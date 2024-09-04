@@ -11,41 +11,13 @@ import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
 import "Windows.Devices.Geolocation.idl";
+import "Windows.Foundation.Numerics.idl";
 import "Windows.Services.Maps.idl";
 import "Windows.Services.Maps.LocalSearch.idl";
 import "Windows.Storage.Streams.idl";
 import "Windows.UI.idl";
 import "Windows.UI.Xaml.idl";
 import "Windows.UI.Xaml.Controls.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Edevices2Egeolocation_h__)")
-cpp_quote("#include <Windows.Devices.Geolocation.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Egeolocation_h__)")
-cpp_quote("#if !defined(__windows2Eservices2Emaps_h__)")
-cpp_quote("#include <Windows.Services.Maps.h>")
-cpp_quote("#endif // !defined(__windows2Eservices2Emaps_h__)")
-cpp_quote("#if !defined(__windows2Eservices2Emaps2Elocalsearch_h__)")
-cpp_quote("#include <Windows.Services.Maps.LocalSearch.h>")
-cpp_quote("#endif // !defined(__windows2Eservices2Emaps2Elocalsearch_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Eui_h__)")
-cpp_quote("#include <Windows.UI.h>")
-cpp_quote("#endif // !defined(__windows2Eui_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#include <Windows.UI.Xaml.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Econtrols_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Controls.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Econtrols_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -61,6 +33,16 @@ namespace Windows
             runtimeclass Geopath;
 
             runtimeclass Geopoint;
+        }
+    }
+}
+namespace Windows
+{
+    namespace Foundation
+    {
+        namespace Numerics
+        {
+            typedef struct Vector3 Vector3;
         }
     }
 }
@@ -155,6 +137,8 @@ namespace Windows
 
                     typedef enum MapLoadingStatus MapLoadingStatus;
 
+                    typedef enum MapModel3DShadingOption MapModel3DShadingOption;
+
                     typedef enum MapPanInteractionMode MapPanInteractionMode;
 
                     typedef enum MapProjection MapProjection;
@@ -211,6 +195,8 @@ namespace Windows
 
                     interface IMapControl5;
 
+                    interface IMapControl6;
+
                     interface IMapControlBusinessLandmarkClickEventArgs;
 
                     interface IMapControlBusinessLandmarkPointerEnteredEventArgs;
@@ -225,6 +211,8 @@ namespace Windows
 
                     interface IMapControlDataHelperFactory;
 
+                    interface IMapControlDataHelperStatics;
+
                     interface IMapControlStatics;
 
                     interface IMapControlStatics2;
@@ -232,6 +220,8 @@ namespace Windows
                     interface IMapControlStatics4;
 
                     interface IMapControlStatics5;
+
+                    interface IMapControlStatics6;
 
                     interface IMapControlTransitFeatureClickEventArgs;
 
@@ -251,6 +241,12 @@ namespace Windows
 
                     interface IMapElement2;
 
+                    interface IMapElement3;
+
+                    interface IMapElement3D;
+
+                    interface IMapElement3DStatics;
+
                     interface IMapElementClickEventArgs;
 
                     interface IMapElementFactory;
@@ -262,6 +258,20 @@ namespace Windows
                     interface IMapElementStatics;
 
                     interface IMapElementStatics2;
+
+                    interface IMapElementStatics3;
+
+                    interface IMapElementsLayer;
+
+                    interface IMapElementsLayerClickEventArgs;
+
+                    interface IMapElementsLayerContextRequestedEventArgs;
+
+                    interface IMapElementsLayerPointerEnteredEventArgs;
+
+                    interface IMapElementsLayerPointerExitedEventArgs;
+
+                    interface IMapElementsLayerStatics;
 
                     interface IMapIcon;
 
@@ -276,6 +286,18 @@ namespace Windows
                     interface IMapItemsControl;
 
                     interface IMapItemsControlStatics;
+
+                    interface IMapLayer;
+
+                    interface IMapLayerFactory;
+
+                    interface IMapLayerStatics;
+
+                    interface IMapModel3D;
+
+                    interface IMapModel3DFactory;
+
+                    interface IMapModel3DStatics;
 
                     interface IMapPolygon;
 
@@ -298,6 +320,10 @@ namespace Windows
                     interface IMapSceneStatics;
 
                     interface IMapStyleSheet;
+
+                    interface IMapStyleSheetEntriesStatics;
+
+                    interface IMapStyleSheetEntryStatesStatics;
 
                     interface IMapStyleSheetStatics;
 
@@ -377,17 +403,33 @@ namespace Windows
 
                     runtimeclass MapElement;
 
+                    runtimeclass MapElement3D;
+
                     runtimeclass MapElementClickEventArgs;
 
                     runtimeclass MapElementPointerEnteredEventArgs;
 
                     runtimeclass MapElementPointerExitedEventArgs;
 
+                    runtimeclass MapElementsLayer;
+
+                    runtimeclass MapElementsLayerClickEventArgs;
+
+                    runtimeclass MapElementsLayerContextRequestedEventArgs;
+
+                    runtimeclass MapElementsLayerPointerEnteredEventArgs;
+
+                    runtimeclass MapElementsLayerPointerExitedEventArgs;
+
                     runtimeclass MapIcon;
 
                     runtimeclass MapInputEventArgs;
 
                     runtimeclass MapItemsControl;
+
+                    runtimeclass MapLayer;
+
+                    runtimeclass MapModel3D;
 
                     runtimeclass MapPolygon;
 
@@ -400,6 +442,10 @@ namespace Windows
                     runtimeclass MapScene;
 
                     runtimeclass MapStyleSheet;
+
+                    runtimeclass MapStyleSheetEntries;
+
+                    runtimeclass MapStyleSheetEntryStates;
 
                     runtimeclass MapTargetCameraChangedEventArgs;
 
@@ -443,6 +489,8 @@ namespace Windows
                     {
                         interface Windows.Foundation.Collections.IIterable<Windows.UI.Xaml.Controls.Maps.MapElement*>;
 
+                        interface Windows.Foundation.Collections.IIterable<Windows.UI.Xaml.Controls.Maps.MapLayer*>;
+
                         interface Windows.Foundation.Collections.IIterable<Windows.UI.Xaml.Controls.Maps.MapRouteView*>;
 
                         interface Windows.Foundation.Collections.IIterable<Windows.UI.Xaml.Controls.Maps.MapStyleSheet*>;
@@ -450,6 +498,8 @@ namespace Windows
                         interface Windows.Foundation.Collections.IIterable<Windows.UI.Xaml.Controls.Maps.MapTileSource*>;
 
                         interface Windows.Foundation.Collections.IIterator<Windows.UI.Xaml.Controls.Maps.MapElement*>;
+
+                        interface Windows.Foundation.Collections.IIterator<Windows.UI.Xaml.Controls.Maps.MapLayer*>;
 
                         interface Windows.Foundation.Collections.IIterator<Windows.UI.Xaml.Controls.Maps.MapRouteView*>;
 
@@ -459,15 +509,21 @@ namespace Windows
 
                         interface Windows.Foundation.Collections.IVectorView<Windows.UI.Xaml.Controls.Maps.MapElement*>;
 
+                        interface Windows.Foundation.Collections.IVectorView<Windows.UI.Xaml.Controls.Maps.MapLayer*>;
+
                         interface Windows.Foundation.Collections.IVectorView<Windows.UI.Xaml.Controls.Maps.MapRouteView*>;
 
                         interface Windows.Foundation.Collections.IVectorView<Windows.UI.Xaml.Controls.Maps.MapTileSource*>;
 
                         interface Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Controls.Maps.MapElement*>;
 
+                        interface Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Controls.Maps.MapLayer*>;
+
                         interface Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Controls.Maps.MapRouteView*>;
 
                         interface Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Controls.Maps.MapTileSource*>;
+
+                        interface Windows.Foundation.IAsyncOperation<Windows.UI.Xaml.Controls.Maps.MapModel3D*>;
 
                         interface Windows.Foundation.IAsyncOperation<Windows.UI.Xaml.Controls.Maps.StreetsidePanorama*>;
 
@@ -514,6 +570,14 @@ namespace Windows
                         interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapRightTappedEventArgs*>;
 
                         interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapControl*, Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs*>;
+
+                        interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapElementsLayer*, Windows.UI.Xaml.Controls.Maps.MapElementsLayerClickEventArgs*>;
+
+                        interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapElementsLayer*, Windows.UI.Xaml.Controls.Maps.MapElementsLayerContextRequestedEventArgs*>;
+
+                        interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapElementsLayer*, Windows.UI.Xaml.Controls.Maps.MapElementsLayerPointerEnteredEventArgs*>;
+
+                        interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapElementsLayer*, Windows.UI.Xaml.Controls.Maps.MapElementsLayerPointerExitedEventArgs*>;
 
                         interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapScene*, Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs*>;
                     }
@@ -588,6 +652,14 @@ namespace Windows
                         Loaded          = 1,
                         [contract(Windows.Foundation.UniversalApiContract, 2.0)]
                         DataUnavailable = 2
+                    };
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    enum MapModel3DShadingOption
+                    {
+                        Default = 0,
+                        Flat    = 1,
+                        Smooth  = 2
                     };
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -979,6 +1051,17 @@ namespace Windows
                         HRESULT TryPanToAsync([in] Windows.Devices.Geolocation.Geopoint* location, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** returnValue);
                     }
 
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapControl)]
+                    [uuid(B0DA89A2-1041-4BEA-B88A-12AC9A82E0E2)]
+                    interface IMapControl6 : IInspectable
+                    {
+                        [propget] HRESULT Layers([out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Controls.Maps.MapLayer*>** value);
+                        [propput] HRESULT Layers([in] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Controls.Maps.MapLayer*>* value);
+                        [overload("TryGetLocationFromOffset")] HRESULT TryGetLocationFromOffset([in] Windows.Foundation.Point offset, [out] Windows.Devices.Geolocation.Geopoint** location, [out] [retval] boolean* returnValue);
+                        [overload("TryGetLocationFromOffset")] HRESULT TryGetLocationFromOffsetWithReferenceSystem([in] Windows.Foundation.Point offset, [in] Windows.Devices.Geolocation.AltitudeReferenceSystem desiredReferenceSystem, [out] Windows.Devices.Geolocation.Geopoint** location, [out] [retval] boolean* returnValue);
+                    }
+
                     [contract(Windows.Services.Maps.LocalSearchContract, 2.0)]
                     [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkClickEventArgs)]
                     [uuid(5E464922-4A1A-4797-BEB7-5CF7754CB867)]
@@ -1049,6 +1132,14 @@ namespace Windows
                         HRESULT CreateInstance([in] Windows.UI.Xaml.Controls.Maps.MapControl* map, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapControlDataHelper** instance);
                     }
 
+                    [contract(Windows.Services.Maps.LocalSearchContract, 4.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapControlDataHelper)]
+                    [uuid(7A6632D6-E944-4110-83CF-314D0722E2E5)]
+                    interface IMapControlDataHelperStatics : IInspectable
+                    {
+                        HRESULT CreateMapControl([in] boolean rasterRenderMode, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapControl** returnValue);
+                    }
+
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapControl)]
                     [uuid(C2C61795-2147-4F0A-942A-5493A85DE807)]
@@ -1113,6 +1204,14 @@ namespace Windows
                         [propget] HRESULT MapProjectionProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                         [propget] HRESULT StyleSheetProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                         [propget] HRESULT ViewPaddingProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapControl)]
+                    [uuid(3CCFDD7F-24D1-40A2-8351-B3063A8C95A4)]
+                    interface IMapControlStatics6 : IInspectable
+                    {
+                        [propget] HRESULT LayersProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                     }
 
                     [contract(Windows.Services.Maps.LocalSearchContract, 2.0)]
@@ -1197,6 +1296,50 @@ namespace Windows
                         [propput] HRESULT MapTabIndex([in] INT32 value);
                     }
 
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapElement)]
+                    [uuid(13EFBC59-45ED-48B4-93AD-E3F78F8CF218)]
+                    interface IMapElement3 : IInspectable
+                    {
+                        [propget] HRESULT MapStyleSheetEntry([out] [retval] HSTRING* value);
+                        [propput] HRESULT MapStyleSheetEntry([in] HSTRING value);
+                        [propget] HRESULT MapStyleSheetEntryState([out] [retval] HSTRING* value);
+                        [propput] HRESULT MapStyleSheetEntryState([in] HSTRING value);
+                        [propget] HRESULT Tag([out] [retval] IInspectable** value);
+                        [propput] HRESULT Tag([in] IInspectable* value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapElement3D)]
+                    [uuid(827AF8D5-3843-48E2-BD00-0F0644FBE6A5)]
+                    interface IMapElement3D : IInspectable
+                    {
+                        [propget] HRESULT Location([out] [retval] Windows.Devices.Geolocation.Geopoint** value);
+                        [propput] HRESULT Location([in] Windows.Devices.Geolocation.Geopoint* value);
+                        [propget] HRESULT Model([out] [retval] Windows.UI.Xaml.Controls.Maps.MapModel3D** value);
+                        [propput] HRESULT Model([in] Windows.UI.Xaml.Controls.Maps.MapModel3D* value);
+                        [propget] HRESULT Heading([out] [retval] DOUBLE* value);
+                        [propput] HRESULT Heading([in] DOUBLE value);
+                        [propget] HRESULT Pitch([out] [retval] DOUBLE* value);
+                        [propput] HRESULT Pitch([in] DOUBLE value);
+                        [propget] HRESULT Roll([out] [retval] DOUBLE* value);
+                        [propput] HRESULT Roll([in] DOUBLE value);
+                        [propget] HRESULT Scale([out] [retval] Windows.Foundation.Numerics.Vector3* value);
+                        [propput] HRESULT Scale([in] Windows.Foundation.Numerics.Vector3 value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapElement3D)]
+                    [uuid(6128011A-450F-442A-B9D9-AA815C71907A)]
+                    interface IMapElement3DStatics : IInspectable
+                    {
+                        [propget] HRESULT LocationProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT HeadingProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT PitchProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT RollProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT ScaleProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    }
+
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapElementClickEventArgs)]
                     [uuid(40168A11-D080-4519-99A1-3149FB8999D0)]
@@ -1250,6 +1393,81 @@ namespace Windows
                     interface IMapElementStatics2 : IInspectable
                     {
                         [propget] HRESULT MapTabIndexProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapElement)]
+                    [uuid(E11EE92F-9742-49AA-AAD8-2E466BFF3796)]
+                    interface IMapElementStatics3 : IInspectable
+                    {
+                        [propget] HRESULT MapStyleSheetEntryProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT MapStyleSheetEntryStateProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT TagProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapElementsLayer)]
+                    [uuid(DE79689A-01EF-46F4-AC60-7C200B552610)]
+                    interface IMapElementsLayer : IInspectable
+                    {
+                        [propget] HRESULT MapElements([out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Controls.Maps.MapElement*>** value);
+                        [propput] HRESULT MapElements([in] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Controls.Maps.MapElement*>* value);
+                        [eventadd] HRESULT MapElementClick([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapElementsLayer*, Windows.UI.Xaml.Controls.Maps.MapElementsLayerClickEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventremove] HRESULT MapElementClick([in] EventRegistrationToken token);
+                        [eventadd] HRESULT MapElementPointerEntered([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapElementsLayer*, Windows.UI.Xaml.Controls.Maps.MapElementsLayerPointerEnteredEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventremove] HRESULT MapElementPointerEntered([in] EventRegistrationToken token);
+                        [eventadd] HRESULT MapElementPointerExited([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapElementsLayer*, Windows.UI.Xaml.Controls.Maps.MapElementsLayerPointerExitedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventremove] HRESULT MapElementPointerExited([in] EventRegistrationToken token);
+                        [eventadd] HRESULT MapContextRequested([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Maps.MapElementsLayer*, Windows.UI.Xaml.Controls.Maps.MapElementsLayerContextRequestedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventremove] HRESULT MapContextRequested([in] EventRegistrationToken token);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapElementsLayerClickEventArgs)]
+                    [uuid(2CA7CF66-AF1B-4C05-8C85-F74AE3D4677F)]
+                    interface IMapElementsLayerClickEventArgs : IInspectable
+                    {
+                        [propget] HRESULT Position([out] [retval] Windows.Foundation.Point* value);
+                        [propget] HRESULT Location([out] [retval] Windows.Devices.Geolocation.Geopoint** value);
+                        [propget] HRESULT MapElements([out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Controls.Maps.MapElement*>** value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapElementsLayerContextRequestedEventArgs)]
+                    [uuid(DA45D0B3-7A0E-4758-808B-3A637627EB0D)]
+                    interface IMapElementsLayerContextRequestedEventArgs : IInspectable
+                    {
+                        [propget] HRESULT Position([out] [retval] Windows.Foundation.Point* value);
+                        [propget] HRESULT Location([out] [retval] Windows.Devices.Geolocation.Geopoint** value);
+                        [propget] HRESULT MapElements([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.UI.Xaml.Controls.Maps.MapElement*>** value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapElementsLayerPointerEnteredEventArgs)]
+                    [uuid(757FC032-4694-4404-8C89-348B6B76C5E6)]
+                    interface IMapElementsLayerPointerEnteredEventArgs : IInspectable
+                    {
+                        [propget] HRESULT Position([out] [retval] Windows.Foundation.Point* value);
+                        [propget] HRESULT Location([out] [retval] Windows.Devices.Geolocation.Geopoint** value);
+                        [propget] HRESULT MapElement([out] [retval] Windows.UI.Xaml.Controls.Maps.MapElement** value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapElementsLayerPointerExitedEventArgs)]
+                    [uuid(92F3C6AD-03ED-4C39-AF20-2A07EE1CCEA6)]
+                    interface IMapElementsLayerPointerExitedEventArgs : IInspectable
+                    {
+                        [propget] HRESULT Position([out] [retval] Windows.Foundation.Point* value);
+                        [propget] HRESULT Location([out] [retval] Windows.Devices.Geolocation.Geopoint** value);
+                        [propget] HRESULT MapElement([out] [retval] Windows.UI.Xaml.Controls.Maps.MapElement** value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapElementsLayer)]
+                    [uuid(34005727-F509-4D28-9180-911C03411D74)]
+                    interface IMapElementsLayerStatics : IInspectable
+                    {
+                        [propget] HRESULT MapElementsProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1323,6 +1541,61 @@ namespace Windows
                         [propget] HRESULT ItemsSourceProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                         [propget] HRESULT ItemsProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                         [propget] HRESULT ItemTemplateProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapLayer)]
+                    [uuid(6D0FF9C1-A14D-4F97-8F57-46715B57683A)]
+                    interface IMapLayer : IInspectable
+                    {
+                        [propget] HRESULT MapTabIndex([out] [retval] INT32* value);
+                        [propput] HRESULT MapTabIndex([in] INT32 value);
+                        [propget] HRESULT Visible([out] [retval] boolean* value);
+                        [propput] HRESULT Visible([in] boolean value);
+                        [propget] HRESULT ZIndex([out] [retval] INT32* value);
+                        [propput] HRESULT ZIndex([in] INT32 value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapLayer)]
+                    [uuid(E02A2207-DEE3-47C8-9825-BD029C5752F7)]
+                    interface IMapLayerFactory : IInspectable
+                    {
+                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapLayer** instance);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapLayer)]
+                    [uuid(9CA4A26B-5DB9-4F0C-BDD5-B1BFFDCCE946)]
+                    interface IMapLayerStatics : IInspectable
+                    {
+                        [propget] HRESULT MapTabIndexProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT VisibleProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT ZIndexProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapModel3D)]
+                    [uuid(F8C541A1-CA27-4968-A2BF-9C20F06A0468)]
+                    interface IMapModel3D : IInspectable
+                    {
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapModel3D)]
+                    [uuid(DF7F0BCC-580A-498B-939B-0119A9DADB9E)]
+                    interface IMapModel3DFactory : IInspectable
+                    {
+                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Maps.MapModel3D** instance);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapModel3D)]
+                    [uuid(4834A480-8E56-4B0F-872D-7EAD103187CD)]
+                    interface IMapModel3DStatics : IInspectable
+                    {
+                        [overload("CreateFrom3MFAsync")] HRESULT CreateFrom3MFAsync([in] Windows.Storage.Streams.IRandomAccessStreamReference* source, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.UI.Xaml.Controls.Maps.MapModel3D*>** returnValue);
+                        [overload("CreateFrom3MFAsync")] HRESULT CreateFrom3MFWithShadingOptionAsync([in] Windows.Storage.Streams.IRandomAccessStreamReference* source, [in] Windows.UI.Xaml.Controls.Maps.MapModel3DShadingOption shadingOption, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.UI.Xaml.Controls.Maps.MapModel3D*>** returnValue);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1444,6 +1717,87 @@ namespace Windows
                     [uuid(AE54B2BF-8991-42ED-8D58-20473DEEDE1D)]
                     interface IMapStyleSheet : IInspectable
                     {
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapStyleSheetEntries)]
+                    [uuid(C9636345-EF1A-41A4-A757-BD4F43E1E4D1)]
+                    interface IMapStyleSheetEntriesStatics : IInspectable
+                    {
+                        [propget] HRESULT Area([out] [retval] HSTRING* value);
+                        [propget] HRESULT Airport([out] [retval] HSTRING* value);
+                        [propget] HRESULT Cemetery([out] [retval] HSTRING* value);
+                        [propget] HRESULT Continent([out] [retval] HSTRING* value);
+                        [propget] HRESULT Education([out] [retval] HSTRING* value);
+                        [propget] HRESULT IndigenousPeoplesReserve([out] [retval] HSTRING* value);
+                        [propget] HRESULT Island([out] [retval] HSTRING* value);
+                        [propget] HRESULT Medical([out] [retval] HSTRING* value);
+                        [propget] HRESULT Military([out] [retval] HSTRING* value);
+                        [propget] HRESULT Nautical([out] [retval] HSTRING* value);
+                        [propget] HRESULT Neighborhood([out] [retval] HSTRING* value);
+                        [propget] HRESULT Runway([out] [retval] HSTRING* value);
+                        [propget] HRESULT Sand([out] [retval] HSTRING* value);
+                        [propget] HRESULT ShoppingCenter([out] [retval] HSTRING* value);
+                        [propget] HRESULT Stadium([out] [retval] HSTRING* value);
+                        [propget] HRESULT Vegetation([out] [retval] HSTRING* value);
+                        [propget] HRESULT Forest([out] [retval] HSTRING* value);
+                        [propget] HRESULT GolfCourse([out] [retval] HSTRING* value);
+                        [propget] HRESULT Park([out] [retval] HSTRING* value);
+                        [propget] HRESULT PlayingField([out] [retval] HSTRING* value);
+                        [propget] HRESULT Reserve([out] [retval] HSTRING* value);
+                        [propget] HRESULT Point([out] [retval] HSTRING* value);
+                        [propget] HRESULT NaturalPoint([out] [retval] HSTRING* value);
+                        [propget] HRESULT Peak([out] [retval] HSTRING* value);
+                        [propget] HRESULT VolcanicPeak([out] [retval] HSTRING* value);
+                        [propget] HRESULT WaterPoint([out] [retval] HSTRING* value);
+                        [propget] HRESULT PointOfInterest([out] [retval] HSTRING* value);
+                        [propget] HRESULT Business([out] [retval] HSTRING* value);
+                        [propget] HRESULT FoodPoint([out] [retval] HSTRING* value);
+                        [propget] HRESULT PopulatedPlace([out] [retval] HSTRING* value);
+                        [propget] HRESULT Capital([out] [retval] HSTRING* value);
+                        [propget] HRESULT AdminDistrictCapital([out] [retval] HSTRING* value);
+                        [propget] HRESULT CountryRegionCapital([out] [retval] HSTRING* value);
+                        [propget] HRESULT RoadShield([out] [retval] HSTRING* value);
+                        [propget] HRESULT RoadExit([out] [retval] HSTRING* value);
+                        [propget] HRESULT Transit([out] [retval] HSTRING* value);
+                        [propget] HRESULT Political([out] [retval] HSTRING* value);
+                        [propget] HRESULT CountryRegion([out] [retval] HSTRING* value);
+                        [propget] HRESULT AdminDistrict([out] [retval] HSTRING* value);
+                        [propget] HRESULT District([out] [retval] HSTRING* value);
+                        [propget] HRESULT Structure([out] [retval] HSTRING* value);
+                        [propget] HRESULT Building([out] [retval] HSTRING* value);
+                        [propget] HRESULT EducationBuilding([out] [retval] HSTRING* value);
+                        [propget] HRESULT MedicalBuilding([out] [retval] HSTRING* value);
+                        [propget] HRESULT TransitBuilding([out] [retval] HSTRING* value);
+                        [propget] HRESULT Transportation([out] [retval] HSTRING* value);
+                        [propget] HRESULT Road([out] [retval] HSTRING* value);
+                        [propget] HRESULT ControlledAccessHighway([out] [retval] HSTRING* value);
+                        [propget] HRESULT HighSpeedRamp([out] [retval] HSTRING* value);
+                        [propget] HRESULT Highway([out] [retval] HSTRING* value);
+                        [propget] HRESULT MajorRoad([out] [retval] HSTRING* value);
+                        [propget] HRESULT ArterialRoad([out] [retval] HSTRING* value);
+                        [propget] HRESULT Street([out] [retval] HSTRING* value);
+                        [propget] HRESULT Ramp([out] [retval] HSTRING* value);
+                        [propget] HRESULT UnpavedStreet([out] [retval] HSTRING* value);
+                        [propget] HRESULT TollRoad([out] [retval] HSTRING* value);
+                        [propget] HRESULT Railway([out] [retval] HSTRING* value);
+                        [propget] HRESULT Trail([out] [retval] HSTRING* value);
+                        [propget] HRESULT WaterRoute([out] [retval] HSTRING* value);
+                        [propget] HRESULT Water([out] [retval] HSTRING* value);
+                        [propget] HRESULT River([out] [retval] HSTRING* value);
+                        [propget] HRESULT RouteLine([out] [retval] HSTRING* value);
+                        [propget] HRESULT WalkingRoute([out] [retval] HSTRING* value);
+                        [propget] HRESULT DrivingRoute([out] [retval] HSTRING* value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Maps.MapStyleSheetEntryStates)]
+                    [uuid(23AC5532-866D-4BFA-B481-39BEA1DE3506)]
+                    interface IMapStyleSheetEntryStatesStatics : IInspectable
+                    {
+                        [propget] HRESULT Disabled([out] [retval] HSTRING* value);
+                        [propget] HRESULT Hover([out] [retval] HSTRING* value);
+                        [propget] HRESULT Selected([out] [retval] HSTRING* value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -1737,6 +2091,7 @@ namespace Windows
                     [static(Windows.UI.Xaml.Controls.Maps.IMapControlStatics2, Windows.Foundation.UniversalApiContract, 1.0)]
                     [static(Windows.UI.Xaml.Controls.Maps.IMapControlStatics4, Windows.Foundation.UniversalApiContract, 3.0)]
                     [static(Windows.UI.Xaml.Controls.Maps.IMapControlStatics5, Windows.Foundation.UniversalApiContract, 4.0)]
+                    [static(Windows.UI.Xaml.Controls.Maps.IMapControlStatics6, Windows.Foundation.UniversalApiContract, 5.0)]
                     [threading(both)]
                     runtimeclass MapControl : Windows.UI.Xaml.Controls.Control
                     {
@@ -1745,6 +2100,7 @@ namespace Windows
                         [contract(Windows.Foundation.UniversalApiContract, 2.0)] interface Windows.UI.Xaml.Controls.Maps.IMapControl3;
                         [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.UI.Xaml.Controls.Maps.IMapControl4;
                         [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.UI.Xaml.Controls.Maps.IMapControl5;
+                        [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Xaml.Controls.Maps.IMapControl6;
                     }
 
                     [activatable(Windows.Services.Maps.LocalSearchContract, 2.0)]
@@ -1786,6 +2142,7 @@ namespace Windows
                     [activatable(Windows.UI.Xaml.Controls.Maps.IMapControlDataHelperFactory, Windows.Services.Maps.LocalSearchContract, 2.0)]
                     [contract(Windows.Services.Maps.LocalSearchContract, 2.0)]
                     [marshaling_behavior(agile)]
+                    [static(Windows.UI.Xaml.Controls.Maps.IMapControlDataHelperStatics, Windows.Services.Maps.LocalSearchContract, 4.0)]
                     [threading(both)]
                     runtimeclass MapControlDataHelper : Windows.UI.Xaml.DependencyObject
                     {
@@ -1852,11 +2209,23 @@ namespace Windows
                     [marshaling_behavior(agile)]
                     [static(Windows.UI.Xaml.Controls.Maps.IMapElementStatics, Windows.Foundation.UniversalApiContract, 1.0)]
                     [static(Windows.UI.Xaml.Controls.Maps.IMapElementStatics2, Windows.Foundation.UniversalApiContract, 1.0)]
+                    [static(Windows.UI.Xaml.Controls.Maps.IMapElementStatics3, Windows.Foundation.UniversalApiContract, 5.0)]
                     [threading(both)]
                     runtimeclass MapElement : Windows.UI.Xaml.DependencyObject
                     {
                         [default] interface Windows.UI.Xaml.Controls.Maps.IMapElement;
                         [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.UI.Xaml.Controls.Maps.IMapElement2;
+                        [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Xaml.Controls.Maps.IMapElement3;
+                    }
+
+                    [activatable(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [marshaling_behavior(agile)]
+                    [static(Windows.UI.Xaml.Controls.Maps.IMapElement3DStatics, Windows.Foundation.UniversalApiContract, 5.0)]
+                    [threading(both)]
+                    runtimeclass MapElement3D : Windows.UI.Xaml.Controls.Maps.MapElement
+                    {
+                        [default] interface Windows.UI.Xaml.Controls.Maps.IMapElement3D;
                     }
 
                     [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1884,6 +2253,52 @@ namespace Windows
                     runtimeclass MapElementPointerExitedEventArgs
                     {
                         [default] interface Windows.UI.Xaml.Controls.Maps.IMapElementPointerExitedEventArgs;
+                    }
+
+                    [activatable(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [marshaling_behavior(agile)]
+                    [static(Windows.UI.Xaml.Controls.Maps.IMapElementsLayerStatics, Windows.Foundation.UniversalApiContract, 5.0)]
+                    [threading(both)]
+                    runtimeclass MapElementsLayer : Windows.UI.Xaml.Controls.Maps.MapLayer
+                    {
+                        [default] interface Windows.UI.Xaml.Controls.Maps.IMapElementsLayer;
+                    }
+
+                    [activatable(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [marshaling_behavior(agile)]
+                    [threading(both)]
+                    runtimeclass MapElementsLayerClickEventArgs
+                    {
+                        [default] interface Windows.UI.Xaml.Controls.Maps.IMapElementsLayerClickEventArgs;
+                    }
+
+                    [activatable(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [marshaling_behavior(agile)]
+                    [threading(both)]
+                    runtimeclass MapElementsLayerContextRequestedEventArgs
+                    {
+                        [default] interface Windows.UI.Xaml.Controls.Maps.IMapElementsLayerContextRequestedEventArgs;
+                    }
+
+                    [activatable(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [marshaling_behavior(agile)]
+                    [threading(both)]
+                    runtimeclass MapElementsLayerPointerEnteredEventArgs
+                    {
+                        [default] interface Windows.UI.Xaml.Controls.Maps.IMapElementsLayerPointerEnteredEventArgs;
+                    }
+
+                    [activatable(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [marshaling_behavior(agile)]
+                    [threading(both)]
+                    runtimeclass MapElementsLayerPointerExitedEventArgs
+                    {
+                        [default] interface Windows.UI.Xaml.Controls.Maps.IMapElementsLayerPointerExitedEventArgs;
                     }
 
                     [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1915,6 +2330,26 @@ namespace Windows
                     runtimeclass MapItemsControl : Windows.UI.Xaml.DependencyObject
                     {
                         [default] interface Windows.UI.Xaml.Controls.Maps.IMapItemsControl;
+                    }
+
+                    [composable(Windows.UI.Xaml.Controls.Maps.IMapLayerFactory, public, Windows.Foundation.UniversalApiContract, 5.0)]
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [marshaling_behavior(agile)]
+                    [static(Windows.UI.Xaml.Controls.Maps.IMapLayerStatics, Windows.Foundation.UniversalApiContract, 5.0)]
+                    [threading(both)]
+                    runtimeclass MapLayer : Windows.UI.Xaml.DependencyObject
+                    {
+                        [default] interface Windows.UI.Xaml.Controls.Maps.IMapLayer;
+                    }
+
+                    [composable(Windows.UI.Xaml.Controls.Maps.IMapModel3DFactory, public, Windows.Foundation.UniversalApiContract, 5.0)]
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [marshaling_behavior(agile)]
+                    [static(Windows.UI.Xaml.Controls.Maps.IMapModel3DStatics, Windows.Foundation.UniversalApiContract, 5.0)]
+                    [threading(both)]
+                    runtimeclass MapModel3D : Windows.UI.Xaml.DependencyObject
+                    {
+                        [default] interface Windows.UI.Xaml.Controls.Maps.IMapModel3D;
                     }
 
                     [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1972,6 +2407,22 @@ namespace Windows
                     runtimeclass MapStyleSheet : Windows.UI.Xaml.DependencyObject
                     {
                         [default] interface Windows.UI.Xaml.Controls.Maps.IMapStyleSheet;
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [marshaling_behavior(agile)]
+                    [static(Windows.UI.Xaml.Controls.Maps.IMapStyleSheetEntriesStatics, Windows.Foundation.UniversalApiContract, 5.0)]
+                    [threading(both)]
+                    runtimeclass MapStyleSheetEntries
+                    {
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [marshaling_behavior(agile)]
+                    [static(Windows.UI.Xaml.Controls.Maps.IMapStyleSheetEntryStatesStatics, Windows.Foundation.UniversalApiContract, 5.0)]
+                    [threading(both)]
+                    runtimeclass MapStyleSheetEntryStates
+                    {
                     }
 
                     [activatable(Windows.Foundation.UniversalApiContract, 1.0)]

@@ -54,6 +54,7 @@ typedef enum DIRECTMANIPULATION_STATUS
 } DIRECTMANIPULATION_STATUS;
 
 // Defines hit-testing options
+// Note: if new types are ever added, make sure to update DIRECTMANIPULATION_HITTEST_TYPE_SYNCHRONOUS_INCLUDE_PTP
 typedef enum DIRECTMANIPULATION_HITTEST_TYPE
 {
     // The hit-test thread receives WM_POINTERDOWN always

@@ -74,7 +74,7 @@ typedef struct _DedupChunk
 {
     DedupHash Hash;        // Uncompressed data hash
     DedupChunkFlags Flags; // Chunk flags
-    DWORD LogicalSize;     // Uncompressed size
+    DWORD LogicalSize;     // Uncompressed size; this field is optional
     DWORD DataSize;        // Compressed size
 } DedupChunk;
 

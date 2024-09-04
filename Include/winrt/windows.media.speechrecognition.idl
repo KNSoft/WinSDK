@@ -12,20 +12,6 @@ import "windowscontracts.idl";
 import "Windows.Foundation.idl";
 import "Windows.Globalization.idl";
 import "Windows.Storage.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eglobalization_h__)")
-cpp_quote("#include <Windows.Globalization.h>")
-cpp_quote("#endif // !defined(__windows2Eglobalization_h__)")
-cpp_quote("#if !defined(__windows2Estorage_h__)")
-cpp_quote("#include <Windows.Storage.h>")
-cpp_quote("#endif // !defined(__windows2Estorage_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -124,6 +110,8 @@ namespace Windows
             interface ISpeechRecognizerStateChangedEventArgs;
 
             interface ISpeechRecognizerStatics;
+
+            interface ISpeechRecognizerStatics2;
 
             interface ISpeechRecognizerTimeouts;
 
@@ -539,6 +527,14 @@ namespace Windows
                 [propget] HRESULT SupportedGrammarLanguages([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.Globalization.Language*>** languages);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Media.SpeechRecognition.SpeechRecognizer)]
+            [uuid(1D1B0D95-7565-4EF9-A2F3-BA15162A96CF)]
+            interface ISpeechRecognizerStatics2 : IInspectable
+            {
+                HRESULT TrySetSystemSpeechLanguageAsync([in] Windows.Globalization.Language* speechLanguage, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** result);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Media.SpeechRecognition.SpeechRecognizerTimeouts)]
             [uuid(2EF76FCA-6A3C-4DCA-A153-DF1BC88A79AF)]
@@ -676,6 +672,7 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
             [static(Windows.Media.SpeechRecognition.ISpeechRecognizerStatics, Windows.Foundation.UniversalApiContract, 1.0)]
+            [static(Windows.Media.SpeechRecognition.ISpeechRecognizerStatics2, Windows.Foundation.UniversalApiContract, 5.0)]
             runtimeclass SpeechRecognizer
             {
                 [default] interface Windows.Media.SpeechRecognition.ISpeechRecognizer;

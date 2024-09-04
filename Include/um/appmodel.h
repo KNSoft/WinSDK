@@ -37,7 +37,9 @@
 
 #if defined(_CONTRACT_GEN)
 #include <nt.h>
-#include <minwindef.h>
+#include <ntrtl.h>
+#include <nturtl.h>
+#include <windows.h>
 #endif // defined(_CONTRACT_GEN)
 
 /* APISET_NAME: api-ms-win-appmodel-runtime-l1 */
@@ -46,17 +48,15 @@
 #if !defined(RC_INVOKED)
 
 #ifndef _APISET_APPMODELRUNTIME_VER
-
 #ifdef _APISET_TARGET_VERSION
 #if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS1
 #define _APISET_APPMODELRUNTIME_VER 0x0102
 #elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WINBLUE
 #define _APISET_APPMODELRUNTIME_VER 0x0101
-#elif _APISET_TARGET_VERSION == _APISET_TARGET_VERSION_WIN8
+#elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN8
 #define _APISET_APPMODELRUNTIME_VER 0x0100
 #endif
 #endif
-
 #endif
 
 #endif // !defined(RC_INVOKED)
@@ -468,7 +468,7 @@ ParseApplicationUserModelId(
 // Lookup Functions
 
 WINBASEAPI
-_Check_return_ _Success_(return == ERROR_SUCCESS)
+_Check_return_ _Success_(return == ERROR_SUCCESS) _On_failure_(_Unchanged_(*count)) _On_failure_(_Unchanged_(*bufferLength))
 LONG
 WINAPI
 GetPackagesByPackageFamily(
@@ -484,7 +484,7 @@ GetPackagesByPackageFamily(
 #if !defined(_CONTRACT_GEN) || (_APISET_APPMODELRUNTIME_VER >= 0x0101)
 
 /* Any combination of PACKAGE_FILTER_* */WINBASEAPI
-_Check_return_ _Success_(return == ERROR_SUCCESS)
+_Check_return_ _Success_(return == ERROR_SUCCESS) _On_failure_(_Unchanged_(*count)) _On_failure_(_Unchanged_(*bufferLength))
 LONG
 WINAPI
 FindPackagesByPackageFamily(

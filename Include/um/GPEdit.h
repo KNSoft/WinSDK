@@ -516,7 +516,7 @@ DECLARE_INTERFACE_(IGroupPolicyObject, IUnknown)
     // cchMaxPath is the max number of characters that can be stored in pszPath
     //
 
-    STDMETHOD(GetPath) (THIS_ _Out_writes_(cchMaxLength) LPOLESTR pszPath, int cchMaxPath) PURE;
+    STDMETHOD(GetPath) (THIS_ _Out_writes_(cchMaxLength) LPOLESTR pszPath, int cchMaxLength) PURE;
 
 
     //

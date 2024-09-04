@@ -12,20 +12,6 @@ import "windowscontracts.idl";
 import "Windows.Foundation.idl";
 import "Windows.UI.Xaml.idl";
 import "Windows.UI.Xaml.Interop.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#include <Windows.UI.Xaml.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Einterop_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Interop.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Einterop_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -232,7 +218,9 @@ namespace Windows
                 {
                     Default         = 0,
                     PropertyChanged = 1,
-                    Explicit        = 2
+                    Explicit        = 2,
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    LostFocus       = 3
                 };
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]

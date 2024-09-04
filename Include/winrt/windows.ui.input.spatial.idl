@@ -15,29 +15,7 @@ import "Windows.Foundation.Numerics.idl";
 import "Windows.Perception.idl";
 import "Windows.Perception.People.idl";
 import "Windows.Perception.Spatial.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Edevices2Ehaptics_h__)")
-cpp_quote("#include <Windows.Devices.Haptics.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Ehaptics_h__)")
-cpp_quote("#if !defined(__windows2Efoundation2Enumerics_h__)")
-cpp_quote("#include <Windows.Foundation.Numerics.h>")
-cpp_quote("#endif // !defined(__windows2Efoundation2Enumerics_h__)")
-cpp_quote("#if !defined(__windows2Eperception_h__)")
-cpp_quote("#include <Windows.Perception.h>")
-cpp_quote("#endif // !defined(__windows2Eperception_h__)")
-cpp_quote("#if !defined(__windows2Eperception2Epeople_h__)")
-cpp_quote("#include <Windows.Perception.People.h>")
-cpp_quote("#endif // !defined(__windows2Eperception2Epeople_h__)")
-cpp_quote("#if !defined(__windows2Eperception2Espatial_h__)")
-cpp_quote("#include <Windows.Perception.Spatial.h>")
-cpp_quote("#endif // !defined(__windows2Eperception2Espatial_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
+import "Windows.Storage.Streams.idl";
 
 // Forward Declare
 namespace Windows
@@ -98,6 +76,16 @@ namespace Windows
 }
 namespace Windows
 {
+    namespace Storage
+    {
+        namespace Streams
+        {
+            interface IRandomAccessStreamWithContentType;
+        }
+    }
+}
+namespace Windows
+{
     namespace UI
     {
         namespace Input
@@ -108,7 +96,11 @@ namespace Windows
 
                 typedef enum SpatialInteractionPressKind SpatialInteractionPressKind;
 
+                typedef enum SpatialInteractionSourceHandedness SpatialInteractionSourceHandedness;
+
                 typedef enum SpatialInteractionSourceKind SpatialInteractionSourceKind;
+
+                typedef enum SpatialInteractionSourcePositionAccuracy SpatialInteractionSourcePositionAccuracy;
 
                 interface ISpatialGestureRecognizer;
 
@@ -124,6 +116,8 @@ namespace Windows
 
                 interface ISpatialInteractionController;
 
+                interface ISpatialInteractionController2;
+
                 interface ISpatialInteractionControllerProperties;
 
                 interface ISpatialInteractionDetectedEventArgs;
@@ -138,6 +132,8 @@ namespace Windows
 
                 interface ISpatialInteractionSource2;
 
+                interface ISpatialInteractionSource3;
+
                 interface ISpatialInteractionSourceEventArgs;
 
                 interface ISpatialInteractionSourceEventArgs2;
@@ -145,6 +141,8 @@ namespace Windows
                 interface ISpatialInteractionSourceLocation;
 
                 interface ISpatialInteractionSourceLocation2;
+
+                interface ISpatialInteractionSourceLocation3;
 
                 interface ISpatialInteractionSourceProperties;
 
@@ -171,6 +169,8 @@ namespace Windows
                 interface ISpatialNavigationUpdatedEventArgs;
 
                 interface ISpatialPointerInteractionSourcePose;
+
+                interface ISpatialPointerInteractionSourcePose2;
 
                 interface ISpatialPointerPose;
 
@@ -335,6 +335,14 @@ namespace Windows
                     Thumbstick = 5
                 };
 
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                enum SpatialInteractionSourceHandedness
+                {
+                    Unspecified = 0,
+                    Left        = 1,
+                    Right       = 2
+                };
+
                 [contract(Windows.Foundation.UniversalApiContract, 2.0)]
                 enum SpatialInteractionSourceKind
                 {
@@ -342,6 +350,13 @@ namespace Windows
                     Hand       = 1,
                     Voice      = 2,
                     Controller = 3
+                };
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                enum SpatialInteractionSourcePositionAccuracy
+                {
+                    High        = 0,
+                    Approximate = 1
                 };
 
                 [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -437,6 +452,16 @@ namespace Windows
                     [propget] HRESULT Version([out] [retval] UINT16* value);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Input.Spatial.SpatialInteractionController)]
+                [uuid(35B6D924-C7A2-49B7-B72E-5436B2FB8F9C)]
+                interface ISpatialInteractionController2 : IInspectable
+                    requires
+                        Windows.UI.Input.Spatial.ISpatialInteractionController
+                {
+                    HRESULT TryGetRenderableModelAsync([out] [retval] Windows.Foundation.IAsyncOperation<Windows.Storage.Streams.IRandomAccessStreamWithContentType*>** value);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)]
                 [exclusiveto(Windows.UI.Input.Spatial.SpatialInteractionControllerProperties)]
                 [uuid(61056FB1-7BA9-4E35-B93F-9272CBA9B28B)]
@@ -522,6 +547,17 @@ namespace Windows
                     HRESULT TryGetStateAtTimestamp([in] Windows.Perception.PerceptionTimestamp* timestamp, [out] [retval] Windows.UI.Input.Spatial.SpatialInteractionSourceState** value);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Input.Spatial.SpatialInteractionSource)]
+                [uuid(0406D9F9-9AFD-44F9-85DC-700023A962E3)]
+                interface ISpatialInteractionSource3 : IInspectable
+                    requires
+                        Windows.UI.Input.Spatial.ISpatialInteractionSource2,
+                        Windows.UI.Input.Spatial.ISpatialInteractionSource
+                {
+                    [propget] HRESULT Handedness([out] [retval] Windows.UI.Input.Spatial.SpatialInteractionSourceHandedness* value);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 2.0)]
                 [exclusiveto(Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs)]
                 [uuid(23B786CF-EC23-3979-B27C-EB0E12FEB7C7)]
@@ -555,6 +591,18 @@ namespace Windows
                 interface ISpatialInteractionSourceLocation2 : IInspectable
                 {
                     [propget] HRESULT Orientation([out] [retval] Windows.Foundation.IReference<Windows.Foundation.Numerics.Quaternion>** value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Input.Spatial.SpatialInteractionSourceLocation)]
+                [uuid(6702E65E-E915-4CFB-9C1B-0538EFC86687)]
+                interface ISpatialInteractionSourceLocation3 : IInspectable
+                    requires
+                        Windows.UI.Input.Spatial.ISpatialInteractionSourceLocation2
+                {
+                    [propget] HRESULT PositionAccuracy([out] [retval] Windows.UI.Input.Spatial.SpatialInteractionSourcePositionAccuracy* value);
+                    [propget] HRESULT AngularVelocity([out] [retval] Windows.Foundation.IReference<Windows.Foundation.Numerics.Vector3>** value);
+                    [propget] HRESULT SourcePointerPose([out] [retval] Windows.UI.Input.Spatial.SpatialPointerInteractionSourcePose** value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -684,6 +732,17 @@ namespace Windows
                     [propget] HRESULT UpDirection([out] [retval] Windows.Foundation.Numerics.Vector3* value);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Input.Spatial.SpatialPointerInteractionSourcePose)]
+                [uuid(ECCD86B8-52DB-469F-9E3F-80C47F74BCE9)]
+                interface ISpatialPointerInteractionSourcePose2 : IInspectable
+                    requires
+                        Windows.UI.Input.Spatial.ISpatialPointerInteractionSourcePose
+                {
+                    [propget] HRESULT Orientation([out] [retval] Windows.Foundation.Numerics.Quaternion* value);
+                    [propget] HRESULT PositionAccuracy([out] [retval] Windows.UI.Input.Spatial.SpatialInteractionSourcePositionAccuracy* value);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 2.0)]
                 [exclusiveto(Windows.UI.Input.Spatial.SpatialPointerPose)]
                 [uuid(6953A42E-C17E-357D-97A1-7269D0ED2D10)]
@@ -786,6 +845,7 @@ namespace Windows
                 runtimeclass SpatialInteractionController
                 {
                     [default] interface Windows.UI.Input.Spatial.ISpatialInteractionController;
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Input.Spatial.ISpatialInteractionController2;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -821,6 +881,7 @@ namespace Windows
                 {
                     [default] interface Windows.UI.Input.Spatial.ISpatialInteractionSource;
                     [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.UI.Input.Spatial.ISpatialInteractionSource2;
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Input.Spatial.ISpatialInteractionSource3;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -838,7 +899,8 @@ namespace Windows
                 runtimeclass SpatialInteractionSourceLocation
                 {
                     [default] interface Windows.UI.Input.Spatial.ISpatialInteractionSourceLocation;
-                    [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.UI.Input.Spatial.ISpatialInteractionSourceLocation2;
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Input.Spatial.ISpatialInteractionSourceLocation2;
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Input.Spatial.ISpatialInteractionSourceLocation3;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -936,6 +998,7 @@ namespace Windows
                 runtimeclass SpatialPointerInteractionSourcePose
                 {
                     [default] interface Windows.UI.Input.Spatial.ISpatialPointerInteractionSourcePose;
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Input.Spatial.ISpatialPointerInteractionSourcePose2;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 2.0)]

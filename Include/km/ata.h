@@ -118,7 +118,7 @@ typedef struct _IDENTIFY_DEVICE_DATA {
     USHORT MinimumPIOCycleTimeIORDY;            // word 68
 
     struct {
-        USHORT Reserved : 2;
+        USHORT ZonedCapabilities : 2;
         USHORT NonVolatileWriteCache : 1;                   // All write cache is non-volatile
         USHORT ExtendedUserAddressableSectorsSupported : 1;
         USHORT DeviceEncryptsAllUserData : 1;
@@ -894,6 +894,7 @@ typedef struct _REGISTER_FIS {
 #define IDE_COMMAND_NOP                         0x00
 #define IDE_COMMAND_DATA_SET_MANAGEMENT         0x06
 #define IDE_COMMAND_ATAPI_RESET                 0x08
+#define IDE_COMMAND_GET_PHYSICAL_ELEMENT_STATUS 0x12
 #define IDE_COMMAND_READ                        0x20
 #define IDE_COMMAND_READ_EXT                    0x24
 #define IDE_COMMAND_READ_DMA_EXT                0x25
@@ -910,6 +911,7 @@ typedef struct _REGISTER_FIS {
 #define IDE_COMMAND_WRITE_LOG_EXT               0x3f
 #define IDE_COMMAND_VERIFY                      0x40
 #define IDE_COMMAND_VERIFY_EXT                  0x42
+#define IDE_COMMAND_ZAC_MANAGEMENT_IN           0x4A        // Report Zones Ext
 #define IDE_COMMAND_WRITE_LOG_DMA_EXT           0x57
 #define IDE_COMMAND_TRUSTED_NON_DATA            0x5B
 #define IDE_COMMAND_TRUSTED_RECEIVE             0x5C
@@ -922,10 +924,12 @@ typedef struct _REGISTER_FIS {
 #define IDE_COMMAND_SEND_FPDMA_QUEUED           0x64        // NCQ Send command
 #define IDE_COMMAND_RECEIVE_FPDMA_QUEUED        0x65        // NCQ Receive command
 #define IDE_COMMAND_SET_DATE_AND_TIME           0x77        // optional 48bit command
+#define IDE_COMMAND_REMOVE_ELEMENT_AND_TRUNCATE 0x7C
 #define IDE_COMMAND_EXECUTE_DEVICE_DIAGNOSTIC   0x90
 #define IDE_COMMAND_SET_DRIVE_PARAMETERS        0x91
 #define IDE_COMMAND_DOWNLOAD_MICROCODE          0x92        // Optional 28bit command
 #define IDE_COMMAND_DOWNLOAD_MICROCODE_DMA      0x93        // Optional 28bit command
+#define IDE_COMMAND_ZAC_MANAGEMENT_OUT          0x9F        // Close Zone Ext; Finish Zone Ext; Open Zone Ext; Reset Write Pointer Ext.
 #define IDE_COMMAND_ATAPI_PACKET                0xA0
 #define IDE_COMMAND_ATAPI_IDENTIFY              0xA1
 #define IDE_COMMAND_SMART                       0xB0
@@ -1176,15 +1180,23 @@ typedef struct _DEVICE_SET_PASSWORD {
 //
 #define IDE_GP_LOG_IDENTIFY_DEVICE_DATA_SUPPORTED_CAPABILITIES_PAGE     0x03
 #define IDE_GP_LOG_IDENTIFY_DEVICE_DATA_SATA_PAGE                       0x08
+#define IDE_GP_LOG_IDENTIFY_DEVICE_DATA_ZONED_DEVICE_INFORMATION_PAGE   0x09
 
 #pragma pack(push, identify_device_data_log_page_header, 1)
 typedef struct _IDENTIFY_DEVICE_DATA_LOG_PAGE_HEADER {
     ULONGLONG   RevisionNumber : 16;    // Shall be set to 0001h
     ULONGLONG   PageNumber : 8;         // Shall be set to the page number
-    ULONGLONG   Reserved : 40;
+    ULONGLONG   Reserved : 39;
+    ULONGLONG   Valid : 1;
 } IDENTIFY_DEVICE_DATA_LOG_PAGE_HEADER, *PIDENTIFY_DEVICE_DATA_LOG_PAGE_HEADER;
 #pragma pack (pop, identify_device_data_log_page_header)
 
+//
+// Values of ZonedCapabilities.Zoned field.
+//
+#define ATA_ZONED_CAPABILITIES_NOT_REPORTED       0x0
+#define ATA_ZONED_CAPABILITIES_HOST_AWARE         0x1
+#define ATA_ZONED_CAPABILITIES_DEVICE_MANAGED     0x2
 
 #pragma pack(push, identify_device_data_log_page_supported_capabilities, 1)
 typedef struct _IDENTIFY_DEVICE_DATA_LOG_PAGE_SUPPORTED_CAPABILITIES {
@@ -1308,10 +1320,114 @@ typedef struct _IDENTIFY_DEVICE_DATA_LOG_PAGE_SUPPORTED_CAPABILITIES {
         ULONGLONG Valid : 1;
     } DataSetManagement;                                // byte 72..79
 
-    UCHAR  Reserved[432];                               // byte 80..511
+    struct {
+        ULONGLONG UtilizationA : 32;
+        ULONGLONG UtilizationB : 32;
+
+        ULONGLONG Reserved0 : 32;
+
+        ULONGLONG UtilizationInterval : 8;
+        ULONGLONG UtilizationUnit : 8;
+        ULONGLONG UtilizationType : 8;
+
+        ULONGLONG Reserved1 : 7;
+
+        ULONGLONG Valid : 1;
+    } UtilizationPerUnitTime;                           // byte 80..95
+
+    struct {
+        ULONGLONG DateTimeRateBasisSupported : 1;
+        ULONGLONG Reserved0 : 3;
+
+        ULONGLONG PowerOnHoursRateBasisSupported : 1;
+        ULONGLONG Reserved1 : 3;
+
+        ULONGLONG SincePowerOnRateBasisSupported : 1;
+        ULONGLONG Reserved2 : 14;
+        ULONGLONG SettingRateBasisSupported : 1;
+
+
+        ULONGLONG Reserved3 : 39;
+
+        ULONGLONG Valid : 1;
+    } UtilizationUsageRateSupport;                      // byte 96..103
+
+    struct {
+        ULONGLONG Zoned : 2;
+
+        ULONGLONG Reserved : 61;
+
+        ULONGLONG Valid : 1;
+    } ZonedCapabilities;                                // byte 104..111
+
+    struct {
+        ULONGLONG ReportZonesExtSupported : 1;
+        ULONGLONG NonDataOpenZoneExtSupported : 1;
+        ULONGLONG NonDataCloseZoneExtSupported : 1;
+        ULONGLONG NonDataFinishZoneExtSupported : 1;
+        ULONGLONG NonDataResetWritePointersExtSupported : 1;
+
+        ULONGLONG Reserved : 58;
+
+        ULONGLONG Valid : 1;
+    } SupportedZacCapabilities;                         // byte 112..119
+    
+    UCHAR  Reserved[392];                               // byte 120..511
 
 } IDENTIFY_DEVICE_DATA_LOG_PAGE_SUPPORTED_CAPABILITIES, *PIDENTIFY_DEVICE_DATA_LOG_PAGE_SUPPORTED_CAPABILITIES;
 #pragma pack (pop, identify_device_data_log_page_supported_capabilities)
+
+//
+// Data Structure of IDE_GP_LOG_IDENTIFY_DEVICE_DATA_ZONED_DEVICE_INFORMATION_PAGE
+//
+#define ZAC_REVISION_NOT_REPORTED_1     0x0000
+#define ZAC_REVISION_NOT_REPORTED_2     0xFFFF
+#define ZAC_REVISION_01                 0xB6E8
+#define ZAC_REVISION_04                 0xA36C
+
+#pragma pack(push, identify_device_data_log_page_zoned_device_information, 1)
+typedef struct _IDENTIFY_DEVICE_DATA_LOG_PAGE_ZONED_DEVICE_INFO {
+    IDENTIFY_DEVICE_DATA_LOG_PAGE_HEADER Header;        // byte 0..7
+
+    struct {
+        ULONGLONG URSWRZ    : 1;        // unrestricted read in sequential write required zone
+        ULONGLONG Reserved  : 62;
+        ULONGLONG Valid     : 1;
+    } ZonedDeviceCapabilities;                          // byte 8..15
+
+    struct {
+        ULONGLONG Reserved  : 63;
+        ULONGLONG Valid     : 1;
+    } ZonedDeviceSettings;                              // byte 16..23
+
+    struct {
+        ULONGLONG Number    : 32;
+        ULONGLONG Reserved  : 31;
+        ULONGLONG Valid     : 1;
+    } OptimalNumberOfOpenSequentialWritePreferredZones; // byte 24..31
+
+    struct {
+        ULONGLONG Number    : 32;
+        ULONGLONG Reserved  : 31;
+        ULONGLONG Valid     : 1;
+    } OptimalNumberOfNonSequentiallyWrittenSequentialWritePreferredZones;   // byte 32..39
+
+    struct {
+        ULONGLONG Number    : 32;
+        ULONGLONG Reserved  : 31;
+        ULONGLONG Valid     : 1;
+    } MaxNumberOfOpenSequentialWriteRequiredZones;      // byte 40..47
+
+    struct {
+        ULONGLONG ZacMinorVersion   : 16;
+        ULONGLONG Reserved0         : 47;
+        ULONGLONG Valid             : 1;
+    } Version;                                          // byte 48..55
+
+    UCHAR  Reserved[456];                               // byte 56..511
+
+} IDENTIFY_DEVICE_DATA_LOG_PAGE_ZONED_DEVICE_INFO, *PIDENTIFY_DEVICE_DATA_LOG_PAGE_ZONED_DEVICE_INFO;
+#pragma pack (pop, identify_device_data_log_page_zoned_device_information)
 
 
 //
@@ -1943,6 +2059,146 @@ typedef struct _GP_LOG_HYBRID_INFORMATION {
 
 } GP_LOG_HYBRID_INFORMATION, *PGP_LOG_HYBRID_INFORMATION;
 #pragma pack (pop, hybrid_info_log)
+
+//
+// Device Signature
+//
+#define ATA_DEVICE_SIGNATURE_ATA                0x00000101
+#define ATA_DEVICE_SIGNATURE_ATAPI              0xEB140101
+#define ATA_DEVICE_SIGNATURE_HOST_ZONED         0xABCD0101
+#define ATA_DEVICE_SIGNATURE_ENCLOSURE          0xC33C0101
+#define ATA_DEVICE_SIGNATURE_PORT_MULTIPLIER    0x96690101
+
+//
+// Zone Management Command ZM_ACTION values
+//
+#define ZM_ACTION_REPORT_ZONES          0x00
+#define ZM_ACTION_CLOSE_ZONE            0x01
+#define ZM_ACTION_FINISH_ZONE           0x02
+#define ZM_ACTION_OPEN_ZONE             0x03
+#define ZM_ACTION_RESET_WRITE_POINTER   0x04
+
+//
+// "All" Zones bit for Close, Finish, and Open Zone command.
+// Bit 8 of FEATURE field
+//
+#define ZM_ALL_ZONES_BIT                (1 << 8)
+
+//
+// REPORTING OPTIONS field for REPORT ZONES EXT command.
+//
+#define ATA_REPORT_ZONES_OPTION_LIST_ALL_ZONES                  0x00
+#define ATA_REPORT_ZONES_OPTION_LIST_EMPTY_ZONES                0x01
+#define ATA_REPORT_ZONES_OPTION_LIST_IMPLICITLY_OPENED_ZONES    0x02
+#define ATA_REPORT_ZONES_OPTION_LIST_EXPLICITLY_OPENED_ZONES    0x03
+#define ATA_REPORT_ZONES_OPTION_LIST_CLOSED_ZONES               0x04
+#define ATA_REPORT_ZONES_OPTION_LIST_FULL_ZONES                 0x05
+#define ATA_REPORT_ZONES_OPTION_LIST_READ_ONLY_ZONES            0x06
+#define ATA_REPORT_ZONES_OPTION_LIST_OFFLINE_ZONES              0x07
+
+#define ATA_REPORT_ZONES_OPTION_LIST_RWP_ZONES                                      0x10
+#define ATA_REPORT_ZONES_OPTION_LIST_NON_SEQUENTIAL_WRITE_RESOURCES_ACTIVE_ZONES    0x11
+
+#define ATA_REPORT_ZONES_OPTION_LIST_NOT_WRITE_POINTER_ZONES    0x3F
+
+//
+// Data structures of REPORT ZONES EXT returned data.
+// Returned data buffer contains REPORT_ZONES_EXT_DATA, may follow with ATA_ZONE_DESCRIPTOR.
+//
+
+#define ATA_ZONES_TYPE_AND_LENGTH_MAY_DIFFERENT          0x0
+#define ATA_ZONES_TYPE_SAME_LENGTH_SAME                  0x1
+#define ATA_ZONES_TYPE_SAME_LAST_ZONE_LENGTH_DIFFERENT   0x2
+#define ATA_ZONES_TYPE_MAY_DIFFERENT_LENGTH_SAME         0x3
+
+
+#pragma pack(push, report_zones_ext_data, 1)
+typedef struct _REPORT_ZONES_EXT_DATA {
+
+    ULONG   ZoneListLength;     // the length in bytes of the zone descriptors list. e.g. bytes of data following this data structure.
+    UCHAR   SAME        : 4;
+    UCHAR   Reserved0   : 4;
+    UCHAR   Reserved1[3];
+
+    ULONGLONG MaxLBA    : 48;
+    ULONGLONG Reserved2 : 16;
+
+    UCHAR   Reserved3[48];
+
+} REPORT_ZONES_EXT_DATA, *PREPORT_ZONES_EXT_DATA;
+#pragma pack(pop, report_zones_ext_data)
+
+
+#define ATA_ZONE_TYPE_CONVENTIONAL                          0x1
+#define ATA_ZONE_TYPE_SEQUENTIAL_WRITE_REQUIRED             0x2
+#define ATA_ZONE_TYPE_SEQUENTIAL_WRITE_PREFERRED            0x3
+
+#define ATA_ZONE_CONDITION_NOT_WRITE_POINTER                0x0
+#define ATA_ZONE_CONDITION_EMPTY                            0x1
+#define ATA_ZONE_CONDITION_IMPLICITLY_OPENED                0x2
+#define ATA_ZONE_CONDITION_EXPLICITLY_OPENED                0x3
+#define ATA_ZONE_CONDITION_CLOSED                           0x4
+#define ATA_ZONE_CONDITION_READ_ONLY                        0xD
+#define ATA_ZONE_CONDITION_FULL                             0xE
+#define ATA_ZONE_CONDITION_OFFLINE                          0xF
+
+#pragma pack(push, ata_zone_descriptor, 1)
+typedef struct _ATA_ZONE_DESCRIPTOR {
+
+    UCHAR   ZoneType    : 4;
+    UCHAR   Reserved0   : 4;
+
+    UCHAR   Reset           : 1;
+    UCHAR   NonSeq          : 1;
+    UCHAR   Reserved1       : 2;
+    UCHAR   ZoneCondition   : 4;
+    
+    UCHAR   Reserved2[6];
+
+    ULONGLONG ZoneLength    : 48;
+    ULONGLONG Reserved3     : 16;
+
+    ULONGLONG ZoneStartLBA  : 48;
+    ULONGLONG Reserved4     : 16;
+
+    ULONGLONG WritePointerLBA   : 48;
+    ULONGLONG Reserved5         : 16;
+
+    UCHAR   Reserved6[32];
+
+} ATA_ZONE_DESCRIPTOR, *PATA_ZONE_DESCRIPTOR;
+#pragma pack(pop, ata_zone_descriptor)
+
+#pragma pack(push, ATA_PHYSICAL_ELEMENT_STATUS_DESCRIPTOR, 1)
+typedef struct _ATA_PHYSICAL_ELEMENT_STATUS_DESCRIPTOR {
+
+    UCHAR Reserved1[4];
+    ULONG ElementIdentifier;
+
+    UCHAR Reserved2[6];
+    UCHAR PhysicalElementType;
+    UCHAR PhysicalElementHealth;
+
+    ULONGLONG AssociatedCapacity;
+
+    UCHAR Reserved3[8];
+
+} ATA_PHYSICAL_ELEMENT_STATUS_DESCRIPTOR, *PATA_PHYSICAL_ELEMENT_STATUS_DESCRIPTOR;
+#pragma pack(pop, ATA_PHYSICAL_ELEMENT_STATUS_DESCRIPTOR)
+
+#pragma pack(push, ATA_GET_PHYSICAL_ELEMENT_STATUS_PARAMETER_DATA, 1)
+typedef struct _ATA_GET_PHYSICAL_ELEMENT_STATUS_PARAMETER_DATA {
+
+    ULONG NumberOfDescriptors;
+    ULONG NumberOfDescriptorsReturned;
+
+    ULONG ElementIdentifierBeingDepoped;
+    UCHAR Reserved[20];
+
+    ATA_PHYSICAL_ELEMENT_STATUS_DESCRIPTOR Descriptors[ANYSIZE_ARRAY];
+
+} ATA_GET_PHYSICAL_ELEMENT_STATUS_PARAMETER_DATA, *PATA_GET_PHYSICAL_ELEMENT_STATUS_PARAMETER_DATA;
+#pragma pack(pop, ATA_GET_PHYSICAL_ELEMENT_STATUS_PARAMETER_DATA)
 
 
 #if _MSC_VER >= 1200

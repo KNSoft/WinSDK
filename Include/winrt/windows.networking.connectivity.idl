@@ -12,20 +12,6 @@ import "windowscontracts.idl";
 import "Windows.Foundation.idl";
 import "Windows.Networking.idl";
 import "Windows.Storage.Streams.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Enetworking_h__)")
-cpp_quote("#include <Windows.Networking.h>")
-cpp_quote("#endif // !defined(__windows2Enetworking_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -118,6 +104,8 @@ namespace Windows
 
             interface IConnectionProfile3;
 
+            interface IConnectionProfile4;
+
             interface IConnectionProfileFilter;
 
             interface IConnectionProfileFilter2;
@@ -155,6 +143,8 @@ namespace Windows
             interface INetworkStateChangeEventDetails2;
 
             interface INetworkUsage;
+
+            interface IProviderNetworkUsage;
 
             interface IProxyConfiguration;
 
@@ -206,6 +196,8 @@ namespace Windows
 
             runtimeclass NetworkUsage;
 
+            runtimeclass ProviderNetworkUsage;
+
             runtimeclass ProxyConfiguration;
 
             runtimeclass RoutePolicy;
@@ -236,6 +228,8 @@ namespace Windows
 
                 interface Windows.Foundation.Collections.IIterable<Windows.Networking.Connectivity.NetworkUsage*>;
 
+                interface Windows.Foundation.Collections.IIterable<Windows.Networking.Connectivity.ProviderNetworkUsage*>;
+
                 interface Windows.Foundation.Collections.IIterator<Windows.Networking.Connectivity.AttributedNetworkUsage*>;
 
                 interface Windows.Foundation.Collections.IIterator<Windows.Networking.Connectivity.ConnectionProfile*>;
@@ -245,6 +239,8 @@ namespace Windows
                 interface Windows.Foundation.Collections.IIterator<Windows.Networking.Connectivity.LanIdentifier*>;
 
                 interface Windows.Foundation.Collections.IIterator<Windows.Networking.Connectivity.NetworkUsage*>;
+
+                interface Windows.Foundation.Collections.IIterator<Windows.Networking.Connectivity.ProviderNetworkUsage*>;
 
                 interface Windows.Foundation.Collections.IVectorView<Windows.Networking.Connectivity.AttributedNetworkUsage*>;
 
@@ -256,6 +252,8 @@ namespace Windows
 
                 interface Windows.Foundation.Collections.IVectorView<Windows.Networking.Connectivity.NetworkUsage*>;
 
+                interface Windows.Foundation.Collections.IVectorView<Windows.Networking.Connectivity.ProviderNetworkUsage*>;
+
                 interface Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVectorView<Windows.Networking.Connectivity.AttributedNetworkUsage*>*>;
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVectorView<Windows.Networking.Connectivity.ConnectionProfile*>*>;
@@ -263,6 +261,8 @@ namespace Windows
                 interface Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVectorView<Windows.Networking.Connectivity.ConnectivityInterval*>*>;
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVectorView<Windows.Networking.Connectivity.NetworkUsage*>*>;
+
+                interface Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVectorView<Windows.Networking.Connectivity.ProviderNetworkUsage*>*>;
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Networking.Connectivity.ConnectionProfile*>;
 
@@ -521,6 +521,14 @@ namespace Windows
                 HRESULT GetAttributedNetworkUsageAsync([in] Windows.Foundation.DateTime startTime, [in] Windows.Foundation.DateTime endTime, [in] Windows.Networking.Connectivity.NetworkUsageStates states, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVectorView<Windows.Networking.Connectivity.AttributedNetworkUsage*>*>** value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Networking.Connectivity.ConnectionProfile)]
+            [uuid(7A2D42CD-81E0-4AE6-ABED-AB9CA13EB714)]
+            interface IConnectionProfile4 : IInspectable
+            {
+                HRESULT GetProviderNetworkUsageAsync([in] Windows.Foundation.DateTime startTime, [in] Windows.Foundation.DateTime endTime, [in] Windows.Networking.Connectivity.NetworkUsageStates states, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVectorView<Windows.Networking.Connectivity.ProviderNetworkUsage*>*>** value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Networking.Connectivity.ConnectionProfileFilter)]
             [uuid(204C7CC8-BD2D-4E8D-A4B3-455EC337388A)]
@@ -727,6 +735,16 @@ namespace Windows
                 [propget] HRESULT ConnectionDuration([out] [retval] Windows.Foundation.TimeSpan* duration);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Networking.Connectivity.ProviderNetworkUsage)]
+            [uuid(5EC69E04-7931-48C8-B8F3-46300FA42728)]
+            interface IProviderNetworkUsage : IInspectable
+            {
+                [propget] HRESULT BytesSent([out] [retval] UINT64* value);
+                [propget] HRESULT BytesReceived([out] [retval] UINT64* value);
+                [propget] HRESULT ProviderId([out] [retval] HSTRING* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Networking.Connectivity.ProxyConfiguration)]
             [uuid(EF3A60B4-9004-4DD6-B7D8-B3E502F4AAD0)]
@@ -803,6 +821,7 @@ namespace Windows
                 [default] interface Windows.Networking.Connectivity.IConnectionProfile;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Networking.Connectivity.IConnectionProfile2;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Networking.Connectivity.IConnectionProfile3;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Networking.Connectivity.IConnectionProfile4;
             }
 
             [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -922,6 +941,14 @@ namespace Windows
             runtimeclass NetworkUsage
             {
                 [default] interface Windows.Networking.Connectivity.INetworkUsage;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass ProviderNetworkUsage
+            {
+                [default] interface Windows.Networking.Connectivity.IProviderNetworkUsage;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

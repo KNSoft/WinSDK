@@ -1,12 +1,9 @@
+/* Header file automatically generated from windows.devices.adc.provider.idl */
+/*
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ */
 
-
-/* this ALWAYS GENERATED file contains the definitions for the interfaces */
-
-
- /* File created by MIDL compiler version 8.01.0622 */
-/* @@MIDL_FILE_HEADING(  ) */
-
-
+#pragma warning( disable: 4049 )  /* more than 64k source lines */
 
 /* verify that the <rpcndr.h> version is high enough to compile this file*/
 #ifndef __REQUIRED_RPCNDR_H_VERSION__
@@ -18,443 +15,481 @@
 #define __REQUIRED_RPCSAL_H_VERSION__ 100
 #endif
 
-#include "rpc.h"
-#include "rpcndr.h"
+#include <rpc.h>
+#include <rpcndr.h>
 
 #ifndef __RPCNDR_H_VERSION__
 #error this stub requires an updated version of <rpcndr.h>
 #endif /* __RPCNDR_H_VERSION__ */
 
 #ifndef COM_NO_WINDOWS_H
-#include "windows.h"
-#include "ole2.h"
+#include <windows.h>
+#include <ole2.h>
 #endif /*COM_NO_WINDOWS_H*/
-
 #ifndef __windows2Edevices2Eadc2Eprovider_h__
 #define __windows2Edevices2Eadc2Eprovider_h__
+#ifndef __windows2Edevices2Eadc2Eprovider_p_h__
+#define __windows2Edevices2Eadc2Eprovider_p_h__
 
-#if defined(_MSC_VER) && (_MSC_VER >= 1020)
+
 #pragma once
+
+//
+// Deprecated attribute support
+//
+
+#pragma push_macro("DEPRECATED")
+#undef DEPRECATED
+
+#if !defined(DISABLE_WINRT_DEPRECATION)
+#if defined(__cplusplus)
+#if __cplusplus >= 201402
+#define DEPRECATED(x) [[deprecated(x)]]
+#elif defined(_MSC_VER)
+#if _MSC_VER >= 1900
+#define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
+#else
+#define DEPRECATED(x) __declspec(deprecated(x))
+#define DEPRECATEDENUMERATOR(x)
+#endif // _MSC_VER >= 1900
+#else // Not Standard C++ or MSVC, ignore the construct.
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif  // C++ deprecation
+#else // C - disable deprecation
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif
+#else // Deprecation is disabled
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif  /* DEPRECATED */
+
+// Disable Deprecation for this header, MIDL verifies that cross-type access is acceptable
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#else
+#pragma warning(push)
+#pragma warning(disable: 4996)
 #endif
 
-/* Forward Declarations */ 
-
-#ifndef ____FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_FWD_DEFINED__
-#define ____FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_FWD_DEFINED__
-typedef interface __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider;
-
-#endif 	/* ____FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_FWD_DEFINED__ */
-
-
-#ifndef ____FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_FWD_DEFINED__
-#define ____FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_FWD_DEFINED__
-typedef interface __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider;
-
-#endif 	/* ____FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_FWD_DEFINED__ */
+#pragma push_macro("MIDL_CONST_ID")
+#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
+#define MIDL_CONST_ID constexpr const
+#else
+#define MIDL_CONST_ID const __declspec(selectany)
+#endif
 
 
-#ifndef ____FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_FWD_DEFINED__
-#define ____FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_FWD_DEFINED__
-typedef interface __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider;
+//  API Contract Inclusion Definitions
+#if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
+#if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
-#endif 	/* ____FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_FWD_DEFINED__ */
+#if !defined(WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION)
+#define WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION)
+
+#if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
+#define WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
+
+#if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
+#define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
+
+#if !defined(WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION)
+#define WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION)
+
+#if !defined(WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION)
+#define WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION)
+
+#endif // defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 
 
+// Header files for imported files
+#include "inspectable.h"
+#include "AsyncInfo.h"
+#include "EventToken.h"
+#include "windowscontracts.h"
+#include "Windows.Foundation.h"
+#include "Windows.Devices.h"
+// Importing Collections header
+#include <windows.foundation.collections.h>
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+/* Forward Declarations */
 #ifndef ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace Devices {
             namespace Adc {
                 namespace Provider {
                     interface IAdcControllerProvider;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* Devices */
+        } /* Adc */
+    } /* Provider */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace Devices {
             namespace Adc {
                 namespace Provider {
                     interface IAdcProvider;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* Devices */
+        } /* Adc */
+    } /* Provider */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider ABI::Windows::Devices::Adc::Provider::IAdcProvider
 
-#endif /* __cplusplus */
+#endif // ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_FWD_DEFINED__
 
-#endif 	/* ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_FWD_DEFINED__ */
+// Parameterized interface forward declarations (C++)
 
+// Collection interface definitions
 
-/* header files for imported files */
-#include "inspectable.h"
-#include "AsyncInfo.h"
-#include "EventToken.h"
-#include "Windows.Foundation.h"
-#include "Windows.Devices.h"
-
-#ifdef __cplusplus
-extern "C"{
-#endif 
-
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0000 */
-/* [local] */ 
-
-#ifdef __cplusplus
-} /*extern "C"*/ 
-#endif
-#include <windows.foundation.collections.h>
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace Devices {
-namespace Adc {
-namespace Provider {
-interface IAdcControllerProvider;
-} /*Provider*/
-} /*Adc*/
-} /*Devices*/
-} /*Windows*/
-}
-#endif
-
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0000 */
-/* [local] */ 
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0000_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0365 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0365 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0365_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0365_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0001 */
-/* [local] */ 
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_USE
 #define DEF___FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("b43acf15-a24a-5b00-b710-1737ba550a18"))
-IIterator<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider*> : IIterator_impl<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider*> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterator`1<Windows.Devices.Adc.Provider.IAdcControllerProvider>"; }
+IIterator<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider*> : IIterator_impl<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.Devices.Adc.Provider.IAdcControllerProvider>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterator<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider*> __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_t;
-#define ____FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_FWD_DEFINED__
 #define __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider*>
+//#define __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0001 */
-/* [local] */ 
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0001_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0366 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0366 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0366_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0366_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0002 */
-/* [local] */ 
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_USE
 #define DEF___FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("30047155-1f71-5223-8482-e5159d0137d0"))
-IIterable<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider*> : IIterable_impl<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider*> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterable`1<Windows.Devices.Adc.Provider.IAdcControllerProvider>"; }
+IIterable<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider*> : IIterable_impl<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.Devices.Adc.Provider.IAdcControllerProvider>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterable<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider*> __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_t;
-#define ____FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_FWD_DEFINED__
 #define __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider*>
+//#define __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0002 */
-/* [local] */ 
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0002_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0367 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0367 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0367_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0367_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0003 */
-/* [local] */ 
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_USE
 #define DEF___FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("7c4789c0-8445-5757-aab7-659cbf50aaa7"))
-IVectorView<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider*> : IVectorView_impl<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider*> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVectorView`1<Windows.Devices.Adc.Provider.IAdcControllerProvider>"; }
+IVectorView<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider*> : IVectorView_impl<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Windows.Devices.Adc.Provider.IAdcControllerProvider>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IVectorView<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider*> __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_t;
-#define ____FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_FWD_DEFINED__
 #define __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider*>
+//#define __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_USE */
-#if defined(__cplusplus)
-}
-#endif // defined(__cplusplus)
-#include <Windows.Foundation.h>
-#if !defined(__windows2Edevices_h__)
-#include <Windows.Devices.h>
-#endif // !defined(__windows2Edevices_h__)
-#if defined(__cplusplus)
-extern "C" {
-#endif // defined(__cplusplus)
-#if !defined(__cplusplus)
-#if !defined(__cplusplus)
-
-typedef enum __x_ABI_CWindows_CDevices_CAdc_CProvider_CProviderAdcChannelMode __x_ABI_CWindows_CDevices_CAdc_CProvider_CProviderAdcChannelMode;
 
 
-#endif /* end if !defined(__cplusplus) */
-
-
-#endif
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0003 */
-/* [local] */ 
 
 
-#ifdef __cplusplus
 
-} /* end extern "C" */
 namespace ABI {
     namespace Windows {
         namespace Devices {
             namespace Adc {
                 namespace Provider {
                     
-                    typedef enum ProviderAdcChannelMode ProviderAdcChannelMode;
+                    typedef enum ProviderAdcChannelMode : int ProviderAdcChannelMode;
                     
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-extern "C" { 
-#endif
+                } /* Windows */
+            } /* Devices */
+        } /* Adc */
+    } /* Provider */} /* ABI */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0003_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0368 */
 
 
 
 
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0368 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0368_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0368_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0004 */
-/* [local] */ 
+/*
+ *
+ * Struct Windows.Devices.Adc.Provider.ProviderAdcChannelMode
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 1.0
+ *
+ *
+ */
 
-#ifndef DEF___FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider
-#define DEF___FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Adc {
+                namespace Provider {
+                    /* [v1_enum, contract] */
+                    enum ProviderAdcChannelMode : int
+                    {
+                        ProviderAdcChannelMode_SingleEnded = 0,
+                        ProviderAdcChannelMode_Differential = 1,
+                    };
+                    
+                } /* Windows */
+            } /* Devices */
+        } /* Adc */
+    } /* Provider */} /* ABI */
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
 
 
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0004 */
-/* [local] */ 
+/*
+ *
+ * Interface Windows.Devices.Adc.Provider.IAdcControllerProvider
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Adc_Provider_IAdcControllerProvider[] = L"Windows.Devices.Adc.Provider.IAdcControllerProvider";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Adc {
+                namespace Provider {
+                    /* [object, uuid("BE545828-816D-4DE5-A048-ABA06958AAA8"), contract] */
+                    MIDL_INTERFACE("BE545828-816D-4DE5-A048-ABA06958AAA8")
+                    IAdcControllerProvider : IInspectable
+                    {
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChannelCount(
+                            /* [retval, out] */__RPC__out INT32 * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ResolutionInBits(
+                            /* [retval, out] */__RPC__out INT32 * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MinValue(
+                            /* [retval, out] */__RPC__out INT32 * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_MaxValue(
+                            /* [retval, out] */__RPC__out INT32 * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChannelMode(
+                            /* [retval, out] */__RPC__out ABI::Windows::Devices::Adc::Provider::ProviderAdcChannelMode * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ChannelMode(
+                            /* [in] */ABI::Windows::Devices::Adc::Provider::ProviderAdcChannelMode value
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE IsChannelModeSupported(
+                            /* [in] */ABI::Windows::Devices::Adc::Provider::ProviderAdcChannelMode channelMode,
+                            /* [retval, out] */__RPC__out boolean * result
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE AcquireChannel(
+                            /* [in] */INT32 channel
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE ReleaseChannel(
+                            /* [in] */INT32 channel
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE ReadValue(
+                            /* [in] */INT32 channelNumber,
+                            /* [retval, out] */__RPC__out INT32 * result
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IAdcControllerProvider=_uuidof(IAdcControllerProvider);
+                    
+                } /* Windows */
+            } /* Devices */
+        } /* Adc */
+    } /* Provider */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_INTERFACE_DEFINED__) */
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Devices.Adc.Provider.IAdcProvider
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Adc_Provider_IAdcProvider[] = L"Windows.Devices.Adc.Provider.IAdcProvider";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Adc {
+                namespace Provider {
+                    /* [object, uuid("28953668-9359-4C57-BC88-E275E81638C9"), contract] */
+                    MIDL_INTERFACE("28953668-9359-4C57-BC88-E275E81638C9")
+                    IAdcProvider : IInspectable
+                    {
+                        virtual HRESULT STDMETHODCALLTYPE GetControllers(
+                            /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * * result
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IAdcProvider=_uuidof(IAdcProvider);
+                    
+                } /* Windows */
+            } /* Devices */
+        } /* Adc */
+    } /* Provider */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_INTERFACE_DEFINED__) */
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0004_v0_0_s_ifspec;
 
-#ifndef ____FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_INTERFACE_DEFINED__
+
+#else // !defined(__cplusplus)
+/* Forward Declarations */
+#ifndef ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider;
+
+#endif // ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider;
+
+#endif // ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_FWD_DEFINED__
+
+// Parameterized interface forward declarations (C)
+
+// Collection interface definitions
+
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
+#if !defined(____FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_INTERFACE_DEFINED__)
 #define ____FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_INTERFACE_DEFINED__
 
-/* interface __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider */
-/* [unique][uuid][object] */ 
+typedef interface __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider;
 
-
-
-/* interface __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("b43acf15-a24a-5b00-b710-1737ba550a18")
-    __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider : public IInspectable
-    {
-    public:
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider **current) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
-            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
-            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProviderVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProviderVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
-            __RPC__in __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider **current);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
-            __RPC__in __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
-            /* [retval][out] */ __RPC__out boolean *hasCurrent);
-        
-        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
-            __RPC__in __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
-            /* [retval][out] */ __RPC__out boolean *hasCurrent);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual);
-        
-        END_INTERFACE
-    } __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProviderVtbl;
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
 
-    interface __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider
-    {
-        CONST_VTBL struct __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProviderVtbl *lpVtbl;
-    };
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
 
-    
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProviderVtbl;
+
+interface __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider
+{
+    CONST_VTBL struct __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProviderVtbl *lpVtbl;
+};
+
+
 
 #ifdef COBJMACROS
 
@@ -494,131 +529,53 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcC
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_INTERFACE_DEFINED__
+
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0005 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider */
-
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0005 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0005_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0369 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0369 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0369_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0369_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0006 */
-/* [local] */ 
-
-#ifndef DEF___FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider
-#define DEF___FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0006 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0006_v0_0_s_ifspec;
-
-#ifndef ____FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_INTERFACE_DEFINED__
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
+#if !defined(____FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_INTERFACE_DEFINED__)
 #define ____FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_INTERFACE_DEFINED__
 
-/* interface __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider */
-/* [unique][uuid][object] */ 
+typedef interface __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider;
 
-
-
-/* interface __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("30047155-1f71-5223-8482-e5159d0137d0")
-    __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE First( 
-            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider **first) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef  struct __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProviderVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProviderVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *First )( 
-            __RPC__in __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
-            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider **first);
-        
-        END_INTERFACE
-    } __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProviderVtbl;
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
 
-    interface __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider
-    {
-        CONST_VTBL struct __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProviderVtbl *lpVtbl;
-    };
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This);
 
-    
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider **first);
+
+    END_INTERFACE
+} __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProviderVtbl;
+
+interface __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider
+{
+    CONST_VTBL struct __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProviderVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
-
 
 #define __FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
@@ -646,161 +603,77 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcC
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_INTERFACE_DEFINED__
+
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0007 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIIterable_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider */
-
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0007 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0007_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0370 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0370 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0370_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider2Eidl_0000_0370_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0008 */
-/* [local] */ 
-
-#ifndef DEF___FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider
-#define DEF___FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0008 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0008_v0_0_s_ifspec;
-
-#ifndef ____FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_INTERFACE_DEFINED__
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
+#if !defined(____FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_INTERFACE_DEFINED__)
 #define ____FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_INTERFACE_DEFINED__
 
-/* interface __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider */
-/* [unique][uuid][object] */ 
+typedef interface __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider;
 
-
-
-/* interface __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("7c4789c0-8445-5757-aab7-659cbf50aaa7")
-    __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE GetAt( 
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider **item) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
-            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
-            /* [in] */ __RPC__in_opt ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider *item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProviderVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProviderVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
             /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
             /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
-            __RPC__in __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider **item);
-        
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * *item);
+
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
             __RPC__in __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
             /* [retval][out] */ __RPC__out unsigned int *size);
-        
+
         HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
-            __RPC__in __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider *item,
+                                               __RPC__in __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
+            /* [in] */ __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * item,
             /* [out] */ __RPC__out unsigned int *index,
             /* [retval][out] */ __RPC__out boolean *found);
-        
+
         HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
+                                               __RPC__in __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * This,
             /* [in] */ unsigned int startIndex,
             /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider **items,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * *items,
             /* [retval][out] */ __RPC__out unsigned int *actual);
-        
+
         END_INTERFACE
-    } __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProviderVtbl;
+} __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProviderVtbl;
 
-    interface __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider
-    {
-        CONST_VTBL struct __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProviderVtbl *lpVtbl;
-    };
+interface __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider
+{
+    CONST_VTBL struct __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProviderVtbl *lpVtbl;
+};
 
-    
+
 
 #ifdef COBJMACROS
 
@@ -840,431 +713,307 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAd
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+
+#endif // ____FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_INTERFACE_DEFINED__
+
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
 
 
 
 
-#endif 	/* ____FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0009 */
-/* [local] */ 
+typedef enum __x_ABI_CWindows_CDevices_CAdc_CProvider_CProviderAdcChannelMode __x_ABI_CWindows_CDevices_CAdc_CProvider_CProviderAdcChannelMode;
 
-#endif /* pinterface */
-#endif /* DEF___FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider */
-#if !defined(__cplusplus)
 
-#if !defined(__cplusplus)
-/* [v1_enum] */ 
+
+
+
+
+
+
+
+
+
+
+
+/*
+ *
+ * Struct Windows.Devices.Adc.Provider.ProviderAdcChannelMode
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
+/* [v1_enum, contract] */
 enum __x_ABI_CWindows_CDevices_CAdc_CProvider_CProviderAdcChannelMode
-    {
-        ProviderAdcChannelMode_SingleEnded	= 0,
-        ProviderAdcChannelMode_Differential	= 1
-    } ;
-#endif /* end if !defined(__cplusplus) */
+{
+    ProviderAdcChannelMode_SingleEnded = 0,
+    ProviderAdcChannelMode_Differential = 1,
+};
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
 
-#endif
+
+/*
+ *
+ * Interface Windows.Devices.Adc.Provider.IAdcControllerProvider
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
 #if !defined(____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Adc_Provider_IAdcControllerProvider[] = L"Windows.Devices.Adc.Provider.IAdcControllerProvider";
-#endif /* !defined(____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0009 */
-/* [local] */ 
-
-#ifdef __cplusplus
-} /* end extern "C" */
-namespace ABI {
-    namespace Windows {
-        namespace Devices {
-            namespace Adc {
-                namespace Provider {
-                    
-                    /* [v1_enum] */ 
-                    enum ProviderAdcChannelMode
-                        {
-                            ProviderAdcChannelMode_SingleEnded	= 0,
-                            ProviderAdcChannelMode_Differential	= 1
-                        } ;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-extern "C" { 
-#endif
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0009_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Adc_Provider_IAdcControllerProvider[] = L"Windows.Devices.Adc.Provider.IAdcControllerProvider";
+/* [object, uuid("BE545828-816D-4DE5-A048-ABA06958AAA8"), contract] */
+typedef struct __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProviderVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-/* interface __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider */
-/* [uuid][object] */ 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ChannelCount )(
+        __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
+        /* [retval, out] */__RPC__out INT32 * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ResolutionInBits )(
+        __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
+        /* [retval, out] */__RPC__out INT32 * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MinValue )(
+        __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
+        /* [retval, out] */__RPC__out INT32 * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_MaxValue )(
+        __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
+        /* [retval, out] */__RPC__out INT32 * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ChannelMode )(
+        __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CDevices_CAdc_CProvider_CProviderAdcChannelMode * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ChannelMode )(
+        __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
+        /* [in] */__x_ABI_CWindows_CDevices_CAdc_CProvider_CProviderAdcChannelMode value
+        );
+    HRESULT ( STDMETHODCALLTYPE *IsChannelModeSupported )(
+        __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
+        /* [in] */__x_ABI_CWindows_CDevices_CAdc_CProvider_CProviderAdcChannelMode channelMode,
+        /* [retval, out] */__RPC__out boolean * result
+        );
+    HRESULT ( STDMETHODCALLTYPE *AcquireChannel )(
+        __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
+        /* [in] */INT32 channel
+        );
+    HRESULT ( STDMETHODCALLTYPE *ReleaseChannel )(
+        __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
+        /* [in] */INT32 channel
+        );
+    HRESULT ( STDMETHODCALLTYPE *ReadValue )(
+        __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
+        /* [in] */INT32 channelNumber,
+        /* [retval, out] */__RPC__out INT32 * result
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProviderVtbl;
+
+interface __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProviderVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_get_ChannelCount(This,value) \
+    ( (This)->lpVtbl->get_ChannelCount(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_get_ResolutionInBits(This,value) \
+    ( (This)->lpVtbl->get_ResolutionInBits(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_get_MinValue(This,value) \
+    ( (This)->lpVtbl->get_MinValue(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_get_MaxValue(This,value) \
+    ( (This)->lpVtbl->get_MaxValue(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_get_ChannelMode(This,value) \
+    ( (This)->lpVtbl->get_ChannelMode(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_put_ChannelMode(This,value) \
+    ( (This)->lpVtbl->put_ChannelMode(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_IsChannelModeSupported(This,channelMode,result) \
+    ( (This)->lpVtbl->IsChannelModeSupported(This,channelMode,result) )
+
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_AcquireChannel(This,channel) \
+    ( (This)->lpVtbl->AcquireChannel(This,channel) )
+
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_ReleaseChannel(This,channel) \
+    ( (This)->lpVtbl->ReleaseChannel(This,channel) )
+
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_ReadValue(This,channelNumber,result) \
+    ( (This)->lpVtbl->ReadValue(This,channelNumber,result) )
 
 
-
-/* interface ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider */
-/* [uuid][object] */ 
+#endif /* COBJMACROS */
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_INTERFACE_DEFINED__) */
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace Devices {
-                namespace Adc {
-                    namespace Provider {
-                        
-                        MIDL_INTERFACE("BE545828-816D-4DE5-A048-ABA06958AAA8")
-                        IAdcControllerProvider : public IInspectable
-                        {
-                        public:
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ChannelCount( 
-                                /* [out][retval] */ __RPC__out INT32 *value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ResolutionInBits( 
-                                /* [out][retval] */ __RPC__out INT32 *value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MinValue( 
-                                /* [out][retval] */ __RPC__out INT32 *value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_MaxValue( 
-                                /* [out][retval] */ __RPC__out INT32 *value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ChannelMode( 
-                                /* [out][retval] */ __RPC__out ABI::Windows::Devices::Adc::Provider::ProviderAdcChannelMode *value) = 0;
-                            
-                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ChannelMode( 
-                                /* [in] */ ABI::Windows::Devices::Adc::Provider::ProviderAdcChannelMode value) = 0;
-                            
-                            virtual HRESULT STDMETHODCALLTYPE IsChannelModeSupported( 
-                                /* [in] */ ABI::Windows::Devices::Adc::Provider::ProviderAdcChannelMode channelMode,
-                                /* [out][retval] */ __RPC__out boolean *result) = 0;
-                            
-                            virtual HRESULT STDMETHODCALLTYPE AcquireChannel( 
-                                /* [in] */ INT32 channel) = 0;
-                            
-                            virtual HRESULT STDMETHODCALLTYPE ReleaseChannel( 
-                                /* [in] */ INT32 channel) = 0;
-                            
-                            virtual HRESULT STDMETHODCALLTYPE ReadValue( 
-                                /* [in] */ INT32 channelNumber,
-                                /* [out][retval] */ __RPC__out INT32 *result) = 0;
-                            
-                        };
 
-                        extern const __declspec(selectany) IID & IID_IAdcControllerProvider = __uuidof(IAdcControllerProvider);
+/*
+ *
+ * Interface Windows.Devices.Adc.Provider.IAdcProvider
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Adc_Provider_IAdcProvider[] = L"Windows.Devices.Adc.Provider.IAdcProvider";
+/* [object, uuid("28953668-9359-4C57-BC88-E275E81638C9"), contract] */
+typedef struct __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProviderVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetControllers )(
+        __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider * * result
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProviderVtbl;
 
-    typedef struct __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProviderVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ChannelCount )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
-            /* [out][retval] */ __RPC__out INT32 *value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ResolutionInBits )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
-            /* [out][retval] */ __RPC__out INT32 *value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MinValue )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
-            /* [out][retval] */ __RPC__out INT32 *value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_MaxValue )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
-            /* [out][retval] */ __RPC__out INT32 *value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ChannelMode )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
-            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CDevices_CAdc_CProvider_CProviderAdcChannelMode *value);
-        
-        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ChannelMode )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
-            /* [in] */ __x_ABI_CWindows_CDevices_CAdc_CProvider_CProviderAdcChannelMode value);
-        
-        HRESULT ( STDMETHODCALLTYPE *IsChannelModeSupported )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
-            /* [in] */ __x_ABI_CWindows_CDevices_CAdc_CProvider_CProviderAdcChannelMode channelMode,
-            /* [out][retval] */ __RPC__out boolean *result);
-        
-        HRESULT ( STDMETHODCALLTYPE *AcquireChannel )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
-            /* [in] */ INT32 channel);
-        
-        HRESULT ( STDMETHODCALLTYPE *ReleaseChannel )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
-            /* [in] */ INT32 channel);
-        
-        HRESULT ( STDMETHODCALLTYPE *ReadValue )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider * This,
-            /* [in] */ INT32 channelNumber,
-            /* [out][retval] */ __RPC__out INT32 *result);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProviderVtbl;
-
-    interface __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProviderVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProviderVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_GetControllers(This,result) \
+    ( (This)->lpVtbl->GetControllers(This,result) )
 
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_get_ChannelCount(This,value)	\
-    ( (This)->lpVtbl -> get_ChannelCount(This,value) ) 
-
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_get_ResolutionInBits(This,value)	\
-    ( (This)->lpVtbl -> get_ResolutionInBits(This,value) ) 
-
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_get_MinValue(This,value)	\
-    ( (This)->lpVtbl -> get_MinValue(This,value) ) 
-
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_get_MaxValue(This,value)	\
-    ( (This)->lpVtbl -> get_MaxValue(This,value) ) 
-
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_get_ChannelMode(This,value)	\
-    ( (This)->lpVtbl -> get_ChannelMode(This,value) ) 
-
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_put_ChannelMode(This,value)	\
-    ( (This)->lpVtbl -> put_ChannelMode(This,value) ) 
-
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_IsChannelModeSupported(This,channelMode,result)	\
-    ( (This)->lpVtbl -> IsChannelModeSupported(This,channelMode,result) ) 
-
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_AcquireChannel(This,channel)	\
-    ( (This)->lpVtbl -> AcquireChannel(This,channel) ) 
-
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_ReleaseChannel(This,channel)	\
-    ( (This)->lpVtbl -> ReleaseChannel(This,channel) ) 
-
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_ReadValue(This,channelNumber,result)	\
-    ( (This)->lpVtbl -> ReadValue(This,channelNumber,result) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcControllerProvider_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0010 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Adc_Provider_IAdcProvider[] = L"Windows.Devices.Adc.Provider.IAdcProvider";
-#endif /* !defined(____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0010 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Eadc2Eprovider_0000_0010_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::Devices::Adc::Provider::IAdcProvider */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace Devices {
-                namespace Adc {
-                    namespace Provider {
-                        
-                        MIDL_INTERFACE("28953668-9359-4C57-BC88-E275E81638C9")
-                        IAdcProvider : public IInspectable
-                        {
-                        public:
-                            virtual HRESULT STDMETHODCALLTYPE GetControllers( 
-                                /* [out][retval] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider **result) = 0;
-                            
-                        };
-
-                        extern const __declspec(selectany) IID & IID_IAdcProvider = __uuidof(IAdcProvider);
-
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
-    
-#else 	/* C style interface */
-
-    typedef struct __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProviderVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetControllers )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider * This,
-            /* [out][retval] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider **result);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProviderVtbl;
-
-    interface __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProviderVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_GetControllers(This,result)	\
-    ( (This)->lpVtbl -> GetControllers(This,result) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
+#endif /* !defined(____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_INTERFACE_DEFINED__) */
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x10000
 
 
 
 
-#endif 	/* ____x_ABI_CWindows_CDevices_CAdc_CProvider_CIAdcProvider_INTERFACE_DEFINED__ */
 
+#endif // defined(__cplusplus)
+#pragma pop_macro("MIDL_CONST_ID")
+// Restore the original value of the 'DEPRECATED' macro
+#pragma pop_macro("DEPRECATED")
 
-/* Additional Prototypes for ALL interfaces */
-
-/* end of Additional Prototypes */
-
-#ifdef __cplusplus
-}
+#ifdef __clang__
+#pragma clang diagnostic pop // deprecated-declarations
+#else
+#pragma warning(pop)
 #endif
+#endif // __windows2Edevices2Eadc2Eprovider_p_h__
 
-#endif
-
-
+#endif // __windows2Edevices2Eadc2Eprovider_h__

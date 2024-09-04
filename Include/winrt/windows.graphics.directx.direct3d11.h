@@ -1,12 +1,9 @@
+/* Header file automatically generated from windows.graphics.directx.direct3d11.idl */
+/*
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ */
 
-
-/* this ALWAYS GENERATED file contains the definitions for the interfaces */
-
-
- /* File created by MIDL compiler version 8.01.0622 */
-/* @@MIDL_FILE_HEADING(  ) */
-
-
+#pragma warning( disable: 4049 )  /* more than 64k source lines */
 
 /* verify that the <rpcndr.h> version is high enough to compile this file*/
 #ifndef __REQUIRED_RPCNDR_H_VERSION__
@@ -18,384 +15,304 @@
 #define __REQUIRED_RPCSAL_H_VERSION__ 100
 #endif
 
-#include "rpc.h"
-#include "rpcndr.h"
+#include <rpc.h>
+#include <rpcndr.h>
 
 #ifndef __RPCNDR_H_VERSION__
 #error this stub requires an updated version of <rpcndr.h>
 #endif /* __RPCNDR_H_VERSION__ */
 
 #ifndef COM_NO_WINDOWS_H
-#include "windows.h"
-#include "ole2.h"
+#include <windows.h>
+#include <ole2.h>
 #endif /*COM_NO_WINDOWS_H*/
-
 #ifndef __windows2Egraphics2Edirectx2Edirect3d11_h__
 #define __windows2Egraphics2Edirectx2Edirect3d11_h__
+#ifndef __windows2Egraphics2Edirectx2Edirect3d11_p_h__
+#define __windows2Egraphics2Edirectx2Edirect3d11_p_h__
 
-#if defined(_MSC_VER) && (_MSC_VER >= 1020)
+
 #pragma once
+
+//
+// Deprecated attribute support
+//
+
+#pragma push_macro("DEPRECATED")
+#undef DEPRECATED
+
+#if !defined(DISABLE_WINRT_DEPRECATION)
+#if defined(__cplusplus)
+#if __cplusplus >= 201402
+#define DEPRECATED(x) [[deprecated(x)]]
+#elif defined(_MSC_VER)
+#if _MSC_VER >= 1900
+#define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
+#else
+#define DEPRECATED(x) __declspec(deprecated(x))
+#define DEPRECATEDENUMERATOR(x)
+#endif // _MSC_VER >= 1900
+#else // Not Standard C++ or MSVC, ignore the construct.
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif  // C++ deprecation
+#else // C - disable deprecation
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif
+#else // Deprecation is disabled
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif  /* DEPRECATED */
+
+// Disable Deprecation for this header, MIDL verifies that cross-type access is acceptable
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#else
+#pragma warning(push)
+#pragma warning(disable: 4996)
 #endif
 
-/* Forward Declarations */ 
-
-#ifndef ____FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_FWD_DEFINED__
-#define ____FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_FWD_DEFINED__
-typedef interface __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface;
-
-#endif 	/* ____FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_FWD_DEFINED__ */
-
-
-#ifndef ____FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_FWD_DEFINED__
-#define ____FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_FWD_DEFINED__
-typedef interface __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface;
-
-#endif 	/* ____FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_FWD_DEFINED__ */
+#pragma push_macro("MIDL_CONST_ID")
+#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
+#define MIDL_CONST_ID constexpr const
+#else
+#define MIDL_CONST_ID const __declspec(selectany)
+#endif
 
 
-#ifndef ____FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_FWD_DEFINED__
-#define ____FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_FWD_DEFINED__
-typedef interface __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface;
+//  API Contract Inclusion Definitions
+#if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
+#if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
-#endif 	/* ____FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_FWD_DEFINED__ */
+#if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
+#define WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
+
+#if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
+#define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
+
+#if !defined(WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION)
+#define WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION)
+
+#if !defined(WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION)
+#define WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION)
+
+#endif // defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 
 
+// Header files for imported files
+#include "inspectable.h"
+#include "AsyncInfo.h"
+#include "EventToken.h"
+#include "windowscontracts.h"
+#include "Windows.Foundation.h"
+#include "Windows.Graphics.DirectX.h"
+// Importing Collections header
+#include <windows.foundation.collections.h>
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+/* Forward Declarations */
 #ifndef ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace Graphics {
             namespace DirectX {
                 namespace Direct3D11 {
                     interface IDirect3DDevice;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* Graphics */
+        } /* DirectX */
+    } /* Direct3D11 */} /* ABI */
+#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace Graphics {
             namespace DirectX {
                 namespace Direct3D11 {
                     interface IDirect3DSurface;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* Graphics */
+        } /* DirectX */
+    } /* Direct3D11 */} /* ABI */
+#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface
 
-#endif /* __cplusplus */
+#endif // ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_FWD_DEFINED__
 
-#endif 	/* ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_FWD_DEFINED__ */
+// Parameterized interface forward declarations (C++)
 
+// Collection interface definitions
 
-/* header files for imported files */
-#include "inspectable.h"
-#include "AsyncInfo.h"
-#include "EventToken.h"
-#include "Windows.Foundation.h"
-#include "Windows.Graphics.DirectX.h"
-
-#ifdef __cplusplus
-extern "C"{
-#endif 
-
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0000 */
-/* [local] */ 
-
-#ifdef __cplusplus
-} /*extern "C"*/ 
-#endif
-#include <windows.foundation.collections.h>
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace Graphics {
-namespace DirectX {
-namespace Direct3D11 {
-interface IDirect3DSurface;
-} /*Direct3D11*/
-} /*DirectX*/
-} /*Graphics*/
-} /*Windows*/
-}
-#endif
-
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0000 */
-/* [local] */ 
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0000_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0338 */
-
-
-
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0338 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0338_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0338_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0001 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_USE
 #define DEF___FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("bdfb6d0b-e785-5d5a-abd2-fe1b18c43257"))
-IIterator<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface*> : IIterator_impl<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface*> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterator`1<Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface>"; }
+IIterator<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface*> : IIterator_impl<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterator<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface*> __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_t;
-#define ____FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_FWD_DEFINED__
 #define __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface*>
+//#define __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_USE */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0001 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0001_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0339 */
-
-
-
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0339 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0339_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0339_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0002 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_USE
 #define DEF___FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("cc63bf9c-e16a-5a75-a5aa-2b53f975b0b0"))
-IIterable<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface*> : IIterable_impl<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface*> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterable`1<Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface>"; }
+IIterable<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface*> : IIterable_impl<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterable<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface*> __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_t;
-#define ____FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_FWD_DEFINED__
 #define __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface*>
+//#define __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_USE */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0002 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0002_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0340 */
-
-
-
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0340 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0340_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0340_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0003 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_USE
 #define DEF___FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("1a81ec3e-5afb-5e10-92bb-c843fec70887"))
-IVectorView<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface*> : IVectorView_impl<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface*> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVectorView`1<Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface>"; }
+IVectorView<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface*> : IVectorView_impl<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IVectorView<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface*> __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_t;
-#define ____FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_FWD_DEFINED__
 #define __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface*>
+//#define __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_USE */
-#if defined(__cplusplus)
-}
-#endif // defined(__cplusplus)
-#include <Windows.Foundation.h>
-#if !defined(__windows2Egraphics2Edirectx_h__)
-#include <Windows.Graphics.DirectX.h>
-#endif // !defined(__windows2Egraphics2Edirectx_h__)
-#if defined(__cplusplus)
-extern "C" {
-#endif // defined(__cplusplus)
-
-#if !defined(__cplusplus)
-#if !defined(__cplusplus)
-
-typedef enum __x_ABI_CWindows_CGraphics_CDirectX_CDirectXPixelFormat __x_ABI_CWindows_CGraphics_CDirectX_CDirectXPixelFormat;
 
 
-#endif /* end if !defined(__cplusplus) */
-
-
-#endif
-#if !defined(__cplusplus)
-#if !defined(__cplusplus)
-
-typedef enum __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DBindings __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DBindings;
-
-
-#endif /* end if !defined(__cplusplus) */
-
-
-#endif
-#if !defined(__cplusplus)
-#if !defined(__cplusplus)
-
-typedef enum __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DUsage __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DUsage;
-
-
-#endif /* end if !defined(__cplusplus) */
-
-
-#endif
-#if !defined(__cplusplus)
-typedef struct __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DMultisampleDescription __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DMultisampleDescription;
-
-#endif
-#if !defined(__cplusplus)
-typedef struct __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DSurfaceDescription __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DSurfaceDescription;
-
-#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0003 */
-/* [local] */ 
+#ifndef ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            interface IClosable;
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+#define __x_ABI_CWindows_CFoundation_CIClosable ABI::Windows::Foundation::IClosable
+
+#endif // ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
 
 
 
-#ifdef __cplusplus
 
-} /* end extern "C" */
+
 namespace ABI {
     namespace Windows {
         namespace Graphics {
             namespace DirectX {
                 
-                typedef enum DirectXPixelFormat DirectXPixelFormat;
+                typedef enum DirectXPixelFormat : int DirectXPixelFormat;
                 
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* Graphics */
+    } /* DirectX */} /* ABI */
 
-extern "C" { 
-#endif
 
-#ifdef __cplusplus
 
-} /* end extern "C" */
+
 namespace ABI {
     namespace Windows {
         namespace Graphics {
             namespace DirectX {
                 namespace Direct3D11 {
                     
-                    typedef enum Direct3DBindings Direct3DBindings;
+                    typedef enum Direct3DBindings : unsigned int Direct3DBindings;
                     
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* Graphics */
+        } /* DirectX */
+    } /* Direct3D11 */} /* ABI */
 
-extern "C" { 
-#endif
-
-#ifdef __cplusplus
-
-} /* end extern "C" */
 namespace ABI {
     namespace Windows {
         namespace Graphics {
             namespace DirectX {
                 namespace Direct3D11 {
                     
-                    typedef enum Direct3DUsage Direct3DUsage;
+                    typedef enum Direct3DUsage : int Direct3DUsage;
                     
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* Graphics */
+        } /* DirectX */
+    } /* Direct3D11 */} /* ABI */
 
-extern "C" { 
-#endif
-
-#ifdef __cplusplus
-
-} /* end extern "C" */
 namespace ABI {
     namespace Windows {
         namespace Graphics {
@@ -404,18 +321,11 @@ namespace ABI {
                     
                     typedef struct Direct3DMultisampleDescription Direct3DMultisampleDescription;
                     
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* Graphics */
+        } /* DirectX */
+    } /* Direct3D11 */} /* ABI */
 
-extern "C" { 
-#endif
-
-#ifdef __cplusplus
-
-} /* end extern "C" */
 namespace ABI {
     namespace Windows {
         namespace Graphics {
@@ -424,145 +334,302 @@ namespace ABI {
                     
                     typedef struct Direct3DSurfaceDescription Direct3DSurfaceDescription;
                     
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-extern "C" { 
-#endif
+                } /* Windows */
+            } /* Graphics */
+        } /* DirectX */
+    } /* Direct3D11 */} /* ABI */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0003_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0341 */
 
 
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0341 */
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0341_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0341_v0_0_s_ifspec;
 
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0004 */
-/* [local] */ 
+/*
+ *
+ * Struct Windows.Graphics.DirectX.Direct3D11.Direct3DBindings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
 
-#ifndef DEF___FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface
-#define DEF___FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace DirectX {
+                namespace Direct3D11 {
+                    /* [v1_enum, flags, contract] */
+                    enum Direct3DBindings : unsigned int
+                    {
+                        Direct3DBindings_VertexBuffer = 0x1,
+                        Direct3DBindings_IndexBuffer = 0x2,
+                        Direct3DBindings_ConstantBuffer = 0x4,
+                        Direct3DBindings_ShaderResource = 0x8,
+                        Direct3DBindings_StreamOutput = 0x10,
+                        Direct3DBindings_RenderTarget = 0x20,
+                        Direct3DBindings_DepthStencil = 0x40,
+                        Direct3DBindings_UnorderedAccess = 0x80,
+                        Direct3DBindings_Decoder = 0x200,
+                        Direct3DBindings_VideoEncoder = 0x400,
+                    };
+                    
+                    DEFINE_ENUM_FLAG_OPERATORS(Direct3DBindings)
+                    
+                } /* Windows */
+            } /* Graphics */
+        } /* DirectX */
+    } /* Direct3D11 */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0004 */
-/* [local] */ 
+/*
+ *
+ * Struct Windows.Graphics.DirectX.Direct3D11.Direct3DUsage
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace DirectX {
+                namespace Direct3D11 {
+                    /* [v1_enum, contract] */
+                    enum Direct3DUsage : int
+                    {
+                        Direct3DUsage_Default = 0,
+                        Direct3DUsage_Immutable = 1,
+                        Direct3DUsage_Dynamic = 2,
+                        Direct3DUsage_Staging = 3,
+                    };
+                    
+                } /* Windows */
+            } /* Graphics */
+        } /* DirectX */
+    } /* Direct3D11 */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.Graphics.DirectX.Direct3D11.Direct3DMultisampleDescription
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace DirectX {
+                namespace Direct3D11 {
+                    /* [contract] */
+                    struct Direct3DMultisampleDescription
+                    {
+                        INT32 Count;
+                        INT32 Quality;
+                    };
+                    
+                } /* Windows */
+            } /* Graphics */
+        } /* DirectX */
+    } /* Direct3D11 */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.Graphics.DirectX.Direct3D11.Direct3DSurfaceDescription
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace DirectX {
+                namespace Direct3D11 {
+                    /* [contract] */
+                    struct Direct3DSurfaceDescription
+                    {
+                        INT32 Width;
+                        INT32 Height;
+                        ABI::Windows::Graphics::DirectX::DirectXPixelFormat Format;
+                        ABI::Windows::Graphics::DirectX::Direct3D11::Direct3DMultisampleDescription MultisampleDescription;
+                    };
+                    
+                } /* Windows */
+            } /* Graphics */
+        } /* DirectX */
+    } /* Direct3D11 */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.Foundation.IClosable
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_DirectX_Direct3D11_IDirect3DDevice[] = L"Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice";
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace DirectX {
+                namespace Direct3D11 {
+                    /* [object, uuid("A37624AB-8D5F-4650-9D3E-9EAE3D9BC670"), contract] */
+                    MIDL_INTERFACE("A37624AB-8D5F-4650-9D3E-9EAE3D9BC670")
+                    IDirect3DDevice : IInspectable
+                    {
+                        virtual HRESULT STDMETHODCALLTYPE Trim(void) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IDirect3DDevice=_uuidof(IDirect3DDevice);
+                    
+                } /* Windows */
+            } /* Graphics */
+        } /* DirectX */
+    } /* Direct3D11 */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice;
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.Foundation.IClosable
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface[] = L"Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface";
+namespace ABI {
+    namespace Windows {
+        namespace Graphics {
+            namespace DirectX {
+                namespace Direct3D11 {
+                    /* [object, uuid("0BF4A146-13C1-4694-BEE3-7ABF15EAF586"), contract] */
+                    MIDL_INTERFACE("0BF4A146-13C1-4694-BEE3-7ABF15EAF586")
+                    IDirect3DSurface : IInspectable
+                    {
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Description(
+                            /* [retval, out] */__RPC__out ABI::Windows::Graphics::DirectX::Direct3D11::Direct3DSurfaceDescription * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IDirect3DSurface=_uuidof(IDirect3DSurface);
+                    
+                } /* Windows */
+            } /* Graphics */
+        } /* DirectX */
+    } /* Direct3D11 */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface;
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0004_v0_0_s_ifspec;
 
-#ifndef ____FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_INTERFACE_DEFINED__
+
+#else // !defined(__cplusplus)
+/* Forward Declarations */
+#ifndef ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice;
+
+#endif // ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface;
+
+#endif // ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_FWD_DEFINED__
+
+// Parameterized interface forward declarations (C)
+
+// Collection interface definitions
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_INTERFACE_DEFINED__)
 #define ____FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_INTERFACE_DEFINED__
 
-/* interface __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface */
-/* [unique][uuid][object] */ 
+typedef interface __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface;
 
-
-
-/* interface __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("bdfb6d0b-e785-5d5a-abd2-fe1b18c43257")
-    __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface : public IInspectable
-    {
-    public:
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface **current) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
-            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
-            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurfaceVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurfaceVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
-            __RPC__in __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface **current);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
-            __RPC__in __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
-            /* [retval][out] */ __RPC__out boolean *hasCurrent);
-        
-        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
-            __RPC__in __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
-            /* [retval][out] */ __RPC__out boolean *hasCurrent);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual);
-        
-        END_INTERFACE
-    } __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurfaceVtbl;
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
 
-    interface __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface
-    {
-        CONST_VTBL struct __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurfaceVtbl *lpVtbl;
-    };
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
 
-    
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurfaceVtbl;
+
+interface __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface
+{
+    CONST_VTBL struct __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurfaceVtbl *lpVtbl;
+};
+
+
 
 #ifdef COBJMACROS
 
@@ -602,131 +669,53 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11_
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0005 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface */
-
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0005 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0005_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0342 */
-
-
-
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0342 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0342_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0342_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0006 */
-/* [local] */ 
-
-#ifndef DEF___FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface
-#define DEF___FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0006 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0006_v0_0_s_ifspec;
-
-#ifndef ____FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_INTERFACE_DEFINED__)
 #define ____FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_INTERFACE_DEFINED__
 
-/* interface __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface */
-/* [unique][uuid][object] */ 
+typedef interface __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface;
 
-
-
-/* interface __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("cc63bf9c-e16a-5a75-a5aa-2b53f975b0b0")
-    __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE First( 
-            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface **first) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef  struct __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurfaceVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurfaceVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *First )( 
-            __RPC__in __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
-            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface **first);
-        
-        END_INTERFACE
-    } __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurfaceVtbl;
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
 
-    interface __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface
-    {
-        CONST_VTBL struct __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurfaceVtbl *lpVtbl;
-    };
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This);
 
-    
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface **first);
+
+    END_INTERFACE
+} __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurfaceVtbl;
+
+interface __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface
+{
+    CONST_VTBL struct __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurfaceVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
-
 
 #define __FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
@@ -754,161 +743,77 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11_
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0007 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIIterable_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface */
-
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0007 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0007_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0343 */
-
-
-
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0343 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0343_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d112Eidl_0000_0343_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0008 */
-/* [local] */ 
-
-#ifndef DEF___FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface
-#define DEF___FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0008 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0008_v0_0_s_ifspec;
-
-#ifndef ____FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_INTERFACE_DEFINED__)
 #define ____FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_INTERFACE_DEFINED__
 
-/* interface __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface */
-/* [unique][uuid][object] */ 
+typedef interface __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface;
 
-
-
-/* interface __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("1a81ec3e-5afb-5e10-92bb-c843fec70887")
-    __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE GetAt( 
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface **item) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
-            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
-            /* [in] */ __RPC__in_opt ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurfaceVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurfaceVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
             /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
             /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
-            __RPC__in __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface **item);
-        
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * *item);
+
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
             __RPC__in __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
             /* [retval][out] */ __RPC__out unsigned int *size);
-        
+
         HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
-            __RPC__in __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface *item,
+                                               __RPC__in __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
+            /* [in] */ __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * item,
             /* [out] */ __RPC__out unsigned int *index,
             /* [retval][out] */ __RPC__out boolean *found);
-        
+
         HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
+                                               __RPC__in __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface * This,
             /* [in] */ unsigned int startIndex,
             /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface **items,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * *items,
             /* [retval][out] */ __RPC__out unsigned int *actual);
-        
+
         END_INTERFACE
-    } __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurfaceVtbl;
+} __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurfaceVtbl;
 
-    interface __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface
-    {
-        CONST_VTBL struct __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurfaceVtbl *lpVtbl;
-    };
+interface __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface
+{
+    CONST_VTBL struct __FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurfaceVtbl *lpVtbl;
+};
 
-    
+
 
 #ifdef COBJMACROS
 
@@ -948,465 +853,340 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D1
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+
+#endif // ____FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+#ifndef ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CFoundation_CIClosable __x_ABI_CWindows_CFoundation_CIClosable;
+
+#endif // ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
 
 
 
 
-#endif 	/* ____FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0009 */
-/* [local] */ 
+typedef enum __x_ABI_CWindows_CGraphics_CDirectX_CDirectXPixelFormat __x_ABI_CWindows_CGraphics_CDirectX_CDirectXPixelFormat;
 
-#endif /* pinterface */
-#endif /* DEF___FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface */
-#if !defined(__cplusplus)
 
-#if !defined(__cplusplus)
-/* [v1_enum] */ 
+
+
+
+typedef enum __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DBindings __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DBindings;
+
+
+typedef enum __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DUsage __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DUsage;
+
+
+typedef struct __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DMultisampleDescription __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DMultisampleDescription;
+
+
+typedef struct __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DSurfaceDescription __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DSurfaceDescription;
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ *
+ * Struct Windows.Graphics.DirectX.Direct3D11.Direct3DBindings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+/* [v1_enum, flags, contract] */
 enum __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DBindings
-    {
-        Direct3DBindings_VertexBuffer	= 0x1,
-        Direct3DBindings_IndexBuffer	= 0x2,
-        Direct3DBindings_ConstantBuffer	= 0x4,
-        Direct3DBindings_ShaderResource	= 0x8,
-        Direct3DBindings_StreamOutput	= 0x10,
-        Direct3DBindings_RenderTarget	= 0x20,
-        Direct3DBindings_DepthStencil	= 0x40,
-        Direct3DBindings_UnorderedAccess	= 0x80,
-        Direct3DBindings_Decoder	= 0x200,
-        Direct3DBindings_VideoEncoder	= 0x400
-    } ;
-#endif /* end if !defined(__cplusplus) */
+{
+    Direct3DBindings_VertexBuffer = 0x1,
+    Direct3DBindings_IndexBuffer = 0x2,
+    Direct3DBindings_ConstantBuffer = 0x4,
+    Direct3DBindings_ShaderResource = 0x8,
+    Direct3DBindings_StreamOutput = 0x10,
+    Direct3DBindings_RenderTarget = 0x20,
+    Direct3DBindings_DepthStencil = 0x40,
+    Direct3DBindings_UnorderedAccess = 0x80,
+    Direct3DBindings_Decoder = 0x200,
+    Direct3DBindings_VideoEncoder = 0x400,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#else
-namespace ABI {
-namespace Windows {
-namespace Graphics {
-namespace DirectX {
-namespace Direct3D11 {
-enum Direct3DBindings;
-DEFINE_ENUM_FLAG_OPERATORS(Direct3DBindings)
-} /*Direct3D11*/
-} /*DirectX*/
-} /*Graphics*/
-} /*Windows*/
-}
-#endif
-#if !defined(__cplusplus)
 
-#if !defined(__cplusplus)
-/* [v1_enum] */ 
+/*
+ *
+ * Struct Windows.Graphics.DirectX.Direct3D11.Direct3DUsage
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+/* [v1_enum, contract] */
 enum __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DUsage
-    {
-        Direct3DUsage_Default	= 0,
-        Direct3DUsage_Immutable	= 1,
-        Direct3DUsage_Dynamic	= 2,
-        Direct3DUsage_Staging	= 3
-    } ;
-#endif /* end if !defined(__cplusplus) */
+{
+    Direct3DUsage_Default = 0,
+    Direct3DUsage_Immutable = 1,
+    Direct3DUsage_Dynamic = 2,
+    Direct3DUsage_Staging = 3,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#endif
-#if !defined(__cplusplus)
+
+/*
+ *
+ * Struct Windows.Graphics.DirectX.Direct3D11.Direct3DMultisampleDescription
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+/* [contract] */
 struct __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DMultisampleDescription
-    {
+{
     INT32 Count;
     INT32 Quality;
-    } ;
-#endif
-#if !defined(__cplusplus)
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.Graphics.DirectX.Direct3D11.Direct3DSurfaceDescription
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+/* [contract] */
 struct __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DSurfaceDescription
-    {
+{
     INT32 Width;
     INT32 Height;
     __x_ABI_CWindows_CGraphics_CDirectX_CDirectXPixelFormat Format;
     __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DMultisampleDescription MultisampleDescription;
-    } ;
-#endif
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.Foundation.IClosable
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_DirectX_Direct3D11_IDirect3DDevice[] = L"Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice";
-#endif /* !defined(____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0009 */
-/* [local] */ 
-
-#ifdef __cplusplus
-} /* end extern "C" */
-namespace ABI {
-    namespace Windows {
-        namespace Graphics {
-            namespace DirectX {
-                namespace Direct3D11 {
-                    
-                    /* [v1_enum] */ 
-                    enum Direct3DBindings
-                        {
-                            Direct3DBindings_VertexBuffer	= 0x1,
-                            Direct3DBindings_IndexBuffer	= 0x2,
-                            Direct3DBindings_ConstantBuffer	= 0x4,
-                            Direct3DBindings_ShaderResource	= 0x8,
-                            Direct3DBindings_StreamOutput	= 0x10,
-                            Direct3DBindings_RenderTarget	= 0x20,
-                            Direct3DBindings_DepthStencil	= 0x40,
-                            Direct3DBindings_UnorderedAccess	= 0x80,
-                            Direct3DBindings_Decoder	= 0x200,
-                            Direct3DBindings_VideoEncoder	= 0x400
-                        } ;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-extern "C" { 
-#endif
-
-#ifdef __cplusplus
-} /* end extern "C" */
-namespace ABI {
-    namespace Windows {
-        namespace Graphics {
-            namespace DirectX {
-                namespace Direct3D11 {
-                    
-                    /* [v1_enum] */ 
-                    enum Direct3DUsage
-                        {
-                            Direct3DUsage_Default	= 0,
-                            Direct3DUsage_Immutable	= 1,
-                            Direct3DUsage_Dynamic	= 2,
-                            Direct3DUsage_Staging	= 3
-                        } ;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-extern "C" { 
-#endif
-
-#ifdef __cplusplus
-} /* end extern "C" */
-namespace ABI {
-    namespace Windows {
-        namespace Graphics {
-            namespace DirectX {
-                namespace Direct3D11 {
-                    
-                    struct Direct3DMultisampleDescription
-                        {
-                        INT32 Count;
-                        INT32 Quality;
-                        } ;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-extern "C" { 
-#endif
-
-#ifdef __cplusplus
-} /* end extern "C" */
-namespace ABI {
-    namespace Windows {
-        namespace Graphics {
-            namespace DirectX {
-                namespace Direct3D11 {
-                    
-                    struct Direct3DSurfaceDescription
-                        {
-                        INT32 Width;
-                        INT32 Height;
-                        ABI::Windows::Graphics::DirectX::DirectXPixelFormat Format;
-                        Direct3DMultisampleDescription MultisampleDescription;
-                        } ;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-extern "C" { 
-#endif
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0009_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_DirectX_Direct3D11_IDirect3DDevice[] = L"Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice";
+/* [object, uuid("A37624AB-8D5F-4650-9D3E-9EAE3D9BC670"), contract] */
+typedef struct __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDeviceVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-/* interface __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice */
-/* [uuid][object] */ 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *Trim )(
+        __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice * This
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDeviceVtbl;
+
+interface __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice
+{
+    CONST_VTBL struct __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDeviceVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_Trim(This) \
+    ( (This)->lpVtbl->Trim(This) )
 
 
-
-/* interface ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice */
-/* [uuid][object] */ 
+#endif /* COBJMACROS */
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice;
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace Graphics {
-                namespace DirectX {
-                    namespace Direct3D11 {
-                        
-                        MIDL_INTERFACE("A37624AB-8D5F-4650-9D3E-9EAE3D9BC670")
-                        IDirect3DDevice : public IInspectable
-                        {
-                        public:
-                            virtual HRESULT STDMETHODCALLTYPE Trim( void) = 0;
-                            
-                        };
 
-                        extern const __declspec(selectany) IID & IID_IDirect3DDevice = __uuidof(IDirect3DDevice);
+/*
+ *
+ * Interface Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.Foundation.IClosable
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface[] = L"Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface";
+/* [object, uuid("0BF4A146-13C1-4694-BEE3-7ABF15EAF586"), contract] */
+typedef struct __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurfaceVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Description )(
+        __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DSurfaceDescription * value
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurfaceVtbl;
 
-    typedef struct __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDeviceVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *Trim )( 
-            __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice * This);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDeviceVtbl;
-
-    interface __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDeviceVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface
+{
+    CONST_VTBL struct __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurfaceVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_get_Description(This,value) \
+    ( (This)->lpVtbl->get_Description(This,value) )
 
-#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_Trim(This)	\
-    ( (This)->lpVtbl -> Trim(This) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DDevice_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0010 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface[] = L"Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface";
-#endif /* !defined(____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0010 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Egraphics2Edirectx2Edirect3d11_0000_0010_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace Graphics {
-                namespace DirectX {
-                    namespace Direct3D11 {
-                        
-                        MIDL_INTERFACE("0BF4A146-13C1-4694-BEE3-7ABF15EAF586")
-                        IDirect3DSurface : public IInspectable
-                        {
-                        public:
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Description( 
-                                /* [out][retval] */ __RPC__out ABI::Windows::Graphics::DirectX::Direct3D11::Direct3DSurfaceDescription *value) = 0;
-                            
-                        };
-
-                        extern const __declspec(selectany) IID & IID_IDirect3DSurface = __uuidof(IDirect3DSurface);
-
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
-    
-#else 	/* C style interface */
-
-    typedef struct __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurfaceVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Description )( 
-            __RPC__in __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface * This,
-            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CDirect3DSurfaceDescription *value);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurfaceVtbl;
-
-    interface __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurfaceVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
-
-
-#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
-#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_get_Description(This,value)	\
-    ( (This)->lpVtbl -> get_Description(This,value) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
+#endif /* !defined(____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
 
-#endif 	/* ____x_ABI_CWindows_CGraphics_CDirectX_CDirect3D11_CIDirect3DSurface_INTERFACE_DEFINED__ */
 
+#endif // defined(__cplusplus)
+#pragma pop_macro("MIDL_CONST_ID")
+// Restore the original value of the 'DEPRECATED' macro
+#pragma pop_macro("DEPRECATED")
 
-/* Additional Prototypes for ALL interfaces */
-
-/* end of Additional Prototypes */
-
-#ifdef __cplusplus
-}
+#ifdef __clang__
+#pragma clang diagnostic pop // deprecated-declarations
+#else
+#pragma warning(pop)
 #endif
+#endif // __windows2Egraphics2Edirectx2Edirect3d11_p_h__
 
-#endif
-
-
+#endif // __windows2Egraphics2Edirectx2Edirect3d11_h__

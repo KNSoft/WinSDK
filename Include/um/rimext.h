@@ -31,14 +31,11 @@
 
 #ifndef _APISET_RIM_VER
 #ifdef _APISET_TARGET_VERSION
-
 #if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS2
 #define _APISET_RIM_VER 0x0101
-
 #elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WINBLUE
 #define _APISET_RIM_VER 0x0100
 #endif
-
 #endif
 #endif
 
@@ -273,6 +270,12 @@ typedef struct _RIM_HID_ATTRIBUTES
     //
 
     HMONITOR Monitor;
+
+    //
+    // Display ID of the monitor that is mapped to this HID device.
+    //
+
+    DWORD DisplayID;
 
     //
     // Vendor ID of the device.
@@ -598,6 +601,16 @@ RIMGetSourceProcessId(
     _In_ HANDLE hRimHandle,
     _In_ HANDLE hRimDev,
     _Out_ PDWORD pdwProcessId
+    );
+
+
+WINUSERAPI
+NTSTATUS
+WINAPI
+RIMEnableMonitorMappingForDevice(
+    _In_ HANDLE hRimHandle,
+    _In_ HANDLE hRimDev,
+    _Out_opt_ HMONITOR * phMonitor
     );
 
 
@@ -992,6 +1005,12 @@ IsRIMGetPhysicalDeviceRectPresent(
 BOOLEAN
 __stdcall
 IsRIMGetSourceProcessIdPresent(
+    VOID
+    );
+
+BOOLEAN
+__stdcall
+IsRIMEnableMonitorMappingForDevicePresent(
     VOID
     );
 

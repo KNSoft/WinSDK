@@ -342,8 +342,8 @@ typedef enum tagCLSCTX
     CLSCTX_INPROC_SERVER16 = 0x08,   // 16-bit server dll (runs in same process as caller)
     CLSCTX_REMOTE_SERVER = 0x10,     // remote server exe (runs on different machine)
     CLSCTX_INPROC_HANDLER16 = 0x20,  // 16-bit handler dll (runs in same process as caller)
-    CLSCTX_RESERVED1 = 0x40,         // formerly INPROC_SERVERX86, deprectated
-    CLSCTX_RESERVED2 = 0x80,         // formerly INPROC_HANDLERX86, deprectated
+    CLSCTX_RESERVED1 = 0x40,         // formerly INPROC_SERVERX86, deprecated
+    CLSCTX_RESERVED2 = 0x80,         // formerly INPROC_HANDLERX86, deprecated
     CLSCTX_RESERVED3 = 0x100,        // formerly ESERVER_HANDLER, deprecated
     CLSCTX_RESERVED4 = 0x200,        // formerly CLSCTX_KERNEL_SERVER, now used only in kmode
     CLSCTX_NO_CODE_DOWNLOAD = 0x400, // disallow code download from the Directory Service (if any) or the internet
@@ -355,13 +355,16 @@ typedef enum tagCLSCTX
     CLSCTX_DISABLE_AAA   = 0x8000,   // Disable activate-as-activator capability for this activation only
     CLSCTX_ENABLE_AAA   = 0x10000,   // Enable activate-as-activator capability for this activation only
     CLSCTX_FROM_DEFAULT_CONTEXT = 0x20000,   // Begin this activation from the default context of the current apartment
-    CLSCTX_ACTIVATE_32_BIT_SERVER = 0x40000,  // Pick 32 bit server over 64 bit server
-    CLSCTX_ACTIVATE_64_BIT_SERVER = 0x80000,  // Pick 64 bit server over 32 bit server
+    CLSCTX_ACTIVATE_X86_SERVER    = 0x40000, // Pick x86 server only
+    CLSCTX_ACTIVATE_32_BIT_SERVER = CLSCTX_ACTIVATE_X86_SERVER, // Old name for CLSCTX_ACTIVATE_X86_SERVER; value must be identical for compatibility
+    CLSCTX_ACTIVATE_64_BIT_SERVER = 0x80000, // Pick 64-bit server only
     CLSCTX_ENABLE_CLOAKING = 0x100000, 	      // Use the thread token (if present) for the activation.
 // The following flag is internal only
     CLSCTX_APPCONTAINER = 0x400000,  // Internal CLSCTX used to indicate activation is for app container
-    CLSCTX_ACTIVATE_AAA_AS_IU = 0x800000, //Interactive User activation behavior for As-Activator servers.
-    CLSCTX_PS_DLL = (int) 0x80000000, // Internal CLSCTX used for loading Proxy/Stub DLLs
+    CLSCTX_ACTIVATE_AAA_AS_IU = 0x800000, // Interactive User activation behavior for As-Activator servers.
+    CLSCTX_RESERVED6 = 0x1000000, // Pick native architecture server only (internal name is CLSCTX_ACTIVATE_NATIVE_SERVER)
+    CLSCTX_ACTIVATE_ARM32_SERVER  = 0x2000000, // Pick ARM32 server only
+    CLSCTX_PS_DLL = 0x80000000, // Internal CLSCTX used for loading Proxy/Stub DLLs
  } CLSCTX;
 
 cpp_quote("#define CLSCTX_VALID_MASK \\")
@@ -377,11 +380,13 @@ cpp_quote("    CLSCTX_NO_FAILURE_LOG | \\")
 cpp_quote("    CLSCTX_DISABLE_AAA | \\")
 cpp_quote("    CLSCTX_ENABLE_AAA | \\")
 cpp_quote("    CLSCTX_FROM_DEFAULT_CONTEXT | \\")
-cpp_quote("    CLSCTX_ACTIVATE_32_BIT_SERVER | \\")
+cpp_quote("    CLSCTX_ACTIVATE_X86_SERVER | \\")
 cpp_quote("    CLSCTX_ACTIVATE_64_BIT_SERVER | \\")
 cpp_quote("    CLSCTX_ENABLE_CLOAKING | \\")
 cpp_quote("    CLSCTX_APPCONTAINER | \\")
 cpp_quote("    CLSCTX_ACTIVATE_AAA_AS_IU | \\")
+cpp_quote("    CLSCTX_RESERVED6 | \\")
+cpp_quote("    CLSCTX_ACTIVATE_ARM32_SERVER | \\")
 cpp_quote("    CLSCTX_PS_DLL)")
 
 // marshaling flags; passed to CoMarshalInterface

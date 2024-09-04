@@ -352,6 +352,7 @@
 #define WDI_TLV_DEVICE_SERVICE_PARAMS_GUID                      0x140
 #define WDI_TLV_DEVICE_SERVICE_PARAMS_DATA_BLOB                 0x141
 #define WDI_TLV_DEVICE_SERVICE_GUID_LIST                        0x142
+#define WDI_TLV_OFFLOAD_SCOPE                                   0x143
 
 #define WDI_TEST_TASK                                           0xFFE0
 #define WDI_TLV_TEST1                                           0xFFE1

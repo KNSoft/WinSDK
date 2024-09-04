@@ -2153,6 +2153,8 @@ ClusWorkersTerminate(
 //by ResUtilEnumResources
 typedef   DWORD (*LPRESOURCE_CALLBACK)( HRESOURCE, HRESOURCE , PVOID );
 typedef   DWORD (*LPRESOURCE_CALLBACK_EX)( HCLUSTER, HRESOURCE, HRESOURCE , PVOID );
+typedef   DWORD (*LPGROUP_CALLBACK_EX)( HCLUSTER, HGROUP, HGROUP , PVOID );
+typedef   DWORD (*LPNODE_CALLBACK)( HCLUSTER, HNODE, CLUSTER_NODE_STATE, PVOID );
 
 
 BOOL
@@ -2782,6 +2784,72 @@ BOOL ResUtilPaxosComparer(const PaxosTagCStruct *const left, const PaxosTagCStru
 
 BOOL ResUtilLeftPaxosIsLessThanRight(const PaxosTagCStruct *const left, const PaxosTagCStruct * const right);
 
+DWORD ResUtilsDeleteKeyTree(HKEY key, LPCWSTR keyName, BOOL treatNoKeyAsError);
+
+DWORD
+WINAPI
+ResUtilGroupsEqual(
+    IN HGROUP    hSelf,
+    IN HGROUP    hGroup,
+    OUT BOOL*    pEqual
+    );
+
+DWORD
+WINAPI
+ResUtilEnumGroups(
+    IN HCLUSTER             hCluster,
+    IN HGROUP               hSelf,
+    IN LPGROUP_CALLBACK_EX  pResCallBack,
+    IN PVOID                pParameter
+    );
+
+DWORD
+WINAPI
+ResUtilEnumGroupsEx(
+    IN HCLUSTER                 hCluster,
+    IN HGROUP               hSelf,
+    IN CLUSGROUP_TYPE           groupType,
+    IN LPGROUP_CALLBACK_EX      pResCallBack,
+    IN PVOID                    pParameter
+    );
+
+
+DWORD
+WINAPI
+ResUtilDupGroup(IN HGROUP group, OUT HGROUP *copy);
+
+DWORD
+WINAPI
+ResUtilGetClusterGroupType(IN HGROUP hGroup, OUT CLUSGROUP_TYPE * groupType);
+
+HGROUP
+WINAPI
+ResUtilGetCoreGroup(IN HCLUSTER hCluster);
+
+DWORD
+WINAPI
+ResUtilResourceDepEnum(
+    IN HRESOURCE                hSelf,
+    IN DWORD                    enumType,
+    IN LPRESOURCE_CALLBACK_EX   pResCallBack,
+    IN PVOID                    pParameter
+    );
+DWORD
+WINAPI
+ResUtilDupResource(IN HRESOURCE group, OUT HRESOURCE *copy);
+
+DWORD
+WINAPI
+ResUtilGetClusterId( IN HCLUSTER hCluster,OUT GUID *guid );
+
+
+DWORD
+WINAPI
+ResUtilNodeEnum(
+    IN HCLUSTER             hCluster,
+    IN LPNODE_CALLBACK      pNodeCallBack,
+    IN PVOID                pParameter
+    );
 
 #ifdef __cplusplus
 }

@@ -46,33 +46,45 @@ extern "C" {
 #include <lmuseflg.h>                   // Deletion force level flags
 
 //
+// LevelFlags : The lower 16 bits describe the use level while the upper 16 bits are flags.
+//
+
+
+#define USE_FLAG_GLOBAL_MAPPING 0x10000
+
+#define USE_LEVEL(LEVELFLAGS) ((LEVELFLAGS) & 0xffff)
+#define USE_FLAGS(LEVELFLAGS) ((LEVELFLAGS) & 0xffff0000)
+
+
+//
 // Function Prototypes
 //
 
 NET_API_STATUS NET_API_FUNCTION
 NetUseAdd (
     _In_opt_ LPTSTR servername,
-    _In_ DWORD level,
-    _When_( level == 0, _In_reads_bytes_(sizeof(USE_INFO_0)))
-    _When_( level == 1, _In_reads_bytes_(sizeof(USE_INFO_1)))
-    _When_( level == 2, _In_reads_bytes_(sizeof(USE_INFO_2)))
-    _When_( level == 3, _In_reads_bytes_(sizeof(USE_INFO_3)))
-    _When_( level == 4, _In_reads_bytes_(sizeof(USE_INFO_4)))
+    _In_ DWORD LevelFlags,
+    _When_( USE_LEVEL(LevelFlags)== 0, _In_reads_bytes_(sizeof(USE_INFO_0)))
+    _When_( USE_LEVEL(LevelFlags)== 1, _In_reads_bytes_(sizeof(USE_INFO_1)))
+    _When_( USE_LEVEL(LevelFlags)== 2, _In_reads_bytes_(sizeof(USE_INFO_2)))
+    _When_( USE_LEVEL(LevelFlags)== 3, _In_reads_bytes_(sizeof(USE_INFO_3)))
+    _When_( USE_LEVEL(LevelFlags)== 4, _In_reads_bytes_(sizeof(USE_INFO_4)))
+    _When_( USE_LEVEL(LevelFlags)== 5, _In_reads_bytes_(sizeof(USE_INFO_5)))
     LPBYTE buf,
     _Out_opt_ LPDWORD parm_err
     );
 
 NET_API_STATUS NET_API_FUNCTION
 NetUseDel (
-    _In_opt_ IN LMSTR  UncServerName OPTIONAL,
-    _In_ IN LMSTR  UseName,
-    IN DWORD ForceCond
+    _In_opt_ LMSTR  UncServerName OPTIONAL,
+    _In_ LMSTR  UseName,
+    _In_ DWORD ForceLevelFlags
     );
 
 NET_API_STATUS NET_API_FUNCTION
 NetUseEnum (
     _In_opt_ LMSTR  UncServerName,
-    _In_ DWORD Level,
+    _In_ DWORD LevelFlags,
     _Outptr_opt_result_buffer_(_Inexpressible_(EntriesRead)) LPBYTE *BufPtr,
     _In_ DWORD PreferedMaximumSize,
     _Out_opt_ LPDWORD EntriesRead,
@@ -84,10 +96,10 @@ NET_API_STATUS NET_API_FUNCTION
 NetUseGetInfo (
     _In_opt_ LMSTR  UncServerName,
     _In_ LMSTR  UseName,
-    _In_ DWORD level,
-    _When_(level == 0, _Outptr_opt_result_bytebuffer_(sizeof(USE_INFO_0)))
-    _When_(level == 1, _Outptr_opt_result_bytebuffer_(sizeof(USE_INFO_1)))
-    _When_(level == 2, _Outptr_opt_result_bytebuffer_(sizeof(USE_INFO_2)))
+    _In_ DWORD LevelFlags,
+    _When_(USE_LEVEL(LevelFlags) == 0, _Outptr_opt_result_bytebuffer_(sizeof(USE_INFO_0)))
+    _When_(USE_LEVEL(LevelFlags) == 1, _Outptr_opt_result_bytebuffer_(sizeof(USE_INFO_1)))
+    _When_(USE_LEVEL(LevelFlags) == 2, _Outptr_opt_result_bytebuffer_(sizeof(USE_INFO_2)))
     LPBYTE *bufptr
     );
 
@@ -133,6 +145,18 @@ typedef struct _USE_INFO_4 {
     PBYTE      ui4_auth_identity;
 } USE_INFO_4, *PUSE_INFO_4, *LPUSE_INFO_4;
 
+typedef struct _USE_INFO_5 {
+
+    USE_INFO_3 ui4_ui3;
+    DWORD      ui4_auth_identity_length;
+    PBYTE      ui4_auth_identity;
+    DWORD      ui5_security_descriptor_length;
+    PBYTE      ui5_security_descriptor;
+    DWORD      ui5_use_options_length;
+    PBYTE      ui5_use_options;
+
+} USE_INFO_5, *PUSE_INFO_5, *LPUSE_INFO_5;
+
 //
 // Special Values and Constants
 //
@@ -143,12 +167,16 @@ typedef struct _USE_INFO_4 {
 // NetUseAdd.
 //
 
-#define USE_LOCAL_PARMNUM       1
-#define USE_REMOTE_PARMNUM      2
-#define USE_PASSWORD_PARMNUM    3
-#define USE_ASGTYPE_PARMNUM     4
-#define USE_USERNAME_PARMNUM    5
-#define USE_DOMAINNAME_PARMNUM  6
+#define USE_LOCAL_PARMNUM       	1
+#define USE_REMOTE_PARMNUM      	2
+#define USE_PASSWORD_PARMNUM    	3
+#define USE_ASGTYPE_PARMNUM     	4
+#define USE_USERNAME_PARMNUM    	5
+#define USE_DOMAINNAME_PARMNUM  	6
+#define USE_FLAGS_PARMNUM  		7
+#define USE_AUTHIDENTITY_PARMNUM  	8
+#define USE_SD_PARMNUM  		9
+#define USE_OPTIONS_PARMNUM  		10
 
 //
 // Values appearing in the ui1_status field of use_info_1 structure.
@@ -183,12 +211,16 @@ typedef struct _USE_INFO_4 {
                                      //  all ops on this connection go to the server,
                                      //  never to the cache
 #define CREATE_CRED_RESET 0x4	     // Create a connection with credentials passed in 
-				     //  this netuse if none exist. If connection already 
-				     //  exists then update credentials after issuing remote
-				     //  tree connection. This is needed as CSC cannot verify 
-				     //  credentials while offline.
+                     //  this netuse if none exist. If connection already 
+                     //  exists then update credentials after issuing remote
+                     //  tree connection. This is needed as CSC cannot verify 
+                     //  credentials while offline.
 
 #define USE_DEFAULT_CREDENTIALS 0x4  // No explicit credentials passed to NetUseAdd
+
+
+#define CREATE_REQUIRE_CONNECTION_INTEGRITY 0x8
+#define CREATE_REQUIRE_CONNECTION_PRIVACY   0x10
 
 #ifdef __cplusplus
 }

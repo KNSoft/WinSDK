@@ -17,7 +17,7 @@
 
 #include <windows.foundation.h>
 #include <windows.foundation.diagnostics.h>
-#ifdef ____x_Windows_CFoundation_CDiagnostics_CITracingStatusChangedEventArgs_FWD_DEFINED__
+#if !defined(MIDL_NS_PREFIX) && !defined(____x_ABI_CWindows_CFoundation_CDiagnostics_CITracingStatusChangedEventArgs_FWD_DEFINED__)
 namespace ABI {
 namespace Windows {
 namespace Foundation {
@@ -91,6 +91,18 @@ namespace Details
       static const bool hasCausalityOperationName = false;
       static const bool isCausalityEnabled = true;
   };
+
+  template < PCWSTR OpName >
+  struct IsOperationName
+  {
+      static const bool Value = true;
+  };
+
+  template < >
+  struct IsOperationName< nullptr >
+  {
+      static const bool Value = false;
+  };
 }
 
 // Options for error propagation and the defaults are set here. 
@@ -104,6 +116,53 @@ struct ErrorPropagationOptions : public Microsoft::WRL::Details::AsyncOptionsBas
     static const ErrorPropagationPolicy PropagationPolicy = errorPropagationPolicy;
     static const bool hasErrorPropagationPolicy = true;
 };
+
+#ifndef _WRL_DISABLE_CAUSALITY_
+
+// Options for causality tracing and the needed defaults are set here. The following class may be used as 
+// a reference to add more options to AsyncBase
+#ifdef BUILD_WINDOWS
+#define WRL_DEFAULT_CAUSALITY_GUID GUID_CAUSALITY_WINDOWS_PLATFORM_ID
+#define WRL_DEFAULT_CAUSALITY_SOURCE ::ABI::Windows::Foundation::Diagnostics::CausalitySource::CausalitySource_System
+#else
+#define WRL_DEFAULT_CAUSALITY_GUID GUID_NULL
+#define WRL_DEFAULT_CAUSALITY_SOURCE ::ABI::Windows::Foundation::Diagnostics::CausalitySource::CausalitySource_Application
+#endif //BUILD_WINDOWS
+
+template <
+    PCWSTR OpName = nullptr,
+    const GUID &PlatformId = WRL_DEFAULT_CAUSALITY_GUID,
+    ::ABI::Windows::Foundation::Diagnostics::CausalitySource CausalitySource = WRL_DEFAULT_CAUSALITY_SOURCE
+>
+struct AsyncCausalityOptions : public Microsoft::WRL::Details::AsyncOptionsBase
+{
+    static PCWSTR GetAsyncOperationName()
+    {
+        return OpName;
+    }
+
+    static const GUID GetPlatformId()
+    {
+        return PlatformId;
+    }
+
+    static ::ABI::Windows::Foundation::Diagnostics::CausalitySource GetCausalitySource()
+    {
+        return CausalitySource;
+    }
+
+    static const bool hasCausalityOptions = true;
+    static const bool hasCausalityOperationName = Microsoft::WRL::Details::IsOperationName<OpName>::Value;
+};
+
+// This option type for causality tracing disables just the tracing part.
+extern __declspec(selectany) const WCHAR DisableCausalityAsyncOperationName[] = L"Disabled";
+struct DisableCausality : public AsyncCausalityOptions< DisableCausalityAsyncOperationName >
+{
+    static const bool isCausalityEnabled = false;
+};
+
+#endif // _WRL_DISABLE_CAUSALITY_
 
 namespace Details
 {
@@ -134,18 +193,6 @@ struct DerefHelper<T*>
 };
 
 #pragma region AsyncOptionsHelper
-
-template < PCWSTR OpName >
-struct IsOperationName
-{
-    static const bool Value = true;
-};
-
-template < >
-struct IsOperationName< nullptr >
-{
-    static const bool Value = false;
-};
 
 #ifndef _WRL_DISABLE_CAUSALITY_
 
@@ -277,7 +324,6 @@ struct AsyncOptionsHelper :
 #pragma endregion
 // End of AsyncOptionsHelper
 
-
 } // Details
 
 // designates whether the "GetResults" method returns a single result (after complete fires) or multiple results
@@ -304,50 +350,6 @@ enum CancelTransitionPolicy
 };
 
 #pragma region AsyncOptions
-
-#ifndef _WRL_DISABLE_CAUSALITY_
-
-// Options for causality tracing and the needed defaults are set here. The following class may be used as 
-// a reference to add more options to AsyncBase
-template <
-    PCWSTR OpName = nullptr,
-#ifdef BUILD_WINDOWS
-    const GUID &PlatformId = GUID_CAUSALITY_WINDOWS_PLATFORM_ID, 
-    ::ABI::Windows::Foundation::Diagnostics::CausalitySource CausalitySource = ::ABI::Windows::Foundation::Diagnostics::CausalitySource::CausalitySource_System
-#else
-    const GUID &PlatformId = GUID_NULL, 
-    ::ABI::Windows::Foundation::Diagnostics::CausalitySource CausalitySource = ::ABI::Windows::Foundation::Diagnostics::CausalitySource::CausalitySource_Application 
-#endif //BUILD_WINDOWS
-     >
-struct AsyncCausalityOptions : public Microsoft::WRL::Details::AsyncOptionsBase
-{
-    static PCWSTR GetAsyncOperationName()
-    {
-        return OpName;
-    }
-
-    static const GUID GetPlatformId() 
-    {
-        return PlatformId;
-    }
-
-    static ::ABI::Windows::Foundation::Diagnostics::CausalitySource GetCausalitySource()
-    {
-        return CausalitySource;
-    }
-
-    static const bool hasCausalityOptions = true;
-    static const bool hasCausalityOperationName = Microsoft::WRL::Details::IsOperationName<OpName>::Value;
-};
-
-// This option type for causality tracing disables just the tracing part.
-extern __declspec(selectany) const WCHAR DisableCausalityAsyncOperationName[] = L"Disabled";
-struct DisableCausality : public AsyncCausalityOptions< DisableCausalityAsyncOperationName >
-{
-    static const bool isCausalityEnabled = false;
-};
-
-#endif // _WRL_DISABLE_CAUSALITY_
 
 template < ErrorPropagationPolicy errorPropagationPolicy >
 struct ErrorPropagationPolicyTraits;

@@ -800,6 +800,7 @@ Examples:
 #define TraceLoggingBool(value, ...)       _TlgArg(INT32,      TlgInBOOL32,           0, 0, _TlgS, value,, __VA_ARGS__)
 #define TraceLoggingGuid(value, ...)       _TlgArg(GUID,       TlgInGUID,             0, 0, _TlgP, value,, __VA_ARGS__)
 #define TraceLoggingPointer(value, ...)    _TlgArg(void const*,TlgInPOINTER,          0, 0, _TlgS, value,, __VA_ARGS__)
+#define TraceLoggingCodePointer(value, ...) _TlgArg(void const*,TlgInPOINTER,TlgOutCODE_POINTER, 1, _TlgS, value,, __VA_ARGS__)
 #define TraceLoggingFileTime(value, ...)   _TlgArg(struct _FILETIME,  TlgInFILETIME,  0, 0, _TlgP, value,, __VA_ARGS__)
 #define TraceLoggingSystemTime(value, ...) _TlgArg(struct _SYSTEMTIME,TlgInSYSTEMTIME,0, 0, _TlgP, value,, __VA_ARGS__)
 #define TraceLoggingHexInt8(value, ...)    _TlgArg(INT8,       TlgInUINT8,    TlgOutHEX, 1, _TlgS, value,, __VA_ARGS__)
@@ -1030,6 +1031,7 @@ Examples:
 #define TraceLoggingBoolFixedArray(pVals, cVals, ...)             _TlgArg(INT32,      TlgInBOOL32,           0, 0, _TlgFA,  pVals,  cVals,  __VA_ARGS__)
 #define TraceLoggingGuidFixedArray(pVals, cVals, ...)             _TlgArg(GUID,       TlgInGUID,             0, 0, _TlgFA,  pVals,  cVals,  __VA_ARGS__)
 #define TraceLoggingPointerFixedArray(pVals, cVals, ...)          _TlgArg(LPVOID,     TlgInPOINTER,          0, 0, _TlgFA,  pVals,  cVals,  __VA_ARGS__)
+#define TraceLoggingCodePointerFixedArray(pVals, cVals, ...)      _TlgArg(LPVOID,TlgInPOINTER,TlgOutCODE_POINTER,1,_TlgFA,  pVals,  cVals,  __VA_ARGS__)
 #define TraceLoggingFileTimeFixedArray(pVals, cVals, ...)         _TlgArg(struct _FILETIME,TlgInFILETIME,    0, 0, _TlgFA,  pVals,  cVals,  __VA_ARGS__)
 #define TraceLoggingSystemTimeFixedArray(pVals, cVals, ...)       _TlgArg(struct _SYSTEMTIME,TlgInSYSTEMTIME,0, 0, _TlgFA,  pVals,  cVals,  __VA_ARGS__)
 #define TraceLoggingHexInt8FixedArray(pVals, cVals, ...)          _TlgArg(INT8,       TlgInUINT8,   TlgOutHEX, 1, _TlgFA,  pVals,  cVals,  __VA_ARGS__)
@@ -1085,6 +1087,7 @@ Examples:
 #define TraceLoggingBoolArray(pVals, cVals, ...)       _TlgArg(INT32,      TlgInBOOL32,           0, 0, _TlgA,  pVals,  cVals,  __VA_ARGS__)
 #define TraceLoggingGuidArray(pVals, cVals, ...)       _TlgArg(GUID,       TlgInGUID,             0, 0, _TlgA,  pVals,  cVals,  __VA_ARGS__)
 #define TraceLoggingPointerArray(pVals, cVals, ...)    _TlgArg(LPVOID,     TlgInPOINTER,          0, 0, _TlgA,  pVals,  cVals,  __VA_ARGS__)
+#define TraceLoggingCodePointerArray(pVals, cVals, ...) _TlgArg(LPVOID,TlgInPOINTER,TlgOutCODE_POINTER,1,_TlgA, pVals,  cVals,  __VA_ARGS__)
 #define TraceLoggingFileTimeArray(pVals, cVals, ...)   _TlgArg(struct _FILETIME, TlgInFILETIME,   0, 0, _TlgA,  pVals,  cVals,  __VA_ARGS__)
 #define TraceLoggingSystemTimeArray(pVals, cVals, ...) _TlgArg(struct _SYSTEMTIME, TlgInSYSTEMTIME,0,0, _TlgA,  pVals,  cVals,  __VA_ARGS__)
 #define TraceLoggingHexInt8Array(pVals, cVals, ...)    _TlgArg(INT8,       TlgInUINT8,   TlgOutHEX, 1, _TlgA,  pVals,  cVals,  __VA_ARGS__)
@@ -1752,6 +1755,7 @@ enum TlgOut_t
     // RS1+: Values 32 and higher are the same as the corresponding TDH_OUTTYPE values.
     TlgOutUTF8 = 35, // Used with InType = ansistring (counted and nul-terminated)
     TlgOutPKCS7_WITH_TYPE_INFO = 36, // Used with InType = binary
+    TlgOutCODE_POINTER = 37, // Used with InType = pointer
     _TlgOutMax,
     _TlgOutChain = 128,
     _TlgOutTypeMask = _TlgOutChain - 1
@@ -3506,9 +3510,21 @@ template<UINT32 n> struct _TraceLoggingEventTag : _TlgIntegralConstant<UINT32, n
             L##providerName \
         ); \
     _TlgDefineProvider_functionWrapperEnd##requiresWrapper
+
 #define _TlgDefineProvider_functionWrapperBegin0(functionPostfix)
+
+#if defined(XBOX_SYSTEMOS)
+
+#define _TlgDefineProvider_functionWrapperBegin1(functionPostfix) void __cdecl _TLG_PASTE(_TlgDefineProvider_annotation_, functionPostfix)(void) \
+                                                {
+
+#else
+
 #define _TlgDefineProvider_functionWrapperBegin1(functionPostfix) static void __cdecl _TLG_PASTE(_TlgDefineProvider_annotation_, functionPostfix)(void) \
                                                 {
+
+#endif
+
 #define _TlgDefineProvider_functionWrapperEnd0
 #define _TlgDefineProvider_functionWrapperEnd1  }
 

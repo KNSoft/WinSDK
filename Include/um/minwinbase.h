@@ -162,6 +162,15 @@ typedef enum _FINDEX_SEARCH_OPS {
 } FINDEX_SEARCH_OPS;
 #endif /* _WIN32_WINNT >= 0x0400 */
 
+#if(_WIN32_WINNT >= 0x0400)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+typedef enum _READ_DIRECTORY_NOTIFY_INFORMATION_CLASS {
+    ReadDirectoryNotifyInformation         = 1,
+    ReadDirectoryNotifyExtendedInformation // 2
+} READ_DIRECTORY_NOTIFY_INFORMATION_CLASS, *PREAD_DIRECTORY_NOTIFY_INFORMATION_CLASS;
+#endif
+#endif /* _WIN32_WINNT >= 0x0400 */
+
 typedef enum _GET_FILEEX_INFO_LEVELS {
     GetFileExInfoStandard,
     GetFileExMaxInfoLevel
@@ -279,6 +288,11 @@ typedef DWORD (WINAPI *PTHREAD_START_ROUTINE)(
     LPVOID lpThreadParameter
     );
 typedef PTHREAD_START_ROUTINE LPTHREAD_START_ROUTINE;
+
+typedef LPVOID (WINAPI *PENCLAVE_ROUTINE)(
+    LPVOID lpThreadParameter
+    );
+typedef PENCLAVE_ROUTINE LPENCLAVE_ROUTINE;
 
 typedef struct _EXCEPTION_DEBUG_INFO {
     EXCEPTION_RECORD ExceptionRecord;

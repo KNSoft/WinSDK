@@ -1212,8 +1212,13 @@ extern HRESULT WINAPI                   WTHelperCertCheckValidSignature(CRYPT_PR
 
 //
 // Biometric entries
-
+//
 #define SPC_WINDOWS_HELLO_COMPATIBILITY_OBJID "1.3.6.1.4.1.311.10.41.1"
+
+//
+// Natural Auth entries
+//
+#define SPC_NATURAL_AUTH_PLUGIN_OBJID       "1.3.6.1.4.1.311.96.1.1"
 
 //
 //  encode/decode internal defines

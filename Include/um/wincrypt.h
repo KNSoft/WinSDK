@@ -3487,6 +3487,9 @@ CryptDecodeObject(
 // Signed by Microsoft through EV hardware certification (EV WHQL)
 #define szOID_EV_WHQL_CRYPTO            "1.3.6.1.4.1.311.10.3.39"
 
+// Image can be executed in a VSM Enclave
+#define szOID_ENCLAVE_SIGNING           "1.3.6.1.4.1.311.10.3.42"
+
 // The following extension is set in the disallowed CTL to trigger
 // a quicker sync of the autorootupdate CTL
 #define szOID_SYNC_ROOT_CTL_EXT         "1.3.6.1.4.1.311.10.3.50"
@@ -3593,8 +3596,11 @@ CryptDecodeObject(
 //  Sinosun                 "SNS"   0x53 0x4E 0x53 0x00
 //  Texas Instruments       "TXN"   0x54 0x58 0x4E 0x00
 //  Winbond                 "WEC"   0x57 0x45 0x43 0x00
+//  Fuzhou Rockchip         "ROCC"  0x52 0x4F 0x43 0x43
 //
-// Obtained from: http://www.trustedcomputinggroup.org/files/static_page_files/33FCF23D-1A4B-B294-D07ED1FE636CF4BE/Vendor_ID_Registry_0%207_clean.pdf
+// Obtained from: https://trustedcomputinggroup.org/wp-content/uploads/Vendor_ID_Registry_0-8_clean.pdf
+
+#define szOID_CT_CERT_SCTLIST               "1.3.6.1.4.1.11129.2.4.2" // OCTET string
 
 
 // pkcs10 attributes
@@ -20693,6 +20699,7 @@ PFXImportCertStore(
 #define PKCS12_ONLY_NOT_ENCRYPTED_CERTIFICATES 0x00000800
 #define PKCS12_ALLOW_OVERWRITE_KEY  0x00004000  // allow overwrite existing key
 #define PKCS12_NO_PERSIST_KEY       0x00008000  // key will not be persisted
+#define PKCS12_VIRTUAL_ISOLATION_KEY 0x00010000  // key will be saved into VSM
 #define PKCS12_IMPORT_RESERVED_MASK 0xffff0000
 
 #define PKCS12_OBJECT_LOCATOR_ALL_IMPORT_FLAGS          \

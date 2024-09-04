@@ -443,9 +443,17 @@ DEFINE_GUID(StyleId_Emphasis_GUID,                                      0xca6e7d
 DEFINE_GUID(StyleId_Quote_GUID,                                         0x5d1c21ea, 0x8195, 0x4f6c, 0x87, 0xea, 0x5d, 0xab, 0xec, 0xe6, 0x4c, 0x1d);
 DEFINE_GUID(StyleId_BulletedList_GUID,                                  0x5963ed64, 0x6426, 0x4632, 0x8c, 0xaf, 0xa3, 0x2a, 0xd4, 0x02, 0xd9, 0x1a);
 DEFINE_GUID(StyleId_NumberedList_GUID,                                  0x1e96dbd5, 0x64c3, 0x43d0, 0xb1, 0xee, 0xb5, 0x3b, 0x06, 0xe3, 0xed, 0xdf);
+DEFINE_GUID(Notification_Event_GUID,                                    0x72c5a2f7, 0x9788, 0x480f, 0xb8, 0xeb, 0x4d, 0xee, 0x00, 0xf6, 0x18, 0x6f);
 
 DEFINE_GUID(SID_IsUIAutomationObject,                                   0xb96fdb85, 0x7204, 0x4724, 0x84, 0x2b, 0xc7, 0x05, 0x9d, 0xed, 0xb9, 0xd0);
 DEFINE_GUID(SID_ControlElementProvider,                                 0xf4791d68, 0xe254, 0x4ba3, 0x9a, 0x53, 0x26, 0xa5, 0xc5, 0x49, 0x79, 0x46);
+
+DEFINE_GUID(IsSelectionPattern2Available_Property_GUID,                 0x490806fb, 0x6e89, 0x4a47, 0x83, 0x19, 0xd2, 0x66, 0xe5, 0x11, 0xf0, 0x21);
+DEFINE_GUID(Selection2_FirstSelectedItem_Property_GUID,                 0xcc24ea67, 0x369c, 0x4e55, 0x9f, 0xf7, 0x38, 0xda, 0x69, 0x54, 0x0c, 0x29);
+DEFINE_GUID(Selection2_LastSelectedItem_Property_GUID,                  0xcf7bda90, 0x2d83, 0x49f8, 0x86, 0x0c, 0x9c, 0xe3, 0x94, 0xcf, 0x89, 0xb4);
+DEFINE_GUID(Selection2_CurrentSelectedItem_Property_GUID,               0x34257c26, 0x83b5, 0x41a6, 0x93, 0x9c, 0xae, 0x84, 0x1c, 0x13, 0x62, 0x36);
+DEFINE_GUID(Selection2_ItemCount_Property_GUID,                         0xbb49eb9f, 0x456d, 0x4048, 0xb5, 0x91, 0x9c, 0x20, 0x26, 0xb8, 0x46, 0x36);
+DEFINE_GUID(Selection_Pattern2_GUID,                                    0xfba25cab, 0xab98, 0x49f7, 0xa7, 0xdc, 0xfe, 0x53, 0x9d, 0xc1, 0x5b, 0xe7);
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
@@ -653,7 +661,7 @@ enum AutomationIdentifierType
     AutomationIdentifierType_LandmarkType,
     AutomationIdentifierType_Annotation,
     AutomationIdentifierType_Changes,
-    AutomationIdentifierType_Style
+    AutomationIdentifierType_Style,
 };
 
 int WINAPI UiaLookupId(AutomationIdentifierType type, const GUID* pGuid);
@@ -685,7 +693,8 @@ enum EventArgsType
     EventArgsType_AsyncContentLoaded,
     EventArgsType_WindowClosed,
     EventArgsType_TextEditTextChanged,
-    EventArgsType_Changes
+    EventArgsType_Changes,
+    EventArgsType_Notification,
 };
 
 enum AsyncContentLoadedState
@@ -760,6 +769,12 @@ HRESULT WINAPI UiaRaiseStructureChangedEvent(IRawElementProviderSimple * pProvid
 HRESULT WINAPI UiaRaiseAsyncContentLoadedEvent(IRawElementProviderSimple * pProvider, AsyncContentLoadedState asyncContentLoadedState, double percentComplete);
 HRESULT WINAPI UiaRaiseTextEditTextChangedEvent(IRawElementProviderSimple * pProvider, TextEditChangeType textEditChangeType, SAFEARRAY *pChangedData);
 HRESULT WINAPI UiaRaiseChangesEvent(IRawElementProviderSimple * pProvider, int eventIdCount, struct UiaChangeInfo * pUiaChanges);
+HRESULT WINAPI UiaRaiseNotificationEvent(
+    _In_ IRawElementProviderSimple* provider,
+    NotificationKind notificationKind,
+    NotificationProcessing notificationProcessing,
+    _In_opt_ BSTR displayString,
+    _In_ BSTR activityId);
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion

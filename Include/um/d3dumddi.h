@@ -34,10 +34,12 @@ typedef struct _D3DDDI_PRESENTFLAGS
     {
         struct
         {
-            UINT    Blt                 : 1;        // 0x00000001
-            UINT    ColorFill           : 1;        // 0x00000002
-            UINT    Flip                : 1;        // 0x00000004
-            UINT    Reserved            :29;        // 0xFFFFFFF8
+            UINT    Blt                  : 1;        // 0x00000001
+            UINT    ColorFill            : 1;        // 0x00000002
+            UINT    Flip                 : 1;        // 0x00000004
+            UINT    AllowTearing         : 1;        // 0x00000008
+            UINT    AllowFlexibleRefresh : 1;        // 0x00000010
+            UINT    Reserved             :27;        // 0xFFFFFFE0
         };
         UINT    Value;
     };

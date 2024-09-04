@@ -150,6 +150,8 @@ typedef enum _MINIDUMP_STREAM_TYPE {
     JavaScriptDataStream        = 20,
     SystemMemoryInfoStream      = 21,
     ProcessVmCountersStream     = 22,
+    IptTraceStream              = 23,
+    ThreadNamesStream           = 24,
 
     ceStreamNull                = 0x8000,
     ceStreamSystemInfo          = 0x8001,
@@ -704,7 +706,22 @@ typedef struct _MINIDUMP_MEMORY_INFO_LIST {
     ULONG64 NumberOfEntries;
 } MINIDUMP_MEMORY_INFO_LIST, *PMINIDUMP_MEMORY_INFO_LIST;
 
-    
+
+//
+// The thread names stream in a minidump, containing information
+// about each thread's name/description (if available).
+//
+
+typedef struct _MINIDUMP_THREAD_NAME {
+    ULONG ThreadId;
+    RVA64 RvaOfThreadName;
+} MINIDUMP_THREAD_NAME, *PMINIDUMP_THREAD_NAME;
+
+typedef struct _MINIDUMP_THREAD_NAME_LIST {
+    ULONG NumberOfThreadNames;
+    MINIDUMP_THREAD_NAME ThreadNames[0]; // Variable size buffer
+} MINIDUMP_THREAD_NAME_LIST, *PMINIDUMP_THREAD_NAME_LIST;
+
 //
 // The memory information stream contains memory region
 // description information.  This stream corresponds to
@@ -1256,7 +1273,8 @@ typedef enum _MINIDUMP_TYPE {
     MiniDumpWithModuleHeaders              = 0x00080000,
     MiniDumpFilterTriage                   = 0x00100000,
     MiniDumpWithAvxXStateContext           = 0x00200000,
-    MiniDumpValidTypeFlags                 = 0x003fffff,
+    MiniDumpWithIptTrace                   = 0x00400000,
+    MiniDumpValidTypeFlags                 = 0x007fffff,
 } MINIDUMP_TYPE;
 
 //

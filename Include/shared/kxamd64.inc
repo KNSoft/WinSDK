@@ -1612,6 +1612,14 @@ ifnb <NmiFlag>
 ;       Hyper-V support RDTSCP (at least on the root partition), however.
 ;
 
+
+ifdef XBOX_SYSTEMOS
+
+        rdtscp                          ; read processor number
+        mov     eax, ecx                ; set processor number
+
+else
+
         mov     eax, KGDT64_R3_CMTEB    ; set selector number
         lsl     eax, eax                ; load segment limit
         jz      short third             ; if z, processor number encoded
@@ -1641,17 +1649,14 @@ ifnb <NmiFlag>
 
 third:
 
-ifndef XBOX_SYSTEMOS
-
         mov     r8d, eax                ; make a copy of segment limit
         and     r8d, 3ffh               ; get group number
         shl     r8d, 6                  ; shift the group number by 6 bits
-
-endif
-
         shr     eax, 14                 ; extract processor number
 
 fourth:
+
+endif
 
 ;
 ; Load the correct kernel GS base.
@@ -1662,11 +1667,6 @@ fourth:
 ifndef XBOX_SYSTEMOS
 
         lea     rdx, KiProcessorNumberToIndexMappingTable ; get mapping table
-
-endif
-
-ifndef XBOX_SYSTEMOS
-
         or      eax, r8d                ; get the index to the mapping table
         mov     eax, [rdx + rax * 4]    ; processor index
 
@@ -2223,6 +2223,8 @@ ifidn <ErrorCode>, <Virtual>
 
 endif
 
+ifndef XBOX_SYSTEMOS
+
 ifidn <ErrorCode>, <Secure>
 
         test    ax, LDT_MASK            ; is fault a secure fault?
@@ -2233,6 +2235,8 @@ ifidn <ErrorCode>, <Secure>
         xchg    rcx, qword ptr gs:[PcSfCode] ; get and clear secure fault code
 
 gtf10:                                  ; rejoin common code
+
+endif
 
 endif
 

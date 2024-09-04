@@ -320,7 +320,8 @@
       <containerRef id="WDI_TLV_ASSOCIATION_RESPONSE_RESULT_PARAMETERS" name="AssocResponseResult" type="AssocResponseResultParametersContainer" />
       <containerRef id="WDI_TLV_ASSOCIATION_RESPONSE_FRAME" name="AssocResponseFrame" type="ByteBlob" />
       <containerRef id="WDI_TLV_BEACON_IES" name="BeaconIEs" type="ByteBlob" />
-      <containerRef id="WDI_TLV_PHY_TYPE_LIST" name="ActivePhyList" type="PhyTypeListContainer"  optional="true" />
+      <containerRef id="WDI_TLV_PHY_TYPE_LIST" name="ActivePhyList" type="PhyTypeListContainer"  versionAdded="WDI_VERSION_1_1_5" />
+      <containerRef id="WDI_TLV_PHY_TYPE_LIST" name="ActivePhyList" type="PhyTypeListContainer"  optional="true" versionRemoved="WDI_VERSION_1_1_5" />
     </message>
 
     <message commandId="74" type="" description="reserved" direction="Both" />
@@ -1203,11 +1204,15 @@
     <container name="PortAttributesContainer" type="WDI_PORT_ATTRIBUTES_CONTAINER" description="Container for Create port complete indication attributes.">
       <groupRef name="PortAttributesParameters" ref="PortAttributesParametersStruct" description="Struct for Create port complete indication"/>
     </container>
-    
+
     <container name="ReceiveOffloadCapabilitiesContainer" type="WDI_RECEIVE_COALESCE_OFFLOAD_CAPABILITIES_CONTAINER" description="Container for Receive Offload">
       <groupRef name="ReceiveOffloadParameters" ref="ReceiveOffloadParametersStruct" description="Struct for Receive Offload parameters"/>
     </container>
-    
+
+    <container name="OffloadScopeContainer" type="WDI_OFFLOAD_SCOPE_CONTAINER" description="Container for Offload Scope">
+      <groupRef name="OffloadScopeParameters" ref="OffloadScopeParametersStruct" description="Struct for Offload Scope parameters"/>
+    </container>
+
     <aggregateContainer name="LsoV2CapabilitiesContainer" type="WDI_LSO_V2_CAPABILITIES_CONTAINER" description="Container for LSO V2.">
       <containerRef id="WDI_TLV_IPV4_LSO_V2" name="Ipv4LSO" type="Ipv4LSOContainer" />
       <containerRef id="WDI_TLV_IPV6_LSO_V2" name="Ipv6LSO" type="Ipv6LSOContainer" />
@@ -1218,6 +1223,7 @@
       <containerRef id="WDI_TLV_LSO_V1_CAPABILITIES" name="LsoV1Capabilities" type="LsoV1CapabilitiesContainer" />
       <containerRef id="WDI_TLV_LSO_V2_CAPABILITIES" name="LsoV2Capabilities" type="LsoV2CapabilitiesContainer" />
       <containerRef id="WDI_TLV_RECEIVE_COALESCE_OFFLOAD_CAPABILITIES" name="ReceiveOffloadCapabilities" type="ReceiveOffloadCapabilitiesContainer" />
+      <containerRef id="WDI_TLV_OFFLOAD_SCOPE" name="OffloadScope" type="OffloadScopeContainer" versionAdded="WDI_VERSION_1_1_5" />
     </aggregateContainer>
 
     <container name="DeletePortParametersContainer" description="Container for Task delete port" type="WDI_TASK_DELETE_PORT_PARAMETERS_CONTAINER">
@@ -2317,12 +2323,19 @@
       <uint32 name="IpExtensionHeadersSupported" description="Whether or not IP extension headers are supported" />
       <uint32 name="TcpOptionsSupported" description="Whether or not TCP Options are supported in this offload" />
     </propertyGroup>
-    
+
     <propertyGroup name="ReceiveOffloadParametersStruct" type="WDI_RECEIVE_COALESCE_OFFLOAD_CAPABILITIES" description="Structure definition for Receive offload">
       <uint8 name="Ipv4Enabled" description="Whether or not Rx Coalesce is enabled for V4" />
       <uint8 name="Ipv6Enabled" description="Whether or not Rx Coalesce is enabled for V6" />   
     </propertyGroup>
-    
+
+    <propertyGroup name="OffloadScopeParametersStruct" type="WDI_OFFLOAD_SCOPE" description="Structure definition for Offload Scope">
+      <uint8 name="ChecksumOffloadSupportedOnAllPorts" description="Whether Checksum Offload params are applicable on all ports" />
+      <uint8 name="LsoV1OffloadSupportedOnAllPorts" description="Whether LsoV1 Offload params are applicable on all ports" />
+      <uint8 name="LsoV2OffloadSupportedOnAllPorts" description="Whether LsoV2 Offload params are applicable on all ports" />
+      <uint8 name="RscOffloadSupportedOnAllPorts" description="Whether RSC Offload params are applicable on all ports" />
+    </propertyGroup>
+
     <propertyGroup name="P2PSendActionFrameResponseParamsStruct" type="WDI_P2P_SEND_ACTION_FRAME_RESPONSE_PARAMETERS" description="Structure definition for Action Frame Response Parameters">
       <namedType name="ResponseFrameType" type="WDI_P2P_ACTION_FRAME_TYPE" description="Type of Response Frame to be sent." />
       <namedType name="PeerDeviceAddress" type="WDI_MAC_ADDRESS" description="Device address of target peer P2P device." />

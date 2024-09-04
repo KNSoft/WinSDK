@@ -68,7 +68,7 @@ typedef VOID (WINAPI *PFN_NCRYPT_FREE)(
 
 typedef struct NCRYPT_ALLOC_PARA {
     DWORD                   cbSize;     // size of this structure
-    PFN_NCRYPT_ALLOC        pfnAlloc;           
+    PFN_NCRYPT_ALLOC        pfnAlloc;
     PFN_NCRYPT_FREE         pfnFree;
 } NCRYPT_ALLOC_PARA;
 
@@ -189,7 +189,7 @@ typedef struct NCRYPT_ALLOC_PARA {
 #define NCRYPTBUFFER_DATA                           1
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
-#define NCRYPTBUFFER_PROTECTION_DESCRIPTOR_STRING   3   // The buffer contains a null-terminated Unicode string that contains the Protection Descriptor. 
+#define NCRYPTBUFFER_PROTECTION_DESCRIPTOR_STRING   3   // The buffer contains a null-terminated Unicode string that contains the Protection Descriptor.
 #define NCRYPTBUFFER_PROTECTION_FLAGS               4   // DWORD flags to be passed to NCryptCreateProtectionDescriptor function.
 #endif // (NTDDI_VERSION >= NTDDI_WIN8)
 
@@ -220,6 +220,10 @@ typedef struct NCRYPT_ALLOC_PARA {
 #define NCRYPTBUFFER_ATTESTATIONSTATEMENT_BLOB              51
 #define NCRYPTBUFFER_ATTESTATION_CLAIM_TYPE                 52
 #define NCRYPTBUFFER_ATTESTATION_CLAIM_CHALLENGE_REQUIRED   53
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+#define NCRYPTBUFFER_VSM_KEY_ATTESTATION_CLAIM_RESTRICTIONS 54
+#endif
 
 #if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 //for generic ecc
@@ -254,7 +258,7 @@ typedef ULONG_PTR NCRYPT_SECRET_HANDLE;
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 
-typedef _Struct_size_bytes_(cbSize + cbIV + cbOtherInfo) 
+typedef _Struct_size_bytes_(cbSize + cbIV + cbOtherInfo)
 struct _NCRYPT_CIPHER_PADDING_INFO
 {
     // size of this struct
@@ -263,26 +267,26 @@ struct _NCRYPT_CIPHER_PADDING_INFO
     // See NCRYPT_CIPHER_ flag values
     DWORD       dwFlags;
 
-    // [in, out, optional] 
-    // The address of a buffer that contains the initialization vector (IV) to use during encryption. 
-    // The cbIV parameter contains the size of this buffer. This function will modify the contents of this buffer. 
+    // [in, out, optional]
+    // The address of a buffer that contains the initialization vector (IV) to use during encryption.
+    // The cbIV parameter contains the size of this buffer. This function will modify the contents of this buffer.
     // If you need to reuse the IV later, make sure you make a copy of this buffer before calling this function.
     _Field_size_bytes_(cbIV)
     PUCHAR      pbIV;
     ULONG       cbIV;
 
-    // [in, out, optional] 
-    // The address of a buffer that contains the algorithm specific info to use during encryption. 
-    // The cbOtherInfo parameter contains the size of this buffer. This function will modify the contents of this buffer. 
+    // [in, out, optional]
+    // The address of a buffer that contains the algorithm specific info to use during encryption.
+    // The cbOtherInfo parameter contains the size of this buffer. This function will modify the contents of this buffer.
     // If you need to reuse the buffer later, make sure you make a copy of this buffer before calling this function.
     //
-    // For Microsoft providers, when an authenticated encryption mode is used, 
+    // For Microsoft providers, when an authenticated encryption mode is used,
     // this parameter must point to a serialized BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO structure.
     //
     // NOTE: All pointers inside a structure must be to a data allocated within pbOtherInfo buffer.
     //
     _Field_size_bytes_(cbOtherInfo)
-    PUCHAR      pbOtherInfo;            
+    PUCHAR      pbOtherInfo;
     ULONG       cbOtherInfo;
 
 } NCRYPT_CIPHER_PADDING_INFO, *PNCRYPT_CIPHER_PADDING_INFO;
@@ -322,14 +326,100 @@ typedef struct _NCRYPT_KEY_ATTEST_PADDING_INFO {
 //
 #if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
-#define NCRYPT_CLAIM_AUTHORITY_ONLY          0x00000001
-#define NCRYPT_CLAIM_SUBJECT_ONLY            0x00000002
-#define NCRYPT_CLAIM_WEB_AUTH_SUBJECT_ONLY   0x00000102
-#define NCRYPT_CLAIM_AUTHORITY_AND_SUBJECT   0x00000003
-#define NCRYPT_CLAIM_UNKNOWN                 0x00001000
-
+#define NCRYPT_CLAIM_AUTHORITY_ONLY                         0x00000001
+#define NCRYPT_CLAIM_SUBJECT_ONLY                           0x00000002
+#define NCRYPT_CLAIM_WEB_AUTH_SUBJECT_ONLY                  0x00000102
+#define NCRYPT_CLAIM_AUTHORITY_AND_SUBJECT                  0x00000003
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+#define NCRYPT_CLAIM_VSM_KEY_ATTESTATION_STATEMENT          0x00000004
+#endif (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+#define NCRYPT_CLAIM_UNKNOWN                                0x00001000
 
 #endif // (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+
+// NCryptCreateClaim claim types, flags and buffer types
+
+#define NCRYPT_ISOLATED_KEY_FLAG_CREATED_IN_ISOLATION 0x00000001 // if set, this key was generated in isolation, not imported
+#define NCRYPT_ISOLATED_KEY_FLAG_IMPORT_ONLY          0x00000002 // if set, this key can only be used for importing other keys
+
+#define NCRYPT_ISOLATED_KEY_ATTESTED_ATTRIBUTES_V0 0
+#define NCRYPT_ISOLATED_KEY_ATTESTED_ATTRIBUTES_CURRENT_VERSION NCRYPT_ISOLATED_KEY_ATTESTED_ATTRIBUTES_V0
+
+typedef struct _NCRYPT_ISOLATED_KEY_ATTESTED_ATTRIBUTES
+{
+   ULONG Version; // set to NCRYPT_ISOLATED_KEY_ATTESTED_ATTRIBUTES_V0
+   ULONG Flags;   // NCRYPT_ISOLATED_KEY_FLAG_ flags
+   ULONG cbPublicKeyBlob;
+   // pbPublicKeyBlob[cbPublicKeyBlob] - exported public key
+} NCRYPT_ISOLATED_KEY_ATTESTED_ATTRIBUTES, *PNCRYPT_ISOLATED_KEY_ATTESTED_ATTRIBUTES;
+
+#define NCRYPT_VSM_KEY_ATTESTATION_STATEMENT_V0 0
+#define NCRYPT_VSM_KEY_ATTESTATION_STATEMENT_CURRENT_VERSION NCRYPT_VSM_KEY_ATTESTATION_STATEMENT_V0
+
+typedef struct _NCRYPT_VSM_KEY_ATTESTATION_STATEMENT
+{
+    ULONG Magic;        // {'I', 'M', 'S', 'V'} - 'VSMI' for VSM Isolated
+    ULONG Version;      // Set to NCRYPT_VSM_KEY_ATTESTATION_STATEMENT_CURRENT_VERSION
+    ULONG cbSignature;  // Secure kernel signature over the isolation report
+    ULONG cbReport;     // Key isolation report from the secure kernel
+    ULONG cbAttributes; // Attributes of the isolated key including public key blob
+    // UCHAR Signature[cbSignature]    -- Secure kernel signature of the report
+    // UCHAR Report[cbReport]          -- Secure kernel report including hash of Attributes
+    // UCHAR Attributes[cbAttributes]  -- Trustlet-reported attributes of the key
+} NCRYPT_VSM_KEY_ATTESTATION_STATEMENT, *PNCRYPT_VSM_KEY_ATTESTATION_STATEMENT;
+
+// Buffer contents for NCryptVerifyClaim (for buffer type NCRYPTBUFFER_ISOLATED_KEY_ATTESTATION_CLAIM_RESTRICTIONS)
+
+#define NCRYPT_VSM_KEY_ATTESTATION_CLAIM_RESTRICTIONS_V0 0
+#define NCRYPT_VSM_KEY_ATTESTATION_CLAIM_RESTRICTIONS_CURRENT_VERSION NCRYPT_VSM_KEY_ATTESTATION_CLAIM_RESTRICTIONS_V0
+
+#pragma warning(disable:4214) // bit fields type other than int
+typedef struct _NCRYPT_VSM_KEY_ATTESTATION_CLAIM_RESTRICTIONS
+{
+    ULONG Version;            // Set to NCRYPT_VSM_KEY_ATTESTATION_CLAIM_RESTRICTIONS_V0
+    ULONGLONG TrustletId;     // Trustlet type
+    ULONG MinSvn;             // Minimum acceptable trustlet SVN, 0 if don't care
+    ULONG FlagsMask;          // Which of NCRYPT_ISOLATED_KEY_ flags to check
+    ULONG FlagsExpected;      // Expected values of flags inside the mask
+    ULONG AllowDebugging : 1; // Is it okay for the trustlet to be debugged, 0 if no
+    ULONG Reserved : 31;      // Future extension area, must be 0
+} NCRYPT_VSM_KEY_ATTESTATION_CLAIM_RESTRICTIONS, *PNCRYPT_VSM_KEY_ATTESTATION_CLAIM_RESTRICTIONS;
+#pragma warning(default:4214) // bit fields type other than int
+
+// Structures to assist with importation of isolated keys
+
+#define NCRYPT_EXPORTED_ISOLATED_KEY_HEADER_V0 0
+#define NCRYPT_EXPORTED_ISOLATED_KEY_HEADER_CURRENT_VERSION NCRYPT_EXPORTED_ISOLATED_KEY_HEADER_V0
+
+#pragma warning(disable:4214) // bit fields type other than int
+typedef struct _NCRYPT_EXPORTED_ISOLATED_KEY_HEADER
+{
+    ULONG Version;         // Set to NCRYPT_EXPORTED_ISOLATED_KEY_HEADER_V0
+    ULONG KeyUsage;        // Set to NCRYPT_ALLOW_KEY_IMPORT_FLAG for import-only keys
+    ULONG PerBootKey : 1;  // Set to TRUE if the key is to be valid in the current boot cycle only
+    ULONG Reserved : 31;   // Leave as 0
+    ULONG cbAlgName;       // Number of bytes in Unicode algorithm name following header + terminating NULL
+    ULONG cbNonce;         // Number of bytes in the nonce used to encrypt the isolated key
+    ULONG cbAuthTag;       // Number of bytes in authentication tag resulting from encrypting the isolated key
+    ULONG cbWrappingKey;   // Number of bytes in encrypted wrapping key blob
+    ULONG cbIsolatedKey;   // Number of bytes in encrypted isolated key blob
+} NCRYPT_EXPORTED_ISOLATED_KEY_HEADER, *PNCRYPT_EXPORTED_ISOLATED_KEY_HEADER;
+#pragma warning(default:4214) // bit fields type other than int
+
+typedef struct _NCRYPT_EXPORTED_ISOLATED_KEY_ENVELOPE
+{
+    NCRYPT_EXPORTED_ISOLATED_KEY_HEADER Header;
+    // UCHAR AlgorithmName[Header.cbAlgName]       -- Unicode algorithm name including terminating NULL
+    // UCHAR Nonce[Header.cbNonce]                 -- Nonce buffer used when encrypting isolated key
+    // ---- data after this point is not integrity protected in transit
+    // UCHAR AesGcmAuthTag[Header.cbAuthTag]
+    // UCHAR WrappingKeyBlob[Header.cbWrappingKey] -- RSA-OAEP encrypted AES wrapping key
+    // UCHAR IsolatedKeyBlob[Header.cbIsolatedKey] -- AES-GCM encrypted key to import
+} NCRYPT_EXPORTED_ISOLATED_KEY_ENVELOPE, *PNCRYPT_EXPORTED_ISOLATED_KEY_ENVELOPE;
+
+#endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
@@ -609,7 +699,7 @@ NCryptCreatePersistedKey(
 #endif // (NTDDI_VERSION >= NTDDI_WIN7)
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 #define NCRYPT_READER_ICON_PROPERTY             L"SmartCardReaderIcon"
-#define NCRYPT_KDF_SECRET_VALUE                 L"KDFKeySecret" 
+#define NCRYPT_KDF_SECRET_VALUE                 L"KDFKeySecret"
 //
 // Additional property strings specific for the Platform Crypto Provider
 //
@@ -639,11 +729,15 @@ NCryptCreatePersistedKey(
 #define NCRYPT_PCP_PLATFORM_BINDING_PCRDIGEST_PROPERTY     L"PCP_PLATFORM_BINDING_PCRDIGEST"
 #define NCRYPT_PCP_KEY_USAGE_POLICY_PROPERTY               L"PCP_KEY_USAGE_POLICY"
 #define NCRYPT_PCP_RSA_SCHEME_PROPERTY                     L"PCP_RSA_SCHEME"
+#define NCRYPT_PCP_RSA_SCHEME_HASH_ALG_PROPERTY            L"PCP_RSA_SCHEME_HASH_ALG"
 #define NCRYPT_PCP_TPM12_IDBINDING_PROPERTY                L"PCP_TPM12_IDBINDING"
 #define NCRYPT_PCP_TPM12_IDBINDING_DYNAMIC_PROPERTY        L"PCP_TPM12_IDBINDING_DYNAMIC"
 #define NCRYPT_PCP_TPM12_IDACTIVATION_PROPERTY             L"PCP_TPM12_IDACTIVATION"
 #define NCRYPT_PCP_KEYATTESTATION_PROPERTY                 L"PCP_TPM12_KEYATTESTATION"
 #define NCRYPT_PCP_ALTERNATE_KEY_STORAGE_LOCATION_PROPERTY L"PCP_ALTERNATE_KEY_STORAGE_LOCATION"
+#define NCRYPT_PCP_TPM_IFX_RSA_KEYGEN_PROHIBITED_PROPERTY  L"PCP_TPM_IFX_RSA_KEYGEN_PROHIBITED"
+#define NCRYPT_PCP_TPM_IFX_RSA_KEYGEN_VULNERABILITY_PROPERTY \
+                                                           L"PCP_TPM_IFX_RSA_KEYGEN_VULNERABILITY"
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS1)
 #define NCRYPT_PCP_HMAC_AUTH_POLICYREF                     L"PCP_HMAC_AUTH_POLICYREF"
@@ -658,6 +752,18 @@ NCryptCreatePersistedKey(
 #define NCRYPT_PCP_TPM_MANUFACTURER_ID_PROPERTY            L"PCP_TPM_MANUFACTURER_ID"
 #define NCRYPT_PCP_TPM_FW_VERSION_PROPERTY                 L"PCP_TPM_FW_VERSION"
 #endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+#define NCRYPT_PCP_TPM2BNAME_PROPERTY                      L"PCP_TPM2BNAME"
+#define NCRYPT_PCP_TPM_VERSION_PROPERTY                    L"PCP_TPM_VERSION"
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+
+//
+// NCRYPT_PCP_TPM_IFX_RSA_KEYGEN_VULNERABILITY_PROPERTY values
+//
+#define IFX_RSA_KEYGEN_VUL_NOT_AFFECTED     0
+#define IFX_RSA_KEYGEN_VUL_AFFECTED_LEVEL_1 1
+#define IFX_RSA_KEYGEN_VUL_AFFECTED_LEVEL_2 2
 
 //
 // BCRYPT_PCP_KEY_USAGE_POLICY values
@@ -693,7 +799,7 @@ NCryptCreatePersistedKey(
 #endif // (NTDDI_VERSION >= NTDDI_WIN8)
 
 #if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
-#define NCRYPT_CHANGEPASSWORD_PROPERTY	NCRYPT_PCP_CHANGEPASSWORD_PROPERTY 
+#define NCRYPT_CHANGEPASSWORD_PROPERTY	NCRYPT_PCP_CHANGEPASSWORD_PROPERTY
 #define NCRYPT_ALTERNATE_KEY_STORAGE_LOCATION_PROPERTY  NCRYPT_PCP_ALTERNATE_KEY_STORAGE_LOCATION_PROPERTY
 #define NCRYPT_KEY_ACCESS_POLICY_PROPERTY   L"Key Access Policy"
 #endif // (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
@@ -720,6 +826,9 @@ NCryptCreatePersistedKey(
 #define NCRYPT_ALLOW_DECRYPT_FLAG               0x00000001
 #define NCRYPT_ALLOW_SIGNING_FLAG               0x00000002
 #define NCRYPT_ALLOW_KEY_AGREEMENT_FLAG         0x00000004
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+#define NCRYPT_ALLOW_KEY_IMPORT_FLAG            0x00000008
+#endif
 #define NCRYPT_ALLOW_ALL_USAGES                 0x00ffffff
 
 // NCRYPT_UI_POLICY_PROPERTY property flags and structure
@@ -801,8 +910,8 @@ typedef struct __NCRYPT_KEY_ACCESS_POLICY_BLOB
 	DWORD   dwPolicyFlags;
 	DWORD	cbUserSid;
     DWORD	cbApplicationSid;
-	//  User Sid 
-    //  Application Sid 
+	//  User Sid
+    //  Application Sid
 }NCRYPT_KEY_ACCESS_POLICY_BLOB;
 #endif // (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
@@ -915,10 +1024,10 @@ NCryptDecrypt(
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 
-typedef struct _NCRYPT_KEY_BLOB_HEADER 
-{  
+typedef struct _NCRYPT_KEY_BLOB_HEADER
+{
     ULONG   cbSize;             // size of this structure
-    ULONG   dwMagic;  
+    ULONG   dwMagic;
     ULONG   cbAlgName;          // size of the algorithm, in bytes, including terminating 0
     ULONG   cbKeyData;
 } NCRYPT_KEY_BLOB_HEADER, *PNCRYPT_KEY_BLOB_HEADER;
@@ -933,10 +1042,26 @@ typedef struct _NCRYPT_KEY_BLOB_HEADER
 
 #endif  // (NTDDI_VERSION >= NTDDI_WIN8)
 
+typedef struct NCRYPT_TPM_LOADABLE_KEY_BLOB_HEADER
+{
+    DWORD magic;
+    DWORD cbHeader;
+    DWORD cbPublic;
+    DWORD cbPrivate;
+    DWORD cbName;
+} NCRYPT_TPM_LOADABLE_KEY_BLOB_HEADER, *PNCRYPT_TPM_LOADABLE_KEY_BLOB_HEADER;
+
+#define NCRYPT_TPM_LOADABLE_KEY_BLOB_MIN_SIZE sizeof(NCRYPT_TPM_LOADABLE_KEY_BLOB_HEADER)
+#define NCRYPT_TPM_LOADABLE_KEY_BLOB L"PcpTpmProtectedKeyBlob"
+#define NCRYPT_TPM_LOADABLE_KEY_BLOB_MAGIC 0x4D54504B //'MTPK'
+
 #define NCRYPT_PKCS7_ENVELOPE_BLOB      L"PKCS7_ENVELOPE"
 #define NCRYPT_PKCS8_PRIVATE_KEY_BLOB   L"PKCS8_PRIVATEKEY"
 #define NCRYPT_OPAQUETRANSPORT_BLOB     L"OpaqueTransport"
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+#define NCRYPT_ISOLATED_KEY_ENVELOPE_BLOB   L"ISOLATED_KEY_ENVELOPE"
+#endif
 
 // NCryptImportKey flags
 #define NCRYPT_MACHINE_KEY_FLAG         0x00000020
@@ -1115,7 +1240,7 @@ NCryptCreateClaim(
     _In_        DWORD               cbClaimBlob,
     _Out_       DWORD               *pcbResult,
     _In_        DWORD               dwFlags);
-   
+
 #endif  // (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
 
@@ -1133,7 +1258,7 @@ NCryptVerifyClaim(
     _In_        DWORD               cbClaimBlob,
     _Out_       NCryptBufferDesc    *pOutput,
     _In_        DWORD               dwFlags);
-   
+
 #endif  // (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
 

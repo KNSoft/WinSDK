@@ -10,16 +10,29 @@ import "AsyncInfo.idl";
 import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
+import "Windows.ApplicationModel.Activation.idl";
 
 // Forward Declare
+namespace Windows
+{
+    namespace ApplicationModel
+    {
+        namespace Activation
+        {
+            interface IActivatedEventArgs;
+        }
+    }
+}
+namespace Windows
+{
+    namespace Foundation
+    {
+        namespace Collections
+        {
+            runtimeclass ValueSet;
+        }
+    }
+}
 namespace Windows
 {
     namespace Foundation
@@ -37,9 +50,13 @@ namespace Windows
         {
             apicontract GameChatOverlayContract;
 
+            apicontract GamingUIProviderContract;
+
             typedef enum GameChatMessageOrigin GameChatMessageOrigin;
 
             typedef enum GameChatOverlayPosition GameChatOverlayPosition;
+
+            typedef enum GameMonitoringPermission GameMonitoringPermission;
 
             interface IGameBarStatics;
 
@@ -51,6 +68,12 @@ namespace Windows
 
             interface IGameChatOverlayStatics;
 
+            interface IGameMonitor;
+
+            interface IGameMonitorStatics;
+
+            interface IGameUIProviderActivatedEventArgs;
+
             runtimeclass GameBar;
 
             runtimeclass GameChatMessageReceivedEventArgs;
@@ -58,6 +81,10 @@ namespace Windows
             runtimeclass GameChatOverlay;
 
             runtimeclass GameChatOverlayMessageSource;
+
+            runtimeclass GameMonitor;
+
+            runtimeclass GameUIProviderActivatedEventArgs;
         }
     }
 }
@@ -71,6 +98,8 @@ namespace Windows
         {
             declare
             {
+                interface Windows.Foundation.IAsyncOperation<Windows.Gaming.UI.GameMonitoringPermission>;
+
                 interface Windows.Foundation.TypedEventHandler<Windows.Gaming.UI.GameChatOverlayMessageSource*, Windows.Gaming.UI.GameChatMessageReceivedEventArgs*>;
             }
         }
@@ -86,6 +115,11 @@ namespace Windows
         {
             [contractversion(1.0)]
             apicontract GameChatOverlayContract
+            {
+            }
+
+            [contractversion(1.0)]
+            apicontract GamingUIProviderContract
             {
             }
 
@@ -107,6 +141,14 @@ namespace Windows
                 TopCenter    = 5,
                 TopLeft      = 6,
                 TopRight     = 7
+            };
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            enum GameMonitoringPermission
+            {
+                Allowed        = 0,
+                DeniedByUser   = 1,
+                DeniedBySystem = 2
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -162,6 +204,33 @@ namespace Windows
                 HRESULT GetDefault([out] [retval] Windows.Gaming.UI.GameChatOverlay** value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Gaming.UI.GameMonitor)]
+            [uuid(12234358-DD09-4511-ADCD-8D5975D81028)]
+            interface IGameMonitor : IInspectable
+            {
+                HRESULT RequestPermissionAsync([out] [retval] Windows.Foundation.IAsyncOperation<Windows.Gaming.UI.GameMonitoringPermission>** operation);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Gaming.UI.GameMonitor)]
+            [uuid(11674B34-5AE0-4BB4-B91F-8ACB48159A71)]
+            interface IGameMonitorStatics : IInspectable
+            {
+                HRESULT GetDefault([out] [retval] Windows.Gaming.UI.GameMonitor** gameMonitor);
+            }
+
+            [contract(Windows.Gaming.UI.GamingUIProviderContract, 1.0)]
+            [exclusiveto(Windows.Gaming.UI.GameUIProviderActivatedEventArgs)]
+            [uuid(A7B3203E-CAF7-4DED-BBD2-47DE43BB6DD5)]
+            interface IGameUIProviderActivatedEventArgs : IInspectable
+                requires
+                    Windows.ApplicationModel.Activation.IActivatedEventArgs
+            {
+                [propget] HRESULT GameUIArgs([out] [retval] Windows.Foundation.Collections.ValueSet** value);
+                HRESULT ReportCompleted([in] Windows.Foundation.Collections.ValueSet* results);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [marshaling_behavior(agile)]
             [static(Windows.Gaming.UI.IGameBarStatics, Windows.Foundation.UniversalApiContract, 2.0)]
@@ -193,6 +262,24 @@ namespace Windows
             runtimeclass GameChatOverlayMessageSource
             {
                 [default] interface Windows.Gaming.UI.IGameChatOverlayMessageSource;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [static(Windows.Gaming.UI.IGameMonitorStatics, Windows.Foundation.UniversalApiContract, 5.0)]
+            [threading(both)]
+            runtimeclass GameMonitor
+            {
+                [default] interface Windows.Gaming.UI.IGameMonitor;
+            }
+
+            [contract(Windows.Gaming.UI.GamingUIProviderContract, 1.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass GameUIProviderActivatedEventArgs
+            {
+                [default] interface Windows.Gaming.UI.IGameUIProviderActivatedEventArgs;
+                interface Windows.ApplicationModel.Activation.IActivatedEventArgs;
             }
         }
     }

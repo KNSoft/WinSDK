@@ -193,6 +193,17 @@ cpp_quote( "EXTERN_GUID( MF_MPEG4SINK_SPSPPS_PASSTHROUGH, 0x5601a134, 0x2005, 0x
 // Using this feature involves an additonal file copying/remuxing.
 cpp_quote( "EXTERN_GUID( MF_MPEG4SINK_MOOV_BEFORE_MDAT, 0xf672e3ac, 0xe1e6, 0x4f10, 0xb5, 0xec, 0x5f, 0x3b, 0x30, 0x82, 0x88, 0x16);" )	
 
+// MF_MPEG4SINK_MINIMUM_PROPERTIES_SIZE 
+// {DCA1ED52-450E-4A22-8C62-4ED452F7A187} 
+// Data type: UINT32 
+// The default behavior of the mpeg4 media sink is to only use the smallest amount of storage 
+// needed when writing the metadata properties to the MP4 file header. 
+// When this attribute is specified, the media sink reserves the specified amount of storage 
+// (in bytes) for metadata properties. If the metadata data properties are updated later, or 
+// if new properties are added, the media sink will attempt to update the file in-place by 
+// writing the properties into the previously reserved space. This avoids having to rewrite 
+// the entire file to make room for the new properties. 
+cpp_quote("EXTERN_GUID( MF_MPEG4SINK_MINIMUM_PROPERTIES_SIZE, 0xdca1ed52, 0x450e, 0x4a22, 0x8c, 0x62, 0x4e, 0xd4, 0x52, 0xf7, 0xa1, 0x87);")
 
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
 #pragma endregion
@@ -608,6 +619,9 @@ enum
 
     MF_RESOLUTION_PLUGIN_CONTROL_POLICY_WEB_ONLY_EDGEMODE     = 0x00000200,
         // This flag causes the source resolver to use a local plugin control policy that only allows use of edge mode web approved plugins.
+
+    MF_RESOLUTION_ENABLE_STORE_PLUGINS                        = 0x00000400,
+    // This flag allows the source resolver to use store-distributed bytestream handler plugins
 
     //
     // Access mode requested
@@ -12411,7 +12425,8 @@ typedef enum MF_MEDIAKEYSESSION_TYPE
 {
     MF_MEDIAKEYSESSION_TYPE_TEMPORARY,
     MF_MEDIAKEYSESSION_TYPE_PERSISTENT_LICENSE,
-    MF_MEDIAKEYSESSION_TYPE_PERSISTENT_RELEASE_MESSAGE
+    MF_MEDIAKEYSESSION_TYPE_PERSISTENT_RELEASE_MESSAGE,
+    MF_MEDIAKEYSESSION_TYPE_PERSISTENT_USAGE_RECORD
 } MF_MEDIAKEYSESSION_TYPE;
 
 typedef enum MF_MEDIAKEY_STATUS
@@ -12421,7 +12436,9 @@ typedef enum MF_MEDIAKEY_STATUS
     MF_MEDIAKEY_STATUS_OUTPUT_DOWNSCALED,
     MF_MEDIAKEY_STATUS_OUTPUT_NOT_ALLOWED,
     MF_MEDIAKEY_STATUS_STATUS_PENDING,
-    MF_MEDIAKEY_STATUS_INTERNAL_ERROR
+    MF_MEDIAKEY_STATUS_INTERNAL_ERROR,
+    MF_MEDIAKEY_STATUS_RELEASED,
+    MF_MEDIAKEY_STATUS_OUTPUT_RESTRICTED
 } MF_MEDIAKEY_STATUS;
 
 //+-----------------------------------------------------------------------------
@@ -12984,5 +13001,119 @@ cpp_quote("")
 
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
 #pragma endregion
+
+[
+    object,
+    uuid(39DC7F4A-B141-4719-813C-A7F46162A2B8),
+    helpstring("IMFSensorProcessActivity Interface"),
+    local
+]
+interface IMFSensorProcessActivity : IUnknown
+{
+    HRESULT GetProcessId(
+        [out, annotation("_Out_")] ULONG* pPID
+        );
+
+    HRESULT GetStreamingState(
+        [out, annotation("_Out_")] BOOL* pfStreaming
+        );
+
+    HRESULT GetStreamingMode(
+        [out, annotation("_Out_")] MFSensorDeviceMode* pMode
+        );
+
+    HRESULT GetReportTime (
+        [out, annotation("_Out_")] FILETIME* pft
+        );
+};
+
+[
+    object,
+    uuid(3E8C4BE1-A8C2-4528-90DE-2851BDE5FEAD),
+    helpstring("IMFSensorActivityReport  Interface"),
+    local
+]
+interface IMFSensorActivityReport  : IUnknown
+{
+    HRESULT GetFriendlyName(
+        [out, size_is(cchFriendlyName), annotation("_Out_writes_z_(cchFriendlyName)")] LPWSTR FriendlyName,
+        [in, annotation("_In_")] ULONG cchFriendlyName,
+        [out, annotation("_Out_")] ULONG* pcchWritten
+        );
+
+    HRESULT GetSymbolicLink(
+        [out, size_is(cchSymbolicLink), annotation("_Out_writes_z_(cchSymbolicLink)")] LPWSTR SymbolicLink,
+        [in, annotation("_In_")] ULONG cchSymbolicLink,
+        [out, annotation("_Out_")] ULONG* pcchWritten
+        );
+
+    HRESULT GetProcessCount(
+        [out, annotation("_Out_")] ULONG* pcCount
+        );
+
+    HRESULT GetProcessActivity(
+        [in, annotation("_In_")] ULONG Index,
+        [out, annotation("_COM_Outptr_")] IMFSensorProcessActivity** ppProcessActivity
+        );
+};
+
+[
+    object,
+    uuid(683F7A5E-4A19-43CD-B1A9-DBF4AB3F7777),
+    helpstring("IMFSensorActivitiesReport Interface"),
+    local
+]
+interface IMFSensorActivitiesReport : IUnknown
+{
+    HRESULT GetCount(
+        [out, annotation("_Out_")] ULONG* pcCount
+        );
+
+    HRESULT GetActivityReport(
+        [in, annotation("_In_")] ULONG Index,
+        [out, annotation("_COM_Outptr_")] IMFSensorActivityReport** sensorActivityReport
+        );
+
+    HRESULT GetActivityReportByDeviceName(
+        [in, annotation("_In_z_")] LPCWSTR SymbolicName,
+        [out, annotation("_COM_Outptr_")] IMFSensorActivityReport** sensorActivityReport
+        );
+};
+
+[
+    object,
+    uuid(DE5072EE-DBE3-46DC-8A87-B6F631194751),
+    helpstring("IMFSensorActivitiesReportCallback Interface"),
+    local
+]
+interface IMFSensorActivitiesReportCallback : IUnknown
+{
+    HRESULT OnActivitiesReport(
+        [in, annotation("_In_")] IMFSensorActivitiesReport* sensorActivitiesReport
+        );
+};
+
+[
+    object,
+    uuid(D0CEF145-B3F4-4340-A2E5-7A5080CA05CB),
+    helpstring("IMFSensorActivityMonitor Interface"),
+    local
+]
+interface IMFSensorActivityMonitor : IUnknown
+{
+    HRESULT Start(
+        );
+
+    HRESULT Stop(
+        );
+};
+
+cpp_quote("")
+cpp_quote("STDAPI")
+cpp_quote("MFCreateSensorActivityMonitor(")
+cpp_quote("    _In_ IMFSensorActivitiesReportCallback* pCallback,")
+cpp_quote("    _COM_Outptr_ IMFSensorActivityMonitor** ppActivityMonitor")
+cpp_quote("    );")
+
 
 cpp_quote("#endif // (WINVER >= _WIN32_WINNT_WINTHRESHOLD) ")

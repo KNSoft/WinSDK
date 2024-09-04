@@ -13,23 +13,6 @@ import "Windows.Foundation.idl";
 import "Windows.System.idl";
 import "Windows.UI.idl";
 import "Windows.UI.Popups.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Esystem_h__)")
-cpp_quote("#include <Windows.System.h>")
-cpp_quote("#endif // !defined(__windows2Esystem_h__)")
-cpp_quote("#if !defined(__windows2Eui_h__)")
-cpp_quote("#include <Windows.UI.h>")
-cpp_quote("#endif // !defined(__windows2Eui_h__)")
-cpp_quote("#if !defined(__windows2Eui2Epopups_h__)")
-cpp_quote("#include <Windows.UI.Popups.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Epopups_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -159,6 +142,8 @@ namespace Windows
 
             interface IAppointmentStore2;
 
+            interface IAppointmentStore3;
+
             interface IAppointmentStoreChange;
 
             interface IAppointmentStoreChange2;
@@ -166,6 +151,8 @@ namespace Windows
             interface IAppointmentStoreChangeReader;
 
             interface IAppointmentStoreChangeTracker;
+
+            interface IAppointmentStoreChangeTracker2;
 
             interface IAppointmentStoreChangedDeferral;
 
@@ -852,6 +839,14 @@ namespace Windows
                 [overload("CreateAppointmentCalendarAsync")] HRESULT CreateAppointmentCalendarInAccountAsync([in] HSTRING name, [in] HSTRING userDataAccountId, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.Appointments.AppointmentCalendar*>** operation);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.ApplicationModel.Appointments.AppointmentStore)]
+            [uuid(4251940B-B078-470A-9A40-C2E01761F72F)]
+            interface IAppointmentStore3 : IInspectable
+            {
+                HRESULT GetChangeTracker([in] HSTRING identity, [out] [retval] Windows.ApplicationModel.Appointments.AppointmentStoreChangeTracker** result);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.ApplicationModel.Appointments.AppointmentStoreChange)]
             [uuid(A5A6E035-0A33-3654-8463-B543E90C3B79)]
@@ -889,6 +884,14 @@ namespace Windows
                 HRESULT GetChangeReader([out] [retval] Windows.ApplicationModel.Appointments.AppointmentStoreChangeReader** value);
                 HRESULT Enable();
                 HRESULT Reset();
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.ApplicationModel.Appointments.AppointmentStoreChangeTracker)]
+            [uuid(B66AAF45-9542-4CF7-8550-EB370E0C08D3)]
+            interface IAppointmentStoreChangeTracker2 : IInspectable
+            {
+                [propget] HRESULT IsTracking([out] [retval] boolean* value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1031,6 +1034,7 @@ namespace Windows
             {
                 [default] interface Windows.ApplicationModel.Appointments.IAppointmentStore;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.ApplicationModel.Appointments.IAppointmentStore2;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.ApplicationModel.Appointments.IAppointmentStore3;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1056,6 +1060,7 @@ namespace Windows
             runtimeclass AppointmentStoreChangeTracker
             {
                 [default] interface Windows.ApplicationModel.Appointments.IAppointmentStoreChangeTracker;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.ApplicationModel.Appointments.IAppointmentStoreChangeTracker2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

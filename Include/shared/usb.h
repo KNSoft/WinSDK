@@ -28,6 +28,9 @@ Revision History:
 #pragma region Desktop Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
+#ifndef PHYSICAL_ADDRESS
+typedef LARGE_INTEGER PHYSICAL_ADDRESS;
+#endif
 
 #ifndef _NTDDK_
 #ifndef _WDMDDK_
@@ -163,6 +166,13 @@ typedef enum _USB_CONTROLLER_FLAVOR {
 #define URB_FUNCTION_GET_DESCRIPTOR_FROM_INTERFACE   0x0028
 #define URB_FUNCTION_SET_DESCRIPTOR_TO_INTERFACE     0x0029
 
+// Reserve 0x002B-0x002F
+#define URB_FUNCTION_RESERVE_0X002B                  0x002B
+#define URB_FUNCTION_RESERVE_0X002C                  0x002C
+#define URB_FUNCTION_RESERVE_0X002D                  0x002D
+#define URB_FUNCTION_RESERVE_0X002E                  0x002E
+#define URB_FUNCTION_RESERVE_0X002F                  0x002F
+
 // USB 2.0 calls start at 0x0030
 
 #if (_WIN32_WINNT >= 0x0501)
@@ -189,12 +199,14 @@ typedef enum _USB_CONTROLLER_FLAVOR {
 #define URB_FUNCTION_ISOCH_TRANSFER_USING_CHAINED_MDL             0x0038
 #endif
 
-// Reserve 0x002B-0x002F
-#define URB_FUNCTION_RESERVE_0X002B                  0x002B
-#define URB_FUNCTION_RESERVE_0X002C                  0x002C
-#define URB_FUNCTION_RESERVE_0X002D                  0x002D
-#define URB_FUNCTION_RESERVE_0X002E                  0x002E
-#define URB_FUNCTION_RESERVE_0X002F                  0x002F
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+
+
+#define URB_FUNCTION_GET_ISOCH_PIPE_TRANSFER_PATH_DELAYS                0x003D
+
+#endif
+
 
 // for backward drivers
 #define URB_FUNCTION_RESET_PIPE     \
@@ -391,7 +403,7 @@ typedef struct _USBD_PIPE_INFORMATION {
 //
 
 //
-// override the enpoint max_packet size with the value in pipe_information 
+// override the enpoint max_packet size with the value in pipe_information
 // field
 //
 #define USBD_PF_CHANGE_MAX_PACKET             0x00000001
@@ -411,10 +423,88 @@ typedef struct _USBD_PIPE_INFORMATION {
 //
 #define USBD_PF_MAP_ADD_TRANSFERS             0x00000008
 
+#define USBD_PF_VIDEO_PRIORITY                0x00000010
+#define USBD_PF_VOICE_PRIORITY                0x00000020
+#define USBD_PF_INTERACTIVE_PRIORITY          0x00000030
+
+#define USBD_PF_PRIORITY_MASK                 0x000000F0
+
 #define USBD_PF_VALID_MASK    (USBD_PF_CHANGE_MAX_PACKET | \
                                USBD_PF_SHORT_PACKET_OPT | \
                                USBD_PF_ENABLE_RT_THREAD_ACCESS | \
-                               USBD_PF_MAP_ADD_TRANSFERS)
+                               USBD_PF_MAP_ADD_TRANSFERS | \
+                               USBD_PF_VIDEO_PRIORITY | \
+                               USBD_PF_VOICE_PRIORITY | \
+                               USBD_PF_INTERACTIVE_PRIORITY)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+
+typedef enum _USBD_ENDPOINT_OFFLOAD_MODE {
+
+    UsbdEndpointOffloadModeNotSupported = 0,
+    UsbdEndpointOffloadSoftwareAssisted,
+    UsbdEndpointOffloadHardwareAssisted
+
+} USBD_ENDPOINT_OFFLOAD_MODE;
+
+#pragma pack(push)
+#pragma pack(1)
+
+typedef struct _USBD_ENDPOINT_OFFLOAD_INFORMATION {
+
+    ULONG Size;
+
+    //
+    // Input field to be filled in by USB client driver
+    //
+
+    USHORT EndpointAddress;
+    ULONG ResourceId;
+
+    //
+    // Output fields returned by the USB host controller driver if the specified
+    // endpoint (in EndpointAddress) was successfully setup for offload mode.
+    //
+
+    USBD_ENDPOINT_OFFLOAD_MODE Mode;
+
+    //
+    // Fields from SLOT_CONTEXT describing the device
+    //
+
+    ULONG RootHubPortNumber:8;
+    ULONG RouteString:20;
+    ULONG Speed:4;
+
+    ULONG UsbDeviceAddress:8;
+    ULONG SlotId:8;
+    ULONG MultiTT:1;
+    ULONG Reserved0:15;
+
+    //
+    // Transfer ring information
+    //
+
+    PHYSICAL_ADDRESS TransferSegmentLA;
+    PVOID TransferSegmentVA;
+    size_t TransferRingSize;
+    ULONG TransferRingInitialCycleBit;
+
+    //
+    // Secondary event ring information
+    //
+
+    ULONG MessageNumber;
+    PHYSICAL_ADDRESS EventRingSegmentLA;
+    PVOID EventRingSegmentVA;
+    size_t EventRingSize;
+    ULONG EventRingInitialCycleBit;
+
+} USBD_ENDPOINT_OFFLOAD_INFORMATION, *PUSBD_ENDPOINT_OFFLOAD_INFORMATION;
+
+#pragma pack(pop)
+
+#endif
 
 typedef struct _USBD_INTERFACE_INFORMATION {
     USHORT Length;
@@ -446,6 +536,7 @@ struct _URB_SELECT_INTERFACE {
     USBD_CONFIGURATION_HANDLE ConfigurationHandle;
     USBD_INTERFACE_INFORMATION Interface;
 };
+
 
 struct _URB_SELECT_CONFIGURATION {
     struct _URB_HEADER Hdr;
@@ -694,6 +785,18 @@ struct _URB_OPEN_STATIC_STREAMS {
 
 #endif
 
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+
+struct _URB_GET_ISOCH_PIPE_TRANSFER_PATH_DELAYS {
+    struct _URB_HEADER Hdr;
+    USBD_PIPE_HANDLE PipeHandle;
+    ULONG MaximumSendPathDelayInMilliSeconds;
+    ULONG MaximumCompletionPathDelayInMilliSeconds;
+};
+
+#endif
+
 typedef _Struct_size_bytes_(UrbHeader.Length) struct _URB {
     union {
         struct _URB_HEADER
@@ -752,7 +855,17 @@ typedef _Struct_size_bytes_(UrbHeader.Length) struct _URB {
 
     #endif
 
+
+    #if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+
+
+        struct _URB_GET_ISOCH_PIPE_TRANSFER_PATH_DELAYS
+            UrbGetIsochPipeTransferPathDelays;
+
+    #endif
+
     };
+
 } URB, *PURB;
 
 #if _MSC_VER >= 1200
@@ -764,3 +877,4 @@ typedef _Struct_size_bytes_(UrbHeader.Length) struct _URB {
 #pragma endregion
 
 #endif /*  __USB_H__ */
+

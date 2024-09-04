@@ -84,6 +84,8 @@
 #define KERNEL_SECURITY_CHECK_FAILURE 0x139
 #define UNSUPPORTED_INSTRUCTION_MODE 0x151
 #define BUGCHECK_CONTEXT_MODIFIER 0x80000000
+#define INVALID_CALLBACK_STACK_ADDRESS 0x1cd
+#define INVALID_KERNEL_STACK_ADDRESS 0x1ce
 
 //
 // Breakpoint type definitions
@@ -98,28 +100,6 @@
 
 #define CidUniqueProcess 0x0
 #define CidUniqueThread 0x4
-
-//
-// Critical Section Structure Offset Definitions
-//
-
-#define CsDebugInfo 0x0
-#define CsLockCount 0x4
-#define CsRecursionCount 0x8
-#define CsOwningThread 0xc
-#define CsLockSemaphore 0x10
-#define CsSpinCount 0x14
-
-//
-// Critical Section Debug Information Structure Offset Definitions
-//
-
-#define CsType 0x0
-#define CsCreatorBackTraceIndex 0x2
-#define CsCriticalSection 0x4
-#define CsProcessLocksList 0x8
-#define CsEntryCount 0x10
-#define CsContentionCount 0x14
 
 //
 // Exception Record Offset, Flag, and Enumerated Type Definitions
@@ -203,6 +183,7 @@
 //
 
 #define IbCfgBitMap 0xb0
+#define IbWow64CfgBitMap 0xc0
 #define IbMitigationOptionsMap 0xa0
 #define PS_MITIGATION_OPTION_BITS_PER_OPTION 0x4
 #define PS_MITIGATION_OPTION_ALWAYS_ON 0x1
@@ -332,6 +313,7 @@
 #define FAST_FAIL_INVALID_NEXT_THREAD 0x1e
 #define FAST_FAIL_INVALID_CONTROL_STACK 0x2f
 #define FAST_FAIL_SET_CONTEXT_DENIED 0x30
+#define FAST_FAIL_ENCLAVE_CALL_FAILURE 0x35
 
 //
 // APC Object Structure Offset Definitions
@@ -454,7 +436,7 @@
 #define PrUserTime 0x9c
 #define PrInstrumentationCallback 0xa4
 #define KernelProcessObjectLength 0xb0
-#define ExecutiveProcessObjectLength 0x3e0
+#define ExecutiveProcessObjectLength 0x3e8
 #define Win32BatchFlushCallout 0x7
 
 //
@@ -532,11 +514,12 @@
 #define ThTimer 0xa8
 #define thProcess 0x150
 
-#define KTHREAD_AUTO_ALIGNMENT_BIT 0x0
-#define KTHREAD_GUI_THREAD_MASK 0x40
-#define KTHREAD_RESTRICTED_GUI_THREAD_MASK 0x100000
+#define KTHREAD_AUTO_ALIGNMENT_BIT 0x2
+#define KTHREAD_GUI_THREAD_MASK 0x80
+#define KTHREAD_RESTRICTED_GUI_THREAD_MASK 0x200000
 #define KTHREAD_SYSTEM_THREAD_BIT 0xa
-#define KTHREAD_QUEUE_DEFER_PREEMPTION_BIT 0xa
+#define KTHREAD_QUEUE_DEFER_PREEMPTION_BIT 0xb
+#define KTHREAD_BAM_QOS_LEVEL_MASK 0x3
 
 #define ThMiscFlags 0x4c
 #define ThThreadFlags 0x50
@@ -604,7 +587,7 @@
 #define PeBeingDebugged 0x2
 #define PeProcessParameters 0x10
 #define PeKernelCallbackTable 0x2c
-#define ProcessEnvironmentBlockLength 0x460
+#define ProcessEnvironmentBlockLength 0x468
 
 //
 // Process Parameters Block Structure Offset Definitions
@@ -860,7 +843,7 @@
 #define PcStartCycles 0xec8
 #define PcSpBase 0xc44
 #define PcCycleCounterHigh 0xef0
-#define ProcessorControlRegisterLength 0x51e0
+#define ProcessorControlRegisterLength 0x5260
 
 //
 // Defines for user shared data
@@ -907,12 +890,12 @@
 #define PbPriorityState 0x1c
 #define PbLockQueue 0x480
 #define PbPPLookasideList 0x580
-#define PbPPNPagedLookasideList 0x3200
-#define PbPPPagedLookasideList 0x3b00
+#define PbPPNPagedLookasideList 0x3280
+#define PbPPPagedLookasideList 0x3b80
 #define PbPacketBarrier 0x600
 #define PbDeferredReadyListHead 0x604
 #define PbLookasideIrpFloat 0x650
-#define PbRequestMailbox 0x4800
+#define PbRequestMailbox 0x4880
 #define PbMailbox 0x680
 #define PbDpcGate 0x700
 #define PbWaitListHead 0x780
@@ -951,10 +934,10 @@
 #define PbAdjustDpcThreshold 0x914
 #define PbParentNode 0x938
 #define PbStartCycles 0x948
-#define PbPageColor 0xaa4
-#define PbNodeColor 0xaa8
-#define PbNodeShiftedColor 0xaac
-#define PbSecondaryColorMask 0xab0
+#define PbPageColor 0xaa8
+#define PbNodeColor 0xaac
+#define PbNodeShiftedColor 0xab0
+#define PbSecondaryColorMask 0xab4
 #define PbCycleTime 0xab8
 #define PbFastReadNoWait 0x638
 #define PbFastReadWait 0x63c
@@ -962,7 +945,7 @@
 #define PbCopyReadNoWait 0x644
 #define PbCopyReadWait 0x648
 #define PbCopyReadNoWaitMiss 0x64c
-#define PbAlignmentFixupCount 0xcf8
+#define PbAlignmentFixupCount 0xd00
 #define PbExceptionDispatchCount 0x934
 #define PbProcessorVendorString 0x508
 #define PbFeatureBits 0x50c
@@ -1692,7 +1675,7 @@
 #define DcControlPcIsUnwound 0x28
 #define DcNonVolatileRegisters 0x2c
 #define DcReserved 0x30
-#define ARM_VFP_MANAGEMENT 0x1
+#define ARM_VFP_MANAGEMENT 0x0
 #define ARM_VFP_ENABLE_STATISTICS 0x0
 #define ARM_VFP_ALWAYSON 0x0
 #define ARM_VFP_LAZY_ONEWAY 0x1

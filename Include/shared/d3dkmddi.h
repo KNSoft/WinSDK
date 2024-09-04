@@ -863,8 +863,9 @@ typedef struct _DXGKARGCB_NOTIFY_INTERRUPT_DATA
 
         struct
         {
-            UINT    NodeOrdinal;          // in: Node ordinal of engine generating the notification.
-            UINT    EngineOrdinal;        // in: Engine ordinal of engine generating the notification.
+            UINT    NodeOrdinal;            // in: Node ordinal of engine generating the notification.
+            UINT    EngineOrdinal;          // in: Engine ordinal of engine generating the notification.
+            UINT64  ContextSwitchFence;     // in: Context switch fence used to perform this switch operation.
         } HwContextListSwitchCompleted;
 
         struct
@@ -1225,7 +1226,12 @@ typedef struct _DXGK_CREATECONTEXTFLAGS
             UINT    VirtualAddressing       : 1;
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_1)
             UINT    SystemProtectedContext  : 1;
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+            UINT    HwQueueSupported        : 1;
+            UINT    Reserved                : 27;
+#else  // ! DXGKDDI_INTERFACE_VERSION_WDDM2_3
             UINT    Reserved                : 28;
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_3
 #else  // ! DXGKDDI_INTERFACE_VERSION_WDDM2_1
             UINT    Reserved                : 29;
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_1
@@ -1521,6 +1527,9 @@ typedef enum _DXGK_QUERYADAPTERINFOTYPE
     DXGKQAITYPE_UEFIFRAMEBUFFERRANGES           = 18,
     DXGKQAITYPE_QUERYCOLORIMETRYOVERRIDES       = 19,
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_2
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+    DXGKQAITYPE_DISPLAYID_DESCRIPTOR   = 20,
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_3
 } DXGK_QUERYADAPTERINFOTYPE;
 
 typedef struct _DXGK_GAMMARAMPCAPS
@@ -1544,9 +1553,21 @@ typedef struct _DXGK_COLORTRANSFORMCAPS
     {
         struct
         {
-            UINT    Gamma_Rgb256x3x16   : 1;    // 0x00000001
-            UINT    Gamma_Dxgi1         : 1;    // 0x00000002
-            UINT    Reserved            :30;    // 0xFFFFFFFC
+            UINT    Gamma_Rgb256x3x16             : 1;    // 0x00000001
+            UINT    Gamma_Dxgi1                   : 1;    // 0x00000002
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+
+            UINT    Transform_3x4Matrix           : 1;    // 0x00000004
+            UINT    Transform_3x4Matrix_WideColor : 1;    // 0x00000008
+            UINT    Transform_3x4Matrix_HighColor : 1;    // 0x00000010
+            UINT    Reserved                      :27;    // 0xFFFFFFE0
+
+#else // DXGKDDI_INTERFACE_VERSION_WDDM2_3
+
+            UINT    Reserved                      :30;    // 0xFFFFFFFC
+
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_3
         };
         UINT        Value;
     };
@@ -1635,7 +1656,9 @@ typedef struct _DXGK_VIDSCHCAPS
         {
             UINT    MultiEngineAware       :1;
             UINT    VSyncPowerSaveAware    :1;
+
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WIN8)
+
             UINT    PreemptionAware        :1;
             UINT    NoDmaPatching          :1;
             UINT    CancelCommandAware     :1;
@@ -1644,17 +1667,29 @@ typedef struct _DXGK_VIDSCHCAPS
 
             UINT    No64BitAtomics         :1;
             UINT    LowIrqlPreemptCommand  :1;
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+
+            UINT    HwQueuePacketCap       :4;  // maximum number of DMA packets allowed to be queued to a node
+            UINT    Reserved               :21;
+
+#else
+
             UINT    Reserved               :25;
+
+#endif // !(DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
 
 #else
 
             UINT    Reserved               :27;
 
-#endif // DXGKDDI_INTERFACE_VERSION
+#endif // !(DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_0)
 
 #else
+
             UINT    Reserved               :30;
-#endif // DXGKDDI_INTERFACE_VERSION
+
+#endif // !(DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WIN8)
         };
         UINT        Value;
     };
@@ -1898,6 +1933,7 @@ typedef enum _DXGK_WDDMVERSION // _ADVSCH_
      DXGKDDI_WDDMv2   = 0x2000,
      DXGKDDI_WDDMv2_1 = 0x2100,
      DXGKDDI_WDDMv2_2 = 0x2200,
+     DXGKDDI_WDDMv2_3 = 0x2300,
 } DXGK_WDDMVERSION;
 #endif // DXGKDDI_INTERFACE_VERSION
 
@@ -2213,11 +2249,6 @@ typedef struct _DXGK_DISPLAY_DRIVERCAPS_EXTENSION
 
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 
-typedef struct _DXGK_QUERYINTEGRATEDDISPLAYIN
-{
-    D3DDDI_VIDEO_PRESENT_TARGET_ID      TargetId;
-} DXGK_QUERYINTEGRATEDDISPLAYIN;
-
 #if defined(__cplusplus) && !defined(SORTPP_PASS)
 typedef enum _DXGK_DISPLAYPANELORIENTATION : UINT
 {
@@ -2294,12 +2325,31 @@ typedef struct _DXGK_QUERYINTEGRATEDDISPLAYOUT
     BYTE                                Descriptor[1];
 } DXGK_QUERYINTEGRATEDDISPLAYOUT, *PDXGK_QUERYINTEGRATEDDISPLAYOUT;
 
-typedef struct _DXGK_QUERYCOLORIMETRYOVERRIDESIN
+typedef struct _DXGK_QAITARGETIN
 {
     D3DDDI_VIDEO_PRESENT_TARGET_ID      TargetId;
-} DXGK_QUERYCOLORIMETRYOVERRIDESIN;
+} DXGK_QAITARGETIN;
+
+typedef DXGK_QAITARGETIN DXGK_QUERYINTEGRATEDDISPLAYIN;
+typedef DXGK_QAITARGETIN DXGK_QUERYCOLORIMETRYOVERRIDESIN;
 
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_2
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+
+typedef struct _DXGK_QUERYDISPLAYIDIN
+{
+    D3DDDI_VIDEO_PRESENT_TARGET_ID TargetId;
+} DXGK_QUERYDISPLAYIDIN;
+
+typedef struct _DXGK_QUERYDISPLAYIDOUT
+{
+    UINT Length;
+    BYTE* pDescriptor;
+} DXGK_QUERYDISPLAYIDOUT;
+
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_3
+
 
 //
 // Defines for runtime power management
@@ -3898,6 +3948,46 @@ DXGKDDI_SWITCHTOHWCONTEXTLIST(
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+
+typedef struct _DXGK_UPDATEHWCONTEXTSTATE_FLAGS
+{
+    union
+    {
+        struct
+        {
+            UINT Suspended                      : 1;    // The context is asked to be suspended. Otherwise, the context is runnable.
+            UINT InterruptOnSwitchCompletion    : 1;    // HW is required to raise DXGK_INTERRUPT_HWCONTEXTLIST_SWITCH_COMPLETED
+                                                        // interrupt when the context state update is effective on the GPU.
+            UINT Reserved                       :30;
+        };
+        UINT Value;
+    };
+} DXGK_UPDATEHWCONTEXTSTATE_FLAGS;
+
+typedef struct _DXGKARG_UPDATEHWCONTEXTSTATE
+{
+    HANDLE                          hHwContext;         // Hardware context whose priority or execution state is being changed.
+    UINT64                          ContextSwitchFence; // Context switch fence value associated with this state change request.
+    UINT                            Priority;           // Execution priority of this context relative to other running contexts on this node.
+    DXGK_UPDATEHWCONTEXTSTATE_FLAGS Flags;              // Context execution state flags.
+} DXGKARG_UPDATEHWCONTEXTSTATE;
+
+typedef _In_ CONST DXGKARG_UPDATEHWCONTEXTSTATE*   IN_CONST_PDXGKARG_UPDATEHWCONTEXTSTATE;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_UPDATEHWCONTEXTSTATE)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_UPDATEHWCONTEXTSTATE(
+    IN_CONST_HANDLE                        hAdapter,
+    IN_CONST_PDXGKARG_UPDATEHWCONTEXTSTATE pUpdateHwContextState
+    );
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+
 typedef struct _DXGKARG_RENDERGDI
 {
     CONST VOID* CONST           pCommand;
@@ -4533,6 +4623,9 @@ typedef struct _DXGK_MULTIPLANE_OVERLAY_ATTRIBUTES3
     DXGK_MULTIPLANE_OVERLAY_BLEND                Blend;    
     D3DDDI_COLOR_SPACE_TYPE                      ColorSpaceType;   
     DXGK_MULTIPLANE_OVERLAY_STRETCH_QUALITY      StretchQuality;
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+    UINT                                         SDRWhiteLevel;
+#endif
 } DXGK_MULTIPLANE_OVERLAY_ATTRIBUTES3;
 
 typedef struct _DXGK_HDR_METADATA
@@ -7209,7 +7302,18 @@ typedef UINT8 DXGK_GLITCH_DURATION;
 typedef struct _DXGK_SET_TIMING_PATH_INFO
 {
     D3DDDI_VIDEO_PRESENT_TARGET_ID      VidPnTargetId;
-    D3DDDI_COLOR_SPACE_TYPE             OutputColorSpace;
+
+    union
+    {
+        // Since this enum type is also used by OS to specify the input
+        // colorspace of MPOs hence we are deprecating its use starting
+        // WDDM2.3. WDDM2.3 and above drivers should use the new
+        // type D3DDDI_OUTPUT_WIRE_COLOR_SPACE_TYPE
+        D3DDDI_COLOR_SPACE_TYPE             OutputColorSpace;
+
+        D3DDDI_OUTPUT_WIRE_COLOR_SPACE_TYPE OutputWireColorSpace;
+    };
+
     D3DKMDT_WIRE_FORMAT_AND_PREFERENCE  SelectedWireFormat;
 
     union
@@ -7451,7 +7555,17 @@ DXGKDDI_QUERYCONNECTIONCHANGE(
 
 typedef struct _DXGK_INHERITED_TIMING_INFO
 {
-    D3DDDI_COLOR_SPACE_TYPE             OutputColorSpace;
+    union
+    {
+        // Since this enum type is also used by OS to specify the input
+        // colorspace of MPOs hence we are deprecating its use starting
+        // WDDM2.3. WDDM2.3 and above drivers should use the new
+        // type D3DDDI_OUTPUT_WIRE_COLOR_SPACE_TYPE
+        D3DDDI_COLOR_SPACE_TYPE             OutputColorSpace;
+
+        D3DDDI_OUTPUT_WIRE_COLOR_SPACE_TYPE OutputWireColorSpace;
+    };
+
     D3DKMDT_WIRE_FORMAT_AND_PREFERENCE  SelectedWireFormat;
     union
     {
@@ -7467,6 +7581,68 @@ typedef struct _DXGK_INHERITED_TIMING_INFO
 } DXGK_INHERITED_TIMING_INFO, *PDXGK_INHERITED_TIMING_INFO;
 
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_2
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+
+typedef struct _DXGKARG_CREATEPROTECTEDSESSION
+{
+    HANDLE     hProtectedSession;       // in: DXG assigned value for the protected session that was passed to
+                                        //     DxgkDdiCreateProtectedSession.
+                                        // out: Driver generated handle.
+    PVOID      pPrivateDriverData;
+    UINT       PrivateDriverDataSize;
+} DXGKARG_CREATEPROTECTEDSESSION;
+
+typedef _Inout_ DXGKARG_CREATEPROTECTEDSESSION* INOUT_PDXGKARG_CREATEPROTECTEDSESSION;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_CREATEPROTECTEDSESSION)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_CREATEPROTECTEDSESSION(
+    IN_CONST_HANDLE                       hAdapter,
+    INOUT_PDXGKARG_CREATEPROTECTEDSESSION pCreateProtectedSession
+    );
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKDDI_DESTROYPROTECTEDSESSION)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_DESTROYPROTECTEDSESSION(
+    IN_CONST_HANDLE                       hAdapter,
+    IN_CONST_HANDLE                       hProtectedSession // in: Driver generated handle driver returned at DxgkDdiCreateProtectedSession.
+    );
+
+typedef enum _DXGK_PROTECTED_SESSION_STATUS
+{
+    DXGK_PROTECTED_SESSION_STATUS_OK         = 0,
+    DXGK_PROTECTED_SESSION_STATUS_INVALID    = 1,
+} DXGK_PROTECTED_SESSION_STATUS;
+
+typedef struct _DXGKARGCB_PROTECTEDSESSIONSTATUS
+{
+    HANDLE                                hProtectedSession; // in: DXG handle
+                                                             // in: DXG assigned value for the protected session that was passed to
+                                                             //     DxgkDdiCreateProtectedSession.
+    DXGK_PROTECTED_SESSION_STATUS         Status;
+} DXGKARGCB_PROTECTEDSESSIONSTATUS;
+
+typedef _In_ CONST DXGKARGCB_PROTECTEDSESSIONSTATUS* IN_CONST_PDXGKARGCB_PROTECTEDSESSIONSTATUS;
+
+typedef
+    _Check_return_
+    _Function_class_DXGK_(DXGKCB_SETPROTECTEDSESSIONSTATUS)
+    _IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+(APIENTRY CALLBACK *DXGKCB_SETPROTECTEDSESSIONSTATUS)(
+    IN_CONST_PDXGKARGCB_PROTECTEDSESSIONSTATUS pProtectedSessionStatus
+    );
+
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_3
 
 //
 //     Function pointer typedefs
@@ -7584,6 +7760,15 @@ typedef DXGKDDI_QUERYCONNECTIONCHANGE           *PDXGKDDI_QUERYCONNECTIONCHANGE;
 typedef DXGKDDI_GETMULTIPLANEOVERLAYCAPS        *PDXGKDDI_GETMULTIPLANEOVERLAYCAPS;
 typedef DXGKDDI_GETPOSTCOMPOSITIONCAPS          *PDXGKDDI_GETPOSTCOMPOSITIONCAPS;
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+
+typedef DXGKDDI_UPDATEHWCONTEXTSTATE   *PDXGKDDI_UPDATEHWCONTEXTSTATE;
+
+typedef DXGKDDI_CREATEPROTECTEDSESSION*  PDXGKDDI_CREATEPROTECTEDSESSION;
+typedef DXGKDDI_DESTROYPROTECTEDSESSION* PDXGKDDI_DESTROYPROTECTEDSESSION;
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
 
 #pragma warning(pop)
 

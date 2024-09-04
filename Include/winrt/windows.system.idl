@@ -15,41 +15,10 @@ import "Windows.Gaming.Input.idl";
 import "Windows.Storage.idl";
 import "Windows.Storage.Search.idl";
 import "Windows.Storage.Streams.idl";
+import "Windows.System.Diagnostics.idl";
 import "Windows.System.RemoteSystems.idl";
 import "Windows.UI.Popups.idl";
 import "Windows.UI.ViewManagement.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eapplicationmodel_h__)")
-cpp_quote("#include <Windows.ApplicationModel.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel_h__)")
-cpp_quote("#if !defined(__windows2Egaming2Einput_h__)")
-cpp_quote("#include <Windows.Gaming.Input.h>")
-cpp_quote("#endif // !defined(__windows2Egaming2Einput_h__)")
-cpp_quote("#if !defined(__windows2Estorage_h__)")
-cpp_quote("#include <Windows.Storage.h>")
-cpp_quote("#endif // !defined(__windows2Estorage_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Esearch_h__)")
-cpp_quote("#include <Windows.Storage.Search.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Esearch_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Esystem2Eremotesystems_h__)")
-cpp_quote("#include <Windows.System.RemoteSystems.h>")
-cpp_quote("#endif // !defined(__windows2Esystem2Eremotesystems_h__)")
-cpp_quote("#if !defined(__windows2Eui2Epopups_h__)")
-cpp_quote("#include <Windows.UI.Popups.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Epopups_h__)")
-cpp_quote("#if !defined(__windows2Eui2Eviewmanagement_h__)")
-cpp_quote("#include <Windows.UI.ViewManagement.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Eviewmanagement_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -75,6 +44,12 @@ namespace Windows
 {
     namespace Foundation
     {
+        typedef struct DateTime DateTime;
+
+        runtimeclass Deferral;
+
+        interface IAsyncAction;
+
         typedef struct Point Point;
 
         typedef struct Rect Rect;
@@ -142,6 +117,16 @@ namespace Windows
 {
     namespace System
     {
+        namespace Diagnostics
+        {
+            runtimeclass ProcessDiagnosticInfo;
+        }
+    }
+}
+namespace Windows
+{
+    namespace System
+    {
         namespace RemoteSystems
         {
             runtimeclass RemoteSystemConnectionRequest;
@@ -174,7 +159,19 @@ namespace Windows
     {
         apicontract SystemManagementContract;
 
+        typedef enum AppDiagnosticInfoWatcherStatus AppDiagnosticInfoWatcherStatus;
+
         typedef enum AppMemoryUsageLevel AppMemoryUsageLevel;
+
+        typedef enum AppResourceGroupEnergyQuotaState AppResourceGroupEnergyQuotaState;
+
+        typedef enum AppResourceGroupExecutionState AppResourceGroupExecutionState;
+
+        typedef enum AppResourceGroupInfoWatcherStatus AppResourceGroupInfoWatcherStatus;
+
+        typedef enum DiagnosticAccessStatus DiagnosticAccessStatus;
+
+        typedef enum DispatcherQueuePriority DispatcherQueuePriority;
 
         typedef enum LaunchFileStatus LaunchFileStatus;
 
@@ -204,13 +201,53 @@ namespace Windows
 
         typedef enum VirtualKeyModifiers VirtualKeyModifiers;
 
+        delegate DispatcherQueueHandler;
+
         interface IAppDiagnosticInfo;
+
+        interface IAppDiagnosticInfo2;
 
         interface IAppDiagnosticInfoStatics;
 
+        interface IAppDiagnosticInfoStatics2;
+
+        interface IAppDiagnosticInfoWatcher;
+
+        interface IAppDiagnosticInfoWatcherEventArgs;
+
         interface IAppMemoryReport;
 
+        interface IAppMemoryReport2;
+
         interface IAppMemoryUsageLimitChangingEventArgs;
+
+        interface IAppResourceGroupBackgroundTaskReport;
+
+        interface IAppResourceGroupInfo;
+
+        interface IAppResourceGroupInfoWatcher;
+
+        interface IAppResourceGroupInfoWatcherEventArgs;
+
+        interface IAppResourceGroupInfoWatcherExecutionStateChangedEventArgs;
+
+        interface IAppResourceGroupMemoryReport;
+
+        interface IAppResourceGroupStateReport;
+
+        interface IDateTimeSettingsStatics;
+
+        interface IDispatcherQueue;
+
+        interface IDispatcherQueueController;
+
+        interface IDispatcherQueueControllerStatics;
+
+        interface IDispatcherQueueShutdownStartingEventArgs;
+
+        interface IDispatcherQueueStatics;
+
+        interface IDispatcherQueueTimer;
 
         interface IFolderLauncherOptions;
 
@@ -243,6 +280,8 @@ namespace Windows
         interface IMemoryManagerStatics2;
 
         interface IMemoryManagerStatics3;
+
+        interface IMemoryManagerStatics4;
 
         interface IProcessLauncherOptions;
 
@@ -286,9 +325,37 @@ namespace Windows
 
         runtimeclass AppDiagnosticInfo;
 
+        runtimeclass AppDiagnosticInfoWatcher;
+
+        runtimeclass AppDiagnosticInfoWatcherEventArgs;
+
         runtimeclass AppMemoryReport;
 
         runtimeclass AppMemoryUsageLimitChangingEventArgs;
+
+        runtimeclass AppResourceGroupBackgroundTaskReport;
+
+        runtimeclass AppResourceGroupInfo;
+
+        runtimeclass AppResourceGroupInfoWatcher;
+
+        runtimeclass AppResourceGroupInfoWatcherEventArgs;
+
+        runtimeclass AppResourceGroupInfoWatcherExecutionStateChangedEventArgs;
+
+        runtimeclass AppResourceGroupMemoryReport;
+
+        runtimeclass AppResourceGroupStateReport;
+
+        runtimeclass DateTimeSettings;
+
+        runtimeclass DispatcherQueue;
+
+        runtimeclass DispatcherQueueController;
+
+        runtimeclass DispatcherQueueShutdownStartingEventArgs;
+
+        runtimeclass DispatcherQueueTimer;
 
         runtimeclass FolderLauncherOptions;
 
@@ -349,17 +416,33 @@ namespace Windows
         {
             interface Windows.Foundation.Collections.IIterable<Windows.System.AppDiagnosticInfo*>;
 
+            interface Windows.Foundation.Collections.IIterable<Windows.System.AppResourceGroupBackgroundTaskReport*>;
+
+            interface Windows.Foundation.Collections.IIterable<Windows.System.AppResourceGroupInfo*>;
+
             interface Windows.Foundation.Collections.IIterable<Windows.System.User*>;
 
             interface Windows.Foundation.Collections.IIterator<Windows.System.AppDiagnosticInfo*>;
+
+            interface Windows.Foundation.Collections.IIterator<Windows.System.AppResourceGroupBackgroundTaskReport*>;
+
+            interface Windows.Foundation.Collections.IIterator<Windows.System.AppResourceGroupInfo*>;
 
             interface Windows.Foundation.Collections.IIterator<Windows.System.User*>;
 
             interface Windows.Foundation.Collections.IVectorView<Windows.System.AppDiagnosticInfo*>;
 
+            interface Windows.Foundation.Collections.IVectorView<Windows.System.AppResourceGroupBackgroundTaskReport*>;
+
+            interface Windows.Foundation.Collections.IVectorView<Windows.System.AppResourceGroupInfo*>;
+
             interface Windows.Foundation.Collections.IVectorView<Windows.System.User*>;
 
             interface Windows.Foundation.Collections.IVector<Windows.System.AppDiagnosticInfo*>;
+
+            interface Windows.Foundation.Collections.IVector<Windows.System.AppResourceGroupBackgroundTaskReport*>;
+
+            interface Windows.Foundation.Collections.IVector<Windows.System.AppResourceGroupInfo*>;
 
             interface Windows.Foundation.EventHandler<Windows.System.AppMemoryUsageLimitChangingEventArgs*>;
 
@@ -368,6 +451,8 @@ namespace Windows
             interface Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVectorView<Windows.System.User*>*>;
 
             interface Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVector<Windows.System.AppDiagnosticInfo*>*>;
+
+            interface Windows.Foundation.IAsyncOperation<Windows.System.DiagnosticAccessStatus>;
 
             interface Windows.Foundation.IAsyncOperation<Windows.System.LaunchQuerySupportStatus>;
 
@@ -383,6 +468,22 @@ namespace Windows
 
             interface Windows.Foundation.TypedEventHandler<Windows.Gaming.Input.IGameController*, Windows.System.UserChangedEventArgs*>;
 
+            interface Windows.Foundation.TypedEventHandler<Windows.System.AppDiagnosticInfoWatcher*, IInspectable*>;
+
+            interface Windows.Foundation.TypedEventHandler<Windows.System.AppDiagnosticInfoWatcher*, Windows.System.AppDiagnosticInfoWatcherEventArgs*>;
+
+            interface Windows.Foundation.TypedEventHandler<Windows.System.AppResourceGroupInfoWatcher*, IInspectable*>;
+
+            interface Windows.Foundation.TypedEventHandler<Windows.System.AppResourceGroupInfoWatcher*, Windows.System.AppResourceGroupInfoWatcherEventArgs*>;
+
+            interface Windows.Foundation.TypedEventHandler<Windows.System.AppResourceGroupInfoWatcher*, Windows.System.AppResourceGroupInfoWatcherExecutionStateChangedEventArgs*>;
+
+            interface Windows.Foundation.TypedEventHandler<Windows.System.DispatcherQueue*, IInspectable*>;
+
+            interface Windows.Foundation.TypedEventHandler<Windows.System.DispatcherQueue*, Windows.System.DispatcherQueueShutdownStartingEventArgs*>;
+
+            interface Windows.Foundation.TypedEventHandler<Windows.System.DispatcherQueueTimer*, IInspectable*>;
+
             interface Windows.Foundation.TypedEventHandler<Windows.System.UserWatcher*, IInspectable*>;
 
             interface Windows.Foundation.TypedEventHandler<Windows.System.UserWatcher*, Windows.System.UserAuthenticationStatusChangingEventArgs*>;
@@ -397,10 +498,21 @@ namespace Windows
 {
     namespace System
     {
-        [contractversion(3.0)]
+        [contractversion(4.0)]
         apicontract SystemManagementContract
         {
         }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        enum AppDiagnosticInfoWatcherStatus
+        {
+            Created              = 0,
+            Started              = 1,
+            EnumerationCompleted = 2,
+            Stopping             = 3,
+            Stopped              = 4,
+            Aborted              = 5
+        };
 
         [contract(Windows.Foundation.UniversalApiContract, 1.0)]
         enum AppMemoryUsageLevel
@@ -410,6 +522,52 @@ namespace Windows
             High      = 2,
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
             OverLimit = 3
+        };
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        enum AppResourceGroupEnergyQuotaState
+        {
+            Unknown = 0,
+            Over    = 1,
+            Under   = 2
+        };
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        enum AppResourceGroupExecutionState
+        {
+            Unknown    = 0,
+            Running    = 1,
+            Suspending = 2,
+            Suspended  = 3,
+            NotRunning = 4
+        };
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        enum AppResourceGroupInfoWatcherStatus
+        {
+            Created              = 0,
+            Started              = 1,
+            EnumerationCompleted = 2,
+            Stopping             = 3,
+            Stopped              = 4,
+            Aborted              = 5
+        };
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        enum DiagnosticAccessStatus
+        {
+            Unspecified = 0,
+            Denied      = 1,
+            Limited     = 2,
+            Allowed     = 3
+        };
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        enum DispatcherQueuePriority
+        {
+            Low    = -10,
+            Normal = 0,
+            High   = 10
         };
 
         [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -747,6 +905,11 @@ namespace Windows
             Windows = 0x8
         };
 
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [uuid(DFA2DC9C-1A2D-4917-98F2-939AF1D6E0C8)]
+        delegate
+            HRESULT DispatcherQueueHandler();
+
         [contract(Windows.Foundation.UniversalApiContract, 4.0)]
         [exclusiveto(Windows.System.AppDiagnosticInfo)]
         [uuid(E348A69A-8889-4CA3-BE07-D5FFFF5F0804)]
@@ -755,12 +918,59 @@ namespace Windows
             [propget] HRESULT AppInfo([out] [retval] Windows.ApplicationModel.AppInfo** value);
         }
 
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.System.AppDiagnosticInfo)]
+        [uuid(DF46FBD7-191A-446C-9473-8FBC2374A354)]
+        interface IAppDiagnosticInfo2 : IInspectable
+        {
+            HRESULT GetResourceGroups([out] [retval] Windows.Foundation.Collections.IVector<Windows.System.AppResourceGroupInfo*>** result);
+            HRESULT CreateResourceGroupWatcher([out] [retval] Windows.System.AppResourceGroupInfoWatcher** result);
+        }
+
         [contract(Windows.Foundation.UniversalApiContract, 4.0)]
         [exclusiveto(Windows.System.AppDiagnosticInfo)]
         [uuid(CE6925BF-10CA-40C8-A9CA-C5C96501866E)]
         interface IAppDiagnosticInfoStatics : IInspectable
         {
             HRESULT RequestInfoAsync([out] [retval] Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVector<Windows.System.AppDiagnosticInfo*>*>** operation);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.System.AppDiagnosticInfo)]
+        [uuid(05B24B86-1000-4C90-BB9F-7235071C50FE)]
+        interface IAppDiagnosticInfoStatics2 : IInspectable
+        {
+            HRESULT CreateWatcher([out] [retval] Windows.System.AppDiagnosticInfoWatcher** watcher);
+            HRESULT RequestAccessAsync([out] [retval] Windows.Foundation.IAsyncOperation<Windows.System.DiagnosticAccessStatus>** operation);
+            HRESULT RequestInfoForPackageAsync([in] HSTRING packageFamilyName, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVector<Windows.System.AppDiagnosticInfo*>*>** operation);
+            [default_overload] [overload("RequestInfoForAppAsync")] HRESULT RequestInfoForAppAsync([out] [retval] Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVector<Windows.System.AppDiagnosticInfo*>*>** operation);
+            [overload("RequestInfoForAppAsync")] HRESULT RequestInfoForAppUserModelId([in] HSTRING appUserModelId, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVector<Windows.System.AppDiagnosticInfo*>*>** operation);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.System.AppDiagnosticInfoWatcher)]
+        [uuid(75575070-01D3-489A-9325-52F9CC6EDE0A)]
+        interface IAppDiagnosticInfoWatcher : IInspectable
+        {
+            [eventadd] HRESULT Added([in] Windows.Foundation.TypedEventHandler<Windows.System.AppDiagnosticInfoWatcher*, Windows.System.AppDiagnosticInfoWatcherEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
+            [eventremove] HRESULT Added([in] EventRegistrationToken token);
+            [eventadd] HRESULT Removed([in] Windows.Foundation.TypedEventHandler<Windows.System.AppDiagnosticInfoWatcher*, Windows.System.AppDiagnosticInfoWatcherEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
+            [eventremove] HRESULT Removed([in] EventRegistrationToken token);
+            [eventadd] HRESULT EnumerationCompleted([in] Windows.Foundation.TypedEventHandler<Windows.System.AppDiagnosticInfoWatcher*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+            [eventremove] HRESULT EnumerationCompleted([in] EventRegistrationToken token);
+            [eventadd] HRESULT Stopped([in] Windows.Foundation.TypedEventHandler<Windows.System.AppDiagnosticInfoWatcher*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+            [eventremove] HRESULT Stopped([in] EventRegistrationToken token);
+            [propget] HRESULT Status([out] [retval] Windows.System.AppDiagnosticInfoWatcherStatus* value);
+            HRESULT Start();
+            HRESULT Stop();
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.System.AppDiagnosticInfoWatcherEventArgs)]
+        [uuid(7017C716-E1DA-4C65-99DF-046DFF5BE71A)]
+        interface IAppDiagnosticInfoWatcherEventArgs : IInspectable
+        {
+            [propget] HRESULT AppDiagnosticInfo([out] [retval] Windows.System.AppDiagnosticInfo** value);
         }
 
         [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -774,6 +984,14 @@ namespace Windows
             [propget] HRESULT TotalCommitLimit([out] [retval] UINT64* value);
         }
 
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.System.AppMemoryReport)]
+        [uuid(5F7F3738-51B7-42DC-B7ED-79BA46D28857)]
+        interface IAppMemoryReport2 : IInspectable
+        {
+            [propget] HRESULT ExpectedTotalCommitLimit([out] [retval] UINT64* value);
+        }
+
         [contract(Windows.Foundation.UniversalApiContract, 1.0)]
         [exclusiveto(Windows.System.AppMemoryUsageLimitChangingEventArgs)]
         [uuid(79F86664-FECA-4DA5-9E40-2BC63EFDC979)]
@@ -781,6 +999,159 @@ namespace Windows
         {
             [propget] HRESULT OldLimit([out] [retval] UINT64* value);
             [propget] HRESULT NewLimit([out] [retval] UINT64* value);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.System.AppResourceGroupBackgroundTaskReport)]
+        [uuid(2566E74E-B05D-40C2-9DC1-1A4F039EA120)]
+        interface IAppResourceGroupBackgroundTaskReport : IInspectable
+        {
+            [propget] HRESULT TaskId([out] [retval] GUID* value);
+            [propget] HRESULT Name([out] [retval] HSTRING* value);
+            [propget] HRESULT Trigger([out] [retval] HSTRING* value);
+            [propget] HRESULT EntryPoint([out] [retval] HSTRING* value);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.System.AppResourceGroupInfo)]
+        [uuid(B913F77A-E807-49F4-845E-7B8BDCFE8EE7)]
+        interface IAppResourceGroupInfo : IInspectable
+        {
+            [propget] HRESULT InstanceId([out] [retval] GUID* value);
+            [propget] HRESULT IsShared([out] [retval] boolean* value);
+            HRESULT GetBackgroundTaskReports([out] [retval] Windows.Foundation.Collections.IVector<Windows.System.AppResourceGroupBackgroundTaskReport*>** result);
+            HRESULT GetMemoryReport([out] [retval] Windows.System.AppResourceGroupMemoryReport** result);
+            HRESULT GetProcessDiagnosticInfos([out] [retval] Windows.Foundation.Collections.IVector<Windows.System.Diagnostics.ProcessDiagnosticInfo*>** result);
+            HRESULT GetStateReport([out] [retval] Windows.System.AppResourceGroupStateReport** result);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.System.AppResourceGroupInfoWatcher)]
+        [uuid(D9B0A0FD-6E5A-4C72-8B17-09FEC4A212BD)]
+        interface IAppResourceGroupInfoWatcher : IInspectable
+        {
+            [eventadd] HRESULT Added([in] Windows.Foundation.TypedEventHandler<Windows.System.AppResourceGroupInfoWatcher*, Windows.System.AppResourceGroupInfoWatcherEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
+            [eventremove] HRESULT Added([in] EventRegistrationToken token);
+            [eventadd] HRESULT Removed([in] Windows.Foundation.TypedEventHandler<Windows.System.AppResourceGroupInfoWatcher*, Windows.System.AppResourceGroupInfoWatcherEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
+            [eventremove] HRESULT Removed([in] EventRegistrationToken token);
+            [eventadd] HRESULT EnumerationCompleted([in] Windows.Foundation.TypedEventHandler<Windows.System.AppResourceGroupInfoWatcher*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+            [eventremove] HRESULT EnumerationCompleted([in] EventRegistrationToken token);
+            [eventadd] HRESULT Stopped([in] Windows.Foundation.TypedEventHandler<Windows.System.AppResourceGroupInfoWatcher*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+            [eventremove] HRESULT Stopped([in] EventRegistrationToken token);
+            [eventadd] HRESULT ExecutionStateChanged([in] Windows.Foundation.TypedEventHandler<Windows.System.AppResourceGroupInfoWatcher*, Windows.System.AppResourceGroupInfoWatcherExecutionStateChangedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
+            [eventremove] HRESULT ExecutionStateChanged([in] EventRegistrationToken token);
+            [propget] HRESULT Status([out] [retval] Windows.System.AppResourceGroupInfoWatcherStatus* status);
+            HRESULT Start();
+            HRESULT Stop();
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.System.AppResourceGroupInfoWatcherEventArgs)]
+        [uuid(7A787637-6302-4D2F-BF89-1C12D0B2A6B9)]
+        interface IAppResourceGroupInfoWatcherEventArgs : IInspectable
+        {
+            [propget] HRESULT AppDiagnosticInfos([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.System.AppDiagnosticInfo*>** value);
+            [propget] HRESULT AppResourceGroupInfo([out] [retval] Windows.System.AppResourceGroupInfo** value);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.System.AppResourceGroupInfoWatcherExecutionStateChangedEventArgs)]
+        [uuid(1BDBEDD7-FEE6-4FD4-98DD-E92A2CC299F3)]
+        interface IAppResourceGroupInfoWatcherExecutionStateChangedEventArgs : IInspectable
+        {
+            [propget] HRESULT AppDiagnosticInfos([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.System.AppDiagnosticInfo*>** value);
+            [propget] HRESULT AppResourceGroupInfo([out] [retval] Windows.System.AppResourceGroupInfo** value);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.System.AppResourceGroupMemoryReport)]
+        [uuid(2C8C06B1-7DB1-4C51-A225-7FAE2D49E431)]
+        interface IAppResourceGroupMemoryReport : IInspectable
+        {
+            [propget] HRESULT CommitUsageLimit([out] [retval] UINT64* value);
+            [propget] HRESULT CommitUsageLevel([out] [retval] Windows.System.AppMemoryUsageLevel* value);
+            [propget] HRESULT PrivateCommitUsage([out] [retval] UINT64* value);
+            [propget] HRESULT TotalCommitUsage([out] [retval] UINT64* value);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.System.AppResourceGroupStateReport)]
+        [uuid(52849F18-2F70-4236-AB40-D04DB0C7B931)]
+        interface IAppResourceGroupStateReport : IInspectable
+        {
+            [propget] HRESULT ExecutionState([out] [retval] Windows.System.AppResourceGroupExecutionState* value);
+            [propget] HRESULT EnergyQuotaState([out] [retval] Windows.System.AppResourceGroupEnergyQuotaState* value);
+        }
+
+        [contract(Windows.System.SystemManagementContract, 4.0)]
+        [exclusiveto(Windows.System.DateTimeSettings)]
+        [uuid(5D2150D1-47EE-48AB-A52B-9F1954278D82)]
+        interface IDateTimeSettingsStatics : IInspectable
+        {
+            HRESULT SetSystemDateTime([in] Windows.Foundation.DateTime utcDateTime);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.System.DispatcherQueue)]
+        [uuid(603E88E4-A338-4FFE-A457-A5CFB9CEB899)]
+        interface IDispatcherQueue : IInspectable
+        {
+            HRESULT CreateTimer([out] [retval] Windows.System.DispatcherQueueTimer** result);
+            [overload("TryEnqueue")] HRESULT TryEnqueue([in] Windows.System.DispatcherQueueHandler* callback, [out] [retval] boolean* result);
+            [overload("TryEnqueue")] HRESULT TryEnqueueWithPriority([in] Windows.System.DispatcherQueuePriority priority, [in] Windows.System.DispatcherQueueHandler* callback, [out] [retval] boolean* result);
+            [eventadd] HRESULT ShutdownStarting([in] Windows.Foundation.TypedEventHandler<Windows.System.DispatcherQueue*, Windows.System.DispatcherQueueShutdownStartingEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
+            [eventremove] HRESULT ShutdownStarting([in] EventRegistrationToken token);
+            [eventadd] HRESULT ShutdownCompleted([in] Windows.Foundation.TypedEventHandler<Windows.System.DispatcherQueue*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+            [eventremove] HRESULT ShutdownCompleted([in] EventRegistrationToken token);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.System.DispatcherQueueController)]
+        [uuid(22F34E66-50DB-4E36-A98D-61C01B384D20)]
+        interface IDispatcherQueueController : IInspectable
+        {
+            [propget] HRESULT DispatcherQueue([out] [retval] Windows.System.DispatcherQueue** value);
+            HRESULT ShutdownQueueAsync([out] [retval] Windows.Foundation.IAsyncAction** operation);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.System.DispatcherQueueController)]
+        [uuid(0A6C98E0-5198-49A2-A313-3F70D1F13C27)]
+        interface IDispatcherQueueControllerStatics : IInspectable
+        {
+            HRESULT CreateOnDedicatedThread([out] [retval] Windows.System.DispatcherQueueController** result);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.System.DispatcherQueueShutdownStartingEventArgs)]
+        [uuid(C4724C4C-FF97-40C0-A226-CC0AAA545E89)]
+        interface IDispatcherQueueShutdownStartingEventArgs : IInspectable
+        {
+            HRESULT GetDeferral([out] [retval] Windows.Foundation.Deferral** value);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.System.DispatcherQueue)]
+        [uuid(A96D83D7-9371-4517-9245-D0824AC12C74)]
+        interface IDispatcherQueueStatics : IInspectable
+        {
+            HRESULT GetForCurrentThread([out] [retval] Windows.System.DispatcherQueue** result);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.System.DispatcherQueueTimer)]
+        [uuid(5FEABB1D-A31C-4727-B1AC-37454649D56A)]
+        interface IDispatcherQueueTimer : IInspectable
+        {
+            [propget] HRESULT Interval([out] [retval] Windows.Foundation.TimeSpan* value);
+            [propput] HRESULT Interval([in] Windows.Foundation.TimeSpan value);
+            [propget] HRESULT IsRunning([out] [retval] boolean* value);
+            [propget] HRESULT IsRepeating([out] [retval] boolean* value);
+            [propput] HRESULT IsRepeating([in] boolean value);
+            HRESULT Start();
+            HRESULT Stop();
+            [eventadd] HRESULT Tick([in] Windows.Foundation.TypedEventHandler<Windows.System.DispatcherQueueTimer*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+            [eventremove] HRESULT Tick([in] EventRegistrationToken token);
         }
 
         [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -969,6 +1340,14 @@ namespace Windows
         interface IMemoryManagerStatics3 : IInspectable
         {
             HRESULT TrySetAppMemoryUsageLimit([in] UINT64 value, [out] [retval] boolean* result);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.System.MemoryManager)]
+        [uuid(C5A94828-E84E-4886-8A0D-44B3190E3B72)]
+        interface IMemoryManagerStatics4 : IInspectable
+        {
+            [propget] HRESULT ExpectedAppMemoryUsageLimit([out] [retval] UINT64* value);
         }
 
         [contract(Windows.System.SystemManagementContract, 2.0)]
@@ -1191,9 +1570,28 @@ namespace Windows
         [contract(Windows.Foundation.UniversalApiContract, 4.0)]
         [marshaling_behavior(agile)]
         [static(Windows.System.IAppDiagnosticInfoStatics, Windows.Foundation.UniversalApiContract, 4.0)]
+        [static(Windows.System.IAppDiagnosticInfoStatics2, Windows.Foundation.UniversalApiContract, 5.0)]
+        [threading(both)]
         runtimeclass AppDiagnosticInfo
         {
             [default] interface Windows.System.IAppDiagnosticInfo;
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.System.IAppDiagnosticInfo2;
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [marshaling_behavior(agile)]
+        [threading(both)]
+        runtimeclass AppDiagnosticInfoWatcher
+        {
+            [default] interface Windows.System.IAppDiagnosticInfoWatcher;
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [marshaling_behavior(agile)]
+        [threading(both)]
+        runtimeclass AppDiagnosticInfoWatcherEventArgs
+        {
+            [default] interface Windows.System.IAppDiagnosticInfoWatcherEventArgs;
         }
 
         [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1201,6 +1599,7 @@ namespace Windows
         runtimeclass AppMemoryReport
         {
             [default] interface Windows.System.IAppMemoryReport;
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.System.IAppMemoryReport2;
         }
 
         [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1208,6 +1607,104 @@ namespace Windows
         runtimeclass AppMemoryUsageLimitChangingEventArgs
         {
             [default] interface Windows.System.IAppMemoryUsageLimitChangingEventArgs;
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [marshaling_behavior(agile)]
+        [threading(both)]
+        runtimeclass AppResourceGroupBackgroundTaskReport
+        {
+            [default] interface Windows.System.IAppResourceGroupBackgroundTaskReport;
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [marshaling_behavior(agile)]
+        [threading(both)]
+        runtimeclass AppResourceGroupInfo
+        {
+            [default] interface Windows.System.IAppResourceGroupInfo;
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [marshaling_behavior(agile)]
+        [threading(both)]
+        runtimeclass AppResourceGroupInfoWatcher
+        {
+            [default] interface Windows.System.IAppResourceGroupInfoWatcher;
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [marshaling_behavior(agile)]
+        [threading(both)]
+        runtimeclass AppResourceGroupInfoWatcherEventArgs
+        {
+            [default] interface Windows.System.IAppResourceGroupInfoWatcherEventArgs;
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [marshaling_behavior(agile)]
+        [threading(both)]
+        runtimeclass AppResourceGroupInfoWatcherExecutionStateChangedEventArgs
+        {
+            [default] interface Windows.System.IAppResourceGroupInfoWatcherExecutionStateChangedEventArgs;
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [marshaling_behavior(agile)]
+        [threading(both)]
+        runtimeclass AppResourceGroupMemoryReport
+        {
+            [default] interface Windows.System.IAppResourceGroupMemoryReport;
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [marshaling_behavior(agile)]
+        [threading(both)]
+        runtimeclass AppResourceGroupStateReport
+        {
+            [default] interface Windows.System.IAppResourceGroupStateReport;
+        }
+
+        [contract(Windows.System.SystemManagementContract, 4.0)]
+        [marshaling_behavior(agile)]
+        [static(Windows.System.IDateTimeSettingsStatics, Windows.System.SystemManagementContract, 4.0)]
+        [threading(both)]
+        runtimeclass DateTimeSettings
+        {
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [marshaling_behavior(agile)]
+        [static(Windows.System.IDispatcherQueueStatics, Windows.Foundation.UniversalApiContract, 5.0)]
+        [threading(both)]
+        runtimeclass DispatcherQueue
+        {
+            [default] interface Windows.System.IDispatcherQueue;
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [marshaling_behavior(agile)]
+        [static(Windows.System.IDispatcherQueueControllerStatics, Windows.Foundation.UniversalApiContract, 5.0)]
+        [threading(both)]
+        runtimeclass DispatcherQueueController
+        {
+            [default] interface Windows.System.IDispatcherQueueController;
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [marshaling_behavior(agile)]
+        [threading(both)]
+        runtimeclass DispatcherQueueShutdownStartingEventArgs
+        {
+            [default] interface Windows.System.IDispatcherQueueShutdownStartingEventArgs;
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [marshaling_behavior(agile)]
+        [threading(both)]
+        runtimeclass DispatcherQueueTimer
+        {
+            [default] interface Windows.System.IDispatcherQueueTimer;
         }
 
         [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1266,6 +1763,7 @@ namespace Windows
         [static(Windows.System.IMemoryManagerStatics, Windows.Foundation.UniversalApiContract, 1.0)]
         [static(Windows.System.IMemoryManagerStatics2, Windows.Foundation.UniversalApiContract, 1.0)]
         [static(Windows.System.IMemoryManagerStatics3, Windows.Foundation.UniversalApiContract, 2.0)]
+        [static(Windows.System.IMemoryManagerStatics4, Windows.Foundation.UniversalApiContract, 5.0)]
         runtimeclass MemoryManager
         {
         }

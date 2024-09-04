@@ -16,32 +16,6 @@ import "Windows.Storage.idl";
 import "Windows.Storage.Streams.idl";
 import "Windows.UI.Notifications.idl";
 import "Windows.Web.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Ebackground_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Background.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Ebackground_h__)")
-cpp_quote("#if !defined(__windows2Esecurity2Ecredentials_h__)")
-cpp_quote("#include <Windows.Security.Credentials.h>")
-cpp_quote("#endif // !defined(__windows2Esecurity2Ecredentials_h__)")
-cpp_quote("#if !defined(__windows2Estorage_h__)")
-cpp_quote("#include <Windows.Storage.h>")
-cpp_quote("#endif // !defined(__windows2Estorage_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Eui2Enotifications_h__)")
-cpp_quote("#include <Windows.UI.Notifications.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Enotifications_h__)")
-cpp_quote("#if !defined(__windows2Eweb_h__)")
-cpp_quote("#include <Windows.Web.h>")
-cpp_quote("#endif // !defined(__windows2Eweb_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -59,6 +33,8 @@ namespace Windows
     namespace Foundation
     {
         typedef struct DateTime DateTime;
+
+        runtimeclass Deferral;
 
         apicontract UniversalApiContract;
 
@@ -89,6 +65,8 @@ namespace Windows
         namespace Streams
         {
             interface IInputStream;
+
+            interface IRandomAccessStreamReference;
         }
     }
 }
@@ -127,6 +105,8 @@ namespace Windows
 
             typedef struct BackgroundDownloadProgress BackgroundDownloadProgress;
 
+            typedef struct BackgroundTransferFileRange BackgroundTransferFileRange;
+
             typedef struct BackgroundUploadProgress BackgroundUploadProgress;
 
             interface IBackgroundDownloader;
@@ -163,6 +143,8 @@ namespace Windows
 
             interface IBackgroundTransferOperationPriority;
 
+            interface IBackgroundTransferRangesDownloadedEventArgs;
+
             interface IBackgroundUploader;
 
             interface IBackgroundUploader2;
@@ -185,6 +167,8 @@ namespace Windows
 
             interface IDownloadOperation2;
 
+            interface IDownloadOperation3;
+
             interface IResponseInformation;
 
             interface IUnconstrainedTransferRequestResult;
@@ -204,6 +188,8 @@ namespace Windows
             runtimeclass BackgroundTransferError;
 
             runtimeclass BackgroundTransferGroup;
+
+            runtimeclass BackgroundTransferRangesDownloadedEventArgs;
 
             runtimeclass BackgroundUploader;
 
@@ -231,19 +217,27 @@ namespace Windows
             {
                 interface Windows.Foundation.Collections.IIterable<Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart*>;
 
+                interface Windows.Foundation.Collections.IIterable<Windows.Networking.BackgroundTransfer.BackgroundTransferFileRange>;
+
                 interface Windows.Foundation.Collections.IIterable<Windows.Networking.BackgroundTransfer.DownloadOperation*>;
 
                 interface Windows.Foundation.Collections.IIterable<Windows.Networking.BackgroundTransfer.UploadOperation*>;
 
                 interface Windows.Foundation.Collections.IIterator<Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart*>;
 
+                interface Windows.Foundation.Collections.IIterator<Windows.Networking.BackgroundTransfer.BackgroundTransferFileRange>;
+
                 interface Windows.Foundation.Collections.IIterator<Windows.Networking.BackgroundTransfer.DownloadOperation*>;
 
                 interface Windows.Foundation.Collections.IIterator<Windows.Networking.BackgroundTransfer.UploadOperation*>;
 
+                interface Windows.Foundation.Collections.IVectorView<Windows.Networking.BackgroundTransfer.BackgroundTransferFileRange>;
+
                 interface Windows.Foundation.Collections.IVectorView<Windows.Networking.BackgroundTransfer.DownloadOperation*>;
 
                 interface Windows.Foundation.Collections.IVectorView<Windows.Networking.BackgroundTransfer.UploadOperation*>;
+
+                interface Windows.Foundation.Collections.IVector<Windows.Networking.BackgroundTransfer.BackgroundTransferFileRange>;
 
                 interface Windows.Foundation.IAsyncOperationWithProgress<Windows.Networking.BackgroundTransfer.DownloadOperation*, Windows.Networking.BackgroundTransfer.DownloadOperation*>;
 
@@ -258,6 +252,8 @@ namespace Windows
                 interface Windows.Foundation.IAsyncOperation<Windows.Networking.BackgroundTransfer.UnconstrainedTransferRequestResult*>;
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Networking.BackgroundTransfer.UploadOperation*>;
+
+                interface Windows.Foundation.TypedEventHandler<Windows.Networking.BackgroundTransfer.DownloadOperation*, Windows.Networking.BackgroundTransfer.BackgroundTransferRangesDownloadedEventArgs*>;
             }
         }
     }
@@ -295,16 +291,18 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             enum BackgroundTransferStatus
             {
-                Idle                = 0,
-                Running             = 1,
-                PausedByApplication = 2,
-                PausedCostedNetwork = 3,
-                PausedNoNetwork     = 4,
-                Completed           = 5,
-                Canceled            = 6,
-                Error               = 7,
+                Idle                            = 0,
+                Running                         = 1,
+                PausedByApplication             = 2,
+                PausedCostedNetwork             = 3,
+                PausedNoNetwork                 = 4,
+                Completed                       = 5,
+                Canceled                        = 6,
+                Error                           = 7,
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                PausedRecoverableWebErrorStatus = 8,
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
-                PausedSystemPolicy  = 32
+                PausedSystemPolicy              = 32
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -315,6 +313,13 @@ namespace Windows
                 Windows.Networking.BackgroundTransfer.BackgroundTransferStatus Status;
                 boolean HasResponseChanged;
                 boolean HasRestarted;
+            };
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            struct BackgroundTransferFileRange
+            {
+                UINT64 Offset;
+                UINT64 Length;
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -502,6 +507,16 @@ namespace Windows
                 [propput] HRESULT Priority([in] Windows.Networking.BackgroundTransfer.BackgroundTransferPriority value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Networking.BackgroundTransfer.BackgroundTransferRangesDownloadedEventArgs)]
+            [uuid(3EBC7453-BF48-4A88-9248-B0C165184F5C)]
+            interface IBackgroundTransferRangesDownloadedEventArgs : IInspectable
+            {
+                [propget] HRESULT WasDownloadRestarted([out] [retval] boolean* value);
+                [propget] HRESULT AddedRanges([out] [retval] Windows.Foundation.Collections.IVector<Windows.Networking.BackgroundTransfer.BackgroundTransferFileRange>** value);
+                HRESULT GetDeferral([out] [retval] Windows.Foundation.Deferral** result);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Networking.BackgroundTransfer.BackgroundUploader)]
             [uuid(C595C9AE-CEAD-465B-8801-C55AC90A01CE)]
@@ -616,6 +631,22 @@ namespace Windows
                 [propget] HRESULT TransferGroup([out] [retval] Windows.Networking.BackgroundTransfer.BackgroundTransferGroup** value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Networking.BackgroundTransfer.DownloadOperation)]
+            [uuid(5027351C-7D5E-4ADC-B8D3-DF5C6031B9CC)]
+            interface IDownloadOperation3 : IInspectable
+            {
+                [propget] HRESULT IsRandomAccessRequired([out] [retval] boolean* value);
+                [propput] HRESULT IsRandomAccessRequired([in] boolean value);
+                HRESULT GetResultRandomAccessStreamReference([out] [retval] Windows.Storage.Streams.IRandomAccessStreamReference** stream);
+                HRESULT GetDownloadedRanges([out] [retval] Windows.Foundation.Collections.IVector<Windows.Networking.BackgroundTransfer.BackgroundTransferFileRange>** value);
+                [eventadd] HRESULT RangesDownloaded([in] Windows.Foundation.TypedEventHandler<Windows.Networking.BackgroundTransfer.DownloadOperation*, Windows.Networking.BackgroundTransfer.BackgroundTransferRangesDownloadedEventArgs*>* eventHandler, [out] [retval] EventRegistrationToken* eventCookie);
+                [eventremove] HRESULT RangesDownloaded([in] EventRegistrationToken eventCookie);
+                [propput] HRESULT RequestedUri([in] Windows.Foundation.Uri* value);
+                [propget] HRESULT RecoverableWebErrorStatuses([out] [retval] Windows.Foundation.Collections.IVector<Windows.Web.WebErrorStatus>** value);
+                [propget] HRESULT CurrentWebErrorStatus([out] [retval] Windows.Foundation.IReference<Windows.Web.WebErrorStatus>** value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Networking.BackgroundTransfer.ResponseInformation)]
             [uuid(F8BB9A12-F713-4792-8B68-D9D297F91D2E)]
@@ -717,6 +748,13 @@ namespace Windows
                 [default] interface Windows.Networking.BackgroundTransfer.IBackgroundTransferGroup;
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            runtimeclass BackgroundTransferRangesDownloadedEventArgs
+            {
+                [default] interface Windows.Networking.BackgroundTransfer.IBackgroundTransferRangesDownloadedEventArgs;
+            }
+
             [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
             [activatable(Windows.Networking.BackgroundTransfer.IBackgroundUploaderFactory, Windows.Foundation.UniversalApiContract, 1.0)]
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -750,6 +788,7 @@ namespace Windows
                 interface Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Networking.BackgroundTransfer.IDownloadOperation2;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Networking.BackgroundTransfer.IDownloadOperation3;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

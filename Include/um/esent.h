@@ -1883,6 +1883,7 @@ typedef enum {
 #define JET_paramTableClass15Name				151 	// name of tableclass15
 #endif // JET_VERSION >= 0x0600
 
+
 #define JET_paramIOPriority			            152     //	adjust IO priority per instance, anytime. Mainly for background recovery
                                                         //  Doesn't affect pending IOs, just subsequent ones
 
@@ -1952,6 +1953,7 @@ typedef enum {
 #if ( JET_VERSION >= 0x0502 )
 #define JET_paramEnableIndexCleanup				54  //	Enable cleanup of out-of-date index entries (Windows 2003 through Windows 7); Does NLS version checking (Windows 2003 and later).
 #endif // JET_VERSION >= 0x0502
+
 
 //												60	//	JET_paramCacheSizeMin defined above
 //												63	//	JET_paramPreferredVerPages defined above
@@ -2060,7 +2062,7 @@ typedef enum {
 #endif // JET_VERSION >= 0x0A00
 
 
-#define JET_paramMaxValueInvalid				196 //	This is not a valid parameter. It can change from release to release!
+#define JET_paramMaxValueInvalid				212 //	This is not a valid parameter. It can change from release to release!
 
 
 //	session paramters
@@ -2119,11 +2121,12 @@ typedef struct {
 #endif // JET_VERSION >= 0x0600
 #if ( JET_VERSION >= 0x0601 )
 #define	JET_bitReplayIgnoreLostLogs			0x00000080	//	ignore logs lost from the end of the log stream
+#endif // JET_VERSION >= 0x0601
 #if ( JET_VERSION >= 0x0602 )
 #define JET_bitKeepDbAttachedAtEndOfRecovery 0x00001000 //	this allows db to remain attached at the end of recovery (for faster transition to running state)
 #endif // JET_VERSION >= 0x0602
-
-#endif // JET_VERSION >= 0x0601
+#if ( JET_VERSION >= 0x0A01 )
+#endif // JET_VERSION >= 0x0A01
 
 
 	/* Flags for JetTerm2 */
@@ -2226,7 +2229,7 @@ typedef struct {
 #define JET_bitColumnTTKey				0x00000040 /* JetOpenTempTable only */
 #define JET_bitColumnTTDescending		0x00000080 /* JetOpenTempTable only */
 #define JET_bitColumnMultiValued			0x00000400
-#define JET_bitColumnEscrowUpdate		0x00000800 /* escrow updated */
+#define JET_bitColumnEscrowUpdate		0x00000800 /* escrow updated, supported coltyps are long and longlong */
 #define JET_bitColumnUnversioned		0x00001000 /* for add column only - add column unversioned */
 #if ( JET_VERSION >= 0x0501 )
 #define JET_bitColumnMaybeNull			0x00002000 /* for retrieve column info of outer join where no match from the inner table */
@@ -2380,6 +2383,7 @@ typedef struct {
 #define JET_bitTableClass13			0x000D0000  /*  table belongs to stats class 13  */
 #define JET_bitTableClass14			0x000E0000  /*  table belongs to stats class 14  */
 #define JET_bitTableClass15			0x000F0000  /*  table belongs to stats class 15  */
+
 
 #if ( JET_VERSION >= 0x0501 )
 #define JET_bitLSReset				0x00000001	/*	reset LS value */

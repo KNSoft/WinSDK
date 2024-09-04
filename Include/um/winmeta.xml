@@ -27,7 +27,11 @@
             </channel>
             <channel name="TraceLogging" type="Debug" symbol="WINEVENT_CHANNEL_TRACELOGGING"
                 value="11" message="$(string.channel.TraceLogging)">
-              Events for self-describing ETW tracing.
+              Event contains provider traits and TraceLogging event metadata.
+            </channel>
+            <channel name="ProviderMetadata" type="Debug" symbol="WINEVENT_CHANNEL_PROVIDERMETADATA"
+                value="12" message="$(string.channel.ProviderMetadata)">
+              Event contains provider traits.
             </channel>
         </channels>
 
@@ -172,6 +176,7 @@
                  <xmlType name="win:Json" value="34" symbol="WINEVENT_OUT_TYPE_JSON"/>
                  <xmlType name="win:Utf8" value="35" symbol="WINEVENT_OUT_TYPE_UTF8"/>
                  <xmlType name="win:Pkcs7WithTypeInfo" value="36" symbol="WINEVENT_OUT_TYPE_PKCS7_WITH_TYPE_INFO"/>
+                 <xmlType name="win:CodePointer" value="37" symbol="WINEVENT_OUT_TYPE_CODE_POINTER"/>
             </xmlTypes>
             <inTypes>
                 <inType name="win:UnicodeString" value="1" symbol="WINEVENT_TYPE_NULL_TERMINATED_STRING">
@@ -226,6 +231,7 @@
                     <outType xmlType="win:Win32Error"> A message string corresponding to system win32 error code. </outType>
                     <outType xmlType="win:NTSTATUS"> A message string corresponding to system NTSTATUS error code. </outType>
                     <outType xmlType="win:HexInt32">An integer in hex format</outType>
+                    <outType xmlType="win:CodePointer">An address that can be decoded into a symbol name.</outType>
                 </inType>
                 <inType name="win:Int64" value="9" symbol="WINEVENT_TYPE_INT64">
                     <description> A signed 64-bit integer. </description>
@@ -236,6 +242,7 @@
                     <outType default="true" xmlType="xs:unsignedLong" />
                     <outType xmlType="win:ETWTIME">An ETW timestamp value from an EVENT_RECORD</outType>
                     <outType xmlType="win:HexInt64">An integer in hex format</outType>
+                    <outType xmlType="win:CodePointer">An address that can be decoded into a symbol name.</outType>
                 </inType>
                 <inType name="win:Float" value="11" symbol="WINEVENT_TYPE_FLOAT">
                     <description> An IEEE 4-byte floating-point value </description>
@@ -263,6 +270,7 @@
                 <inType name="win:Pointer" value="16" symbol="WINEVENT_TYPE_POINTER">
                     <description> A pointer; sized to the current platform (32-bit or 64-bit). XML spec: hex representation of a pointer</description>
                     <outType default="true" xmlType="win:HexInt64"/>
+                    <outType xmlType="win:CodePointer">An address that can be decoded into a symbol name.</outType>
                 </inType>
                 <inType name="win:FILETIME" value="17" symbol="WINEVENT_TYPE_FILETIME">
                     <description> A Windows FILETIME struct. </description>
@@ -284,10 +292,12 @@
                     <outType xmlType="win:ErrorCode"> Deprecated, same as win:HexInt32. </outType>
                     <outType xmlType="win:Win32Error"> A message string corresponding to system win32 error code. </outType>
                     <outType xmlType="win:NTSTATUS"> A message string corresponding to system NTSTATUS error code. </outType>
+                    <outType xmlType="win:CodePointer">An address that can be decoded into a symbol name.</outType>
                 </inType>
                 <inType name="win:HexInt64" value="21" symbol="WINEVENT_TYPE_HEXINT64">
                     <description> A hexidecimal representation of an unsigned 64-bit integer. </description>
                     <outType default="true" xmlType="win:HexInt64"/>
+                    <outType xmlType="win:CodePointer">An address that can be decoded into a symbol name.</outType>
                 </inType>
             </inTypes>
         </types>
@@ -358,6 +368,7 @@
                 <string id="channel.Application" value="Application"/>
                 <string id="channel.Security" value="Security"/>
                 <string id="channel.TraceLogging" value="TraceLogging"/>
+                <string id="channel.ProviderMetadata" value="ProviderMetadata"/>
             </stringTable>
         </resources>
     </localization>

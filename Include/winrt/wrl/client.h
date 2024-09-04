@@ -368,7 +368,7 @@ public:
     }
 #else
     // allow use of sealed / final in retail builds.
-    typename InterfaceType* operator->() const throw()
+    InterfaceType* operator->() const throw()
     {
         return ptr_;
     }
@@ -889,7 +889,7 @@ bool operator<(const Details::ComPtrRef<ComPtr<T>>& a, const Details::ComPtrRef<
 template<typename T>
 void** IID_PPV_ARGS_Helper(_Inout_ ::Microsoft::WRL::Details::ComPtrRef<T> pp) throw()
 {
-    static_assert(__is_base_of(IUnknown, T::InterfaceType), "T has to derive from IUnknown");
+    static_assert(__is_base_of(IUnknown, typename T::InterfaceType), "T has to derive from IUnknown");
     return pp;
 }
 
@@ -897,7 +897,7 @@ void** IID_PPV_ARGS_Helper(_Inout_ ::Microsoft::WRL::Details::ComPtrRef<T> pp) t
 template<typename T>
 void** IID_INS_ARGS_Helper(_Inout_ ::Microsoft::WRL::Details::ComPtrRef<T> pp) throw()
 {
-    static_assert(__is_base_of(IInspectable, T::InterfaceType), "T has to derive from IInspectable");
+    static_assert(__is_base_of(IInspectable, typename T::InterfaceType), "T has to derive from IInspectable");
     return pp;
 }
 

@@ -134,6 +134,7 @@ typedef KSIDENTIFIER KSPROPERTY, *PKSPROPERTY, KSMETHOD, *PKSMETHOD, KSEVENT, *P
 
 #define KSPROPERTY_TYPE_GET                 0x00000001
 #define KSPROPERTY_TYPE_SET                 0x00000002
+#define KSPROPERTY_TYPE_GETPAYLOADSIZE      0x00000004
 #define KSPROPERTY_TYPE_SETSUPPORT          0x00000100
 #define KSPROPERTY_TYPE_BASICSUPPORT        0x00000200
 #define KSPROPERTY_TYPE_RELATIONS           0x00000400
@@ -5090,7 +5091,7 @@ NTSTATUS
 NTAPI
 KsRegisterCountedWorker(
     _In_ WORK_QUEUE_TYPE WorkQueueType,
-    _In_ PWORK_QUEUE_ITEM CountedWorkItem,
+    _Inout_ PWORK_QUEUE_ITEM CountedWorkItem,
     _Out_ PKSWORKER* Worker
     );
 _IRQL_requires_max_(PASSIVE_LEVEL)
@@ -5098,29 +5099,29 @@ KSDDKAPI
 VOID
 NTAPI
 KsUnregisterWorker(
-    _In_ PKSWORKER Worker
+    _Inout_ PKSWORKER Worker
     );
 _IRQL_requires_max_(DISPATCH_LEVEL)
 KSDDKAPI
 NTSTATUS
 NTAPI
 KsQueueWorkItem(
-    _In_ PKSWORKER Worker,
-    _In_ PWORK_QUEUE_ITEM WorkItem
+    _Inout_ PKSWORKER Worker,
+    _Inout_ PWORK_QUEUE_ITEM WorkItem
     );
-_IRQL_requires_max_(PASSIVE_LEVEL)
+_IRQL_requires_max_(DISPATCH_LEVEL)
 KSDDKAPI
 ULONG
 NTAPI
 KsIncrementCountedWorker(
-    _In_ PKSWORKER Worker
+    _Inout_ PKSWORKER Worker
     );
-_IRQL_requires_max_(PASSIVE_LEVEL)
+_IRQL_requires_max_(DISPATCH_LEVEL)
 KSDDKAPI
 ULONG
 NTAPI
 KsDecrementCountedWorker(
-    _In_ PKSWORKER Worker
+    _Inout_ PKSWORKER Worker
     );
 
 // topology.c:

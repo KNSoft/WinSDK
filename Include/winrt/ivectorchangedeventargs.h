@@ -1,12 +1,9 @@
+/* Header file automatically generated from ivectorchangedeventargs.idl */
+/*
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ */
 
-
-/* this ALWAYS GENERATED file contains the definitions for the interfaces */
-
-
- /* File created by MIDL compiler version 8.01.0622 */
-/* @@MIDL_FILE_HEADING(  ) */
-
-
+#pragma warning( disable: 4049 )  /* more than 64k source lines */
 
 /* verify that the <rpcndr.h> version is high enough to compile this file*/
 #ifndef __REQUIRED_RPCNDR_H_VERSION__
@@ -18,281 +15,346 @@
 #define __REQUIRED_RPCSAL_H_VERSION__ 100
 #endif
 
-#include "rpc.h"
-#include "rpcndr.h"
+#include <rpc.h>
+#include <rpcndr.h>
 
 #ifndef __RPCNDR_H_VERSION__
 #error this stub requires an updated version of <rpcndr.h>
 #endif /* __RPCNDR_H_VERSION__ */
 
 #ifndef COM_NO_WINDOWS_H
-#include "windows.h"
-#include "ole2.h"
+#include <windows.h>
+#include <ole2.h>
 #endif /*COM_NO_WINDOWS_H*/
-
 #ifndef __ivectorchangedeventargs_h__
 #define __ivectorchangedeventargs_h__
+#ifndef __ivectorchangedeventargs_p_h__
+#define __ivectorchangedeventargs_p_h__
 
-#if defined(_MSC_VER) && (_MSC_VER >= 1020)
+
 #pragma once
+
+//
+// Deprecated attribute support
+//
+
+#pragma push_macro("DEPRECATED")
+#undef DEPRECATED
+
+#if !defined(DISABLE_WINRT_DEPRECATION)
+#if defined(__cplusplus)
+#if __cplusplus >= 201402
+#define DEPRECATED(x) [[deprecated(x)]]
+#elif defined(_MSC_VER)
+#if _MSC_VER >= 1900
+#define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
+#else
+#define DEPRECATED(x) __declspec(deprecated(x))
+#define DEPRECATEDENUMERATOR(x)
+#endif // _MSC_VER >= 1900
+#else // Not Standard C++ or MSVC, ignore the construct.
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif  // C++ deprecation
+#else // C - disable deprecation
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif
+#else // Deprecation is disabled
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif  /* DEPRECATED */
+
+// Disable Deprecation for this header, MIDL verifies that cross-type access is acceptable
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#else
+#pragma warning(push)
+#pragma warning(disable: 4996)
 #endif
 
-/* Forward Declarations */ 
+#pragma push_macro("MIDL_CONST_ID")
+#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
+#define MIDL_CONST_ID constexpr const
+#else
+#define MIDL_CONST_ID const __declspec(selectany)
+#endif
 
+
+//  API Contract Inclusion Definitions
+#if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
+#if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
+
+#if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
+#define WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
+
+#if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
+#define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
+
+#if !defined(WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION)
+#define WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION)
+
+#if !defined(WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION)
+#define WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION)
+
+#endif // defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
+
+
+// Header files for imported files
+#include "oaidl.h"
+#include "inspectable.h"
+#include "asyncinfo.h"
+#include "eventtoken.h"
+#include "windowscontracts.h"
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+/* Forward Declarations */
 #ifndef ____x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace Foundation {
             namespace Collections {
                 interface IVectorChangedEventArgs;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* Foundation */
+    } /* Collections */} /* ABI */
+#define __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs ABI::Windows::Foundation::Collections::IVectorChangedEventArgs
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_FWD_DEFINED__ */
+#endif // ____x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_FWD_DEFINED__
 
 
-/* header files for imported files */
-#include "oaidl.h"
-#include "inspectable.h"
-#include "asyncinfo.h"
-#include "eventtoken.h"
-
-#ifdef __cplusplus
-extern "C"{
-#endif 
-
-
-/* interface __MIDL_itf_ivectorchangedeventargs_0000_0000 */
-/* [local] */ 
 
 #pragma warning(push)
 #pragma warning(disable:4668) 
 #pragma warning(disable:4001) 
 #pragma once
 #pragma warning(pop)
-#if !defined(__cplusplus)
 
-#if !defined(__cplusplus)
-/* [v1_enum] */ 
-enum __x_ABI_CWindows_CFoundation_CCollections_CCollectionChange
-    {
-        CollectionChange_Reset	= 0,
-        CollectionChange_ItemInserted	= ( CollectionChange_Reset + 1 ) ,
-        CollectionChange_ItemRemoved	= ( CollectionChange_ItemInserted + 1 ) ,
-        CollectionChange_ItemChanged	= ( CollectionChange_ItemRemoved + 1 ) 
-    } ;
-#endif /* end if !defined(__cplusplus) */
+/*
+ *
+ * Typedef of Windows.Foundation.Collections.CollectionChange
+ *
+ * Introduced to Windows.Foundation.FoundationContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                /* [contract, version] */
+                typedef /* [v1_enum] */
+                enum CollectionChange : int
+                {
+                    CollectionChange_Reset,
+                    CollectionChange_ItemInserted,
+                    CollectionChange_ItemRemoved,
+                    CollectionChange_ItemChanged,
+                } CollectionChange;
+                
+            } /* Windows */
+        } /* Foundation */
+    } /* Collections */} /* ABI */
+#endif // WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION >= 0x10000
 
-#if !defined(__cplusplus)
 
-typedef enum __x_ABI_CWindows_CFoundation_CCollections_CCollectionChange __x_ABI_CWindows_CFoundation_CCollections_CCollectionChange;
-
-
-#endif /* end if !defined(__cplusplus) */
-
-
-#endif
+/*
+ *
+ * Interface Windows.Foundation.Collections.IVectorChangedEventArgs
+ *
+ * Introduced to Windows.Foundation.FoundationContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION >= 0x10000
 #if !defined(____x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Foundation_Collections_IVectorChangedEventArgs[] = L"Windows.Foundation.Collections.IVectorChangedEventArgs";
-#endif /* !defined(____x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_ivectorchangedeventargs_0000_0000 */
-/* [local] */ 
-
-#ifdef __cplusplus
-} /* end extern "C" */
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            namespace Collections {
-                
-                /* [v1_enum] */ 
-                enum CollectionChange
-                    {
-                        CollectionChange_Reset	= 0,
-                        CollectionChange_ItemInserted	= ( CollectionChange_Reset + 1 ) ,
-                        CollectionChange_ItemRemoved	= ( CollectionChange_ItemInserted + 1 ) ,
-                        CollectionChange_ItemChanged	= ( CollectionChange_ItemRemoved + 1 ) 
-                    } ;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-extern "C" { 
-#endif
-
-#ifdef __cplusplus
-
-} /* end extern "C" */
-namespace ABI {
-    namespace Windows {
-        namespace Foundation {
-            namespace Collections {
-                
-                typedef enum CollectionChange CollectionChange;
-                
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-extern "C" { 
-#endif
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_ivectorchangedeventargs_0000_0000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_ivectorchangedeventargs_0000_0000_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Foundation_Collections_IVectorChangedEventArgs[] = L"Windows.Foundation.Collections.IVectorChangedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            namespace Collections {
+                /* [contract, version, pointer_default(unique), uuid("575933df-34fe-4480-af15-07691f3d5d9b"), object] */
+                MIDL_INTERFACE("575933df-34fe-4480-af15-07691f3d5d9b")
+                IVectorChangedEventArgs : IInspectable
+                {
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CollectionChange(
+                        /* [retval, out] */__RPC__out ABI::Windows::Foundation::Collections::CollectionChange * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Index(
+                        /* [retval, out] */__RPC__out unsigned int * value
+                        ) = 0;
+                    
+                };
 
-/* interface __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs */
-/* [object][uuid][unique] */ 
-
-
-
-/* interface ABI::Windows::Foundation::Collections::IVectorChangedEventArgs */
-/* [object][uuid][unique] */ 
-
+                extern MIDL_CONST_ID IID & IID_IVectorChangedEventArgs=_uuidof(IVectorChangedEventArgs);
+                
+            } /* Windows */
+        } /* Foundation */
+    } /* Collections */} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace Foundation {
-                namespace Collections {
-                    
-                    MIDL_INTERFACE("575933df-34fe-4480-af15-07691f3d5d9b")
-                    IVectorChangedEventArgs : public IInspectable
-                    {
-                    public:
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CollectionChange( 
-                            /* [out][retval] */ __RPC__out ABI::Windows::Foundation::Collections::CollectionChange *value) = 0;
-                        
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Index( 
-                            /* [out][retval] */ __RPC__out unsigned int *value) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_IVectorChangedEventArgs = __uuidof(IVectorChangedEventArgs);
+#else // !defined(__cplusplus)
+/* Forward Declarations */
+#ifndef ____x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs;
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+#endif // ____x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_FWD_DEFINED__
+
+
+#pragma warning(push)
+#pragma warning(disable:4668) 
+#pragma warning(disable:4001) 
+#pragma once
+#pragma warning(pop)
+
+/*
+ *
+ * Typedef of Windows.Foundation.Collections.CollectionChange
+ *
+ * Introduced to Windows.Foundation.FoundationContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION >= 0x10000
+/* [contract, version] */
+typedef /* [v1_enum] */
+enum __x_ABI_CWindows_CFoundation_CCollections_CCollectionChange
+{
+    CollectionChange_Reset,
+    CollectionChange_ItemInserted,
+    CollectionChange_ItemRemoved,
+    CollectionChange_ItemChanged,
+} __x_ABI_CWindows_CFoundation_CCollections_CCollectionChange;
+#endif // WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Foundation.Collections.IVectorChangedEventArgs
+ *
+ * Introduced to Windows.Foundation.FoundationContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Foundation_Collections_IVectorChangedEventArgs[] = L"Windows.Foundation.Collections.IVectorChangedEventArgs";
+/* [contract, version, pointer_default(unique), uuid("575933df-34fe-4480-af15-07691f3d5d9b"), object] */
+typedef struct __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
+
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CollectionChange )(
+        __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CFoundation_CCollections_CCollectionChange * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Index )(
+        __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs * This,
+        /* [retval, out] */__RPC__out unsigned int * value
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgsVtbl;
 
-    typedef struct __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CollectionChange )( 
-            __RPC__in __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs * This,
-            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CFoundation_CCollections_CCollectionChange *value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Index )( 
-            __RPC__in __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs * This,
-            /* [out][retval] */ __RPC__out unsigned int *value);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgsVtbl;
-
-    interface __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgsVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgsVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_get_CollectionChange(This,value) \
+    ( (This)->lpVtbl->get_CollectionChange(This,value) )
 
-#define __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_get_Index(This,value) \
+    ( (This)->lpVtbl->get_Index(This,value) )
 
-#define __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_get_CollectionChange(This,value)	\
-    ( (This)->lpVtbl -> get_CollectionChange(This,value) ) 
-
-#define __x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_get_Index(This,value)	\
-    ( (This)->lpVtbl -> get_Index(This,value) ) 
 
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+EXTERN_C const IID IID___x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION >= 0x10000
 
 
+#endif // defined(__cplusplus)
+#pragma pop_macro("MIDL_CONST_ID")
+// Restore the original value of the 'DEPRECATED' macro
+#pragma pop_macro("DEPRECATED")
 
-
-#endif 	/* ____x_ABI_CWindows_CFoundation_CCollections_CIVectorChangedEventArgs_INTERFACE_DEFINED__ */
-
-
-/* Additional Prototypes for ALL interfaces */
-
-/* end of Additional Prototypes */
-
-#ifdef __cplusplus
-}
+#ifdef __clang__
+#pragma clang diagnostic pop // deprecated-declarations
+#else
+#pragma warning(pop)
 #endif
+#endif // __ivectorchangedeventargs_p_h__
 
-#endif
-
-
+#endif // __ivectorchangedeventargs_h__

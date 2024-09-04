@@ -181,7 +181,8 @@ enum _CREATE_VIRTUAL_DISK_VERSION
         CREATE_VIRTUAL_DISK_VERSION_UNSPECIFIED	= 0,
         CREATE_VIRTUAL_DISK_VERSION_1	= 1,
         CREATE_VIRTUAL_DISK_VERSION_2	= 2,
-        CREATE_VIRTUAL_DISK_VERSION_3	= 3
+        CREATE_VIRTUAL_DISK_VERSION_3	= 3,
+        CREATE_VIRTUAL_DISK_VERSION_4	= 4
     } 	CREATE_VIRTUAL_DISK_VERSION;
 
 typedef struct _CREATE_VIRTUAL_DISK_PARAMETERS
@@ -228,6 +229,24 @@ typedef struct _CREATE_VIRTUAL_DISK_PARAMETERS
             PCWSTR SourceLimitPath;
             VIRTUAL_STORAGE_TYPE BackingStorageType;
             } 	Version3;
+        struct 
+            {
+            GUID UniqueId;
+            ULONGLONG MaximumSize;
+            ULONG BlockSizeInBytes;
+            ULONG SectorSizeInBytes;
+            ULONG PhysicalSectorSizeInBytes;
+            PCWSTR ParentPath;
+            PCWSTR SourcePath;
+            OPEN_VIRTUAL_DISK_FLAG OpenFlags;
+            VIRTUAL_STORAGE_TYPE ParentVirtualStorageType;
+            VIRTUAL_STORAGE_TYPE SourceVirtualStorageType;
+            GUID ResiliencyGuid;
+            PCWSTR SourceLimitPath;
+            VIRTUAL_STORAGE_TYPE BackingStorageType;
+            GUID PmemAddressAbstractionType;
+            ULONGLONG DataAlignment;
+            } 	Version4;
         } 	;
     } 	CREATE_VIRTUAL_DISK_PARAMETERS;
 
@@ -244,7 +263,8 @@ enum _CREATE_VIRTUAL_DISK_FLAG
         CREATE_VIRTUAL_DISK_FLAG_USE_CHANGE_TRACKING_SOURCE_LIMIT	= 0x10,
         CREATE_VIRTUAL_DISK_FLAG_PRESERVE_PARENT_CHANGE_TRACKING_STATE	= 0x20,
         CREATE_VIRTUAL_DISK_FLAG_VHD_SET_USE_ORIGINAL_BACKING_STORAGE	= 0x40,
-        CREATE_VIRTUAL_DISK_FLAG_SPARSE_FILE	= 0x80
+        CREATE_VIRTUAL_DISK_FLAG_SPARSE_FILE	= 0x80,
+        CREATE_VIRTUAL_DISK_FLAG_PMEM_COMPATIBLE	= 0x100
     } 	CREATE_VIRTUAL_DISK_FLAG;
 
 DWORD __stdcall CreateVirtualDisk( 
@@ -710,7 +730,8 @@ typedef
 enum _MIRROR_VIRTUAL_DISK_FLAG
     {
         MIRROR_VIRTUAL_DISK_FLAG_NONE	= 0,
-        MIRROR_VIRTUAL_DISK_FLAG_EXISTING_FILE	= 0x1
+        MIRROR_VIRTUAL_DISK_FLAG_EXISTING_FILE	= 0x1,
+        MIRROR_VIRTUAL_DISK_FLAG_SKIP_MIRROR_ACTIVATION	= 0x2
     } 	MIRROR_VIRTUAL_DISK_FLAG;
 
 DWORD __stdcall MirrorVirtualDisk( 

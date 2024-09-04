@@ -21,11 +21,15 @@ Revision History:
 #define TEXT(quote) __TEXT(quote)   
 
 //
-//  Language IDs.
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
+//  DEPRECATED: The Language ID  concept is deprecated, please use
+//  Locale Names instead, eg: "en" instead of a LANGID like 0x09.
+//  See the documentation for GetLocaleInfoEx.
 //
 //  Note that the named locale APIs (eg GetLocaleInfoEx) are preferred.
 //
-//  Not all locales have unique Language IDs
+//  WARNING: Not all locales/languages have unique Language IDs
 //
 //  The following two combinations of primary language ID and
 //  sublanguage ID have special semantics:
@@ -37,18 +41,30 @@ Revision History:
 //    LANG_NEUTRAL          SUBLANG_SYS_DEFAULT System default language
 //    LANG_INVARIANT        SUBLANG_NEUTRAL     Invariant locale
 //
-//  It is recommended that applications test for locale names instead of
-//  Language IDs / LCIDs.
-
+//  This concept is deprecated.  It is strongly recommended that
+//  applications test for locale names instead of Language IDs / LCIDs.
 //
 //  Primary language IDs.
 //
-//  WARNING: These aren't always unique.  Bosnian, Serbian & Croation for example.
+//  WARNING: This pattern is broken and not followed for all languages.
+//           Serbian, Bosnian & Croatian are a few examples.
+//
+//  WARNING: There are > 6000 human languages.  The PRIMARYLANGID construct
+//           cannot support all languages your application may encounter.
+//           Please use Language Names, such as "en".
+//
+//  WARNING: Some languages may have more than one PRIMARYLANGID.  Please
+//           use Locale Names, such as "en-FJ".
+//
+//  WARNING: Some languages do not have assigned LANGIDs.  Please use
+//           Locale Names, such as "tlh-Piqd".
 //
 //  It is recommended that applications test for locale names or actual LCIDs.
 //
 //  Note that the LANG, SUBLANG construction is not always consistent.
 //  The named locale APIs (eg GetLocaleInfoEx) are recommended.
+//
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
 //
 #define LANG_NEUTRAL                     0x00
 #define LANG_INVARIANT                   0x7f
@@ -193,7 +209,11 @@ Revision History:
 #define LANG_ZULU                        0x35
 
 //
-//  Sublanguage IDs.
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
+//  DEPRECATED: The Sublanguage ID concept is deprecated, please use
+//  Locale Names instead, eg: "en-US" instead of an LCID like 0x0409.
+//  See the documentation for GetLocaleInfoEx.
 //
 //  The name immediately following SUBLANG_ dictates which primary
 //  language ID that sublanguage ID can be combined with to form a
@@ -202,7 +222,35 @@ Revision History:
 //  Note that the LANG, SUBLANG construction is not always consistent.
 //  The named locale APIs (eg GetLocaleInfoEx) are recommended.
 //
-
+//  WARNING: The pattern is broken and not followed for all languages.
+//           Serbian, Bosnian & Croatian are a few examples.
+//
+//  WARNING: The "SUBLANG" depends on the primary language and is inconsistent.
+//           SUBLANG_ENGLISH_US is 0x1 and SUBLANG_SPANISH_US is 0x15, so
+//           it is impossible to determine region merely by inspecting the
+//           SUBLANG.  Please use Locale Names such as "en-US" instead.
+//
+//  WARNING: Numerous SUBLANGS are assigned the same value, so 0x01 could be
+//           US, French, or many other variations.  Please use Locale Names
+//           such as "en-US" instead.  If that is not possible, consider
+//           testing the entire LCID, eg: 0x0409.
+//
+//  WARNING: There are > 6000 human languages.  The PRIMARYLANGID construct
+//           cannot support all languages your application may encounter.
+//           Please use Language Names, such as "en".
+//
+//  WARNING: There are > 200 country-regions.  The SUBLANGID construct cannot
+//           represent all valid dialects of languages such as English.
+//           Please use Locale Names, such as "en-US".
+//
+//  WARNING: Some languages may have more than one PRIMARYLANGID.  Please
+//           use Locale Names, such as "en-FJ".
+//
+//  WARNING: Some languages do not have assigned LANGIDs.  Please use
+//           Locale Names, such as "tlh-Piqd".
+//
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
 #define SUBLANG_NEUTRAL                             0x00    // language neutral
 #define SUBLANG_DEFAULT                             0x01    // user default
 #define SUBLANG_SYS_DEFAULT                         0x02    // system default

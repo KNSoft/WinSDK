@@ -1862,8 +1862,8 @@ EXTERN_C const IID IID_IWSManConnectionOptionsEx2;
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE SetProxy( 
             /* [defaultvalue][in] */ long accessType = 0,
             /* [defaultvalue][in] */ long authenticationMechanism = 0,
-            /* [defaultvalue][in] */ BSTR userName = L"",
-            /* [defaultvalue][in] */ BSTR password = L"") = 0;
+            /* [defaultvalue][in] */ BSTR userName = (BSTR)L"",
+            /* [defaultvalue][in] */ BSTR password = (BSTR)L"") = 0;
         
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE ProxyIEConfig( 
             /* [retval][out] */ long *value) = 0;

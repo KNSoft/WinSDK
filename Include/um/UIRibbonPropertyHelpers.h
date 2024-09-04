@@ -77,7 +77,7 @@ template<class T>
 HRESULT UIInitPropertyFromBoolean(const T& propertyKey, BOOL fVal, _Out_ PROPVARIANT* pPropVar)
 {
     // If this fails to compile, it means this property is not of type VT_BOOL
-    UIBreakCheckType<T, VT_BOOL>::_Type valid = UIBreakCheckType<T, VT_BOOL>::Validate(propertyKey);
+    typename UIBreakCheckType<T, VT_BOOL>::_Type valid = UIBreakCheckType<T, VT_BOOL>::Validate(propertyKey);
     return valid ? InitPropVariantFromBoolean(fVal, pPropVar) : E_INVALIDARG;
 }
 
@@ -85,7 +85,7 @@ template<class T>
 HRESULT UIInitPropertyFromUInt32(const T& propertyKey, UINT ulVal, _Out_ PROPVARIANT* pPropVar)
 {
     // If this fails to compile, it means this property is not of type VT_UI4
-    UIBreakCheckType<T, VT_UI4>::_Type valid = UIBreakCheckType<T, VT_UI4>::Validate(propertyKey);
+    typename UIBreakCheckType<T, VT_UI4>::_Type valid = UIBreakCheckType<T, VT_UI4>::Validate(propertyKey);
     return valid ? InitPropVariantFromUInt32(ulVal, pPropVar) : E_INVALIDARG;
 }
 
@@ -93,7 +93,7 @@ template<class T>
 HRESULT UIInitPropertyFromString(const T& propertyKey, _In_ PCWSTR psz, _Out_ PROPVARIANT* pPropVar)
 {
     // If this fails to compile, it means this property is not of type VT_LPWSTR
-    UIBreakCheckType<T, VT_LPWSTR>::_Type valid = UIBreakCheckType<T, VT_LPWSTR>::Validate(propertyKey);
+    typename UIBreakCheckType<T, VT_LPWSTR>::_Type valid = UIBreakCheckType<T, VT_LPWSTR>::Validate(propertyKey);
     return valid ? InitPropVariantFromString(psz, pPropVar) : E_INVALIDARG;
 }
 
@@ -101,7 +101,7 @@ template<class T>
 HRESULT UIInitPropertyFromDecimal(const T& propertyKey, const DECIMAL& decValue, _Out_ PROPVARIANT* pPropVar)
 {
     // If this fails to compile, it means this property is not of type VT_DECIMAL
-    UIBreakCheckType<T, VT_DECIMAL>::_Type valid = UIBreakCheckType<T, VT_DECIMAL>::Validate(propertyKey);
+    typename UIBreakCheckType<T, VT_DECIMAL>::_Type valid = UIBreakCheckType<T, VT_DECIMAL>::Validate(propertyKey);
     if (valid)
     {
         //  Must set decVal before vt because the two overlap.
@@ -116,7 +116,7 @@ template<class T>
 HRESULT UIInitPropertyFromInterface(const T& propertyKey, _In_ IUnknown* pUnk, _Out_ PROPVARIANT* pPropVar)
 {
     // If this fails to compile, it means this property is not of type VT_UNKNOWN
-    UIBreakCheckType<T, VT_UNKNOWN>::_Type valid = UIBreakCheckType<T, VT_UNKNOWN>::Validate(propertyKey);
+    typename UIBreakCheckType<T, VT_UNKNOWN>::_Type valid = UIBreakCheckType<T, VT_UNKNOWN>::Validate(propertyKey);
     if (valid)
     {
         pPropVar->vt = VT_UNKNOWN;
@@ -140,7 +140,7 @@ template<class T>
 HRESULT UIInitPropertyFromIUnknownArray(const T& propertyKey, _In_ SAFEARRAY* psa, _Out_ PROPVARIANT* pPropVar)
 {
     // If this fails to compile, it means this property is not of type VT_ARRAY
-    UIBreakCheckType<T, VT_ARRAY|VT_UNKNOWN>::_Type valid = UIBreakCheckType<T, VT_ARRAY|VT_UNKNOWN>::Validate(propertyKey);
+    typename UIBreakCheckType<T, VT_ARRAY|VT_UNKNOWN>::_Type valid = UIBreakCheckType<T, VT_ARRAY|VT_UNKNOWN>::Validate(propertyKey);
     if (valid && (psa->fFeatures & FADF_UNKNOWN) )
     {
         HRESULT hr = ::SafeArrayCopy(psa, &pPropVar->parray);
@@ -160,7 +160,7 @@ template<class T>
 HRESULT UIPropertyToBoolean(const T& propertyKey, REFPROPVARIANT propvarIn, _Out_ BOOL *pfRet)
 {
     // If this fails to compile, it means this property is not of type VT_BOOL
-    UIBreakCheckType<T, VT_BOOL>::_Type valid = UIBreakCheckType<T, VT_BOOL>::Validate(propertyKey);
+    typename UIBreakCheckType<T, VT_BOOL>::_Type valid = UIBreakCheckType<T, VT_BOOL>::Validate(propertyKey);
     return valid ? PropVariantToBoolean(propvarIn, pfRet) : E_INVALIDARG;
 }
 
@@ -168,7 +168,7 @@ template<class T>
 HRESULT UIPropertyToUInt32(const T& propertyKey, REFPROPVARIANT propvarIn, _Out_ UINT *pulVal)
 {
     // If this fails to compile, it means this property is not of type VT_UI4
-    UIBreakCheckType<T, VT_UI4>::_Type valid = UIBreakCheckType<T, VT_UI4>::Validate(propertyKey);
+    typename UIBreakCheckType<T, VT_UI4>::_Type valid = UIBreakCheckType<T, VT_UI4>::Validate(propertyKey);
     return valid ? PropVariantToUInt32(propvarIn, pulVal) : E_INVALIDARG;
 }
 
@@ -177,7 +177,7 @@ template<class T>
 HRESULT UIPropertyToStringAlloc(const T& propertyKey, REFPROPVARIANT propvarIn, _Outptr_ PWSTR *ppszOut)
 {
     // If this fails to compile, it means this property is not of type VT_LPWSTR
-    UIBreakCheckType<T, VT_LPWSTR>::_Type valid = UIBreakCheckType<T, VT_LPWSTR>::Validate(propertyKey);
+    typename UIBreakCheckType<T, VT_LPWSTR>::_Type valid = UIBreakCheckType<T, VT_LPWSTR>::Validate(propertyKey);
     return valid ? PropVariantToStringAlloc(propvarIn, ppszOut) : E_INVALIDARG;
 }
 
@@ -185,7 +185,7 @@ template<class T>
 HRESULT UIPropertyToDecimal(const T& propertyKey, REFPROPVARIANT propvarIn, _Out_ DECIMAL *pDecValue)
 {
     // If this fails to compile, it means this property is not of type VT_DECIMAL
-    UIBreakCheckType<T, VT_DECIMAL>::_Type valid = UIBreakCheckType<T, VT_DECIMAL>::Validate(propertyKey);
+    typename UIBreakCheckType<T, VT_DECIMAL>::_Type valid = UIBreakCheckType<T, VT_DECIMAL>::Validate(propertyKey);
     if (valid && propvarIn.vt == VT_DECIMAL)
     {
         *pDecValue = propvarIn.decVal;
@@ -199,7 +199,7 @@ HRESULT UIPropertyToInterface(const T& propertyKey, REFPROPVARIANT propvarIn, _O
 {
     *ppObj = NULL;
     // If this fails to compile, it means this property is not of type VT_UNKNOWN
-    UIBreakCheckType<T, VT_UNKNOWN>::_Type valid = UIBreakCheckType<T, VT_UNKNOWN>::Validate(propertyKey);
+    typename UIBreakCheckType<T, VT_UNKNOWN>::_Type valid = UIBreakCheckType<T, VT_UNKNOWN>::Validate(propertyKey);
     if (valid && propvarIn.vt == VT_UNKNOWN)
     {
         if (propvarIn.punkVal)
@@ -221,7 +221,7 @@ template<class T>
 HRESULT UIPropertyToIUnknownArrayAlloc(const T& propertyKey, REFPROPVARIANT propvarIn, _Outptr_ SAFEARRAY** ppsa)
 {
     // If this fails to compile, it means this property is not of type VT_ARRAY
-    UIBreakCheckType<T, VT_ARRAY|VT_UNKNOWN>::_Type valid = UIBreakCheckType<T, VT_ARRAY|VT_UNKNOWN>::Validate(propertyKey);
+    typename UIBreakCheckType<T, VT_ARRAY|VT_UNKNOWN>::_Type valid = UIBreakCheckType<T, VT_ARRAY|VT_UNKNOWN>::Validate(propertyKey);
     if (valid && propvarIn.vt == (VT_ARRAY|VT_UNKNOWN) )
     {
         return ::SafeArrayCopy(propvarIn.parray, ppsa);

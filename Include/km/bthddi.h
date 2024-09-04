@@ -1329,9 +1329,41 @@ struct _BRB_SCO_GET_SYSTEM_INFO {
 
 typedef struct _INDICATION_PARAMETERS *PINDICATION_PARAMETERS;
 typedef struct _INDICATION_PARAMETERS_ENHANCED *PINDICATION_PARAMETERS_ENHANCED;
-typedef enum _INDICATION_CODE INDICATION_CODE;
 
+#if (NTDDI_VERSION >= NTDDI_WIN8)
+typedef enum _INDICATION_CODE {
 
+    IndicationAddReference = 0,
+    IndicationReleaseReference,
+    IndicationRemoteConnect,
+    IndicationRemoteDisconnect,
+    IndicationRemoteConfigRequest,
+    IndicationRemoteConfigResponse,
+    IndicationFreeExtraOptions,
+    IndicationRecvPacket,
+    IndicationPairDevice,
+    IndicationUnpairDevice,
+    IndicationUnpersonalizeDevice,
+    IndicationRemoteConnectLE,
+} INDICATION_CODE, *PINDICATION_CODE;
+
+#else
+
+typedef enum _INDICATION_CODE {
+    IndicationAddReference = 0,
+    IndicationReleaseReference,
+    IndicationRemoteConnect,
+    IndicationRemoteDisconnect,
+    IndicationRemoteConfigRequest,
+    IndicationRemoteConfigResponse,
+    IndicationFreeExtraOptions,
+    IndicationRecvPacket,
+    IndicationPairDevice,
+    IndicationUnpairDevice,
+    IndicationUnpersonalizeDevice,
+} INDICATION_CODE, *PINDICATION_CODE;
+
+#endif // NTDDI_WIN8
 typedef
 void
 (*PFNBTHPORT_INDICATION_CALLBACK)(
@@ -1498,41 +1530,6 @@ typedef struct _CHANNEL_CONFIG_RESULTS {
     ULONG ExtraOptionsBufferSize;
 
 } CHANNEL_CONFIG_RESULTS, *PCHANNEL_CONFIG_RESULTS;
-
-#if (NTDDI_VERSION >= NTDDI_WIN8)
-typedef enum _INDICATION_CODE {
-
-    IndicationAddReference = 0,
-    IndicationReleaseReference,
-    IndicationRemoteConnect,
-    IndicationRemoteDisconnect,
-    IndicationRemoteConfigRequest,
-    IndicationRemoteConfigResponse,
-    IndicationFreeExtraOptions,
-    IndicationRecvPacket,
-    IndicationPairDevice,
-    IndicationUnpairDevice,
-    IndicationUnpersonalizeDevice,
-    IndicationRemoteConnectLE,
-} INDICATION_CODE, *PINDICATION_CODE;
-
-#else
-
-typedef enum _INDICATION_CODE {
-    IndicationAddReference = 0,
-    IndicationReleaseReference,
-    IndicationRemoteConnect,
-    IndicationRemoteDisconnect,
-    IndicationRemoteConfigRequest,
-    IndicationRemoteConfigResponse,
-    IndicationFreeExtraOptions,
-    IndicationRecvPacket,
-    IndicationPairDevice,
-    IndicationUnpairDevice,
-    IndicationUnpersonalizeDevice,
-} INDICATION_CODE, *PINDICATION_CODE;
-
-#endif // NTDDI_WIN8
 
 //
 // Reasons why a channel has been disconnected

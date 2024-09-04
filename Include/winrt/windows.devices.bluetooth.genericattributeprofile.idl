@@ -13,23 +13,6 @@ import "Windows.Foundation.idl";
 import "Windows.Devices.Bluetooth.idl";
 import "Windows.Devices.Enumeration.idl";
 import "Windows.Storage.Streams.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Edevices2Ebluetooth_h__)")
-cpp_quote("#include <Windows.Devices.Bluetooth.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Ebluetooth_h__)")
-cpp_quote("#if !defined(__windows2Edevices2Eenumeration_h__)")
-cpp_quote("#include <Windows.Devices.Enumeration.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Eenumeration_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -126,6 +109,8 @@ namespace Windows
                 interface IGattCharacteristicsResult;
 
                 interface IGattClientNotificationResult;
+
+                interface IGattClientNotificationResult2;
 
                 interface IGattDescriptor;
 
@@ -703,6 +688,14 @@ namespace Windows
                     [propget] HRESULT SubscribedClient([out] [retval] Windows.Devices.Bluetooth.GenericAttributeProfile.GattSubscribedClient** value);
                     [propget] HRESULT Status([out] [retval] Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus* value);
                     [propget] HRESULT ProtocolError([out] [retval] Windows.Foundation.IReference<BYTE>** value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientNotificationResult)]
+                [uuid(8FAEC497-45E0-497E-9582-29A1FE281AD5)]
+                interface IGattClientNotificationResult2 : IInspectable
+                {
+                    [propget] HRESULT BytesSent([out] [retval] UINT16* value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1319,6 +1312,7 @@ namespace Windows
                 runtimeclass GattClientNotificationResult
                 {
                     [default] interface Windows.Devices.Bluetooth.GenericAttributeProfile.IGattClientNotificationResult;
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.Bluetooth.GenericAttributeProfile.IGattClientNotificationResult2;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]

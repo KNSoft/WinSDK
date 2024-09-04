@@ -688,7 +688,9 @@ typedef struct DECLSPEC_ALIGN(16) _CONTEXT {
 
 
 
+
 #endif // _AMD64_
+
 
 
 
@@ -1104,11 +1106,11 @@ typedef struct DECLSPEC_ALIGN(16) _ARM64_NT_CONTEXT {
                         ULONG64 X26;
                         ULONG64 X27;
                         ULONG64 X28;
+    /* +0x0f0 */        ULONG64 Fp;
+    /* +0x0f8 */        ULONG64 Lr;
                     } DUMMYSTRUCTNAME;
-                    ULONG64 X[29];
+                    ULONG64 X[31];
                  } DUMMYUNIONNAME;
-    /* +0x0f0 */ ULONG64 Fp;
-    /* +0x0f8 */ ULONG64 Lr;
     /* +0x100 */ ULONG64 Sp;
     /* +0x108 */ ULONG64 Pc;
 
@@ -2575,7 +2577,7 @@ RtlIsGenericTableEmptyAvl (
 
 #endif // RTL_USE_AVL_TABLES
 
- 
+
 //
 //  Define the splay links and the associated manipuliation macros and
 //  routines.  Note that the splay_links should be an opaque type.
@@ -2869,7 +2871,7 @@ RtlRealPredecessor (
     );
 #endif
 
- 
+
 //
 //  Define the generic table package.  Note a generic table should really
 //  be an opaque type.  We provide routines to manipulate the structure.
@@ -4013,6 +4015,17 @@ RtlIsMultiSessionSku (
     );
 #endif // NTDDI_VERSION >= NTDDI_WIN10_RS1
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+_IRQL_requires_max_(PASSIVE_LEVEL)
+_Must_inspect_result_
+NTSYSAPI
+BOOLEAN
+NTAPI
+RtlIsStateSeparationEnabled (
+    VOID
+    );
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS2
+
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS1)
 _IRQL_requires_max_(PASSIVE_LEVEL)
 _Must_inspect_result_
@@ -4130,6 +4143,67 @@ RtlFlushNonVolatileMemoryRanges (
     );
 #endif // (NTDDI_VERSION >= NTDDI_RS2) && defined(_AMD64_)
 
+
+//
+// Correlation Vector Routines.
+//
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+
+#define RTL_CORRELATION_VECTOR_STRING_LENGTH 129
+#define RTL_CORRELATION_VECTOR_VERSION_1 ((CHAR)1)
+#define RTL_CORRELATION_VECTOR_VERSION_2 ((CHAR)2)
+#define RTL_CORRELATION_VECTOR_VERSION_CURRENT RTL_CORRELATION_VECTOR_VERSION_2
+
+#define RTL_CORRELATION_VECTOR_V1_PREFIX_LENGTH (16)
+#define RTL_CORRELATION_VECTOR_V1_LENGTH (64)
+
+#define RTL_CORRELATION_VECTOR_V2_PREFIX_LENGTH (22)
+#define RTL_CORRELATION_VECTOR_V2_LENGTH (128)
+
+typedef struct CORRELATION_VECTOR {
+    CHAR Version;
+    CHAR Vector[RTL_CORRELATION_VECTOR_STRING_LENGTH];
+} CORRELATION_VECTOR;
+
+typedef CORRELATION_VECTOR *PCORRELATION_VECTOR;
+
+#define TraceLoggingCORRELATION_VECTOR(cv) TraceLoggingString((cv).Vector, "__TlgCV__")
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+RtlInitializeCorrelationVector(
+    _Out_ PCORRELATION_VECTOR CorrelationVector,
+    _In_  int Version,
+    _In_opt_  const GUID * Guid
+    );
+
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+RtlIncrementCorrelationVector(
+    _Inout_ PCORRELATION_VECTOR CorrelationVector
+    );
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+RtlExtendCorrelationVector(
+    _Inout_ PCORRELATION_VECTOR CorrelationVector
+    );
+
+NTSYSAPI
+NTSTATUS
+NTAPI
+RtlValidateCorrelationVector(
+    _In_ PCORRELATION_VECTOR Vector
+    );
+
+#endif // NTDDI_VERSION >= NTDDI_RS2
+
 //
 // Define the various device type values.  Note that values used by Microsoft
 // Corporation are in the range 0-32767, and 32768-65535 are reserved for use
@@ -4221,6 +4295,7 @@ RtlFlushNonVolatileMemoryRanges (
 #define FILE_DEVICE_PERSISTENT_MEMORY   0x00000059
 #define FILE_DEVICE_NVDIMM              0x0000005a
 #define FILE_DEVICE_HOLOGRAPHIC         0x0000005b
+#define FILE_DEVICE_SDFXHCI             0x0000005c
 
 //
 // Macro definition for defining IOCTL and FSCTL function control codes.  Note
@@ -4757,7 +4832,8 @@ typedef enum _THREADINFOCLASS {
     ThreadActualGroupAffinity       = 41,
     ThreadDynamicCodePolicyInfo     = 42,
     ThreadSubsystemInformation      = 45,
-    MaxThreadInfoClass              = 48,
+
+    MaxThreadInfoClass              = 50,
 } THREADINFOCLASS;
 
 #define THREAD_CSWITCH_PMU_DISABLE  FALSE
@@ -5055,6 +5131,9 @@ typedef enum _PROCESS_MITIGATION_POLICY {
     ProcessSignaturePolicy,
     ProcessFontDisablePolicy,
     ProcessImageLoadPolicy,
+    ProcessSystemCallFilterPolicy,
+    ProcessPayloadRestrictionPolicy,
+    ProcessChildProcessPolicy,
     MaxProcessMitigationPolicy
 } PROCESS_MITIGATION_POLICY, *PPROCESS_MITIGATION_POLICY;
 
@@ -5104,7 +5183,8 @@ typedef struct _PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY {
         ULONG Flags;
         struct {
             ULONG DisallowWin32kSystemCalls : 1;
-            ULONG ReservedFlags : 31;
+            ULONG AuditDisallowWin32kSystemCalls : 1;
+            ULONG ReservedFlags : 30;
         } DUMMYSTRUCTNAME;
     } DUMMYUNIONNAME;
 } PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY, *PPROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY;
@@ -5126,7 +5206,8 @@ typedef struct _PROCESS_MITIGATION_DYNAMIC_CODE_POLICY {
             ULONG ProhibitDynamicCode : 1;
             ULONG AllowThreadOptOut : 1;
             ULONG AllowRemoteDowngrade : 1;
-            ULONG ReservedFlags : 29;
+            ULONG AuditProhibitDynamicCode : 1;
+            ULONG ReservedFlags : 28;
         } DUMMYSTRUCTNAME;
     } DUMMYUNIONNAME;
 } PROCESS_MITIGATION_DYNAMIC_CODE_POLICY, *PPROCESS_MITIGATION_DYNAMIC_CODE_POLICY;
@@ -5150,7 +5231,9 @@ typedef struct _PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY {
             ULONG MicrosoftSignedOnly : 1;
             ULONG StoreSignedOnly : 1;
             ULONG MitigationOptIn : 1;
-            ULONG ReservedFlags : 29;
+            ULONG AuditMicrosoftSignedOnly : 1;
+            ULONG AuditStoreSignedOnly : 1;
+            ULONG ReservedFlags : 27;
         } DUMMYSTRUCTNAME;
     } DUMMYUNIONNAME;
 } PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY, *PPROCESS_MITIGATION_BINARY_SIGNATURE_POLICY;
@@ -5173,10 +5256,61 @@ typedef struct _PROCESS_MITIGATION_IMAGE_LOAD_POLICY {
             ULONG NoRemoteImages : 1;
             ULONG NoLowMandatoryLabelImages : 1;
             ULONG PreferSystem32Images : 1;
-            ULONG ReservedFlags : 29;
+            ULONG AuditNoRemoteImages : 1;
+            ULONG AuditNoLowMandatoryLabelImages : 1;
+            ULONG ReservedFlags : 27;
         } DUMMYSTRUCTNAME;
     } DUMMYUNIONNAME;
 } PROCESS_MITIGATION_IMAGE_LOAD_POLICY, *PPROCESS_MITIGATION_IMAGE_LOAD_POLICY;
+
+typedef struct _PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY {
+    union {
+        ULONG Flags;
+        struct {
+            ULONG FilterId: 4;
+            ULONG ReservedFlags : 28;
+        } DUMMYSTRUCTNAME;
+    } DUMMYUNIONNAME;
+} PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY, *PPROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY;
+
+typedef struct _PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY {
+    union {
+        ULONG Flags;
+        struct {
+            ULONG EnableExportAddressFilter     : 1;
+            ULONG AuditExportAddressFilter      : 1;
+
+            ULONG EnableExportAddressFilterPlus : 1;
+            ULONG AuditExportAddressFilterPlus  : 1;
+
+            ULONG EnableImportAddressFilter     : 1;
+            ULONG AuditImportAddressFilter      : 1;
+
+            ULONG EnableRopStackPivot           : 1;
+            ULONG AuditRopStackPivot            : 1;
+
+            ULONG EnableRopCallerCheck          : 1;
+            ULONG AuditRopCallerCheck           : 1;
+
+            ULONG EnableRopSimExec              : 1;
+            ULONG AuditRopSimExec               : 1;
+
+            ULONG ReservedFlags                 : 20;
+        } DUMMYSTRUCTNAME;
+    } DUMMYUNIONNAME;
+} PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY, *PPROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY;
+
+typedef struct _PROCESS_MITIGATION_CHILD_PROCESS_POLICY {
+    union {
+        ULONG Flags;
+        struct {
+            ULONG NoChildProcessCreation : 1;
+            ULONG AuditNoChildProcessCreation : 1;
+            ULONG AllowSecureProcessCreation : 1;
+            ULONG ReservedFlags : 29;
+        } DUMMYSTRUCTNAME;
+    } DUMMYUNIONNAME;
+} PROCESS_MITIGATION_CHILD_PROCESS_POLICY, *PPROCESS_MITIGATION_CHILD_PROCESS_POLICY;
 
 
 
@@ -5196,6 +5330,24 @@ typedef struct _PROCESS_KEEPALIVE_COUNT_INFORMATION {
 typedef struct _PROCESS_REVOKE_FILE_HANDLES_INFORMATION {
     UNICODE_STRING TargetDevicePath;
 } PROCESS_REVOKE_FILE_HANDLES_INFORMATION, *PPROCESS_REVOKE_FILE_HANDLES_INFORMATION;
+
+//
+// Process Read/WriteVm Logging
+// NtQueryInformationProcess using ProcessEnableReadWriteVmLogging
+//
+#define PROCESS_READWRITEVM_LOGGING_ENABLE_READVM       0x01
+#define PROCESS_READWRITEVM_LOGGING_ENABLE_READVM_V     1UL
+#define PROCESS_READWRITEVM_LOGGING_ENABLE_WRITEVM      0x02L
+#define PROCESS_READWRITEVM_LOGGING_ENABLE_WRITEVM_V    2UL
+
+typedef union _PROCESS_READWRITEVM_LOGGING_INFORMATION {
+    UCHAR Flags;
+    struct {
+        UCHAR EnableReadVmLogging : 1;
+        UCHAR EnableWriteVmLogging : 1;
+        UCHAR Unused : 6;
+    };
+} PROCESS_READWRITEVM_LOGGING_INFORMATION, *PPROCESS_READWRITEVM_LOGGING_INFORMATION;
 
 //
 // Process Pooled Quota Usage and Limits
@@ -5298,45 +5450,34 @@ typedef enum _SUBSYSTEM_INFORMATION_TYPE {
 
 //
 // Process resource throttling information
-//  NtQueryInformationProcess using ProcessActivityThrottleState
+//  NtQueryInformationProcess using ProcessPowerThrottlingState
 //
 
-typedef enum _ACTIVITY_THROTTLE_STATE {
-    ActivityThrottleStateSystemManaged = 0,
-    ActivityThrottleStateForceOn = 1,
-    ActivityThrottleStateForceOff = 2,
-    MaxActivityThrottleState
-} ACTIVITY_THROTTLE_STATE, *PACTIVITY_THROTTLE_STATE;
+#define POWER_THROTTLING_PROCESS_CURRENT_VERSION 1
 
-//
-// Process resource throttling policy
-//  NtQueryInformationProcess using ProcessActivityThrottlePolicy
-//
+#define POWER_THROTTLING_PROCESS_EXECUTION_SPEED 0x1
+#define POWER_THROTTLING_PROCESS_DELAYTIMERS 0x2
 
-typedef enum _ACTIVITY_THROTTLE_POLICY_OP {
-    ActivityThrottlePolicyDisable = 0,
-    ActivityThrottlePolicyEnable = 1,
-    ActivityThrottlePolicyDefault = 2,
-    MaxActivityThrottlePolicy
-} ACTIVITY_THROTTLE_POLICY_OP, *PACTIVITY_THROTTLE_POLICY_OP;
+#define POWER_THROTTLING_PROCESS_VALID_FLAGS ((POWER_THROTTLING_PROCESS_EXECUTION_SPEED | \
+                                               POWER_THROTTLING_PROCESS_DELAYTIMERS))
 
-//
-// Flags for ACTIVITY_THROTTLE_POLICY PolicyFlags
-//
-
-#define ACTIVITY_THROTTLE_EXECUTIONSPEED 0x1
-#define ACTIVITY_THROTTLE_DELAYTIMERS 0x2
-#define ACTIVITY_THROTTLE_ALL ((ACTIVITY_THROTTLE_EXECUTIONSPEED | \
-                                ACTIVITY_THROTTLE_DELAYTIMERS))
-
-#define ACTIVITY_THROTTLE_POLICY_VERSION 1
-
-typedef struct _ACTIVITY_THROTTLE_POLICY {
+typedef struct _POWER_THROTTLING_PROCESS_STATE {
     ULONG Version;
-    ACTIVITY_THROTTLE_POLICY_OP Operation;
-    ULONG PolicyFlags;
-} ACTIVITY_THROTTLE_POLICY, *PACTIVITY_THROTTLE_POLICY;
+    ULONG ControlMask;
+    ULONG StateMask;
+} POWER_THROTTLING_PROCESS_STATE, *PPOWER_THROTTLING_PROCESS_STATE;
 
+#define POWER_THROTTLING_THREAD_CURRENT_VERSION 1
+
+#define POWER_THROTTLING_THREAD_EXECUTION_SPEED 0x1
+
+#define POWER_THROTTLING_THREAD_VALID_FLAGS (POWER_THROTTLING_THREAD_EXECUTION_SPEED)
+
+typedef struct _POWER_THROTTLING_THREAD_STATE {
+    ULONG Version;
+    ULONG ControlMask;
+    ULONG StateMask;
+} POWER_THROTTLING_THREAD_STATE, *PPOWER_THROTTLING_THREAD_STATE;
 
 __kernel_entry NTSYSCALLAPI
 NTSTATUS
@@ -5355,6 +5496,7 @@ NtOpenProcess (
 
 
 #if defined(_X86_) 
+
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
@@ -7588,6 +7730,10 @@ typedef struct _XSTATE_CONFIGURATION {
 #define SHARED_GLOBAL_FLAGS_MULTIUSERS_IN_SESSION_SKU   \
     (1UL << SHARED_GLOBAL_FLAGS_MULTIUSERS_IN_SESSION_SKU_V)
 
+#define SHARED_GLOBAL_FLAGS_STATE_SEPARATION_ENABLED_V 0xA
+#define SHARED_GLOBAL_FLAGS_STATE_SEPARATION_ENABLED   \
+    (1UL << SHARED_GLOBAL_FLAGS_STATE_SEPARATION_ENABLED_V)
+
 #define EX_INIT_BITS(Flags, Bit) \
     *((Flags)) |= (Bit)             // Safe to use before concurrently accessible
 
@@ -7603,6 +7749,18 @@ typedef struct _XSTATE_CONFIGURATION {
 
 #define SYSTEM_CALL_SYSCALL 0
 #define SYSTEM_CALL_INT_2E  1
+
+//
+// Define flags for QPC bypass information. None of these flags may be set
+// unless bypass is enabled. This is for compat with existing code which
+// compares this value to zero to detect bypass enablement.
+//
+
+#define SHARED_GLOBAL_FLAGS_QPC_BYPASS_ENABLED (0x01)
+#define SHARED_GLOBAL_FLAGS_QPC_BYPASS_USE_MFENCE (0x10)
+#define SHARED_GLOBAL_FLAGS_QPC_BYPASS_USE_LFENCE (0x20)
+#define SHARED_GLOBAL_FLAGS_QPC_BYPASS_A73_ERRATA (0x40)
+#define SHARED_GLOBAL_FLAGS_QPC_BYPASS_USE_RDTSCP (0x80)
 
 typedef struct _KUSER_SHARED_DATA {
 
@@ -7890,7 +8048,8 @@ typedef struct _KUSER_SHARED_DATA {
             ULONG DbgSecureBootEnabled      : 1;
             ULONG DbgMultiSessionSku        : 1;
             ULONG DbgMultiUsersInSessionSku : 1;
-            ULONG SpareBits                 : 22;
+            ULONG DbgStateSeparationEnabled : 1;
+            ULONG SpareBits                 : 21;
         } DUMMYSTRUCTNAME2;
     } DUMMYUNIONNAME2;
 
@@ -8013,10 +8172,10 @@ typedef struct _KUSER_SHARED_DATA {
     ULONG EnclaveFeatureMask[4];
 
     //
-    // Reserved (available for reuse).
+    // Current coverage round for telemetry based coverage.
     //
 
-    ULONG Reserved8;
+    ULONG TelemetryCoverageRound;
 
     //
     // The following field is used for ETW user mode global logging
@@ -8079,7 +8238,7 @@ typedef struct _KUSER_SHARED_DATA {
             // can read the counter directly (bypassing the system call).
             //
 
-            volatile BOOLEAN QpcBypassEnabled;
+            volatile UCHAR QpcBypassEnabled;
 
             //
             // Shift applied to the raw counter value to derive the
@@ -8192,7 +8351,7 @@ C_ASSERT(FIELD_OFFSET(KUSER_SHARED_DATA, QpcSystemTimeIncrementShift) == 0x368);
 C_ASSERT(FIELD_OFFSET(KUSER_SHARED_DATA, QpcInterruptTimeIncrementShift) == 0x369);
 C_ASSERT(FIELD_OFFSET(KUSER_SHARED_DATA, UnparkedProcessorCount) == 0x36a);
 C_ASSERT(FIELD_OFFSET(KUSER_SHARED_DATA, EnclaveFeatureMask) == 0x36c);
-C_ASSERT(FIELD_OFFSET(KUSER_SHARED_DATA, Reserved8) == 0x37c);
+C_ASSERT(FIELD_OFFSET(KUSER_SHARED_DATA, TelemetryCoverageRound) == 0x37c);
 C_ASSERT(FIELD_OFFSET(KUSER_SHARED_DATA, UserModeGlobalLogger) == 0x380);
 C_ASSERT(FIELD_OFFSET(KUSER_SHARED_DATA, ImageFileExecutionOptions) == 0x3a0);
 C_ASSERT(FIELD_OFFSET(KUSER_SHARED_DATA, LangGenerationCount) == 0x3a4);
@@ -9151,7 +9310,7 @@ MmIsThisAnNtAsSystem (
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_ (APC_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -9198,7 +9357,7 @@ typedef enum _MM_ROTATE_DIRECTION {
 } MM_ROTATE_DIRECTION, *PMM_ROTATE_DIRECTION;
 
 #if (NTDDI_VERSION >= NTDDI_VISTA)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_ (APC_LEVEL)
 NTSTATUS
 MmRotatePhysicalView (
@@ -9247,7 +9406,7 @@ MmGetPhysicalMemoryRangesEx (
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_ (APC_LEVEL)
 NTKERNELAPI
 _Out_writes_bytes_opt_ (NumberOfBytes) PVOID
@@ -9319,7 +9478,7 @@ MmGetVirtualForPhysical (
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_(DISPATCH_LEVEL)
 NTKERNELAPI
 _When_ (return != NULL, _Post_writable_byte_size_ (NumberOfBytes)) PVOID
@@ -9330,7 +9489,7 @@ MmAllocateContiguousMemory (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_(DISPATCH_LEVEL)
 NTKERNELAPI
 _When_ (return != NULL, _Post_writable_byte_size_ (NumberOfBytes)) PVOID
@@ -9356,7 +9515,7 @@ typedef ULONG NODE_REQUIREMENT;
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_VISTA)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_(DISPATCH_LEVEL)
 NTKERNELAPI
 _When_ (return != NULL, _Post_writable_byte_size_ (NumberOfBytes)) PVOID
@@ -9371,7 +9530,7 @@ MmAllocateContiguousMemorySpecifyCacheNode (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_(DISPATCH_LEVEL)
 NTKERNELAPI
 _When_ (return != NULL, _Post_writable_byte_size_ (NumberOfBytes)) PVOID
@@ -9407,7 +9566,7 @@ MmFreeContiguousMemorySpecifyCache (
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_(APC_LEVEL)
 NTKERNELAPI
 _Out_writes_bytes_opt_ (NumberOfBytes) PVOID
@@ -9463,8 +9622,8 @@ MmLockPagableSectionByHandle (
 // value from this function can ONLY be used with MmUnsecureVirtualMemory.
 //
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
-_Must_inspect_result_ 
-_IRQL_requires_max_(APC_LEVEL) 
+_Must_inspect_result_
+_IRQL_requires_max_(APC_LEVEL)
 __drv_reportError("Caution: MmSecureVirtualMemory ensures the specified VA "
 	"range protections cannot be tightened - but accesses to the memory can "
 	"still fail and so they must be protected by try-except.")
@@ -9504,7 +9663,7 @@ MmMapViewInSystemSpaceEx (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_ (APC_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -9539,7 +9698,7 @@ MmMapViewInSessionSpaceEx (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_ (APC_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -9562,7 +9721,7 @@ MmUnmapViewInSessionSpace (
 
 
 #if (NTDDI_VERSION >= NTDDI_WS03)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_ (PASSIVE_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -9780,6 +9939,20 @@ PsSetLoadImageNotifyRoutine(
     );
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+
+#define PS_IMAGE_NOTIFY_CONFLICTING_ARCHITECTURE            0x1
+
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+NTSTATUS
+PsSetLoadImageNotifyRoutineEx(
+    _In_ PLOAD_IMAGE_NOTIFY_ROUTINE NotifyRoutine,
+    _In_ ULONG_PTR Flags
+    );
+
+#endif
+
 #if (NTDDI_VERSION >= NTDDI_WINXP)
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTKERNELAPI
@@ -9924,7 +10097,7 @@ typedef
 VOID
 (NTAPI *SILO_CONTEXT_CLEANUP_CALLBACK)(
     _In_ PVOID SiloContext
-    ); 
+    );
 
 typedef
 NTSTATUS
@@ -10182,6 +10355,12 @@ PsGetServerSiloServiceSessionId(
     );
 
 NTKERNELAPI
+ULONG
+PsGetServerSiloActiveConsoleId(
+    _In_ PESILO Silo
+    );
+
+NTKERNELAPI
 VOID
 PsTerminateServerSilo(
     _In_ PESILO ServerSilo,
@@ -10189,12 +10368,22 @@ PsTerminateServerSilo(
     );
 
 #endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+
+PESILO
+PsGetParentSilo(
+    _In_opt_ PEJOB Job
+    );
+
+#endif
 //
 // Directory control minor function codes
 //
 
-#define IRP_MN_QUERY_DIRECTORY          0x01
-#define IRP_MN_NOTIFY_CHANGE_DIRECTORY  0x02
+#define IRP_MN_QUERY_DIRECTORY              0x01
+#define IRP_MN_NOTIFY_CHANGE_DIRECTORY      0x02
+#define IRP_MN_NOTIFY_CHANGE_DIRECTORY_EX   0x03
 
 //
 // File system control minor function codes.  Note that "user request" is
@@ -11135,6 +11324,7 @@ IoQueryInformationByName (
     _Out_writes_bytes_(Length) PVOID FileInformation,
     _In_ ULONG Length,
     _In_ FILE_INFORMATION_CLASS FileInformationClass,
+    _In_ ULONG Options,
     _In_opt_ PIO_DRIVER_CREATE_CONTEXT DriverContext
     );
 #endif
@@ -12160,6 +12350,8 @@ typedef enum _HAL_QUERY_INFORMATION_CLASS {
     HalQueryProfileNumberOfCounters,
     HalQueryHyperlaunchEntrypoint,
     HalHardwareWatchdogInformation,
+    HalDmaRemappingInformation,
+    HalQueryRuntimeServicesBlockInformation,
     // information levels >= 0x8000000 reserved for OEM use
 } HAL_QUERY_INFORMATION_CLASS, *PHAL_QUERY_INFORMATION_CLASS;
 
@@ -12184,6 +12376,7 @@ typedef enum _HAL_SET_INFORMATION_CLASS {
     HalSetResetParkDisposition,        // Set whether to park processors on reset (LOGICAL)
     HalSetPsciSuspendMode,
     HalSetHvciEnabled,
+    HalSetProcessorTraceInterruptHandler, // Register performance monitor interrupt callback for Intel Processor Trace
 //    HalRegisterPlatformServicesInterface,
 } HAL_SET_INFORMATION_CLASS, *PHAL_SET_INFORMATION_CLASS;
 
@@ -12392,9 +12585,18 @@ NTSTATUS
 
 
 typedef struct {
-    UCHAR     Type;  //CmResourceType
-    BOOLEAN   Valid;
-    UCHAR     Reserved[2];
+    UCHAR Type;  //CmResourceType
+    BOOLEAN Valid;
+
+    union {
+        UCHAR Reserved[2];
+
+        struct {
+            UCHAR BitWidth;
+            UCHAR AccessSize;
+        };
+    };
+
     PUCHAR    TranslatedAddress;
     ULONG     Length;
 } DEBUG_DEVICE_ADDRESS, *PDEBUG_DEVICE_ADDRESS;
@@ -12443,6 +12645,7 @@ typedef struct _DEBUG_TRANSPORT_DATA {
 #define DBG_DEVICE_FLAG_BARS_MAPPED           0x02
 #define DBG_DEVICE_FLAG_SCRATCH_ALLOCATED     0x04
 #define DBG_DEVICE_FLAG_UNCACHED_MEMORY       0x08
+#define DBG_DEVICE_FLAG_SYNTHETIC             0x10
 
 typedef struct _DEBUG_DEVICE_DESCRIPTOR {
     ULONG     Bus;

@@ -10,24 +10,21 @@ import "AsyncInfo.idl";
 import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
+import "Windows.ApplicationModel.Contacts.idl";
 import "Windows.ApplicationModel.DataTransfer.idl";
 import "Windows.Storage.Streams.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Edatatransfer_h__)")
-cpp_quote("#include <Windows.ApplicationModel.DataTransfer.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Edatatransfer_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
+namespace Windows
+{
+    namespace ApplicationModel
+    {
+        namespace Contacts
+        {
+            runtimeclass Contact;
+        }
+    }
+}
 namespace Windows
 {
     namespace ApplicationModel
@@ -68,6 +65,8 @@ namespace Windows
                 interface IShareOperation;
 
                 interface IShareOperation2;
+
+                interface IShareOperation3;
 
                 runtimeclass QuickLink;
 
@@ -127,6 +126,14 @@ namespace Windows
                     HRESULT DismissUI();
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation)]
+                [uuid(5EF6B382-B7A7-4571-A2A6-994A034988B2)]
+                interface IShareOperation3 : IInspectable
+                {
+                    [propget] HRESULT Contacts([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.ApplicationModel.Contacts.Contact*>** value);
+                }
+
                 [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [marshaling_behavior(standard)]
@@ -141,6 +148,7 @@ namespace Windows
                 {
                     [default] interface Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation;
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation2;
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation3;
                 }
             }
         }

@@ -68,7 +68,7 @@ Revision History:
 #define USB_GET_DEVICE_HANDLE_EX    269
 #define USB_GET_TT_DEVICE_HANDLE    270
 #define USB_GET_TOPOLOGY_ADDRESS    271
-#define USB_IDLE_NOTIFICATION_EX    272  
+#define USB_IDLE_NOTIFICATION_EX    272
 #define USB_REQ_GLOBAL_SUSPEND      273
 #define USB_REQ_GLOBAL_RESUME       274
 #define USB_GET_HUB_CONFIG_INFO     275
@@ -76,13 +76,13 @@ Revision History:
 
 /*
     Function codes for kernel mode IOCTLs with DeviceType : DEVICE_TYPE_USBEX
-    
+
     The following codes are valid only if passed as in
     the icControlCode parameter for
     IRP_MJ_INTERNAL_DEVICE_CONTROL
-    
+
     The range 0 - 2047 is reserved for use by Microsoft.
-    The range 0 - 1023 is used for Public Ioctls defined by Microsoft. 
+    The range 0 - 1023 is used for Public Ioctls defined by Microsoft.
 
 */
 
@@ -111,22 +111,33 @@ Revision History:
 #define HCD_TRACE_READ_REQUEST              275
 
 
-#define USB_GET_NODE_INFORMATION                    258
-#define USB_GET_NODE_CONNECTION_INFORMATION         259
-#define USB_GET_DESCRIPTOR_FROM_NODE_CONNECTION     260
-#define USB_GET_NODE_CONNECTION_NAME                261
-#define USB_DIAG_IGNORE_HUBS_ON                     262
-#define USB_DIAG_IGNORE_HUBS_OFF                    263
-#define USB_GET_NODE_CONNECTION_DRIVERKEY_NAME      264
-#define USB_GET_HUB_CAPABILITIES                    271
-#define USB_GET_NODE_CONNECTION_ATTRIBUTES          272
-#define USB_HUB_CYCLE_PORT                          273
-#define USB_GET_NODE_CONNECTION_INFORMATION_EX      274
-#define USB_RESET_HUB                               275
-#define USB_GET_HUB_CAPABILITIES_EX                 276
-#define USB_GET_HUB_INFORMATION_EX                  277
-#define USB_GET_PORT_CONNECTOR_PROPERTIES           278
-#define USB_GET_NODE_CONNECTION_INFORMATION_EX_V2   279
+#define USB_GET_NODE_INFORMATION                            258
+#define USB_GET_NODE_CONNECTION_INFORMATION                 259
+#define USB_GET_DESCRIPTOR_FROM_NODE_CONNECTION             260
+#define USB_GET_NODE_CONNECTION_NAME                        261
+#define USB_DIAG_IGNORE_HUBS_ON                             262
+#define USB_DIAG_IGNORE_HUBS_OFF                            263
+#define USB_GET_NODE_CONNECTION_DRIVERKEY_NAME              264
+#define USB_GET_HUB_CAPABILITIES                            271
+#define USB_GET_NODE_CONNECTION_ATTRIBUTES                  272
+#define USB_HUB_CYCLE_PORT                                  273
+#define USB_GET_NODE_CONNECTION_INFORMATION_EX              274
+#define USB_RESET_HUB                                       275
+#define USB_GET_HUB_CAPABILITIES_EX                         276
+#define USB_GET_HUB_INFORMATION_EX                          277
+#define USB_GET_PORT_CONNECTOR_PROPERTIES                   278
+#define USB_GET_NODE_CONNECTION_INFORMATION_EX_V2           279
+
+#define USB_GET_TRANSPORT_CHARACTERISTICS                   281
+#define USB_REGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE   282
+#define USB_NOTIFY_ON_TRANSPORT_CHARACTERISTICS_CHANGE      283
+#define USB_UNREGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE 284
+
+#define USB_START_TRACKING_FOR_TIME_SYNC                    285
+#define USB_GET_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC          286
+#define USB_STOP_TRACKING_FOR_TIME_SYNC                     287
+
+#define USB_GET_DEVICE_CHARACTERISTICS                      288
 
 /*
 USB specific GUIDs
@@ -136,6 +147,10 @@ USB specific GUIDs
 /* f18a0e88-c30c-11d0-8815-00a0c906bed8 */
 DEFINE_GUID(GUID_DEVINTERFACE_USB_HUB,    0xf18a0e88, 0xc30c, 0x11d0, 0x88, 0x15, 0x00, \
              0xa0, 0xc9, 0x06, 0xbe, 0xd8);
+
+/*5e9adaef-f879-473f-b807-4e5ea77d1b1c*/
+DEFINE_GUID(GUID_DEVINTERFACE_USB_BILLBOARD, 0x5e9adaef, 0xf879, 0x473f, 0xb8, 0x07, 0x4e, \
+            0x5e, 0xa7, 0x7d, 0x1b, 0x1c);
 
 /* A5DCBF10-6530-11D2-901F-00C04FB951ED */
 DEFINE_GUID(GUID_DEVINTERFACE_USB_DEVICE, 0xA5DCBF10L, 0x6530, 0x11D2, 0x90, 0x1F, 0x00, \
@@ -161,21 +176,21 @@ DEFINE_GUID(GUID_USB_WMI_STD_NOTIFICATION, 0x4E623B20L, 0xCB14, 0x11D1, 0xB3, 0x
 /* 66C1AA3C-499F-49a0-A9A5-61E2359F6407 */
 DEFINE_GUID(GUID_USB_WMI_DEVICE_PERF_INFO, 0x66c1aa3c, 0x499f, 0x49a0, 0xa9, 0xa5, 0x61, 0xe2,\
              0x35, 0x9f, 0x64, 0x7);
-             
+
 // {9C179357-DC7A-4f41-B66B-323B9DDCB5B1}
-DEFINE_GUID(GUID_USB_WMI_NODE_INFO, 
+DEFINE_GUID(GUID_USB_WMI_NODE_INFO,
 0x9c179357, 0xdc7a, 0x4f41, 0xb6, 0x6b, 0x32, 0x3b, 0x9d, 0xdc, 0xb5, 0xb1);
 
 /* 3a61881b-b4e6-4bf9-ae0f-3cd8f394e52f */
-DEFINE_GUID(GUID_USB_WMI_TRACING, 
+DEFINE_GUID(GUID_USB_WMI_TRACING,
 0x3a61881b, 0xb4e6, 0x4bf9, 0xae, 0xf, 0x3c, 0xd8, 0xf3, 0x94, 0xe5, 0x2f);
 
 // {681EB8AA-403D-452c-9F8A-F0616FAC9540}
-DEFINE_GUID(GUID_USB_TRANSFER_TRACING, 
+DEFINE_GUID(GUID_USB_TRANSFER_TRACING,
 0x681eb8aa, 0x403d, 0x452c, 0x9f, 0x8a, 0xf0, 0x61, 0x6f, 0xac, 0x95, 0x40);
 
 // {D5DE77A6-6AE9-425c-B1E2-F5615FD348A9}
-DEFINE_GUID(GUID_USB_PERFORMANCE_TRACING, 
+DEFINE_GUID(GUID_USB_PERFORMANCE_TRACING,
 0xd5de77a6, 0x6ae9, 0x425c, 0xb1, 0xe2, 0xf5, 0x61, 0x5f, 0xd3, 0x48, 0xa9);
 
 // {9BBBF831-A2F2-43B4-96D1-86944B5914B3}
@@ -226,7 +241,7 @@ Obsolete device interface class GUID names.
 */
 
 
-_IRQL_requires_max_(PASSIVE_LEVEL) 
+_IRQL_requires_max_(PASSIVE_LEVEL)
 typedef
 VOID
 (*USB_IDLE_CALLBACK)(

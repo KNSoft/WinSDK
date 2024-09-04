@@ -12,20 +12,6 @@ import "windowscontracts.idl";
 import "Windows.Foundation.idl";
 import "Windows.Networking.Connectivity.idl";
 import "Windows.Security.Credentials.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Enetworking2Econnectivity_h__)")
-cpp_quote("#include <Windows.Networking.Connectivity.h>")
-cpp_quote("#endif // !defined(__windows2Enetworking2Econnectivity_h__)")
-cpp_quote("#if !defined(__windows2Esecurity2Ecredentials_h__)")
-cpp_quote("#include <Windows.Security.Credentials.h>")
-cpp_quote("#endif // !defined(__windows2Esecurity2Ecredentials_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -71,6 +57,8 @@ namespace Windows
         {
             typedef enum WiFiAccessStatus WiFiAccessStatus;
 
+            typedef enum WiFiConnectionMethod WiFiConnectionMethod;
+
             typedef enum WiFiConnectionStatus WiFiConnectionStatus;
 
             typedef enum WiFiNetworkKind WiFiNetworkKind;
@@ -79,7 +67,13 @@ namespace Windows
 
             typedef enum WiFiReconnectionKind WiFiReconnectionKind;
 
+            typedef enum WiFiWpsConfigurationStatus WiFiWpsConfigurationStatus;
+
+            typedef enum WiFiWpsKind WiFiWpsKind;
+
             interface IWiFiAdapter;
+
+            interface IWiFiAdapter2;
 
             interface IWiFiAdapterStatics;
 
@@ -89,6 +83,8 @@ namespace Windows
 
             interface IWiFiNetworkReport;
 
+            interface IWiFiWpsConfigurationResult;
+
             runtimeclass WiFiAdapter;
 
             runtimeclass WiFiAvailableNetwork;
@@ -96,6 +92,8 @@ namespace Windows
             runtimeclass WiFiConnectionResult;
 
             runtimeclass WiFiNetworkReport;
+
+            runtimeclass WiFiWpsConfigurationResult;
         }
     }
 }
@@ -113,19 +111,27 @@ namespace Windows
 
                 interface Windows.Foundation.Collections.IIterable<Windows.Devices.WiFi.WiFiAvailableNetwork*>;
 
+                interface Windows.Foundation.Collections.IIterable<Windows.Devices.WiFi.WiFiWpsKind>;
+
                 interface Windows.Foundation.Collections.IIterator<Windows.Devices.WiFi.WiFiAdapter*>;
 
                 interface Windows.Foundation.Collections.IIterator<Windows.Devices.WiFi.WiFiAvailableNetwork*>;
 
+                interface Windows.Foundation.Collections.IIterator<Windows.Devices.WiFi.WiFiWpsKind>;
+
                 interface Windows.Foundation.Collections.IVectorView<Windows.Devices.WiFi.WiFiAdapter*>;
 
                 interface Windows.Foundation.Collections.IVectorView<Windows.Devices.WiFi.WiFiAvailableNetwork*>;
+
+                interface Windows.Foundation.Collections.IVectorView<Windows.Devices.WiFi.WiFiWpsKind>;
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Devices.WiFi.WiFiAccessStatus>;
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Devices.WiFi.WiFiAdapter*>;
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Devices.WiFi.WiFiConnectionResult*>;
+
+                interface Windows.Foundation.IAsyncOperation<Windows.Devices.WiFi.WiFiWpsConfigurationResult*>;
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVectorView<Windows.Devices.WiFi.WiFiAdapter*>*>;
 
@@ -149,6 +155,14 @@ namespace Windows
                 Allowed        = 1,
                 DeniedByUser   = 2,
                 DeniedBySystem = 3
+            };
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            enum WiFiConnectionMethod
+            {
+                Default       = 0,
+                WpsPin        = 1,
+                WpsPushButton = 2
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -194,6 +208,25 @@ namespace Windows
                 Manual    = 1
             };
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            enum WiFiWpsConfigurationStatus
+            {
+                UnspecifiedFailure = 0,
+                Success            = 1,
+                Timeout            = 2
+            };
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            enum WiFiWpsKind
+            {
+                Unknown    = 0,
+                Pin        = 1,
+                PushButton = 2,
+                Nfc        = 3,
+                Ethernet   = 4,
+                Usb        = 5
+            };
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Devices.WiFi.WiFiAdapter)]
             [uuid(A6C4E423-3D75-43A4-B9DE-11E26B72D9B0)]
@@ -208,6 +241,15 @@ namespace Windows
                 [overload("ConnectAsync")] HRESULT ConnectWithPasswordCredentialAsync([in] Windows.Devices.WiFi.WiFiAvailableNetwork* availableNetwork, [in] Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind, [in] Windows.Security.Credentials.PasswordCredential* passwordCredential, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.WiFi.WiFiConnectionResult*>** value);
                 [overload("ConnectAsync")] HRESULT ConnectWithPasswordCredentialAndSsidAsync([in] Windows.Devices.WiFi.WiFiAvailableNetwork* availableNetwork, [in] Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind, [in] Windows.Security.Credentials.PasswordCredential* passwordCredential, [in] HSTRING ssid, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.WiFi.WiFiConnectionResult*>** value);
                 HRESULT Disconnect();
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.WiFi.WiFiAdapter)]
+            [uuid(5BC4501D-81E4-453D-9430-1FCAFBADD6B6)]
+            interface IWiFiAdapter2 : IInspectable
+            {
+                HRESULT GetWpsConfigurationAsync([in] Windows.Devices.WiFi.WiFiAvailableNetwork* availableNetwork, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.WiFi.WiFiWpsConfigurationResult*>** operation);
+                [overload("ConnectAsync")] HRESULT ConnectWithPasswordCredentialAndSsidAndConnectionMethodAsync([in] Windows.Devices.WiFi.WiFiAvailableNetwork* availableNetwork, [in] Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind, [in] Windows.Security.Credentials.PasswordCredential* passwordCredential, [in] HSTRING ssid, [in] Windows.Devices.WiFi.WiFiConnectionMethod connectionMethod, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.WiFi.WiFiConnectionResult*>** operation);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -256,12 +298,22 @@ namespace Windows
                 [propget] HRESULT AvailableNetworks([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.Devices.WiFi.WiFiAvailableNetwork*>** value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.WiFi.WiFiWpsConfigurationResult)]
+            [uuid(67B49871-17EE-42D1-B14F-5A11F1226FB5)]
+            interface IWiFiWpsConfigurationResult : IInspectable
+            {
+                [propget] HRESULT Status([out] [retval] Windows.Devices.WiFi.WiFiWpsConfigurationStatus* value);
+                [propget] HRESULT SupportedWpsKinds([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.Devices.WiFi.WiFiWpsKind>** value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
             [static(Windows.Devices.WiFi.IWiFiAdapterStatics, Windows.Foundation.UniversalApiContract, 1.0)]
             runtimeclass WiFiAdapter
             {
                 [default] interface Windows.Devices.WiFi.IWiFiAdapter;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.WiFi.IWiFiAdapter2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -283,6 +335,13 @@ namespace Windows
             runtimeclass WiFiNetworkReport
             {
                 [default] interface Windows.Devices.WiFi.IWiFiNetworkReport;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            runtimeclass WiFiWpsConfigurationResult
+            {
+                [default] interface Windows.Devices.WiFi.IWiFiWpsConfigurationResult;
             }
         }
     }

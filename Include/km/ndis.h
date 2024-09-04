@@ -40,7 +40,8 @@ Notes:
 
         Version     First available in
         ------------------------------------------------------------------
-        670         Windows 10
+        680         Windows 10  RS3 Release
+        670         Windows 10, version 1703
         660         Windows 10, version 1607 / Windows Server 2016
         651         Windows 10, version 1511
         650         Windows 10, version 1507
@@ -92,6 +93,8 @@ Notes:
 
     Do not define BINARY_COMPATIBLE, USE_KLOCKS, or WIRELESS_WAN; these are
     deprecated.  Do not define NDIS_WRAPPER; it is reserved for use by NDIS.
+    NDIS_WDF and all defines starting with NET_ADAPTER_CX are reserved for
+    the WDF NetAdapter Class Extension.
 
 --*/
 
@@ -231,10 +234,11 @@ typedef enum _NET_DEVICE_POWER_STATE
 // of requiring the client to do it.
 //
 
-#if defined(NET_ADAPTER_CX_1_0)
-#  if (NET_ADAPTER_CX_1_0 == 1)
+#if (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1))
+#  if (NET_ADAPTER_CX_1_0 == 1 || NET_ADAPTER_CX_1_1 == 1)
 #    if (defined(NDIS_MINIPORT_DRIVER) || \
          defined(NDIS_WDF)             || \
+         defined(NDIS680_MINIPORT)     || \
          defined(NDIS670_MINIPORT)     || \
          defined(NDIS660_MINIPORT)     || \
          defined(NDIS651_MINIPORT)     || \
@@ -250,15 +254,17 @@ typedef enum _NET_DEVICE_POWER_STATE
 #    endif
 #    define NDIS_MINIPORT_DRIVER 1
 #    define NDIS_WDF 1
-#    define NDIS670_MINIPORT 1
+#    if (NET_ADAPTER_CX_1_1 == 1)
+#        define NDIS680_MINIPORT 1
+#    elif (NET_ADAPTER_CX_1_0 == 1)
+#        define NDIS670_MINIPORT 1
+#    endif
 #    if defined(NDIS_WDM)
 #        undef NDIS_WDM
 #    endif
 #    define NDIS_WDM 1
-#  else
-#    error If NET_ADAPTER_CX_1_0 is defined, it can only have the value 1
-#  endif // NET_ADAPTER_CX_1_0 == 1
-#endif // NET_ADAPTER_CX_1_0
+#  endif // (NET_ADAPTER_CX_1_0 == 1 || NET_ADAPTER_CX_1_1 == 1)
+#endif // ((defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1))
 
 
 //
@@ -363,7 +369,10 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 // for Miniports versions 5.0 and up, provide a consistent way to match
 // Ndis version in their characteristics with their makefile defines
 //
-#if (defined(NDIS670_MINIPORT))
+#if (defined(NDIS680_MINIPORT))
+#define NDIS_MINIPORT_MAJOR_VERSION 6
+#define NDIS_MINIPORT_MINOR_VERSION 80
+#elif (defined(NDIS670_MINIPORT))
 #define NDIS_MINIPORT_MAJOR_VERSION 6
 #define NDIS_MINIPORT_MINOR_VERSION 70
 #elif (defined(NDIS660_MINIPORT))
@@ -445,12 +454,16 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 #elif (defined(NDIS670_MINIPORT))
 #define NDIS_MINIPORT_MINIMUM_MAJOR_VERSION 6
 #define NDIS_MINIPORT_MINIMUM_MINOR_VERSION 70
+#elif (defined(NDIS680_MINIPORT))
+#define NDIS_MINIPORT_MINIMUM_MAJOR_VERSION 6
+#define NDIS_MINIPORT_MINIMUM_MINOR_VERSION 80
 #endif
 
 //
 // Disallow invalid major/minor combination
 //
 #if ((NDIS_MINIPORT_MAJOR_VERSION == 6) && \
+       (NDIS_MINIPORT_MINOR_VERSION != 80) && \
        (NDIS_MINIPORT_MINOR_VERSION != 70) && \
        (NDIS_MINIPORT_MINOR_VERSION != 60) && \
        (NDIS_MINIPORT_MINOR_VERSION != 51) && \
@@ -474,9 +487,10 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 // Make sure the target platform is consistent with miniport version
 //
 #if  (NDIS_MINIPORT_MINIMUM_MAJOR_VERSION == 6) && \
-     ((NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 70 && NTDDI_VERSION < NTDDI_WIN10)  || /*TODO: Update when newer version is defined*/ \
-      (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 60 && NTDDI_VERSION < NTDDI_WIN10)  || \
-      (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 51 && NTDDI_VERSION < NTDDI_WIN10)  || \
+     ((NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 80 && NTDDI_VERSION < NTDDI_WIN10_RS3)  || \
+      (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 70 && NTDDI_VERSION < NTDDI_WIN10_RS2)  || \
+      (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 60 && NTDDI_VERSION < NTDDI_WIN10_RS1)  || \
+      (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 51 && NTDDI_VERSION < NTDDI_WIN10_TH2)  || \
       (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 50 && NTDDI_VERSION < NTDDI_WIN10)  || \
       (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 40 && NTDDI_VERSION < NTDDI_WINBLUE)  || \
       (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 30 && NTDDI_VERSION < NTDDI_WIN8)  || \
@@ -507,7 +521,12 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 // a protocol only or filter driver
 //
 
-#if (defined(NDIS670))
+#if (defined(NDIS680))
+#define NDIS_PROTOCOL_MAJOR_VERSION 6
+#define NDIS_PROTOCOL_MINOR_VERSION 80
+#define NDIS_FILTER_MAJOR_VERSION 6
+#define NDIS_FILTER_MINOR_VERSION 80
+#elif (defined(NDIS670))
 #define NDIS_PROTOCOL_MAJOR_VERSION 6
 #define NDIS_PROTOCOL_MINOR_VERSION 70
 #define NDIS_FILTER_MAJOR_VERSION 6
@@ -625,6 +644,11 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 #define NDIS_PROTOCOL_MINIMUM_MINOR_VERSION 70
 #define NDIS_FILTER_MINIMUM_MAJOR_VERSION 6
 #define NDIS_FILTER_MINIMUM_MINOR_VERSION 70
+#elif (defined(NDIS680))
+#define NDIS_PROTOCOL_MINIMUM_MAJOR_VERSION 6
+#define NDIS_PROTOCOL_MINIMUM_MINOR_VERSION 80
+#define NDIS_FILTER_MINIMUM_MAJOR_VERSION 6
+#define NDIS_FILTER_MINIMUM_MINOR_VERSION 80
 #endif
 
 
@@ -656,6 +680,7 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 // disallow invalid major/minor combination
 //
 #if ((NDIS_FILTER_MAJOR_VERSION == 6) && \
+     (NDIS_FILTER_MINOR_VERSION != 80) && \
      (NDIS_FILTER_MINOR_VERSION != 70) && \
      (NDIS_FILTER_MINOR_VERSION != 60) && \
      (NDIS_FILTER_MINOR_VERSION != 51) && \
@@ -680,6 +705,7 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 // disallow invalid major/minor combination
 //
 #if ((NDIS_PROTOCOL_MAJOR_VERSION == 6) && \
+     (NDIS_PROTOCOL_MINOR_VERSION != 80) && \
      (NDIS_PROTOCOL_MINOR_VERSION != 70) && \
      (NDIS_PROTOCOL_MINOR_VERSION != 60) && \
      (NDIS_PROTOCOL_MINOR_VERSION != 51) && \
@@ -703,9 +729,10 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 // Make sure the target platform is consistent with protocol version
 //
 #if  (NDIS_PROTOCOL_MINIMUM_MAJOR_VERSION == 6) && \
-     ((NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 70 && NTDDI_VERSION < NTDDI_WIN10)  || /*TODO: Update when newer version is defined*/ \
-      (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 60 && NTDDI_VERSION < NTDDI_WIN10)  ||  \
-      (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 51 && NTDDI_VERSION < NTDDI_WIN10)  || \
+     ((NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 80 && NTDDI_VERSION < NTDDI_WIN10_RS3)  || \
+      (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 70 && NTDDI_VERSION < NTDDI_WIN10_RS2)  || \
+      (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 60 && NTDDI_VERSION < NTDDI_WIN10_RS1)  || \
+      (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 51 && NTDDI_VERSION < NTDDI_WIN10_TH2)  || \
       (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 50 && NTDDI_VERSION < NTDDI_WIN10)  || \
       (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 40 && NTDDI_VERSION < NTDDI_WINBLUE)  || \
       (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 30 && NTDDI_VERSION < NTDDI_WIN8)  || \
@@ -866,7 +893,7 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 
 
 //
-// and something to identify new (TBD and up) drivers + NDIS itself
+// and something to identify new (RS1 and up) drivers + NDIS itself
 //
 #if !defined(NDIS_SUPPORT_NDIS660)
 #if  (((defined (NDIS_MINIPORT_MAJOR_VERSION) && (NDIS_MINIPORT_MAJOR_VERSION >= 6)) && \
@@ -891,6 +918,26 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 #endif
 #endif // !defined(NDIS_SUPPORT_NDIS670)
 
+//
+// and something to identify new (RS3 and up) drivers + NDIS itself
+//
+#if !defined(NDIS_SUPPORT_NDIS680)
+#if  (((defined (NDIS_MINIPORT_MAJOR_VERSION) && (NDIS_MINIPORT_MAJOR_VERSION >= 6)) && \
+       (defined (NDIS_MINIPORT_MINOR_VERSION) && (NDIS_MINIPORT_MINOR_VERSION >= 80))) || \
+      (defined (NDIS680)) || NDIS_WRAPPER)
+#define NDIS_SUPPORT_NDIS680      1
+#else
+#define NDIS_SUPPORT_NDIS680      0
+#endif
+#endif // !defined(NDIS_SUPPORT_NDIS680)
+
+//
+// Enable NDIS670 defines for NDIS 680 drivers
+//
+#if (NDIS_SUPPORT_NDIS680)
+#undef NDIS_SUPPORT_NDIS670
+#define NDIS_SUPPORT_NDIS670      1
+#endif
 
 //
 // Enable NDIS660 defines for NDIS 670 drivers
@@ -984,6 +1031,7 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 #define NDIS_RUNTIME_VERSION_651    ((6 << 16) | 51)
 #define NDIS_RUNTIME_VERSION_660    ((6 << 16) | 60)
 #define NDIS_RUNTIME_VERSION_670    ((6 << 16) | 70)
+#define NDIS_RUNTIME_VERSION_680    ((6 << 16) | 80)
 
 
 #define NDIS_DECLARE_CONTEXT_INNER(datatype,purpose) \
@@ -2152,6 +2200,14 @@ typedef struct _REFERENCE
 #define NDIS_STATUS_WWAN_DEVICE_CAPS_EX                     ((NDIS_STATUS)0x4004103fL)
 #endif
 
+#if (NDIS_SUPPORT_NDIS680)
+#define NDIS_STATUS_WWAN_MODEM_CONFIG_INFO                  ((NDIS_STATUS)0x40041040L)
+#define NDIS_STATUS_WWAN_PCO_STATUS                         ((NDIS_STATUS)0x40041041L)
+#define NDIS_STATUS_WWAN_UICC_RESET_INFO                    ((NDIS_STATUS)0x40041042L)
+#define NDIS_STATUS_WWAN_DEVICE_RESET_STATUS                ((NDIS_STATUS)0x40041043L)
+#define NDIS_STATUS_WWAN_BASE_STATIONS_INFO                 ((NDIS_STATUS)0x40041044L)
+#endif
+
 //
 // End of WWAN specific status indication codes
 //
@@ -2182,6 +2238,7 @@ typedef struct _REFERENCE
 //
 #define NDIS_STATUS_SUCCESS                     ((NDIS_STATUS)STATUS_SUCCESS)
 #define NDIS_STATUS_PENDING                     ((NDIS_STATUS)STATUS_PENDING)
+#define NDIS_STATUS_ALREADY_COMPLETE            ((NDIS_STATUS)STATUS_ALREADY_COMPLETE)
 #define NDIS_STATUS_NOT_RECOGNIZED              ((NDIS_STATUS)0x00010001L)
 #define NDIS_STATUS_NOT_COPIED                  ((NDIS_STATUS)0x00010002L)
 #define NDIS_STATUS_NOT_ACCEPTED                ((NDIS_STATUS)0x00010003L)
@@ -6651,10 +6708,20 @@ typedef enum _NDIS_NET_BUFFER_LIST_INFO
     TcpSendOffloadsSupplementalNetBufferListInfo = RscTcpTimestampDelta,
 
 #if (NDIS_SUPPORT_NDIS650)
-#if (_AMD64_)
+#if (_AMD64_) || (_ARM64_)
     GftOffloadInformation,
     GftFlowEntryId,
-#endif // (_AMD64_)
+#endif // (_AMD64_) || (_ARM64_)
+
+#if (NDIS_SUPPORT_NDIS680)
+#if _WIN64
+    NetBufferListInfoReserved3,
+#else
+    NetBufferListInfoReserved3,
+    NetBufferListInfoReserved4,
+#endif // _WIN64
+#endif // (NDIS_SUPPORT_NDIS680)
+
 #endif // (NDIS_SUPPORT_NDIS650)
 
 #endif // (NDIS_SUPPORT_NDIS630)
@@ -7435,6 +7502,7 @@ NdisAdjustNetBufferCurrentMdl(
 #endif // (NDIS_SUPPORT_NDIS61)
 
 #define NDIS_NBL_FLAGS_IS_LOOPBACK_PACKET               0x00008000  // The NBL is loopback NBL.
+
 
 #define NdisTestNblFlag(_NBL, _F)                   (((_NBL)->NblFlags & (_F)) != 0)
 #define NdisTestNblFlags(_NBL, _F)                  (((_NBL)->NblFlags & (_F)) == (_F))
@@ -10085,6 +10153,17 @@ NdisCancelDirectOidRequest(
     );
 #endif // (NDIS_SUPPORT_NDIS61)
 
+#if (NDIS_SUPPORT_NDIS680)
+
+_IRQL_requires_max_(DISPATCH_LEVEL)
+EXPORT
+NDIS_STATUS
+NdisSynchronousOidRequest(
+    _In_ NDIS_HANDLE NdisBindingHandle,
+    _In_ NDIS_OID_REQUEST *OidRequest);
+
+#endif // NDIS_SUPPORT_NDIS680
+
 #endif // NDIS_SUPPORT_NDIS6
 
 //
@@ -11995,6 +12074,21 @@ typedef MINIPORT_CANCEL_DIRECT_OID_REQUEST (*MINIPORT_CANCEL_DIRECT_OID_REQUEST_
 
 #endif // (NDIS_SUPPORT_NDIS61)
 
+#if (NDIS_SUPPORT_NDIS680)
+
+typedef
+_IRQL_requires_max_(DISPATCH_LEVEL)
+_Function_class_(MINIPORT_SYNCHRONOUS_OID_REQUEST)
+NDIS_STATUS
+MINIPORT_SYNCHRONOUS_OID_REQUEST(
+    _In_  NDIS_HANDLE             MiniportAdapterContext,
+    _In_  NDIS_OID_REQUEST       *OidRequest
+    );
+
+typedef MINIPORT_SYNCHRONOUS_OID_REQUEST (*MINIPORT_SYNCHRONOUS_OID_REQUEST_HANDLER);
+
+#endif // (NDIS_SUPPORT_NDIS680)
+
 //
 // flags used in Flags field of NDIS60_MINIPORT_CHARACTERISTICS
 //
@@ -12011,6 +12105,10 @@ typedef MINIPORT_CANCEL_DIRECT_OID_REQUEST (*MINIPORT_CANCEL_DIRECT_OID_REQUEST_
 #if (NDIS_SUPPORT_NDIS61)
 #define NDIS_MINIPORT_DRIVER_CHARACTERISTICS_REVISION_2     2
 #endif // (NDIS_SUPPORT_NDIS61)
+
+#if (NDIS_SUPPORT_NDIS680)
+#define NDIS_MINIPORT_DRIVER_CHARACTERISTICS_REVISION_3     3
+#endif // (NDIS_SUPPORT_NDIS680)
 
 typedef struct _NDIS_MINIPORT_DRIVER_CHARACTERISTICS
 {
@@ -12039,6 +12137,9 @@ typedef struct _NDIS_MINIPORT_DRIVER_CHARACTERISTICS
     MINIPORT_DIRECT_OID_REQUEST_HANDLER         DirectOidRequestHandler;
     MINIPORT_CANCEL_DIRECT_OID_REQUEST_HANDLER  CancelDirectOidRequestHandler;
 #endif // (NDIS_SUPPORT_NDIS61)
+#if (NDIS_SUPPORT_NDIS680)
+    MINIPORT_SYNCHRONOUS_OID_REQUEST_HANDLER    SynchronousOidRequestHandler;
+#endif // (NDIS_SUPPORT_NDIS680)
 } NDIS_MINIPORT_DRIVER_CHARACTERISTICS, *PNDIS_MINIPORT_DRIVER_CHARACTERISTICS;
 
 #define NDIS_SIZEOF_MINIPORT_DRIVER_CHARACTERISTICS_REVISION_1      \
@@ -12048,6 +12149,11 @@ typedef struct _NDIS_MINIPORT_DRIVER_CHARACTERISTICS
 #define NDIS_SIZEOF_MINIPORT_DRIVER_CHARACTERISTICS_REVISION_2      \
         RTL_SIZEOF_THROUGH_FIELD(NDIS_MINIPORT_DRIVER_CHARACTERISTICS, CancelDirectOidRequestHandler)
 #endif // (NDIS_SUPPORT_NDIS61)
+
+#if (NDIS_SUPPORT_NDIS680)
+#define NDIS_SIZEOF_MINIPORT_DRIVER_CHARACTERISTICS_REVISION_3      \
+        RTL_SIZEOF_THROUGH_FIELD(NDIS_MINIPORT_DRIVER_CHARACTERISTICS, SynchronousOidRequestHandler)
+#endif // (NDIS_SUPPORT_NDIS680)
 
 //
 // CO NDIS 6.0 handlers
@@ -13539,9 +13645,9 @@ _IRQL_requires_(PASSIVE_LEVEL)
 EXPORT
 NDIS_STATUS
 NdisMRegisterScatterGatherDma(
-    _In_  NDIS_HANDLE                     MiniportAdapterHandle,
-    _In_  PNDIS_SG_DMA_DESCRIPTION        DmaDescription,
-    _Out_ PNDIS_HANDLE                    NdisMiniportDmaHandle
+    _In_    NDIS_HANDLE                     MiniportAdapterHandle,
+    _Inout_ PNDIS_SG_DMA_DESCRIPTION        DmaDescription,
+    _Out_   PNDIS_HANDLE                    NdisMiniportDmaHandle
     );
 
 _IRQL_requires_(PASSIVE_LEVEL)
@@ -15771,6 +15877,37 @@ VOID
 typedef FILTER_CANCEL_DIRECT_OID_REQUEST (*FILTER_CANCEL_DIRECT_OID_REQUEST_HANDLER);
 #endif (NDIS_SUPPORT_NDIS61)
 
+#if (NDIS_SUPPORT_NDIS680)
+
+typedef
+_IRQL_requires_max_(DISPATCH_LEVEL)
+_IRQL_requires_same_
+_Function_class_(FILTER_SYNCHRONOUS_OID_REQUEST)
+NDIS_STATUS
+FILTER_SYNCHRONOUS_OID_REQUEST(
+    _In_ NDIS_HANDLE FilterModuleContext,
+    _Inout_ NDIS_OID_REQUEST *OidRequest,
+    _Outptr_result_maybenull_ PVOID *CallContext
+    );
+
+typedef FILTER_SYNCHRONOUS_OID_REQUEST (*FILTER_SYNCHRONOUS_OID_REQUEST_HANDLER);
+
+typedef
+_IRQL_requires_max_(DISPATCH_LEVEL)
+_IRQL_requires_same_
+_Function_class_(FILTER_SYNCHRONOUS_OID_REQUEST_COMPLETE)
+VOID
+FILTER_SYNCHRONOUS_OID_REQUEST_COMPLETE(
+    _In_ NDIS_HANDLE FilterModuleContext,
+    _Inout_ NDIS_OID_REQUEST *OidRequest,
+    _Inout_ NDIS_STATUS *Status,
+    _In_ PVOID CallContext
+    );
+
+typedef FILTER_SYNCHRONOUS_OID_REQUEST_COMPLETE (*FILTER_SYNCHRONOUS_OID_REQUEST_COMPLETE_HANDLER);
+
+#endif // NDIS_SUPPORT_NDIS680
+
 #define NDIS_FILTER_PARTIAL_CHARACTERISTICS_REVISION_1      1
 
 typedef struct _NDIS_FILTER_PARTIAL_CHARACTERISTICS
@@ -15801,6 +15938,10 @@ typedef struct _NDIS_FILTER_PARTIAL_CHARACTERISTICS
 #if (NDIS_SUPPORT_NDIS61)
 #define NDIS_FILTER_CHARACTERISTICS_REVISION_2      2
 #endif // (NDIS_SUPPORT_NDIS61)
+
+#if (NDIS_SUPPORT_NDIS680)
+#define NDIS_FILTER_CHARACTERISTICS_REVISION_3      3
+#endif // (NDIS_SUPPORT_NDIS680)
 
 typedef struct _NDIS_FILTER_DRIVER_CHARACTERISTICS
 {
@@ -15835,6 +15976,10 @@ typedef struct _NDIS_FILTER_DRIVER_CHARACTERISTICS
     FILTER_DIRECT_OID_REQUEST_COMPLETE_HANDLER      DirectOidRequestCompleteHandler;
     FILTER_CANCEL_DIRECT_OID_REQUEST_HANDLER        CancelDirectOidRequestHandler;
 #endif // (NDIS_SUPPORT_NDIS61)
+#if (NDIS_SUPPORT_NDIS680)
+    FILTER_SYNCHRONOUS_OID_REQUEST_HANDLER          SynchronousOidRequestHandler;
+    FILTER_SYNCHRONOUS_OID_REQUEST_COMPLETE_HANDLER SynchronousOidRequestCompleteHandler;
+#endif // (NDIS_SUPPORT_NDIS680)
 } NDIS_FILTER_DRIVER_CHARACTERISTICS, *PNDIS_FILTER_DRIVER_CHARACTERISTICS;
 #define NDIS_SIZEOF_FILTER_DRIVER_CHARACTERISTICS_REVISION_1   \
         RTL_SIZEOF_THROUGH_FIELD(NDIS_FILTER_DRIVER_CHARACTERISTICS, StatusHandler)
@@ -15842,6 +15987,11 @@ typedef struct _NDIS_FILTER_DRIVER_CHARACTERISTICS
 #if (NDIS_SUPPORT_NDIS61)
 #define NDIS_SIZEOF_FILTER_DRIVER_CHARACTERISTICS_REVISION_2   \
         RTL_SIZEOF_THROUGH_FIELD(NDIS_FILTER_DRIVER_CHARACTERISTICS, CancelDirectOidRequestHandler)
+#endif //(NDIS_SUPPORT_NDIS61)
+
+#if (NDIS_SUPPORT_NDIS680)
+#define NDIS_SIZEOF_FILTER_DRIVER_CHARACTERISTICS_REVISION_3   \
+        RTL_SIZEOF_THROUGH_FIELD(NDIS_FILTER_DRIVER_CHARACTERISTICS, SynchronousOidRequestCompleteHandler)
 #endif //(NDIS_SUPPORT_NDIS61)
 
 #define NDIS_FILTER_ATTRIBUTES_REVISION_1       1
@@ -16043,6 +16193,17 @@ NdisFGetOptionalSwitchHandlers(
     );
 
 #endif // (NDIS_SUPPORT_NDIS630)
+
+#if (NDIS_SUPPORT_NDIS680)
+
+_IRQL_requires_max_(DISPATCH_LEVEL)
+EXPORT
+NDIS_STATUS
+NdisFSynchronousOidRequest(
+    _In_ NDIS_HANDLE NdisFilterModuleHandle,
+    _In_ NDIS_OID_REQUEST *OidRequest);
+
+#endif // NDIS_SUPPORT_NDIS680
 
 #endif // NDIS_SUPPORT_NDIS6
 

@@ -33,15 +33,19 @@ Environment:
 // IRP_MJ_INTERNAL_DEVICE_CONTROL CODES
 //
 
-#define IOCTL_ACPI_ASYNC_EVAL_METHOD            CTL_CODE(FILE_DEVICE_ACPI, 0, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
-#define IOCTL_ACPI_EVAL_METHOD                  CTL_CODE(FILE_DEVICE_ACPI, 1, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
+#define IOCTL_ACPI_ASYNC_EVAL_METHOD_V1         CTL_CODE(FILE_DEVICE_ACPI, 0, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
+#define IOCTL_ACPI_EVAL_METHOD_V1               CTL_CODE(FILE_DEVICE_ACPI, 1, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
 #define IOCTL_ACPI_ACQUIRE_GLOBAL_LOCK          CTL_CODE(FILE_DEVICE_ACPI, 4, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
 #define IOCTL_ACPI_RELEASE_GLOBAL_LOCK          CTL_CODE(FILE_DEVICE_ACPI, 5, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
+#define IOCTL_ACPI_EVAL_METHOD                  IOCTL_ACPI_EVAL_METHOD_V1
+#define IOCTL_ACPI_ASYNC_EVAL_METHOD            IOCTL_ACPI_ASYNC_EVAL_METHOD_V1
 
 #if (NTDDI_VERSION >= NTDDI_VISTA)
-#define IOCTL_ACPI_EVAL_METHOD_EX               CTL_CODE(FILE_DEVICE_ACPI, 6, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
-#define IOCTL_ACPI_ASYNC_EVAL_METHOD_EX         CTL_CODE(FILE_DEVICE_ACPI, 7, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
+#define IOCTL_ACPI_EVAL_METHOD_V1_EX            CTL_CODE(FILE_DEVICE_ACPI, 6, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
+#define IOCTL_ACPI_ASYNC_EVAL_METHOD_V1_EX      CTL_CODE(FILE_DEVICE_ACPI, 7, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
 #define IOCTL_ACPI_ENUM_CHILDREN                CTL_CODE(FILE_DEVICE_ACPI, 8, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
+#define IOCTL_ACPI_EVAL_METHOD_EX               IOCTL_ACPI_EVAL_METHOD_V1_EX
+#define IOCTL_ACPI_ASYNC_EVAL_METHOD_EX         IOCTL_ACPI_ASYNC_EVAL_METHOD_V1_EX
 #endif
 
 //
@@ -60,32 +64,43 @@ Environment:
 #endif
 
 //
-// Data structures used for IOCTL_ACPI_ASYNC_EVAL_METHOD and
-// IOCTL_ACPI_EVAL_METHOD
+// V2 ACPI IOCTLs.
+//
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+#define IOCTL_ACPI_EVAL_METHOD_V2               CTL_CODE(FILE_DEVICE_ACPI, 15, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
+#define IOCTL_ACPI_ASYNC_EVAL_METHOD_V2         CTL_CODE(FILE_DEVICE_ACPI, 16, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
+#define IOCTL_ACPI_EVAL_METHOD_V2_EX            CTL_CODE(FILE_DEVICE_ACPI, 17, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
+#define IOCTL_ACPI_ASYNC_EVAL_METHOD_V2_EX      CTL_CODE(FILE_DEVICE_ACPI, 18, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
+#endif
+
+//
+// -----------------------------V1 Data Structures------------------------------
 //
 
 //
-// Possible Input buffer
+// Data structures used for IOCTL_ACPI_ASYNC_EVAL_METHOD_V1 and
+// IOCTL_ACPI_EVAL_METHOD_V1
 //
 
-typedef struct _ACPI_EVAL_INPUT_BUFFER {
+typedef struct _ACPI_EVAL_INPUT_BUFFER_V1 {
     ULONG       Signature;
     union {
         UCHAR   MethodName[4];
         ULONG   MethodNameAsUlong;
     } DUMMYUNIONNAME;
-} ACPI_EVAL_INPUT_BUFFER, *PACPI_EVAL_INPUT_BUFFER;
+} ACPI_EVAL_INPUT_BUFFER_V1, *PACPI_EVAL_INPUT_BUFFER_V1;
 
-typedef struct _ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER {
+typedef struct _ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_V1 {
     ULONG       Signature;
     union {
         UCHAR   MethodName[4];
         ULONG   MethodNameAsUlong;
     } DUMMYUNIONNAME;
     ULONG       IntegerArgument;
-} ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER, *PACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER;
+} ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_V1, *PACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_V1;
 
-typedef struct _ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING {
+typedef struct _ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V1 {
     ULONG       Signature;
     union {
         UCHAR   MethodName[4];
@@ -95,9 +110,9 @@ typedef struct _ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING {
     _Field_size_bytes_(StringLength)
     _Null_terminated_
     UCHAR       String[ANYSIZE_ARRAY];
-} ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING, *PACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING;
+} ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V1, *PACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V1;
 
-typedef struct _ACPI_METHOD_ARGUMENT {
+typedef struct _ACPI_METHOD_ARGUMENT_V1 {
     USHORT      Type;
     USHORT      DataLength;
     union {
@@ -105,9 +120,116 @@ typedef struct _ACPI_METHOD_ARGUMENT {
         _Field_size_bytes_(DataLength)
         UCHAR       Data[ANYSIZE_ARRAY];
     } DUMMYUNIONNAME;
-} ACPI_METHOD_ARGUMENT;
+} ACPI_METHOD_ARGUMENT_V1;
 
-typedef ACPI_METHOD_ARGUMENT UNALIGNED *PACPI_METHOD_ARGUMENT;
+typedef ACPI_METHOD_ARGUMENT_V1 UNALIGNED *PACPI_METHOD_ARGUMENT_V1;
+
+typedef struct _ACPI_EVAL_INPUT_BUFFER_COMPLEX_V1 {
+    ULONG                   Signature;
+    union {
+        UCHAR               MethodName[4];
+        ULONG               MethodNameAsUlong;
+    } DUMMYUNIONNAME;
+    ULONG                   Size;
+    ULONG                   ArgumentCount;
+    ACPI_METHOD_ARGUMENT_V1    Argument[ANYSIZE_ARRAY];
+} ACPI_EVAL_INPUT_BUFFER_COMPLEX_V1, *PACPI_EVAL_INPUT_BUFFER_COMPLEX_V1;
+
+typedef struct _ACPI_EVAL_OUTPUT_BUFFER_V1 {
+    ULONG                   Signature;
+    ULONG                   Length;
+    ULONG                   Count;
+    _Field_size_bytes_(Length - FIELD_OFFSET(struct _ACPI_EVAL_OUTPUT_BUFFER_V1, Argument))
+    ACPI_METHOD_ARGUMENT_V1    Argument[ANYSIZE_ARRAY];
+}  ACPI_EVAL_OUTPUT_BUFFER_V1;
+
+typedef ACPI_EVAL_OUTPUT_BUFFER_V1 UNALIGNED *PACPI_EVAL_OUTPUT_BUFFER_V1;
+
+//
+// Data structure used for IOCTL_ACPI_ASYNC_EVAL_METHOD_V1_EX,
+//                         IOCTL_ACPI_EVAL_METHOD_V1_EX and
+//
+
+
+typedef struct _ACPI_EVAL_INPUT_BUFFER_V1_EX {
+    ULONG       Signature;
+    _Null_terminated_
+    CHAR        MethodName[256]; //NULL terminated name string
+} ACPI_EVAL_INPUT_BUFFER_V1_EX, *PACPI_EVAL_INPUT_BUFFER_V1_EX;
+
+typedef struct _ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_V1_EX {
+    ULONG       Signature;
+    _Null_terminated_
+    CHAR        MethodName[256];//NULL terminated name string
+    ULONG64     IntegerArgument;
+} ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_V1_EX, *PACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_V1_EX;
+
+typedef struct _ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V1_EX {
+    ULONG       Signature;
+    CHAR        MethodName[256];//NULL terminated name string
+    ULONG       StringLength;
+    _Field_size_(StringLength)
+    _Null_terminated_
+    UCHAR       String[ANYSIZE_ARRAY];
+
+} ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V1_EX, *PACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V1_EX;
+
+typedef struct _ACPI_EVAL_INPUT_BUFFER_COMPLEX_V1_EX {
+    ULONG                   Signature;
+    CHAR                    MethodName[256];//NULL terminated name string
+    ULONG                   Size;
+    ULONG                   ArgumentCount;
+    _Field_size_(ArgumentCount)
+    ACPI_METHOD_ARGUMENT_V1    Argument[ANYSIZE_ARRAY];
+} ACPI_EVAL_INPUT_BUFFER_COMPLEX_V1_EX, *PACPI_EVAL_INPUT_BUFFER_COMPLEX_V1_EX;
+
+//
+// Define ACPI_METHOD_ARGUMENT structure as V1 for DDKVERSION < NTDDI_WIN10_RS2
+//
+
+typedef struct _ACPI_METHOD_ARGUMENT_V1 ACPI_METHOD_ARGUMENT;
+typedef ACPI_METHOD_ARGUMENT_V1 UNALIGNED *PACPI_METHOD_ARGUMENT;
+
+//
+// Define ACPI_EVAL_INPUT_BUFFER structure as V1 for DDKVERSION < NTDDI_WIN10_RS2
+//
+
+typedef struct _ACPI_EVAL_INPUT_BUFFER_V1 ACPI_EVAL_INPUT_BUFFER, *PACPI_EVAL_INPUT_BUFFER;
+
+typedef struct _ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_V1
+    ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER, *PACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER;
+
+typedef struct _ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V1
+     ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING, *PACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING;
+
+typedef struct _ACPI_EVAL_INPUT_BUFFER_COMPLEX_V1
+     ACPI_EVAL_INPUT_BUFFER_COMPLEX, *PACPI_EVAL_INPUT_BUFFER_COMPLEX;
+
+//
+// Define ACPI_EVAL_INPUT_BUFFER_EX structure as V1 for DDKVERSION < NTDDI_WIN10_RS2
+//
+
+typedef struct _ACPI_EVAL_INPUT_BUFFER_V1_EX ACPI_EVAL_INPUT_BUFFER_EX, *PACPI_EVAL_INPUT_BUFFER_EX;
+
+typedef struct _ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_V1_EX
+    ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_EX, *PACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_EX;
+
+typedef struct _ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V1_EX
+     ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_EX, *PACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_EX;
+
+typedef struct _ACPI_EVAL_INPUT_BUFFER_COMPLEX_V1_EX
+     ACPI_EVAL_INPUT_BUFFER_COMPLEX_EX, *PACPI_EVAL_INPUT_BUFFER_COMPLEX_EX;
+
+//
+// Define ACPI_EVAL_OUTPUT_BUFFER structure as V1 for DDKVERSION < NTDDI_WIN10_RS2
+//
+
+typedef struct _ACPI_EVAL_OUTPUT_BUFFER_V1 ACPI_EVAL_OUTPUT_BUFFER;
+typedef struct _ACPI_EVAL_OUTPUT_BUFFER_V1 UNALIGNED *PACPI_EVAL_OUTPUT_BUFFER;
+
+//
+// -------------------------------V1 Macros-------------------------------------
+//
 
 #define ACPI_METHOD_ARGUMENT_LENGTH( DataLength )                          \
     (FIELD_OFFSET(ACPI_METHOD_ARGUMENT, Data) + max(sizeof(ULONG), DataLength))
@@ -158,7 +280,57 @@ typedef ACPI_METHOD_ARGUMENT UNALIGNED *PACPI_METHOD_ARGUMENT;
             MethodArgument < (MethodArgumentsEnd);                          \
             MethodArgument = ACPI_METHOD_NEXT_ARGUMENT(MethodArgument))
 
-typedef struct _ACPI_EVAL_INPUT_BUFFER_COMPLEX {
+//
+// ----------------------------V2 Data Structures-------------------------------
+//
+
+//
+// Data structures used for IOCTL_ACPI_ASYNC_EVAL_METHOD_V2 and
+// IOCTL_ACPI_EVAL_METHOD_V2
+//
+
+typedef struct _ACPI_EVAL_INPUT_BUFFER_V2 {
+    ULONG       Signature;
+    union {
+        UCHAR   MethodName[4];
+        ULONG   MethodNameAsUlong;
+    } DUMMYUNIONNAME;
+} ACPI_EVAL_INPUT_BUFFER_V2, *PACPI_EVAL_INPUT_BUFFER_V2;
+
+typedef struct _ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_V2 {
+    ULONG       Signature;
+    union {
+        UCHAR   MethodName[4];
+        ULONG   MethodNameAsUlong;
+    } DUMMYUNIONNAME;
+    ULONG       IntegerArgument;
+} ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_V2, *PACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_V2;
+
+typedef struct _ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V2 {
+    ULONG       Signature;
+    union {
+        UCHAR   MethodName[4];
+        ULONG   MethodNameAsUlong;
+    } DUMMYUNIONNAME;
+    ULONG       StringLength;
+    _Field_size_bytes_(StringLength)
+    _Null_terminated_
+    UCHAR       String[ANYSIZE_ARRAY];
+} ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V2, *PACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V2;
+
+typedef struct _ACPI_METHOD_ARGUMENT_V2 {
+    USHORT      Type;
+    ULONG       DataLength;
+    union {
+        ULONG   Argument;
+        _Field_size_bytes_(DataLength)
+        UCHAR       Data[ANYSIZE_ARRAY];
+    } DUMMYUNIONNAME;
+} ACPI_METHOD_ARGUMENT_V2;
+
+typedef ACPI_METHOD_ARGUMENT_V2 UNALIGNED *PACPI_METHOD_ARGUMENT_V2;
+
+typedef struct _ACPI_EVAL_INPUT_BUFFER_COMPLEX_V2 {
     ULONG                   Signature;
     union {
         UCHAR               MethodName[4];
@@ -166,31 +338,131 @@ typedef struct _ACPI_EVAL_INPUT_BUFFER_COMPLEX {
     } DUMMYUNIONNAME;
     ULONG                   Size;
     ULONG                   ArgumentCount;
-    ACPI_METHOD_ARGUMENT    Argument[ANYSIZE_ARRAY];
-} ACPI_EVAL_INPUT_BUFFER_COMPLEX, *PACPI_EVAL_INPUT_BUFFER_COMPLEX;
+    ACPI_METHOD_ARGUMENT_V2    Argument[ANYSIZE_ARRAY];
+} ACPI_EVAL_INPUT_BUFFER_COMPLEX_V2, *PACPI_EVAL_INPUT_BUFFER_COMPLEX_V2;
 
-typedef struct _ACPI_EVAL_OUTPUT_BUFFER {
+typedef struct _ACPI_EVAL_OUTPUT_BUFFER_V2 {
     ULONG                   Signature;
     ULONG                   Length;
     ULONG                   Count;
-    _Field_size_bytes_(Length - FIELD_OFFSET(struct _ACPI_EVAL_OUTPUT_BUFFER, Argument))
-    ACPI_METHOD_ARGUMENT    Argument[ANYSIZE_ARRAY];
-}  ACPI_EVAL_OUTPUT_BUFFER;
+    _Field_size_bytes_(Length - FIELD_OFFSET(struct _ACPI_EVAL_OUTPUT_BUFFER_V2, Argument))
+    ACPI_METHOD_ARGUMENT_V2    Argument[ANYSIZE_ARRAY];
+}  ACPI_EVAL_OUTPUT_BUFFER_V2;
 
-typedef ACPI_EVAL_OUTPUT_BUFFER UNALIGNED *PACPI_EVAL_OUTPUT_BUFFER;
+typedef ACPI_EVAL_OUTPUT_BUFFER_V2 UNALIGNED *PACPI_EVAL_OUTPUT_BUFFER_V2;
 
-#define ACPI_EVAL_INPUT_BUFFER_SIGNATURE                    'BieA'
-#define ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_SIGNATURE     'IieA'
-#define ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_SIGNATURE      'SieA'
-#define ACPI_EVAL_INPUT_BUFFER_COMPLEX_SIGNATURE            'CieA'
-#define ACPI_EVAL_OUTPUT_BUFFER_SIGNATURE                   'BoeA'
+//
+// Data structure used for IOCTL_ACPI_ASYNC_EVAL_METHOD_V2_EX,
+//                         IOCTL_ACPI_EVAL_METHOD_V2_EX and
+//
+
+
+typedef struct _ACPI_EVAL_INPUT_BUFFER_V2_EX {
+    ULONG       Signature;
+    _Null_terminated_
+    CHAR        MethodName[256]; //NULL terminated name string
+} ACPI_EVAL_INPUT_BUFFER_V2_EX, *PACPI_EVAL_INPUT_BUFFER_V2_EX;
+
+typedef struct _ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_V2_EX {
+    ULONG       Signature;
+    _Null_terminated_
+    CHAR        MethodName[256];//NULL terminated name string
+    ULONG64     IntegerArgument;
+} ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_V2_EX, *PACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_V2_EX;
+
+typedef struct _ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V2_EX {
+    ULONG       Signature;
+    CHAR        MethodName[256];//NULL terminated name string
+    ULONG       StringLength;
+    _Field_size_(StringLength)
+    _Null_terminated_
+    UCHAR       String[ANYSIZE_ARRAY];
+
+} ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V2_EX, *PACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_V2_EX;
+
+typedef struct _ACPI_EVAL_INPUT_BUFFER_COMPLEX_V2_EX {
+    ULONG                   Signature;
+    CHAR                    MethodName[256];//NULL terminated name string
+    ULONG                   Size;
+    ULONG                   ArgumentCount;
+    _Field_size_(ArgumentCount)
+    ACPI_METHOD_ARGUMENT_V2    Argument[ANYSIZE_ARRAY];
+} ACPI_EVAL_INPUT_BUFFER_COMPLEX_V2_EX, *PACPI_EVAL_INPUT_BUFFER_COMPLEX_V2_EX;
+
+//
+// -------------------------------V2 Macros-------------------------------------
+//
+
+#define ACPI_METHOD_ARGUMENT_V2_LENGTH( DataLength )                           \
+        (FIELD_OFFSET(ACPI_METHOD_ARGUMENT_V2, Data) + max(sizeof(ULONG), DataLength))
+
+#define ACPI_METHOD_ARGUMENT_V2_LENGTH_FROM_ARGUMENT( Argument )              \
+        (ACPI_METHOD_ARGUMENT_V2_LENGTH(((PACPI_METHOD_ARGUMENT_V2)Argument)->DataLength))
+
+#define ACPI_METHOD_NEXT_ARGUMENT_V2( Argument )                              \
+        (PACPI_METHOD_ARGUMENT_V2) ( (PUCHAR) Argument +                      \
+        ACPI_METHOD_ARGUMENT_V2_LENGTH_FROM_ARGUMENT( Argument ) )
+
+#define ACPI_METHOD_SET_ARGUMENT_INTEGER_V2( MethodArgument, IntData )    \
+        { MethodArgument->Type = ACPI_METHOD_ARGUMENT_INTEGER;            \
+          MethodArgument->DataLength = sizeof(ULONG);                     \
+          MethodArgument->Argument = IntData; }
+
+#define ACPI_METHOD_SET_ARGUMENT_STRING_V2( Argument, StrData )           \
+        { Argument->Type = ACPI_METHOD_ARGUMENT_STRING;                   \
+          Argument->DataLength = strlen((PUCHAR)StrData) + sizeof(UCHAR); \
+          memcpy_s(&Argument->Data[0],                                    \
+                   Argument->DataLength,                                  \
+                   (PUCHAR)StrData,                                       \
+                   Argument->DataLength); }
+
+#define ACPI_METHOD_SET_ARGUMENT_BUFFER_V2( Argument, BuffData, BuffLength )  \
+        { Argument->Type = ACPI_METHOD_ARGUMENT_BUFFER;                       \
+          Argument->DataLength = BuffLength;                                  \
+          memcpy_s(&Argument->Data[0],                                        \
+                   Argument->DataLength,                                      \
+                   (PUCHAR)BuffData,                                          \
+                   BuffLength); }
+
+#define ACPI_EVAL_OUTPUT_BUFFER_V2_ARGUMENT_LENGTH( EvalOutputBuffer )         \
+        (EvalOutputBuffer->Length - FIELD_OFFSET(ACPI_EVAL_OUTPUT_BUFFER_V2, Argument))
+
+#define ACPI_EVAL_OUTPUT_BUFFER_V2_ARGUMENTS_BEGIN( EvalOutputBuffer )         \
+        ((PACPI_METHOD_ARGUMENT_V2)EvalOutputBuffer->Argument)
+
+#define ACPI_EVAL_OUTPUT_BUFFER_V2_ARGUMENTS_END( EvalOutputBuffer )           \
+        (PACPI_METHOD_ARGUMENT_V2)((PUCHAR)EvalOutputBuffer->Argument +        \
+            ACPI_EVAL_OUTPUT_BUFFER_V2_ARGUMENT_LENGTH(EvalOutputBuffer))
+
+#define FOR_EACH_ACPI_METHOD_ARGUMENT_V2( MethodArgument,                      \
+                                             MethodArgumentsBegin,             \
+                                             MethodArgumentsEnd )              \
+        for (PACPI_METHOD_ARGUMENT_V2 MethodArgument = (MethodArgumentsBegin); \
+                MethodArgument < (MethodArgumentsEnd);                         \
+                MethodArgument = ACPI_METHOD_NEXT_ARGUMENT_V2(MethodArgument))
+
+#define ACPI_EVAL_INPUT_BUFFER_SIGNATURE_V1                    'BieA'
+#define ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_SIGNATURE_V1     'IieA'
+#define ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_SIGNATURE_V1      'SieA'
+#define ACPI_EVAL_INPUT_BUFFER_COMPLEX_SIGNATURE_V1            'CieA'
+#define ACPI_EVAL_OUTPUT_BUFFER_SIGNATURE_V1                   'BoeA'
+#define ACPI_EVAL_INPUT_BUFFER_SIGNATURE ACPI_EVAL_INPUT_BUFFER_SIGNATURE_V1
+#define ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_SIGNATURE ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_SIGNATURE_V1
+#define ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_SIGNATURE ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_SIGNATURE_V1
+#define ACPI_EVAL_INPUT_BUFFER_COMPLEX_SIGNATURE ACPI_EVAL_INPUT_BUFFER_COMPLEX_SIGNATURE_V1
+#define ACPI_EVAL_OUTPUT_BUFFER_SIGNATURE ACPI_EVAL_OUTPUT_BUFFER_SIGNATURE_V1
+
 #if (NTDDI_VERSION >= NTDDI_VISTA)
-#define ACPI_EVAL_INPUT_BUFFER_SIGNATURE_EX                 'AieA'
-#define ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_SIGNATURE_EX  'DieA'
-#define ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_SIGNATURE_EX   'EieA'
-#define ACPI_EVAL_INPUT_BUFFER_COMPLEX_SIGNATURE_EX         'FieA'
-#define ACPI_ENUM_CHILDREN_OUTPUT_BUFFER_SIGNATURE          'GieA'
-#define ACPI_ENUM_CHILDREN_INPUT_BUFFER_SIGNATURE           'HieA'
+#define ACPI_EVAL_INPUT_BUFFER_SIGNATURE_V1_EX                 'AieA'
+#define ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_SIGNATURE_V1_EX  'DieA'
+#define ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_SIGNATURE_V1_EX   'EieA'
+#define ACPI_EVAL_INPUT_BUFFER_COMPLEX_SIGNATURE_V1_EX         'FieA'
+#define ACPI_ENUM_CHILDREN_OUTPUT_BUFFER_SIGNATURE             'GieA'
+#define ACPI_ENUM_CHILDREN_INPUT_BUFFER_SIGNATURE              'HieA'
+#define ACPI_EVAL_INPUT_BUFFER_SIGNATURE_EX ACPI_EVAL_INPUT_BUFFER_SIGNATURE_V1_EX
+#define ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_SIGNATURE_EX ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_SIGNATURE_V1_EX
+#define ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_SIGNATURE_EX ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_SIGNATURE_V1_EX
+#define ACPI_EVAL_INPUT_BUFFER_COMPLEX_SIGNATURE_EX ACPI_EVAL_INPUT_BUFFER_COMPLEX_SIGNATURE_V1_EX
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN7)
@@ -199,6 +471,18 @@ typedef ACPI_EVAL_OUTPUT_BUFFER UNALIGNED *PACPI_EVAL_OUTPUT_BUFFER;
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS1)
 #define IOCTL_ACPI_GET_DEVICE_SPECIFIC_DATA_SIGNATURE       'HieA'
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+#define ACPI_EVAL_INPUT_BUFFER_SIGNATURE_V2                   'KieA'
+#define ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_SIGNATURE_V2    'LieA'
+#define ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_SIGNATURE_V2     'MieA'
+#define ACPI_EVAL_INPUT_BUFFER_COMPLEX_SIGNATURE_V2           'NieA'
+#define ACPI_EVAL_INPUT_BUFFER_SIGNATURE_V2_EX                'OieA'
+#define ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_SIGNATURE_V2_EX 'PieA'
+#define ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_SIGNATURE_V2_EX  'QieA'
+#define ACPI_EVAL_INPUT_BUFFER_COMPLEX_SIGNATURE_V2_EX        'RieA'
+#define ACPI_EVAL_OUTPUT_BUFFER_SIGNATURE_V2                  'KoeA'
 #endif
 
 #define ACPI_METHOD_ARGUMENT_INTEGER                      0x0
@@ -221,42 +505,8 @@ typedef struct _ACPI_MANIPULATE_GLOBAL_LOCK_BUFFER {
 #define ACPI_RELEASE_GLOBAL_LOCK_SIGNATURE              'LgrA'
 
 //
-// Data structure used for IOCTL_ACPI_ASYNC_EVAL_METHOD_EX,
-//                         IOCTL_ACPI_EVAL_METHOD_EX and
 //                         IOCTL_ACPI_ENUM_CHILDREN
 //
-
-typedef struct _ACPI_EVAL_INPUT_BUFFER_EX {
-    ULONG       Signature;
-    _Null_terminated_
-    CHAR        MethodName[256]; //NULL terminated name string
-} ACPI_EVAL_INPUT_BUFFER_EX, *PACPI_EVAL_INPUT_BUFFER_EX;
-
-typedef struct _ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_EX {
-    ULONG       Signature;
-    _Null_terminated_
-    CHAR        MethodName[256];//NULL terminated name string
-    ULONG64     IntegerArgument;
-} ACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_EX, *PACPI_EVAL_INPUT_BUFFER_SIMPLE_INTEGER_EX;
-
-typedef struct _ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_EX {
-    ULONG       Signature;
-    CHAR        MethodName[256];//NULL terminated name string
-    ULONG       StringLength;
-    _Field_size_(StringLength)
-    _Null_terminated_
-    UCHAR       String[ANYSIZE_ARRAY];
-
-} ACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_EX, *PACPI_EVAL_INPUT_BUFFER_SIMPLE_STRING_EX;
-
-typedef struct _ACPI_EVAL_INPUT_BUFFER_COMPLEX_EX {
-    ULONG                   Signature;
-    CHAR                    MethodName[256];//NULL terminated name string
-    ULONG                   Size;
-    ULONG                   ArgumentCount;
-    _Field_size_(ArgumentCount)
-    ACPI_METHOD_ARGUMENT    Argument[ANYSIZE_ARRAY];
-} ACPI_EVAL_INPUT_BUFFER_COMPLEX_EX, *PACPI_EVAL_INPUT_BUFFER_COMPLEX_EX;
 
 typedef struct _ACPI_ENUM_CHILDREN_INPUT_BUFFER {
     ULONG       Signature;
@@ -383,4 +633,5 @@ typedef struct _ACPI_GET_DEVICE_SPECIFIC_DATA {
 #endif
 
 #endif
+
 

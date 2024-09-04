@@ -2587,7 +2587,7 @@ NtGdiScaleRgn(
 __kernel_entry W32KAPI BOOL
 NtGdiScaleValues(
     _In_ HDC hdc,
-    __in_ecount(cl) LPLONG pl,
+    _In_reads_(cl) LPLONG pl,
     _In_ UINT cl);
 
 BOOL GreScaleValues(
@@ -2610,9 +2610,19 @@ NtGdiGetBitmapDpiScaleValue(
 LONG GreGetDCDpiScaleValue(
     _In_ HDC hdc);
 
+VOID GreSetDCDpiScaleValue(
+    _In_ HDC hdc,
+    _In_ LONG scaleValue);
+
 LONG GreGetBitmapDpiScaleValue(
     _In_ HSURF hsurf);
 
+__kernel_entry W32KAPI VOID
+NtGdiEnsureDpiDepDefaultGuiFontForPlateau(
+    _In_ int iDpi);
+
+VOID GreEnsureDpiDepDefaultGuiFontForPlateau(
+    _In_ int iDpi);
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion

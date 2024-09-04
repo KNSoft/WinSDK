@@ -15,29 +15,6 @@ import "Windows.UI.Xaml.Automation.idl";
 import "Windows.UI.Xaml.Automation.Provider.idl";
 import "Windows.UI.Xaml.Controls.idl";
 import "Windows.UI.Xaml.Controls.Primitives.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#include <Windows.UI.Xaml.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Eautomation_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Automation.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Eautomation_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Eautomation2Eprovider_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Automation.Provider.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Eautomation2Eprovider_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Econtrols_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Controls.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Econtrols_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Econtrols2Eprimitives_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Controls.Primitives.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Econtrols2Eprimitives_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -190,7 +167,11 @@ namespace Windows
 
                 runtimeclass MenuFlyoutPresenter;
 
+                runtimeclass NavigationViewItem;
+
                 runtimeclass PasswordBox;
+
+                runtimeclass PersonPicture;
 
                 runtimeclass Pivot;
 
@@ -210,6 +191,10 @@ namespace Windows
                 namespace Primitives
                 {
                     runtimeclass ButtonBase;
+
+                    runtimeclass ColorPickerSlider;
+
+                    runtimeclass ColorSpectrum;
 
                     runtimeclass RangeBase;
 
@@ -240,6 +225,8 @@ namespace Windows
                 runtimeclass ProgressRing;
 
                 runtimeclass RadioButton;
+
+                runtimeclass RatingControl;
 
                 runtimeclass RichEditBox;
 
@@ -306,6 +293,10 @@ namespace Windows
 
                     typedef enum AutomationNavigationDirection AutomationNavigationDirection;
 
+                    typedef enum AutomationNotificationKind AutomationNotificationKind;
+
+                    typedef enum AutomationNotificationProcessing AutomationNotificationProcessing;
+
                     typedef enum AutomationOrientation AutomationOrientation;
 
                     typedef enum AutomationStructureChangeType AutomationStructureChangeType;
@@ -341,6 +332,8 @@ namespace Windows
                     interface IAutomationPeer5;
 
                     interface IAutomationPeer6;
+
+                    interface IAutomationPeer7;
 
                     interface IAutomationPeerAnnotation;
 
@@ -383,6 +376,14 @@ namespace Windows
                     interface ICheckBoxAutomationPeer;
 
                     interface ICheckBoxAutomationPeerFactory;
+
+                    interface IColorPickerSliderAutomationPeer;
+
+                    interface IColorPickerSliderAutomationPeerFactory;
+
+                    interface IColorSpectrumAutomationPeer;
+
+                    interface IColorSpectrumAutomationPeerFactory;
 
                     interface IComboBoxAutomationPeer;
 
@@ -540,9 +541,17 @@ namespace Windows
 
                     interface IMenuFlyoutPresenterAutomationPeerFactory;
 
+                    interface INavigationViewItemAutomationPeer;
+
+                    interface INavigationViewItemAutomationPeerFactory;
+
                     interface IPasswordBoxAutomationPeer;
 
                     interface IPasswordBoxAutomationPeerFactory;
+
+                    interface IPersonPictureAutomationPeer;
+
+                    interface IPersonPictureAutomationPeerFactory;
 
                     interface IPickerFlyoutPresenterAutomationPeer;
 
@@ -573,6 +582,10 @@ namespace Windows
                     interface IRangeBaseAutomationPeer;
 
                     interface IRangeBaseAutomationPeerFactory;
+
+                    interface IRatingControlAutomationPeer;
+
+                    interface IRatingControlAutomationPeerFactory;
 
                     interface IRepeatButtonAutomationPeer;
 
@@ -672,6 +685,10 @@ namespace Windows
 
                     runtimeclass CheckBoxAutomationPeer;
 
+                    runtimeclass ColorPickerSliderAutomationPeer;
+
+                    runtimeclass ColorSpectrumAutomationPeer;
+
                     runtimeclass ComboBoxAutomationPeer;
 
                     runtimeclass ComboBoxItemAutomationPeer;
@@ -754,7 +771,11 @@ namespace Windows
 
                     runtimeclass MenuFlyoutPresenterAutomationPeer;
 
+                    runtimeclass NavigationViewItemAutomationPeer;
+
                     runtimeclass PasswordBoxAutomationPeer;
+
+                    runtimeclass PersonPictureAutomationPeer;
 
                     runtimeclass PickerFlyoutPresenterAutomationPeer;
 
@@ -771,6 +792,8 @@ namespace Windows
                     runtimeclass RadioButtonAutomationPeer;
 
                     runtimeclass RangeBaseAutomationPeer;
+
+                    runtimeclass RatingControlAutomationPeer;
 
                     runtimeclass RepeatButtonAutomationPeer;
 
@@ -988,6 +1011,26 @@ namespace Windows
                         PreviousSibling = 2,
                         FirstChild      = 3,
                         LastChild       = 4
+                    };
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    enum AutomationNotificationKind
+                    {
+                        ItemAdded       = 0,
+                        ItemRemoved     = 1,
+                        ActionCompleted = 2,
+                        ActionAborted   = 3,
+                        Other           = 4
+                    };
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    enum AutomationNotificationProcessing
+                    {
+                        ImportantAll          = 0,
+                        ImportantMostRecent   = 1,
+                        All                   = 2,
+                        MostRecent            = 3,
+                        CurrentThenMostRecent = 4
                     };
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1216,6 +1259,14 @@ namespace Windows
                         HRESULT GetCulture([out] [retval] INT32* returnValue);
                     }
 
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Automation.Peers.AutomationPeer)]
+                    [uuid(796B3287-E642-48AB-B223-5208B41DA9D6)]
+                    interface IAutomationPeer7 : IInspectable
+                    {
+                        HRESULT RaiseNotificationEvent([in] Windows.UI.Xaml.Automation.Peers.AutomationNotificationKind notificationKind, [in] Windows.UI.Xaml.Automation.Peers.AutomationNotificationProcessing notificationProcessing, [in] HSTRING displayString, [in] HSTRING activityId);
+                    }
+
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     [exclusiveto(Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation)]
                     [uuid(0C456061-52CF-43FA-82F8-07F137351E5A)]
@@ -1423,6 +1474,36 @@ namespace Windows
                     interface ICheckBoxAutomationPeerFactory : IInspectable
                     {
                         HRESULT CreateInstanceWithOwner([in] Windows.UI.Xaml.Controls.CheckBox* owner, [in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Automation.Peers.CheckBoxAutomationPeer** instance);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Automation.Peers.ColorPickerSliderAutomationPeer)]
+                    [uuid(A514215A-7293-4577-924C-47D4E0BF9B90)]
+                    interface IColorPickerSliderAutomationPeer : IInspectable
+                    {
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Automation.Peers.ColorPickerSliderAutomationPeer)]
+                    [uuid(1A55C77E-9DD6-45A3-9042-B40200FEA1A9)]
+                    interface IColorPickerSliderAutomationPeerFactory : IInspectable
+                    {
+                        HRESULT CreateInstanceWithOwner([in] Windows.UI.Xaml.Controls.Primitives.ColorPickerSlider* owner, [in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Automation.Peers.ColorPickerSliderAutomationPeer** instance);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Automation.Peers.ColorSpectrumAutomationPeer)]
+                    [uuid(15D5BA03-010D-4FF7-9087-F4DD09F831B7)]
+                    interface IColorSpectrumAutomationPeer : IInspectable
+                    {
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Automation.Peers.ColorSpectrumAutomationPeer)]
+                    [uuid(0AC400E1-B743-4496-837A-8889E6AC6497)]
+                    interface IColorSpectrumAutomationPeerFactory : IInspectable
+                    {
+                        HRESULT CreateInstanceWithOwner([in] Windows.UI.Xaml.Controls.Primitives.ColorSpectrum* owner, [in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Automation.Peers.ColorSpectrumAutomationPeer** instance);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2012,6 +2093,21 @@ namespace Windows
                         HRESULT CreateInstanceWithOwner([in] Windows.UI.Xaml.Controls.MenuFlyoutPresenter* owner, [in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Automation.Peers.MenuFlyoutPresenterAutomationPeer** instance);
                     }
 
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Automation.Peers.NavigationViewItemAutomationPeer)]
+                    [uuid(309847A5-9971-4D8D-A81C-085C7086A1B9)]
+                    interface INavigationViewItemAutomationPeer : IInspectable
+                    {
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Automation.Peers.NavigationViewItemAutomationPeer)]
+                    [uuid(0BC2835D-AA38-4F97-9664-E6FC821D81ED)]
+                    interface INavigationViewItemAutomationPeerFactory : IInspectable
+                    {
+                        HRESULT CreateInstanceWithOwner([in] Windows.UI.Xaml.Controls.NavigationViewItem* owner, [in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Automation.Peers.NavigationViewItemAutomationPeer** instance);
+                    }
+
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     [exclusiveto(Windows.UI.Xaml.Automation.Peers.PasswordBoxAutomationPeer)]
                     [uuid(684F065E-3DF3-4B9F-82AD-8819DB3B218A)]
@@ -2025,6 +2121,21 @@ namespace Windows
                     interface IPasswordBoxAutomationPeerFactory : IInspectable
                     {
                         HRESULT CreateInstanceWithOwner([in] Windows.UI.Xaml.Controls.PasswordBox* owner, [in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Automation.Peers.PasswordBoxAutomationPeer** instance);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Automation.Peers.PersonPictureAutomationPeer)]
+                    [uuid(27156D4C-A66F-4AAF-8286-4F796D30628C)]
+                    interface IPersonPictureAutomationPeer : IInspectable
+                    {
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Automation.Peers.PersonPictureAutomationPeer)]
+                    [uuid(A95F1F6D-2524-44A4-97FD-1181130100AD)]
+                    interface IPersonPictureAutomationPeerFactory : IInspectable
+                    {
+                        HRESULT CreateInstanceWithOwner([in] Windows.UI.Xaml.Controls.PersonPicture* owner, [in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Automation.Peers.PersonPictureAutomationPeer** instance);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2137,6 +2248,21 @@ namespace Windows
                     interface IRangeBaseAutomationPeerFactory : IInspectable
                     {
                         HRESULT CreateInstanceWithOwner([in] Windows.UI.Xaml.Controls.Primitives.RangeBase* owner, [in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Automation.Peers.RangeBaseAutomationPeer** instance);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Automation.Peers.RatingControlAutomationPeer)]
+                    [uuid(3D14349A-9963-4A47-823C-F457CB3209D5)]
+                    interface IRatingControlAutomationPeer : IInspectable
+                    {
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Automation.Peers.RatingControlAutomationPeer)]
+                    [uuid(F179F272-9846-4632-8B9C-BE6FA8D3C9BB)]
+                    interface IRatingControlAutomationPeerFactory : IInspectable
+                    {
+                        HRESULT CreateInstanceWithOwner([in] Windows.UI.Xaml.Controls.RatingControl* owner, [in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Automation.Peers.RatingControlAutomationPeer** instance);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2491,6 +2617,7 @@ namespace Windows
                         [contract(Windows.Foundation.UniversalApiContract, 3.0)] [overridable] interface Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5;
                         [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.UI.Xaml.Automation.Peers.IAutomationPeer6;
                         [contract(Windows.Foundation.UniversalApiContract, 4.0)] [overridable] interface Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides6;
+                        [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Xaml.Automation.Peers.IAutomationPeer7;
                     }
 
                     [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2539,6 +2666,24 @@ namespace Windows
                     runtimeclass CheckBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer
                     {
                         [default] interface Windows.UI.Xaml.Automation.Peers.ICheckBoxAutomationPeer;
+                    }
+
+                    [composable(Windows.UI.Xaml.Automation.Peers.IColorPickerSliderAutomationPeerFactory, public, Windows.Foundation.UniversalApiContract, 5.0)]
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [marshaling_behavior(agile)]
+                    [threading(both)]
+                    runtimeclass ColorPickerSliderAutomationPeer : Windows.UI.Xaml.Automation.Peers.SliderAutomationPeer
+                    {
+                        [default] interface Windows.UI.Xaml.Automation.Peers.IColorPickerSliderAutomationPeer;
+                    }
+
+                    [composable(Windows.UI.Xaml.Automation.Peers.IColorSpectrumAutomationPeerFactory, public, Windows.Foundation.UniversalApiContract, 5.0)]
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [marshaling_behavior(agile)]
+                    [threading(both)]
+                    runtimeclass ColorSpectrumAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+                    {
+                        [default] interface Windows.UI.Xaml.Automation.Peers.IColorSpectrumAutomationPeer;
                     }
 
                     [composable(Windows.UI.Xaml.Automation.Peers.IComboBoxAutomationPeerFactory, public, Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2930,6 +3075,15 @@ namespace Windows
                         [default] interface Windows.UI.Xaml.Automation.Peers.IMenuFlyoutPresenterAutomationPeer;
                     }
 
+                    [composable(Windows.UI.Xaml.Automation.Peers.INavigationViewItemAutomationPeerFactory, public, Windows.Foundation.UniversalApiContract, 5.0)]
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [marshaling_behavior(agile)]
+                    [threading(both)]
+                    runtimeclass NavigationViewItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.ListViewItemAutomationPeer
+                    {
+                        [default] interface Windows.UI.Xaml.Automation.Peers.INavigationViewItemAutomationPeer;
+                    }
+
                     [composable(Windows.UI.Xaml.Automation.Peers.IPasswordBoxAutomationPeerFactory, public, Windows.Foundation.UniversalApiContract, 1.0)]
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     [marshaling_behavior(agile)]
@@ -2937,6 +3091,15 @@ namespace Windows
                     runtimeclass PasswordBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
                     {
                         [default] interface Windows.UI.Xaml.Automation.Peers.IPasswordBoxAutomationPeer;
+                    }
+
+                    [composable(Windows.UI.Xaml.Automation.Peers.IPersonPictureAutomationPeerFactory, public, Windows.Foundation.UniversalApiContract, 5.0)]
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [marshaling_behavior(agile)]
+                    [threading(both)]
+                    runtimeclass PersonPictureAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+                    {
+                        [default] interface Windows.UI.Xaml.Automation.Peers.IPersonPictureAutomationPeer;
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -3015,6 +3178,15 @@ namespace Windows
                     {
                         [default] interface Windows.UI.Xaml.Automation.Peers.IRangeBaseAutomationPeer;
                         [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.UI.Xaml.Automation.Provider.IRangeValueProvider;
+                    }
+
+                    [composable(Windows.UI.Xaml.Automation.Peers.IRatingControlAutomationPeerFactory, public, Windows.Foundation.UniversalApiContract, 5.0)]
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [marshaling_behavior(agile)]
+                    [threading(both)]
+                    runtimeclass RatingControlAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer
+                    {
+                        [default] interface Windows.UI.Xaml.Automation.Peers.IRatingControlAutomationPeer;
                     }
 
                     [composable(Windows.UI.Xaml.Automation.Peers.IRepeatButtonAutomationPeerFactory, public, Windows.Foundation.UniversalApiContract, 1.0)]

@@ -87,7 +87,7 @@ extern "C" {
 #define __failure(x) __static_context(SAL_return_convention, \
     _SAL_L_Source_(__failure, (x), _SA_annotes1(SAL_failure,x)))
 
-__ANNOTATION(SAL_valueUndefined());
+__ANNOTATION(SAL_valueUndefined(void));
 #define __valueUndefined _SAL_L_Source_(__valueUndefined, (), _SA_annotes0(SAL_valueUndefined))
 
 enum __SAL_failureKind{__failureUnspecified = 0, __failureUndefined = 1};

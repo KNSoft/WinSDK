@@ -1277,6 +1277,12 @@ GetLongPathNameTransactedW(
 
 #endif // _WIN32_WINNT >= 0x0600
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 WINBASEAPI
 BOOL
 WINAPI
@@ -1294,6 +1300,12 @@ SetProcessAffinityMask(
     _In_ DWORD_PTR dwProcessAffinityMask
     );
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+
 WINBASEAPI
 BOOL
 WINAPI
@@ -1301,6 +1313,12 @@ GetProcessIoCounters(
     _In_  HANDLE hProcess,
     _Out_ PIO_COUNTERS lpIoCounters
     );
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINBASEAPI
 BOOL
@@ -1310,6 +1328,12 @@ GetProcessWorkingSetSize(
     _Out_ PSIZE_T lpMinimumWorkingSetSize,
     _Out_ PSIZE_T lpMaximumWorkingSetSize
     );
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
 WINBASEAPI
 BOOL
@@ -1613,8 +1637,8 @@ GetUmsSystemThreadInformation(
 
 #endif /* _WIN32_WINNT >= 0x0400 */
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINBASEAPI
 DWORD_PTR
@@ -1623,7 +1647,8 @@ SetThreadAffinityMask(
     _In_ HANDLE hThread,
     _In_ DWORD_PTR dwThreadAffinityMask
     );
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #pragma region Desktop Family
@@ -1752,6 +1777,12 @@ typedef VOID (WINAPI* PRESTORE_LAST_ERROR)(DWORD);
 
 #define HasOverlappedIoCompleted(lpOverlapped) (((DWORD)(lpOverlapped)->Internal) != STATUS_PENDING)
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 #if (_WIN32_WINNT >= 0x0600)
 
 //
@@ -1779,6 +1810,12 @@ SetFileCompletionNotificationModes(
     );
 
 #endif // _WIN32_WINNT >= 0x0600
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
 #define SEM_FAILCRITICALERRORS      0x0001
 #define SEM_NOGPFAULTERRORBOX       0x0002
@@ -1976,8 +2013,8 @@ WinExec(
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma region Desktop Family or OneCore or App Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_APP)
 
 WINBASEAPI
 BOOL
@@ -2127,7 +2164,21 @@ WaitCommEvent(
     _Inout_opt_ LPOVERLAPPED lpOverlapped
     );
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+
+WINBASEAPI
+HANDLE
+WINAPI
+OpenCommPort(
+    _In_ ULONG uPortNumber,
+    _In_ DWORD dwDesiredAccess,
+    _In_ DWORD dwFlagsAndAttributes
+    );
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_APP) */
 #pragma endregion
 
 #pragma region Desktop Family
@@ -3209,6 +3260,38 @@ LoadPackagedLibrary (
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
+#if (_WIN32_WINNT >= 0x0600)
+
+//
+// Supported process protection levels.
+//
+
+#define PROTECTION_LEVEL_WINTCB_LIGHT       0x00000000
+#define PROTECTION_LEVEL_WINDOWS            0x00000001
+#define PROTECTION_LEVEL_WINDOWS_LIGHT      0x00000002
+#define PROTECTION_LEVEL_ANTIMALWARE_LIGHT  0x00000003
+#define PROTECTION_LEVEL_LSA_LIGHT          0x00000004
+
+//
+// The following protection levels are supplied for testing only (no win32
+// callers need these).
+//
+
+#define PROTECTION_LEVEL_WINTCB             0x00000005
+#define PROTECTION_LEVEL_CODEGEN_LIGHT      0x00000006
+#define PROTECTION_LEVEL_AUTHENTICODE       0x00000007
+#define PROTECTION_LEVEL_PPL_APP            0x00000008
+
+#define PROTECTION_LEVEL_SAME               0xFFFFFFFF
+
+//
+// The following is only used as a value for ProtectionLevel
+// when querying ProcessProtectionLevelInfo in GetProcessInformation.
+//
+#define PROTECTION_LEVEL_NONE               0xFFFFFFFE
+
+#endif // _WIN32_WINNT >= 0x0600
+
 #pragma region Desktop Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
@@ -3253,8 +3336,6 @@ QueryFullProcessImageNameW(
 #define PROC_THREAD_ATTRIBUTE_INPUT     0x00020000  // Attribute is input only
 #define PROC_THREAD_ATTRIBUTE_ADDITIVE  0x00040000  // Attribute may be "accumulated," e.g. bitmasks, counters, etc.
 
-
-#define PROTECTION_LEVEL_SAME               0xFFFFFFFF
 
 #ifndef _USE_FULL_PROC_THREAD_ATTRIBUTE
 typedef enum _PROC_THREAD_ATTRIBUTE_NUM {
@@ -3528,6 +3609,16 @@ typedef enum _PROC_THREAD_ATTRIBUTE_NUM {
 #define PROCESS_CREATION_MITIGATION_POLICY2_STRICT_CONTROL_FLOW_GUARD_ALWAYS_OFF          (0x00000002ui64 << 8)
 #define PROCESS_CREATION_MITIGATION_POLICY2_STRICT_CONTROL_FLOW_GUARD_RESERVED            (0x00000003ui64 << 8)
 
+//
+// Define the module tampering mitigation policy options.
+//
+
+#define PROCESS_CREATION_MITIGATION_POLICY2_MODULE_TAMPERING_PROTECTION_MASK              (0x00000003ui64 << 12)
+#define PROCESS_CREATION_MITIGATION_POLICY2_MODULE_TAMPERING_PROTECTION_DEFER             (0x00000000ui64 << 12)
+#define PROCESS_CREATION_MITIGATION_POLICY2_MODULE_TAMPERING_PROTECTION_ALWAYS_ON         (0x00000001ui64 << 12)
+#define PROCESS_CREATION_MITIGATION_POLICY2_MODULE_TAMPERING_PROTECTION_ALWAYS_OFF        (0x00000002ui64 << 12)
+#define PROCESS_CREATION_MITIGATION_POLICY2_MODULE_TAMPERING_PROTECTION_NOINHERIT         (0x00000003ui64 << 12)
+
 #endif // _WIN32_WINNT_WINTHRESHOLD
 #endif // _WIN32_WINNT_WINBLUE
 #endif // _WIN32_WINNT_WIN8
@@ -3543,12 +3634,7 @@ typedef enum _PROC_THREAD_ATTRIBUTE_NUM {
 
 #define PROCESS_CREATION_CHILD_PROCESS_RESTRICTED                                         0x01
 #define PROCESS_CREATION_CHILD_PROCESS_OVERRIDE                                           0x02
-
-//
-// Define Attribute for Desktop Appx Overide.
-//
-
-#define PROCESS_CREATION_DESKTOP_APPX_OVERRIDE                                            0x04
+#define PROCESS_CREATION_CHILD_PROCESS_RESTRICTED_UNLESS_SECURE                           0x04
 
 #define PROC_THREAD_ATTRIBUTE_CHILD_PROCESS_POLICY \
     ProcThreadAttributeValue (ProcThreadAttributeChildProcessPolicy, FALSE, TRUE, FALSE)
@@ -5166,8 +5252,8 @@ FindFirstFileTransactedW(
 
 #endif /* _WIN32_WINNT >= 0x0400 */
 
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 
 WINBASEAPI
@@ -5214,13 +5300,13 @@ CopyFile(
 }
 #endif  /* _M_CEE */
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #if(_WIN32_WINNT >= 0x0400)
 
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 typedef
 DWORD
@@ -5266,7 +5352,7 @@ CopyFileExW(
 #define CopyFileEx  CopyFileExA
 #endif // !UNICODE
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #pragma region Desktop Family
@@ -5750,6 +5836,12 @@ FindFirstFileNameTransactedW (
 
 #endif
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 WINBASEAPI
 HANDLE
 WINAPI
@@ -5767,7 +5859,7 @@ CreateNamedPipeA(
 #define CreateNamedPipe  CreateNamedPipeA
 #endif
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #pragma region Desktop Family or OneCore Family
@@ -5888,8 +5980,8 @@ GetNamedPipeServerSessionId(
 
 #endif // (_WIN32_WINNT >= 0x0600)
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+#pragma region Application Family or Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
 
 WINBASEAPI
 BOOL
@@ -5910,6 +6002,13 @@ SetVolumeLabelW(
 #else
 #define SetVolumeLabel  SetVolumeLabelA
 #endif // !UNICODE
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#pragma endregion
+
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+
 
 #if (_WIN32_WINNT >= 0x0600)
 
@@ -6441,6 +6540,12 @@ GetFileSecurityA (
 #define GetFileSecurity  GetFileSecurityA
 #endif
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 #if(_WIN32_WINNT >= 0x0400)
 WINBASEAPI
 BOOL
@@ -6455,9 +6560,26 @@ ReadDirectoryChangesW(
     _Inout_opt_ LPOVERLAPPED lpOverlapped,
     _In_opt_    LPOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
     );
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+WINBASEAPI
+BOOL
+WINAPI
+ReadDirectoryChangesExW(
+    _In_        HANDLE hDirectory,
+    _Out_writes_bytes_to_(nBufferLength, *lpBytesReturned) LPVOID lpBuffer,
+    _In_        DWORD nBufferLength,
+    _In_        BOOL bWatchSubtree,
+    _In_        DWORD dwNotifyFilter,
+    _Out_opt_   LPDWORD lpBytesReturned,
+    _Inout_opt_ LPOVERLAPPED lpOverlapped,
+    _In_opt_    LPOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine,
+    _In_        READ_DIRECTORY_NOTIFY_INFORMATION_CLASS ReadDirectoryNotifyInformationClass
+    );
+#endif
 #endif /* _WIN32_WINNT >= 0x0400 */
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #pragma region Desktop Family
@@ -6697,7 +6819,7 @@ LookupAccountSidLocalW(
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
-#pragma region Appliation Family or OneCore Family
+#pragma region Application Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINADVAPI
@@ -6886,6 +7008,12 @@ SetDefaultCommConfigW(
 #define SetDefaultCommConfig  SetDefaultCommConfigA
 #endif // !UNICODE
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 #ifndef _MAC
 #define MAX_COMPUTERNAME_LENGTH 15
 #else
@@ -6913,6 +7041,12 @@ GetComputerNameW (
 #else
 #define GetComputerName  GetComputerNameA
 #endif // !UNICODE
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
 #if (_WIN32_WINNT >= 0x0500)
 
@@ -7710,8 +7844,8 @@ SetVolumeMountPointW(
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINBASEAPI
 BOOL
@@ -7723,6 +7857,16 @@ DeleteVolumeMountPointA(
 #define DeleteVolumeMountPoint  DeleteVolumeMountPointA
 #endif
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
+#ifndef UNICODE
+#define GetVolumeNameForVolumeMountPoint  GetVolumeNameForVolumeMountPointA
+#endif
+
 WINBASEAPI
 BOOL
 WINAPI
@@ -7730,10 +7874,7 @@ GetVolumeNameForVolumeMountPointA(
     _In_ LPCSTR lpszVolumeMountPoint,
     _Out_writes_(cchBufferLength) LPSTR lpszVolumeName,
     _In_ DWORD cchBufferLength
-    );
-#ifndef UNICODE
-#define GetVolumeNameForVolumeMountPoint  GetVolumeNameForVolumeMountPointA
-#endif
+);
 
 WINBASEAPI
 BOOL
@@ -8361,8 +8502,12 @@ typedef struct _FILE_NAME_INFO {
 } FILE_NAME_INFO, *PFILE_NAME_INFO;
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1)
-#define FILE_RENAME_FLAG_REPLACE_IF_EXISTS         0x00000001
-#define FILE_RENAME_FLAG_POSIX_SEMANTICS           0x00000002
+#define FILE_RENAME_FLAG_REPLACE_IF_EXISTS                  0x00000001
+#define FILE_RENAME_FLAG_POSIX_SEMANTICS                    0x00000002
+#endif
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS3)
+#define FILE_RENAME_FLAG_SUPPRESS_PIN_STATE_INHERITANCE     0x00000004
 #endif
 
 typedef struct _FILE_RENAME_INFO {

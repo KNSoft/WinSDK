@@ -1,4 +1,4 @@
-#include <winapifamily.h>	
+#include <winapifamily.h>
 
 /**************************************************************************
 *                                                                         *
@@ -2817,7 +2817,7 @@ typedef enum
     DISPLAYCONFIG_OUTPUT_TECHNOLOGY_UDI_EMBEDDED            = 13,
     DISPLAYCONFIG_OUTPUT_TECHNOLOGY_SDTVDONGLE              = 14,
     DISPLAYCONFIG_OUTPUT_TECHNOLOGY_MIRACAST                = 15,
-	DISPLAYCONFIG_OUTPUT_TECHNOLOGY_INDIRECT_WIRED          = 16,
+    DISPLAYCONFIG_OUTPUT_TECHNOLOGY_INDIRECT_WIRED          = 16,
     DISPLAYCONFIG_OUTPUT_TECHNOLOGY_INTERNAL                = 0x80000000,
     DISPLAYCONFIG_OUTPUT_TECHNOLOGY_FORCE_UINT32            = 0xFFFFFFFF
 } DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY;
@@ -3009,7 +3009,7 @@ typedef struct DISPLAYCONFIG_PATH_INFO
 //
 
 #define DISPLAYCONFIG_PATH_ACTIVE               0x00000001
-#define DISPLAYCONFIG_PATH_PREFERRED_UNSCALED   0x00000004
+#define DISPLAYCONFIG_PATH_PREFERRED_UNSCALED   0x00000004 // Not implemented
 #define DISPLAYCONFIG_PATH_SUPPORT_VIRTUAL_MODE 0x00000008
 #define DISPLAYCONFIG_PATH_VALID_FLAGS          0x0000000D
 
@@ -3158,7 +3158,8 @@ typedef struct _DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
         {
           UINT32 advancedColorSupported  :1;
           UINT32 advancedColorEnabled    :1;
-          UINT32 reserved  :30;
+          UINT32 wideColorEnforced       :1;
+          UINT32 reserved  :29;
         } DUMMYSTRUCTNAME;
 
         UINT32 value;

@@ -1331,6 +1331,23 @@ typedef struct _WDI_RECEIVE_COALESCE_OFFLOAD_CAPABILITIES
 
 
 //
+// Structure definition for Offload Scope
+//
+typedef struct _WDI_OFFLOAD_SCOPE
+{
+    UINT8 ChecksumOffloadSupportedOnAllPorts; // Whether Checksum Offload params are applicable on all ports
+    UINT8 LsoV1OffloadSupportedOnAllPorts; // Whether LsoV1 Offload params are applicable on all ports
+    UINT8 LsoV2OffloadSupportedOnAllPorts; // Whether LsoV2 Offload params are applicable on all ports
+    UINT8 RscOffloadSupportedOnAllPorts; // Whether RSC Offload params are applicable on all ports
+#ifdef __cplusplus
+    _WDI_OFFLOAD_SCOPE() : ChecksumOffloadSupportedOnAllPorts( 0 ), LsoV1OffloadSupportedOnAllPorts( 0 ), LsoV2OffloadSupportedOnAllPorts( 0 ), RscOffloadSupportedOnAllPorts( 0 )
+    {
+    };
+#endif // __cplusplus
+} WDI_OFFLOAD_SCOPE, *PWDI_OFFLOAD_SCOPE;
+
+
+//
 // Structure definition for Action Frame Response Parameters
 //
 typedef struct _WDI_P2P_SEND_ACTION_FRAME_RESPONSE_PARAMETERS
@@ -2992,6 +3009,8 @@ typedef WDI_CREATE_PORT_COMPLETE_STRUCT WDI_PORT_ATTRIBUTES_CONTAINER;
 
 typedef WDI_RECEIVE_COALESCE_OFFLOAD_CAPABILITIES WDI_RECEIVE_COALESCE_OFFLOAD_CAPABILITIES_CONTAINER;
 
+typedef WDI_OFFLOAD_SCOPE WDI_OFFLOAD_SCOPE_CONTAINER;
+
 
 //
 // Container for LSO V2.
@@ -3011,6 +3030,7 @@ typedef struct _WDI_TCP_OFFLOAD_CAPABILITIES_CONTAINER
     WDI_LSO_V1_CAPABILITIES_CONTAINER LsoV1Capabilities;
     WDI_LSO_V2_CAPABILITIES_CONTAINER LsoV2Capabilities;
     WDI_RECEIVE_COALESCE_OFFLOAD_CAPABILITIES_CONTAINER ReceiveOffloadCapabilities;
+    WDI_OFFLOAD_SCOPE_CONTAINER OffloadScope;
 } WDI_TCP_OFFLOAD_CAPABILITIES_CONTAINER, *PWDI_TCP_OFFLOAD_CAPABILITIES_CONTAINER;
 typedef WDI_DELETE_PORT_PARAMETERS WDI_TASK_DELETE_PORT_PARAMETERS_CONTAINER;
 
@@ -5106,16 +5126,6 @@ typedef struct _WDI_INDICATION_CAN_SUSTAIN_AP_PARAMETERS
 //
 typedef struct _WDI_INDICATION_SEND_AP_ASSOCIATION_RESPONSE_COMPLETE_PARAMETERS
 {
-    struct _WDI_INDICATION_SEND_AP_ASSOCIATION_RESPONSE_COMPLETE_PARAMETERS_Optional
-    {
-        UINT32 ActivePhyList_IsPresent : 1;
-#ifdef __cplusplus
-        _WDI_INDICATION_SEND_AP_ASSOCIATION_RESPONSE_COMPLETE_PARAMETERS_Optional() : ActivePhyList_IsPresent( FALSE )
-        {
-        };
-#endif // __cplusplus
-    } Optional;
-
     WDI_ASSOC_RESPONSE_RESULT_PARAMETERS_CONTAINER AssocResponseResult;
     WDI_BYTE_BLOB AssocResponseFrame;
     WDI_BYTE_BLOB BeaconIEs;

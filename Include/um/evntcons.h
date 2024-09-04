@@ -58,7 +58,8 @@ extern "C" {
 #define EVENT_HEADER_EXT_TYPE_EVENT_SCHEMA_TL      0x000B
 #define EVENT_HEADER_EXT_TYPE_PROV_TRAITS          0x000C
 #define EVENT_HEADER_EXT_TYPE_PROCESS_START_KEY    0x000D
-#define EVENT_HEADER_EXT_TYPE_MAX                  0x000E
+#define EVENT_HEADER_EXT_TYPE_CONTROL_GUID         0x000E
+#define EVENT_HEADER_EXT_TYPE_MAX                  0x000F
 
 #ifndef EVENT_HEADER_EXTENDED_DATA_ITEM_DEF
 #define EVENT_HEADER_EXTENDED_DATA_ITEM_DEF
@@ -133,6 +134,7 @@ typedef struct _EVENT_EXTENDED_ITEM_EVENT_KEY {
 #define EVENT_HEADER_FLAG_NO_CPUTIME            0x0010
 #define EVENT_HEADER_FLAG_32_BIT_HEADER         0x0020
 #define EVENT_HEADER_FLAG_64_BIT_HEADER         0x0040
+#define EVENT_HEADER_FLAG_DECODE_GUID           0x0080 // ProviderId is decode GUID.
 #define EVENT_HEADER_FLAG_CLASSIC_HEADER        0x0100
 #define EVENT_HEADER_FLAG_PROCESSOR_INDEX       0x0200
 
@@ -218,7 +220,8 @@ GetEventProcessorIndex (
 //
 
 typedef enum {
-    EtwProviderTraitTypeGroup = 1,
+    EtwProviderTraitTypeGroup  = 1, // Provider group GUID.
+    EtwProviderTraitDecodeGuid = 2, // Decode GUID (when different from control GUID)
     EtwProviderTraitTypeMax
 } ETW_PROVIDER_TRAIT_TYPE;
 

@@ -34,9 +34,9 @@
 #define _APISET_FILE_VER 0x0202
 #elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WINBLUE
 #define _APISET_FILE_VER 0x0201
-#elif _APISET_TARGET_VERSION == _APISET_TARGET_VERSION_WIN8
+#elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN8
 #define _APISET_FILE_VER 0x0200
-#elif _APISET_TARGET_VERSION == _APISET_TARGET_VERSION_WIN7
+#elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN7
 #define _APISET_FILE_VER 0x0100
 #endif
 #endif
@@ -190,13 +190,6 @@ DeleteFileW(
 #define DeleteFile  DeleteFileA
 #endif // !UNICODE
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
 WINBASEAPI
 BOOL
 WINAPI
@@ -208,13 +201,6 @@ DeleteVolumeMountPointW(
 #ifdef UNICODE
 #define DeleteVolumeMountPoint  DeleteVolumeMountPointW
 #endif
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Application Family or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINBASEAPI
 BOOL
@@ -501,13 +487,6 @@ GetDiskFreeSpaceExW(
 #define GetDiskFreeSpaceEx  GetDiskFreeSpaceExA
 #endif // !UNICODE
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
 WINBASEAPI
 UINT
 WINAPI
@@ -528,7 +507,7 @@ GetDriveTypeW(
 #define GetDriveType  GetDriveTypeA
 #endif // !UNICODE
 
-#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #pragma region Application Family or OneCore Family
@@ -708,13 +687,6 @@ GetFullPathNameW(
 #define GetFullPathName  GetFullPathNameW
 #endif
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
 WINBASEAPI
 _Success_(return != 0 && return < nBufferLength)
 DWORD
@@ -738,6 +710,13 @@ GetLogicalDrives(
     VOID
     );
 
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 WINBASEAPI
 DWORD
@@ -859,6 +838,12 @@ GetVolumeInformationByHandleW(
 
 
 #endif /* _WIN32_WINNT >=  0x0600 */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINBASEAPI
 BOOL
@@ -878,6 +863,13 @@ GetVolumeInformationW(
 #ifdef UNICODE
 #define GetVolumeInformation  GetVolumeInformationW
 #endif
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 WINBASEAPI
 BOOL
@@ -909,13 +901,6 @@ LocalFileTimeToFileTime(
     );
 
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-
 WINBASEAPI
 BOOL
 WINAPI
@@ -927,13 +912,6 @@ LockFile(
     _In_ DWORD nNumberOfBytesToLockHigh
     );
 
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Application Family or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINBASEAPI
 BOOL
@@ -1149,6 +1127,13 @@ SetFileValidData(
 
 #endif // (_WIN32_WINNT >= 0x0501)
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 WINBASEAPI
 BOOL
 WINAPI
@@ -1161,12 +1146,6 @@ UnlockFile(
     );
 
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Application Family or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 WINBASEAPI
 BOOL
@@ -1454,6 +1433,18 @@ AreFileApisANSI(
     );
 
 
+#endif // !defined(_CONTRACT_GEN) || (_APISET_FILE_VER >= 0x0202)
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
+
+#if !defined(_CONTRACT_GEN) || (_APISET_FILE_VER >= 0x0202)
+
 WINBASEAPI
 DWORD
 WINAPI
@@ -1466,6 +1457,18 @@ GetTempPathA(
 #ifndef UNICODE
 #define GetTempPath  GetTempPathA
 #endif
+
+#endif // !defined(_CONTRACT_GEN) || (_APISET_FILE_VER >= 0x0202)
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
+
+#if !defined(_CONTRACT_GEN) || (_APISET_FILE_VER >= 0x0202)
 
 
 #if _WIN32_WINNT >= 0x0600
@@ -1492,6 +1495,18 @@ FindNextFileNameW(
 
 
 #endif // (_WIN32_WINNT >= 0x0600)
+
+#endif // !defined(_CONTRACT_GEN) || (_APISET_FILE_VER >= 0x0202)
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
+
+#if !defined(_CONTRACT_GEN) || (_APISET_FILE_VER >= 0x0202)
 
 WINBASEAPI
 BOOL
@@ -1526,6 +1541,17 @@ GetTempFileNameA(
 #ifndef UNICODE
 #define GetTempFileName  GetTempFileNameA
 #endif
+#endif // !defined(_CONTRACT_GEN) || (_APISET_FILE_VER >= 0x0202)
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
+
+#if !defined(_CONTRACT_GEN) || (_APISET_FILE_VER >= 0x0202)
 
 WINBASEAPI
 VOID

@@ -216,7 +216,6 @@ GEN_ADDR        sleep_status_reg;       // This is the last field if the table R
      (((Type *)(Entry))->Length >= RTL_SIZEOF_THROUGH_FIELD(Type, Length)) && \
      (((PUCHAR)(Entry)) + ((Type *)(Entry))->Length <= (PUCHAR)(TableEnd)))
 
-
 //
 // System Resource Affinity Table
 //
@@ -277,6 +276,15 @@ typedef struct _ACPI_SRAT_ENTRY {
             ULONG               ClockDomain;
             ULONG               Reserved2;
         } X2ApicAffinity;
+        struct {
+            ULONG               ProximityDomain;
+            ULONG               ProcessorUid;
+            struct {
+                ULONG           Enabled:1;
+                ULONG           Reserved:31;
+            }                   Flags;
+            ULONG               ClockDomain;
+        } GiccAffinity;
     } DUMMYUNIONNAME;
 } ACPI_SRAT_ENTRY, *PACPI_SRAT_ENTRY;
 
@@ -291,6 +299,10 @@ typedef struct _ACPI_SRAT_ENTRY {
 #define SRAT_X2APIC_ENTRY_LENGTH                     \
     (FIELD_OFFSET(ACPI_SRAT_ENTRY, X2ApicAffinity) + \
      RTL_FIELD_SIZE(ACPI_SRAT_ENTRY, X2ApicAffinity))
+
+#define SRAT_GICC_ENTRY_LENGTH                     \
+    (FIELD_OFFSET(ACPI_SRAT_ENTRY, GiccAffinity) + \
+     RTL_FIELD_SIZE(ACPI_SRAT_ENTRY, GiccAffinity))
 
 #define PROXIMITY_DOMAIN(SratTable, SratEntry) \
     (((SratTable)->Header.Revision == 1) ? \
@@ -307,7 +319,9 @@ typedef struct _ACPI_SRAT_ENTRY {
       (((ULONG)((SratEntry)->ApicAffinity.ProximityDomainHigh[2])) << 24)) : \
      (((SratEntry)->Type == SratProcessorLocalX2APIC) ? \
       (SratEntry)->X2ApicAffinity.ProximityDomain : \
-      (SratEntry)->MemoryAffinity.ProximityDomain))
+      (((SratEntry)->Type == SratMemory) ? \
+       (SratEntry)->MemoryAffinity.ProximityDomain : \
+       (SratEntry)->GiccAffinity.ProximityDomain)))
 
 #if _MSC_VER >= 1200
 #pragma warning(pop)
@@ -316,7 +330,8 @@ typedef struct _ACPI_SRAT_ENTRY {
 typedef enum {
     SratProcessorLocalAPIC,
     SratMemory,
-    SratProcessorLocalX2APIC
+    SratProcessorLocalX2APIC,
+    SratGicc
 } SRAT_ENTRY_TYPE;
 
 #define ACPI_MPST_SIGNATURE 0x5453504D // "MPST"
@@ -450,7 +465,6 @@ typedef struct _ACPI_MSCT_ENTRY {
 
 #define ACPI_MSCT_MINIMUM_LENGTH sizeof(ACPI_MSCT)
 
-
 #ifdef _IA64_
 // FLUSH WORKS IS FOR IA64
 #define         FLUSH_WORKS_BIT           0
@@ -980,6 +994,19 @@ typedef GIC_REDISTRIBUTOR UNALIGNED *PGIC_REDISTRIBUTOR;
 
 #define GIC_REDISTRIBUTOR_LENGTH (sizeof(GIC_REDISTRIBUTOR))
 
+typedef struct _GIC_ITS {
+    UCHAR Type;
+    UCHAR Length;
+    USHORT Reserved1;
+    ULONG Identifier;
+    ULONGLONG PhysicalAddress;
+    ULONG Reserved2;
+} GIC_ITS;
+
+typedef GIC_ITS UNALIGNED *PGIC_ITS;
+
+#define GIC_ITS_LENGTH (sizeof(GIC_ITS))
+
 //
 // Smart Battery
 //
@@ -1123,10 +1150,14 @@ typedef struct _DEBUG_DEVICE_INFORMATION {
 #define DEBUG_DEVICE_PORT_NET 0x8003
 #define DEBUG_DEVICE_PORT_LOCAL 0x8004
 
+#define DEBUG_DEVICE_PORT_SUBTYPE_16550 0x0000
+#define DEBUG_DEVICE_PORT_SUBTYPE_16450 0x0001
 #define DEBUG_DEVICE_PORT_SUBTYPE_PL011 0x0003
 #define DEBUG_DEVICE_PORT_SUBTYPE_UEFI 0x0007
+#define DEBUG_DEVICE_PORT_SUBTYPE_IMX6 0x000C
 #define DEBUG_DEVICE_PORT_SUBTYPE_SBSA32 0x000D
 #define DEBUG_DEVICE_PORT_SUBTYPE_SBSA 0x000E
+#define DEBUG_DEVICE_PORT_SUBTYPE_MM16550 0x0012
 
 //
 // v2 Debug Device Information Structure.
@@ -1745,6 +1776,12 @@ C_ASSERT(WAET_DEV_RTC_ENLIGHTENED == 1);
 #define IORT_TYPE_ARM_CORELINK_MMU400 2
 #define IORT_TYPE_ARM_CORELINK_MMU500 3
 
+#define IORT_SMMUV3_NODE_REVISION 0
+#define IORT_TYPE_GENERIC_SMMUV3 0
+
+#define IORT_SMMUV3_NODE_REVISION 0
+#define IORT_TYPE_GENERIC_SMMUV3 0
+
 #if _MSC_VER >= 1200
 #pragma warning(push)
 #endif
@@ -1837,14 +1874,6 @@ typedef struct _IORT_SMMUV2_NODE {
     ULONGLONG BaseAddress;
     ULONGLONG Span;
     ULONG Model;
-    ULONG Flags;
-    ULONG GlobalInterruptArrayOffset;
-    ULONG ContextInterruptCount;
-    ULONG ContextInterruptArrayOffset;
-    ULONG PmuInterruptCount;
-    ULONG PmuInterruptArrayOffset;
-    ULONG NSgIrptGsiv;
-
     union {
 
         ULONG AsULONG;
@@ -1855,26 +1884,21 @@ typedef struct _IORT_SMMUV2_NODE {
             ULONG Reserved : 30;
         } DUMMYSTRUCTNAME;
 
-    } NsgIrptFlags;
+    } Flags;
 
-    ULONG NSgCfgIrptGsiv;
-
-    union {
-
-        ULONG AsULONG;
-
-        struct {
-            ULONG InterruptFlags : 1;
-            ULONG Reserved : 31;
-        } DUMMYSTRUCTNAME;
-
-    } NSgCfgIrptFlags;
+    ULONG GlobalInterruptArrayOffset;
+    ULONG ContextInterruptCount;
+    ULONG ContextInterruptArrayOffset;
+    ULONG PmuInterruptCount;
+    ULONG PmuInterruptArrayOffset;
+    IORT_SMMUV2_INTERRUPT NSgIrpt;
+    IORT_SMMUV2_INTERRUPT NSgCfgIrpt;
 
     //
     // Context interrupt array (IORT_SMMUV2_INTERRUPTs)
     //
 
-    IORT_SMMUV2_INTERRUPT ContextInterruptArray[ANYSIZE_ARRAY];
+    //IORT_SMMUV2_INTERRUPT ContextInterruptArray[ANYSIZE_ARRAY];
 
     //
     // PMU Interrupt array (IORT_SMMUV2_INTERRUPTs)
@@ -1937,16 +1961,16 @@ typedef union _IORT_NODE_MEMORY_ATTRIBUTES {
             } DUMMYSTRUCTNAME;
 
         } Ah;
-        
+
         UCHAR Reserved[2];
 
         union {
-            ULONG AsULONG;
+            UCHAR AsUCHAR;
 
             struct {
-                ULONG Cpm : 1;
-        ULONG Dacs : 1;
-        ULONG Reserved : 30;
+                UCHAR Cpm : 1;
+                UCHAR Dacs : 1;
+                UCHAR Reserved : 6;
             } DUMMYSTRUCTNAME;
 
         } Maf;
@@ -1961,7 +1985,6 @@ typedef struct _IORT_ITS_GROUP_NODE {
     ULONG ItsArray[ANYSIZE_ARRAY];
 } IORT_ITS_GROUP_NODE, *PIORT_ITS_GROUP_NODE;
 
-// 
 typedef struct _IORT_NAMED_COMPONENT_NODE {
     IORT_NODE_HEADER Header;
     UCHAR Reserved[4]; // Defined as node flags in the spec but reserved.
@@ -2353,9 +2376,12 @@ typedef struct _IVMD_BLOCK {
 #define SDEV_SECURE_ACPI_TYPE 0
 #define SDEV_SECURE_PCI_TYPE 1
 
+#define SDEV_ENTRY_FLAG_OPTIONALLY_SECURE 1
+
 typedef struct _SDEV_ENTRY_HEADER {
-   USHORT Type;
-   USHORT Length;
+    UCHAR Type;
+    UCHAR Flags;
+    USHORT Length;
 } SDEV_ENTRY_HEADER, *PSDEV_ENTRY_HEADER;
 
 typedef struct _SDEV_SECURE_PCI_INFO_ENTRY {

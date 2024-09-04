@@ -10,9 +10,11 @@ import "AsyncInfo.idl";
 import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
+import "Windows.ApplicationModel.AppService.idl";
 import "Windows.Graphics.Imaging.idl";
 import "Windows.Media.idl";
 import "Windows.Media.Capture.idl";
+import "Windows.Media.Capture.Frames.idl";
 import "Windows.Media.Devices.idl";
 import "Windows.Media.Devices.Core.idl";
 import "Windows.Media.Effects.idl";
@@ -25,61 +27,18 @@ import "Windows.Storage.idl";
 import "Windows.Storage.FileProperties.idl";
 import "Windows.Storage.Streams.idl";
 import "Windows.UI.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Egraphics2Eimaging_h__)")
-cpp_quote("#include <Windows.Graphics.Imaging.h>")
-cpp_quote("#endif // !defined(__windows2Egraphics2Eimaging_h__)")
-cpp_quote("#if !defined(__windows2Emedia_h__)")
-cpp_quote("#include <Windows.Media.h>")
-cpp_quote("#endif // !defined(__windows2Emedia_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Ecapture_h__)")
-cpp_quote("#include <Windows.Media.Capture.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Ecapture_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Edevices_h__)")
-cpp_quote("#include <Windows.Media.Devices.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Edevices_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Edevices2Ecore_h__)")
-cpp_quote("#include <Windows.Media.Devices.Core.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Edevices2Ecore_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Eeffects_h__)")
-cpp_quote("#include <Windows.Media.Effects.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Eeffects_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Efaceanalysis_h__)")
-cpp_quote("#include <Windows.Media.FaceAnalysis.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Efaceanalysis_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Emediaproperties_h__)")
-cpp_quote("#include <Windows.Media.MediaProperties.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Emediaproperties_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Eplayback_h__)")
-cpp_quote("#include <Windows.Media.Playback.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Eplayback_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Eprotection_h__)")
-cpp_quote("#include <Windows.Media.Protection.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Eprotection_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Estreaming2Eadaptive_h__)")
-cpp_quote("#include <Windows.Media.Streaming.Adaptive.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Estreaming2Eadaptive_h__)")
-cpp_quote("#if !defined(__windows2Estorage_h__)")
-cpp_quote("#include <Windows.Storage.h>")
-cpp_quote("#endif // !defined(__windows2Estorage_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Efileproperties_h__)")
-cpp_quote("#include <Windows.Storage.FileProperties.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Efileproperties_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Eui_h__)")
-cpp_quote("#include <Windows.UI.h>")
-cpp_quote("#endif // !defined(__windows2Eui_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
+namespace Windows
+{
+    namespace ApplicationModel
+    {
+        namespace AppService
+        {
+            runtimeclass AppServiceConnection;
+        }
+    }
+}
 namespace Windows
 {
     namespace Foundation
@@ -115,6 +74,8 @@ namespace Windows
     {
         namespace Imaging
         {
+            typedef enum BitmapPixelFormat BitmapPixelFormat;
+
             runtimeclass SoftwareBitmap;
         }
     }
@@ -126,7 +87,28 @@ namespace Windows
         namespace Capture
         {
             runtimeclass CapturedFrameControlValues;
-
+        }
+    }
+}
+namespace Windows
+{
+    namespace Media
+    {
+        namespace Capture
+        {
+            namespace Frames
+            {
+                runtimeclass MediaFrameSource;
+            }
+        }
+    }
+}
+namespace Windows
+{
+    namespace Media
+    {
+        namespace Capture
+        {
             runtimeclass VideoStreamConfiguration;
         }
     }
@@ -308,6 +290,8 @@ namespace Windows
 
             typedef enum MseReadyState MseReadyState;
 
+            typedef enum SceneAnalysisRecommendation SceneAnalysisRecommendation;
+
             typedef enum TimedMetadataKind TimedMetadataKind;
 
             typedef enum TimedMetadataTrackErrorCode TimedMetadataTrackErrorCode;
@@ -380,6 +364,12 @@ namespace Windows
 
             interface IImageCue;
 
+            interface IInitializeMediaStreamSourceRequestedEventArgs;
+
+            interface ILowLightFusionResult;
+
+            interface ILowLightFusionStatics;
+
             interface IMediaBinder;
 
             interface IMediaBindingEventArgs;
@@ -398,6 +388,10 @@ namespace Windows
 
             interface IMediaSource4;
 
+            interface IMediaSourceAppServiceConnection;
+
+            interface IMediaSourceAppServiceConnectionFactory;
+
             interface IMediaSourceError;
 
             interface IMediaSourceOpenOperationCompletedEventArgs;
@@ -408,7 +402,11 @@ namespace Windows
 
             interface IMediaSourceStatics2;
 
+            interface IMediaSourceStatics3;
+
             interface IMediaStreamDescriptor;
+
+            interface IMediaStreamDescriptor2;
 
             interface IMediaStreamSample;
 
@@ -421,6 +419,8 @@ namespace Windows
             interface IMediaStreamSource2;
 
             interface IMediaStreamSource3;
+
+            interface IMediaStreamSource4;
 
             interface IMediaStreamSourceClosedEventArgs;
 
@@ -456,11 +456,15 @@ namespace Windows
 
             interface IMseStreamSource;
 
+            interface IMseStreamSource2;
+
             interface IMseStreamSourceStatics;
 
             interface ISceneAnalysisEffect;
 
             interface ISceneAnalysisEffectFrame;
+
+            interface ISceneAnalysisEffectFrame2;
 
             interface ISceneAnalyzedEventArgs;
 
@@ -546,6 +550,12 @@ namespace Windows
 
             runtimeclass ImageCue;
 
+            runtimeclass InitializeMediaStreamSourceRequestedEventArgs;
+
+            runtimeclass LowLightFusion;
+
+            runtimeclass LowLightFusionResult;
+
             runtimeclass MediaBinder;
 
             runtimeclass MediaBindingEventArgs;
@@ -553,6 +563,8 @@ namespace Windows
             runtimeclass MediaCueEventArgs;
 
             runtimeclass MediaSource;
+
+            runtimeclass MediaSourceAppServiceConnection;
 
             runtimeclass MediaSourceError;
 
@@ -742,9 +754,13 @@ namespace Windows
 
                 interface Windows.Foundation.Collections.IVector<Windows.Media.Core.VideoStreamDescriptor*>;
 
+                interface Windows.Foundation.IAsyncOperationWithProgress<Windows.Media.Core.LowLightFusionResult*, DOUBLE>;
+
                 interface Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVectorView<Windows.Media.Core.CodecInfo*>*>;
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Media.Core.MediaStreamSample*>;
+
+                interface Windows.Foundation.IReference<Windows.Media.Core.MseTimeRange>;
 
                 interface Windows.Foundation.TypedEventHandler<Windows.Media.Core.AudioTrack*, Windows.Media.Core.AudioTrackOpenFailedEventArgs*>;
 
@@ -759,6 +775,8 @@ namespace Windows
                 interface Windows.Foundation.TypedEventHandler<Windows.Media.Core.MediaSource*, Windows.Media.Core.MediaSourceOpenOperationCompletedEventArgs*>;
 
                 interface Windows.Foundation.TypedEventHandler<Windows.Media.Core.MediaSource*, Windows.Media.Core.MediaSourceStateChangedEventArgs*>;
+
+                interface Windows.Foundation.TypedEventHandler<Windows.Media.Core.MediaSourceAppServiceConnection*, Windows.Media.Core.InitializeMediaStreamSourceRequestedEventArgs*>;
 
                 interface Windows.Foundation.TypedEventHandler<Windows.Media.Core.MediaStreamSample*, IInspectable*>;
 
@@ -924,6 +942,14 @@ namespace Windows
                 Closed = 0,
                 Open   = 1,
                 Ended  = 2
+            };
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            enum SceneAnalysisRecommendation
+            {
+                Standard = 0,
+                Hdr      = 1,
+                LowLight = 2
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1323,6 +1349,34 @@ namespace Windows
                 [propget] HRESULT SoftwareBitmap([out] [retval] Windows.Graphics.Imaging.SoftwareBitmap** value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Media.Core.InitializeMediaStreamSourceRequestedEventArgs)]
+            [uuid(25BC45E1-9B08-4C2E-A855-4542F1A75DEB)]
+            interface IInitializeMediaStreamSourceRequestedEventArgs : IInspectable
+            {
+                [propget] HRESULT Source([out] [retval] Windows.Media.Core.MediaStreamSource** value);
+                [propget] HRESULT RandomAccessStream([out] [retval] Windows.Storage.Streams.IRandomAccessStream** value);
+                HRESULT GetDeferral([out] [retval] Windows.Foundation.Deferral** result);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Media.Core.LowLightFusionResult)]
+            [uuid(78EDBE35-27A0-42E0-9CD3-738D2089DE9C)]
+            interface ILowLightFusionResult : IInspectable
+            {
+                [propget] HRESULT Frame([out] [retval] Windows.Graphics.Imaging.SoftwareBitmap** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Media.Core.LowLightFusion)]
+            [uuid(5305016D-C29E-40E2-87A9-9E1FD2F192F5)]
+            interface ILowLightFusionStatics : IInspectable
+            {
+                [propget] HRESULT SupportedBitmapPixelFormats([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.Graphics.Imaging.BitmapPixelFormat>** value);
+                [propget] HRESULT MaxSupportedFrameCount([out] [retval] INT32* value);
+                HRESULT FuseAsync([in] Windows.Foundation.Collections.IIterable<Windows.Graphics.Imaging.SoftwareBitmap*>* frameSet, [out] [retval] Windows.Foundation.IAsyncOperationWithProgress<Windows.Media.Core.LowLightFusionResult*, DOUBLE>** result);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [exclusiveto(Windows.Media.Core.MediaBinder)]
             [uuid(2B7E40AA-DE07-424F-83F1-F1DE46C4FA2E)]
@@ -1433,6 +1487,24 @@ namespace Windows
                 HRESULT OpenAsync([out] [retval] Windows.Foundation.IAsyncAction** operation);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Media.Core.MediaSourceAppServiceConnection)]
+            [uuid(61E1EA97-1916-4810-B7F4-B642BE829596)]
+            interface IMediaSourceAppServiceConnection : IInspectable
+            {
+                [eventadd] HRESULT InitializeMediaStreamSourceRequested([in] Windows.Foundation.TypedEventHandler<Windows.Media.Core.MediaSourceAppServiceConnection*, Windows.Media.Core.InitializeMediaStreamSourceRequestedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT InitializeMediaStreamSourceRequested([in] EventRegistrationToken token);
+                HRESULT Start();
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Media.Core.MediaSourceAppServiceConnection)]
+            [uuid(65B912EB-80B9-44F9-9C1E-E120F6D92838)]
+            interface IMediaSourceAppServiceConnectionFactory : IInspectable
+            {
+                HRESULT Create([in] Windows.ApplicationModel.AppService.AppServiceConnection* appServiceConnection, [out] [retval] Windows.Media.Core.MediaSourceAppServiceConnection** result);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Media.Core.MediaSourceError)]
             [uuid(5C0A8965-37C5-4E9D-8D21-1CDEE90CECC6)]
@@ -1481,6 +1553,14 @@ namespace Windows
                 HRESULT CreateFromMediaBinder([in] Windows.Media.Core.MediaBinder* binder, [out] [retval] Windows.Media.Core.MediaSource** result);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Media.Core.MediaSource)]
+            [uuid(453A30D6-2BEA-4122-9F73-EACE04526E35)]
+            interface IMediaSourceStatics3 : IInspectable
+            {
+                HRESULT CreateFromMediaFrameSource([in] Windows.Media.Capture.Frames.MediaFrameSource* frameSource, [out] [retval] Windows.Media.Core.MediaSource** result);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [uuid(80F16E6E-92F7-451E-97D2-AFD80742DA70)]
             interface IMediaStreamDescriptor : IInspectable
@@ -1490,6 +1570,16 @@ namespace Windows
                 [propget] HRESULT Name([out] [retval] HSTRING* value);
                 [propput] HRESULT Language([in] HSTRING value);
                 [propget] HRESULT Language([out] [retval] HSTRING* value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [uuid(5073010F-E8B2-4071-B00B-EBF337A76B58)]
+            interface IMediaStreamDescriptor2 : IInspectable
+                requires
+                    Windows.Media.Core.IMediaStreamDescriptor
+            {
+                [propput] HRESULT Label([in] HSTRING value);
+                [propget] HRESULT Label([out] [retval] HSTRING* value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1592,6 +1682,18 @@ namespace Windows
             {
                 [propput] HRESULT MaxSupportedPlaybackRate([in] Windows.Foundation.IReference<DOUBLE>* value);
                 [propget] HRESULT MaxSupportedPlaybackRate([out] [retval] Windows.Foundation.IReference<DOUBLE>** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Media.Core.MediaStreamSource)]
+            [uuid(1D0CFCAB-830D-417C-A3A9-2454FD6415C7)]
+            interface IMediaStreamSource4 : IInspectable
+                requires
+                    Windows.Media.Core.IMediaStreamSource,
+                    Windows.Media.Core.IMediaSource
+            {
+                [propput] HRESULT IsLive([in] boolean value);
+                [propget] HRESULT IsLive([out] [retval] boolean* value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1785,6 +1887,15 @@ namespace Windows
                 HRESULT EndOfStream([in] Windows.Media.Core.MseEndOfStreamStatus status);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Media.Core.MseStreamSource)]
+            [uuid(66F57D37-F9E7-418A-9CDE-A020E956552B)]
+            interface IMseStreamSource2 : IInspectable
+            {
+                [propget] HRESULT LiveSeekableRange([out] [retval] Windows.Foundation.IReference<Windows.Media.Core.MseTimeRange>** value);
+                [propput] HRESULT LiveSeekableRange([in] Windows.Foundation.IReference<Windows.Media.Core.MseTimeRange>* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Media.Core.MseStreamSource)]
             [uuid(465C679D-D570-43CE-BA21-0BFF5F3FBD0A)]
@@ -1817,6 +1928,17 @@ namespace Windows
             {
                 [propget] HRESULT FrameControlValues([out] [retval] Windows.Media.Capture.CapturedFrameControlValues** value);
                 [propget] HRESULT HighDynamicRange([out] [retval] Windows.Media.Core.HighDynamicRangeOutput** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Media.Core.SceneAnalysisEffectFrame)]
+            [uuid(2D4E29BE-061F-47AE-9915-02524B5F9A5F)]
+            interface ISceneAnalysisEffectFrame2 : IInspectable
+                requires
+                    Windows.Media.IMediaFrame,
+                    Windows.Foundation.IClosable
+            {
+                [propget] HRESULT AnalysisRecommendation([out] [retval] Windows.Media.Core.SceneAnalysisRecommendation* value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2150,6 +2272,7 @@ namespace Windows
                 [default] interface Windows.Media.Core.IAudioStreamDescriptor;
                 interface Windows.Media.Core.IMediaStreamDescriptor;
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.Media.Core.IAudioStreamDescriptor2;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Media.Core.IMediaStreamDescriptor2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2286,6 +2409,31 @@ namespace Windows
                 interface Windows.Media.Core.IMediaCue;
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass InitializeMediaStreamSourceRequestedEventArgs
+            {
+                [default] interface Windows.Media.Core.IInitializeMediaStreamSourceRequestedEventArgs;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [static(Windows.Media.Core.ILowLightFusionStatics, Windows.Foundation.UniversalApiContract, 5.0)]
+            [threading(both)]
+            runtimeclass LowLightFusion
+            {
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass LowLightFusionResult
+            {
+                [default] interface Windows.Media.Core.ILowLightFusionResult;
+                interface Windows.Foundation.IClosable;
+            }
+
             [activatable(Windows.Foundation.UniversalApiContract, 2.0)]
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [marshaling_behavior(agile)]
@@ -2316,6 +2464,7 @@ namespace Windows
             [marshaling_behavior(agile)]
             [static(Windows.Media.Core.IMediaSourceStatics, Windows.Foundation.UniversalApiContract, 1.0)]
             [static(Windows.Media.Core.IMediaSourceStatics2, Windows.Foundation.UniversalApiContract, 2.0)]
+            [static(Windows.Media.Core.IMediaSourceStatics3, Windows.Foundation.UniversalApiContract, 5.0)]
             [threading(both)]
             runtimeclass MediaSource
             {
@@ -2324,6 +2473,13 @@ namespace Windows
                 interface Windows.Media.Playback.IMediaPlaybackSource;
                 [contract(Windows.Foundation.UniversalApiContract, 2.0)] interface Windows.Media.Core.IMediaSource3;
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.Media.Core.IMediaSource4;
+            }
+
+            [activatable(Windows.Media.Core.IMediaSourceAppServiceConnectionFactory, Windows.Foundation.UniversalApiContract, 5.0)]
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            runtimeclass MediaSourceAppServiceConnection
+            {
+                [default] interface Windows.Media.Core.IMediaSourceAppServiceConnection;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2385,6 +2541,7 @@ namespace Windows
                 interface Windows.Media.Core.IMediaSource;
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.Media.Core.IMediaStreamSource2;
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.Media.Core.IMediaStreamSource3;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Media.Core.IMediaStreamSource4;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2508,6 +2665,7 @@ namespace Windows
             {
                 [default] interface Windows.Media.Core.IMseStreamSource;
                 interface Windows.Media.Core.IMediaSource;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Media.Core.IMseStreamSource2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2536,6 +2694,7 @@ namespace Windows
                 [default] interface Windows.Media.Core.ISceneAnalysisEffectFrame;
                 interface Windows.Media.IMediaFrame;
                 interface Windows.Foundation.IClosable;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Media.Core.ISceneAnalysisEffectFrame2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2682,6 +2841,7 @@ namespace Windows
             {
                 [default] interface Windows.Media.Core.IVideoStreamDescriptor;
                 interface Windows.Media.Core.IMediaStreamDescriptor;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Media.Core.IMediaStreamDescriptor2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

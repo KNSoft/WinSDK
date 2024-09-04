@@ -866,6 +866,21 @@ Revision History:
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+//
+// MessageId: WINBIO_E_ENROLLMENT_CANCELED_BY_SUSPEND
+//
+// MessageText:
+//
+// The Windows Biometric Service canceled the enrollment because the platform entered a suspended state.
+//
+#define WINBIO_E_ENROLLMENT_CANCELED_BY_SUSPEND ((HRESULT)0x8009805BL)
+
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
 #if (NTDDI_VERSION >= NTDDI_WIN7)
 
 

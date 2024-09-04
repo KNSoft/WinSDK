@@ -74,6 +74,7 @@
 #define DEVICEDISPLAY_CATEGORY_DISPLAY_TV_LCD                       L"Display.TV.LCD"
 #define DEVICEDISPLAY_CATEGORY_DISPLAY_TV_PLASMA                    L"Display.TV.Plasma"
 #define DEVICEDISPLAY_CATEGORY_DISPLAY_TV_DLP                       L"Display.TV.DLP"
+#define DEVICEDISPLAY_CATEGORY_DISPLAY_DOCK                         L"Display.Dock"
 
 // Component
 #define DEVICEDISPLAY_CATEGORY_COMPONENT                            L"Component"
@@ -290,7 +291,6 @@
 #define DEVICEDISPLAY_CATEGORY_GAMING_DEVICES_PLAYSTATION4          L"GamingDevices.Playstation4"
 #define DEVICEDISPLAY_CATEGORY_GAMING_DEVICES_CONSOLE               L"GamingDevices.GameConsole"
 #define DEVICEDISPLAY_CATEGORY_GAMING_DEVICES_PORTABLE              L"GamingDevices.Portable"
-
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion

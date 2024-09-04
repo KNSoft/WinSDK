@@ -12,7 +12,7 @@ cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)")
 
 cpp_quote("// Win32 API definitions")
 cpp_quote("#include <evntcons.h>")
-cpp_quote("_Check_return_ HRESULT ProcessEvent(_In_ PEVENT_RECORD eventRecord);")
+cpp_quote("_Check_return_ STDAPI ProcessEvent(_In_ PEVENT_RECORD eventRecord);")
 
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */ ")
 cpp_quote("#pragma endregion")

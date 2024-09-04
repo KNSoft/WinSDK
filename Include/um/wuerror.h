@@ -1022,6 +1022,15 @@
 #define WU_E_FILETRUST_SHA2SIGNATURE_MISSING _HRESULT_TYPEDEF_(0x80240061L)
 
 //
+// MessageId: WU_E_UPDATE_NOT_APPROVED
+//
+// MessageText:
+//
+// The update is not in the servicing approval list.
+//
+#define WU_E_UPDATE_NOT_APPROVED         _HRESULT_TYPEDEF_(0x80240062L)
+
+//
 // MessageId: WU_E_UNEXPECTED
 //
 // MessageText:
@@ -1998,6 +2007,15 @@
 // No engine was provided by the server-initiated healing server response.
 //
 #define WU_E_SIH_NO_ENGINE               _HRESULT_TYPEDEF_(0x80245108L)
+
+//
+// MessageId: WU_E_SIH_POST_REBOOT_INSTALL_FAILED
+//
+// MessageText:
+//
+// Post-reboot install failed. 
+//
+#define WU_E_SIH_POST_REBOOT_INSTALL_FAILED _HRESULT_TYPEDEF_(0x80245109L)
 
 //
 // MessageId: WU_E_SIH_UNEXPECTED

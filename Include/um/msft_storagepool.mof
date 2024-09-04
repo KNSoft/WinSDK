@@ -626,6 +626,91 @@ class MSFT_StoragePool : MSFT_StorageObject {
         String ExtendedStatus
         );
 
+    //
+    // Method: CreateVirtualDisk3
+    //
+
+    UInt32 CreateVirtualDisk3(
+
+        [In, Required]
+        String FriendlyName,
+
+        [In]
+        UInt64 Size,
+
+        [In]
+        Boolean UseMaximumSize,
+
+        [In]
+        UInt16 ProvisioningType,
+
+        [In]
+        UInt64 AllocationUnitSize,
+
+        [In]
+        UInt16 MediaType,
+
+        [In]
+        String ResiliencySettingName,
+
+        [In]
+        UInt16 Usage,
+
+        [In]
+        String OtherUsageDescription,
+
+        [In]
+        UInt16 NumberOfDataCopies,
+
+        [In]
+        UInt16 PhysicalDiskRedundancy,
+
+        [In]
+        UInt16 NumberOfColumns,
+
+        [In]
+        Boolean AutoNumberOfColumns,
+
+        [In]
+        UInt64 Interleave,
+
+        [In]
+        UInt16 NumberOfGroups,
+
+        [In]
+        UInt16 FaultDomainAwareness,
+
+        [In]
+        UInt16 ColumnIsolation,
+
+        [In]
+        MSFT_StorageFaultDomain REF StorageFaultDomainsToUse[],
+
+        [In, EmbeddedInstance("MSFT_StorageTier")]
+        String StorageTiers[],
+
+        [In]
+        UInt64 StorageTierSizes[],
+
+        [In]
+        UInt64 WriteCacheSize,
+
+        [In]
+        Boolean AutoWriteCacheSize,
+
+        [In]
+        UInt64 ReadCacheSize,
+
+        [Out, EmbeddedInstance("MSFT_VirtualDisk")]
+        String CreatedVirtualDisk,
+
+        [Out]
+        MSFT_StorageJob REF CreatedStorageJob,
+
+        [Out, EmbeddedInstance("MSFT_StorageExtendedStatus")]
+        String ExtendedStatus
+        );
+
 
     //
     // Method: CreateVolume
@@ -948,6 +1033,61 @@ class MSFT_StoragePool : MSFT_StorageObject {
         String ExtendedStatus
         );
 
+    //
+    // Method: CreateStorageTier3
+    //
+
+    UInt32 CreateStorageTier3(
+
+        [In]
+        String FriendlyName,
+
+        [In]
+        UInt16 ProvisioningType,
+
+        [In]
+        UInt16 MediaType,
+
+        [In]
+        UInt16 FaultDomainAwareness,
+
+        [In]
+        UInt16 ColumnIsolation,
+
+        [In]
+        MSFT_StorageFaultDomain REF StorageFaultDomainsToUse[],
+
+        [In]
+        String ResiliencySettingName,
+
+        [In]
+        UInt64 Interleave,
+
+        [In]
+        UInt16 NumberOfDataCopies,
+
+        [In]
+        UInt16 NumberOfGroups,
+
+        [In]
+        UInt16 NumberOfColumns,
+
+        [In]
+        UInt16 PhysicalDiskRedundancy,
+
+        [In]
+        String Description,
+
+        [Out, EmbeddedInstance("MSFT_StorageTier")]
+        String CreatedStorageTier,
+
+        [Out]
+        MSFT_StorageJob REF CreatedStorageJob,
+
+        [Out, EmbeddedInstance("MSFT_StorageExtendedStatus")]
+        String ExtendedStatus
+        );
+
 
     //
     // Method: DeleteObject
@@ -1111,6 +1251,26 @@ class MSFT_StoragePool : MSFT_StorageObject {
 
 
     //
+    // Method: AddPhysicalDisk2
+    //
+
+    UInt32 AddPhysicalDisk2(
+
+        [In, Required]
+        MSFT_PhysicalDisk REF PhysicalDisks[],
+
+        [In]
+        UInt16 Usage,
+
+        [Out]
+        MSFT_StorageJob REF CreatedStorageJob,
+
+        [Out, EmbeddedInstance("MSFT_StorageExtendedStatus")]
+        String ExtendedStatus
+    );
+
+
+    //
     // Method: RemovePhysicalDisk
     //
 
@@ -1165,26 +1325,6 @@ class MSFT_StoragePool : MSFT_StorageObject {
             "specific) error information."
             ),
             EmbeddedInstance("MSFT_StorageExtendedStatus")]
-        String ExtendedStatus
-    );
-
-
-    //
-    // Method: AddPhysicalDisk2
-    //
-
-    UInt32 AddPhysicalDisk2(
-
-        [In, Required]
-        MSFT_PhysicalDisk REF PhysicalDisks[],
-
-        [In]
-        UInt16 Usage,
-
-        [Out]
-        MSFT_StorageJob REF CreatedStorageJob,
-
-        [Out, EmbeddedInstance("MSFT_StorageExtendedStatus")]
         String ExtendedStatus
     );
 

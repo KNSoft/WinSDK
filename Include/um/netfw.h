@@ -532,10 +532,12 @@ NetworkIsolationDiagnoseConnectFailureAndGetInfo(
 
 
 typedef void (CALLBACK *PNETISO_EDP_ID_CALLBACK_FN) (
-    _In_opt_ void *context,
+    _Inout_opt_ void *context,
     _In_opt_z_ const LPCWSTR wszEnterpriseId,
     _In_ DWORD dwErr
     );
+#define NETISO_GEID_FOR_WDAG 0x01
+#define NETISO_GEID_FOR_NEUTRAL_AWARE 0x02
 DWORD
 NetworkIsolationGetEnterpriseIdAsync(
     _In_z_ LPCWSTR wszServerName,

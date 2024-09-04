@@ -990,9 +990,13 @@ TdiBuildNetbiosAddress (
     _Inout_ PTA_NETBIOS_ADDRESS NetworkName
     );
 
+_At_(Buffer,
+    _Out_writes_bytes_(
+        sizeof(FILE_FULL_EA_INFORMATION) + TDI_TRANSPORT_ADDRESS_LENGTH +
+            sizeof(TA_NETBIOS_ADDRESS)))
 NTSTATUS
 TdiBuildNetbiosAddressEa (
-    _Out_ PUCHAR Buffer,
+    PUCHAR Buffer,
     _In_  BOOLEAN IsGroupName,
     _In_  PUCHAR NetbiosName
     );

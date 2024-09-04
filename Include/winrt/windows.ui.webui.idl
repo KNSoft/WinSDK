@@ -13,31 +13,10 @@ import "Windows.Foundation.idl";
 import "Windows.ApplicationModel.idl";
 import "Windows.ApplicationModel.Activation.idl";
 import "Windows.ApplicationModel.Background.idl";
+import "Windows.ApplicationModel.Core.idl";
 import "Windows.ApplicationModel.Wallet.idl";
 import "Windows.Graphics.Printing.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eapplicationmodel_h__)")
-cpp_quote("#include <Windows.ApplicationModel.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel_h__)")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Eactivation_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Activation.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Eactivation_h__)")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Ebackground_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Background.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Ebackground_h__)")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Ewallet_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Wallet.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Ewallet_h__)")
-cpp_quote("#if !defined(__windows2Egraphics2Eprinting_h__)")
-cpp_quote("#include <Windows.Graphics.Printing.h>")
-cpp_quote("#endif // !defined(__windows2Egraphics2Eprinting_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
+import "Windows.System.idl";
 
 // Forward Declare
 namespace Windows
@@ -73,6 +52,8 @@ namespace Windows
             interface ICachedFileUpdaterActivatedEventArgs;
 
             interface ICameraSettingsActivatedEventArgs;
+
+            interface ICommandLineActivatedEventArgs;
 
             interface IContactActivatedEventArgs;
 
@@ -142,6 +123,8 @@ namespace Windows
 
             interface IShareTargetActivatedEventArgs;
 
+            interface IStartupTaskActivatedEventArgs;
+
             interface IToastNotificationActivatedEventArgs;
 
             interface IUserDataAccountProviderActivatedEventArgs;
@@ -165,6 +148,16 @@ namespace Windows
         namespace Background
         {
             interface IBackgroundTaskInstance;
+        }
+    }
+}
+namespace Windows
+{
+    namespace ApplicationModel
+    {
+        namespace Core
+        {
+            typedef enum AppRestartFailureReason AppRestartFailureReason;
         }
     }
 }
@@ -214,6 +207,13 @@ namespace Windows
 }
 namespace Windows
 {
+    namespace System
+    {
+        runtimeclass User;
+    }
+}
+namespace Windows
+{
     namespace UI
     {
         namespace WebUI
@@ -243,6 +243,8 @@ namespace Windows
             interface IWebUIActivationStatics;
 
             interface IWebUIActivationStatics2;
+
+            interface IWebUIActivationStatics3;
 
             interface IWebUIBackgroundTaskInstance;
 
@@ -289,6 +291,8 @@ namespace Windows
             runtimeclass WebUICachedFileUpdaterActivatedEventArgs;
 
             runtimeclass WebUICameraSettingsActivatedEventArgs;
+
+            runtimeclass WebUICommandLineActivatedEventArgs;
 
             runtimeclass WebUIContactCallActivatedEventArgs;
 
@@ -351,6 +355,8 @@ namespace Windows
             runtimeclass WebUISearchActivatedEventArgs;
 
             runtimeclass WebUIShareTargetActivatedEventArgs;
+
+            runtimeclass WebUIStartupTaskActivatedEventArgs;
 
             runtimeclass WebUIToastNotificationActivatedEventArgs;
 
@@ -492,6 +498,15 @@ namespace Windows
                 HRESULT EnablePrelaunch([in] boolean value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.WebUI.WebUIApplication)]
+            [uuid(91ABB686-1AF5-4445-B49F-9459F40FC8DE)]
+            interface IWebUIActivationStatics3 : IInspectable
+            {
+                HRESULT RequestRestartAsync([in] HSTRING launchArguments, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.Core.AppRestartFailureReason>** operation);
+                HRESULT RequestRestartForUserAsync([in] Windows.System.User* user, [in] HSTRING launchArguments, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.Core.AppRestartFailureReason>** operation);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [uuid(23F12C25-E2F7-4741-BC9C-394595DE24DC)]
             interface IWebUIBackgroundTaskInstance : IInspectable
@@ -593,6 +608,7 @@ namespace Windows
             [marshaling_behavior(standard)]
             [static(Windows.UI.WebUI.IWebUIActivationStatics, Windows.Foundation.UniversalApiContract, 1.0)]
             [static(Windows.UI.WebUI.IWebUIActivationStatics2, Windows.Foundation.UniversalApiContract, 3.0)]
+            [static(Windows.UI.WebUI.IWebUIActivationStatics3, Windows.Foundation.UniversalApiContract, 5.0)]
             runtimeclass WebUIApplication
             {
             }
@@ -683,6 +699,16 @@ namespace Windows
             {
                 [default] interface Windows.ApplicationModel.Activation.ICameraSettingsActivatedEventArgs;
                 interface Windows.ApplicationModel.Activation.IActivatedEventArgs;
+                interface Windows.UI.WebUI.IActivatedEventArgsDeferral;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            runtimeclass WebUICommandLineActivatedEventArgs
+            {
+                [default] interface Windows.ApplicationModel.Activation.ICommandLineActivatedEventArgs;
+                interface Windows.ApplicationModel.Activation.IActivatedEventArgs;
+                interface Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser;
                 interface Windows.UI.WebUI.IActivatedEventArgsDeferral;
             }
 
@@ -998,6 +1024,16 @@ namespace Windows
                 interface Windows.ApplicationModel.Activation.IActivatedEventArgs;
                 interface Windows.UI.WebUI.IActivatedEventArgsDeferral;
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            runtimeclass WebUIStartupTaskActivatedEventArgs
+            {
+                [default] interface Windows.ApplicationModel.Activation.IStartupTaskActivatedEventArgs;
+                interface Windows.ApplicationModel.Activation.IActivatedEventArgs;
+                interface Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser;
+                interface Windows.UI.WebUI.IActivatedEventArgsDeferral;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

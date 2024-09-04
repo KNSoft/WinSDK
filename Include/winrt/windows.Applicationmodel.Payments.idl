@@ -10,14 +10,6 @@ import "AsyncInfo.idl";
 import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -47,6 +39,8 @@ namespace Windows
     {
         namespace Payments
         {
+            typedef enum PaymentCanMakePaymentResultStatus PaymentCanMakePaymentResultStatus;
+
             typedef enum PaymentOptionPresence PaymentOptionPresence;
 
             typedef enum PaymentRequestChangeKind PaymentRequestChangeKind;
@@ -60,6 +54,10 @@ namespace Windows
             delegate PaymentRequestChangedHandler;
 
             interface IPaymentAddress;
+
+            interface IPaymentCanMakePaymentResult;
+
+            interface IPaymentCanMakePaymentResultFactory;
 
             interface IPaymentCurrencyAmount;
 
@@ -79,6 +77,8 @@ namespace Windows
 
             interface IPaymentMediator;
 
+            interface IPaymentMediator2;
+
             interface IPaymentMerchantInfo;
 
             interface IPaymentMerchantInfoFactory;
@@ -91,6 +91,8 @@ namespace Windows
 
             interface IPaymentRequest;
 
+            interface IPaymentRequest2;
+
             interface IPaymentRequestChangedArgs;
 
             interface IPaymentRequestChangedResult;
@@ -98,6 +100,8 @@ namespace Windows
             interface IPaymentRequestChangedResultFactory;
 
             interface IPaymentRequestFactory;
+
+            interface IPaymentRequestFactory2;
 
             interface IPaymentRequestSubmitResult;
 
@@ -112,6 +116,8 @@ namespace Windows
             interface IPaymentTokenFactory;
 
             runtimeclass PaymentAddress;
+
+            runtimeclass PaymentCanMakePaymentResult;
 
             runtimeclass PaymentCurrencyAmount;
 
@@ -179,6 +185,8 @@ namespace Windows
 
                 interface Windows.Foundation.Collections.IVectorView<Windows.ApplicationModel.Payments.PaymentShippingOption*>;
 
+                interface Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.Payments.PaymentCanMakePaymentResult*>;
+
                 interface Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.Payments.PaymentRequestChangedResult*>;
 
                 interface Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.Payments.PaymentRequestSubmitResult*>;
@@ -194,6 +202,18 @@ namespace Windows
     {
         namespace Payments
         {
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            enum PaymentCanMakePaymentResultStatus
+            {
+                Unknown                               = 0,
+                Yes                                   = 1,
+                No                                    = 2,
+                NotAllowed                            = 3,
+                UserNotSignedIn                       = 4,
+                SpecifiedPaymentMethodIdsNotSupported = 5,
+                NoQualifyingCardOnFile                = 6
+            };
+
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             enum PaymentOptionPresence
             {
@@ -266,6 +286,22 @@ namespace Windows
                 [propget] HRESULT PhoneNumber([out] [retval] HSTRING* value);
                 [propput] HRESULT PhoneNumber([in] HSTRING value);
                 [propget] HRESULT Properties([out] [retval] Windows.Foundation.Collections.ValueSet** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.ApplicationModel.Payments.PaymentCanMakePaymentResult)]
+            [uuid(7696FE55-D5D3-4D3D-B345-45591759C510)]
+            interface IPaymentCanMakePaymentResult : IInspectable
+            {
+                [propget] HRESULT Status([out] [retval] Windows.ApplicationModel.Payments.PaymentCanMakePaymentResultStatus* value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.ApplicationModel.Payments.PaymentCanMakePaymentResult)]
+            [uuid(BBDCAA3E-7D49-4F69-AA53-2A0F8164B7C9)]
+            interface IPaymentCanMakePaymentResultFactory : IInspectable
+            {
+                HRESULT Create([in] Windows.ApplicationModel.Payments.PaymentCanMakePaymentResultStatus value, [out] [retval] Windows.ApplicationModel.Payments.PaymentCanMakePaymentResult** result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -366,6 +402,14 @@ namespace Windows
                 [overload("SubmitPaymentRequestAsync")] HRESULT SubmitPaymentRequestWithChangeHandlerAsync([in] Windows.ApplicationModel.Payments.PaymentRequest* paymentRequest, [in] Windows.ApplicationModel.Payments.PaymentRequestChangedHandler* changeHandler, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.Payments.PaymentRequestSubmitResult*>** result);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.ApplicationModel.Payments.PaymentMediator)]
+            [uuid(CEEF98F1-E407-4128-8E73-D93D5F822786)]
+            interface IPaymentMediator2 : IInspectable
+            {
+                HRESULT CanMakePaymentAsync([in] Windows.ApplicationModel.Payments.PaymentRequest* paymentRequest, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.Payments.PaymentCanMakePaymentResult*>** result);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [exclusiveto(Windows.ApplicationModel.Payments.PaymentMerchantInfo)]
             [uuid(63445050-0E94-4ED6-AACB-E6012BD327A7)]
@@ -429,6 +473,14 @@ namespace Windows
                 [propget] HRESULT Options([out] [retval] Windows.ApplicationModel.Payments.PaymentOptions** value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.ApplicationModel.Payments.PaymentRequest)]
+            [uuid(B63CCFB5-5998-493E-A04C-67048A50F141)]
+            interface IPaymentRequest2 : IInspectable
+            {
+                [propget] HRESULT Id([out] [retval] HSTRING* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [exclusiveto(Windows.ApplicationModel.Payments.PaymentRequestChangedArgs)]
             [uuid(C6145E44-CD8B-4BE4-B555-27C99194C0C5)]
@@ -470,6 +522,14 @@ namespace Windows
                 HRESULT Create([in] Windows.ApplicationModel.Payments.PaymentDetails* details, [in] Windows.Foundation.Collections.IIterable<Windows.ApplicationModel.Payments.PaymentMethodData*>* methodData, [out] [retval] Windows.ApplicationModel.Payments.PaymentRequest** result);
                 HRESULT CreateWithMerchantInfo([in] Windows.ApplicationModel.Payments.PaymentDetails* details, [in] Windows.Foundation.Collections.IIterable<Windows.ApplicationModel.Payments.PaymentMethodData*>* methodData, [in] Windows.ApplicationModel.Payments.PaymentMerchantInfo* merchantInfo, [out] [retval] Windows.ApplicationModel.Payments.PaymentRequest** result);
                 HRESULT CreateWithMerchantInfoAndOptions([in] Windows.ApplicationModel.Payments.PaymentDetails* details, [in] Windows.Foundation.Collections.IIterable<Windows.ApplicationModel.Payments.PaymentMethodData*>* methodData, [in] Windows.ApplicationModel.Payments.PaymentMerchantInfo* merchantInfo, [in] Windows.ApplicationModel.Payments.PaymentOptions* options, [out] [retval] Windows.ApplicationModel.Payments.PaymentRequest** result);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.ApplicationModel.Payments.PaymentRequest)]
+            [uuid(E6CE1325-A506-4372-B7EF-1A031D5662D1)]
+            interface IPaymentRequestFactory2 : IInspectable
+            {
+                HRESULT CreateWithMerchantInfoOptionsAndId([in] Windows.ApplicationModel.Payments.PaymentDetails* details, [in] Windows.Foundation.Collections.IIterable<Windows.ApplicationModel.Payments.PaymentMethodData*>* methodData, [in] Windows.ApplicationModel.Payments.PaymentMerchantInfo* merchantInfo, [in] Windows.ApplicationModel.Payments.PaymentOptions* options, [in] HSTRING id, [out] [retval] Windows.ApplicationModel.Payments.PaymentRequest** result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -547,6 +607,15 @@ namespace Windows
                 [default] interface Windows.ApplicationModel.Payments.IPaymentAddress;
             }
 
+            [activatable(Windows.ApplicationModel.Payments.IPaymentCanMakePaymentResultFactory, Windows.Foundation.UniversalApiContract, 5.0)]
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass PaymentCanMakePaymentResult
+            {
+                [default] interface Windows.ApplicationModel.Payments.IPaymentCanMakePaymentResult;
+            }
+
             [activatable(Windows.ApplicationModel.Payments.IPaymentCurrencyAmountFactory, Windows.Foundation.UniversalApiContract, 4.0)]
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
@@ -591,6 +660,7 @@ namespace Windows
             runtimeclass PaymentMediator
             {
                 [default] interface Windows.ApplicationModel.Payments.IPaymentMediator;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.ApplicationModel.Payments.IPaymentMediator2;
             }
 
             [activatable(Windows.ApplicationModel.Payments.IPaymentMerchantInfoFactory, Windows.Foundation.UniversalApiContract, 4.0)]
@@ -622,12 +692,14 @@ namespace Windows
             }
 
             [activatable(Windows.ApplicationModel.Payments.IPaymentRequestFactory, Windows.Foundation.UniversalApiContract, 4.0)]
+            [activatable(Windows.ApplicationModel.Payments.IPaymentRequestFactory2, Windows.Foundation.UniversalApiContract, 5.0)]
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
             [threading(both)]
             runtimeclass PaymentRequest
             {
                 [default] interface Windows.ApplicationModel.Payments.IPaymentRequest;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.ApplicationModel.Payments.IPaymentRequest2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]

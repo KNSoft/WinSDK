@@ -13,23 +13,6 @@ import "Windows.Foundation.idl";
 import "Windows.Media.idl";
 import "Windows.Media.Core.idl";
 import "Windows.Storage.Streams.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Emedia_h__)")
-cpp_quote("#include <Windows.Media.h>")
-cpp_quote("#endif // !defined(__windows2Emedia_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Ecore_h__)")
-cpp_quote("#include <Windows.Media.Core.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Ecore_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -86,6 +69,8 @@ namespace Windows
 
             interface IInstalledVoicesStatic;
 
+            interface IInstalledVoicesStatic2;
+
             interface ISpeechSynthesisStream;
 
             interface ISpeechSynthesizer;
@@ -93,6 +78,8 @@ namespace Windows
             interface ISpeechSynthesizer2;
 
             interface ISpeechSynthesizerOptions;
+
+            interface ISpeechSynthesizerOptions2;
 
             interface IVoiceInformation;
 
@@ -151,6 +138,14 @@ namespace Windows
                 [propget] HRESULT DefaultVoice([out] [retval] Windows.Media.SpeechSynthesis.VoiceInformation** value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Media.SpeechSynthesis.SpeechSynthesizer)]
+            [uuid(64255F2E-358D-4058-BE9A-FD3FCB423530)]
+            interface IInstalledVoicesStatic2 : IInspectable
+            {
+                HRESULT TrySetDefaultVoiceAsync([in] Windows.Media.SpeechSynthesis.VoiceInformation* voice, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** result);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Media.SpeechSynthesis.SpeechSynthesisStream)]
             [uuid(83E46E93-244C-4622-BA0B-6229C4D0D65D)]
@@ -196,6 +191,19 @@ namespace Windows
                 [propput] HRESULT IncludeSentenceBoundaryMetadata([in] boolean value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Media.SpeechSynthesis.SpeechSynthesizerOptions)]
+            [uuid(1CBEF60E-119C-4BED-B118-D250C3A25793)]
+            interface ISpeechSynthesizerOptions2 : IInspectable
+            {
+                [propget] HRESULT AudioVolume([out] [retval] DOUBLE* value);
+                [propput] HRESULT AudioVolume([in] DOUBLE value);
+                [propget] HRESULT SpeakingRate([out] [retval] DOUBLE* value);
+                [propput] HRESULT SpeakingRate([in] DOUBLE value);
+                [propget] HRESULT AudioPitch([out] [retval] DOUBLE* value);
+                [propput] HRESULT AudioPitch([in] DOUBLE value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Media.SpeechSynthesis.VoiceInformation)]
             [uuid(B127D6A4-1291-4604-AA9C-83134083352C)]
@@ -226,6 +234,7 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
             [static(Windows.Media.SpeechSynthesis.IInstalledVoicesStatic, Windows.Foundation.UniversalApiContract, 1.0)]
+            [static(Windows.Media.SpeechSynthesis.IInstalledVoicesStatic2, Windows.Foundation.UniversalApiContract, 5.0)]
             runtimeclass SpeechSynthesizer
             {
                 [default] interface Windows.Media.SpeechSynthesis.ISpeechSynthesizer;
@@ -238,6 +247,7 @@ namespace Windows
             runtimeclass SpeechSynthesizerOptions
             {
                 [default] interface Windows.Media.SpeechSynthesis.ISpeechSynthesizerOptions;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Media.SpeechSynthesis.ISpeechSynthesizerOptions2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

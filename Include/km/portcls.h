@@ -541,6 +541,7 @@ DEFINE_GUID(CLSID_MiniportDriverFmSynthWithVol,
 #if !defined(DEFINE_ABSTRACT_MINIPORTWAVERTINPUTSTREAM)
 
 #define DEFINE_ABSTRACT_MINIPORTWAVERTINPUTSTREAM()             \
+    _IRQL_requires_max_(PASSIVE_LEVEL)                          \
     STDMETHOD_(NTSTATUS, GetReadPacket)                         \
     (   THIS_                                                   \
         _Out_ ULONG     *PacketNumber,                          \
@@ -554,6 +555,7 @@ DEFINE_GUID(CLSID_MiniportDriverFmSynthWithVol,
 #if !defined(DEFINE_ABSTRACT_MINIPORTWAVERTOUTPUTSTREAM)
 
 #define DEFINE_ABSTRACT_MINIPORTWAVERTOUTPUTSTREAM()                \
+    _IRQL_requires_max_(PASSIVE_LEVEL)                              \
     STDMETHOD_(NTSTATUS, SetWritePacket)                            \
     (                                                               \
         THIS_                                                       \
@@ -562,12 +564,14 @@ DEFINE_GUID(CLSID_MiniportDriverFmSynthWithVol,
         _In_ ULONG      EosPacketLength                             \
     ) PURE;                                                         \
                                                                     \
+    _IRQL_requires_max_(PASSIVE_LEVEL)                              \
     STDMETHOD_(NTSTATUS, GetOutputStreamPresentationPosition)       \
     (                                                               \
         THIS_                                                       \
         _Out_ KSAUDIO_PRESENTATION_POSITION *pPresentationPosition  \
     ) PURE;                                                         \
                                                                     \
+    _IRQL_requires_max_(PASSIVE_LEVEL)                              \
     STDMETHOD_(NTSTATUS, GetPacketCount)                            \
     (                                                               \
         THIS_                                                       \
@@ -2601,6 +2605,7 @@ DECLARE_INTERFACE_(IMiniportWaveRTInputStream, IUnknown)
 {
     DEFINE_ABSTRACT_UNKNOWN()                               //  For IUnknown
 
+    _IRQL_requires_max_(PASSIVE_LEVEL)
     STDMETHOD_(NTSTATUS, GetReadPacket)
         (THIS_
         _Out_ ULONG     *PacketNumber,
@@ -2614,6 +2619,7 @@ DECLARE_INTERFACE_(IMiniportWaveRTInputStream, IUnknown)
 typedef IMiniportWaveRTInputStream *PMINIPORTWAVERTINPUTSTREAM;
 
 #define IMP_IMiniportWaveRTInputStream                          \
+    _IRQL_requires_max_(PASSIVE_LEVEL)                          \
     STDMETHODIMP_(NTSTATUS) GetReadPacket                       \
     (                                                           \
         _Out_ ULONG     *PacketNumber,                          \
@@ -2631,6 +2637,7 @@ DECLARE_INTERFACE_(IMiniportWaveRTOutputStream, IUnknown)
 {
     DEFINE_ABSTRACT_UNKNOWN()                               //  For IUnknown
 
+    _IRQL_requires_max_(PASSIVE_LEVEL)
     STDMETHOD_(NTSTATUS, SetWritePacket)
     (
         THIS_
@@ -2639,12 +2646,14 @@ DECLARE_INTERFACE_(IMiniportWaveRTOutputStream, IUnknown)
         _In_ ULONG      EosPacketLength
     ) PURE;
 
+    _IRQL_requires_max_(PASSIVE_LEVEL)
     STDMETHOD_(NTSTATUS, GetOutputStreamPresentationPosition)
     (
         THIS_
         _Out_ KSAUDIO_PRESENTATION_POSITION *pPresentationPosition
     ) PURE;
 
+    _IRQL_requires_max_(PASSIVE_LEVEL)
     STDMETHOD_(NTSTATUS, GetPacketCount)
     (
         THIS_
@@ -2655,6 +2664,7 @@ DECLARE_INTERFACE_(IMiniportWaveRTOutputStream, IUnknown)
 typedef IMiniportWaveRTOutputStream *PMINIPORTWAVERTOUTPUTSTREAM;
 
 #define IMP_IMiniportWaveRTOutputStream                             \
+    _IRQL_requires_max_(PASSIVE_LEVEL)                              \
     STDMETHOD_(NTSTATUS, SetWritePacket)                            \
     (                                                               \
         _In_ ULONG      PacketNumber,                               \
@@ -2662,11 +2672,13 @@ typedef IMiniportWaveRTOutputStream *PMINIPORTWAVERTOUTPUTSTREAM;
         _In_ ULONG      EosPacketLength                             \
     );                                                              \
                                                                     \
+    _IRQL_requires_max_(PASSIVE_LEVEL)                              \
     STDMETHOD_(NTSTATUS, GetOutputStreamPresentationPosition)       \
     (                                                               \
         _Out_ KSAUDIO_PRESENTATION_POSITION *pPresentationPosition  \
     );                                                              \
                                                                     \
+    _IRQL_requires_max_(PASSIVE_LEVEL)                              \
     STDMETHOD_(NTSTATUS, GetPacketCount)                            \
     (                                                               \
         _Out_ ULONG		*pPacketCount                               \

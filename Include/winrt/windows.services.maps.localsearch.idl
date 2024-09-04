@@ -13,23 +13,6 @@ import "Windows.Foundation.idl";
 import "Windows.Devices.Geolocation.idl";
 import "Windows.Globalization.idl";
 import "Windows.Services.Maps.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Edevices2Egeolocation_h__)")
-cpp_quote("#include <Windows.Devices.Geolocation.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Egeolocation_h__)")
-cpp_quote("#if !defined(__windows2Eglobalization_h__)")
-cpp_quote("#include <Windows.Globalization.h>")
-cpp_quote("#endif // !defined(__windows2Eglobalization_h__)")
-cpp_quote("#if !defined(__windows2Eservices2Emaps_h__)")
-cpp_quote("#include <Windows.Services.Maps.h>")
-cpp_quote("#endif // !defined(__windows2Eservices2Emaps_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -67,6 +50,8 @@ namespace Windows
             apicontract LocalSearchContract;
 
             runtimeclass MapAddress;
+
+            runtimeclass PlaceInfo;
         }
     }
 }
@@ -94,6 +79,8 @@ namespace Windows
 
                 interface ILocalLocationRatingInfo;
 
+                interface IPlaceInfoHelperStatics;
+
                 runtimeclass LocalCategories;
 
                 runtimeclass LocalLocation;
@@ -105,6 +92,8 @@ namespace Windows
                 runtimeclass LocalLocationHoursOfOperationItem;
 
                 runtimeclass LocalLocationRatingInfo;
+
+                runtimeclass PlaceInfoHelper;
             }
         }
     }
@@ -238,6 +227,14 @@ namespace Windows
                     [propget] HRESULT ProviderIdentifier([out] [retval] HSTRING* value);
                 }
 
+                [contract(Windows.Services.Maps.LocalSearchContract, 4.0)]
+                [exclusiveto(Windows.Services.Maps.LocalSearch.PlaceInfoHelper)]
+                [uuid(DD1CA9A7-A9C6-491B-BC09-E80FCEA48EE6)]
+                interface IPlaceInfoHelperStatics : IInspectable
+                {
+                    HRESULT CreateFromLocalLocation([in] Windows.Services.Maps.LocalSearch.LocalLocation* location, [out] [retval] Windows.Services.Maps.PlaceInfo** resultValue);
+                }
+
                 [contract(Windows.Services.Maps.LocalSearchContract, 1.0)]
                 [marshaling_behavior(agile)]
                 [static(Windows.Services.Maps.LocalSearch.ILocalCategoriesStatics, Windows.Services.Maps.LocalSearchContract, 1.0)]
@@ -285,6 +282,14 @@ namespace Windows
                 runtimeclass LocalLocationRatingInfo
                 {
                     [default] interface Windows.Services.Maps.LocalSearch.ILocalLocationRatingInfo;
+                }
+
+                [contract(Windows.Services.Maps.LocalSearchContract, 4.0)]
+                [marshaling_behavior(agile)]
+                [static(Windows.Services.Maps.LocalSearch.IPlaceInfoHelperStatics, Windows.Services.Maps.LocalSearchContract, 4.0)]
+                [threading(both)]
+                runtimeclass PlaceInfoHelper
+                {
                 }
             }
         }

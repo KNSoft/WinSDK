@@ -59,7 +59,7 @@ protected:
 		// SUPPORT TYPES
 #ifndef __NOTHROW_T_DEFINED
 struct nothrow_t {};
-extern _CRTIMP2 const nothrow_t nothrow;
+extern const nothrow_t nothrow;
 #endif  /* __NOTHROW_T_DEFINED */
 _STD_END
 

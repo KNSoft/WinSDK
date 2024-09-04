@@ -60,7 +60,6 @@ extern "C" {
 #endif
 
 #if (PSAPI_VERSION > 1)
-#define EnumProcesses               K32EnumProcesses
 #define EnumProcessModules          K32EnumProcessModules
 #define EnumProcessModulesEx        K32EnumProcessModulesEx
 #define GetModuleBaseNameA          K32GetModuleBaseNameA
@@ -87,14 +86,6 @@ extern "C" {
 #define GetProcessImageFileNameW    K32GetProcessImageFileNameW
 #endif
 
-BOOL
-WINAPI
-EnumProcesses (
-    _Out_writes_bytes_(cb) DWORD * lpidProcess,
-    _In_ DWORD cb,
-    _Out_ LPDWORD lpcbNeeded
-    );
-
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
@@ -111,6 +102,7 @@ EnumProcesses (
 
 #if (PSAPI_VERSION > 1)
 
+#define EnumProcesses               K32EnumProcesses
 #define GetProcessMemoryInfo        K32GetProcessMemoryInfo
 #define GetModuleInformation        K32GetModuleInformation
 #define GetModuleBaseNameA          K32GetModuleBaseNameA
@@ -119,6 +111,14 @@ EnumProcesses (
 #define GetModuleFileNameExW        K32GetModuleFileNameExW
 
 #endif
+
+BOOL
+WINAPI
+EnumProcesses (
+    _Out_writes_bytes_(cb) DWORD * lpidProcess,
+    _In_ DWORD cb,
+    _Out_ LPDWORD lpcbNeeded
+    );
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion

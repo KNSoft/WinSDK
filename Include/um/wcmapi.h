@@ -178,8 +178,8 @@ WcmSetProperty(
 DWORD
 WINAPI
 WcmGetProfileList(
-    _Reserved_  PVOID pReserved,
-    _Out_       PWCM_PROFILE_INFO_LIST *ppProfileList
+    _Reserved_ PVOID pReserved,
+    _Outptr_ WCM_PROFILE_INFO_LIST **ppProfileList
 );
 
 

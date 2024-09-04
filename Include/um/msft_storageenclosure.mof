@@ -40,6 +40,9 @@ class MSFT_StorageEnclosure : MSFT_StorageFaultDomain {
     [Read, Description("Number of slots hosted within the enclosure")]
     UInt32 NumberOfSlots;
 
+    [Read]
+    UInt16 SlotOperationalStatus[];
+
     [Read, Description(
         "An array containing the operational status of each "
         "power supply of the enclosure. \n"
@@ -303,6 +306,69 @@ class MSFT_StorageEnclosure : MSFT_StorageFaultDomain {
 
         [In]
         Boolean IgnoreDetachedVirtualDisks,
+
+        [Out, EmbeddedInstance("MSFT_StorageExtendedStatus")]
+        String ExtendedStatus
+    );
+
+
+    //
+    // Method: PowerElement
+    //
+
+    UInt32 PowerElement(
+
+        [In]
+        Boolean Off,
+
+        [In]
+        UInt32 SlotNumbers[],
+
+        [Out, EmbeddedInstance("MSFT_StorageExtendedStatus")]
+        String ExtendedStatus
+    );
+
+
+    //
+    // Method: GetFirmwareInformation
+    //
+
+    UInt32 GetFirmwareInformation(
+
+        [Out]
+        Boolean SupportsUpdate,
+
+        [Out]
+        UInt16 NumberOfSlots,
+
+        [Out]
+        UInt16 ActiveSlotNumber,
+
+        [Out]
+        UInt16 SlotNumber[],
+
+        [Out]
+        Boolean IsSlotWritable[],
+
+        [Out]
+        String FirmwareVersionInSlot[],
+
+        [Out, EmbeddedInstance("MSFT_StorageExtendedStatus")]
+        String ExtendedStatus
+    );
+
+
+    //
+    // Method: UpdateFirmware
+    //
+
+    UInt32 UpdateFirmware(
+
+        [In]
+        String ImagePath,
+
+        [In]
+        UInt16 SlotNumber,
 
         [Out, EmbeddedInstance("MSFT_StorageExtendedStatus")]
         String ExtendedStatus

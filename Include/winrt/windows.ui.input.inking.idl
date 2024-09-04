@@ -15,29 +15,6 @@ import "Windows.Storage.Streams.idl";
 import "Windows.UI.idl";
 import "Windows.UI.Core.idl";
 import "Windows.UI.Input.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Efoundation2Enumerics_h__)")
-cpp_quote("#include <Windows.Foundation.Numerics.h>")
-cpp_quote("#endif // !defined(__windows2Efoundation2Enumerics_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Eui_h__)")
-cpp_quote("#include <Windows.UI.h>")
-cpp_quote("#endif // !defined(__windows2Eui_h__)")
-cpp_quote("#if !defined(__windows2Eui2Ecore_h__)")
-cpp_quote("#include <Windows.UI.Core.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Ecore_h__)")
-cpp_quote("#if !defined(__windows2Eui2Einput_h__)")
-cpp_quote("#include <Windows.UI.Input.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Einput_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows

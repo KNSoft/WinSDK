@@ -17,8 +17,8 @@ Environment:
 
 --*/
 
-#ifndef __HWN_CLX_W__
-#define __HWN_CLX_W__
+#ifndef __HWN_CLX_H__
+#define __HWN_CLX_H__
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 
@@ -27,7 +27,7 @@ extern "C" {
 #endif
 
 //
-// The version number for the Hardware Notification interface supported by 
+// The version number for the Hardware Notification interface supported by
 // client driver.
 //
 
@@ -62,20 +62,20 @@ typedef struct _CLIENT_DEVICE_INFORMATION {
 #define HWN_EXPORT __stdcall
 
 /**
-  Client driver callback function used to initialize the Hardware Notification as a result 
+  Client driver callback function used to initialize the Hardware Notification as a result
   of a call to the driver's EvtDevicePrepareHardware function.
 
             Device                   A handle to a framework device object.
 
-            Context                  Supplies a pointer to the Hardware Notification client 
-                                     driver's device extension. 
+            Context                  Supplies a pointer to the Hardware Notification client
+                                     driver's device extension.
 
-            ResourcesRaw             A handle to a framework resource-list object that 
-                                     identifies the raw hardware resources that the Plug 
+            ResourcesRaw             A handle to a framework resource-list object that
+                                     identifies the raw hardware resources that the Plug
                                      and Play manager has assigned to the device.
 
-            ResourcesTranslated      A handle to a framework resource-list object that 
-                                     identifies the translated hardware resources that 
+            ResourcesTranslated      A handle to a framework resource-list object that
+                                     identifies the translated hardware resources that
                                      the Plug and Play manager has assigned to the device.
 **/
 typedef
@@ -97,7 +97,7 @@ typedef HWN_CLIENT_INITIALIZE_DEVICE *PHWN_CLIENT_INITIALIZE_DEVICE;
 
             Device                   A handle to a framework device object.
 
-            Context                  Supplies a pointer to the Hardware Notification client 
+            Context                  Supplies a pointer to the Hardware Notification client
                                      driver's device extension.
 **/
 typedef
@@ -133,7 +133,7 @@ typedef HWN_CLIENT_QUERY_DEVICE_INFORMATION
     *PHWN_CLIENT_QUERY_DEVICE_INFORMATION;
 
 /**
-  Client driver callback function used to start the Hardware Notification as a result of a 
+  Client driver callback function used to start the Hardware Notification as a result of a
   call to the driver's EvtDeviceD0Entry function.
 
             Context                  Supplies a pointer to the Hardware Notification client
@@ -166,7 +166,7 @@ NTSTATUS
 typedef HWN_CLIENT_STOP_DEVICE *PHWN_CLIENT_STOP_DEVICE;
 
 /**
-  Client driver callback function used to get Hardware Notification state. Called by the class 
+  Client driver callback function used to get Hardware Notification state. Called by the class
   extension when user asks for the state of a driver.
 
             Context                  Supplies a pointer to the Hardware Notification client
@@ -200,7 +200,7 @@ NTSTATUS
 typedef HWN_CLIENT_GET_STATE *PHWN_CLIENT_GET_STATE;
 
 /**
-  Client driver callback function used to set Hardware Notification state. Called by the class 
+  Client driver callback function used to set Hardware Notification state. Called by the class
   extension when the user wants to change the state of a driver.
 
             Context                  Supplies a pointer to the Hardware Notification client
@@ -228,7 +228,7 @@ typedef HWN_CLIENT_SET_STATE *PHWN_CLIENT_SET_STATE;
 
 //
 // Hardware Notification client driver registration packet that is passed to the class
-// extension when a client driver is registered. Contains version information and 
+// extension when a client driver is registered. Contains version information and
 // client driver callback functions.
 //
 
@@ -251,8 +251,8 @@ typedef struct _HWN_CLIENT_REGISTRATION_PACKET {
 
 /**
   This export routine is called by the Hardware Notification client driver to
-  register itself with the class extension and to supply the class extension 
-  with all its callback functions. The client driver invokes this routine when 
+  register itself with the class extension and to supply the class extension
+  with all its callback functions. The client driver invokes this routine when
   it's loaded (i.e., from its driver entry).
 
             Driver                   A handle to the client driver's framework driver object.
@@ -276,8 +276,8 @@ typedef HWN_CLX_REGISTER_CLIENT *PHWN_CLX_REGISTER_CLIENT;
 
 /**
   This export routine is called by the Hardware Notification client driver to
-  unregister itself with the class extension. The client driver invokes this 
-  routine when the client driver unloads (i.e., from its driver unload entry 
+  unregister itself with the class extension. The client driver invokes this
+  routine when the client driver unloads (i.e., from its driver unload entry
   point).
 
             Driver                   A handle to the client driver's framework driver object.
@@ -292,8 +292,8 @@ NTSTATUS
 typedef HWN_CLX_UNREGISTER_CLIENT *PHWN_CLX_UNREGISTER_CLIENT;
 
 /*++
-  This export routine is called by the Hardware Notification client driver 
-  when the WDF invokes the client driver's AddDevice callback. The client driver 
+  This export routine is called by the Hardware Notification client driver
+  when the WDF invokes the client driver's AddDevice callback. The client driver
   invokes this routine prior to creating the device object. This routine is
   responsible for supplying the device prepare/release and entry/exit
   callbacks to WDF for transitioning the device into different states.
@@ -319,9 +319,9 @@ typedef HWN_CLX_PROCESS_ADD_DEVICE_PRE_DEVICE_CREATE
     *PHWN_CLX_PROCESS_ADD_DEVICE_PRE_DEVICE_CREATE;
 
 /*++
-  This export routine is called by the Hardware Notification client driver 
+  This export routine is called by the Hardware Notification client driver
   when the driver framework invokes the client driver's AddDevice callback.
-  The client driver invokes this routine after creating the device object. 
+  The client driver invokes this routine after creating the device object.
   This routine is responsible for creating IO queues.
 
             Driver                   A handle to the client driver's framework driver object.
@@ -344,7 +344,7 @@ typedef HWN_CLX_PROCESS_ADD_DEVICE_POST_DEVICE_CREATE
     *PHWN_CLX_PROCESS_ADD_DEVICE_POST_DEVICE_CREATE;
 
 //
-// Define the position for each of the Hardware Notification exports in the 
+// Define the position for each of the Hardware Notification exports in the
 // export table.
 //
 

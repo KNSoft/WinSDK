@@ -11,33 +11,11 @@ import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
 import "Windows.Foundation.Numerics.idl";
+import "Windows.Graphics.DirectX.idl";
 import "Windows.Graphics.DirectX.Direct3D11.idl";
 import "Windows.Perception.idl";
 import "Windows.Perception.Spatial.idl";
 import "Windows.UI.Core.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Efoundation2Enumerics_h__)")
-cpp_quote("#include <Windows.Foundation.Numerics.h>")
-cpp_quote("#endif // !defined(__windows2Efoundation2Enumerics_h__)")
-cpp_quote("#if !defined(__windows2Egraphics2Edirectx2Edirect3d11_h__)")
-cpp_quote("#include <Windows.Graphics.DirectX.Direct3D11.h>")
-cpp_quote("#endif // !defined(__windows2Egraphics2Edirectx2Edirect3d11_h__)")
-cpp_quote("#if !defined(__windows2Eperception_h__)")
-cpp_quote("#include <Windows.Perception.h>")
-cpp_quote("#endif // !defined(__windows2Eperception_h__)")
-cpp_quote("#if !defined(__windows2Eperception2Espatial_h__)")
-cpp_quote("#include <Windows.Perception.Spatial.h>")
-cpp_quote("#endif // !defined(__windows2Eperception2Espatial_h__)")
-cpp_quote("#if !defined(__windows2Eui2Ecore_h__)")
-cpp_quote("#include <Windows.UI.Core.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Ecore_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -45,6 +23,8 @@ namespace Windows
     namespace Foundation
     {
         runtimeclass Deferral;
+
+        interface IClosable;
     }
 }
 namespace Windows
@@ -54,6 +34,8 @@ namespace Windows
         namespace Numerics
         {
             typedef struct Matrix4x4 Matrix4x4;
+
+            typedef struct Quaternion Quaternion;
 
             typedef struct Vector2 Vector2;
 
@@ -86,6 +68,16 @@ namespace Windows
 
                 interface IDirect3DSurface;
             }
+        }
+    }
+}
+namespace Windows
+{
+    namespace Graphics
+    {
+        namespace DirectX
+        {
+            typedef enum DirectXPixelFormat DirectXPixelFormat;
         }
     }
 }
@@ -140,21 +132,35 @@ namespace Windows
 
             interface IHolographicCamera2;
 
+            interface IHolographicCamera3;
+
             interface IHolographicCameraPose;
 
             interface IHolographicCameraRenderingParameters;
 
             interface IHolographicCameraRenderingParameters2;
 
+            interface IHolographicCameraRenderingParameters3;
+
             interface IHolographicCameraViewportParameters;
 
             interface IHolographicDisplay;
+
+            interface IHolographicDisplay2;
 
             interface IHolographicDisplayStatics;
 
             interface IHolographicFrame;
 
+            interface IHolographicFrame2;
+
             interface IHolographicFramePrediction;
+
+            interface IHolographicQuadLayer;
+
+            interface IHolographicQuadLayerFactory;
+
+            interface IHolographicQuadLayerUpdateParameters;
 
             interface IHolographicSpace;
 
@@ -165,6 +171,8 @@ namespace Windows
             interface IHolographicSpaceStatics;
 
             interface IHolographicSpaceStatics2;
+
+            interface IHolographicSpaceStatics3;
 
             runtimeclass HolographicCamera;
 
@@ -179,6 +187,10 @@ namespace Windows
             runtimeclass HolographicFrame;
 
             runtimeclass HolographicFramePrediction;
+
+            runtimeclass HolographicQuadLayer;
+
+            runtimeclass HolographicQuadLayerUpdateParameters;
 
             runtimeclass HolographicSpace;
 
@@ -202,13 +214,21 @@ namespace Windows
 
                 interface Windows.Foundation.Collections.IIterable<Windows.Graphics.Holographic.HolographicCameraPose*>;
 
+                interface Windows.Foundation.Collections.IIterable<Windows.Graphics.Holographic.HolographicQuadLayer*>;
+
                 interface Windows.Foundation.Collections.IIterator<Windows.Graphics.Holographic.HolographicCamera*>;
 
                 interface Windows.Foundation.Collections.IIterator<Windows.Graphics.Holographic.HolographicCameraPose*>;
 
+                interface Windows.Foundation.Collections.IIterator<Windows.Graphics.Holographic.HolographicQuadLayer*>;
+
                 interface Windows.Foundation.Collections.IVectorView<Windows.Graphics.Holographic.HolographicCamera*>;
 
                 interface Windows.Foundation.Collections.IVectorView<Windows.Graphics.Holographic.HolographicCameraPose*>;
+
+                interface Windows.Foundation.Collections.IVectorView<Windows.Graphics.Holographic.HolographicQuadLayer*>;
+
+                interface Windows.Foundation.Collections.IVector<Windows.Graphics.Holographic.HolographicQuadLayer*>;
 
                 interface Windows.Foundation.IReference<Windows.Graphics.Holographic.HolographicStereoTransform>;
 
@@ -289,6 +309,20 @@ namespace Windows
                 [propget] HRESULT Display([out] [retval] Windows.Graphics.Holographic.HolographicDisplay** result);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Graphics.Holographic.HolographicCamera)]
+            [uuid(45AA4FB3-7B59-524E-4A3F-4A6AD6650477)]
+            interface IHolographicCamera3 : IInspectable
+                requires
+                    Windows.Graphics.Holographic.IHolographicCamera2,
+                    Windows.Graphics.Holographic.IHolographicCamera
+            {
+                [propget] HRESULT IsPrimaryLayerEnabled([out] [retval] boolean* value);
+                [propput] HRESULT IsPrimaryLayerEnabled([in] boolean value);
+                [propget] HRESULT MaxQuadLayerCount([out] [retval] UINT32* value);
+                [propget] HRESULT QuadLayers([out] [retval] Windows.Foundation.Collections.IVector<Windows.Graphics.Holographic.HolographicQuadLayer*>** value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [exclusiveto(Windows.Graphics.Holographic.HolographicCameraPose)]
             [uuid(0D7D7E30-12DE-45BD-912B-C7F6561599D1)]
@@ -328,6 +362,18 @@ namespace Windows
                 HRESULT CommitDirect3D11DepthBuffer([in] Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Graphics.Holographic.HolographicCameraRenderingParameters)]
+            [uuid(B1AA513F-136D-4B06-B9D4-E4B914CD0683)]
+            interface IHolographicCameraRenderingParameters3 : IInspectable
+                requires
+                    Windows.Graphics.Holographic.IHolographicCameraRenderingParameters2,
+                    Windows.Graphics.Holographic.IHolographicCameraRenderingParameters
+            {
+                [propget] HRESULT IsContentProtectionEnabled([out] [retval] boolean* value);
+                [propput] HRESULT IsContentProtectionEnabled([in] boolean value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [exclusiveto(Windows.Graphics.Holographic.HolographicCameraViewportParameters)]
             [uuid(80CDF3F7-842A-41E1-93ED-5692AB1FBB10)]
@@ -348,6 +394,14 @@ namespace Windows
                 [propget] HRESULT IsOpaque([out] [retval] boolean* value);
                 [propget] HRESULT AdapterId([out] [retval] Windows.Graphics.Holographic.HolographicAdapterId* value);
                 [propget] HRESULT SpatialLocator([out] [retval] Windows.Perception.Spatial.SpatialLocator** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Graphics.Holographic.HolographicDisplay)]
+            [uuid(75AC3F82-E755-436C-8D96-4D32D131473E)]
+            interface IHolographicDisplay2 : IInspectable
+            {
+                [propget] HRESULT RefreshRate([out] [retval] DOUBLE* value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -374,6 +428,16 @@ namespace Windows
                 HRESULT WaitForFrameToFinish();
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Graphics.Holographic.HolographicFrame)]
+            [uuid(283F37BF-3BF2-5E91-6633-870574E6F217)]
+            interface IHolographicFrame2 : IInspectable
+                requires
+                    Windows.Graphics.Holographic.IHolographicFrame
+            {
+                HRESULT GetQuadLayerUpdateParameters([in] Windows.Graphics.Holographic.HolographicQuadLayer* layer, [out] [retval] Windows.Graphics.Holographic.HolographicQuadLayerUpdateParameters** value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [exclusiveto(Windows.Graphics.Holographic.HolographicFramePrediction)]
             [uuid(520F4DE1-5C0A-4E79-A81E-6ABE02BB2739)]
@@ -381,6 +445,37 @@ namespace Windows
             {
                 [propget] HRESULT CameraPoses([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.Graphics.Holographic.HolographicCameraPose*>** value);
                 [propget] HRESULT Timestamp([out] [retval] Windows.Perception.PerceptionTimestamp** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Graphics.Holographic.HolographicQuadLayer)]
+            [uuid(903460C9-C9D9-5D5C-41AC-A2D5AB0FD331)]
+            interface IHolographicQuadLayer : IInspectable
+            {
+                [propget] HRESULT PixelFormat([out] [retval] Windows.Graphics.DirectX.DirectXPixelFormat* value);
+                [propget] HRESULT Size([out] [retval] Windows.Foundation.Size* value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Graphics.Holographic.HolographicQuadLayer)]
+            [uuid(A67538F3-5A14-5A10-489A-455065B37B76)]
+            interface IHolographicQuadLayerFactory : IInspectable
+            {
+                HRESULT Create([in] Windows.Foundation.Size size, [out] [retval] Windows.Graphics.Holographic.HolographicQuadLayer** value);
+                HRESULT CreateWithPixelFormat([in] Windows.Foundation.Size size, [in] Windows.Graphics.DirectX.DirectXPixelFormat pixelFormat, [out] [retval] Windows.Graphics.Holographic.HolographicQuadLayer** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Graphics.Holographic.HolographicQuadLayerUpdateParameters)]
+            [uuid(2B0EA3B0-798D-5BCA-55C2-2C0C762EBB08)]
+            interface IHolographicQuadLayerUpdateParameters : IInspectable
+            {
+                HRESULT AcquireBufferToUpdateContent([out] [retval] Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface** value);
+                HRESULT UpdateViewport([in] Windows.Foundation.Rect value);
+                HRESULT UpdateContentProtectionEnabled([in] boolean value);
+                HRESULT UpdateExtents([in] Windows.Foundation.Numerics.Vector2 value);
+                HRESULT UpdateLocationWithStationaryMode([in] Windows.Perception.Spatial.SpatialCoordinateSystem* coordinateSystem, [in] Windows.Foundation.Numerics.Vector3 position, [in] Windows.Foundation.Numerics.Quaternion orientation);
+                HRESULT UpdateLocationWithDisplayRelativeMode([in] Windows.Foundation.Numerics.Vector3 position, [in] Windows.Foundation.Numerics.Quaternion orientation);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -433,6 +528,14 @@ namespace Windows
                 [eventremove] HRESULT IsAvailableChanged([in] EventRegistrationToken token);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Graphics.Holographic.HolographicSpace)]
+            [uuid(3B00DE3D-B1A3-4DFE-8E79-FEC5909E6DF8)]
+            interface IHolographicSpaceStatics3 : IInspectable
+            {
+                [propget] HRESULT IsConfigured([out] [retval] boolean* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [marshaling_behavior(agile)]
             [threading(both)]
@@ -440,6 +543,7 @@ namespace Windows
             {
                 [default] interface Windows.Graphics.Holographic.IHolographicCamera;
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.Graphics.Holographic.IHolographicCamera2;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Graphics.Holographic.IHolographicCamera3;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -457,6 +561,7 @@ namespace Windows
             {
                 [default] interface Windows.Graphics.Holographic.IHolographicCameraRenderingParameters;
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.Graphics.Holographic.IHolographicCameraRenderingParameters2;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Graphics.Holographic.IHolographicCameraRenderingParameters3;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -474,6 +579,7 @@ namespace Windows
             runtimeclass HolographicDisplay
             {
                 [default] interface Windows.Graphics.Holographic.IHolographicDisplay;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Graphics.Holographic.IHolographicDisplay2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -482,6 +588,7 @@ namespace Windows
             runtimeclass HolographicFrame
             {
                 [default] interface Windows.Graphics.Holographic.IHolographicFrame;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Graphics.Holographic.IHolographicFrame2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -492,10 +599,29 @@ namespace Windows
                 [default] interface Windows.Graphics.Holographic.IHolographicFramePrediction;
             }
 
+            [activatable(Windows.Graphics.Holographic.IHolographicQuadLayerFactory, Windows.Foundation.UniversalApiContract, 5.0)]
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass HolographicQuadLayer
+            {
+                interface Windows.Foundation.IClosable;
+                [default] interface Windows.Graphics.Holographic.IHolographicQuadLayer;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass HolographicQuadLayerUpdateParameters
+            {
+                [default] interface Windows.Graphics.Holographic.IHolographicQuadLayerUpdateParameters;
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [marshaling_behavior(agile)]
             [static(Windows.Graphics.Holographic.IHolographicSpaceStatics, Windows.Foundation.UniversalApiContract, 2.0)]
             [static(Windows.Graphics.Holographic.IHolographicSpaceStatics2, Windows.Foundation.UniversalApiContract, 4.0)]
+            [static(Windows.Graphics.Holographic.IHolographicSpaceStatics3, Windows.Foundation.UniversalApiContract, 5.0)]
             [threading(both)]
             runtimeclass HolographicSpace
             {

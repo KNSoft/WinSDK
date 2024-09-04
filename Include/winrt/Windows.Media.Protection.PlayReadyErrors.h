@@ -1500,6 +1500,109 @@ typedef HRESULT DRM_RESULT;
 */
 #define MSPR_E_INVALID_H264_SLICE_HEADERS                           MAKE_DRM_RESULT(DRM_SEVERITY_ERROR,  DRM_FACILITY_ITF, DRM_E_MSPRSDK_BASECODE+0x00C2)
 
+/*
+*    MessageId:    MSPR_E_CDM_PERSISTENT_LICENSE_NOT_ALLOWED
+*    Message Meaning:
+*       The app is trying to acquire a persistent license with the wrong session type.
+*    Hex Value:    0x8004B8C3
+*/
+#define MSPR_E_CDM_PERSISTENT_LICENSE_NOT_ALLOWED                   MAKE_DRM_RESULT(DRM_SEVERITY_ERROR,  DRM_FACILITY_ITF, DRM_E_MSPRSDK_BASECODE+0x00C3)
+
+/*
+*    MessageId:    MSPR_E_CDM_TEMPORARY_LICENSE_NOT_ALLOWED
+*    Message Meaning:
+*       The app is trying to acquire a temporary license with the wrong session type.
+*    Hex Value:    0x8004B8C4
+*/
+#define MSPR_E_CDM_TEMPORARY_LICENSE_NOT_ALLOWED                    MAKE_DRM_RESULT(DRM_SEVERITY_ERROR,  DRM_FACILITY_ITF, DRM_E_MSPRSDK_BASECODE+0x00C4)
+
+/*
+*    MessageId:    MSPR_E_CMD_PERSISTENT_USAGE_RECORD_NOT_ALLOWED
+*    Message Meaning:
+*       The app is trying to acquire a temporary securestop license with the wrong session type.
+*    Hex Value:    0x8004B8C5
+*/
+#define MSPR_E_CDM_PERSISTENT_USAGE_RECORD_NOT_ALLOWED              MAKE_DRM_RESULT(DRM_SEVERITY_ERROR,  DRM_FACILITY_ITF, DRM_E_MSPRSDK_BASECODE+0x00C5)
+
+/*
+*    MessageId:    MSPR_E_LICENSE_UNSUPPORTED_IN_SOFTWARE
+*    Message Meaning:
+*       The app received a SWDRM license which is only supported when running in HWDRM mode.
+*    Hex Value:    0x8004B8C6
+*/
+#define MSPR_E_LICENSE_UNSUPPORTED_IN_SOFTWARE                      MAKE_DRM_RESULT(DRM_SEVERITY_ERROR,  DRM_FACILITY_ITF, DRM_E_MSPRSDK_BASECODE+0x00C6)
+
+/*
+*    MessageId:    MSPR_E_LICENSE_UNSUPPORTED_IN_CURRENT_FIRMWARE
+*    Message Meaning:
+*       The app received a HWDRM license which the current firmware does not support.
+*    Hex Value:    0x8004B8C7
+*/
+#define MSPR_E_LICENSE_UNSUPPORTED_IN_CURRENT_FIRMWARE              MAKE_DRM_RESULT(DRM_SEVERITY_ERROR,  DRM_FACILITY_ITF, DRM_E_MSPRSDK_BASECODE+0x00C7)
+
+/*
+*    MessageId:    MSPR_E_HDSANTIROLLBACK_GET_SECURITY_INFO
+*    Message Meaning:
+*       Getting the security information of the HDS AntiRollback Registry failed.
+*    Hex Value:    0x8004B8C8
+*/
+#define MSPR_E_HDSANTIROLLBACK_GET_SECURITY_INFO                    MAKE_DRM_RESULT(DRM_SEVERITY_ERROR,  DRM_FACILITY_ITF, DRM_E_MSPRSDK_BASECODE+0x00C8)
+
+/*
+*    MessageId:    MSPR_E_HDSANTIROLLBACK_CONVERT_SECURITYDESCRIPTOR_TO_STRING
+*    Message Meaning:
+*       Converting the security descriptor of the HDS AntiRollback Registry to string failed.
+*    Hex Value:    0x8004B8C9
+*/
+#define MSPR_E_HDSANTIROLLBACK_CONVERT_SECURITYDESCRIPTOR_TO_STRING MAKE_DRM_RESULT(DRM_SEVERITY_ERROR,  DRM_FACILITY_ITF, DRM_E_MSPRSDK_BASECODE+0x00C9)
+
+/*
+*    MessageId:    MSPR_E_HDSANTIROLLBACK_SECURITYDESCRIPTOR_SIZE
+*    Message Meaning:
+*       The size of the security descriptor of the HDS AntiRollback is incorrect.
+*    Hex Value:    0x8004B8CA
+*/
+#define MSPR_E_HDSANTIROLLBACK_SECURITYDESCRIPTOR_SIZE              MAKE_DRM_RESULT(DRM_SEVERITY_ERROR,  DRM_FACILITY_ITF, DRM_E_MSPRSDK_BASECODE+0x00CA)
+
+/*
+*    MessageId:    MSPR_E_HDSANTIROLLBACK_LICENSE_DELETION_REQUIRED
+*    Message Meaning:
+*       HDS roll back is detected, and license deletion is required.
+*    Hex Value:    0x8004B8CB
+*/
+#define MSPR_E_HDSANTIROLLBACK_LICENSE_DELETION_REQUIRED            MAKE_DRM_RESULT(DRM_SEVERITY_ERROR,  DRM_FACILITY_ITF, DRM_E_MSPRSDK_BASECODE+0x00CB)
+
+/*
+*    MessageId:    MSPR_E_PRO_HEADER_UNSPECIFIED_ENCRYPTION_TYPE
+*    Message Meaning:
+*        The PlayReady object header has an unspecified encryption type for a header version less than 4.3
+*    Hex Value:    0x8004B8CC
+*/
+#define MSPR_E_PRO_HEADER_UNSPECIFIED_ENCRYPTION_TYPE               MAKE_DRM_RESULT(DRM_SEVERITY_ERROR,  DRM_FACILITY_ITF, DRM_E_MSPRSDK_BASECODE+0x00CC)
+
+/*
+*    MessageId:    MSPR_E_PRO_HEADER_INVALID_CBC_ENCRYPTION_TYPE
+*    Message Meaning:
+*        The PlayReady object header has a CBC encryption type for a header version less than 4.3
+*    Hex Value:    0x8004B8CD
+*/
+#define MSPR_E_PRO_HEADER_INVALID_CBC_ENCRYPTION_TYPE               MAKE_DRM_RESULT(DRM_SEVERITY_ERROR,  DRM_FACILITY_ITF, DRM_E_MSPRSDK_BASECODE+0x00CD)
+
+/*
+*    MessageId:    MSPR_E_HWDRM_NOT_SUPPORTED
+*    Message Meaning:
+*       HWDRM is present on the system but is not supported.
+*    Hex Value:    0x8004B8CE
+*/
+#define MSPR_E_HWDRM_NOT_SUPPORTED                                  MAKE_DRM_RESULT(DRM_SEVERITY_ERROR,  DRM_FACILITY_ITF, DRM_E_MSPRSDK_BASECODE+0x00CE)
+
+/*
+*    MessageId:    MSPR_E_HWDRM_SUPPORTED_BUT_NO_PATHS
+*    Message Meaning:
+*       Unable to initialize underlying DRM system without data store path.
+*    Hex Value:    0x8004B8CF
+*/
+#define MSPR_E_HWDRM_SUPPORTED_BUT_NO_PATHS              MAKE_DRM_RESULT(DRM_SEVERITY_ERROR,  DRM_FACILITY_ITF, DRM_E_MSPRSDK_BASECODE+0x00CF)
 
 #endif /* __WINDOWS_MEDIA_PROTECTION_PLAYREADY_ERRORS_H_ */
 

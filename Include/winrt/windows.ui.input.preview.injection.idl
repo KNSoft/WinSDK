@@ -10,14 +10,7 @@ import "AsyncInfo.idl";
 import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
+import "Windows.Gaming.Input.idl";
 
 // Forward Declare
 namespace Windows
@@ -25,6 +18,18 @@ namespace Windows
     namespace Foundation
     {
         apicontract UniversalApiContract;
+    }
+}
+namespace Windows
+{
+    namespace Gaming
+    {
+        namespace Input
+        {
+            typedef enum GamepadButtons GamepadButtons;
+
+            typedef struct GamepadReading GamepadReading;
+        }
     }
 }
 namespace Windows
@@ -61,6 +66,10 @@ namespace Windows
 
                     typedef struct InjectedInputRectangle InjectedInputRectangle;
 
+                    interface IInjectedInputGamepadInfo;
+
+                    interface IInjectedInputGamepadInfoFactory;
+
                     interface IInjectedInputKeyboardInfo;
 
                     interface IInjectedInputMouseInfo;
@@ -71,7 +80,13 @@ namespace Windows
 
                     interface IInputInjector;
 
+                    interface IInputInjector2;
+
                     interface IInputInjectorStatics;
+
+                    interface IInputInjectorStatics2;
+
+                    runtimeclass InjectedInputGamepadInfo;
 
                     runtimeclass InjectedInputKeyboardInfo;
 
@@ -270,6 +285,35 @@ namespace Windows
                         INT32 Right;
                     };
 
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Input.Preview.Injection.InjectedInputGamepadInfo)]
+                    [uuid(20AE9A3F-DF11-4572-A9AB-D75B8A5E48AD)]
+                    interface IInjectedInputGamepadInfo : IInspectable
+                    {
+                        [propget] HRESULT Buttons([out] [retval] Windows.Gaming.Input.GamepadButtons* value);
+                        [propput] HRESULT Buttons([in] Windows.Gaming.Input.GamepadButtons value);
+                        [propget] HRESULT LeftThumbstickX([out] [retval] DOUBLE* value);
+                        [propput] HRESULT LeftThumbstickX([in] DOUBLE value);
+                        [propget] HRESULT LeftThumbstickY([out] [retval] DOUBLE* value);
+                        [propput] HRESULT LeftThumbstickY([in] DOUBLE value);
+                        [propget] HRESULT LeftTrigger([out] [retval] DOUBLE* value);
+                        [propput] HRESULT LeftTrigger([in] DOUBLE value);
+                        [propget] HRESULT RightThumbstickX([out] [retval] DOUBLE* value);
+                        [propput] HRESULT RightThumbstickX([in] DOUBLE value);
+                        [propget] HRESULT RightThumbstickY([out] [retval] DOUBLE* value);
+                        [propput] HRESULT RightThumbstickY([in] DOUBLE value);
+                        [propget] HRESULT RightTrigger([out] [retval] DOUBLE* value);
+                        [propput] HRESULT RightTrigger([in] DOUBLE value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Input.Preview.Injection.InjectedInputGamepadInfo)]
+                    [uuid(59596876-6C39-4EC4-8B2A-29EF7DE18ACA)]
+                    interface IInjectedInputGamepadInfoFactory : IInspectable
+                    {
+                        [overload("CreateInstance")] HRESULT CreateInstanceFromGamepadReading([in] Windows.Gaming.Input.GamepadReading reading, [out] [retval] Windows.UI.Input.Preview.Injection.InjectedInputGamepadInfo** value);
+                    }
+
                     [contract(Windows.Foundation.UniversalApiContract, 3.0)]
                     [exclusiveto(Windows.UI.Input.Preview.Injection.InjectedInputKeyboardInfo)]
                     [uuid(4B46D140-2B6A-5FFA-7EAE-BD077B052ACD)]
@@ -354,12 +398,42 @@ namespace Windows
                         HRESULT InjectShortcut([in] Windows.UI.Input.Preview.Injection.InjectedInputShortcut shortcut);
                     }
 
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Input.Preview.Injection.InputInjector)]
+                    [uuid(8E7A905D-1453-43A7-9BCB-06D6D7B305F7)]
+                    interface IInputInjector2 : IInspectable
+                        requires
+                            Windows.UI.Input.Preview.Injection.IInputInjector
+                    {
+                        HRESULT InitializeGamepadInjection();
+                        HRESULT InjectGamepadInput([in] Windows.UI.Input.Preview.Injection.InjectedInputGamepadInfo* input);
+                        HRESULT UninitializeGamepadInjection();
+                    }
+
                     [contract(Windows.Foundation.UniversalApiContract, 3.0)]
                     [exclusiveto(Windows.UI.Input.Preview.Injection.InputInjector)]
                     [uuid(DEAE6943-7402-4141-A5C6-0C01AA57B16A)]
                     interface IInputInjectorStatics : IInspectable
                     {
                         HRESULT TryCreate([out] [retval] Windows.UI.Input.Preview.Injection.InputInjector** instance);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Input.Preview.Injection.InputInjector)]
+                    [uuid(A4DB38FB-DD8C-414F-95EA-F87EF4C0AE6C)]
+                    interface IInputInjectorStatics2 : IInspectable
+                        requires
+                            Windows.UI.Input.Preview.Injection.IInputInjectorStatics
+                    {
+                        HRESULT TryCreateForAppBroadcastOnly([out] [retval] Windows.UI.Input.Preview.Injection.InputInjector** instance);
+                    }
+
+                    [activatable(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [activatable(Windows.UI.Input.Preview.Injection.IInjectedInputGamepadInfoFactory, Windows.Foundation.UniversalApiContract, 5.0)]
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    runtimeclass InjectedInputGamepadInfo
+                    {
+                        [default] interface Windows.UI.Input.Preview.Injection.IInjectedInputGamepadInfo;
                     }
 
                     [activatable(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -392,9 +466,11 @@ namespace Windows
 
                     [contract(Windows.Foundation.UniversalApiContract, 3.0)]
                     [static(Windows.UI.Input.Preview.Injection.IInputInjectorStatics, Windows.Foundation.UniversalApiContract, 3.0)]
+                    [static(Windows.UI.Input.Preview.Injection.IInputInjectorStatics2, Windows.Foundation.UniversalApiContract, 5.0)]
                     runtimeclass InputInjector
                     {
                         [default] interface Windows.UI.Input.Preview.Injection.IInputInjector;
+                        [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Input.Preview.Injection.IInputInjector2;
                     }
                 }
             }

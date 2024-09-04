@@ -10959,7 +10959,7 @@ EXTERN_C const IID IID_IXSLProcessor;
         
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE setStartMode( 
             /* [in] */ BSTR mode,
-            /* [defaultvalue][in] */ BSTR namespaceURI = L"") = 0;
+            /* [defaultvalue][in] */ BSTR namespaceURI = 0) = 0;
         
         virtual /* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE get_startMode( 
             /* [retval][out] */ BSTR *mode) = 0;
@@ -10984,7 +10984,7 @@ EXTERN_C const IID IID_IXSLProcessor;
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE addParameter( 
             /* [in] */ BSTR baseName,
             /* [in] */ VARIANT parameter,
-            /* [defaultvalue][in] */ BSTR namespaceURI = L"") = 0;
+            /* [defaultvalue][in] */ BSTR namespaceURI = 0) = 0;
         
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE addObject( 
             /* [in] */ IDispatch *obj,

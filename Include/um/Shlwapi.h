@@ -1723,7 +1723,7 @@ typedef enum
 {
     ASSOCDATA_MSIDESCRIPTOR = 1,  //  Component Descriptor to pass to MSI APIs
     ASSOCDATA_NOACTIVATEHANDLER,  //  restrict attempts to activate window
-    ASSOCDATA_QUERYCLASSSTORE,    //  should check with the NT Class Store
+    ASSOCDATA_UNUSED1,            //  removed QUERYCLASSSTORE, dead code
     ASSOCDATA_HASPERUSERASSOC,    //  defaults to user specified association
 #if (_WIN32_IE >= _WIN32_IE_IE60)
     ASSOCDATA_EDITFLAGS,          //  Edit flags.

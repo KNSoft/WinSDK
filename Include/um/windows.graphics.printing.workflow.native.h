@@ -69,9 +69,17 @@ typedef interface IPrintWorkflowXpsObjectModelTargetPackageNative IPrintWorkflow
 #endif 	/* __IPrintWorkflowXpsObjectModelTargetPackageNative_FWD_DEFINED__ */
 
 
+#ifndef __IPrintWorkflowConfigurationNative_FWD_DEFINED__
+#define __IPrintWorkflowConfigurationNative_FWD_DEFINED__
+typedef interface IPrintWorkflowConfigurationNative IPrintWorkflowConfigurationNative;
+
+#endif 	/* __IPrintWorkflowConfigurationNative_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "oaidl.h"
 #include "ocidl.h"
+#include "PrinterExtension.h"
 #include "xpsobjectmodel_1.h"
 
 #ifdef __cplusplus
@@ -394,6 +402,106 @@ EXTERN_C const IID IID_IPrintWorkflowXpsObjectModelTargetPackageNative;
 
 
 #endif 	/* __IPrintWorkflowXpsObjectModelTargetPackageNative_INTERFACE_DEFINED__ */
+
+
+#ifndef __IPrintWorkflowConfigurationNative_INTERFACE_DEFINED__
+#define __IPrintWorkflowConfigurationNative_INTERFACE_DEFINED__
+
+/* interface IPrintWorkflowConfigurationNative */
+/* [unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IPrintWorkflowConfigurationNative;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("C056BE0A-9EE2-450A-9823-964F0006F2BB")
+    IPrintWorkflowConfigurationNative : public IUnknown
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PrinterQueue( 
+            /* [retval][out] */ __RPC__deref_out_opt IPrinterQueue **value) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DriverProperties( 
+            /* [retval][out] */ __RPC__deref_out_opt IPrinterPropertyBag **value) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_UserProperties( 
+            /* [retval][out] */ __RPC__deref_out_opt IPrinterPropertyBag **value) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IPrintWorkflowConfigurationNativeVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in IPrintWorkflowConfigurationNative * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in IPrintWorkflowConfigurationNative * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in IPrintWorkflowConfigurationNative * This);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PrinterQueue )( 
+            __RPC__in IPrintWorkflowConfigurationNative * This,
+            /* [retval][out] */ __RPC__deref_out_opt IPrinterQueue **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DriverProperties )( 
+            __RPC__in IPrintWorkflowConfigurationNative * This,
+            /* [retval][out] */ __RPC__deref_out_opt IPrinterPropertyBag **value);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_UserProperties )( 
+            __RPC__in IPrintWorkflowConfigurationNative * This,
+            /* [retval][out] */ __RPC__deref_out_opt IPrinterPropertyBag **value);
+        
+        END_INTERFACE
+    } IPrintWorkflowConfigurationNativeVtbl;
+
+    interface IPrintWorkflowConfigurationNative
+    {
+        CONST_VTBL struct IPrintWorkflowConfigurationNativeVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IPrintWorkflowConfigurationNative_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IPrintWorkflowConfigurationNative_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IPrintWorkflowConfigurationNative_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IPrintWorkflowConfigurationNative_get_PrinterQueue(This,value)	\
+    ( (This)->lpVtbl -> get_PrinterQueue(This,value) ) 
+
+#define IPrintWorkflowConfigurationNative_get_DriverProperties(This,value)	\
+    ( (This)->lpVtbl -> get_DriverProperties(This,value) ) 
+
+#define IPrintWorkflowConfigurationNative_get_UserProperties(This,value)	\
+    ( (This)->lpVtbl -> get_UserProperties(This,value) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IPrintWorkflowConfigurationNative_INTERFACE_DEFINED__ */
 
 
 /* Additional Prototypes for ALL interfaces */

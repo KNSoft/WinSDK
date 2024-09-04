@@ -779,6 +779,10 @@ typedef enum _WLAN_POWER_SETTING {
 // To be used in conjunction with WLAN_CONNECTION_PERSIST_DISCOVERY_PROFILE. The 
 // discovery profile will be persisted with automatic connection mode.
 #define WLAN_CONNECTION_PERSIST_DISCOVERY_PROFILE_CONNECTION_MODE_AUTO 0x00000020
+// To be used in conjunction with WLAN_CONNECTION_PERSIST_DISCOVERY_PROFILE. The 
+// discovery profile will be persisted and attempt to overwrite an existing profile
+// with the same name.
+#define WLAN_CONNECTION_PERSIST_DISCOVERY_PROFILE_OVERWRITE_EXISTING 0x00000040
 
 // connection parameters
 typedef struct _WLAN_CONNECTION_PARAMETERS {
@@ -2282,6 +2286,18 @@ DEFINE_DEVPROPKEY(
     0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
     0x18
     );
+
+//
+// Property: DEVPKEY_InfraCast_HostName_ResolutionMode
+// Description: String representation of InfraCast Sink HostName resolution mode (Valid Values: Unknown, mDNS, DNS)
+// Type: DEVPROP_TYPE_STRING
+// Availability: Always.
+//
+DEFINE_DEVPROPKEY(
+    DEVPKEY_InfraCast_HostName_ResolutionMode,
+    0x1506935d, 0xe3e7, 0x450f, 0x86, 0x37, 0x82, 0x23, 0x3e, 0xbe, 0x5f, 0x6E,
+    0x19
+);
 
 //
 // Wi-Fi Direct Services Property Key Definitions

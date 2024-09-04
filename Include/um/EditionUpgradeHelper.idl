@@ -1,4 +1,5 @@
 #pragma region Application Family
+
 cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)")
 
 import "ocidl.idl";
@@ -36,24 +37,7 @@ interface IEditionUpgradeHelper : IUnknown
         [out]                   BOOL*                       isGenuine
     );
 
-    HRESULT
-    DisableAcgEnforcement(
-        [in]                    BOOL                        isEnforcementSet
-    );
 
-};
-
-[
-object,
-uuid(80AE3FC2-2580-4483-B427-9215C56E1604),
-]
-interface IEnableCodeGeneration: IUnknown
-{
-    HRESULT
-    DisableAcgEnforcementWithBinaryName(
-        [in]                    BOOL                        isEnforcementSet,
-        [in, string]            LPCWSTR                     binaryName
-    );
 };
 
 [
@@ -87,11 +71,6 @@ interface IEditionUpgradeBroker: IUnknown
         void
     );
 
-    HRESULT
-    DisableAcgEnforcement(
-        [in]                    BOOL                        isEnforcementSet,
-        [in, string]            BSTR                        binaryName
-    );
 };
 
 
@@ -107,7 +86,6 @@ library EditionUpgradeHelperLib
     coclass EditionUpgradeHelper
     {
         [default] interface IEditionUpgradeHelper;
-        interface IEnableCodeGeneration;
     }
 
     [

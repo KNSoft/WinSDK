@@ -179,10 +179,12 @@ extern "C" {
 #include <basetsd.h>
 
 
+#ifndef DECLSPEC_IMPORT
 #if (defined(_M_IX86) || defined(_M_IA64) || defined(_M_AMD64) || defined(_M_ARM) || defined(_M_ARM64)) && !defined(MIDL_PASS)
 #define DECLSPEC_IMPORT __declspec(dllimport)
 #else
 #define DECLSPEC_IMPORT
+#endif
 #endif
 
 #ifndef DECLSPEC_NORETURN
@@ -306,9 +308,17 @@ extern "C" {
 
 #ifndef DECLSPEC_CHPE_GUEST
 #if _M_HYBRID
-#define DECLSPEC_CHPE_GUEST __declspec(hybrid_guest)
+#define DECLSPEC_CHPE_GUEST  __declspec(hybrid_guest)
 #else
 #define DECLSPEC_CHPE_GUEST
+#endif
+#endif
+
+#ifndef DECLSPEC_CHPE_PATCHABLE
+#if _M_HYBRID
+#define DECLSPEC_CHPE_PATCHABLE  __declspec(hybrid_patchable)
+#else
+#define DECLSPEC_CHPE_PATCHABLE
 #endif
 #endif
 
@@ -1558,6 +1568,7 @@ typedef EXCEPTION_ROUTINE *PEXCEPTION_ROUTINE;
 #define PRODUCT_AZURE_NANO_SERVER                   0x000000A9
 #define PRODUCT_ENTERPRISEG                         0x000000AB
 #define PRODUCT_ENTERPRISEGN                        0x000000AC
+#define PRODUCT_SERVERRDSH                          0x000000AF
 #define PRODUCT_CLOUD                               0x000000B2
 #define PRODUCT_CLOUDN                              0x000000B3
 
@@ -1566,11 +1577,15 @@ typedef EXCEPTION_ROUTINE *PEXCEPTION_ROUTINE;
 #include <sdkddkver.h>
 
 //
-//  Language IDs.
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
+//  DEPRECATED: The Language ID  concept is deprecated, please use
+//  Locale Names instead, eg: "en" instead of a LANGID like 0x09.
+//  See the documentation for GetLocaleInfoEx.
 //
 //  Note that the named locale APIs (eg GetLocaleInfoEx) are preferred.
 //
-//  Not all locales have unique Language IDs
+//  WARNING: Not all locales/languages have unique Language IDs
 //
 //  The following two combinations of primary language ID and
 //  sublanguage ID have special semantics:
@@ -1582,18 +1597,30 @@ typedef EXCEPTION_ROUTINE *PEXCEPTION_ROUTINE;
 //    LANG_NEUTRAL          SUBLANG_SYS_DEFAULT System default language
 //    LANG_INVARIANT        SUBLANG_NEUTRAL     Invariant locale
 //
-//  It is recommended that applications test for locale names instead of
-//  Language IDs / LCIDs.
-
+//  This concept is deprecated.  It is strongly recommended that
+//  applications test for locale names instead of Language IDs / LCIDs.
 //
 //  Primary language IDs.
 //
-//  WARNING: These aren't always unique.  Bosnian, Serbian & Croation for example.
+//  WARNING: This pattern is broken and not followed for all languages.
+//           Serbian, Bosnian & Croatian are a few examples.
+//
+//  WARNING: There are > 6000 human languages.  The PRIMARYLANGID construct
+//           cannot support all languages your application may encounter.
+//           Please use Language Names, such as "en".
+//
+//  WARNING: Some languages may have more than one PRIMARYLANGID.  Please
+//           use Locale Names, such as "en-FJ".
+//
+//  WARNING: Some languages do not have assigned LANGIDs.  Please use
+//           Locale Names, such as "tlh-Piqd".
 //
 //  It is recommended that applications test for locale names or actual LCIDs.
 //
 //  Note that the LANG, SUBLANG construction is not always consistent.
 //  The named locale APIs (eg GetLocaleInfoEx) are recommended.
+//
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
 //
 #define LANG_NEUTRAL                     0x00
 #define LANG_INVARIANT                   0x7f
@@ -1738,7 +1765,11 @@ typedef EXCEPTION_ROUTINE *PEXCEPTION_ROUTINE;
 #define LANG_ZULU                        0x35
 
 //
-//  Sublanguage IDs.
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
+//  DEPRECATED: The Sublanguage ID concept is deprecated, please use
+//  Locale Names instead, eg: "en-US" instead of an LCID like 0x0409.
+//  See the documentation for GetLocaleInfoEx.
 //
 //  The name immediately following SUBLANG_ dictates which primary
 //  language ID that sublanguage ID can be combined with to form a
@@ -1747,7 +1778,35 @@ typedef EXCEPTION_ROUTINE *PEXCEPTION_ROUTINE;
 //  Note that the LANG, SUBLANG construction is not always consistent.
 //  The named locale APIs (eg GetLocaleInfoEx) are recommended.
 //
-
+//  WARNING: The pattern is broken and not followed for all languages.
+//           Serbian, Bosnian & Croatian are a few examples.
+//
+//  WARNING: The "SUBLANG" depends on the primary language and is inconsistent.
+//           SUBLANG_ENGLISH_US is 0x1 and SUBLANG_SPANISH_US is 0x15, so
+//           it is impossible to determine region merely by inspecting the
+//           SUBLANG.  Please use Locale Names such as "en-US" instead.
+//
+//  WARNING: Numerous SUBLANGS are assigned the same value, so 0x01 could be
+//           US, French, or many other variations.  Please use Locale Names
+//           such as "en-US" instead.  If that is not possible, consider
+//           testing the entire LCID, eg: 0x0409.
+//
+//  WARNING: There are > 6000 human languages.  The PRIMARYLANGID construct
+//           cannot support all languages your application may encounter.
+//           Please use Language Names, such as "en".
+//
+//  WARNING: There are > 200 country-regions.  The SUBLANGID construct cannot
+//           represent all valid dialects of languages such as English.
+//           Please use Locale Names, such as "en-US".
+//
+//  WARNING: Some languages may have more than one PRIMARYLANGID.  Please
+//           use Locale Names, such as "en-FJ".
+//
+//  WARNING: Some languages do not have assigned LANGIDs.  Please use
+//           Locale Names, such as "tlh-Piqd".
+//
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
 #define SUBLANG_NEUTRAL                             0x00    // language neutral
 #define SUBLANG_DEFAULT                             0x01    // user default
 #define SUBLANG_SYS_DEFAULT                         0x02    // system default
@@ -2033,6 +2092,12 @@ typedef EXCEPTION_ROUTINE *PEXCEPTION_ROUTINE;
 // end_r_winnt
 
 //
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
+//  DEPRECATED: The LCID/LANGID/SORTID concept is deprecated, please use
+//  Locale Names instead, eg: "en-US" instead of an LCID like 0x0409.
+//  See the documentation for GetLocaleInfoEx.
+//
 //  A language ID is a 16 bit value which is the combination of a
 //  primary language ID and a secondary language ID.  The bits are
 //  allocated as follows:
@@ -2042,10 +2107,25 @@ typedef EXCEPTION_ROUTINE *PEXCEPTION_ROUTINE;
 //       +-----------------------+-------------------------+
 //        15                   10 9                       0   bit
 //
-//  WARNING:  This pattern isn't always follows, Serbina, Bosnian & Croation
-//            for example.
+//  WARNING:  This pattern is broken and not followed for all languages.
+//            Serbian, Bosnian & Croatian are a few examples.
 //
-//  It is recommended that applications test for locale names or actual LCIDs.
+//  WARNING:  There are > 6000 human languages.  The PRIMARYLANGID construct
+//            cannot support all languages your application may encounter.
+//            Please use Language Names, such as "en".
+//
+//  WARNING:  There are > 200 country-regions.  The SUBLANGID construct cannot
+//            represent all valid dialects of languages such as English.
+//            Please use Locale Names, such as "en-US".
+//
+//  WARNING:  Some languages may have more than one PRIMARYLANGID.  Please
+//            use Locale Names, such as "en-FJ".
+//
+//  WARNING:  Some languages do not have assigned LANGIDs.  Please use
+//            Locale Names, such as "tlh-Piqd".
+//
+//  It is recommended that applications test for locale names rather than
+//  attempting to construct/deconstruct LANGID/PRIMARYLANGID/SUBLANGID
 //
 //  Language ID creation/extraction macros:
 //
@@ -2057,13 +2137,20 @@ typedef EXCEPTION_ROUTINE *PEXCEPTION_ROUTINE;
 //  Note that the LANG, SUBLANG construction is not always consistent.
 //  The named locale APIs (eg GetLocaleInfoEx) are recommended.
 //
-//  Language IDs do not exist for all locales
+//  DEPRECATED: Language IDs do not exist for all locales
+//
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
 //
 #define MAKELANGID(p, s)       ((((WORD  )(s)) << 10) | (WORD  )(p))
 #define PRIMARYLANGID(lgid)    ((WORD  )(lgid) & 0x3ff)
 #define SUBLANGID(lgid)        ((WORD  )(lgid) >> 10)
 
-
+//
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
+//  DEPRECATED: The LCID/LANGID/SORTID concept is deprecated, please use
+//  Locale Names instead, eg: en-US instead of an LCID like 0x0409.
+//  See the documentation for GetLocaleInfoEx.
 //
 //  A locale ID is a 32 bit value which is the combination of a
 //  language ID, a sort ID, and a reserved area.  The bits are
@@ -2076,9 +2163,13 @@ typedef EXCEPTION_ROUTINE *PEXCEPTION_ROUTINE;
 //
 //  WARNING: This pattern isn't always followed (es-ES_tradnl vs es-ES for example)
 //
-//  It is recommended that applications test for locale names or actual LCIDs.
+//  WARNING: Some locales do not have assigned LCIDs.  Please use
+//           Locale Names, such as "tlh-Piqd".
 //
-//  Locale ID creation/extraction macros:
+//  It is recommended that applications test for locale names rather than
+//  attempting to rely on LCID or LANGID behavior.
+//
+//  DEPRECATED: Locale ID creation/extraction macros:
 //
 //    MAKELCID            - construct the locale id from a language id and a sort id.
 //    MAKESORTLCID        - construct the locale id from a language id, sort id, and sort version.
@@ -2089,7 +2180,9 @@ typedef EXCEPTION_ROUTINE *PEXCEPTION_ROUTINE;
 //  Note that the LANG, SUBLANG construction is not always consistent.
 //  The named locale APIs (eg GetLocaleInfoEx) are recommended.
 //
-//  LCIDs do not exist for all locales.
+//  DEPRECATED: LCIDs do not exist for all locales.
+//
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
 //
 #define NLS_VALID_LOCALE_MASK  0x000fffff
 
@@ -2102,18 +2195,21 @@ typedef EXCEPTION_ROUTINE *PEXCEPTION_ROUTINE;
 #define SORTIDFROMLCID(lcid)   ((WORD  )((((DWORD)(lcid)) >> 16) & 0xf))
 #define SORTVERSIONFROMLCID(lcid)  ((WORD  )((((DWORD)(lcid)) >> 20) & 0xf))
 
-// 8 characters for language
-// 8 characters for region
-// 64 characters for suffix (script)
-// 2 characters for '-' separators
-// 2 characters for prefix like "i-" or "x-"
-// 1 null termination
+// Maximum Locale Name Length in Windows
+// Locale names are preferred to the deprecated LCID/LANGID concepts.
+//
+// Locale names should follow the BCP47 recommendations and typically
+// include language, script, regional variant, and perhaps additional specifiers.
+// BCP47 allows some variation, eg: en-US is preferred to en-Latn-US.
 #define LOCALE_NAME_MAX_LENGTH   85
 
 //
-//  Default System and User IDs for language and locale.
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
+//  Deprecated default System and User IDs for language and locale.
+//
 //  Locale names such as LOCALE_NAME_SYSTEM_DEFAULT, LOCALE_NAME_USER_DEFAULT,
-//  and LOCALE_NAME_INVARIANT are preferred.
+//  and LOCALE_NAME_INVARIANT are preferred.  See documentation for GetLocaleInfoEx.
 //
 
 #define LANG_SYSTEM_DEFAULT    (MAKELANGID(LANG_NEUTRAL, SUBLANG_SYS_DEFAULT))
@@ -2124,6 +2220,10 @@ typedef EXCEPTION_ROUTINE *PEXCEPTION_ROUTINE;
 
 //
 //  Other special IDs for language and locale.
+//
+//  DEPRECATED: These identifiers are all underspecified and lose information.
+//              Please use Locale Names such as "en-FJ".
+//              See documentation for GetLocaleInfoEx.
 //
 #define LOCALE_CUSTOM_DEFAULT                                                 \
           (MAKELCID(MAKELANGID(LANG_NEUTRAL, SUBLANG_CUSTOM_DEFAULT), SORT_DEFAULT))
@@ -2144,6 +2244,11 @@ typedef EXCEPTION_ROUTINE *PEXCEPTION_ROUTINE;
 // Transient keyboard Locale IDs (LCIDs)
 // Should only be used for keyboard layout identification
 //
+//  DEPRECATED: These identifiers are all transient and will change, even at
+//              different times on the same system.
+//              Please use Locale Names such as "en-FJ".
+//              See documentation for GetLocaleInfoEx.
+//
 #define LOCALE_TRANSIENT_KEYBOARD1  0x2000
 #define LOCALE_TRANSIENT_KEYBOARD2  0x2400
 #define LOCALE_TRANSIENT_KEYBOARD3  0x2800
@@ -2153,6 +2258,8 @@ typedef EXCEPTION_ROUTINE *PEXCEPTION_ROUTINE;
 // Locale with an unassigned LCID
 // These locales cannot be queried by LCID
 // Currently same as LOCALE_CUSTOM_UNSPECIFIED
+//
+// DEPRECATED: Please use Locale Names; see documentation for GetLocaleInfoEx.
 //
 #define LOCALE_UNASSIGNED_LCID LOCALE_CUSTOM_UNSPECIFIED
 
@@ -2182,9 +2289,9 @@ typedef EXCEPTION_ROUTINE *PEXCEPTION_ROUTINE;
 #ifdef _PREFAST_
 
 void _Prefast_unreferenced_parameter_impl_(const char*, ...);
-#define UNREFERENCED_PARAMETER(P)          _Prefast_unreferenced_parameter_impl_("PREfast", (P))
-#define DBG_UNREFERENCED_PARAMETER(P)      _Prefast_unreferenced_parameter_impl_("PREfast", (P))
-#define DBG_UNREFERENCED_LOCAL_VARIABLE(V) _Prefast_unreferenced_parameter_impl_("PREfast", (V))
+#define UNREFERENCED_PARAMETER(P)          _Prefast_unreferenced_parameter_impl_("PREfast", ((void) (P), 0))
+#define DBG_UNREFERENCED_PARAMETER(P)      _Prefast_unreferenced_parameter_impl_("PREfast", ((void) (P), 0))
+#define DBG_UNREFERENCED_LOCAL_VARIABLE(V) _Prefast_unreferenced_parameter_impl_("PREfast", ((void) (V), 0))
 
 #else // _PREFAST_
 
@@ -3003,9 +3110,9 @@ InterlockedExchange16 (
 #define InterlockedOr16 _InterlockedOr16
 #define InterlockedXor16 _InterlockedXor16
 
-char 
+char
 InterlockedExchangeAdd8 (
-    _Inout_ _Interlocked_operand_ char volatile * _Addend, 
+    _Inout_ _Interlocked_operand_ char volatile * _Addend,
     _In_ char _Value
     );
 
@@ -5679,9 +5786,21 @@ WriteNoFence64 (
 #define PF_TEMPORAL_LEVEL_3         2
 #define PF_NON_TEMPORAL_LEVEL_ALL   3
 
+#if defined(_M_HYBRID_X86_ARM64)
+
+extern DWORD64 (*_os_wowa64_rdtsc) (VOID);
+
+#endif
+
 //
 // Define function to read the value of the time stamp counter.
 //
+
+#if defined(_M_HYBRID_X86_ARM64)
+
+DECLSPEC_GUARDNOCF 
+
+#endif
 
 FORCEINLINE
 DWORD64
@@ -5693,11 +5812,11 @@ ReadTimeStampCounter(
 #if defined(_M_HYBRID_X86_ARM64)
 
     //
-    // For guest code, the rdtsc instruction is implemented in terms of CNTVCT.
-    // Use the same implementation for consistency.
+    // Call into the emulator to return the same value as the x86 RDTSC
+    // instruction.
     //
 
-    return (DWORD64)_ReadStatusReg(ARM64_CNTVCT);
+    return (*_os_wowa64_rdtsc)();
 
 #else
 
@@ -5858,11 +5977,11 @@ YieldProcessor (
 // context of a thread, then only those portions of the thread's context
 // corresponding to set flags will be returned.
 //
-// CONTEXT_CONTROL specifies Sp, Lr, Pc, and Cpsr
+// CONTEXT_CONTROL specifies FP, LR, SP, PC, and CPSR
 //
-// CONTEXT_INTEGER specifies R0-R12
+// CONTEXT_INTEGER specifies X0-X28
 //
-// CONTEXT_FLOATING_POINT specifies Q0-Q15 / D0-D31 / S0-S31
+// CONTEXT_FLOATING_POINT specifies Fpcr, Fpsr and Q0-Q31 / D0-D31 / S0-S31
 //
 // CONTEXT_DEBUG_REGISTERS specifies up to 16 of DBGBVR, DBGBCR, DBGWVR,
 //      DBGWCR.
@@ -5941,11 +6060,11 @@ typedef struct DECLSPEC_ALIGN(16) _ARM64_NT_CONTEXT {
                         DWORD64 X26;
                         DWORD64 X27;
                         DWORD64 X28;
+    /* +0x0f0 */        DWORD64 Fp;
+    /* +0x0f8 */        DWORD64 Lr;
                     } DUMMYSTRUCTNAME;
-                    DWORD64 X[29];
+                    DWORD64 X[31];
                  } DUMMYUNIONNAME;
-    /* +0x0f0 */ DWORD64 Fp;
-    /* +0x0f8 */ DWORD64 Lr;
     /* +0x100 */ DWORD64 Sp;
     /* +0x108 */ DWORD64 Pc;
 
@@ -6174,6 +6293,7 @@ typedef struct _KNONVOLATILE_CONTEXT_POINTERS *PKNONVOLATILE_CONTEXT_POINTERS;
 
 #endif
 
+// begin_wudfwdm
 
 #ifdef __cplusplus
 extern "C" {
@@ -6988,7 +7108,8 @@ _InlineInterlockedIncrement64 (
 
 #define InterlockedIncrement64 _InlineInterlockedIncrement64
 #define InterlockedIncrementAcquire64 InterlockedIncrement64
-
+#define InterlockedIncrementRelease64 InterlockedIncrement64
+#define InterlockedIncrementNoFence64 InterlockedIncrement64
 
 FORCEINLINE
 LONGLONG
@@ -7008,6 +7129,9 @@ _InlineInterlockedDecrement64 (
 }
 
 #define InterlockedDecrement64 _InlineInterlockedDecrement64
+#define InterlockedDecrementAcquire64 InterlockedDecrement64
+#define InterlockedDecrementRelease64 InterlockedDecrement64
+#define InterlockedDecrementNoFence64 InterlockedDecrement64
 
 FORCEINLINE
 LONGLONG
@@ -9155,6 +9279,7 @@ typedef struct _SID_AND_ATTRIBUTES_HASH {
 #define DOMAIN_USER_RID_GUEST                (0x000001F5L)
 #define DOMAIN_USER_RID_KRBTGT               (0x000001F6L)
 #define DOMAIN_USER_RID_DEFAULT_ACCOUNT      (0x000001F7L)
+#define DOMAIN_USER_RID_WDAG_ACCOUNT         (0x000001F8L)
 
 #define DOMAIN_USER_RID_MAX            (0x000003E7L)
 
@@ -9309,6 +9434,7 @@ typedef struct _SID_AND_ATTRIBUTES_HASH {
 #define SECURITY_PROCESS_PROTECTION_LEVEL_WINTCB_RID        (0x00002000L)
 #define SECURITY_PROCESS_PROTECTION_LEVEL_WINDOWS_RID       (0x00001000L)
 #define SECURITY_PROCESS_PROTECTION_LEVEL_APP_RID           (0x00000800L)
+#define SECURITY_PROCESS_PROTECTION_LEVEL_AUTHENTICODE_RID  (0x00000400L)
 #define SECURITY_PROCESS_PROTECTION_LEVEL_NONE_RID          (0x00000000L)
 
 //
@@ -10558,6 +10684,7 @@ typedef enum _TOKEN_INFORMATION_CLASS {
     TokenPrivateNameSpace,
     TokenSingletonAttributes,
     TokenBnoIsolation,
+    TokenChildProcessFlags,
     MaxTokenInfoClass  // MaxTokenInfoClass should always be the last enum
 } TOKEN_INFORMATION_CLASS, *PTOKEN_INFORMATION_CLASS;
 
@@ -11368,6 +11495,9 @@ typedef enum _PROCESS_MITIGATION_POLICY {
     ProcessSignaturePolicy,
     ProcessFontDisablePolicy,
     ProcessImageLoadPolicy,
+    ProcessSystemCallFilterPolicy,
+    ProcessPayloadRestrictionPolicy,
+    ProcessChildProcessPolicy,
     MaxProcessMitigationPolicy
 } PROCESS_MITIGATION_POLICY, *PPROCESS_MITIGATION_POLICY;
 
@@ -11417,7 +11547,8 @@ typedef struct _PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY {
         DWORD Flags;
         struct {
             DWORD DisallowWin32kSystemCalls : 1;
-            DWORD ReservedFlags : 31;
+            DWORD AuditDisallowWin32kSystemCalls : 1;
+            DWORD ReservedFlags : 30;
         } DUMMYSTRUCTNAME;
     } DUMMYUNIONNAME;
 } PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY, *PPROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY;
@@ -11439,7 +11570,8 @@ typedef struct _PROCESS_MITIGATION_DYNAMIC_CODE_POLICY {
             DWORD ProhibitDynamicCode : 1;
             DWORD AllowThreadOptOut : 1;
             DWORD AllowRemoteDowngrade : 1;
-            DWORD ReservedFlags : 29;
+            DWORD AuditProhibitDynamicCode : 1;
+            DWORD ReservedFlags : 28;
         } DUMMYSTRUCTNAME;
     } DUMMYUNIONNAME;
 } PROCESS_MITIGATION_DYNAMIC_CODE_POLICY, *PPROCESS_MITIGATION_DYNAMIC_CODE_POLICY;
@@ -11463,7 +11595,9 @@ typedef struct _PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY {
             DWORD MicrosoftSignedOnly : 1;
             DWORD StoreSignedOnly : 1;
             DWORD MitigationOptIn : 1;
-            DWORD ReservedFlags : 29;
+            DWORD AuditMicrosoftSignedOnly : 1;
+            DWORD AuditStoreSignedOnly : 1;
+            DWORD ReservedFlags : 27;
         } DUMMYSTRUCTNAME;
     } DUMMYUNIONNAME;
 } PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY, *PPROCESS_MITIGATION_BINARY_SIGNATURE_POLICY;
@@ -11486,10 +11620,61 @@ typedef struct _PROCESS_MITIGATION_IMAGE_LOAD_POLICY {
             DWORD NoRemoteImages : 1;
             DWORD NoLowMandatoryLabelImages : 1;
             DWORD PreferSystem32Images : 1;
-            DWORD ReservedFlags : 29;
+            DWORD AuditNoRemoteImages : 1;
+            DWORD AuditNoLowMandatoryLabelImages : 1;
+            DWORD ReservedFlags : 27;
         } DUMMYSTRUCTNAME;
     } DUMMYUNIONNAME;
 } PROCESS_MITIGATION_IMAGE_LOAD_POLICY, *PPROCESS_MITIGATION_IMAGE_LOAD_POLICY;
+
+typedef struct _PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY {
+    union {
+        DWORD Flags;
+        struct {
+            DWORD FilterId: 4;
+            DWORD ReservedFlags : 28;
+        } DUMMYSTRUCTNAME;
+    } DUMMYUNIONNAME;
+} PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY, *PPROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY;
+
+typedef struct _PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY {
+    union {
+        DWORD Flags;
+        struct {
+            DWORD EnableExportAddressFilter     : 1;
+            DWORD AuditExportAddressFilter      : 1;
+
+            DWORD EnableExportAddressFilterPlus : 1;
+            DWORD AuditExportAddressFilterPlus  : 1;
+
+            DWORD EnableImportAddressFilter     : 1;
+            DWORD AuditImportAddressFilter      : 1;
+
+            DWORD EnableRopStackPivot           : 1;
+            DWORD AuditRopStackPivot            : 1;
+
+            DWORD EnableRopCallerCheck          : 1;
+            DWORD AuditRopCallerCheck           : 1;
+
+            DWORD EnableRopSimExec              : 1;
+            DWORD AuditRopSimExec               : 1;
+
+            DWORD ReservedFlags                 : 20;
+        } DUMMYSTRUCTNAME;
+    } DUMMYUNIONNAME;
+} PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY, *PPROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY;
+
+typedef struct _PROCESS_MITIGATION_CHILD_PROCESS_POLICY {
+    union {
+        DWORD Flags;
+        struct {
+            DWORD NoChildProcessCreation : 1;
+            DWORD AuditNoChildProcessCreation : 1;
+            DWORD AllowSecureProcessCreation : 1;
+            DWORD ReservedFlags : 29;
+        } DUMMYSTRUCTNAME;
+    } DUMMYUNIONNAME;
+} PROCESS_MITIGATION_CHILD_PROCESS_POLICY, *PPROCESS_MITIGATION_CHILD_PROCESS_POLICY;
 
 
 typedef struct _JOBOBJECT_BASIC_ACCOUNTING_INFORMATION {
@@ -12476,18 +12661,6 @@ typedef struct _CFG_CALL_TARGET_INFO {
                             SESSION_QUERY_ACCESS |             \
                             SESSION_MODIFY_ACCESS)
 
-//
-// Partition Specific Access Rights.
-//
-
-#define MEMORY_PARTITION_QUERY_ACCESS  0x0001
-#define MEMORY_PARTITION_MODIFY_ACCESS 0x0002
-
-#define MEMORY_PARTITION_ALL_ACCESS (STANDARD_RIGHTS_REQUIRED |         \
-                                     SYNCHRONIZE |                      \
-                                     MEMORY_PARTITION_QUERY_ACCESS |    \
-                                     MEMORY_PARTITION_MODIFY_ACCESS)
-
 // end_access
 #define PAGE_NOACCESS           0x01    
 #define PAGE_READONLY           0x02    
@@ -12548,6 +12721,29 @@ typedef struct _ENCLAVE_INIT_INFO_SGX {
     BYTE  EInitToken[304];
     BYTE  Reserved2[1744];
 } ENCLAVE_INIT_INFO_SGX, *PENCLAVE_INIT_INFO_SGX;
+
+#define ENCLAVE_TYPE_VBS            0x00000010
+
+typedef struct _ENCLAVE_CREATE_INFO_VBS {
+    DWORD Flags;
+    BYTE  OwnerID[32];
+} ENCLAVE_CREATE_INFO_VBS, *PENCLAVE_CREATE_INFO_VBS;
+
+#define ENCLAVE_VBS_FLAG_DEBUG      0x00000001
+
+
+typedef struct _ENCLAVE_INIT_INFO_VBS {
+    DWORD Length;
+    DWORD ThreadCount;
+} ENCLAVE_INIT_INFO_VBS, *PENCLAVE_INIT_INFO_VBS;
+
+#if !defined(SORTPP_PASS) && !defined(MIDL_PASS) && !defined(RC_INVOKED)
+
+typedef PVOID (ENCLAVE_TARGET_FUNCTION)(PVOID);
+typedef ENCLAVE_TARGET_FUNCTION (*PENCLAVE_TARGET_FUNCTION);
+typedef PENCLAVE_TARGET_FUNCTION LPENCLAVE_TARGET_FUNCTION;
+
+#endif
 
 // begin_access
 
@@ -12635,6 +12831,10 @@ typedef struct _ENCLAVE_INIT_INFO_SGX {
 #define FILE_ATTRIBUTE_UNPINNED             0x00100000  
 #define FILE_ATTRIBUTE_RECALL_ON_OPEN       0x00040000  
 #define FILE_ATTRIBUTE_RECALL_ON_DATA_ACCESS 0x00400000 
+#define TREE_CONNECT_ATTRIBUTE_PRIVACY      0x00004000  
+#define TREE_CONNECT_ATTRIBUTE_INTEGRITY    0x00008000  
+#define TREE_CONNECT_ATTRIBUTE_GLOBAL       0x00000004  
+#define FILE_ATTRIBUTE_STRICTLY_SEQUENTIAL  0x20000000  
 #define FILE_NOTIFY_CHANGE_FILE_NAME    0x00000001   
 #define FILE_NOTIFY_CHANGE_DIR_NAME     0x00000002   
 #define FILE_NOTIFY_CHANGE_ATTRIBUTES   0x00000004   
@@ -12660,7 +12860,7 @@ typedef struct _ENCLAVE_INIT_INFO_SGX {
 #define FILE_SUPPORTS_REPARSE_POINTS        0x00000080  
 #define FILE_SUPPORTS_REMOTE_STORAGE        0x00000100  
 #define FILE_RETURNS_CLEANUP_RESULT_INFO    0x00000200  
-
+#define FILE_SUPPORTS_POSIX_UNLINK_RENAME   0x00000400  
 
 
 
@@ -12697,6 +12897,25 @@ typedef struct _FILE_NOTIFY_INFORMATION {
     DWORD FileNameLength;
     WCHAR FileName[1];
 } FILE_NOTIFY_INFORMATION, *PFILE_NOTIFY_INFORMATION;
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS3)
+typedef struct _FILE_NOTIFY_EXTENDED_INFORMATION {
+    DWORD NextEntryOffset;
+    DWORD Action;
+    LARGE_INTEGER CreationTime;
+    LARGE_INTEGER LastModificationTime;
+    LARGE_INTEGER LastChangeTime;
+    LARGE_INTEGER LastAccessTime;
+    LARGE_INTEGER AllocatedLength;
+    LARGE_INTEGER FileSize;
+    DWORD FileAttributes;
+    DWORD ReparsePointTag;
+    LARGE_INTEGER FileId;
+    LARGE_INTEGER ParentFileId;
+    DWORD FileNameLength;
+    WCHAR FileName[1];
+} FILE_NOTIFY_EXTENDED_INFORMATION, *PFILE_NOTIFY_EXTENDED_INFORMATION;
+#endif
 
 
 //
@@ -12879,13 +13098,28 @@ typedef struct _REPARSE_GUID_DATA_BUFFER {
 #define IO_REPARSE_TAG_FILE_PLACEHOLDER         (0x80000015L)       
 #define IO_REPARSE_TAG_WOF                      (0x80000017L)       
 #define IO_REPARSE_TAG_WCI                      (0x80000018L)       
+#define IO_REPARSE_TAG_WCI_1                    (0x90001018L)       
 #define IO_REPARSE_TAG_GLOBAL_REPARSE           (0xA0000019L)       
 #define IO_REPARSE_TAG_CLOUD                    (0x9000001AL)       
-#define IO_REPARSE_TAG_CLOUD_ROOT               (0x9000101AL)       
-#define IO_REPARSE_TAG_CLOUD_ON_DEMAND          (0x9000201AL)       
-#define IO_REPARSE_TAG_CLOUD_ROOT_ON_DEMAND     (0x9000301AL)       
+#define IO_REPARSE_TAG_CLOUD_1                  (0x9000101AL)       
+#define IO_REPARSE_TAG_CLOUD_2                  (0x9000201AL)       
+#define IO_REPARSE_TAG_CLOUD_3                  (0x9000301AL)       
+#define IO_REPARSE_TAG_CLOUD_4                  (0x9000401AL)       
+#define IO_REPARSE_TAG_CLOUD_5                  (0x9000501AL)       
+#define IO_REPARSE_TAG_CLOUD_6                  (0x9000601AL)       
+#define IO_REPARSE_TAG_CLOUD_7                  (0x9000701AL)       
+#define IO_REPARSE_TAG_CLOUD_8                  (0x9000801AL)       
+#define IO_REPARSE_TAG_CLOUD_9                  (0x9000901AL)       
+#define IO_REPARSE_TAG_CLOUD_A                  (0x9000A01AL)       
+#define IO_REPARSE_TAG_CLOUD_B                  (0x9000B01AL)       
+#define IO_REPARSE_TAG_CLOUD_C                  (0x9000C01AL)       
+#define IO_REPARSE_TAG_CLOUD_D                  (0x9000D01AL)       
+#define IO_REPARSE_TAG_CLOUD_E                  (0x9000E01AL)       
+#define IO_REPARSE_TAG_CLOUD_F                  (0x9000F01AL)       
+#define IO_REPARSE_TAG_CLOUD_MASK               (0x0000F000L)       
 #define IO_REPARSE_TAG_APPEXECLINK              (0x8000001BL)       
 #define IO_REPARSE_TAG_GVFS                     (0x9000001CL)       
+#define IO_REPARSE_TAG_STORAGE_SYNC             (0x8000001EL)       
 #define IO_REPARSE_TAG_WCI_TOMBSTONE            (0xA000001FL)       
 #define IO_REPARSE_TAG_UNHANDLED                (0x80000020L)       
 #define IO_REPARSE_TAG_ONEDRIVE                 (0x80000021L)       
@@ -12898,6 +13132,9 @@ typedef struct _REPARSE_GUID_DATA_BUFFER {
 #define SCRUB_DATA_INPUT_FLAG_RESUME                           0x00000001
 #define SCRUB_DATA_INPUT_FLAG_SKIP_IN_SYNC                     0x00000002
 #define SCRUB_DATA_INPUT_FLAG_SKIP_NON_INTEGRITY_DATA          0x00000004
+#define SCRUB_DATA_INPUT_FLAG_IGNORE_REDUNDANCY                0x00000008
+#define SCRUB_DATA_INPUT_FLAG_SKIP_DATA                        0x00000010 
+#define SCRUB_DATA_INPUT_FLAG_SCRUB_BY_OBJECT_ID               0x00000020                   
 
 #define SCRUB_DATA_OUTPUT_FLAG_INCOMPLETE                      0x00000001
 
@@ -12931,12 +13168,20 @@ typedef struct _SCRUB_DATA_INPUT {
     //
 
     DWORD MaximumIos;
+    
+    //
+    // 16 Byte object id. Only used if SCRUB_DATA_INPUT_FLAG_SCRUB_BY_OBJECT_ID
+    // is specified via FSCTL_SCRUB_UNDISCOVERABLE_ID. Array of DWORDs to 
+    // preserve previous alignment.
+    //
+    
+    DWORD ObjectId[4];
 
     //
     // Reserved
     //
 
-    DWORD Reserved[17];
+    DWORD Reserved[13];
 
     //
     // Opaque data returned from the previous call to restart the
@@ -13700,6 +13945,13 @@ DEFINE_GUID( GUID_ALLOW_STANDBY_STATES, 0xabfc2519, 0x3608, 0x4c2a, 0x94, 0xea, 
 // {BD3B718A-0680-4D9D-8AB2-E1D2B4AC806D}
 //
 DEFINE_GUID( GUID_ALLOW_RTC_WAKE, 0xBD3B718A, 0x0680, 0x4D9D, 0x8A, 0xB2, 0xE1, 0xD2, 0xB4, 0xAC, 0x80, 0x6D );
+
+//
+// Defines a guid for enabling/disabling legacy RTC mitigations.
+//
+// {1A34BDC3-7E6B-442E-A9D0-64B6EF378E84}
+//
+DEFINE_GUID( GUID_LEGACY_RTC_MITIGATION, 0x1A34BDC3, 0x7E6B, 0x442E, 0xA9, 0xD0, 0x64, 0xB6, 0xEF, 0x37, 0x8E, 0x84 );
 
 //
 // Defines a guid for enabling/disabling the ability to create system required
@@ -14506,6 +14758,23 @@ DEFINE_GUID( GUID_PROCESSOR_CLASS0_FLOOR_PERF, 0xfddc842b, 0x8364, 0x4edc, 0x94,
 DEFINE_GUID( GUID_PROCESSOR_CLASS1_INITIAL_PERF, 0x1facfc65, 0xa930, 0x4bc5, 0x9f, 0x38, 0x50, 0x4e, 0xc0, 0x97, 0xbb, 0xc0);
 
 //
+// Specifies the scheduling policy for threads in a given QoS class.
+//
+// {93B8B6DC-0698-4d1c-9EE4-0644E900C85D}
+//
+DEFINE_GUID( GUID_PROCESSOR_THREAD_SCHEDULING_POLICY,
+0x93b8b6dc, 0x698, 0x4d1c, 0x9e, 0xe4, 0x6, 0x44, 0xe9, 0x0, 0xc8, 0x5d);
+
+//
+// Specifies the scheduling policy for short running threads in a given QoS
+// class.
+//
+// {BAE08B81-2D5E-4688-AD6A-13243356654B}
+//
+DEFINE_GUID( GUID_PROCESSOR_SHORT_THREAD_SCHEDULING_POLICY,
+0xbae08b81, 0x2d5e, 0x4688, 0xad, 0x6a, 0x13, 0x24, 0x33, 0x56, 0x65, 0x4b);
+
+//
 // Specifies active vs passive cooling.  Although not directly related to
 // processor settings, it is the processor that gets throttled if we're doing
 // passive cooling, so it is fairly strongly related.
@@ -14544,16 +14813,16 @@ DEFINE_GUID( GUID_CONNECTIVITY_IN_STANDBY, 0xF15576E8, 0x98B7, 0x4186, 0xB9, 0x4
 
 #define POWER_CONNECTIVITY_IN_STANDBY_DISABLED 0
 #define POWER_CONNECTIVITY_IN_STANDBY_ENABLED 1
-#define POWER_CONNECTIVITY_IN_STANDBY_DISABLED_LID_CLOSE 2
+#define POWER_CONNECTIVITY_IN_STANDBY_SYSTEM_MANAGED 2
 
 //
-// Specifies the mode for disconnected standby. 
-// 
+// Specifies the mode for disconnected standby.
+//
 // 68AFB2D9-EE95-47A8-8F50-4115088073B1
 DEFINE_GUID( GUID_DISCONNECTED_STANDBY_MODE, 0x68AFB2D9, 0xEE95, 0x47A8, 0x8F, 0x50, 0x41, 0x15, 0x08, 0x80, 0x73, 0xB1 );
 
 #define POWER_DISCONNECTED_STANDBY_MODE_NORMAL 0
-#define POWER_DISCONNECTED_STANDBY_MODE_AGGRESSIVE 1 
+#define POWER_DISCONNECTED_STANDBY_MODE_AGGRESSIVE 1
 
 // AC/DC power source
 // ------------------
@@ -14717,6 +14986,18 @@ DEFINE_GUID(GUID_INTSTEER_LOAD_PER_PROC_TRIGGER,
 // {D6BA4903-386F-4c2c-8ADB-5C21B3328D25}
 DEFINE_GUID(GUID_INTSTEER_TIME_UNPARK_TRIGGER,
 0xd6ba4903, 0x386f, 0x4c2c, 0x8a, 0xdb, 0x5c, 0x21, 0xb3, 0x32, 0x8d, 0x25);
+
+// Other miscellaneous power notification GUIDs
+// ------------------------
+//
+
+// Specifies whether mixed reality mode is engaged.
+//
+// {1E626B4E-CF04-4f8d-9CC7-C97C5B0F2391}
+//
+
+DEFINE_GUID(GUID_MIXED_REALITY_MODE,
+0x1e626b4e, 0xcf04, 0x4f8d, 0x9c, 0xc7, 0xc9, 0x7c, 0x5b, 0xf, 0x23, 0x91);
 
 
 typedef enum _SYSTEM_POWER_STATE {
@@ -15028,6 +15309,19 @@ typedef enum {
                                             // transition to S4/S5, please note this
                                             // reason is different than ReasonSxTransition.
     MonitorRequestReasonWinrt,
+    MonitorRequestReasonUserInputKeyboard,
+    MonitorRequestReasonUserInputMouse,
+    MonitorRequestReasonUserInputTouch,
+    MonitorRequestReasonUserInputPen,
+    MonitorRequestReasonUserInputAccelerometer,
+    MonitorRequestReasonUserInputHid,
+    MonitorRequestReasonUserInputPoUserPresent,
+    MonitorRequestReasonUserInputSessionSwitch,
+    MonitorRequestReasonUserInputInitialization,
+    MonitorRequestReasonPdcSignalWindowsMobilePwrNotif,         // PDC_SIGNAL_PROVIDER_PWRNOTIF_SVC
+    MonitorRequestReasonPdcSignalWindowsMobileShell,            // PDC_SIGNAL_PROVIDER_UM_CS_CONTROL
+    MonitorRequestReasonPdcSignalHeyCortana,                    // PDC_SIGNAL_PROVIDER_HEY_CORTANA
+    MonitorRequestReasonPdcSignalHolographicShell,              // PDC_SIGNAL_PROVIDER_HOLOSI_CRITICAL_BATTERY_WAKE
     MonitorRequestReasonMax
 } POWER_MONITOR_REQUEST_REASON;
 
@@ -16632,6 +16926,7 @@ typedef enum IMAGE_AUX_SYMBOL_TYPE {
 #define IMAGE_WEAK_EXTERN_SEARCH_NOLIBRARY  1
 #define IMAGE_WEAK_EXTERN_SEARCH_LIBRARY    2
 #define IMAGE_WEAK_EXTERN_SEARCH_ALIAS      3
+#define IMAGE_WEAK_EXTERN_ANTI_DEPENDENCY   4
 
 //
 // Relocation format.
@@ -17546,6 +17841,8 @@ typedef struct _IMAGE_LOAD_CONFIG_DIRECTORY32 {
     WORD    Reserved2;
     DWORD   GuardRFVerifyStackPointerFunctionPointer; // VA
     DWORD   HotPatchTableOffset;
+    DWORD   Reserved3;
+    DWORD   EnclaveConfigurationPointer;    // VA
 } IMAGE_LOAD_CONFIG_DIRECTORY32, *PIMAGE_LOAD_CONFIG_DIRECTORY32;
 
 typedef struct _IMAGE_LOAD_CONFIG_DIRECTORY64 {
@@ -17588,6 +17885,8 @@ typedef struct _IMAGE_LOAD_CONFIG_DIRECTORY64 {
     WORD       Reserved2;
     ULONGLONG  GuardRFVerifyStackPointerFunctionPointer; // VA
     DWORD      HotPatchTableOffset;
+    DWORD      Reserved3;
+    ULONGLONG  EnclaveConfigurationPointer;     // VA
 } IMAGE_LOAD_CONFIG_DIRECTORY64, *PIMAGE_LOAD_CONFIG_DIRECTORY64;
 
 // end_ntoshvp 
@@ -17609,6 +17908,7 @@ typedef struct _IMAGE_HOT_PATCH_INFO {
     DWORD SequenceNumber;
     DWORD BaseImageList;
     DWORD BaseImageCount;
+    DWORD BufferOffset; // V2 and later
 } IMAGE_HOT_PATCH_INFO, *PIMAGE_HOT_PATCH_INFO;
 
 typedef struct _IMAGE_HOT_PATCH_BASE {
@@ -17619,6 +17919,7 @@ typedef struct _IMAGE_HOT_PATCH_BASE {
     DWORD CodeIntegrityInfo;
     DWORD CodeIntegritySize;
     DWORD PatchTable;
+    DWORD BufferOffset; // V2 and later
 } IMAGE_HOT_PATCH_BASE, *PIMAGE_HOT_PATCH_BASE;
 
 typedef struct _IMAGE_HOT_PATCH_HASHES {
@@ -17775,6 +18076,75 @@ typedef  _IMAGE_RUNTIME_FUNCTION_ENTRY  IMAGE_RUNTIME_FUNCTION_ENTRY;
 typedef _PIMAGE_RUNTIME_FUNCTION_ENTRY PIMAGE_RUNTIME_FUNCTION_ENTRY;
 
 #endif
+
+//
+// Sofware enclave information
+//
+
+#define IMAGE_ENCLAVE_LONG_ID_LENGTH    32
+#define IMAGE_ENCLAVE_SHORT_ID_LENGTH   16
+
+typedef struct _IMAGE_ENCLAVE_CONFIG32 {
+    DWORD Size;
+    DWORD MinimumRequiredConfigSize;
+    DWORD PolicyFlags;
+    DWORD NumberOfImports;
+    DWORD ImportList;
+    DWORD ImportEntrySize;
+    BYTE  FamilyID[IMAGE_ENCLAVE_SHORT_ID_LENGTH];
+    BYTE  ImageID[IMAGE_ENCLAVE_SHORT_ID_LENGTH];
+    DWORD ImageVersion;
+    DWORD SecurityVersion;
+    DWORD EnclaveSize;
+    DWORD NumberOfThreads;
+    DWORD EnclaveFlags;
+} IMAGE_ENCLAVE_CONFIG32, *PIMAGE_ENCLAVE_CONFIG32;
+
+typedef struct _IMAGE_ENCLAVE_CONFIG64 {
+    DWORD Size;
+    DWORD MinimumRequiredConfigSize;
+    DWORD PolicyFlags;
+    DWORD NumberOfImports;
+    DWORD ImportList;
+    DWORD ImportEntrySize;
+    BYTE  FamilyID[IMAGE_ENCLAVE_SHORT_ID_LENGTH];
+    BYTE  ImageID[IMAGE_ENCLAVE_SHORT_ID_LENGTH];
+    DWORD ImageVersion;
+    DWORD SecurityVersion;
+    ULONGLONG EnclaveSize;
+    DWORD NumberOfThreads;
+    DWORD EnclaveFlags;
+} IMAGE_ENCLAVE_CONFIG64, *PIMAGE_ENCLAVE_CONFIG64;
+
+#ifdef _WIN64
+typedef IMAGE_ENCLAVE_CONFIG64          IMAGE_ENCLAVE_CONFIG;
+typedef PIMAGE_ENCLAVE_CONFIG64         PIMAGE_ENCLAVE_CONFIG;
+#else
+typedef IMAGE_ENCLAVE_CONFIG32          IMAGE_ENCLAVE_CONFIG;
+typedef PIMAGE_ENCLAVE_CONFIG32         PIMAGE_ENCLAVE_CONFIG;
+#endif
+
+#define IMAGE_ENCLAVE_MINIMUM_CONFIG_SIZE   FIELD_OFFSET(IMAGE_ENCLAVE_CONFIG, EnclaveFlags)
+
+#define IMAGE_ENCLAVE_POLICY_DEBUGGABLE     0x00000001
+
+#define IMAGE_ENCLAVE_FLAG_PRIMARY_IMAGE    0x00000001
+
+typedef struct _IMAGE_ENCLAVE_IMPORT {
+    DWORD MatchType;
+    DWORD MinimumSecurityVersion;
+    BYTE  UniqueOrAuthorID[IMAGE_ENCLAVE_LONG_ID_LENGTH];
+    BYTE  FamilyID[IMAGE_ENCLAVE_SHORT_ID_LENGTH];
+    BYTE  ImageID[IMAGE_ENCLAVE_SHORT_ID_LENGTH];
+    DWORD ImportName;
+    DWORD Reserved;
+} IMAGE_ENCLAVE_IMPORT, *PIMAGE_ENCLAVE_IMPORT;
+
+#define IMAGE_ENCLAVE_IMPORT_MATCH_NONE             0x00000000
+#define IMAGE_ENCLAVE_IMPORT_MATCH_UNIQUE_ID        0x00000001
+#define IMAGE_ENCLAVE_IMPORT_MATCH_AUTHOR_ID        0x00000002
+#define IMAGE_ENCLAVE_IMPORT_MATCH_FAMILY_ID        0x00000003
+#define IMAGE_ENCLAVE_IMPORT_MATCH_IMAGE_ID         0x00000004
 
 //
 // Debug Format
@@ -18985,6 +19355,12 @@ typedef struct _RTL_BARRIER {
 #define FAST_FAIL_GUARD_EXPORT_SUPPRESSION_FAILURE  46
 #define FAST_FAIL_INVALID_CONTROL_STACK             47
 #define FAST_FAIL_SET_CONTEXT_DENIED                48
+#define FAST_FAIL_INVALID_IAT                       49
+#define FAST_FAIL_HEAP_METADATA_CORRUPTION          50
+#define FAST_FAIL_PAYLOAD_RESTRICTION_VIOLATION     51
+#define FAST_FAIL_LOW_LABEL_ACCESS_DENIED           52         // Telemetry, nonfatal
+#define FAST_FAIL_ENCLAVE_CALL_FAILURE              53
+#define FAST_FAIL_UNHANDLED_LSS_EXCEPTON            54
 #define FAST_FAIL_INVALID_FAST_FAIL_CODE            0xFFFFFFFF
 
 #if _MSC_VER >= 1610
@@ -19578,6 +19954,187 @@ RtlFlushNonVolatileMemoryRanges (
 #endif // (NTDDI_VERSION >= NTDDI_RS2) && defined(_AMD64_)
 
 
+//
+// Correlation Vector Routines.
+//
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+
+#define RTL_CORRELATION_VECTOR_STRING_LENGTH 129
+#define RTL_CORRELATION_VECTOR_VERSION_1 ((CHAR)1)
+#define RTL_CORRELATION_VECTOR_VERSION_2 ((CHAR)2)
+#define RTL_CORRELATION_VECTOR_VERSION_CURRENT RTL_CORRELATION_VECTOR_VERSION_2
+
+#define RTL_CORRELATION_VECTOR_V1_PREFIX_LENGTH (16)
+#define RTL_CORRELATION_VECTOR_V1_LENGTH (64)
+
+#define RTL_CORRELATION_VECTOR_V2_PREFIX_LENGTH (22)
+#define RTL_CORRELATION_VECTOR_V2_LENGTH (128)
+
+typedef struct CORRELATION_VECTOR {
+    CHAR Version;
+    CHAR Vector[RTL_CORRELATION_VECTOR_STRING_LENGTH];
+} CORRELATION_VECTOR;
+
+typedef CORRELATION_VECTOR *PCORRELATION_VECTOR;
+
+#define TraceLoggingCORRELATION_VECTOR(cv) TraceLoggingString((cv).Vector, "__TlgCV__")
+
+NTSYSAPI
+DWORD   
+NTAPI
+RtlInitializeCorrelationVector(
+    _Out_ PCORRELATION_VECTOR CorrelationVector,
+    _In_  int Version,
+    _In_opt_  const GUID * Guid
+    );
+
+
+NTSYSAPI
+DWORD   
+NTAPI
+RtlIncrementCorrelationVector(
+    _Inout_ PCORRELATION_VECTOR CorrelationVector
+    );
+
+NTSYSAPI
+DWORD   
+NTAPI
+RtlExtendCorrelationVector(
+    _Inout_ PCORRELATION_VECTOR CorrelationVector
+    );
+
+NTSYSAPI
+DWORD   
+NTAPI
+RtlValidateCorrelationVector(
+    _In_ PCORRELATION_VECTOR Vector
+    );
+
+#endif // NTDDI_VERSION >= NTDDI_RS2
+
+
+//
+// Support for process policy settings embedded into executable image.
+//
+
+#define IMAGE_POLICY_METADATA_VERSION 1
+#define IMAGE_POLICY_SECTION_NAME ".tPolicy"
+#define IMAGE_POLICY_METADATA_NAME __ImagePolicyMetadata
+
+typedef enum _IMAGE_POLICY_ENTRY_TYPE {
+    ImagePolicyEntryTypeNone = 0,
+    ImagePolicyEntryTypeBool,
+    ImagePolicyEntryTypeInt8,
+    ImagePolicyEntryTypeUInt8,
+    ImagePolicyEntryTypeInt16,
+    ImagePolicyEntryTypeUInt16,
+    ImagePolicyEntryTypeInt32,
+    ImagePolicyEntryTypeUInt32,
+    ImagePolicyEntryTypeInt64,
+    ImagePolicyEntryTypeUInt64,
+    ImagePolicyEntryTypeAnsiString,
+    ImagePolicyEntryTypeUnicodeString,
+    ImagePolicyEntryTypeMaximum
+} IMAGE_POLICY_ENTRY_TYPE;
+
+typedef enum _IMAGE_POLICY_ID {
+    ImagePolicyIdNone = 0,
+    ImagePolicyIdEtw,
+    ImagePolicyIdDebug,
+    ImagePolicyIdCrashDump,
+    ImagePolicyIdCrashDumpKey,
+    ImagePolicyIdCrashDumpKeyGuid,
+    ImagePolicyIdParentSd,
+    ImagePolicyIdParentSdRev,
+    ImagePolicyIdSvn,
+    ImagePolicyIdDeviceId,
+    ImagePolicyIdCapability,
+    ImagePolicyIdScenarioId,
+    ImagePolicyIdMaximum
+} IMAGE_POLICY_ID;
+
+typedef struct _IMAGE_POLICY_ENTRY {
+    IMAGE_POLICY_ENTRY_TYPE Type;
+    IMAGE_POLICY_ID PolicyId;
+    union {
+        const VOID* None;
+        BOOLEAN BoolValue;
+        INT8 Int8Value;
+        UINT8 UInt8Value;
+        INT16 Int16Value;
+        UINT16 UInt16Value;
+        INT32 Int32Value;
+        UINT32 UInt32Value;
+        INT64 Int64Value;
+        UINT64 UInt64Value;
+        PCSTR AnsiStringValue;
+        PCWSTR UnicodeStringValue;
+    } u;
+} IMAGE_POLICY_ENTRY;
+typedef const IMAGE_POLICY_ENTRY* PCIMAGE_POLICY_ENTRY;
+
+#pragma warning(push)
+#pragma warning(disable:4200) // zero-sized array in struct/union
+typedef struct _IMAGE_POLICY_METADATA {
+    BYTE  Version;
+    BYTE  Reserved0[7];
+    ULONGLONG ApplicationId;
+    IMAGE_POLICY_ENTRY Policies[];
+} IMAGE_POLICY_METADATA;
+typedef const IMAGE_POLICY_METADATA* PCIMAGE_POLICY_METADATA;
+#pragma warning(pop)
+
+#define IMAGE_POLICY_START(_ApplicationId_)                                   \
+__pragma(const_seg(push, IMAGE_POLICY_SECTION_NAME));                         \
+EXTERN_C __declspec(dllexport) const                                          \
+IMAGE_POLICY_METADATA IMAGE_POLICY_METADATA_NAME = {                          \
+    IMAGE_POLICY_METADATA_VERSION,                                            \
+    {0},                                                                      \
+    _ApplicationId_,                                                          \
+    {
+
+#define IMAGE_POLICY_END()                                                    \
+        {ImagePolicyEntryTypeNone, ImagePolicyIdNone, NULL}                   \
+    }                                                                         \
+};                                                                            \
+__pragma(const_seg(pop))
+
+#define IMAGE_POLICY_BOOL(_PolicyId_, _Value_)             \
+    {ImagePolicyEntryTypeBool, _PolicyId_, (const VOID*)_Value_},
+
+#define IMAGE_POLICY_INT8(_PolicyId_, _Value_)             \
+    {ImagePolicyEntryTypeInt8, _PolicyId_, (const VOID*)_Value_},
+
+#define IMAGE_POLICY_UINT8(_PolicyId_, _Value_)            \
+    {ImagePolicyEntryTypeUInt8, _PolicyId_, (const VOID*)_Value_},
+
+#define IMAGE_POLICY_INT16(_PolicyId_, _Value_)            \
+    {ImagePolicyEntryTypeInt16, _PolicyId_, (const VOID*)_Value_},
+
+#define IMAGE_POLICY_UINT16(_PolicyId_, _Value_)           \
+    {ImagePolicyEntryTypeUInt16, _PolicyId_, (const VOID*)_Value_},
+
+#define IMAGE_POLICY_INT32(_PolicyId_, _Value_)            \
+    {ImagePolicyEntryTypeInt32, _PolicyId_, (const VOID*)_Value_},
+
+#define IMAGE_POLICY_UINT32(_PolicyId_, _Value_)           \
+    {ImagePolicyEntryTypeUInt32, _PolicyId_, (const VOID*)_Value_},
+
+#define IMAGE_POLICY_INT64(_PolicyId_, _Value_)            \
+    {ImagePolicyEntryTypeInt64, _PolicyId_, (const VOID*)_Value_},
+
+#define IMAGE_POLICY_UINT64(_PolicyId_, _Value_)           \
+    {ImagePolicyEntryTypeUInt64, _PolicyId_, (const VOID*)_Value_},
+
+#define IMAGE_POLICY_ANSI_STRING(_PolicyId_, _Value_)      \
+    {ImagePolicyEntryTypeAnsiString, _PolicyId_, _Value_},
+
+#define IMAGE_POLICY_UNICODE_STRING(_PolicyId_, _Value_)   \
+    {ImagePolicyEntryTypeUnicodeString, _PolicyId_, _Value_},
+
+
 typedef struct _RTL_CRITICAL_SECTION_DEBUG {
     WORD   Type;
     WORD   CreatorBackTraceIndex;
@@ -19908,8 +20465,9 @@ typedef struct _PERFORMANCE_DATA {
 #define DEVICEFAMILYINFOENUM_XBOXSRA                    0x0000000B
 #define DEVICEFAMILYINFOENUM_XBOXERA                    0x0000000C
 #define DEVICEFAMILYINFOENUM_SERVER_NANO                0x0000000D
+#define DEVICEFAMILYINFOENUM_8828080                    0x0000000E
 
-#define DEVICEFAMILYINFOENUM_MAX                        0x0000000D
+#define DEVICEFAMILYINFOENUM_MAX                        0x0000000E
 
 #define DEVICEFAMILYDEVICEFORM_UNKNOWN                  0x00000000
 #define DEVICEFAMILYDEVICEFORM_PHONE                    0x00000001
@@ -19941,8 +20499,12 @@ typedef struct _PERFORMANCE_DATA {
 #define DEVICEFAMILYDEVICEFORM_TOY                      0x0000001B
 #define DEVICEFAMILYDEVICEFORM_VENDING                  0x0000001C
 #define DEVICEFAMILYDEVICEFORM_INDUSTRY_OTHER           0x0000001D
+#define DEVICEFAMILYDEVICEFORM_XBOX_ONE                 0x0000001E
+#define DEVICEFAMILYDEVICEFORM_XBOX_ONE_S               0x0000001F
+#define DEVICEFAMILYDEVICEFORM_XBOX_ONE_X               0x00000020
+#define DEVICEFAMILYDEVICEFORM_XBOX_ONE_X_DEVKIT        0x00000021
 
-#define DEVICEFAMILYDEVICEFORM_MAX                      0x0000001D
+#define DEVICEFAMILYDEVICEFORM_MAX                      0x00000021
 
 VOID
 NTAPI

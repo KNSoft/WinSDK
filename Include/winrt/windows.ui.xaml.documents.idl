@@ -14,26 +14,6 @@ import "Windows.UI.Text.idl";
 import "Windows.UI.Xaml.idl";
 import "Windows.UI.Xaml.Input.idl";
 import "Windows.UI.Xaml.Media.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eui2Etext_h__)")
-cpp_quote("#include <Windows.UI.Text.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Etext_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#include <Windows.UI.Xaml.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Einput_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Input.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Einput_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Emedia_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Media.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Emedia_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -173,11 +153,17 @@ namespace Windows
 
                 typedef enum UnderlineStyle UnderlineStyle;
 
+                typedef struct TextRange TextRange;
+
                 interface IBlock;
+
+                interface IBlock2;
 
                 interface IBlockFactory;
 
                 interface IBlockStatics;
+
+                interface IBlockStatics2;
 
                 interface IBold;
 
@@ -197,6 +183,8 @@ namespace Windows
 
                 interface IHyperlink4;
 
+                interface IHyperlink5;
+
                 interface IHyperlinkClickEventArgs;
 
                 interface IHyperlinkStatics;
@@ -206,6 +194,8 @@ namespace Windows
                 interface IHyperlinkStatics3;
 
                 interface IHyperlinkStatics4;
+
+                interface IHyperlinkStatics5;
 
                 interface IInline;
 
@@ -249,6 +239,16 @@ namespace Windows
 
                 interface ITextElementStatics4;
 
+                interface ITextHighlighter;
+
+                interface ITextHighlighterBase;
+
+                interface ITextHighlighterBaseFactory;
+
+                interface ITextHighlighterFactory;
+
+                interface ITextHighlighterStatics;
+
                 interface ITextPointer;
 
                 interface ITypography;
@@ -287,6 +287,10 @@ namespace Windows
 
                 runtimeclass TextElement;
 
+                runtimeclass TextHighlighter;
+
+                runtimeclass TextHighlighterBase;
+
                 runtimeclass TextPointer;
 
                 runtimeclass Typography;
@@ -312,17 +316,33 @@ namespace Windows
 
                     interface Windows.Foundation.Collections.IIterable<Windows.UI.Xaml.Documents.Inline*>;
 
+                    interface Windows.Foundation.Collections.IIterable<Windows.UI.Xaml.Documents.TextHighlighter*>;
+
+                    interface Windows.Foundation.Collections.IIterable<Windows.UI.Xaml.Documents.TextRange>;
+
                     interface Windows.Foundation.Collections.IIterator<Windows.UI.Xaml.Documents.Block*>;
 
                     interface Windows.Foundation.Collections.IIterator<Windows.UI.Xaml.Documents.Inline*>;
+
+                    interface Windows.Foundation.Collections.IIterator<Windows.UI.Xaml.Documents.TextHighlighter*>;
+
+                    interface Windows.Foundation.Collections.IIterator<Windows.UI.Xaml.Documents.TextRange>;
 
                     interface Windows.Foundation.Collections.IVectorView<Windows.UI.Xaml.Documents.Block*>;
 
                     interface Windows.Foundation.Collections.IVectorView<Windows.UI.Xaml.Documents.Inline*>;
 
+                    interface Windows.Foundation.Collections.IVectorView<Windows.UI.Xaml.Documents.TextHighlighter*>;
+
+                    interface Windows.Foundation.Collections.IVectorView<Windows.UI.Xaml.Documents.TextRange>;
+
                     interface Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Documents.Block*>;
 
                     interface Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Documents.Inline*>;
+
+                    interface Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Documents.TextHighlighter*>;
+
+                    interface Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Documents.TextRange>;
 
                     interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Documents.Hyperlink*, Windows.UI.Xaml.Documents.HyperlinkClickEventArgs*>;
                 }
@@ -354,6 +374,13 @@ namespace Windows
                     Single = 1
                 };
 
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                struct TextRange
+                {
+                    INT32 StartIndex;
+                    INT32 Length;
+                };
+
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [exclusiveto(Windows.UI.Xaml.Documents.Block)]
                 [uuid(4BCE0016-DD47-4350-8CB0-E171600AC896)]
@@ -367,6 +394,15 @@ namespace Windows
                     [propput] HRESULT LineStackingStrategy([in] Windows.UI.Xaml.LineStackingStrategy value);
                     [propget] HRESULT Margin([out] [retval] Windows.UI.Xaml.Thickness* value);
                     [propput] HRESULT Margin([in] Windows.UI.Xaml.Thickness value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Documents.Block)]
+                [uuid(5EC7BDF3-1333-4A92-8318-6CAEDC12EF89)]
+                interface IBlock2 : IInspectable
+                {
+                    [propget] HRESULT HorizontalTextAlignment([out] [retval] Windows.UI.Xaml.TextAlignment* value);
+                    [propput] HRESULT HorizontalTextAlignment([in] Windows.UI.Xaml.TextAlignment value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -386,6 +422,14 @@ namespace Windows
                     [propget] HRESULT LineHeightProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                     [propget] HRESULT LineStackingStrategyProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                     [propget] HRESULT MarginProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Documents.Block)]
+                [uuid(AF01A4D6-03E3-4CEE-9B02-2BFC308B27A9)]
+                interface IBlockStatics2 : IInspectable
+                {
+                    [propget] HRESULT HorizontalTextAlignmentProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -511,6 +555,17 @@ namespace Windows
                     HRESULT Focus([in] Windows.UI.Xaml.FocusState value, [out] [retval] boolean* returnValue);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Documents.Hyperlink)]
+                [uuid(607DD7D2-0945-4328-91EE-94CCEC2EA6C3)]
+                interface IHyperlink5 : IInspectable
+                {
+                    [propget] HRESULT IsTabStop([out] [retval] boolean* value);
+                    [propput] HRESULT IsTabStop([in] boolean value);
+                    [propget] HRESULT TabIndex([out] [retval] INT32* value);
+                    [propput] HRESULT TabIndex([in] INT32 value);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [exclusiveto(Windows.UI.Xaml.Documents.HyperlinkClickEventArgs)]
                 [uuid(C755916B-7BDC-4BE7-B373-9240A503D870)]
@@ -556,6 +611,15 @@ namespace Windows
                     [propget] HRESULT XYFocusDownNavigationStrategyProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                     [propget] HRESULT XYFocusLeftNavigationStrategyProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                     [propget] HRESULT XYFocusRightNavigationStrategyProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Documents.Hyperlink)]
+                [uuid(59308CEA-1E49-4921-BD88-A2878D07E30E)]
+                interface IHyperlinkStatics5 : IInspectable
+                {
+                    [propget] HRESULT IsTabStopProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    [propget] HRESULT TabIndexProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -787,6 +851,49 @@ namespace Windows
                     [propget] HRESULT KeyTipVerticalOffsetProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Documents.TextHighlighter)]
+                [uuid(BA6CB54B-7D75-4535-B30D-A81A00B637A4)]
+                interface ITextHighlighter : IInspectable
+                {
+                    [propget] HRESULT Ranges([out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Documents.TextRange>** value);
+                    [propget] HRESULT Foreground([out] [retval] Windows.UI.Xaml.Media.Brush** value);
+                    [propput] HRESULT Foreground([in] Windows.UI.Xaml.Media.Brush* value);
+                    [propget] HRESULT Background([out] [retval] Windows.UI.Xaml.Media.Brush** value);
+                    [propput] HRESULT Background([in] Windows.UI.Xaml.Media.Brush* value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Documents.TextHighlighterBase)]
+                [uuid(D957601A-5F0D-4CDF-9758-97E0EB95C8FA)]
+                interface ITextHighlighterBase : IInspectable
+                {
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Documents.TextHighlighterBase)]
+                [uuid(9592B2D0-EADC-4C74-92C8-6E896E22506D)]
+                interface ITextHighlighterBaseFactory : IInspectable
+                {
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Documents.TextHighlighter)]
+                [uuid(70125461-9A8F-4FA0-B235-8FFAA507BEF2)]
+                interface ITextHighlighterFactory : IInspectable
+                {
+                    HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Documents.TextHighlighter** instance);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Documents.TextHighlighter)]
+                [uuid(B3B009C4-3A7E-49CC-AB84-29C405488765)]
+                interface ITextHighlighterStatics : IInspectable
+                {
+                    [propget] HRESULT ForegroundProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    [propget] HRESULT BackgroundProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [exclusiveto(Windows.UI.Xaml.Documents.TextPointer)]
                 [uuid(AC687AA1-6A41-43FF-851E-45348AA2CF7B)]
@@ -954,10 +1061,12 @@ namespace Windows
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [marshaling_behavior(agile)]
                 [static(Windows.UI.Xaml.Documents.IBlockStatics, Windows.Foundation.UniversalApiContract, 1.0)]
+                [static(Windows.UI.Xaml.Documents.IBlockStatics2, Windows.Foundation.UniversalApiContract, 5.0)]
                 [threading(both)]
                 runtimeclass Block : Windows.UI.Xaml.Documents.TextElement
                 {
                     [default] interface Windows.UI.Xaml.Documents.IBlock;
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Xaml.Documents.IBlock2;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -997,6 +1106,7 @@ namespace Windows
                 [static(Windows.UI.Xaml.Documents.IHyperlinkStatics2, Windows.Foundation.UniversalApiContract, 1.0)]
                 [static(Windows.UI.Xaml.Documents.IHyperlinkStatics3, Windows.Foundation.UniversalApiContract, 3.0)]
                 [static(Windows.UI.Xaml.Documents.IHyperlinkStatics4, Windows.Foundation.UniversalApiContract, 4.0)]
+                [static(Windows.UI.Xaml.Documents.IHyperlinkStatics5, Windows.Foundation.UniversalApiContract, 5.0)]
                 [threading(both)]
                 runtimeclass Hyperlink : Windows.UI.Xaml.Documents.Span
                 {
@@ -1004,6 +1114,7 @@ namespace Windows
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.UI.Xaml.Documents.IHyperlink2;
                     [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.UI.Xaml.Documents.IHyperlink3;
                     [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.UI.Xaml.Documents.IHyperlink4;
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Xaml.Documents.IHyperlink5;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1103,6 +1214,25 @@ namespace Windows
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.UI.Xaml.Documents.ITextElement2;
                     [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.UI.Xaml.Documents.ITextElement3;
                     [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.UI.Xaml.Documents.ITextElement4;
+                }
+
+                [composable(Windows.UI.Xaml.Documents.ITextHighlighterFactory, public, Windows.Foundation.UniversalApiContract, 5.0)]
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [marshaling_behavior(agile)]
+                [static(Windows.UI.Xaml.Documents.ITextHighlighterStatics, Windows.Foundation.UniversalApiContract, 5.0)]
+                [threading(both)]
+                runtimeclass TextHighlighter
+                {
+                    [default] interface Windows.UI.Xaml.Documents.ITextHighlighter;
+                }
+
+                [composable(Windows.UI.Xaml.Documents.ITextHighlighterBaseFactory, public, Windows.Foundation.UniversalApiContract, 5.0)]
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [marshaling_behavior(agile)]
+                [threading(both)]
+                runtimeclass TextHighlighterBase : Windows.UI.Xaml.DependencyObject
+                {
+                    [default] interface Windows.UI.Xaml.Documents.ITextHighlighterBase;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]

@@ -22,6 +22,10 @@ typedef [v1_enum] enum AMSI_RESULT
     // No detection found. Result might change after future definition update.
     AMSI_RESULT_NOT_DETECTED = 1,
 
+    // Certain policy set by administrator blocked this content on this machine.
+    AMSI_RESULT_BLOCKED_BY_ADMIN_START = 0x4000,
+    AMSI_RESULT_BLOCKED_BY_ADMIN_END   = 0x4fff,
+
     // Detection found. It is recommended to abort executing the content if it is executable, e.g. a script.
     // Return result of 1 - 32767 is estimated risk level that an antimalware provider might indicate.
     // The large the result, the riskier to continue.
@@ -33,6 +37,7 @@ typedef [v1_enum] enum AMSI_RESULT
 } AMSI_RESULT;
 
 cpp_quote("#define AmsiResultIsMalware(r) ((r) >= AMSI_RESULT_DETECTED)")
+cpp_quote("#define AmsiResultIsBlockedByAdmin(r) ((r) >= AMSI_RESULT_BLOCKED_BY_ADMIN_START) && (r) <= AMSI_RESULT_BLOCKED_BY_ADMIN_END")
 
 typedef [v1_enum] enum AMSI_ATTRIBUTE
 {

@@ -21,14 +21,15 @@ Revision History:
 #ifndef   __USBDRIVR_H__
 #define   __USBDRIVR_H__
 
+
 #define USB_KERNEL_IOCTL
 #include "usbioctl.h"
 #undef USB_KERNEL_IOCTL
 
 #include "usb.h"
 #include "usbdlib.h"
-#include "usbbusif.h"
 
+#include "usbbusif.h"
 
 #endif // __USBDRIVR_H__
 

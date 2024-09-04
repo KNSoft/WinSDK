@@ -25,8 +25,8 @@ STDAPI CreateDirect3D11SurfaceFromDXGISurface(
 
 namespace Windows { namespace Graphics { namespace DirectX { namespace Direct3D11 {
 
-[uuid(A9B3D012-3DF2-4EE3-B8D1-8695F457D3C1)]
-struct IDirect3DDxgiInterfaceAccess : public IUnknown
+struct __declspec(uuid("A9B3D012-3DF2-4EE3-B8D1-8695F457D3C1"))
+IDirect3DDxgiInterfaceAccess : public IUnknown
 {
     IFACEMETHOD(GetInterface)(REFIID iid, _COM_Outptr_ void** p) = 0;
 };

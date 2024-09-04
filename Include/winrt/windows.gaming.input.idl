@@ -10,28 +10,22 @@ import "AsyncInfo.idl";
 import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
+import "Windows.Devices.Haptics.idl";
 import "Windows.Devices.Power.idl";
 import "Windows.Gaming.Input.ForceFeedback.idl";
 import "Windows.System.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Edevices2Epower_h__)")
-cpp_quote("#include <Windows.Devices.Power.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Epower_h__)")
-cpp_quote("#if !defined(__windows2Egaming2Einput2Eforcefeedback_h__)")
-cpp_quote("#include <Windows.Gaming.Input.ForceFeedback.h>")
-cpp_quote("#endif // !defined(__windows2Egaming2Einput2Eforcefeedback_h__)")
-cpp_quote("#if !defined(__windows2Esystem_h__)")
-cpp_quote("#include <Windows.System.h>")
-cpp_quote("#endif // !defined(__windows2Esystem_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
+namespace Windows
+{
+    namespace Devices
+    {
+        namespace Haptics
+        {
+            runtimeclass SimpleHapticsController;
+        }
+    }
+}
 namespace Windows
 {
     namespace Devices
@@ -140,6 +134,8 @@ namespace Windows
             interface IRacingWheelStatics2;
 
             interface IRawGameController;
+
+            interface IRawGameController2;
 
             interface IRawGameControllerStatics;
 
@@ -710,6 +706,19 @@ namespace Windows
                 HRESULT GetSwitchKind([in] INT32 switchIndex, [out] [retval] Windows.Gaming.Input.GameControllerSwitchKind* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Gaming.Input.RawGameController)]
+            [uuid(43C0C035-BB73-4756-A787-3ED6BEA617BD)]
+            interface IRawGameController2 : IInspectable
+                requires
+                    Windows.Gaming.Input.IRawGameController,
+                    Windows.Gaming.Input.IGameController
+            {
+                [propget] HRESULT SimpleHapticsControllers([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.Devices.Haptics.SimpleHapticsController*>** value);
+                [propget] HRESULT NonRoamableId([out] [retval] HSTRING* value);
+                [propget] HRESULT DisplayName([out] [retval] HSTRING* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [exclusiveto(Windows.Gaming.Input.RawGameController)]
             [uuid(EB8D0792-E95A-4B19-AFC7-0A59F8BF759E)]
@@ -823,6 +832,7 @@ namespace Windows
                 [default] interface Windows.Gaming.Input.IRawGameController;
                 interface Windows.Gaming.Input.IGameController;
                 interface Windows.Gaming.Input.IGameControllerBatteryInfo;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Gaming.Input.IRawGameController2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]

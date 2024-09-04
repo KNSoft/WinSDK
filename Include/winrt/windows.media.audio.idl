@@ -19,41 +19,6 @@ import "Windows.Media.MediaProperties.idl";
 import "Windows.Media.Render.idl";
 import "Windows.Media.Transcoding.idl";
 import "Windows.Storage.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Edevices2Eenumeration_h__)")
-cpp_quote("#include <Windows.Devices.Enumeration.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Eenumeration_h__)")
-cpp_quote("#if !defined(__windows2Efoundation2Enumerics_h__)")
-cpp_quote("#include <Windows.Foundation.Numerics.h>")
-cpp_quote("#endif // !defined(__windows2Efoundation2Enumerics_h__)")
-cpp_quote("#if !defined(__windows2Emedia_h__)")
-cpp_quote("#include <Windows.Media.h>")
-cpp_quote("#endif // !defined(__windows2Emedia_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Ecapture_h__)")
-cpp_quote("#include <Windows.Media.Capture.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Ecapture_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Eeffects_h__)")
-cpp_quote("#include <Windows.Media.Effects.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Eeffects_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Emediaproperties_h__)")
-cpp_quote("#include <Windows.Media.MediaProperties.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Emediaproperties_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Erender_h__)")
-cpp_quote("#include <Windows.Media.Render.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Erender_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Etranscoding_h__)")
-cpp_quote("#include <Windows.Media.Transcoding.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Etranscoding_h__)")
-cpp_quote("#if !defined(__windows2Estorage_h__)")
-cpp_quote("#include <Windows.Storage.h>")
-cpp_quote("#endif // !defined(__windows2Estorage_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows

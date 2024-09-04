@@ -80,6 +80,7 @@ typedef DWORD (CALLBACK *PFNDAVAUTHCALLBACK)(
     _Out_ PFNDAVAUTHCALLBACK_FREECRED *pFreeCred    // Callback to free the memory allocated for creds by the callback
 );
 
+_Success_(return == ERROR_SUCCESS)
 DWORD
 WINAPI
 DavAddConnection(
@@ -91,28 +92,32 @@ DavAddConnection(
     _In_ DWORD CertSize
     );
 
+_Success_(return == ERROR_SUCCESS)
 DWORD
 WINAPI
 DavDeleteConnection(
     _In_ HANDLE ConnectionHandle
     );
 
+_Success_(return == ERROR_SUCCESS)
 DWORD
 WINAPI
 DavGetUNCFromHTTPPath (
-    _In_ LPCWSTR  HttpPath,
-    _Out_writes_(*lpSize) LPWSTR UncPath,
-    IN OUT  LPDWORD lpSize
+    _In_ LPCWSTR Url,
+    _Out_writes_to_opt_(*lpSize, *lpSize) LPWSTR UncPath,
+    _Inout_ LPDWORD lpSize
     );
 
+_Success_(return == ERROR_SUCCESS)
 DWORD
 WINAPI
 DavGetHTTPFromUNCPath (
     _In_ LPCWSTR  UncPath,
-    _Out_writes_(*lpSize) LPWSTR HttpPath,
-    IN OUT  LPDWORD lpSize
+    _Out_writes_to_opt_(*lpSize, *lpSize) LPWSTR Url,
+    _Inout_ LPDWORD lpSize
     );
 
+_Success_(return == ERROR_SUCCESS)
 DWORD
 WINAPI
 DavGetTheLockOwnerOfTheFile(
@@ -121,6 +126,7 @@ DavGetTheLockOwnerOfTheFile(
     _Inout_ PULONG LockOwnerNameLengthInBytes
     );
 
+_Success_(return == ERROR_SUCCESS)
 DWORD
 WINAPI
 DavGetExtendedError(
@@ -130,32 +136,35 @@ DavGetExtendedError(
     _Inout_ DWORD *cChSize
     );
 
+_Success_(return == ERROR_SUCCESS)
 DWORD
 WINAPI
 DavFlushFile(
     _In_ HANDLE hFile
     );
-	
+
+_Success_(return == ERROR_SUCCESS)
 DWORD
 WINAPI
 DavInvalidateCache(
-	_In_ LPWSTR URLName
-	);
+    _In_ LPCWSTR URLName
+    );
 
+_Success_(return == ERROR_SUCCESS)
 DWORD
-APIENTRY
+WINAPI
 DavCancelConnectionsToServer(
     _In_ LPWSTR lpName,
-    BOOL fForce
+    _In_ BOOL fForce
     );
 
 OPAQUE_HANDLE
-APIENTRY
+WINAPI
 DavRegisterAuthCallback(_In_ PFNDAVAUTHCALLBACK CallBack,
                         _In_ ULONG Version);
 
 VOID
-APIENTRY
+WINAPI
 DavUnregisterAuthCallback(_In_ OPAQUE_HANDLE hCallback);
 
 #ifdef __cplusplus

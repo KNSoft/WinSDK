@@ -216,6 +216,7 @@ WINHTTP_AUTOPROXY_OPTIONS;
 
 #define WINHTTP_AUTOPROXY_SORT_RESULTS          0x00400000
 
+
 //
 // Flags for dwAutoDetectFlags
 //
@@ -456,6 +457,7 @@ typedef struct
 
 
 #define WINHTTP_OPTION_KDC_PROXY_SETTINGS             136
+
 
 #define WINHTTP_LAST_OPTION                           WINHTTP_OPTION_KDC_PROXY_SETTINGS
 
@@ -1081,6 +1083,7 @@ typedef struct
 
 #define ERROR_WINHTTP_CLIENT_AUTH_CERT_NEEDED_PROXY         (WINHTTP_ERROR_BASE + 187)
 #define ERROR_WINHTTP_SECURE_FAILURE_PROXY                  (WINHTTP_ERROR_BASE + 188)
+
 
 #define WINHTTP_ERROR_LAST                                  (WINHTTP_ERROR_BASE + 188)
 

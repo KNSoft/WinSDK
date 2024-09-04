@@ -16,32 +16,6 @@ import "Windows.System.idl";
 import "Windows.UI.idl";
 import "Windows.UI.Popups.idl";
 import "Windows.UI.ViewManagement.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Edata2Etext_h__)")
-cpp_quote("#include <Windows.Data.Text.h>")
-cpp_quote("#endif // !defined(__windows2Edata2Etext_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Esystem_h__)")
-cpp_quote("#include <Windows.System.h>")
-cpp_quote("#endif // !defined(__windows2Esystem_h__)")
-cpp_quote("#if !defined(__windows2Eui_h__)")
-cpp_quote("#include <Windows.UI.h>")
-cpp_quote("#endif // !defined(__windows2Eui_h__)")
-cpp_quote("#if !defined(__windows2Eui2Epopups_h__)")
-cpp_quote("#include <Windows.UI.Popups.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Epopups_h__)")
-cpp_quote("#if !defined(__windows2Eui2Eviewmanagement_h__)")
-cpp_quote("#include <Windows.UI.ViewManagement.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Eviewmanagement_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -223,6 +197,8 @@ namespace Windows
 
             interface IContactChangeTracker;
 
+            interface IContactChangeTracker2;
+
             interface IContactChangedDeferral;
 
             interface IContactChangedEventArgs;
@@ -252,6 +228,10 @@ namespace Windows
             interface IContactList;
 
             interface IContactList2;
+
+            interface IContactList3;
+
+            interface IContactListLimitedWriteOperations;
 
             interface IContactListSyncConstraints;
 
@@ -312,6 +292,8 @@ namespace Windows
             interface IContactStore;
 
             interface IContactStore2;
+
+            interface IContactStore3;
 
             interface IContactStoreNotificationTriggerDetails;
 
@@ -378,6 +360,8 @@ namespace Windows
             runtimeclass ContactLaunchActionVerbs;
 
             runtimeclass ContactList;
+
+            runtimeclass ContactListLimitedWriteOperations;
 
             runtimeclass ContactListSyncConstraints;
 
@@ -774,7 +758,9 @@ namespace Windows
             enum ContactListOtherAppWriteAccess
             {
                 None       = 0,
-                SystemOnly = 1
+                SystemOnly = 1,
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                Limited    = 2
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1132,6 +1118,14 @@ namespace Windows
                 HRESULT Reset();
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.ApplicationModel.Contacts.ContactChangeTracker)]
+            [uuid(7F8AD0FC-9321-4D18-9C09-D708C63FCD31)]
+            interface IContactChangeTracker2 : IInspectable
+            {
+                [propget] HRESULT IsTracking([out] [retval] boolean* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.ApplicationModel.Contacts.ContactChangedDeferral)]
             [uuid(C5143AE8-1B03-46F8-B694-A523E83CFCB6)]
@@ -1327,6 +1321,24 @@ namespace Windows
                 HRESULT RegisterSyncManagerAsync([out] [retval] Windows.Foundation.IAsyncAction** result);
                 [propput] HRESULT SupportsServerSearch([in] boolean value);
                 [propget] HRESULT SyncConstraints([out] [retval] Windows.ApplicationModel.Contacts.ContactListSyncConstraints** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.ApplicationModel.Contacts.ContactList)]
+            [uuid(1578EE57-26FC-41E8-A850-5AA32514ACA9)]
+            interface IContactList3 : IInspectable
+            {
+                [propget] HRESULT LimitedWriteOperations([out] [retval] Windows.ApplicationModel.Contacts.ContactListLimitedWriteOperations** value);
+                HRESULT GetChangeTracker([in] HSTRING identity, [out] [retval] Windows.ApplicationModel.Contacts.ContactChangeTracker** result);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.ApplicationModel.Contacts.ContactListLimitedWriteOperations)]
+            [uuid(E19813DA-4A0B-44B8-9A1F-A0F3D218175F)]
+            interface IContactListLimitedWriteOperations : IInspectable
+            {
+                HRESULT TryCreateOrUpdateContactAsync([in] Windows.ApplicationModel.Contacts.Contact* contact, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                HRESULT TryDeleteContactAsync([in] HSTRING contactId, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -1743,6 +1755,14 @@ namespace Windows
                 [overload("CreateContactListAsync")] HRESULT CreateContactListInAccountAsync([in] HSTRING displayName, [in] HSTRING userDataAccountId, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.Contacts.ContactList*>** value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.ApplicationModel.Contacts.ContactStore)]
+            [uuid(CB882C6C-004E-4050-87F0-840407EE6818)]
+            interface IContactStore3 : IInspectable
+            {
+                HRESULT GetChangeTracker([in] HSTRING identity, [out] [retval] Windows.ApplicationModel.Contacts.ContactChangeTracker** result);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.ApplicationModel.Contacts.ContactStoreNotificationTriggerDetails)]
             [uuid(ABB298D6-878A-4F8B-A9CE-46BB7D1C84CE)]
@@ -1926,6 +1946,7 @@ namespace Windows
             runtimeclass ContactChangeTracker
             {
                 [default] interface Windows.ApplicationModel.Contacts.IContactChangeTracker;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.ApplicationModel.Contacts.IContactChangeTracker2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2029,6 +2050,14 @@ namespace Windows
             {
                 [default] interface Windows.ApplicationModel.Contacts.IContactList;
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.ApplicationModel.Contacts.IContactList2;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.ApplicationModel.Contacts.IContactList3;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            runtimeclass ContactListLimitedWriteOperations
+            {
+                [default] interface Windows.ApplicationModel.Contacts.IContactListLimitedWriteOperations;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -2164,6 +2193,7 @@ namespace Windows
             {
                 [default] interface Windows.ApplicationModel.Contacts.IContactStore;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.ApplicationModel.Contacts.IContactStore2;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.ApplicationModel.Contacts.IContactStore3;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

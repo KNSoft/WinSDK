@@ -21,13 +21,13 @@ Notes:
 
 #pragma once
 
-#if defined(NET_ADAPTER_CX_1_0)
-#    if (NET_ADAPTER_CX_1_0 != 1)
-#        error NetPacket.h can be used only with NetAdapterCx 1.0
-#    endif // NET_ADAPTER_CX_1_0 != 1
-#else // defined(NET_ADAPTER_CX_1_0)
+#if (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1))
+#    if (NET_ADAPTER_CX_1_0 != 1 && NET_ADAPTER_CX_1_1 != 1)
+#        error NetPacket.h can be used only with NetAdapterCx 1.0 or 1.1
+#    endif
+#else
 #    error Include NetAdapterCx.h
-#endif // defined(NET_ADAPTER_CX_1_0)
+#endif // (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1))
 
 #pragma warning(push)
 #pragma warning(default : 4820) // Warn if the compiler inserted padding
@@ -72,7 +72,13 @@ typedef struct DECLSPEC_ALIGN(NET_PACKET_FRAGMENT_ALIGNMENT_BYTES) _NET_PACKET_F
     ULONG_PTR NextFragment_Reserved : 29;
 #endif
 
-    PHYSICAL_ADDRESS DmaLogicalAddress;
+    union
+    {
+        MDL *Mdl;
+        PHYSICAL_ADDRESS DmaLogicalAddress;
+        ULONG64 AsInteger;
+    } Mapping;
+
     PVOID VirtualAddress;
 
     UINT64 ValidLength             : 26;

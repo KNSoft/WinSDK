@@ -13,23 +13,6 @@ import "Windows.Foundation.idl";
 import "Windows.Globalization.idl";
 import "Windows.UI.Text.idl";
 import "Windows.UI.ViewManagement.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eglobalization_h__)")
-cpp_quote("#include <Windows.Globalization.h>")
-cpp_quote("#endif // !defined(__windows2Eglobalization_h__)")
-cpp_quote("#if !defined(__windows2Eui2Etext_h__)")
-cpp_quote("#include <Windows.UI.Text.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Etext_h__)")
-cpp_quote("#if !defined(__windows2Eui2Eviewmanagement_h__)")
-cpp_quote("#include <Windows.UI.ViewManagement.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Eviewmanagement_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -306,7 +289,13 @@ namespace Windows
                     PasswordNumeric         = 63,
                     FormulaNumber           = 67,
                     [contract(Windows.Foundation.UniversalApiContract, 3.0)]
-                    ChatWithoutEmoji        = 68
+                    ChatWithoutEmoji        = 68,
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    Digits                  = 28,
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    PinNumeric              = 64,
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    PinAlphanumeric         = 65
                 };
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]

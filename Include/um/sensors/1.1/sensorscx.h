@@ -123,6 +123,36 @@ EVT_SENSOR_DRIVER_STOP_SENSOR_HISTORY(
 typedef EVT_SENSOR_DRIVER_STOP_SENSOR_HISTORY *PFN_SENSOR_DRIVER_STOP_SENSOR_HISTORY;
 
 //
+// Callback to enable wake for the sensor. 
+//
+typedef
+_Function_class_(EVT_SENSOR_DRIVER_ENABLE_WAKE)
+_IRQL_requires_same_
+_Check_return_
+NTSTATUS
+EVT_SENSOR_DRIVER_ENABLE_WAKE(
+    _In_
+    SENSOROBJECT Sensor
+    );
+
+typedef EVT_SENSOR_DRIVER_ENABLE_WAKE *PFN_SENSOR_DRIVER_ENABLE_WAKE;
+
+//
+// Callback to disable wake for the sensor. 
+//
+typedef
+_Function_class_(EVT_SENSOR_DRIVER_DISABLE_WAKE)
+_IRQL_requires_same_
+_Check_return_
+NTSTATUS
+EVT_SENSOR_DRIVER_DISABLE_WAKE(
+    _In_
+    SENSOROBJECT Sensor
+    );
+
+typedef EVT_SENSOR_DRIVER_DISABLE_WAKE *PFN_SENSOR_DRIVER_DISABLE_WAKE;
+
+//
 // Callback to clear the history recorded so far in the sensor.
 //
 typedef
@@ -343,36 +373,73 @@ EVT_SENSOR_DRIVER_SET_BATCH_LATENCY(
 typedef EVT_SENSOR_DRIVER_SET_BATCH_LATENCY *PFN_SENSOR_DRIVER_SET_BATCH_LATENCY;
 
 //
+// Callback to start sensor state change notification
+//
+typedef
+_Function_class_(EVT_SENSOR_DRIVER_START_STATE_CHANGE_NOTIFICATION)
+_IRQL_requires_same_
+_Check_return_
+NTSTATUS
+EVT_SENSOR_DRIVER_START_STATE_CHANGE_NOTIFICATION(
+    _In_
+    SENSOROBJECT Sensors
+    );
+
+typedef EVT_SENSOR_DRIVER_START_STATE_CHANGE_NOTIFICATION *PFN_SENSOR_DRIVER_START_STATE_CHANGE_NOTIFICATION;
+
+//
+// Callback to stop sensor state change notification
+//
+typedef
+_Function_class_(EVT_SENSOR_DRIVER_STOP_STATE_CHANGE_NOTIFICATION)
+_IRQL_requires_same_
+_Check_return_
+NTSTATUS
+EVT_SENSOR_DRIVER_STOP_STATE_CHANGE_NOTIFICATION(
+    _In_
+    SENSOROBJECT Sensors
+    );
+
+typedef EVT_SENSOR_DRIVER_STOP_STATE_CHANGE_NOTIFICATION *PFN_SENSOR_DRIVER_STOP_STATE_CHANGE_NOTIFICATION;
+
+//
 // Sensor Controller Structure
 //
 typedef struct _SENSOR_CONTROLLER_CONFIG
 {
-    ULONG                                       Size;
-    WDF_TRI_STATE                               DriverIsPowerPolicyOwner;
+    ULONG                                               Size;
+    WDF_TRI_STATE                                       DriverIsPowerPolicyOwner;
   
-    PFN_SENSOR_DRIVER_START_SENSOR              EvtSensorStart;
-    PFN_SENSOR_DRIVER_STOP_SENSOR               EvtSensorStop;
+    PFN_SENSOR_DRIVER_START_SENSOR                      EvtSensorStart;
+    PFN_SENSOR_DRIVER_STOP_SENSOR                       EvtSensorStop;
 
-    PFN_SENSOR_DRIVER_GET_SUPPORTED_DATA_FIELDS EvtSensorGetSupportedDataFields;
-    PFN_SENSOR_DRIVER_GET_DATA_FIELD_PROPERTIES EvtSensorGetDataFieldProperties;
+    PFN_SENSOR_DRIVER_GET_SUPPORTED_DATA_FIELDS         EvtSensorGetSupportedDataFields;
+    PFN_SENSOR_DRIVER_GET_DATA_FIELD_PROPERTIES         EvtSensorGetDataFieldProperties;
 
-    PFN_SENSOR_DRIVER_GET_DATA_INTERVAL         EvtSensorGetDataInterval;
-    PFN_SENSOR_DRIVER_SET_DATA_INTERVAL         EvtSensorSetDataInterval;
+    PFN_SENSOR_DRIVER_GET_DATA_INTERVAL                 EvtSensorGetDataInterval;
+    PFN_SENSOR_DRIVER_SET_DATA_INTERVAL                 EvtSensorSetDataInterval;
 
-    PFN_SENSOR_DRIVER_GET_DATA_THRESHOLDS       EvtSensorGetDataThresholds;
-    PFN_SENSOR_DRIVER_SET_DATA_THRESHOLDS       EvtSensorSetDataThresholds;
+    PFN_SENSOR_DRIVER_GET_DATA_THRESHOLDS               EvtSensorGetDataThresholds;
+    PFN_SENSOR_DRIVER_SET_DATA_THRESHOLDS               EvtSensorSetDataThresholds;
 
-    PFN_SENSOR_DRIVER_GET_PROPERTIES            EvtSensorGetProperties;
+    PFN_SENSOR_DRIVER_GET_PROPERTIES                    EvtSensorGetProperties;
 
-    PFN_SENSOR_DRIVER_DEVICE_IO_CONTROL         EvtSensorDeviceIoControl;
+    PFN_SENSOR_DRIVER_DEVICE_IO_CONTROL                 EvtSensorDeviceIoControl;
 
-    PFN_SENSOR_DRIVER_START_SENSOR_HISTORY      EvtSensorStartHistory;
-    PFN_SENSOR_DRIVER_STOP_SENSOR_HISTORY       EvtSensorStopHistory;
-    PFN_SENSOR_DRIVER_CLEAR_SENSOR_HISTORY      EvtSensorClearHistory;
-    PFN_SENSOR_DRIVER_START_HISTORY_RETRIEVAL   EvtSensorStartHistoryRetrieval;
-    PFN_SENSOR_DRIVER_CANCEL_HISTORY_RETRIEVAL  EvtSensorCancelHistoryRetrieval;
+    PFN_SENSOR_DRIVER_START_SENSOR_HISTORY              EvtSensorStartHistory;
+    PFN_SENSOR_DRIVER_STOP_SENSOR_HISTORY               EvtSensorStopHistory;
+    PFN_SENSOR_DRIVER_CLEAR_SENSOR_HISTORY              EvtSensorClearHistory;
+    PFN_SENSOR_DRIVER_START_HISTORY_RETRIEVAL           EvtSensorStartHistoryRetrieval;
+    PFN_SENSOR_DRIVER_CANCEL_HISTORY_RETRIEVAL          EvtSensorCancelHistoryRetrieval;
     
-    PFN_SENSOR_DRIVER_SET_BATCH_LATENCY         EvtSensorSetBatchLatency;
+    PFN_SENSOR_DRIVER_SET_BATCH_LATENCY                 EvtSensorSetBatchLatency;
+
+    PFN_SENSOR_DRIVER_START_STATE_CHANGE_NOTIFICATION   EvtSensorStartStateChangeNotification;
+
+    PFN_SENSOR_DRIVER_STOP_STATE_CHANGE_NOTIFICATION    EvtSensorStopStateChangeNotification;
+    PFN_SENSOR_DRIVER_ENABLE_WAKE                       EvtSensorEnableWake;
+    PFN_SENSOR_DRIVER_DISABLE_WAKE                      EvtSensorDisableWake;
+
 }  SENSOR_CONTROLLER_CONFIG, *PSENSOR_CONTROLLER_CONFIG;
 
 VOID
@@ -611,6 +678,33 @@ SensorsCxDeviceGetSensorList(
     )
 {
     return ((PFN_SENSORSCXDEVICEGETSENSORLIST) SensorscxFunctions[SensorsCxDeviceGetSensorListTableIndex])(SensorscxDriverGlobals, FxDevice, pSensorList, pListCount);
+}
+
+//
+// SENSORSCX Function: SensorsCxStateChange
+//
+typedef
+WDFAPI
+VOID
+(*PFN_SENSORSCXSTATECHANGE)(
+    _In_
+    PSENSORSCX_DRIVER_GLOBALS DriverGlobals,
+    _In_
+    SENSOROBJECT Sensor,
+    _In_
+    SENSOR_STATE State
+    );
+
+VOID
+FORCEINLINE
+SensorsCxStateChange(
+    _In_
+    SENSOROBJECT Sensor,
+    _In_
+    SENSOR_STATE State
+    )
+{
+    ((PFN_SENSORSCXSTATECHANGE) SensorscxFunctions[SensorsCxStateChangeTableIndex])(SensorscxDriverGlobals, Sensor, State);
 }
 
 

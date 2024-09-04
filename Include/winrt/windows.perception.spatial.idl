@@ -14,26 +14,6 @@ import "Windows.Foundation.Numerics.idl";
 import "Windows.Perception.idl";
 import "Windows.Storage.Streams.idl";
 import "Windows.System.RemoteSystems.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Efoundation2Enumerics_h__)")
-cpp_quote("#include <Windows.Foundation.Numerics.h>")
-cpp_quote("#endif // !defined(__windows2Efoundation2Enumerics_h__)")
-cpp_quote("#if !defined(__windows2Eperception_h__)")
-cpp_quote("#include <Windows.Perception.h>")
-cpp_quote("#endif // !defined(__windows2Eperception_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Esystem2Eremotesystems_h__)")
-cpp_quote("#include <Windows.System.RemoteSystems.h>")
-cpp_quote("#endif // !defined(__windows2Esystem2Eremotesystems_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -250,6 +230,8 @@ namespace Windows
                 interface Windows.Foundation.IAsyncOperation<Windows.Perception.Spatial.SpatialPerceptionAccessStatus>;
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Perception.Spatial.SpatialStageFrameOfReference*>;
+
+                interface Windows.Foundation.IReference<Windows.Perception.Spatial.SpatialBoundingBox>;
 
                 interface Windows.Foundation.IReference<Windows.Perception.Spatial.SpatialBoundingFrustum>;
 

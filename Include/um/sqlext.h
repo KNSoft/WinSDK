@@ -63,6 +63,8 @@ typedef SQLTCHAR SQLSTATE[SQL_SQLSTATE_SIZE+1];
 #define SQL_ATTR_ODBC_VERSION                   200
 #define SQL_ATTR_CONNECTION_POOLING             201
 #define SQL_ATTR_CP_MATCH                       202
+// For private driver manager
+#define SQL_ATTR_APPLICATION_KEY                203
 #endif  /* ODBCVER >= 0x0300 */
 
 #if (ODBCVER >= 0x0300)
@@ -677,6 +679,7 @@ typedef SQLTCHAR SQLSTATE[SQL_SQLSTATE_SIZE+1];
 #define SQL_API_SQLDESCRIBEPARAM    58
 #define SQL_API_SQLDRIVERCONNECT    41
 #define SQL_API_SQLDRIVERS          71
+#define SQL_API_SQLPRIVATEDRIVERS   79
 #define SQL_API_SQLEXTENDEDFETCH    59
 #define SQL_API_SQLFOREIGNKEYS      60
 #define SQL_API_SQLMORERESULTS      61

@@ -11,17 +11,6 @@ import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
 import "Windows.Networking.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Enetworking_h__)")
-cpp_quote("#include <Windows.Networking.h>")
-cpp_quote("#endif // !defined(__windows2Enetworking_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -86,6 +75,8 @@ namespace Windows
 
             interface IRemoteSystem2;
 
+            interface IRemoteSystem3;
+
             interface IRemoteSystemAddedEventArgs;
 
             interface IRemoteSystemAuthorizationKindFilter;
@@ -107,6 +98,8 @@ namespace Windows
             interface IRemoteSystemKindFilterFactory;
 
             interface IRemoteSystemKindStatics;
+
+            interface IRemoteSystemKindStatics2;
 
             interface IRemoteSystemRemovedEventArgs;
 
@@ -434,6 +427,15 @@ namespace Windows
                 HRESULT GetCapabilitySupportedAsync([in] HSTRING capabilityName, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.System.RemoteSystems.RemoteSystem)]
+            [uuid(72B4B495-B7C6-40BE-831B-73562F12FFA8)]
+            interface IRemoteSystem3 : IInspectable
+            {
+                [propget] HRESULT ManufacturerDisplayName([out] [retval] HSTRING* value);
+                [propget] HRESULT ModelDisplayName([out] [retval] HSTRING* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
             [exclusiveto(Windows.System.RemoteSystems.RemoteSystemAddedEventArgs)]
             [uuid(8F39560F-E534-4697-8836-7ABEA151516E)]
@@ -522,6 +524,16 @@ namespace Windows
                 [propget] HRESULT Holographic([out] [retval] HSTRING* value);
                 [propget] HRESULT Desktop([out] [retval] HSTRING* value);
                 [propget] HRESULT Xbox([out] [retval] HSTRING* value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.System.RemoteSystems.RemoteSystemKinds)]
+            [uuid(B9E3A3D0-0466-4749-91E8-65F9D19A96A5)]
+            interface IRemoteSystemKindStatics2 : IInspectable
+            {
+                [propget] HRESULT Iot([out] [retval] HSTRING* value);
+                [propget] HRESULT Tablet([out] [retval] HSTRING* value);
+                [propget] HRESULT Laptop([out] [retval] HSTRING* value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -851,6 +863,7 @@ namespace Windows
             {
                 [default] interface Windows.System.RemoteSystems.IRemoteSystem;
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.System.RemoteSystems.IRemoteSystem2;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.System.RemoteSystems.IRemoteSystem3;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -897,6 +910,7 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
             [static(Windows.System.RemoteSystems.IRemoteSystemKindStatics, Windows.Foundation.UniversalApiContract, 3.0)]
+            [static(Windows.System.RemoteSystems.IRemoteSystemKindStatics2, Windows.Foundation.UniversalApiContract, 5.0)]
             runtimeclass RemoteSystemKinds
             {
             }

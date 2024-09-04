@@ -13,23 +13,6 @@ import "Windows.Foundation.idl";
 import "Windows.Foundation.Numerics.idl";
 import "Windows.UI.Composition.idl";
 import "Windows.UI.Input.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Efoundation2Enumerics_h__)")
-cpp_quote("#include <Windows.Foundation.Numerics.h>")
-cpp_quote("#endif // !defined(__windows2Efoundation2Enumerics_h__)")
-cpp_quote("#if !defined(__windows2Eui2Ecomposition_h__)")
-cpp_quote("#include <Windows.UI.Composition.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Ecomposition_h__)")
-cpp_quote("#if !defined(__windows2Eui2Einput_h__)")
-cpp_quote("#include <Windows.UI.Input.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Einput_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -60,6 +43,10 @@ namespace Windows
             runtimeclass Compositor;
 
             runtimeclass ExpressionAnimation;
+
+            runtimeclass ScalarNaturalMotionAnimation;
+
+            runtimeclass Vector2NaturalMotionAnimation;
 
             runtimeclass Visual;
         }
@@ -101,6 +88,8 @@ namespace Windows
 
                 interface IInteractionTracker2;
 
+                interface IInteractionTracker3;
+
                 interface IInteractionTrackerCustomAnimationStateEnteredArgs;
 
                 interface IInteractionTrackerIdleStateEnteredArgs;
@@ -112,6 +101,10 @@ namespace Windows
                 interface IInteractionTrackerInertiaMotion;
 
                 interface IInteractionTrackerInertiaMotionStatics;
+
+                interface IInteractionTrackerInertiaNaturalMotion;
+
+                interface IInteractionTrackerInertiaNaturalMotionStatics;
 
                 interface IInteractionTrackerInertiaRestingValue;
 
@@ -128,6 +121,14 @@ namespace Windows
                 interface IInteractionTrackerStatics;
 
                 interface IInteractionTrackerValuesChangedArgs;
+
+                interface IInteractionTrackerVector2InertiaModifier;
+
+                interface IInteractionTrackerVector2InertiaModifierFactory;
+
+                interface IInteractionTrackerVector2InertiaNaturalMotion;
+
+                interface IInteractionTrackerVector2InertiaNaturalMotionStatics;
 
                 interface IVisualInteractionSource;
 
@@ -151,6 +152,8 @@ namespace Windows
 
                 runtimeclass InteractionTrackerInertiaMotion;
 
+                runtimeclass InteractionTrackerInertiaNaturalMotion;
+
                 runtimeclass InteractionTrackerInertiaRestingValue;
 
                 runtimeclass InteractionTrackerInertiaStateEnteredArgs;
@@ -160,6 +163,10 @@ namespace Windows
                 runtimeclass InteractionTrackerRequestIgnoredArgs;
 
                 runtimeclass InteractionTrackerValuesChangedArgs;
+
+                runtimeclass InteractionTrackerVector2InertiaModifier;
+
+                runtimeclass InteractionTrackerVector2InertiaNaturalMotion;
 
                 runtimeclass VisualInteractionSource;
             }
@@ -184,11 +191,15 @@ namespace Windows
 
                     interface Windows.Foundation.Collections.IIterable<Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier*>;
 
+                    interface Windows.Foundation.Collections.IIterable<Windows.UI.Composition.Interactions.InteractionTrackerVector2InertiaModifier*>;
+
                     interface Windows.Foundation.Collections.IIterator<Windows.UI.Composition.Interactions.CompositionConditionalValue*>;
 
                     interface Windows.Foundation.Collections.IIterator<Windows.UI.Composition.Interactions.ICompositionInteractionSource*>;
 
                     interface Windows.Foundation.Collections.IIterator<Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier*>;
+
+                    interface Windows.Foundation.Collections.IIterator<Windows.UI.Composition.Interactions.InteractionTrackerVector2InertiaModifier*>;
                 }
             }
         }
@@ -314,6 +325,14 @@ namespace Windows
                     HRESULT ConfigureCenterPointYInertiaModifiers([in] Windows.Foundation.Collections.IIterable<Windows.UI.Composition.Interactions.CompositionConditionalValue*>* conditionalValues);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Composition.Interactions.InteractionTracker)]
+                [uuid(E6C5D7A2-5C4B-42C6-84B7-F69441B18091)]
+                interface IInteractionTracker3 : IInspectable
+                {
+                    HRESULT ConfigureVector2PositionInertiaModifiers([in] Windows.Foundation.Collections.IIterable<Windows.UI.Composition.Interactions.InteractionTrackerVector2InertiaModifier*>* modifiers);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)]
                 [exclusiveto(Windows.UI.Composition.Interactions.InteractionTrackerCustomAnimationStateEnteredArgs)]
                 [uuid(8D1C8CF1-D7B0-434C-A5D2-2D7611864834)]
@@ -361,6 +380,25 @@ namespace Windows
                 interface IInteractionTrackerInertiaMotionStatics : IInspectable
                 {
                     HRESULT Create([in] Windows.UI.Composition.Compositor* compositor, [out] [retval] Windows.UI.Composition.Interactions.InteractionTrackerInertiaMotion** result);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Composition.Interactions.InteractionTrackerInertiaNaturalMotion)]
+                [uuid(70ACDAAE-27DC-48ED-A3C3-6D61C9A029D2)]
+                interface IInteractionTrackerInertiaNaturalMotion : IInspectable
+                {
+                    [propget] HRESULT Condition([out] [retval] Windows.UI.Composition.ExpressionAnimation** value);
+                    [propput] HRESULT Condition([in] Windows.UI.Composition.ExpressionAnimation* value);
+                    [propget] HRESULT NaturalMotion([out] [retval] Windows.UI.Composition.ScalarNaturalMotionAnimation** value);
+                    [propput] HRESULT NaturalMotion([in] Windows.UI.Composition.ScalarNaturalMotionAnimation* value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Composition.Interactions.InteractionTrackerInertiaNaturalMotion)]
+                [uuid(CFDA55B0-5E3E-4289-932D-EE5F50E74283)]
+                interface IInteractionTrackerInertiaNaturalMotionStatics : IInspectable
+                {
+                    HRESULT Create([in] Windows.UI.Composition.Compositor* compositor, [out] [retval] Windows.UI.Composition.Interactions.InteractionTrackerInertiaNaturalMotion** result);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -441,6 +479,39 @@ namespace Windows
                     [propget] HRESULT Position([out] [retval] Windows.Foundation.Numerics.Vector3* value);
                     [propget] HRESULT RequestId([out] [retval] INT32* value);
                     [propget] HRESULT Scale([out] [retval] FLOAT* value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Composition.Interactions.InteractionTrackerVector2InertiaModifier)]
+                [uuid(87E08AB0-3086-4853-A4B7-77882AD5D7E3)]
+                interface IInteractionTrackerVector2InertiaModifier : IInspectable
+                {
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Composition.Interactions.InteractionTrackerVector2InertiaModifier)]
+                [uuid(7401D6C4-6C6D-48DF-BC3E-171E227E7D7F)]
+                interface IInteractionTrackerVector2InertiaModifierFactory : IInspectable
+                {
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Composition.Interactions.InteractionTrackerVector2InertiaNaturalMotion)]
+                [uuid(5F17695C-162D-4C07-9400-C282B28276CA)]
+                interface IInteractionTrackerVector2InertiaNaturalMotion : IInspectable
+                {
+                    [propget] HRESULT Condition([out] [retval] Windows.UI.Composition.ExpressionAnimation** value);
+                    [propput] HRESULT Condition([in] Windows.UI.Composition.ExpressionAnimation* value);
+                    [propget] HRESULT NaturalMotion([out] [retval] Windows.UI.Composition.Vector2NaturalMotionAnimation** value);
+                    [propput] HRESULT NaturalMotion([in] Windows.UI.Composition.Vector2NaturalMotionAnimation* value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Composition.Interactions.InteractionTrackerVector2InertiaNaturalMotion)]
+                [uuid(82001A48-09C0-434F-8189-141C66DF362F)]
+                interface IInteractionTrackerVector2InertiaNaturalMotionStatics : IInspectable
+                {
+                    HRESULT Create([in] Windows.UI.Composition.Compositor* compositor, [out] [retval] Windows.UI.Composition.Interactions.InteractionTrackerVector2InertiaNaturalMotion** result);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -529,6 +600,7 @@ namespace Windows
                 {
                     [default] interface Windows.UI.Composition.Interactions.IInteractionTracker;
                     [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.UI.Composition.Interactions.IInteractionTracker2;
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Composition.Interactions.IInteractionTracker3;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -563,6 +635,15 @@ namespace Windows
                 runtimeclass InteractionTrackerInertiaMotion : Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier
                 {
                     [default] interface Windows.UI.Composition.Interactions.IInteractionTrackerInertiaMotion;
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [marshaling_behavior(agile)]
+                [static(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaNaturalMotionStatics, Windows.Foundation.UniversalApiContract, 5.0)]
+                [threading(both)]
+                runtimeclass InteractionTrackerInertiaNaturalMotion : Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier
+                {
+                    [default] interface Windows.UI.Composition.Interactions.IInteractionTrackerInertiaNaturalMotion;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -604,6 +685,24 @@ namespace Windows
                 runtimeclass InteractionTrackerValuesChangedArgs
                 {
                     [default] interface Windows.UI.Composition.Interactions.IInteractionTrackerValuesChangedArgs;
+                }
+
+                [composable(Windows.UI.Composition.Interactions.IInteractionTrackerVector2InertiaModifierFactory, protected, Windows.Foundation.UniversalApiContract, 5.0)]
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [marshaling_behavior(agile)]
+                [threading(both)]
+                runtimeclass InteractionTrackerVector2InertiaModifier : Windows.UI.Composition.CompositionObject
+                {
+                    [default] interface Windows.UI.Composition.Interactions.IInteractionTrackerVector2InertiaModifier;
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [marshaling_behavior(agile)]
+                [static(Windows.UI.Composition.Interactions.IInteractionTrackerVector2InertiaNaturalMotionStatics, Windows.Foundation.UniversalApiContract, 5.0)]
+                [threading(both)]
+                runtimeclass InteractionTrackerVector2InertiaNaturalMotion : Windows.UI.Composition.Interactions.InteractionTrackerVector2InertiaModifier
+                {
+                    [default] interface Windows.UI.Composition.Interactions.IInteractionTrackerVector2InertiaNaturalMotion;
                 }
 
                 [composable(Windows.UI.Composition.Interactions.IVisualInteractionSourceObjectFactory, protected, Windows.Foundation.UniversalApiContract, 4.0)]

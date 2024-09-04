@@ -28,7 +28,9 @@
 
 #ifndef _APISET_COMM_VER
 #ifdef _APISET_TARGET_VERSION
-#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN8
+#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS3
+#define _APISET_COMM_VER 0x0101
+#elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN8
 #define _APISET_COMM_VER 0x0100
 #endif
 #endif
@@ -41,9 +43,9 @@
 extern "C" {
 #endif
 
-#pragma region Desktop Family or OneCore Family
+#pragma region Desktop Family or OneCore or App Family
 
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_APP)
 
 WINBASEAPI
 BOOL
@@ -211,7 +213,22 @@ WaitCommEvent(
     );
 
 
-#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
+#if !defined(_CONTRACT_GEN) || (_APISET_COMM_VER >= 0x0101)
+
+WINBASEAPI
+HANDLE
+WINAPI
+OpenCommPort(
+    _In_ ULONG uPortNumber,
+    _In_ DWORD dwDesiredAccess,
+    _In_ DWORD dwFlagsAndAttributes
+    );
+
+
+#endif
+
+#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_APP)
 #pragma endregion
 
 #ifdef __cplusplus
@@ -219,3 +236,4 @@ WaitCommEvent(
 #endif
 
 #endif // _COMM_H_
+

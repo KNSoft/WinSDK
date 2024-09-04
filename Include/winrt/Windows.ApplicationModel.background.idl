@@ -17,7 +17,9 @@ import "Windows.Devices.Bluetooth.idl";
 import "Windows.Devices.Bluetooth.Advertisement.idl";
 import "Windows.Devices.Bluetooth.Background.idl";
 import "Windows.Devices.Bluetooth.GenericAttributeProfile.idl";
+import "Windows.Devices.Geolocation.idl";
 import "Windows.Devices.Sensors.idl";
+import "Windows.Devices.SmartCards.idl";
 import "Windows.Devices.Sms.idl";
 import "Windows.Media.Capture.idl";
 import "Windows.Networking.idl";
@@ -26,62 +28,6 @@ import "Windows.Storage.idl";
 import "Windows.Storage.Provider.idl";
 import "Windows.System.idl";
 import "Windows.UI.Notifications.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Eactivation_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Activation.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Eactivation_h__)")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Ecalls_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Calls.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Ecalls_h__)")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Ecalls2Ebackground_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Calls.Background.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Ecalls2Ebackground_h__)")
-cpp_quote("#if !defined(__windows2Edevices2Ebluetooth_h__)")
-cpp_quote("#include <Windows.Devices.Bluetooth.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Ebluetooth_h__)")
-cpp_quote("#if !defined(__windows2Edevices2Ebluetooth2Eadvertisement_h__)")
-cpp_quote("#include <Windows.Devices.Bluetooth.Advertisement.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Ebluetooth2Eadvertisement_h__)")
-cpp_quote("#if !defined(__windows2Edevices2Ebluetooth2Ebackground_h__)")
-cpp_quote("#include <Windows.Devices.Bluetooth.Background.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Ebluetooth2Ebackground_h__)")
-cpp_quote("#if !defined(__windows2Edevices2Ebluetooth2Egenericattributeprofile_h__)")
-cpp_quote("#include <Windows.Devices.Bluetooth.GenericAttributeProfile.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Ebluetooth2Egenericattributeprofile_h__)")
-cpp_quote("#if !defined(__windows2Edevices2Esensors_h__)")
-cpp_quote("#include <Windows.Devices.Sensors.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Esensors_h__)")
-cpp_quote("#if !defined(__windows2Edevices2Esms_h__)")
-cpp_quote("#include <Windows.Devices.Sms.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Esms_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Ecapture_h__)")
-cpp_quote("#include <Windows.Media.Capture.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Ecapture_h__)")
-cpp_quote("#if !defined(__windows2Enetworking_h__)")
-cpp_quote("#include <Windows.Networking.h>")
-cpp_quote("#endif // !defined(__windows2Enetworking_h__)")
-cpp_quote("#if !defined(__windows2Enetworking2Esockets_h__)")
-cpp_quote("#include <Windows.Networking.Sockets.h>")
-cpp_quote("#endif // !defined(__windows2Enetworking2Esockets_h__)")
-cpp_quote("#if !defined(__windows2Estorage_h__)")
-cpp_quote("#include <Windows.Storage.h>")
-cpp_quote("#endif // !defined(__windows2Estorage_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Eprovider_h__)")
-cpp_quote("#include <Windows.Storage.Provider.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Eprovider_h__)")
-cpp_quote("#if !defined(__windows2Esystem_h__)")
-cpp_quote("#include <Windows.System.h>")
-cpp_quote("#endif // !defined(__windows2Esystem_h__)")
-cpp_quote("#if !defined(__windows2Eui2Enotifications_h__)")
-cpp_quote("#include <Windows.UI.Notifications.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Enotifications_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -184,11 +130,33 @@ namespace Windows
 {
     namespace Devices
     {
+        namespace Geolocation
+        {
+            typedef enum VisitMonitoringScope VisitMonitoringScope;
+        }
+    }
+}
+namespace Windows
+{
+    namespace Devices
+    {
         namespace Sensors
         {
             typedef enum ActivityType ActivityType;
 
             interface ISensorDataThreshold;
+        }
+    }
+}
+namespace Windows
+{
+    namespace Devices
+    {
+        namespace SmartCards
+        {
+            apicontract SmartCardBackgroundTriggerContract;
+
+            typedef enum SmartCardTriggerType SmartCardTriggerType;
         }
     }
 }
@@ -430,6 +398,8 @@ namespace Windows
 
             interface IGattServiceProviderTriggerStatics;
 
+            interface IGeovisitTrigger;
+
             interface ILocationTrigger;
 
             interface ILocationTriggerFactory;
@@ -461,6 +431,10 @@ namespace Windows
             interface ISensorDataThresholdTrigger;
 
             interface ISensorDataThresholdTriggerFactory;
+
+            interface ISmartCardTrigger;
+
+            interface ISmartCardTriggerFactory;
 
             interface ISmsMessageReceivedTriggerFactory;
 
@@ -552,6 +526,8 @@ namespace Windows
 
             runtimeclass GattServiceProviderTriggerResult;
 
+            runtimeclass GeovisitTrigger;
+
             runtimeclass LocationTrigger;
 
             runtimeclass MaintenanceTrigger;
@@ -570,6 +546,8 @@ namespace Windows
 
             runtimeclass NetworkOperatorNotificationTrigger;
 
+            runtimeclass PaymentAppCanMakePaymentTrigger;
+
             runtimeclass PhoneTrigger;
 
             runtimeclass PushNotificationTrigger;
@@ -581,6 +559,8 @@ namespace Windows
             runtimeclass SecondaryAuthenticationFactorAuthenticationTrigger;
 
             runtimeclass SensorDataThresholdTrigger;
+
+            runtimeclass SmartCardTrigger;
 
             runtimeclass SmsMessageReceivedTrigger;
 
@@ -1368,6 +1348,17 @@ namespace Windows
                 [overload("CreateAsync")] HRESULT CreateAsync([in] HSTRING triggerId, [in] GUID serviceUuid, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.Background.GattServiceProviderTriggerResult*>** operation);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.ApplicationModel.Background.GeovisitTrigger)]
+            [uuid(4818EDAA-04E1-4127-9A4C-19351B8A80A4)]
+            interface IGeovisitTrigger : IInspectable
+                requires
+                    Windows.ApplicationModel.Background.IBackgroundTrigger
+            {
+                [propget] HRESULT MonitoringScope([out] [retval] Windows.Devices.Geolocation.VisitMonitoringScope* value);
+                [propput] HRESULT MonitoringScope([in] Windows.Devices.Geolocation.VisitMonitoringScope value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.ApplicationModel.Background.LocationTrigger)]
             [uuid(47666A1C-6877-481E-8026-FF7E14A811A0)]
@@ -1522,6 +1513,24 @@ namespace Windows
             interface ISensorDataThresholdTriggerFactory : IInspectable
             {
                 HRESULT Create([in] Windows.Devices.Sensors.ISensorDataThreshold* threshold, [out] [retval] Windows.ApplicationModel.Background.SensorDataThresholdTrigger** trigger);
+            }
+
+            [contract(Windows.Devices.SmartCards.SmartCardBackgroundTriggerContract, 1.0)]
+            [exclusiveto(Windows.ApplicationModel.Background.SmartCardTrigger)]
+            [uuid(F53BC5AC-84CA-4972-8CE9-E58F97B37A50)]
+            interface ISmartCardTrigger : IInspectable
+                requires
+                    Windows.ApplicationModel.Background.IBackgroundTrigger
+            {
+                [propget] HRESULT TriggerType([out] [retval] Windows.Devices.SmartCards.SmartCardTriggerType* triggerType);
+            }
+
+            [contract(Windows.Devices.SmartCards.SmartCardBackgroundTriggerContract, 1.0)]
+            [exclusiveto(Windows.ApplicationModel.Background.SmartCardTrigger)]
+            [uuid(63BF54C3-89C1-4E00-A9D3-97C629269DAD)]
+            interface ISmartCardTriggerFactory : IInspectable
+            {
+                HRESULT Create([in] Windows.Devices.SmartCards.SmartCardTriggerType triggerType, [out] [retval] Windows.ApplicationModel.Background.SmartCardTrigger** trigger);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1937,6 +1946,16 @@ namespace Windows
                 [default] interface Windows.ApplicationModel.Background.IGattServiceProviderTriggerResult;
             }
 
+            [activatable(Windows.Foundation.UniversalApiContract, 5.0)]
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass GeovisitTrigger
+            {
+                [default] interface Windows.ApplicationModel.Background.IGeovisitTrigger;
+                interface Windows.ApplicationModel.Background.IBackgroundTrigger;
+            }
+
             [activatable(Windows.ApplicationModel.Background.ILocationTriggerFactory, Windows.Foundation.UniversalApiContract, 1.0)]
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
@@ -2023,6 +2042,15 @@ namespace Windows
                 interface Windows.ApplicationModel.Background.IBackgroundTrigger;
             }
 
+            [activatable(Windows.Foundation.UniversalApiContract, 5.0)]
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass PaymentAppCanMakePaymentTrigger
+            {
+                [default] interface Windows.ApplicationModel.Background.IBackgroundTrigger;
+            }
+
             [activatable(Windows.ApplicationModel.Background.IPhoneTriggerFactory, Windows.ApplicationModel.Calls.CallsPhoneContract, 1.0)]
             [contract(Windows.ApplicationModel.Calls.Background.CallsBackgroundContract, 1.0)]
             [from_contract(Windows.ApplicationModel.Calls.CallsPhoneContract, range(1.0, 2.0))]
@@ -2080,6 +2108,16 @@ namespace Windows
             runtimeclass SensorDataThresholdTrigger
             {
                 [default] interface Windows.ApplicationModel.Background.ISensorDataThresholdTrigger;
+                interface Windows.ApplicationModel.Background.IBackgroundTrigger;
+            }
+
+            [activatable(Windows.ApplicationModel.Background.ISmartCardTriggerFactory, Windows.Devices.SmartCards.SmartCardBackgroundTriggerContract, 1.0)]
+            [contract(Windows.Devices.SmartCards.SmartCardBackgroundTriggerContract, 1.0)]
+            [marshaling_behavior(standard)]
+            [threading(mta)]
+            runtimeclass SmartCardTrigger
+            {
+                [default] interface Windows.ApplicationModel.Background.ISmartCardTrigger;
                 interface Windows.ApplicationModel.Background.IBackgroundTrigger;
             }
 

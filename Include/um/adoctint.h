@@ -3505,8 +3505,8 @@ EXTERN_C const IID IID_Keys;
             /* [in] */ VARIANT Item,
             /* [defaultvalue][in] */ KeyTypeEnum Type,
             /* [optional][in] */ VARIANT Column,
-            /* [defaultvalue][in] */ __RPC__in BSTR RelatedADOTable = L"",
-            /* [defaultvalue][in] */ __RPC__in BSTR RelatedADOColumn = L"") = 0;
+            /* [defaultvalue][in] */ __RPC__in BSTR RelatedADOTable = (BSTR)L"",
+            /* [defaultvalue][in] */ __RPC__in BSTR RelatedADOColumn = (BSTR)L"") = 0;
         
         virtual /* [helpcontext] */ HRESULT STDMETHODCALLTYPE Delete( 
             /* [in] */ VARIANT Item) = 0;
@@ -3650,7 +3650,7 @@ EXTERN_C const IID IID_Users;
         
         virtual /* [helpcontext] */ HRESULT STDMETHODCALLTYPE Append( 
             /* [in] */ VARIANT Item,
-            /* [defaultvalue][in] */ __RPC__in BSTR Password = L"") = 0;
+            /* [defaultvalue][in] */ __RPC__in BSTR Password = (BSTR)L"") = 0;
         
         virtual /* [helpcontext] */ HRESULT STDMETHODCALLTYPE Delete( 
             /* [in] */ VARIANT Item) = 0;

@@ -1711,8 +1711,6 @@ public:
     static ModuleT& GetModule() throw()
     {
         auto &moduleRef = Create();
-        // Module must be initialized with Create method first
-        __WRL_ASSERT__(moduleRef.releaseNotifier_ != nullptr);
         return moduleRef;
     }
 };
@@ -1948,7 +1946,7 @@ public:
         auto ref = ::CoReleaseServerProcess();
         if (ref == 0)
         {
-            releaseNotifier_->Invoke();
+            __super::releaseNotifier_->Invoke();
         }
 
         return ref;

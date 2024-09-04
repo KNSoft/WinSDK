@@ -29,7 +29,8 @@ typedef enum _SENSORSCXFUNCENUM {
     SensorsCxSensorDataReadyTableIndex = 4,
     SensorsCxDeviceGetSensorListTableIndex = 5,
     SensorsCxSensorHistoryRetrievalCompletedTableIndex = 6,
-    SensorscxFunctionTableNumEntries = 7,
+    SensorsCxStateChangeTableIndex = 7,
+    SensorscxFunctionTableNumEntries = 8,
 } SENSORSCXFUNCENUM;
 
 #endif // _SENSORSCXFUNCENUM_H_

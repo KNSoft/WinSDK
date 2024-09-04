@@ -102,7 +102,6 @@ enum MODEMPOWERSTATE
 
 // BUGBUG: These should have been defined in RilAPITypes.idl or given a different name, since only idertifiers in the IHVRIL
 // interface should have names beginning with the prefix RIL
-typedef enum RILSIDNIDPARAMMASK RILSIDNIDPARAMMASK;
 typedef struct RILSIDNID RILSIDNID;
 typedef struct RILSIDNID *LPRILSIDNID;
 typedef struct RILNAI NAI;
@@ -117,13 +116,14 @@ struct RILNAI {
     DWORD cbSize;
     DWORD dwParams;
     WCHAR wszNAI[MAXLENGTH_NAI + 1];
-};
+} ;
 
 enum RILSIDNIDPARAMMASK {
     RIL_PARAM_SIDNID_SID = 0x00000001,
     RIL_PARAM_SIDNID_NID = 0x00000002,
     RIL_PARAM_SIDNID_ALL = 0x00000003
 } ;
+typedef enum RILSIDNIDPARAMMASK RILSIDNIDPARAMMASK;
 
 struct RILSIDNID {
     DWORD cbSize;
@@ -149,13 +149,14 @@ struct UICCDATASTOREENTRY
     BYTE iccId[MAXLENGTH_ICCID];
 } ;
 
-typedef struct UICCDATASTOREINFO UICCDATASTOREINFO;
-
 struct UICCDATASTOREINFO
 {
     DWORD dwCount;
     struct UICCDATASTOREENTRY entries[MAXLENGTH_UICCDATASTORE];
 } ;
+
+typedef struct UICCDATASTOREINFO UICCDATASTOREINFO;
+
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //
 // Major Objects

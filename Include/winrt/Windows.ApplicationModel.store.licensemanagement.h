@@ -1,12 +1,9 @@
+/* Header file automatically generated from windows.applicationmodel.store.licensemanagement.idl */
+/*
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ */
 
-
-/* this ALWAYS GENERATED file contains the definitions for the interfaces */
-
-
- /* File created by MIDL compiler version 8.01.0622 */
-/* @@MIDL_FILE_HEADING(  ) */
-
-
+#pragma warning( disable: 4049 )  /* more than 64k source lines */
 
 /* verify that the <rpcndr.h> version is high enough to compile this file*/
 #ifndef __REQUIRED_RPCNDR_H_VERSION__
@@ -18,771 +15,1018 @@
 #define __REQUIRED_RPCSAL_H_VERSION__ 100
 #endif
 
-#include "rpc.h"
-#include "rpcndr.h"
+#include <rpc.h>
+#include <rpcndr.h>
 
 #ifndef __RPCNDR_H_VERSION__
 #error this stub requires an updated version of <rpcndr.h>
 #endif /* __RPCNDR_H_VERSION__ */
 
 #ifndef COM_NO_WINDOWS_H
-#include "windows.h"
-#include "ole2.h"
+#include <windows.h>
+#include <ole2.h>
 #endif /*COM_NO_WINDOWS_H*/
-
 #ifndef __windows2Eapplicationmodel2Estore2Elicensemanagement_h__
 #define __windows2Eapplicationmodel2Estore2Elicensemanagement_h__
+#ifndef __windows2Eapplicationmodel2Estore2Elicensemanagement_p_h__
+#define __windows2Eapplicationmodel2Estore2Elicensemanagement_p_h__
 
-#if defined(_MSC_VER) && (_MSC_VER >= 1020)
+
 #pragma once
+
+//
+// Deprecated attribute support
+//
+
+#pragma push_macro("DEPRECATED")
+#undef DEPRECATED
+
+#if !defined(DISABLE_WINRT_DEPRECATION)
+#if defined(__cplusplus)
+#if __cplusplus >= 201402
+#define DEPRECATED(x) [[deprecated(x)]]
+#elif defined(_MSC_VER)
+#if _MSC_VER >= 1900
+#define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
+#else
+#define DEPRECATED(x) __declspec(deprecated(x))
+#define DEPRECATEDENUMERATOR(x)
+#endif // _MSC_VER >= 1900
+#else // Not Standard C++ or MSVC, ignore the construct.
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif  // C++ deprecation
+#else // C - disable deprecation
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif
+#else // Deprecation is disabled
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif  /* DEPRECATED */
+
+// Disable Deprecation for this header, MIDL verifies that cross-type access is acceptable
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#else
+#pragma warning(push)
+#pragma warning(disable: 4996)
 #endif
 
-/* Forward Declarations */ 
-
-#ifndef ____FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_FWD_DEFINED__
-#define ____FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_FWD_DEFINED__
-typedef interface __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo;
-
-#endif 	/* ____FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_FWD_DEFINED__ */
-
-
-#ifndef ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_FWD_DEFINED__
-#define ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_FWD_DEFINED__
-typedef interface __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo;
-
-#endif 	/* ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_FWD_DEFINED__ */
+#pragma push_macro("MIDL_CONST_ID")
+#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
+#define MIDL_CONST_ID constexpr const
+#else
+#define MIDL_CONST_ID const __declspec(selectany)
+#endif
 
 
-#ifndef ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_FWD_DEFINED__
-#define ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_FWD_DEFINED__
-typedef interface __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo;
+//  API Contract Inclusion Definitions
+#if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
+#if !defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATEDEVENTSCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATEDEVENTSCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATEDEVENTSCONTRACT_VERSION)
 
-#endif 	/* ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_FWD_DEFINED__ */
+#if !defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATIONCAMERASETTINGSCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATIONCAMERASETTINGSCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATIONCAMERASETTINGSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_CONTACTACTIVATEDEVENTSCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_ACTIVATION_CONTACTACTIVATEDEVENTSCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_CONTACTACTIVATEDEVENTSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_WEBUISEARCHACTIVATEDEVENTSCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_ACTIVATION_WEBUISEARCHACTIVATEDEVENTSCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_WEBUISEARCHACTIVATEDEVENTSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_BACKGROUND_BACKGROUNDALARMAPPLICATIONCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_BACKGROUND_BACKGROUNDALARMAPPLICATIONCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_BACKGROUND_BACKGROUNDALARMAPPLICATIONCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
+
+#if !defined(WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION)
+#define WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
+
+#if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
+
+#if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
+#define WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
+#define WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
+
+#if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
+#define WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
+
+#if !defined(WINDOWS_GLOBALIZATION_GLOBALIZATIONJAPANESEPHONETICANALYZERCONTRACT_VERSION)
+#define WINDOWS_GLOBALIZATION_GLOBALIZATIONJAPANESEPHONETICANALYZERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_GLOBALIZATION_GLOBALIZATIONJAPANESEPHONETICANALYZERCONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_CAPTURE_APPBROADCASTCONTRACT_VERSION)
+#define WINDOWS_MEDIA_CAPTURE_APPBROADCASTCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_MEDIA_CAPTURE_APPBROADCASTCONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_CAPTURE_APPCAPTURECONTRACT_VERSION)
+#define WINDOWS_MEDIA_CAPTURE_APPCAPTURECONTRACT_VERSION 0x40000
+#endif // defined(WINDOWS_MEDIA_CAPTURE_APPCAPTURECONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_CAPTURE_APPCAPTUREMETADATACONTRACT_VERSION)
+#define WINDOWS_MEDIA_CAPTURE_APPCAPTUREMETADATACONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_CAPTURE_APPCAPTUREMETADATACONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_CAPTURE_CAMERACAPTUREUICONTRACT_VERSION)
+#define WINDOWS_MEDIA_CAPTURE_CAMERACAPTUREUICONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_CAPTURE_CAMERACAPTUREUICONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_CAPTURE_GAMEBARCONTRACT_VERSION)
+#define WINDOWS_MEDIA_CAPTURE_GAMEBARCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_CAPTURE_GAMEBARCONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_DEVICES_CALLCONTROLCONTRACT_VERSION)
+#define WINDOWS_MEDIA_DEVICES_CALLCONTROLCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_DEVICES_CALLCONTROLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_MEDIACONTROLCONTRACT_VERSION)
+#define WINDOWS_MEDIA_MEDIACONTROLCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_MEDIACONTROLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
+#define WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+
+#if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
+#define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
+
+#if !defined(WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION)
+#define WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION)
+
+#if !defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
+#define WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION 0x50000
+#endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
+
+#if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
+
+#if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
+
+#if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
+#define WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_UI_VIEWMANAGEMENT_VIEWMANAGEMENTVIEWSCALINGCONTRACT_VERSION)
+#define WINDOWS_UI_VIEWMANAGEMENT_VIEWMANAGEMENTVIEWSCALINGCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_UI_VIEWMANAGEMENT_VIEWMANAGEMENTVIEWSCALINGCONTRACT_VERSION)
+
+#if !defined(WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION)
+#define WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION)
+
+#endif // defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 
 
-#ifndef ____FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_FWD_DEFINED__
-#define ____FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_FWD_DEFINED__
-typedef interface __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo;
+// Header files for imported files
+#include "inspectable.h"
+#include "AsyncInfo.h"
+#include "EventToken.h"
+#include "windowscontracts.h"
+#include "Windows.Foundation.h"
+#include "Windows.Storage.Streams.h"
+// Importing Collections header
+#include <windows.foundation.collections.h>
 
-#endif 	/* ____FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_FWD_DEFINED__ */
-
-
-#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_FWD_DEFINED__
-#define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_FWD_DEFINED__
-typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult;
-
-#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_FWD_DEFINED__ */
-
-
-#ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_FWD_DEFINED__
-#define ____FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_FWD_DEFINED__
-typedef interface __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult;
-
-#endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_FWD_DEFINED__ */
-
-
+#if defined(__cplusplus) && !defined(CINTERFACE)
+/* Forward Declarations */
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
             namespace Store {
                 namespace LicenseManagement {
                     interface ILicenseManagerStatics;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* LicenseManagement */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseManagerStatics
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
             namespace Store {
                 namespace LicenseManagement {
                     interface ILicenseManagerStatics2;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* LicenseManagement */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseManagerStatics2
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
             namespace Store {
                 namespace LicenseManagement {
                     interface ILicenseSatisfactionInfo;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* LicenseManagement */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
             namespace Store {
                 namespace LicenseManagement {
                     interface ILicenseSatisfactionResult;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* LicenseManagement */} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionResult
 
-#endif /* __cplusplus */
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_FWD_DEFINED__
 
-#endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_FWD_DEFINED__ */
+// Parameterized interface forward declarations (C++)
 
-
-/* header files for imported files */
-#include "inspectable.h"
-#include "AsyncInfo.h"
-#include "EventToken.h"
-#include "Windows.Foundation.h"
-#include "Windows.Storage.Streams.h"
-
-#ifdef __cplusplus
-extern "C"{
-#endif 
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0000 */
-/* [local] */ 
-
-#ifdef __cplusplus
-} /*extern "C"*/ 
-#endif
-#include <windows.foundation.collections.h>
-#ifdef __cplusplus
-extern "C" {
-#endif
-#ifdef __cplusplus
+// Collection interface definitions
 namespace ABI {
-namespace Windows {
-namespace ApplicationModel {
-namespace Store {
-namespace LicenseManagement {
-class LicenseSatisfactionInfo;
-} /*LicenseManagement*/
-} /*Store*/
-} /*ApplicationModel*/
-} /*Windows*/
-}
-#endif
-
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace ApplicationModel {
-namespace Store {
-namespace LicenseManagement {
-interface ILicenseSatisfactionInfo;
-} /*LicenseManagement*/
-} /*Store*/
-} /*ApplicationModel*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace LicenseManagement {
+                    class LicenseSatisfactionInfo;
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* LicenseManagement */} /* ABI */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0000 */
-/* [local] */ 
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0000_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4659 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4659 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4659_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4659_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0001 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_USE
 #define DEF___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("69426b8f-88d8-5546-92ee-53f75307845b"))
-IKeyValuePair<HSTRING,ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionInfo*> : IKeyValuePair_impl<HSTRING,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionInfo*, ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IKeyValuePair`2<String, Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo>"; }
+IKeyValuePair<HSTRING,ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionInfo*> : IKeyValuePair_impl<HSTRING,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionInfo*, ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IKeyValuePair`2<String, Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IKeyValuePair<HSTRING,ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionInfo*> __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_t;
-#define ____FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_FWD_DEFINED__
 #define __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo ABI::Windows::Foundation::Collections::__FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo*>
+//#define __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_t ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0001 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0001_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4660 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4660 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4660_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4660_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0002 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_USE
 #define DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("168d4306-e80a-5e37-ae46-2ceecdd7fc9a"))
-IIterator<__FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo*> : IIterator_impl<__FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo*> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterator`1<Windows.Foundation.Collections.IKeyValuePair`2<String, Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo>>"; }
+IIterator<__FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo*> : IIterator_impl<__FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.Foundation.Collections.IKeyValuePair`2<String, Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo>>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterator<__FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo*> __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_t;
-#define ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_FWD_DEFINED__
 #define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo ABI::Windows::Foundation::Collections::__FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo*>*>
+//#define __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo*>*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0002 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0002_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4661 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4661 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4661_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4661_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0003 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_USE
 #define DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("ac935021-e04b-5226-8119-5b73d0b8be5b"))
-IIterable<__FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo*> : IIterable_impl<__FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo*> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterable`1<Windows.Foundation.Collections.IKeyValuePair`2<String, Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo>>"; }
+IIterable<__FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo*> : IIterable_impl<__FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.Foundation.Collections.IKeyValuePair`2<String, Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo>>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterable<__FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo*> __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_t;
-#define ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_FWD_DEFINED__
 #define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo*>*>
+//#define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING,ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo*>*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0003 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0003_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4662 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4662 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4662_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4662_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0004 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_USE
 #define DEF___FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("19df5e64-c2b2-5bfd-a259-f02c23574cd3"))
-IMapView<HSTRING,ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionInfo*> : IMapView_impl<HSTRING,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionInfo*, ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IMapView`2<String, Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo>"; }
+IMapView<HSTRING,ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionInfo*> : IMapView_impl<HSTRING,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionInfo*, ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IMapView`2<String, Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IMapView<HSTRING,ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionInfo*> __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_t;
-#define ____FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_FWD_DEFINED__
 #define __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo ABI::Windows::Foundation::Collections::IMapView<HSTRING,ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo*>
+//#define __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_t ABI::Windows::Foundation::Collections::IMapView<HSTRING,ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_USE */
-#ifdef __cplusplus
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
 namespace ABI {
-namespace Windows {
-namespace ApplicationModel {
-namespace Store {
-namespace LicenseManagement {
-class LicenseSatisfactionResult;
-} /*LicenseManagement*/
-} /*Store*/
-} /*ApplicationModel*/
-} /*Windows*/
-}
-#endif
-
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace ApplicationModel {
-namespace Store {
-namespace LicenseManagement {
-interface ILicenseSatisfactionResult;
-} /*LicenseManagement*/
-} /*Store*/
-} /*ApplicationModel*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace LicenseManagement {
+                    class LicenseSatisfactionResult;
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* LicenseManagement */} /* ABI */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0004 */
-/* [local] */ 
-
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0004_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4663 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4663 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4663_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4663_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0005 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_USE
 #define DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
 struct __declspec(uuid("936e8471-252f-5339-89c3-9428412086ca"))
-IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult*, ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionResult*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult>"; }
+IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult*> : IAsyncOperationCompletedHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult*, ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionResult*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult*> __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_t;
-#define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_FWD_DEFINED__
 #define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionResult*>
+//#define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionResult*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0005 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0005_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4664 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4664 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4664_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4664_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0006 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 #ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_USE
 #define DEF___FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
 struct __declspec(uuid("b8447bc9-a9f8-5867-8b30-cd34720edc31"))
-IAsyncOperation<ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult*, ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionResult*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperation`1<Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult>"; }
+IAsyncOperation<ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult*> : IAsyncOperation_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult*, ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionResult*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IAsyncOperation<ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult*> __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_t;
-#define ____FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_FWD_DEFINED__
 #define __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionResult*>
+//#define __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionResult*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0006 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0006_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4665 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4665 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4665_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4665_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0007 */
-/* [local] */ 
 
 #ifndef DEF___FIIterator_1_HSTRING_USE
 #define DEF___FIIterator_1_HSTRING_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236"))
-IIterator<HSTRING> : IIterator_impl<HSTRING> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterator`1<String>"; }
+IIterator<HSTRING> : IIterator_impl<HSTRING> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<String>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterator<HSTRING> __FIIterator_1_HSTRING_t;
-#define ____FIIterator_1_HSTRING_FWD_DEFINED__
 #define __FIIterator_1_HSTRING ABI::Windows::Foundation::Collections::__FIIterator_1_HSTRING_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_HSTRING ABI::Windows::Foundation::Collections::IIterator<HSTRING>
+//#define __FIIterator_1_HSTRING_t ABI::Windows::Foundation::Collections::IIterator<HSTRING>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterator_1_HSTRING_USE */
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0007 */
-/* [local] */ 
 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0007_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4666 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4666 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4666_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4666_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0008 */
-/* [local] */ 
 
 #ifndef DEF___FIIterable_1_HSTRING_USE
 #define DEF___FIIterable_1_HSTRING_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e"))
-IIterable<HSTRING> : IIterable_impl<HSTRING> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterable`1<String>"; }
+IIterable<HSTRING> : IIterable_impl<HSTRING> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<String>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterable<HSTRING> __FIIterable_1_HSTRING_t;
-#define ____FIIterable_1_HSTRING_FWD_DEFINED__
 #define __FIIterable_1_HSTRING ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_HSTRING ABI::Windows::Foundation::Collections::IIterable<HSTRING>
+//#define __FIIterable_1_HSTRING_t ABI::Windows::Foundation::Collections::IIterable<HSTRING>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterable_1_HSTRING_USE */
-#if defined(__cplusplus)
-}
-#endif // defined(__cplusplus)
-#include <Windows.Foundation.h>
-#if !defined(__windows2Estorage2Estreams_h__)
-#include <Windows.Storage.Streams.h>
-#endif // !defined(__windows2Estorage2Estreams_h__)
-#if defined(__cplusplus)
-extern "C" {
-#endif // defined(__cplusplus)
-
-
-#if !defined(__cplusplus)
-#if !defined(__cplusplus)
-
-typedef enum __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CLicenseRefreshOption __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CLicenseRefreshOption;
-
-
-#endif /* end if !defined(__cplusplus) */
-
-
-#endif
 
 
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0008 */
-/* [local] */ 
+
+#ifndef ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Foundation {
+            interface IAsyncAction;
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+#define __x_ABI_CWindows_CFoundation_CIAsyncAction ABI::Windows::Foundation::IAsyncAction
+
+#endif // ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
 
 
 
 
-#ifdef __cplusplus
 
-} /* end extern "C" */
+#ifndef ____x_ABI_CWindows_CStorage_CStreams_CIBuffer_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CStreams_CIBuffer_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Storage {
+            namespace Streams {
+                interface IBuffer;
+            } /* Windows */
+        } /* Storage */
+    } /* Streams */} /* ABI */
+#define __x_ABI_CWindows_CStorage_CStreams_CIBuffer ABI::Windows::Storage::Streams::IBuffer
+
+#endif // ____x_ABI_CWindows_CStorage_CStreams_CIBuffer_FWD_DEFINED__
+
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace ApplicationModel {
             namespace Store {
                 namespace LicenseManagement {
                     
-                    typedef enum LicenseRefreshOption LicenseRefreshOption;
+                    typedef enum LicenseRefreshOption : int LicenseRefreshOption;
                     
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* LicenseManagement */} /* ABI */
 
-extern "C" { 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Store.LicenseManagement.LicenseRefreshOption
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace LicenseManagement {
+                    /* [v1_enum, contract] */
+                    enum LicenseRefreshOption : int
+                    {
+                        LicenseRefreshOption_RunningLicenses = 0,
+                        LicenseRefreshOption_AllLicenses = 1,
+                    };
+                    
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* LicenseManagement */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.LicenseManagement.LicenseManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_LicenseManagement_ILicenseManagerStatics[] = L"Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace LicenseManagement {
+                    /* [object, uuid("B5AC3AE0-DA47-4F20-9A23-09182C9476FF"), exclusiveto, contract] */
+                    MIDL_INTERFACE("B5AC3AE0-DA47-4F20-9A23-09182C9476FF")
+                    ILicenseManagerStatics : IInspectable
+                    {
+                        virtual HRESULT STDMETHODCALLTYPE AddLicenseAsync(
+                            /* [in] */__RPC__in_opt ABI::Windows::Storage::Streams::IBuffer * license,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * action
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE GetSatisfactionInfosAsync(
+                            /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * contentIds,
+                            /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * keyIds,
+                            /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * * operation
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_ILicenseManagerStatics=_uuidof(ILicenseManagerStatics);
+                    
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* LicenseManagement */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.LicenseManagement.LicenseManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_LicenseManagement_ILicenseManagerStatics2[] = L"Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics2";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace LicenseManagement {
+                    /* [object, uuid("AB2EC47B-1F79-4480-B87E-2C499E601BA3"), exclusiveto, contract] */
+                    MIDL_INTERFACE("AB2EC47B-1F79-4480-B87E-2C499E601BA3")
+                    ILicenseManagerStatics2 : IInspectable
+                    {
+                        virtual HRESULT STDMETHODCALLTYPE RefreshLicensesAsync(
+                            /* [in] */ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseRefreshOption refreshOption,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * action
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_ILicenseManagerStatics2=_uuidof(ILicenseManagerStatics2);
+                    
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* LicenseManagement */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_LicenseManagement_ILicenseSatisfactionInfo[] = L"Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace LicenseManagement {
+                    /* [object, uuid("3CCBB08F-DB31-48D5-8384-FA17C81474E2"), exclusiveto, contract] */
+                    MIDL_INTERFACE("3CCBB08F-DB31-48D5-8384-FA17C81474E2")
+                    ILicenseSatisfactionInfo : IInspectable
+                    {
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SatisfiedByDevice(
+                            /* [retval, out] */__RPC__out boolean * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SatisfiedByOpenLicense(
+                            /* [retval, out] */__RPC__out boolean * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SatisfiedByTrial(
+                            /* [retval, out] */__RPC__out boolean * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SatisfiedByPass(
+                            /* [retval, out] */__RPC__out boolean * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SatisfiedByInstallMedia(
+                            /* [retval, out] */__RPC__out boolean * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SatisfiedBySignedInUser(
+                            /* [retval, out] */__RPC__out boolean * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_IsSatisfied(
+                            /* [retval, out] */__RPC__out boolean * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_ILicenseSatisfactionInfo=_uuidof(ILicenseSatisfactionInfo);
+                    
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* LicenseManagement */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_LicenseManagement_ILicenseSatisfactionResult[] = L"Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionResult";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Store {
+                namespace LicenseManagement {
+                    /* [object, uuid("3C674F73-3C87-4EE1-8201-F428359BD3AF"), exclusiveto, contract] */
+                    MIDL_INTERFACE("3C674F73-3C87-4EE1-8201-F428359BD3AF")
+                    ILicenseSatisfactionResult : IInspectable
+                    {
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_LicenseSatisfactionInfos(
+                            /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ExtendedError(
+                            /* [retval, out] */__RPC__out HRESULT * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_ILicenseSatisfactionResult=_uuidof(ILicenseSatisfactionResult);
+                    
+                } /* Windows */
+            } /* ApplicationModel */
+        } /* Store */
+    } /* LicenseManagement */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Store.LicenseManagement.LicenseManager
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics2 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Store_LicenseManagement_LicenseManager_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Store_LicenseManagement_LicenseManager_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Store_LicenseManagement_LicenseManager[] = L"Windows.ApplicationModel.Store.LicenseManagement.LicenseManager";
 #endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Store_LicenseManagement_LicenseSatisfactionInfo_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Store_LicenseManagement_LicenseSatisfactionInfo_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Store_LicenseManagement_LicenseSatisfactionInfo[] = L"Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+#ifndef RUNTIMECLASS_Windows_ApplicationModel_Store_LicenseManagement_LicenseSatisfactionResult_DEFINED
+#define RUNTIMECLASS_Windows_ApplicationModel_Store_LicenseManagement_LicenseSatisfactionResult_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Store_LicenseManagement_LicenseSatisfactionResult[] = L"Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0008_v0_0_s_ifspec;
+#else // !defined(__cplusplus)
+/* Forward Declarations */
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4667 */
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2;
 
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo;
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4667 */
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult;
 
+#endif // ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_FWD_DEFINED__
 
+// Parameterized interface forward declarations (C)
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4667_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4667_v0_0_s_ifspec;
+// Collection interface definitions
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0009 */
-/* [local] */ 
-
-#ifndef DEF___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo
-#define DEF___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0009 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0009_v0_0_s_ifspec;
-
-#ifndef ____FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if !defined(____FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_INTERFACE_DEFINED__)
 #define ____FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_INTERFACE_DEFINED__
 
-/* interface __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo */
-/* [unique][uuid][object] */ 
+typedef interface __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo;
 
-
-
-/* interface __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("69426b8f-88d8-5546-92ee-53f75307845b")
-    __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo : public IInspectable
-    {
-    public:
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Key( 
-            /* [retval][out] */ __RPC__deref_out_opt HSTRING *key) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Value( 
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo **value) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
 
-    typedef struct __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
             /* [out] */ __RPC__out ULONG *iidCount,
             /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Key )( 
-            __RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [retval][out] */ __RPC__deref_out_opt HSTRING *key);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )( 
-            __RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo **value);
-        
-        END_INTERFACE
-    } __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl;
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
 
-    interface __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo
-    {
-        CONST_VTBL struct __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl *lpVtbl;
-    };
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Key )(__RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This, /* [retval][out] */ __RPC__out HSTRING *key);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Value )(__RPC__in __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This, /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * *value);
+    END_INTERFACE
+} __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl;
 
-    
+interface __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo
+{
+    CONST_VTBL struct __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
-
-
 #define __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
@@ -808,157 +1052,58 @@ EXTERN_C const IID IID___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CS
 
 #define __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_get_Value(This,value)	\
     ( (This)->lpVtbl -> get_Value(This,value) ) 
-
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
-
-
-#endif 	/* ____FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0010 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0010 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0010_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4668 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4668 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4668_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4668_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0011 */
-/* [local] */ 
-
-#ifndef DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo
-#define DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0011 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0011_v0_0_s_ifspec;
-
-#ifndef ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if !defined(____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_INTERFACE_DEFINED__)
 #define ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_INTERFACE_DEFINED__
 
-/* interface __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo */
-/* [unique][uuid][object] */ 
+typedef interface __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo;
 
-
-
-/* interface __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("168d4306-e80a-5e37-ae46-2ceecdd7fc9a")
-    __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo : public IInspectable
-    {
-    public:
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
-            /* [retval][out] */ __RPC__deref_out_opt __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo **current) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
-            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
-            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
-            __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [retval][out] */ __RPC__deref_out_opt __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo **current);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
-            __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [retval][out] */ __RPC__out boolean *hasCurrent);
-        
-        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
-            __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [retval][out] */ __RPC__out boolean *hasCurrent);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual);
-        
-        END_INTERFACE
-    } __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl;
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
 
-    interface __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo
-    {
-        CONST_VTBL struct __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl *lpVtbl;
-    };
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
 
-    
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This, /* [retval][out] */ __RPC__out __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl;
+
+interface __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo
+{
+    CONST_VTBL struct __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl *lpVtbl;
+};
+
+
 
 #ifdef COBJMACROS
 
@@ -998,131 +1143,53 @@ EXTERN_C const IID IID___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CAppli
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
-
-
-#endif 	/* ____FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0012 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0012 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0012_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4669 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4669 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4669_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4669_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0013 */
-/* [local] */ 
-
-#ifndef DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo
-#define DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0013 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0013_v0_0_s_ifspec;
-
-#ifndef ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if !defined(____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_INTERFACE_DEFINED__)
 #define ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_INTERFACE_DEFINED__
 
-/* interface __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo */
-/* [unique][uuid][object] */ 
+typedef interface __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo;
 
-
-
-/* interface __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("ac935021-e04b-5226-8119-5b73d0b8be5b")
-    __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE First( 
-            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo **first) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef  struct __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *First )( 
-            __RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo **first);
-        
-        END_INTERFACE
-    } __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl;
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
 
-    interface __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo
-    {
-        CONST_VTBL struct __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl *lpVtbl;
-    };
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This);
 
-    
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo **first);
+
+    END_INTERFACE
+} __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl;
+
+interface __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo
+{
+    CONST_VTBL struct __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
-
 
 #define __FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
@@ -1150,1231 +1217,932 @@ EXTERN_C const IID IID___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CAppli
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
-
-
-#endif 	/* ____FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0014 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0014 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0014_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4670 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4670 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4670_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4670_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0015 */
-/* [local] */ 
-
-#ifndef DEF___FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo
-#define DEF___FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0015 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0015_v0_0_s_ifspec;
-
-#ifndef ____FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if !defined(____FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_INTERFACE_DEFINED__)
 #define ____FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_INTERFACE_DEFINED__
 
-/* interface __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo */
-/* [unique][uuid][object] */ 
+typedef interface __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo;
 
-
-
-/* interface __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("19df5e64-c2b2-5bfd-a259-f02c23574cd3")
-    __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE Lookup( 
-            /* [in] */ __RPC__in HSTRING key,
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo **value) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
-            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE HasKey( 
-            /* [in] */ __RPC__in HSTRING key,
-            /* [retval][out] */ __RPC__out boolean *found) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Split( 
-            /* [out] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo **firstPartition,
-            /* [out] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo **secondPartition) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
 
-    typedef struct __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *Lookup )( 
-            __RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [in] */ __RPC__in HSTRING key,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo **value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
-            __RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [retval][out] */ __RPC__out unsigned int *size);
-        
-        HRESULT ( STDMETHODCALLTYPE *HasKey )( 
-            __RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [in] */ __RPC__in HSTRING key,
-            /* [retval][out] */ __RPC__out boolean *found);
-        
-        HRESULT ( STDMETHODCALLTYPE *Split )( 
-            __RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
-            /* [out] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo **firstPartition,
-            /* [out] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo **secondPartition);
-        
-        END_INTERFACE
-    } __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl;
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This);
 
-    interface __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo
-    {
-        CONST_VTBL struct __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl *lpVtbl;
-    };
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This);
 
-    
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,/* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *Lookup )(__RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,
+        /* [in] */ __RPC__in HSTRING key,
+        /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * *value);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )(__RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This, /* [retval][out] */ __RPC__out unsigned int *size);
+    HRESULT ( STDMETHODCALLTYPE *HasKey )(__RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This, /* [in] */ __RPC__in HSTRING key, /* [retval][out] */ __RPC__out boolean *found);
+    HRESULT ( STDMETHODCALLTYPE *Split )(__RPC__in __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * This,/* [out] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo **firstPartition,
+        /* [out] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo **secondPartition);
+    END_INTERFACE
+} __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl;
+
+interface __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo
+{
+    CONST_VTBL struct __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfoVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
-
-
 #define __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
 #define __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_AddRef(This)	\
     ( (This)->lpVtbl -> AddRef(This) ) 
-
 #define __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_Release(This)	\
     ( (This)->lpVtbl -> Release(This) ) 
 
-
 #define __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_GetIids(This,iidCount,iids)	\
     ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
 #define __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_GetRuntimeClassName(This,className)	\
     ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
 #define __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_GetTrustLevel(This,trustLevel)	\
     ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
 
-
 #define __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_Lookup(This,key,value)	\
     ( (This)->lpVtbl -> Lookup(This,key,value) ) 
-
 #define __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_get_Size(This,size)	\
     ( (This)->lpVtbl -> get_Size(This,size) ) 
-
 #define __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_HasKey(This,key,found)	\
     ( (This)->lpVtbl -> HasKey(This,key,found) ) 
-
 #define __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_Split(This,firstPartition,secondPartition)	\
     ( (This)->lpVtbl -> Split(This,firstPartition,secondPartition) ) 
-
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
-
-
-#endif 	/* ____FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0016 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0016 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0016_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4671 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4671 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4671_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4671_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0017 */
-/* [local] */ 
-
-#ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult
-#define DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0017 */
-/* [local] */ 
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0017_v0_0_s_ifspec;
-
-#ifndef ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if !defined(____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_INTERFACE_DEFINED__)
 #define ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_INTERFACE_DEFINED__
 
-/* interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult */
-/* [unique][uuid][object] */ 
+typedef interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult;
 
-
-
-/* interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("936e8471-252f-5339-89c3-9428412086ca")
-    __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult : public IUnknown
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE Invoke( 
-            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult *asyncInfo,
-            /* [in] */ AsyncStatus status) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult;
 
-    typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResultVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            __RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This,
-            /* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult *asyncInfo,
-            /* [in] */ AsyncStatus status);
-        
-        END_INTERFACE
-    } __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResultVtbl;
+typedef struct __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResultVtbl
+{
+    BEGIN_INTERFACE
 
-    interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult
-    {
-        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResultVtbl *lpVtbl;
-    };
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This);
 
-    
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResultVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResultVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
-
-
 #define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
 #define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_AddRef(This)	\
     ( (This)->lpVtbl -> AddRef(This) ) 
-
 #define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_Release(This)	\
     ( (This)->lpVtbl -> Release(This) ) 
 
-
 #define __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_Invoke(This,asyncInfo,status)	\
     ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
-
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
-
-
-#endif 	/* ____FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0018 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0018 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0018_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4672 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4672 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4672_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement2Eidl_0000_4672_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0019 */
-/* [local] */ 
-
-#ifndef DEF___FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult
-#define DEF___FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0019 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0019_v0_0_s_ifspec;
-
-#ifndef ____FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if !defined(____FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_INTERFACE_DEFINED__)
 #define ____FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_INTERFACE_DEFINED__
 
-/* interface __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult */
-/* [unique][uuid][object] */ 
+typedef interface __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult;
 
-
-
-/* interface __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("b8447bc9-a9f8-5867-8b30-cd34720edc31")
-    __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult : public IInspectable
-    {
-    public:
-        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
-            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult *handler) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
-            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult **handler) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetResults( 
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionResult **results) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This);
 
-    typedef struct __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResultVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
-            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This,
-            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult *handler);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
-            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This,
-            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult **handler);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
-            __RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult **results);
-        
-        END_INTERFACE
-    } __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResultVtbl;
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
 
-    interface __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult
-    {
-        CONST_VTBL struct __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResultVtbl *lpVtbl;
-    };
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResultVtbl;
 
-    
+interface __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult
+{
+    CONST_VTBL struct __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResultVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
-
-
 #define __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
 #define __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_AddRef(This)	\
     ( (This)->lpVtbl -> AddRef(This) ) 
-
 #define __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_Release(This)	\
     ( (This)->lpVtbl -> Release(This) ) 
 
-
 #define __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_GetIids(This,iidCount,iids)	\
     ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
 #define __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_GetRuntimeClassName(This,className)	\
     ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
 #define __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_GetTrustLevel(This,trustLevel)	\
     ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
 
-
 #define __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_put_Completed(This,handler)	\
     ( (This)->lpVtbl -> put_Completed(This,handler) ) 
-
 #define __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_get_Completed(This,handler)	\
     ( (This)->lpVtbl -> get_Completed(This,handler) ) 
-
 #define __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_GetResults(This,results)	\
     ( (This)->lpVtbl -> GetResults(This,results) ) 
+#endif /* COBJMACROS */
+
+
+#endif // ____FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+#if !defined(____FIIterator_1_HSTRING_INTERFACE_DEFINED__)
+#define ____FIIterator_1_HSTRING_INTERFACE_DEFINED__
+
+typedef interface __FIIterator_1_HSTRING __FIIterator_1_HSTRING;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterator_1_HSTRING;
+
+typedef struct __FIIterator_1_HSTRINGVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_HSTRING * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_HSTRING * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_HSTRING * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_HSTRING * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_HSTRING * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_HSTRING * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_HSTRING * This, /* [retval][out] */ __RPC__out HSTRING *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_HSTRING * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_HSTRING * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_HSTRING * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) HSTRING *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_HSTRINGVtbl;
+
+interface __FIIterator_1_HSTRING
+{
+    CONST_VTBL struct __FIIterator_1_HSTRINGVtbl *lpVtbl;
+};
+
+
+
+#ifdef COBJMACROS
+
+
+#define __FIIterator_1_HSTRING_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterator_1_HSTRING_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterator_1_HSTRING_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterator_1_HSTRING_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterator_1_HSTRING_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterator_1_HSTRING_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterator_1_HSTRING_get_Current(This,current)	\
+    ( (This)->lpVtbl -> get_Current(This,current) ) 
+
+#define __FIIterator_1_HSTRING_get_HasCurrent(This,hasCurrent)	\
+    ( (This)->lpVtbl -> get_HasCurrent(This,hasCurrent) ) 
+
+#define __FIIterator_1_HSTRING_MoveNext(This,hasCurrent)	\
+    ( (This)->lpVtbl -> MoveNext(This,hasCurrent) ) 
+
+#define __FIIterator_1_HSTRING_GetMany(This,capacity,items,actual)	\
+    ( (This)->lpVtbl -> GetMany(This,capacity,items,actual) ) 
 
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIIterator_1_HSTRING_INTERFACE_DEFINED__
+
+
+#if !defined(____FIIterable_1_HSTRING_INTERFACE_DEFINED__)
+#define ____FIIterable_1_HSTRING_INTERFACE_DEFINED__
+
+typedef interface __FIIterable_1_HSTRING __FIIterable_1_HSTRING;
+
+//  Declare the parameterized interface IID.
+EXTERN_C const IID IID___FIIterable_1_HSTRING;
+
+typedef  struct __FIIterable_1_HSTRINGVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_HSTRING * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_HSTRING * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_HSTRING * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_HSTRING * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_HSTRING * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_HSTRING * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_HSTRING * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_HSTRING **first);
+
+    END_INTERFACE
+} __FIIterable_1_HSTRINGVtbl;
+
+interface __FIIterable_1_HSTRING
+{
+    CONST_VTBL struct __FIIterable_1_HSTRINGVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __FIIterable_1_HSTRING_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define __FIIterable_1_HSTRING_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define __FIIterable_1_HSTRING_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define __FIIterable_1_HSTRING_GetIids(This,iidCount,iids)	\
+    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+
+#define __FIIterable_1_HSTRING_GetRuntimeClassName(This,className)	\
+    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+
+#define __FIIterable_1_HSTRING_GetTrustLevel(This,trustLevel)	\
+    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+
+
+#define __FIIterable_1_HSTRING_First(This,first)	\
+    ( (This)->lpVtbl -> First(This,first) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif // ____FIIterable_1_HSTRING_INTERFACE_DEFINED__
+
+
+
+#ifndef ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CFoundation_CIAsyncAction __x_ABI_CWindows_CFoundation_CIAsyncAction;
+
+#endif // ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
 
 
 
 
-#endif 	/* ____FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult_INTERFACE_DEFINED__ */
+
+#ifndef ____x_ABI_CWindows_CStorage_CStreams_CIBuffer_FWD_DEFINED__
+#define ____x_ABI_CWindows_CStorage_CStreams_CIBuffer_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CStorage_CStreams_CIBuffer __x_ABI_CWindows_CStorage_CStreams_CIBuffer;
+
+#endif // ____x_ABI_CWindows_CStorage_CStreams_CIBuffer_FWD_DEFINED__
 
 
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0020 */
-/* [local] */ 
 
-#endif /* pinterface */
-#endif /* DEF___FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult */
-#if !defined(__cplusplus)
 
-#if !defined(__cplusplus)
-/* [v1_enum] */ 
+
+
+typedef enum __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CLicenseRefreshOption __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CLicenseRefreshOption;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ *
+ * Struct Windows.ApplicationModel.Store.LicenseManagement.LicenseRefreshOption
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+/* [v1_enum, contract] */
 enum __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CLicenseRefreshOption
-    {
-        LicenseRefreshOption_RunningLicenses	= 0,
-        LicenseRefreshOption_AllLicenses	= 1
-    } ;
-#endif /* end if !defined(__cplusplus) */
+{
+    LicenseRefreshOption_RunningLicenses = 0,
+    LicenseRefreshOption_AllLicenses = 1,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
-#endif
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.LicenseManagement.LicenseManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_LicenseManagement_ILicenseManagerStatics[] = L"Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics";
-#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0020 */
-/* [local] */ 
-
-#ifdef __cplusplus
-} /* end extern "C" */
-namespace ABI {
-    namespace Windows {
-        namespace ApplicationModel {
-            namespace Store {
-                namespace LicenseManagement {
-                    
-                    /* [v1_enum] */ 
-                    enum LicenseRefreshOption
-                        {
-                            LicenseRefreshOption_RunningLicenses	= 0,
-                            LicenseRefreshOption_AllLicenses	= 1
-                        } ;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-extern "C" { 
-#endif
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0020_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_LicenseManagement_ILicenseManagerStatics[] = L"Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics";
+/* [object, uuid("B5AC3AE0-DA47-4F20-9A23-09182C9476FF"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-/* interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics */
-/* [uuid][object] */ 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *AddLicenseAsync )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIBuffer * license,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * action
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetSatisfactionInfosAsync )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics * This,
+        /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * contentIds,
+        /* [in] */__RPC__in_opt __FIIterable_1_HSTRING * keyIds,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult * * operation
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStaticsVtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStaticsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_AddLicenseAsync(This,license,action) \
+    ( (This)->lpVtbl->AddLicenseAsync(This,license,action) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_GetSatisfactionInfosAsync(This,contentIds,keyIds,operation) \
+    ( (This)->lpVtbl->GetSatisfactionInfosAsync(This,contentIds,keyIds,operation) )
 
 
-
-/* interface ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseManagerStatics */
-/* [uuid][object] */ 
+#endif /* COBJMACROS */
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace ApplicationModel {
-                namespace Store {
-                    namespace LicenseManagement {
-                        
-                        MIDL_INTERFACE("B5AC3AE0-DA47-4F20-9A23-09182C9476FF")
-                        ILicenseManagerStatics : public IInspectable
-                        {
-                        public:
-                            virtual HRESULT STDMETHODCALLTYPE AddLicenseAsync( 
-                                /* [in] */ __RPC__in_opt ABI::Windows::Storage::Streams::IBuffer *license,
-                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction **action) = 0;
-                            
-                            virtual HRESULT STDMETHODCALLTYPE GetSatisfactionInfosAsync( 
-                                /* [in] */ __RPC__in_opt __FIIterable_1_HSTRING *contentIds,
-                                /* [in] */ __RPC__in_opt __FIIterable_1_HSTRING *keyIds,
-                                /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult **operation) = 0;
-                            
-                        };
 
-                        extern const __declspec(selectany) IID & IID_ILicenseManagerStatics = __uuidof(ILicenseManagerStatics);
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.LicenseManagement.LicenseManager
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_LicenseManagement_ILicenseManagerStatics2[] = L"Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics2";
+/* [object, uuid("AB2EC47B-1F79-4480-B87E-2C499E601BA3"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *RefreshLicensesAsync )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 * This,
+        /* [in] */__x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CLicenseRefreshOption refreshOption,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * action
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2Vtbl;
 
-    typedef struct __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStaticsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *AddLicenseAsync )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CStorage_CStreams_CIBuffer *license,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction **action);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetSatisfactionInfosAsync )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics * This,
-            /* [in] */ __RPC__in_opt __FIIterable_1_HSTRING *contentIds,
-            /* [in] */ __RPC__in_opt __FIIterable_1_HSTRING *keyIds,
-            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionResult **operation);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStaticsVtbl;
-
-    interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStaticsVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2Vtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_RefreshLicensesAsync(This,refreshOption,action) \
+    ( (This)->lpVtbl->RefreshLicensesAsync(This,refreshOption,action) )
 
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_AddLicenseAsync(This,license,action)	\
-    ( (This)->lpVtbl -> AddLicenseAsync(This,license,action) ) 
-
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_GetSatisfactionInfosAsync(This,contentIds,keyIds,operation)	\
-    ( (This)->lpVtbl -> GetSatisfactionInfosAsync(This,contentIds,keyIds,operation) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0021 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_LicenseManagement_ILicenseManagerStatics2[] = L"Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics2";
-#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0021 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0021_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseManagerStatics2 */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace ApplicationModel {
-                namespace Store {
-                    namespace LicenseManagement {
-                        
-                        MIDL_INTERFACE("AB2EC47B-1F79-4480-B87E-2C499E601BA3")
-                        ILicenseManagerStatics2 : public IInspectable
-                        {
-                        public:
-                            virtual HRESULT STDMETHODCALLTYPE RefreshLicensesAsync( 
-                                /* [in] */ ABI::Windows::ApplicationModel::Store::LicenseManagement::LicenseRefreshOption refreshOption,
-                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction **action) = 0;
-                            
-                        };
 
-                        extern const __declspec(selectany) IID & IID_ILicenseManagerStatics2 = __uuidof(ILicenseManagerStatics2);
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_LicenseManagement_ILicenseSatisfactionInfo[] = L"Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo";
+/* [object, uuid("3CCBB08F-DB31-48D5-8384-FA17C81474E2"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfoVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SatisfiedByDevice )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SatisfiedByOpenLicense )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SatisfiedByTrial )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SatisfiedByPass )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SatisfiedByInstallMedia )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SatisfiedBySignedInUser )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_IsSatisfied )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfoVtbl;
 
-    typedef struct __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2Vtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *RefreshLicensesAsync )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2 * This,
-            /* [in] */ __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CLicenseRefreshOption refreshOption,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction **action);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2Vtbl;
-
-    interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2Vtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfoVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_get_SatisfiedByDevice(This,value) \
+    ( (This)->lpVtbl->get_SatisfiedByDevice(This,value) )
 
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_get_SatisfiedByOpenLicense(This,value) \
+    ( (This)->lpVtbl->get_SatisfiedByOpenLicense(This,value) )
 
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_get_SatisfiedByTrial(This,value) \
+    ( (This)->lpVtbl->get_SatisfiedByTrial(This,value) )
 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_get_SatisfiedByPass(This,value) \
+    ( (This)->lpVtbl->get_SatisfiedByPass(This,value) )
 
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_RefreshLicensesAsync(This,refreshOption,action)	\
-    ( (This)->lpVtbl -> RefreshLicensesAsync(This,refreshOption,action) ) 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_get_SatisfiedByInstallMedia(This,value) \
+    ( (This)->lpVtbl->get_SatisfiedByInstallMedia(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_get_SatisfiedBySignedInUser(This,value) \
+    ( (This)->lpVtbl->get_SatisfiedBySignedInUser(This,value) )
+
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_get_IsSatisfied(This,value) \
+    ( (This)->lpVtbl->get_IsSatisfied(This,value) )
+
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseManagerStatics2_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0022 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_LicenseManagement_ILicenseSatisfactionInfo[] = L"Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo";
-#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0022 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0022_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace ApplicationModel {
-                namespace Store {
-                    namespace LicenseManagement {
-                        
-                        MIDL_INTERFACE("3CCBB08F-DB31-48D5-8384-FA17C81474E2")
-                        ILicenseSatisfactionInfo : public IInspectable
-                        {
-                        public:
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SatisfiedByDevice( 
-                                /* [out][retval] */ __RPC__out boolean *value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SatisfiedByOpenLicense( 
-                                /* [out][retval] */ __RPC__out boolean *value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SatisfiedByTrial( 
-                                /* [out][retval] */ __RPC__out boolean *value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SatisfiedByPass( 
-                                /* [out][retval] */ __RPC__out boolean *value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SatisfiedByInstallMedia( 
-                                /* [out][retval] */ __RPC__out boolean *value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SatisfiedBySignedInUser( 
-                                /* [out][retval] */ __RPC__out boolean *value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_IsSatisfied( 
-                                /* [out][retval] */ __RPC__out boolean *value) = 0;
-                            
-                        };
 
-                        extern const __declspec(selectany) IID & IID_ILicenseSatisfactionInfo = __uuidof(ILicenseSatisfactionInfo);
+/*
+ *
+ * Interface Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_LicenseManagement_ILicenseSatisfactionResult[] = L"Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionResult";
+/* [object, uuid("3C674F73-3C87-4EE1-8201-F428359BD3AF"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResultVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_LicenseSatisfactionInfos )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ExtendedError )(
+        __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult * This,
+        /* [retval, out] */__RPC__out HRESULT * value
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResultVtbl;
 
-    typedef struct __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfoVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SatisfiedByDevice )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
-            /* [out][retval] */ __RPC__out boolean *value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SatisfiedByOpenLicense )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
-            /* [out][retval] */ __RPC__out boolean *value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SatisfiedByTrial )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
-            /* [out][retval] */ __RPC__out boolean *value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SatisfiedByPass )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
-            /* [out][retval] */ __RPC__out boolean *value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SatisfiedByInstallMedia )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
-            /* [out][retval] */ __RPC__out boolean *value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SatisfiedBySignedInUser )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
-            /* [out][retval] */ __RPC__out boolean *value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsSatisfied )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo * This,
-            /* [out][retval] */ __RPC__out boolean *value);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfoVtbl;
-
-    interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfoVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResultVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_get_LicenseSatisfactionInfos(This,value) \
+    ( (This)->lpVtbl->get_LicenseSatisfactionInfos(This,value) )
 
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_get_ExtendedError(This,value) \
+    ( (This)->lpVtbl->get_ExtendedError(This,value) )
 
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_get_SatisfiedByDevice(This,value)	\
-    ( (This)->lpVtbl -> get_SatisfiedByDevice(This,value) ) 
-
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_get_SatisfiedByOpenLicense(This,value)	\
-    ( (This)->lpVtbl -> get_SatisfiedByOpenLicense(This,value) ) 
-
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_get_SatisfiedByTrial(This,value)	\
-    ( (This)->lpVtbl -> get_SatisfiedByTrial(This,value) ) 
-
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_get_SatisfiedByPass(This,value)	\
-    ( (This)->lpVtbl -> get_SatisfiedByPass(This,value) ) 
-
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_get_SatisfiedByInstallMedia(This,value)	\
-    ( (This)->lpVtbl -> get_SatisfiedByInstallMedia(This,value) ) 
-
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_get_SatisfiedBySignedInUser(This,value)	\
-    ( (This)->lpVtbl -> get_SatisfiedBySignedInUser(This,value) ) 
-
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_get_IsSatisfied(This,value)	\
-    ( (This)->lpVtbl -> get_IsSatisfied(This,value) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionInfo_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0023 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Store_LicenseManagement_ILicenseSatisfactionResult[] = L"Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionResult";
-#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0023 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0023_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionResult */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace ApplicationModel {
-                namespace Store {
-                    namespace LicenseManagement {
-                        
-                        MIDL_INTERFACE("3C674F73-3C87-4EE1-8201-F428359BD3AF")
-                        ILicenseSatisfactionResult : public IInspectable
-                        {
-                        public:
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_LicenseSatisfactionInfos( 
-                                /* [out][retval] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo **value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ExtendedError( 
-                                /* [out][retval] */ __RPC__out HRESULT *value) = 0;
-                            
-                        };
-
-                        extern const __declspec(selectany) IID & IID_ILicenseSatisfactionResult = __uuidof(ILicenseSatisfactionResult);
-
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
-    
-#else 	/* C style interface */
-
-    typedef struct __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResultVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_LicenseSatisfactionInfos )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult * This,
-            /* [out][retval] */ __RPC__deref_out_opt __FIMapView_2_HSTRING_Windows__CApplicationModel__CStore__CLicenseManagement__CLicenseSatisfactionInfo **value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ExtendedError )( 
-            __RPC__in __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult * This,
-            /* [out][retval] */ __RPC__out HRESULT *value);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResultVtbl;
-
-    interface __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResultVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_get_LicenseSatisfactionInfos(This,value)	\
-    ( (This)->lpVtbl -> get_LicenseSatisfactionInfos(This,value) ) 
-
-#define __x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_get_ExtendedError(This,value)	\
-    ( (This)->lpVtbl -> get_ExtendedError(This,value) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CApplicationModel_CStore_CLicenseManagement_CILicenseSatisfactionResult_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0024 */
-/* [local] */ 
-
+/*
+ *
+ * Class Windows.ApplicationModel.Store.LicenseManagement.LicenseManager
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics2 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Store_LicenseManagement_LicenseManager_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Store_LicenseManagement_LicenseManager_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Store_LicenseManagement_LicenseManager[] = L"Windows.ApplicationModel.Store.LicenseManagement.LicenseManager";
 #endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Store_LicenseManagement_LicenseSatisfactionInfo_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Store_LicenseManagement_LicenseSatisfactionInfo_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Store_LicenseManagement_LicenseSatisfactionInfo[] = L"Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo";
 #endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Class Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionResult ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
 #ifndef RUNTIMECLASS_Windows_ApplicationModel_Store_LicenseManagement_LicenseSatisfactionResult_DEFINED
 #define RUNTIMECLASS_Windows_ApplicationModel_Store_LicenseManagement_LicenseSatisfactionResult_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_ApplicationModel_Store_LicenseManagement_LicenseSatisfactionResult[] = L"Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult";
 #endif
-
-
-/* interface __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0024 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eapplicationmodel2Estore2Elicensemanagement_0000_0024_v0_0_s_ifspec;
 
-/* Additional Prototypes for ALL interfaces */
 
-unsigned long             __RPC_USER  HSTRING_UserSize(     __RPC__in unsigned long *, unsigned long            , __RPC__in HSTRING * ); 
-unsigned char * __RPC_USER  HSTRING_UserMarshal(  __RPC__in unsigned long *, __RPC__inout_xcount(0) unsigned char *, __RPC__in HSTRING * ); 
-unsigned char * __RPC_USER  HSTRING_UserUnmarshal(__RPC__in unsigned long *, __RPC__in_xcount(0) unsigned char *, __RPC__out HSTRING * ); 
-void                      __RPC_USER  HSTRING_UserFree(     __RPC__in unsigned long *, __RPC__in HSTRING * ); 
+#endif // defined(__cplusplus)
+#pragma pop_macro("MIDL_CONST_ID")
+// Restore the original value of the 'DEPRECATED' macro
+#pragma pop_macro("DEPRECATED")
 
-unsigned long             __RPC_USER  HSTRING_UserSize64(     __RPC__in unsigned long *, unsigned long            , __RPC__in HSTRING * ); 
-unsigned char * __RPC_USER  HSTRING_UserMarshal64(  __RPC__in unsigned long *, __RPC__inout_xcount(0) unsigned char *, __RPC__in HSTRING * ); 
-unsigned char * __RPC_USER  HSTRING_UserUnmarshal64(__RPC__in unsigned long *, __RPC__in_xcount(0) unsigned char *, __RPC__out HSTRING * ); 
-void                      __RPC_USER  HSTRING_UserFree64(     __RPC__in unsigned long *, __RPC__in HSTRING * ); 
-
-/* end of Additional Prototypes */
-
-#ifdef __cplusplus
-}
+#ifdef __clang__
+#pragma clang diagnostic pop // deprecated-declarations
+#else
+#pragma warning(pop)
 #endif
+#endif // __windows2Eapplicationmodel2Estore2Elicensemanagement_p_h__
 
-#endif
-
-
+#endif // __windows2Eapplicationmodel2Estore2Elicensemanagement_h__

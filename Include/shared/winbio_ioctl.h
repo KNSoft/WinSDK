@@ -58,29 +58,39 @@ DEFINE_GUID( GUID_DEVINTERFACE_BIOMETRIC_READER,
 //
 // Mandatory IOCTLs
 //
-#define IOCTL_BIOMETRIC_GET_ATTRIBUTES                  BIO_CTL_CODE(1)
-#define IOCTL_BIOMETRIC_RESET                           BIO_CTL_CODE(2)
-#define IOCTL_BIOMETRIC_CALIBRATE                       BIO_CTL_CODE(3)
-#define IOCTL_BIOMETRIC_GET_SENSOR_STATUS               BIO_CTL_CODE(4)
-#define IOCTL_BIOMETRIC_CAPTURE_DATA                    BIO_CTL_CODE(5)
+#define IOCTL_BIOMETRIC_GET_ATTRIBUTES                  BIO_CTL_CODE(0x001)
+#define IOCTL_BIOMETRIC_RESET                           BIO_CTL_CODE(0x002)
+#define IOCTL_BIOMETRIC_CALIBRATE                       BIO_CTL_CODE(0x003)
+#define IOCTL_BIOMETRIC_GET_SENSOR_STATUS               BIO_CTL_CODE(0x004)
+#define IOCTL_BIOMETRIC_CAPTURE_DATA                    BIO_CTL_CODE(0x005)
 
 //
 // Optional IOCTL for updating the firmware
 //
-#define IOCTL_BIOMETRIC_UPDATE_FIRMWARE                 BIO_CTL_CODE(6)
+#define IOCTL_BIOMETRIC_UPDATE_FIRMWARE                 BIO_CTL_CODE(0x006)
 
 //
 // Optional IOCTL for retrieving supported hash algorthims
 // Capability:  WINBIO_CAPABILITY_PROCESSING, WINBIO_CAPABILITY_ENCRYPTION
 //
-#define IOCTL_BIOMETRIC_GET_SUPPORTED_ALGORITHMS        BIO_CTL_CODE(7)
+#define IOCTL_BIOMETRIC_GET_SUPPORTED_ALGORITHMS        BIO_CTL_CODE(0x007)
 
 //
 // Optional IOCTLs to set indicator status
 // Capability:  WINBIO_CAPABILITY_INDICATOR
 //
-#define IOCTL_BIOMETRIC_GET_INDICATOR                   BIO_CTL_CODE(8)
-#define IOCTL_BIOMETRIC_SET_INDICATOR                   BIO_CTL_CODE(9)
+#define IOCTL_BIOMETRIC_GET_INDICATOR                   BIO_CTL_CODE(0x008)
+#define IOCTL_BIOMETRIC_SET_INDICATOR                   BIO_CTL_CODE(0x009)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+
+//
+// Optional IOCTL to retrieve sensor-type information
+// in a vendor-specific format
+//
+#define IOCTL_BIOMETRIC_GET_PRIVATE_SENSOR_TYPE         BIO_CTL_CODE(0x00A)
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS3)
 
 //
 // Vendor control codes are specified at 0x800:
@@ -163,7 +173,7 @@ typedef struct _WINBIO_DIAGNOSTICS {
 
 //
 // OUT payload for IOCTL_BIOMETRIC_RESET
-// OUT payload for IOCTL_UPDATE_FIRMWARE
+// OUT payload for IOCTL_BIOMETRIC_UPDATE_FIRMWARE
 //
 typedef struct _WINBIO_BLANK_PAYLOAD {
     DWORD PayloadSize;
@@ -226,6 +236,18 @@ typedef struct _WINBIO_SET_INDICATOR {
     WINBIO_INDICATOR_STATUS IndicatorStatus;
 } WINBIO_SET_INDICATOR, *PWINBIO_SET_INDICATOR;
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+
+//
+// OUT payload for IOCTL_BIOMETRIC_GET_PRIVATE_SENSOR_TYPE
+//
+typedef struct _WINBIO_PRIVATE_SENSOR_TYPE_INFO {
+    DWORD PayloadSize;
+    HRESULT WinBioHresult;
+    WINBIO_DATA PrivateSensorTypeInfo;
+} WINBIO_PRIVATE_SENSOR_TYPE_INFO, *PWINBIO_PRIVATE_SENSOR_TYPE_INFO;
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS3)
 
 #ifdef __cplusplus
 }

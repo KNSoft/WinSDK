@@ -15,29 +15,6 @@ import "Windows.Security.Credentials.idl";
 import "Windows.Storage.Streams.idl";
 import "Windows.System.idl";
 import "Windows.UI.Xaml.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Esecurity2Eauthentication2Eweb2Ecore_h__)")
-cpp_quote("#include <Windows.Security.Authentication.Web.Core.h>")
-cpp_quote("#endif // !defined(__windows2Esecurity2Eauthentication2Eweb2Ecore_h__)")
-cpp_quote("#if !defined(__windows2Esecurity2Ecredentials_h__)")
-cpp_quote("#include <Windows.Security.Credentials.h>")
-cpp_quote("#endif // !defined(__windows2Esecurity2Ecredentials_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Esystem_h__)")
-cpp_quote("#include <Windows.System.h>")
-cpp_quote("#endif // !defined(__windows2Esystem_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#include <Windows.UI.Xaml.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows

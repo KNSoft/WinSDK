@@ -17,35 +17,6 @@ import "Windows.Security.Cryptography.Core.idl";
 import "Windows.Storage.Streams.idl";
 import "Windows.System.idl";
 import "Windows.Web.Http.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Esecurity2Eauthentication2Eweb_h__)")
-cpp_quote("#include <Windows.Security.Authentication.Web.h>")
-cpp_quote("#endif // !defined(__windows2Esecurity2Eauthentication2Eweb_h__)")
-cpp_quote("#if !defined(__windows2Esecurity2Eauthentication2Eweb2Ecore_h__)")
-cpp_quote("#include <Windows.Security.Authentication.Web.Core.h>")
-cpp_quote("#endif // !defined(__windows2Esecurity2Eauthentication2Eweb2Ecore_h__)")
-cpp_quote("#if !defined(__windows2Esecurity2Ecredentials_h__)")
-cpp_quote("#include <Windows.Security.Credentials.h>")
-cpp_quote("#endif // !defined(__windows2Esecurity2Ecredentials_h__)")
-cpp_quote("#if !defined(__windows2Esecurity2Ecryptography2Ecore_h__)")
-cpp_quote("#include <Windows.Security.Cryptography.Core.h>")
-cpp_quote("#endif // !defined(__windows2Esecurity2Ecryptography2Ecore_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Esystem_h__)")
-cpp_quote("#include <Windows.System.h>")
-cpp_quote("#endif // !defined(__windows2Esystem_h__)")
-cpp_quote("#if !defined(__windows2Eweb2Ehttp_h__)")
-cpp_quote("#include <Windows.Web.Http.h>")
-cpp_quote("#endif // !defined(__windows2Eweb2Ehttp_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -173,6 +144,8 @@ namespace Windows
                     interface IWebAccountManagerStatics2;
 
                     interface IWebAccountManagerStatics3;
+
+                    interface IWebAccountManagerStatics4;
 
                     interface IWebAccountMapManagerStatics;
 
@@ -374,6 +347,15 @@ namespace Windows
                         [overload("AddWebAccountForUserAsync")] HRESULT AddWebAccountWithScopeAndMapForUserAsync([in] Windows.System.User* user, [in] HSTRING webAccountId, [in] HSTRING webAccountUserName, [in] Windows.Foundation.Collections.IMapView<HSTRING, HSTRING>* props, [in] Windows.Security.Authentication.Web.Provider.WebAccountScope scope, [in] HSTRING perUserWebAccountId, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Security.Credentials.WebAccount*>** operation);
                     }
 
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.Security.Authentication.Web.Provider.WebAccountManager)]
+                    [uuid(59EBC2D2-F7DB-412F-BC3F-F2FEA04430B4)]
+                    interface IWebAccountManagerStatics4 : IInspectable
+                    {
+                        HRESULT InvalidateAppCacheForAllAccountsAsync([out] [retval] Windows.Foundation.IAsyncAction** asyncInfo);
+                        HRESULT InvalidateAppCacheForAccountAsync([in] Windows.Security.Credentials.WebAccount* webAccount, [out] [retval] Windows.Foundation.IAsyncAction** asyncInfo);
+                    }
+
                     [contract(Windows.Foundation.UniversalApiContract, 3.0)]
                     [exclusiveto(Windows.Security.Authentication.Web.Provider.WebAccountManager)]
                     [uuid(E8FA446F-3A1B-48A4-8E90-1E59CA6F54DB)]
@@ -564,6 +546,7 @@ namespace Windows
                     [static(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics, Windows.Foundation.UniversalApiContract, 1.0)]
                     [static(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics2, Windows.Foundation.UniversalApiContract, 2.0)]
                     [static(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics3, Windows.Foundation.UniversalApiContract, 4.0)]
+                    [static(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics4, Windows.Foundation.UniversalApiContract, 5.0)]
                     [static(Windows.Security.Authentication.Web.Provider.IWebAccountMapManagerStatics, Windows.Foundation.UniversalApiContract, 3.0)]
                     [static(Windows.Security.Authentication.Web.Provider.IWebAccountScopeManagerStatics, Windows.Foundation.UniversalApiContract, 1.0)]
                     runtimeclass WebAccountManager

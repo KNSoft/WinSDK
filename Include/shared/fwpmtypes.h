@@ -98,6 +98,7 @@ enum FWPM_SERVICE_STATE_
 #define FWPM_ENGINE_OPTION_PACKET_QUEUE_NONE (0x00000000)
 #define FWPM_ENGINE_OPTION_PACKET_QUEUE_INBOUND (0x00000001)
 #define FWPM_ENGINE_OPTION_PACKET_QUEUE_FORWARD (0x00000002)
+#define FWPM_ENGINE_OPTION_PACKET_BATCH_INBOUND (0x00000004)
 typedef 
 enum FWPM_ENGINE_OPTION_
     {
@@ -276,6 +277,35 @@ typedef struct FWPM_PROVIDER_CONTEXT2_
     } 	FWPM_PROVIDER_CONTEXT2;
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN8)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+typedef struct FWPM_PROVIDER_CONTEXT3_
+    {
+    GUID providerContextKey;
+    FWPM_DISPLAY_DATA0 displayData;
+    UINT32 flags;
+    /* [unique] */ GUID *providerKey;
+    FWP_BYTE_BLOB providerData;
+    FWPM_PROVIDER_CONTEXT_TYPE type;
+    /* [switch_is][switch_type] */ union 
+        {
+        /* [case()][unique] */ IPSEC_KEYING_POLICY1 *keyingPolicy;
+        /* [case()][unique] */ IPSEC_TRANSPORT_POLICY2 *ikeQmTransportPolicy;
+        /* [case()][unique] */ IPSEC_TUNNEL_POLICY3 *ikeQmTunnelPolicy;
+        /* [case()][unique] */ IPSEC_TRANSPORT_POLICY2 *authipQmTransportPolicy;
+        /* [case()][unique] */ IPSEC_TUNNEL_POLICY3 *authipQmTunnelPolicy;
+        /* [case()][unique] */ IKEEXT_POLICY2 *ikeMmPolicy;
+        /* [case()][unique] */ IKEEXT_POLICY2 *authIpMmPolicy;
+        /* [case()][unique] */ FWP_BYTE_BLOB *dataBuffer;
+        /* [case()][unique] */ FWPM_CLASSIFY_OPTIONS0 *classifyOptions;
+        /* [case()][unique] */ IPSEC_TUNNEL_POLICY3 *ikeV2QmTunnelPolicy;
+        /* [case()][unique] */ IPSEC_TRANSPORT_POLICY2 *ikeV2QmTransportPolicy;
+        /* [case()][unique] */ IKEEXT_POLICY2 *ikeV2MmPolicy;
+        /* [case()][unique] */ IPSEC_DOSP_OPTIONS0 *idpOptions;
+        } 	;
+    UINT64 providerContextId;
+    } 	FWPM_PROVIDER_CONTEXT3;
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS3)
 typedef struct FWPM_PROVIDER_CONTEXT_ENUM_TEMPLATE0_
     {
     /* [unique] */ GUID *providerKey;
@@ -425,6 +455,7 @@ typedef struct FWPM_FILTER_CONDITION0_
 #define FWPM_FILTER_FLAG_SYSTEMOS_ONLY (0x00000100)
 #define FWPM_FILTER_FLAG_GAMEOS_ONLY (0x00000200)
 #define FWPM_FILTER_FLAG_SILENT_MODE (0x00000400)
+#define FWPM_FILTER_FLAG_IPSEC_NO_ACQUIRE_INITIATE   (0x00000800)
 typedef struct FWPM_FILTER0_
     {
     GUID filterKey;
@@ -500,6 +531,32 @@ typedef struct FWPM_STATISTICS0_
     UINT32 outboundActiveConnectionsV4;
     UINT32 inboundActiveConnectionsV6;
     UINT32 outboundActiveConnectionsV6;
+    UINT64 reauthDirInbound;
+    UINT64 reauthDirOutbound;
+    UINT64 reauthFamilyV4;
+    UINT64 reauthFamilyV6;
+    UINT64 reauthProtoOther;
+    UINT64 reauthProtoIPv4;
+    UINT64 reauthProtoIPv6;
+    UINT64 reauthProtoICMP;
+    UINT64 reauthProtoICMP6;
+    UINT64 reauthProtoUDP;
+    UINT64 reauthProtoTCP;
+    UINT64 reauthReasonPolicyChange;
+    UINT64 reauthReasonNewArrivalInterface;
+    UINT64 reauthReasonNewNextHopInterface;
+    UINT64 reauthReasonProfileCrossing;
+    UINT64 reauthReasonClassifyCompletion;
+    UINT64 reauthReasonIPSecPropertiesChanged;
+    UINT64 reauthReasonMidStreamInspection;
+    UINT64 reauthReasonSocketPropertyChanged;
+    UINT64 reauthReasonNewInboundMCastBCastPacket;
+    UINT64 reauthReasonEDPPolicyChanged;
+    UINT64 reauthReasonLocalAddressUniFiltersChanged;
+    UINT64 reauthReasonRemoteAddressUniFiltersChanged;
+    UINT64 reauthReasonLocalPortUniFiltersChanges;
+    UINT64 reauthReasonRemotePortUniFiltersChanges;
+    UINT64 reauthReasonProxyHandleChanged;
     } 	FWPM_STATISTICS0;
 
 #define FWPM_NET_EVENT_FLAG_IP_PROTOCOL_SET (0x00000001)

@@ -57,6 +57,11 @@ extern "C" {
 #define FH_STATE_TOO_MUCH_BEHIND                    0xF0
 #define FH_STATE_NO_ERROR                           0xFF
 
+// Indicates that File History is in a depreciated state
+// where backup is not supported. This is only applicable
+// if the user has an existing backup configured.
+#define FH_STATE_BACKUP_NOT_SUPPORTED               0x810
+
 #define FH_STATE_RUNNING                        0x100
 
 

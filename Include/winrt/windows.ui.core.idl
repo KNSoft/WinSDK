@@ -15,29 +15,6 @@ import "Windows.UI.Input.idl";
 import "Windows.UI.Input.Inking.idl";
 import "Windows.UI.Input.Inking.Core.idl";
 import "Windows.UI.Popups.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Esystem_h__)")
-cpp_quote("#include <Windows.System.h>")
-cpp_quote("#endif // !defined(__windows2Esystem_h__)")
-cpp_quote("#if !defined(__windows2Eui2Einput_h__)")
-cpp_quote("#include <Windows.UI.Input.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Einput_h__)")
-cpp_quote("#if !defined(__windows2Eui2Einput2Einking_h__)")
-cpp_quote("#include <Windows.UI.Input.Inking.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Einput2Einking_h__)")
-cpp_quote("#if !defined(__windows2Eui2Einput2Einking2Ecore_h__)")
-cpp_quote("#include <Windows.UI.Input.Inking.Core.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Einput2Einking2Ecore_h__)")
-cpp_quote("#if !defined(__windows2Eui2Epopups_h__)")
-cpp_quote("#include <Windows.UI.Popups.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Epopups_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -69,6 +46,8 @@ namespace Windows
 {
     namespace System
     {
+        runtimeclass DispatcherQueue;
+
         typedef enum VirtualKey VirtualKey;
 
         typedef enum VirtualKeyModifiers VirtualKeyModifiers;
@@ -153,6 +132,8 @@ namespace Windows
 
             typedef enum CoreVirtualKeyStates CoreVirtualKeyStates;
 
+            typedef enum CoreWindowActivationMode CoreWindowActivationMode;
+
             typedef enum CoreWindowActivationState CoreWindowActivationState;
 
             typedef enum CoreWindowFlowDirection CoreWindowFlowDirection;
@@ -212,6 +193,8 @@ namespace Windows
             interface ICoreWindow3;
 
             interface ICoreWindow4;
+
+            interface ICoreWindow5;
 
             interface ICoreWindowDialog;
 
@@ -428,7 +411,11 @@ namespace Windows
                 SizeWestEast           = 10,
                 UniversalNo            = 11,
                 UpArrow                = 12,
-                Wait                   = 13
+                Wait                   = 13,
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                Pin                    = 14,
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                Person                 = 15
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -474,6 +461,15 @@ namespace Windows
                 None   = 0x0,
                 Down   = 0x1,
                 Locked = 0x2
+            };
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            enum CoreWindowActivationMode
+            {
+                None                   = 0,
+                Deactivated            = 1,
+                ActivatedNotForeground = 2,
+                ActivatedInForeground  = 3
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -830,6 +826,15 @@ namespace Windows
                 [eventremove] HRESULT ResizeCompleted([in] EventRegistrationToken cookie);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Core.CoreWindow)]
+            [uuid(4B4AE1E1-2E6D-4EAA-BDA1-1C5CC1BEE141)]
+            interface ICoreWindow5 : IInspectable
+            {
+                [propget] HRESULT DispatcherQueue([out] [retval] Windows.System.DispatcherQueue** value);
+                [propget] HRESULT ActivationMode([out] [retval] Windows.UI.Core.CoreWindowActivationMode* value);
+            }
+
             [contract(Windows.UI.Core.CoreWindowDialogsContract, 1.0)]
             [exclusiveto(Windows.UI.Core.CoreWindowDialog)]
             [uuid(E7392CE0-C78D-427E-8B2C-01FF420C69D5)]
@@ -1164,6 +1169,7 @@ namespace Windows
                 [contract(Windows.Foundation.UniversalApiContract, 2.0)] interface Windows.UI.Core.ICorePointerRedirector;
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.UI.Core.ICoreWindow3;
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.UI.Core.ICoreWindow4;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Core.ICoreWindow5;
             }
 
             [activatable(Windows.UI.Core.CoreWindowDialogsContract, 1.0)]

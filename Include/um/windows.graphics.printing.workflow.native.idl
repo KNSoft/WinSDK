@@ -15,6 +15,7 @@ cpp_quote("//-------------------------------------------------------------------
 import "oaidl.idl";
 import "ocidl.idl";
 import "msxml.idl";
+import "PrinterExtension.idl";
 import "xpsobjectmodel_1.idl";
 
 #include <sdkddkver.h>
@@ -63,4 +64,16 @@ interface IPrintWorkflowObjectModelSourceFileContentNative : IUnknown
 interface IPrintWorkflowXpsObjectModelTargetPackageNative : IUnknown
 {
     [propget] HRESULT DocumentPackageTarget([out, retval] IXpsDocumentPackageTarget** value);
+}
+
+[
+    object,
+    uuid(C056BE0A-9EE2-450A-9823-964F0006F2BB),
+    pointer_default(unique)
+]
+interface IPrintWorkflowConfigurationNative : IUnknown
+{
+    [propget] HRESULT PrinterQueue([out, retval] IPrinterQueue** value);
+    [propget] HRESULT DriverProperties([out, retval] IPrinterPropertyBag** value);
+    [propget] HRESULT UserProperties([out, retval] IPrinterPropertyBag** value);
 }

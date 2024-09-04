@@ -798,6 +798,24 @@
 #define BG_E_RANDOM_ACCESS_NOT_SUPPORTED 0x8020006DL
 
 //
+// MessageId: BG_E_BLOCKED_BY_BACKGROUND_ACCESS_POLICY
+//
+// MessageText:
+//
+// The background access settings of the job's owner app prevent the job from transferring at this time.
+//
+#define BG_E_BLOCKED_BY_BACKGROUND_ACCESS_POLICY 0x8020006EL
+
+//
+// MessageId: BG_E_BLOCKED_BY_GAME_MODE
+//
+// MessageText:
+//
+// The job was paused because there is an active Game Mode recipient that isn't the job's owner. The job will resume once the Game Mode recipient loses input focus or is closed.
+//
+#define BG_E_BLOCKED_BY_GAME_MODE        0x8020006FL
+
+//
 // MessageId: BG_E_HTTP_ERROR_100
 //
 // MessageText:

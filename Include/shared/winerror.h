@@ -145,6 +145,7 @@
 #define FACILITY_TIERING                 131
 #define FACILITY_WSB_ONLINE              133
 #define FACILITY_ONLINE_ID               134
+#define FACILITY_DEVICE_UPDATE_AGENT     135
 #define FACILITY_DLS                     153
 #define FACILITY_DELIVERY_OPTIMIZATION   208
 #define FACILITY_USERMODE_SPACES         231
@@ -2514,13 +2515,13 @@
 #define ERROR_EDP_DPL_POLICY_CANT_BE_SATISFIED 357L
 
 //
-// MessageId: ERROR_CLOUD_FILE_PROVIDER_UNKNOWN
+// MessageId: ERROR_CLOUD_FILE_SYNC_ROOT_METADATA_CORRUPT
 //
 // MessageText:
 //
-// The Cloud File provider is unknown.
+// The cloud sync root metadata is corrupted.
 //
-#define ERROR_CLOUD_FILE_PROVIDER_UNKNOWN 358L
+#define ERROR_CLOUD_FILE_SYNC_ROOT_METADATA_CORRUPT 358L
 
 //
 // MessageId: ERROR_DEVICE_IN_MAINTENANCE
@@ -2554,7 +2555,7 @@
 //
 // MessageText:
 //
-// The Cloud File provider is not running.
+// The cloud file provider is not running.
 //
 #define ERROR_CLOUD_FILE_PROVIDER_NOT_RUNNING 362L
 
@@ -2563,7 +2564,7 @@
 //
 // MessageText:
 //
-// The Cloud File metadata is corrupt and unreadable.
+// The cloud file metadata is corrupt and unreadable.
 //
 #define ERROR_CLOUD_FILE_METADATA_CORRUPT 363L
 
@@ -2572,7 +2573,7 @@
 //
 // MessageText:
 //
-// The operation could not be completed because the Cloud File metadata is too large.
+// The cloud file metadata is too large.
 //
 #define ERROR_CLOUD_FILE_METADATA_TOO_LARGE 364L
 
@@ -2581,7 +2582,7 @@
 //
 // MessageText:
 //
-// The operation could not be completed because the Cloud File property blob is too large.
+// The cloud file property is too large.
 //
 #define ERROR_CLOUD_FILE_PROPERTY_BLOB_TOO_LARGE 365L
 
@@ -2590,7 +2591,7 @@
 //
 // MessageText:
 //
-// The Cloud File property blob is possibly corrupt. The on-disk checksum does not match the computed checksum.
+// The cloud file property is possibly corrupt. The on-disk checksum does not match the computed checksum.
 //
 #define ERROR_CLOUD_FILE_PROPERTY_BLOB_CHECKSUM_MISMATCH 366L
 
@@ -2662,25 +2663,25 @@
 //
 // MessageText:
 //
-// The operation could not be completed because the maximum number of Cloud File property blobs would be exceeded.
+// The maximum number of cloud file properties has been reached.
 //
 #define ERROR_CLOUD_FILE_TOO_MANY_PROPERTY_BLOBS 374L
 
 //
-// MessageId: ERROR_CLOUD_FILE_METADATA_VERSION_NOT_SUPPORTED
+// MessageId: ERROR_CLOUD_FILE_PROPERTY_VERSION_NOT_SUPPORTED
 //
 // MessageText:
 //
-// The operation could not be completed because the Cloud File metadata version is not supported.
+// The version of the cloud file property store is not supported.
 //
-#define ERROR_CLOUD_FILE_METADATA_VERSION_NOT_SUPPORTED 375L
+#define ERROR_CLOUD_FILE_PROPERTY_VERSION_NOT_SUPPORTED 375L
 
 //
 // MessageId: ERROR_NOT_A_CLOUD_FILE
 //
 // MessageText:
 //
-// The operation could not be completed because the file is not a Cloud File.
+// The file is not a cloud file.
 //
 #define ERROR_NOT_A_CLOUD_FILE           376L
 
@@ -2689,9 +2690,208 @@
 //
 // MessageText:
 //
-// The operation could not be completed because the Cloud File is not in sync.
+// The file is not in sync with the cloud.
 //
 #define ERROR_CLOUD_FILE_NOT_IN_SYNC     377L
+
+//
+// MessageId: ERROR_CLOUD_FILE_ALREADY_CONNECTED
+//
+// MessageText:
+//
+// The cloud sync root is already connected with another cloud sync engine.
+//
+#define ERROR_CLOUD_FILE_ALREADY_CONNECTED 378L
+
+//
+// MessageId: ERROR_CLOUD_FILE_NOT_SUPPORTED
+//
+// MessageText:
+//
+// The operation is not supported by the cloud sync engine.
+//
+#define ERROR_CLOUD_FILE_NOT_SUPPORTED   379L
+
+//
+// MessageId: ERROR_CLOUD_FILE_INVALID_REQUEST
+//
+// MessageText:
+//
+// The cloud operation is invalid.
+//
+#define ERROR_CLOUD_FILE_INVALID_REQUEST 380L
+
+//
+// MessageId: ERROR_CLOUD_FILE_READ_ONLY_VOLUME
+//
+// MessageText:
+//
+// The cloud operation is not supported on a read-only volume.
+//
+#define ERROR_CLOUD_FILE_READ_ONLY_VOLUME 381L
+
+//
+// MessageId: ERROR_CLOUD_FILE_CONNECTED_PROVIDER_ONLY
+//
+// MessageText:
+//
+// The operation is reserved for a connected cloud sync engine.
+//
+#define ERROR_CLOUD_FILE_CONNECTED_PROVIDER_ONLY 382L
+
+//
+// MessageId: ERROR_CLOUD_FILE_VALIDATION_FAILED
+//
+// MessageText:
+//
+// The cloud sync engine failed to validate the downloaded data.
+//
+#define ERROR_CLOUD_FILE_VALIDATION_FAILED 383L
+
+//
+// MessageId: ERROR_SMB1_NOT_AVAILABLE
+//
+// MessageText:
+//
+// You can't connect to the file share because it's not secure. This share requires the obsolete SMB1 protocol, which is unsafe and could expose your system to attack.
+// Your system requires SMB2 or higher. For more info on resolving this issue, see: https://go.microsoft.com/fwlink/?linkid=852747
+//
+#define ERROR_SMB1_NOT_AVAILABLE         384L
+
+//
+// MessageId: ERROR_FILE_SYSTEM_VIRTUALIZATION_INVALID_OPERATION
+//
+// MessageText:
+//
+// The virtualization operation is not allowed on the file in its current state.
+//
+#define ERROR_FILE_SYSTEM_VIRTUALIZATION_INVALID_OPERATION 385L
+
+//
+// MessageId: ERROR_CLOUD_FILE_AUTHENTICATION_FAILED
+//
+// MessageText:
+//
+// The cloud sync engine failed user authentication.
+//
+#define ERROR_CLOUD_FILE_AUTHENTICATION_FAILED 386L
+
+//
+// MessageId: ERROR_CLOUD_FILE_INSUFFICIENT_RESOURCES
+//
+// MessageText:
+//
+// The cloud sync engine failed to perform the operation due to low system resources.
+//
+#define ERROR_CLOUD_FILE_INSUFFICIENT_RESOURCES 387L
+
+//
+// MessageId: ERROR_CLOUD_FILE_NETWORK_UNAVAILABLE
+//
+// MessageText:
+//
+// The cloud sync engine failed to perform the operation due to network being unavailable.
+//
+#define ERROR_CLOUD_FILE_NETWORK_UNAVAILABLE 388L
+
+//
+// MessageId: ERROR_CLOUD_FILE_UNSUCCESSFUL
+//
+// MessageText:
+//
+// The cloud operation was unsuccessful.
+//
+#define ERROR_CLOUD_FILE_UNSUCCESSFUL    389L
+
+//
+// MessageId: ERROR_CLOUD_FILE_NOT_UNDER_SYNC_ROOT
+//
+// MessageText:
+//
+// The operation is only supported on files under a cloud sync root.
+//
+#define ERROR_CLOUD_FILE_NOT_UNDER_SYNC_ROOT 390L
+
+//
+// MessageId: ERROR_CLOUD_FILE_IN_USE
+//
+// MessageText:
+//
+// The operation cannot be performed on cloud files in use.
+//
+#define ERROR_CLOUD_FILE_IN_USE          391L
+
+//
+// MessageId: ERROR_CLOUD_FILE_PINNED
+//
+// MessageText:
+//
+// The operation cannot be performed on pinned cloud files.
+//
+#define ERROR_CLOUD_FILE_PINNED          392L
+
+//
+// MessageId: ERROR_CLOUD_FILE_REQUEST_ABORTED
+//
+// MessageText:
+//
+// The cloud operation was aborted.
+//
+#define ERROR_CLOUD_FILE_REQUEST_ABORTED 393L
+
+//
+// MessageId: ERROR_CLOUD_FILE_PROPERTY_CORRUPT
+//
+// MessageText:
+//
+// The cloud file's property store is corrupt.
+//
+#define ERROR_CLOUD_FILE_PROPERTY_CORRUPT 394L
+
+//
+// MessageId: ERROR_CLOUD_FILE_ACCESS_DENIED
+//
+// MessageText:
+//
+// Access to the cloud file is denied.
+//
+#define ERROR_CLOUD_FILE_ACCESS_DENIED   395L
+
+//
+// MessageId: ERROR_CLOUD_FILE_INCOMPATIBLE_HARDLINKS
+//
+// MessageText:
+//
+// The cloud operation cannot be performed on a file with incompatible hardlinks.
+//
+#define ERROR_CLOUD_FILE_INCOMPATIBLE_HARDLINKS 396L
+
+//
+// MessageId: ERROR_CLOUD_FILE_PROPERTY_LOCK_CONFLICT
+//
+// MessageText:
+//
+// The operation failed due to a conflicting cloud file property lock.
+//
+#define ERROR_CLOUD_FILE_PROPERTY_LOCK_CONFLICT 397L
+
+//
+// MessageId: ERROR_CLOUD_FILE_REQUEST_CANCELED
+//
+// MessageText:
+//
+// The cloud operation was canceled by user.
+//
+#define ERROR_CLOUD_FILE_REQUEST_CANCELED 398L
+
+//
+// MessageId: ERROR_EXTERNAL_SYSKEY_NOT_SUPPORTED
+//
+// MessageText:
+//
+// An externally encrypted syskey has been configured, but the system no longer supports this feature.  Please see https://go.microsoft.com/fwlink/?linkid=851152 for more information.
+//
+#define ERROR_EXTERNAL_SYSKEY_NOT_SUPPORTED 399L
 
 //
 // **** Available SYSTEM error codes ****
@@ -2798,6 +2998,51 @@
 #define ERROR_CAPAUTHZ_DB_CORRUPTED      455L
 
 //
+// MessageId: ERROR_CAPAUTHZ_SCCD_INVALID_CATALOG
+//
+// MessageText:
+//
+// The custom capability's SCCD has an invalid catalog.
+//
+#define ERROR_CAPAUTHZ_SCCD_INVALID_CATALOG 456L
+
+//
+// MessageId: ERROR_CAPAUTHZ_SCCD_NO_AUTH_ENTITY
+//
+// MessageText:
+//
+// There is no matching authorized in the SCCD.
+//
+#define ERROR_CAPAUTHZ_SCCD_NO_AUTH_ENTITY 457L
+
+//
+// MessageId: ERROR_CAPAUTHZ_SCCD_PARSE_ERROR
+//
+// MessageText:
+//
+// The custom capability's SCCD failed to parse.
+//
+#define ERROR_CAPAUTHZ_SCCD_PARSE_ERROR  458L
+
+//
+// MessageId: ERROR_CAPAUTHZ_SCCD_DEV_MODE_REQUIRED
+//
+// MessageText:
+//
+// The custom capability's SCCD requires developer mode.
+//
+#define ERROR_CAPAUTHZ_SCCD_DEV_MODE_REQUIRED 459L
+
+//
+// MessageId: ERROR_CAPAUTHZ_SCCD_NO_CAPABILITY_MATCH
+//
+// MessageText:
+//
+// There not all declared custom capabilities are found in the SCCD.
+//
+#define ERROR_CAPAUTHZ_SCCD_NO_CAPABILITY_MATCH 460L
+
+//
 // **** Available SYSTEM error codes ****
 //
 //
@@ -2853,6 +3098,15 @@
 // Driver Verifier Volatile settings cannot be set when CFG is enabled.
 //
 #define ERROR_VRF_CFG_ENABLED            1183L
+
+//
+// MessageId: ERROR_PARTITION_TERMINATING
+//
+// MessageText:
+//
+// An attempt was made to access a partition that has begun termination.
+//
+#define ERROR_PARTITION_TERMINATING      1184L
 
 //
 // **** Available SYSTEM error codes ****
@@ -5382,6 +5636,15 @@
 // The specified CPU Set IDs are invalid.
 //
 #define ERROR_CPU_SET_INVALID            813L
+
+//
+// MessageId: ERROR_ENCLAVE_NOT_TERMINATED
+//
+// MessageText:
+//
+// The specified enclave has not yet been terminated.
+//
+#define ERROR_ENCLAVE_NOT_TERMINATED     814L
 
 //
 // **** Available SYSTEM error codes ****
@@ -9603,24 +9866,6 @@
 #define ERROR_STRICT_CFG_VIOLATION       1657L
 
 //
-// MessageId: ERROR_STRICT_RFG_VIOLATION
-//
-// MessageText:
-//
-// The specified image file was blocked from loading because it does not enable a feature required by the process: Return Flow Guard.
-//
-#define ERROR_STRICT_RFG_VIOLATION       1658L
-
-//
-// MessageId: ERROR_RFG_ACCESS_VIOLATION
-//
-// MessageText:
-//
-// An invalid memory access occurred to a Return Flow Guard restricted region.
-//
-#define ERROR_RFG_ACCESS_VIOLATION       1659L
-
-//
 // MessageId: ERROR_SET_CONTEXT_DENIED
 //
 // MessageText:
@@ -12957,6 +13202,15 @@
 //
 #define ERROR_ALREADY_HAS_STREAM_ID      4444L
 
+//
+// MessageId: ERROR_SMR_GARBAGE_COLLECTION_REQUIRED
+//
+// MessageText:
+//
+// The volume must undergo garbage collection.
+//
+#define ERROR_SMR_GARBAGE_COLLECTION_REQUIRED 4445L
+
 
 ///////////////////////////////////////////////////
 //                                               //
@@ -14952,6 +15206,26 @@
 // Storage Spaces Direct has rejected the proposed fault domain changes because it reduces the storage connected to the system.
 //
 #define ERROR_CLUSTER_FAULT_DOMAIN_S2D_CONNECTIVITY_LOSS 5997L
+
+//
+// MessageId: ERROR_CLUSTER_INVALID_INFRASTRUCTURE_FILESERVER_NAME
+//
+// MessageText:
+//
+// 
+// Cluster infrastructure file server creation failed because a valid non-empty file server name was not provided.
+//
+#define ERROR_CLUSTER_INVALID_INFRASTRUCTURE_FILESERVER_NAME 5998L
+
+//
+// MessageId: ERROR_CLUSTERSET_MANAGEMENT_CLUSTER_UNREACHABLE
+//
+// MessageText:
+//
+// 
+// The action cannot be completed because the cluster set managenement cluster is unreachable.
+//
+#define ERROR_CLUSTERSET_MANAGEMENT_CLUSTER_UNREACHABLE 5999L
 
 
 ///////////////////////////////////////////////////
@@ -27549,6 +27823,42 @@
 //
 #define ERROR_INSTALL_OPTIONAL_PACKAGE_REQUIRES_MAIN_PACKAGE_FULLTRUST_CAPABILITY 15640L
 
+//
+// MessageId: ERROR_DEPLOYMENT_BLOCKED_BY_USER_LOG_OFF
+//
+// MessageText:
+//
+// An error occurred because a user was logged off.
+//
+#define ERROR_DEPLOYMENT_BLOCKED_BY_USER_LOG_OFF 15641L
+
+//
+// MessageId: ERROR_PROVISION_OPTIONAL_PACKAGE_REQUIRES_MAIN_PACKAGE_PROVISIONED
+//
+// MessageText:
+//
+// An optional package provision requires the dependency main package to also be provisioned.
+//
+#define ERROR_PROVISION_OPTIONAL_PACKAGE_REQUIRES_MAIN_PACKAGE_PROVISIONED 15642L
+
+//
+// MessageId: ERROR_PACKAGES_REPUTATION_CHECK_FAILED
+//
+// MessageText:
+//
+// The packages failed the SmartScreen reputation check.
+//
+#define ERROR_PACKAGES_REPUTATION_CHECK_FAILED 15643L
+
+//
+// MessageId: ERROR_PACKAGES_REPUTATION_CHECK_TIMEDOUT
+//
+// MessageText:
+//
+// The SmartScreen reputation check operation timed out.
+//
+#define ERROR_PACKAGES_REPUTATION_CHECK_TIMEDOUT 15644L
+
 //////////////////////////
 //                      //
 // AppModel Error Codes //
@@ -28418,6 +28728,24 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 // A COM call to an ASTA was blocked because the call chain originated in or passed through another ASTA. This call pattern is deadlock-prone and disallowed by apartment call control.
 //
 #define RO_E_BLOCKED_CROSS_ASTA_CALL     _HRESULT_TYPEDEF_(0x8000001FL)
+
+//
+// MessageId: RO_E_CANNOT_ACTIVATE_FULL_TRUST_SERVER
+//
+// MessageText:
+//
+// A universal application process cannot activate a packaged WinRT server that is declared to run full trust.
+//
+#define RO_E_CANNOT_ACTIVATE_FULL_TRUST_SERVER _HRESULT_TYPEDEF_(0x80000020L)
+
+//
+// MessageId: RO_E_CANNOT_ACTIVATE_UNIVERSAL_APPLICATION_SERVER
+//
+// MessageText:
+//
+// A full trust packaged application process cannot activate a packaged WinRT server unless it is also declared to run full trust.
+//
+#define RO_E_CANNOT_ACTIVATE_UNIVERSAL_APPLICATION_SERVER _HRESULT_TYPEDEF_(0x80000021L)
 
 //
 // MessageId: CO_E_INIT_TLS
@@ -32027,6 +32355,15 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 // The Appx package's content group map is invalid.
 //
 #define APPX_E_INVALID_CONTENTGROUPMAP   _HRESULT_TYPEDEF_(0x8008020BL)
+
+//
+// MessageId: APPX_E_INVALID_APPINSTALLER
+//
+// MessageText:
+//
+// The .appinstaller file is invalid.
+//
+#define APPX_E_INVALID_APPINSTALLER      _HRESULT_TYPEDEF_(0x8008020CL)
 
 //
 // Codes 0x0300-0x030f are reserved for background task error codes.
@@ -44478,6 +44815,15 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 #define TPM_E_BUFFER_LENGTH_MISMATCH     _HRESULT_TYPEDEF_(0x8029041EL)
 
 //
+// MessageId: TPM_E_PCP_IFX_RSA_KEY_CREATION_BLOCKED
+//
+// MessageText:
+//
+// The RSA key creation is blocked on this TPM due to known security vulnerabilities.
+//
+#define TPM_E_PCP_IFX_RSA_KEY_CREATION_BLOCKED _HRESULT_TYPEDEF_(0x8029041FL)
+
+//
 // Misc error codes in TPM code {0x0500..0x05ff}
 //
 //
@@ -49081,6 +49427,24 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 #define ERROR_VMCOMPUTE_PROTOCOL_ERROR   _NDIS_ERROR_TYPEDEF_(0xC0370111L)
 
 //
+// MessageId: ERROR_VMCOMPUTE_INVALID_LAYER
+//
+// MessageText:
+//
+// The container's image contains a layer with an unrecognized format.
+//
+#define ERROR_VMCOMPUTE_INVALID_LAYER    _NDIS_ERROR_TYPEDEF_(0xC0370112L)
+
+//
+// MessageId: ERROR_VMCOMPUTE_WINDOWS_INSIDER_REQUIRED
+//
+// MessageText:
+//
+// To use this container image, you must join the Windows Insider Program. Please see https://go.microsoft.com/fwlink/?linkid=850659 for more information.
+//
+#define ERROR_VMCOMPUTE_WINDOWS_INSIDER_REQUIRED _NDIS_ERROR_TYPEDEF_(0xC0370113L)
+
+//
 // Virtual networking errors (0x0200-0x02ff)
 //
 //
@@ -49103,6 +49467,99 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 // A virtual machine is running with its memory allocated across multiple NUMA nodes. This does not indicate a problem unless the performance of your virtual machine is unusually slow. If you are experiencing performance problems, you may need to modify the NUMA configuration.
 //
 #define ERROR_VID_REMOTE_NODE_PARENT_GPA_PAGES_USED _NDIS_ERROR_TYPEDEF_(0x80370001L)
+
+//
+// User-mode Hypervisor API error codes (0x0300-0x03ff)
+//
+//
+// MessageId: WHV_E_UNKNOWN_CAPABILITY
+//
+// MessageText:
+//
+// The specified capability does not exist.
+//
+#define WHV_E_UNKNOWN_CAPABILITY         _HRESULT_TYPEDEF_(0x80370300L)
+
+//
+// MessageId: WHV_E_INSUFFICIENT_BUFFER
+//
+// MessageText:
+//
+// The specified buffer is too small for the requested data.
+//
+#define WHV_E_INSUFFICIENT_BUFFER        _HRESULT_TYPEDEF_(0x80370301L)
+
+//
+// MessageId: WHV_E_UNKNOWN_PROPERTY
+//
+// MessageText:
+//
+// The specified property does not exist.
+//
+#define WHV_E_UNKNOWN_PROPERTY           _HRESULT_TYPEDEF_(0x80370302L)
+
+//
+// MessageId: WHV_E_UNSUPPORTED_HYPERVISOR_CONFIG
+//
+// MessageText:
+//
+// The configuration of the hypervisor on this system is not supported.
+//
+#define WHV_E_UNSUPPORTED_HYPERVISOR_CONFIG _HRESULT_TYPEDEF_(0x80370303L)
+
+//
+// MessageId: WHV_E_INVALID_PARTITION_CONFIG
+//
+// MessageText:
+//
+// The configuration of the partition is not valid.
+//
+#define WHV_E_INVALID_PARTITION_CONFIG   _HRESULT_TYPEDEF_(0x80370304L)
+
+//
+// MessageId: WHV_E_GPA_RANGE_NOT_FOUND
+//
+// MessageText:
+//
+// The specified GPA range was not found.
+//
+#define WHV_E_GPA_RANGE_NOT_FOUND        _HRESULT_TYPEDEF_(0x80370305L)
+
+//
+// MessageId: WHV_E_VP_ALREADY_EXISTS
+//
+// MessageText:
+//
+// A virtual processor with the specified index already exists.
+//
+#define WHV_E_VP_ALREADY_EXISTS          _HRESULT_TYPEDEF_(0x80370306L)
+
+//
+// MessageId: WHV_E_VP_DOES_NOT_EXIST
+//
+// MessageText:
+//
+// A virtual processor with the specified index does not exist.
+//
+#define WHV_E_VP_DOES_NOT_EXIST          _HRESULT_TYPEDEF_(0x80370307L)
+
+//
+// MessageId: WHV_E_INVALID_VP_STATE
+//
+// MessageText:
+//
+// The virtual processor is not in the correct state to perform the requested operation.
+//
+#define WHV_E_INVALID_VP_STATE           _HRESULT_TYPEDEF_(0x80370308L)
+
+//
+// MessageId: WHV_E_INVALID_VP_REGISTER_NAME
+//
+// MessageText:
+//
+// A virtual processor register with the specified name does not exist.
+//
+#define WHV_E_INVALID_VP_REGISTER_NAME   _HRESULT_TYPEDEF_(0x80370309L)
 
 
 //
@@ -50406,22 +50863,274 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 // =======================================================
 //
 //
-// MessageId: ERROR_HNS_PORT_ALLOCATED
+// MessageId: HNS_NETWORK_NOT_FOUND
 //
 // MessageText:
 //
-// The port is already allocated
+// The network was not found.
 //
-#define ERROR_HNS_PORT_ALLOCATED         _NDIS_ERROR_TYPEDEF_(0xC03B0001L)
+#define HNS_NETWORK_NOT_FOUND            _HRESULT_TYPEDEF_(0xC03B0001L)
 
 //
-// MessageId: ERROR_HNS_MAPPING_NOT_SUPPORTED
+// MessageId: HNS_ENDPOINT_NOT_FOUND
 //
 // MessageText:
 //
-// Port mapping is not supported on the given network
+// The endpoint was not found.
 //
-#define ERROR_HNS_MAPPING_NOT_SUPPORTED  _NDIS_ERROR_TYPEDEF_(0xC03B0002L)
+#define HNS_ENDPOINT_NOT_FOUND           _HRESULT_TYPEDEF_(0xC03B0002L)
+
+//
+// MessageId: HNS_LAYER_NOT_FOUND
+//
+// MessageText:
+//
+// The network's underlying layer was not found.
+//
+#define HNS_LAYER_NOT_FOUND              _HRESULT_TYPEDEF_(0xC03B0003L)
+
+//
+// MessageId: HNS_SWITCH_NOT_FOUND
+//
+// MessageText:
+//
+// The virtual switch was not found.
+//
+#define HNS_SWITCH_NOT_FOUND             _HRESULT_TYPEDEF_(0xC03B0004L)
+
+//
+// MessageId: HNS_SUBNET_NOT_FOUND
+//
+// MessageText:
+//
+// The network does not have a subnet for this endpoint.
+//
+#define HNS_SUBNET_NOT_FOUND             _HRESULT_TYPEDEF_(0xC03B0005L)
+
+//
+// MessageId: HNS_ADAPTER_NOT_FOUND
+//
+// MessageText:
+//
+// An adapter was not found.
+//
+#define HNS_ADAPTER_NOT_FOUND            _HRESULT_TYPEDEF_(0xC03B0006L)
+
+//
+// MessageId: HNS_PORT_NOT_FOUND
+//
+// MessageText:
+//
+// The switch-port was not found.
+//
+#define HNS_PORT_NOT_FOUND               _HRESULT_TYPEDEF_(0xC03B0007L)
+
+//
+// MessageId: HNS_POLICY_NOT_FOUND
+//
+// MessageText:
+//
+// An expected policy was not found.
+//
+#define HNS_POLICY_NOT_FOUND             _HRESULT_TYPEDEF_(0xC03B0008L)
+
+//
+// MessageId: HNS_VFP_PORTSETTING_NOT_FOUND
+//
+// MessageText:
+//
+// A required VFP port setting was not found.
+//
+#define HNS_VFP_PORTSETTING_NOT_FOUND    _HRESULT_TYPEDEF_(0xC03B0009L)
+
+//
+// MessageId: HNS_INVALID_NETWORK
+//
+// MessageText:
+//
+// The provided network configuration is invalid or missing parameters.
+//
+#define HNS_INVALID_NETWORK              _HRESULT_TYPEDEF_(0xC03B000AL)
+
+//
+// MessageId: HNS_INVALID_NETWORK_TYPE
+//
+// MessageText:
+//
+// Invalid network type.
+//
+#define HNS_INVALID_NETWORK_TYPE         _HRESULT_TYPEDEF_(0xC03B000BL)
+
+//
+// MessageId: HNS_INVALID_ENDPOINT
+//
+// MessageText:
+//
+// The provided endpoint configuration is invalid or missing parameters.
+//
+#define HNS_INVALID_ENDPOINT             _HRESULT_TYPEDEF_(0xC03B000CL)
+
+//
+// MessageId: HNS_INVALID_POLICY
+//
+// MessageText:
+//
+// The provided policy configuration is invalid or missing parameters.
+//
+#define HNS_INVALID_POLICY               _HRESULT_TYPEDEF_(0xC03B000DL)
+
+//
+// MessageId: HNS_INVALID_POLICY_TYPE
+//
+// MessageText:
+//
+// Invalid policy type.
+//
+#define HNS_INVALID_POLICY_TYPE          _HRESULT_TYPEDEF_(0xC03B000EL)
+
+//
+// MessageId: HNS_INVALID_REMOTE_ENDPOINT_OPERATION
+//
+// MessageText:
+//
+// This requested operation is invalid for a remote endpoint.
+//
+#define HNS_INVALID_REMOTE_ENDPOINT_OPERATION _HRESULT_TYPEDEF_(0xC03B000FL)
+
+//
+// MessageId: HNS_NETWORK_ALREADY_EXISTS
+//
+// MessageText:
+//
+// A network with this name already exists.
+//
+#define HNS_NETWORK_ALREADY_EXISTS       _HRESULT_TYPEDEF_(0xC03B0010L)
+
+//
+// MessageId: HNS_LAYER_ALREADY_EXISTS
+//
+// MessageText:
+//
+// A network with this name already exists.
+//
+#define HNS_LAYER_ALREADY_EXISTS         _HRESULT_TYPEDEF_(0xC03B0011L)
+
+//
+// MessageId: HNS_POLICY_ALREADY_EXISTS
+//
+// MessageText:
+//
+// Policy information already exists on this object.
+//
+#define HNS_POLICY_ALREADY_EXISTS        _HRESULT_TYPEDEF_(0xC03B0012L)
+
+//
+// MessageId: HNS_PORT_ALREADY_EXISTS
+//
+// MessageText:
+//
+// The specified port already exists.
+//
+#define HNS_PORT_ALREADY_EXISTS          _HRESULT_TYPEDEF_(0xC03B0013L)
+
+//
+// MessageId: HNS_ENDPOINT_ALREADY_ATTACHED
+//
+// MessageText:
+//
+// This endpoint is already attached to the switch.
+//
+#define HNS_ENDPOINT_ALREADY_ATTACHED    _HRESULT_TYPEDEF_(0xC03B0014L)
+
+//
+// MessageId: HNS_REQUEST_UNSUPPORTED
+//
+// MessageText:
+//
+// The specified request is unsupported.
+//
+#define HNS_REQUEST_UNSUPPORTED          _HRESULT_TYPEDEF_(0xC03B0015L)
+
+//
+// MessageId: HNS_MAPPING_NOT_SUPPORTED
+//
+// MessageText:
+//
+// Port mapping is not supported on the given network.
+//
+#define HNS_MAPPING_NOT_SUPPORTED        _HRESULT_TYPEDEF_(0xC03B0016L)
+
+//
+// MessageId: HNS_DEGRADED_OPERATION
+//
+// MessageText:
+//
+// There was an operation attempted on a degraded object.
+//
+#define HNS_DEGRADED_OPERATION           _HRESULT_TYPEDEF_(0xC03B0017L)
+
+//
+// MessageId: HNS_SHARED_SWITCH_MODIFICATION
+//
+// MessageText:
+//
+// Cannot modify a switch shared by multiple networks.
+//
+#define HNS_SHARED_SWITCH_MODIFICATION   _HRESULT_TYPEDEF_(0xC03B0018L)
+
+//
+// MessageId: HNS_GUID_CONVERSION_FAILURE
+//
+// MessageText:
+//
+// Failed to interpret a parameter as a GUID.
+//
+#define HNS_GUID_CONVERSION_FAILURE      _HRESULT_TYPEDEF_(0xC03B0019L)
+
+//
+// MessageId: HNS_REGKEY_FAILURE
+//
+// MessageText:
+//
+// Failed to process registry key.
+//
+#define HNS_REGKEY_FAILURE               _HRESULT_TYPEDEF_(0xC03B001AL)
+
+//
+// MessageId: HNS_INVALID_JSON
+//
+// MessageText:
+//
+// Invalid Json document string.
+//
+#define HNS_INVALID_JSON                 _HRESULT_TYPEDEF_(0xC03B001BL)
+
+//
+// MessageId: HNS_INVALID_JSON_REFERENCE
+//
+// MessageText:
+//
+// The reference is invalid in the json document.
+//
+#define HNS_INVALID_JSON_REFERENCE       _HRESULT_TYPEDEF_(0xC03B001CL)
+
+//
+// MessageId: HNS_ENDPOINT_SHARING_DISABLED
+//
+// MessageText:
+//
+// Endpoint sharing is disabled.
+//
+#define HNS_ENDPOINT_SHARING_DISABLED    _HRESULT_TYPEDEF_(0xC03B001DL)
+
+//
+// MessageId: HNS_INVALID_IP
+//
+// MessageText:
+//
+// IP address is either invalid or not part of any configured subnet(s).
+//
+#define HNS_INVALID_IP                   _HRESULT_TYPEDEF_(0xC03B001EL)
 
 //
 // =======================================================
@@ -52526,6 +53235,15 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 #define STATEREPOSITORY_E_SERVICE_STOP_IN_PROGRESS _HRESULT_TYPEDEF_(0x80670010L)
 
 //
+// MessageId: STATEREPOSTORY_E_NESTED_TRANSACTION_NOT_SUPPORTED
+//
+// MessageText:
+//
+// Nested transactions are not supported.
+//
+#define STATEREPOSTORY_E_NESTED_TRANSACTION_NOT_SUPPORTED _HRESULT_TYPEDEF_(0x80670011L)
+
+//
 // Spaceport errors
 //
 // Success
@@ -53990,6 +54708,42 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 // The font or glyph run does not contain any colored glyphs.
 //
 #define DWRITE_E_NOCOLOR                 _HRESULT_TYPEDEF_(0x8898500CL)
+
+//
+// MessageId: DWRITE_E_REMOTEFONT
+//
+// MessageText:
+//
+// A font resource could not be accessed because it is remote.
+//
+#define DWRITE_E_REMOTEFONT              _HRESULT_TYPEDEF_(0x8898500DL)
+
+//
+// MessageId: DWRITE_E_DOWNLOADCANCELLED
+//
+// MessageText:
+//
+// A font download was canceled.
+//
+#define DWRITE_E_DOWNLOADCANCELLED       _HRESULT_TYPEDEF_(0x8898500EL)
+
+//
+// MessageId: DWRITE_E_DOWNLOADFAILED
+//
+// MessageText:
+//
+// A font download failed.
+//
+#define DWRITE_E_DOWNLOADFAILED          _HRESULT_TYPEDEF_(0x8898500FL)
+
+//
+// MessageId: DWRITE_E_TOOMANYDOWNLOADS
+//
+// MessageText:
+//
+// A font download request was not added or a download failed because there are too many active downloads.
+//
+#define DWRITE_E_TOOMANYDOWNLOADS        _HRESULT_TYPEDEF_(0x88985010L)
 
 
 //
@@ -58948,5 +59702,95 @@ FORCEINLINE _Translates_Win32_to_HRESULT_(x) HRESULT HRESULT_FROM_WIN32(unsigned
 // A RunExeWithArgs action contains a binary which is not present on the targeted device.
 //
 #define UTC_E_BINARY_MISSING             _HRESULT_TYPEDEF_(0x87C51034L)
+
+//
+// MessageId: UTC_E_NETWORK_CAPTURE_NOT_ALLOWED
+//
+// MessageText:
+//
+// A network capture trace is not allowed.
+//
+#define UTC_E_NETWORK_CAPTURE_NOT_ALLOWED _HRESULT_TYPEDEF_(0x87C51035L)
+
+//
+// MessageId: UTC_E_FAILED_TO_RESOLVE_CONTAINER_ID
+//
+// MessageText:
+//
+// UTC failed to identify the container id to use for a scenario escalation action.
+//
+#define UTC_E_FAILED_TO_RESOLVE_CONTAINER_ID _HRESULT_TYPEDEF_(0x87C51036L)
+
+//
+// MessageId: UTC_E_UNABLE_TO_RESOLVE_SESSION
+//
+// MessageText:
+//
+// Failed to resolve session ID during API invocation.
+//
+#define UTC_E_UNABLE_TO_RESOLVE_SESSION  _HRESULT_TYPEDEF_(0x87C51037L)
+
+//
+// MessageId: UTC_E_THROTTLED
+//
+// MessageText:
+//
+// UTC has throttled the event for firing too often.
+//
+#define UTC_E_THROTTLED                  _HRESULT_TYPEDEF_(0x87C51038L)
+
+//
+// MessageId: UTC_E_UNAPPROVED_SCRIPT
+//
+// MessageText:
+//
+// The script is not approved to run as part of DiagTrack scenario.
+//
+#define UTC_E_UNAPPROVED_SCRIPT          _HRESULT_TYPEDEF_(0x87C51039L)
+
+//
+// MessageId: UTC_E_SCRIPT_MISSING
+//
+// MessageText:
+//
+// The script referenced in DiagTrack scenario is not present on the system.
+//
+#define UTC_E_SCRIPT_MISSING             _HRESULT_TYPEDEF_(0x87C5103AL)
+
+//
+// MessageId: UTC_E_SCENARIO_THROTTLED
+//
+// MessageText:
+//
+// A trigger in this scenario is throttled, blocking the scenario from being loaded.
+//
+#define UTC_E_SCENARIO_THROTTLED         _HRESULT_TYPEDEF_(0x87C5103BL)
+
+//
+// MessageId: UTC_E_API_NOT_SUPPORTED
+//
+// MessageText:
+//
+// The requested UTC API call is not supported on this device.
+//
+#define UTC_E_API_NOT_SUPPORTED          _HRESULT_TYPEDEF_(0x87C5103CL)
+
+//
+// MessageId: UTC_E_GETFILE_EXTERNAL_PATH_NOT_APPROVED
+//
+// MessageText:
+//
+// The file path is not approved for collection on external rings for the GetFile escalation action.
+//
+#define UTC_E_GETFILE_EXTERNAL_PATH_NOT_APPROVED _HRESULT_TYPEDEF_(0x87C5103DL)
+
+//
+// MessageId: UTC_E_TRY_GET_SCENARIO_TIMEOUT_EXCEEDED
+//
+// MessageText:
+//
+// Querying a scenario definition exceeded the specified maximum timeout.
+//
+#define UTC_E_TRY_GET_SCENARIO_TIMEOUT_EXCEEDED _HRESULT_TYPEDEF_(0x87C5103EL)
 
 #endif//_WINERROR_

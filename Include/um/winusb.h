@@ -48,11 +48,10 @@ extern "C" {
 
 #include <winusbio.h>
 
-
 typedef PVOID WINUSB_INTERFACE_HANDLE, *PWINUSB_INTERFACE_HANDLE;
 
 typedef PVOID WINUSB_ISOCH_BUFFER_HANDLE, *PWINUSB_ISOCH_BUFFER_HANDLE;
-   
+
 #pragma pack(1)
 
 typedef struct _WINUSB_SETUP_PACKET {
@@ -178,7 +177,7 @@ WinUsb_WritePipe(
     _In_reads_bytes_(BufferLength) PUCHAR Buffer,
     _In_  ULONG BufferLength,
     _Out_opt_ PULONG LengthTransferred,
-    _In_opt_ LPOVERLAPPED Overlapped    
+    _In_opt_ LPOVERLAPPED Overlapped
     );
 
 BOOL __stdcall
@@ -188,7 +187,7 @@ WinUsb_ControlTransfer(
     _Out_writes_bytes_to_opt_(BufferLength, *LengthTransferred) PUCHAR Buffer,
     _In_  ULONG BufferLength,
     _Out_opt_ PULONG LengthTransferred,
-    _In_opt_  LPOVERLAPPED Overlapped    
+    _In_opt_  LPOVERLAPPED Overlapped
     );
 
 BOOL __stdcall
@@ -232,7 +231,7 @@ WinUsb_GetOverlappedResult(
     _Out_ LPDWORD lpNumberOfBytesTransferred,
     _In_  BOOL bWait
     );
-    
+
 PUSB_INTERFACE_DESCRIPTOR __stdcall
 WinUsb_ParseConfigurationDescriptor(
     _In_  PUSB_CONFIGURATION_DESCRIPTOR ConfigurationDescriptor,
@@ -263,7 +262,7 @@ BOOL __stdcall WinUsb_GetAdjustedFrameNumber (
     _In_  LARGE_INTEGER TimeStamp
     );
 
-BOOL __stdcall 
+BOOL __stdcall
 WinUsb_RegisterIsochBuffer(
     _In_  WINUSB_INTERFACE_HANDLE InterfaceHandle,
     _In_  UCHAR PipeID,
@@ -272,7 +271,7 @@ WinUsb_RegisterIsochBuffer(
     _Out_ PWINUSB_ISOCH_BUFFER_HANDLE IsochBufferHandle
     );
 
-BOOL __stdcall 
+BOOL __stdcall
 WinUsb_UnregisterIsochBuffer(
     _In_  WINUSB_ISOCH_BUFFER_HANDLE IsochBufferHandle
     );
@@ -313,15 +312,80 @@ BOOL __stdcall WinUsb_ReadIsochPipeAsap (
     _In_opt_ LPOVERLAPPED Overlapped
     );
 
+
+#ifndef __USB_TIME_SYNC_DEFINED
+#define __USB_TIME_SYNC_DEFINED
+
+#include <pshpack1.h>
+
+typedef struct _USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION {
+
+    HANDLE          TimeTrackingHandle;
+    BOOLEAN         IsStartupDelayTolerable;
+
+} USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION, *PUSB_START_TRACKING_FOR_TIME_SYNC_INFORMATION;
+
+typedef struct _USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION {
+
+    HANDLE          TimeTrackingHandle;
+
+} USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION, *PUSB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION;
+
+typedef struct _USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION {
+
+    //
+    // Input
+    //
+
+    HANDLE          TimeTrackingHandle;
+    ULONG           InputFrameNumber;
+    ULONG           InputMicroFrameNumber;
+
+    //
+    // Output
+    //
+
+    LARGE_INTEGER   QueryPerformanceCounterAtInputFrameOrMicroFrame;
+    LARGE_INTEGER   QueryPerformanceCounterFrequency;
+    ULONG           PredictedAccuracyInMicroSeconds;
+
+    ULONG           CurrentGenerationID;
+    LARGE_INTEGER   CurrentQueryPerformanceCounter;
+    ULONG           CurrentHardwareFrameNumber;         // 11 bits from hardware/MFINDEX
+    ULONG           CurrentHardwareMicroFrameNumber;    //  3 bits from hardware/MFINDEX
+    ULONG           CurrentUSBFrameNumber;              // 32 bit USB Frame Number
+
+} USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION, *PUSB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION;
+
+#include <poppack.h>
+
+#endif
+
+BOOL __stdcall WinUsb_StartTrackingForTimeSync (
+    _In_  WINUSB_INTERFACE_HANDLE InterfaceHandle,
+    _In_  PUSB_START_TRACKING_FOR_TIME_SYNC_INFORMATION StartTrackingInfo
+    );
+
+BOOL __stdcall WinUsb_GetCurrentFrameNumberAndQpc (
+    _In_  WINUSB_INTERFACE_HANDLE InterfaceHandle,
+    _In_  PUSB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION FrameQpcInfo
+    );
+
+BOOL __stdcall WinUsb_StopTrackingForTimeSync (
+    _In_  WINUSB_INTERFACE_HANDLE InterfaceHandle,
+    _In_  PUSB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION StopTrackingInfo
+    );
+
 #endif // (NTDDI_VERSION >= NTDDI_WINXP)
 
 #ifdef __cplusplus
 }
 #endif
 
-                   
+
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
 #endif //__WUSB_H__
+

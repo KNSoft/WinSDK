@@ -14,26 +14,6 @@ import "Windows.Devices.Haptics.idl";
 import "Windows.Devices.Input.idl";
 import "Windows.Storage.Streams.idl";
 import "Windows.UI.Core.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Edevices2Ehaptics_h__)")
-cpp_quote("#include <Windows.Devices.Haptics.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Ehaptics_h__)")
-cpp_quote("#if !defined(__windows2Edevices2Einput_h__)")
-cpp_quote("#include <Windows.Devices.Input.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Einput_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Eui2Ecore_h__)")
-cpp_quote("#include <Windows.UI.Core.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Ecore_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -180,6 +160,8 @@ namespace Windows
             interface IRadialControllerConfiguration2;
 
             interface IRadialControllerConfigurationStatics;
+
+            interface IRadialControllerConfigurationStatics2;
 
             interface IRadialControllerControlAcquiredEventArgs;
 
@@ -896,6 +878,17 @@ namespace Windows
                 HRESULT GetForCurrentView([out] [retval] Windows.UI.Input.RadialControllerConfiguration** configuration);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Input.RadialControllerConfiguration)]
+            [uuid(53E08B17-E205-48D3-9CAF-80FF47C4D7C7)]
+            interface IRadialControllerConfigurationStatics2 : IInspectable
+            {
+                [propput] HRESULT AppController([in] Windows.UI.Input.RadialController* value);
+                [propget] HRESULT AppController([out] [retval] Windows.UI.Input.RadialController** value);
+                [propput] HRESULT IsAppControllerEnabled([in] boolean value);
+                [propget] HRESULT IsAppControllerEnabled([out] [retval] boolean* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
             [exclusiveto(Windows.UI.Input.RadialControllerControlAcquiredEventArgs)]
             [uuid(206AA439-E651-11E5-BF62-2C27D7404E85)]
@@ -1207,6 +1200,7 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
             [marshaling_behavior(agile)]
             [static(Windows.UI.Input.IRadialControllerConfigurationStatics, Windows.Foundation.UniversalApiContract, 3.0)]
+            [static(Windows.UI.Input.IRadialControllerConfigurationStatics2, Windows.Foundation.UniversalApiContract, 5.0)]
             runtimeclass RadialControllerConfiguration
             {
                 [default] interface Windows.UI.Input.IRadialControllerConfiguration;

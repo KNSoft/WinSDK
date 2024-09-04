@@ -4,6 +4,7 @@
 #define WINEVENT_CHANNEL_GLOBAL_APPLICATION 0x9
 #define WINEVENT_CHANNEL_GLOBAL_SECURITY 0xa
 #define WINEVENT_CHANNEL_TRACELOGGING 0xb
+#define WINEVENT_CHANNEL_PROVIDERMETADATA 0xc
 #define WINEVENT_LEVEL_LOG_ALWAYS 0x0
 #define WINEVENT_LEVEL_CRITICAL 0x1
 #define WINEVENT_LEVEL_ERROR 0x2
@@ -79,6 +80,8 @@
 #define MSG_category_SystemEvent         0x00000006L
 
 #define MSG_channel_Application          0x00000100L
+
+#define MSG_channel_ProviderMetadata     0x90000003L
 
 #define MSG_channel_Security             0x00000101L
 

@@ -1092,7 +1092,7 @@ typedef struct
     PWSTR           pNameSigner;
 #ifdef MIDL_PASS
     [size_is(wSignatureLength)] BYTE  Signature[];
-#else    
+#else
     BYTE            Signature[1];
 #endif
 }
@@ -1111,7 +1111,7 @@ typedef struct
     PSTR            pNameSigner;
 #ifdef MIDL_PASS
     [size_is(wSignatureLength)] BYTE  Signature[];
-#else    
+#else
     BYTE            Signature[1];
 #endif
 }
@@ -1126,9 +1126,9 @@ typedef struct
     WORD            wPad;            // keep byte field aligned
 #ifdef MIDL_PASS
     [size_is(wKeyLength)] BYTE Key[];
-#else    
+#else
     BYTE            Key[1];
-#endif    
+#endif
 }
 DNS_KEY_DATA, *PDNS_KEY_DATA, DNS_DNSKEY_DATA, *PDNS_DNSKEY_DATA;
 
@@ -1150,9 +1150,9 @@ typedef struct
     WORD            wPad;            // keep byte field aligned
 #ifdef MIDL_PASS
     [size_is(wTypeBitMapsLength)] BYTE  TypeBitMaps[];
-#else        
+#else
     BYTE            TypeBitMaps[1];
-#endif    
+#endif
 }
 DNS_NSEC_DATAW, *PDNS_NSEC_DATAW;
 
@@ -1163,9 +1163,9 @@ typedef struct
     WORD            wPad;            // keep byte field aligned
 #ifdef MIDL_PASS
     [size_is(wTypeBitMapsLength)] BYTE  TypeBitMaps[];
-#else        
+#else
     BYTE            TypeBitMaps[1];
-#endif    
+#endif
 }
 DNS_NSEC_DATAA, *PDNS_NSEC_DATAA;
 
@@ -1179,9 +1179,9 @@ typedef struct
     WORD            wTypeBitMapsLength;
 #ifdef MIDL_PASS
     [size_is(bSaltLength+bHashLength+wTypeBitMapsLength)] BYTE  chData[];
-#else        
+#else
     BYTE            chData[1];
-#endif    
+#endif
 }
 DNS_NSEC3_DATA, *PDNS_NSEC3_DATA;
 
@@ -1194,9 +1194,9 @@ typedef struct
     BYTE            bPad[3];        // keep salt field aligned
 #ifdef MIDL_PASS
     [size_is(bSaltLength)] BYTE  pbSalt[];
-#else        
+#else
     BYTE            pbSalt[1];
-#endif    
+#endif
 }
 DNS_NSEC3PARAM_DATA, *PDNS_NSEC3PARAM_DATA;
 
@@ -1209,9 +1209,9 @@ typedef struct
     BYTE            bPad[3];        // keep certificate association data field aligned
 #ifdef MIDL_PASS
     [size_is(bCertificateAssociationDataLength)] BYTE  bCertificateAssociationData[];
-#else        
+#else
     BYTE            bCertificateAssociationData[1];
-#endif    
+#endif
 }
 DNS_TLSA_DATA, *PDNS_TLSA_DATA;
 
@@ -1224,9 +1224,9 @@ typedef struct
     WORD            wPad;            // keep byte field aligned
 #ifdef MIDL_PASS
     [size_is(wDigestLength)] BYTE  Digest[];
-#else    
+#else
     BYTE            Digest[1];
-#endif    
+#endif
 }
 DNS_DS_DATA, *PDNS_DS_DATA;
 
@@ -1238,7 +1238,7 @@ typedef struct
     [size_is(wDataLength)] BYTE Data[];
 #else
     BYTE            Data[1];
-#endif    
+#endif
 }
 DNS_OPT_DATA, *PDNS_OPT_DATA;
 
@@ -1262,7 +1262,7 @@ typedef struct
     [size_is(wNumTypes)] WORD wTypes[];
 #else
     WORD            wTypes[1];
-#endif    
+#endif
 }
 DNS_NXT_DATAW, *PDNS_NXT_DATAW;
 
@@ -1274,7 +1274,7 @@ typedef struct
     [size_is(wNumTypes)] WORD wTypes[];
 #else
     WORD            wTypes[1];
-#endif    
+#endif
 }
 DNS_NXT_DATAA, *PDNS_NXT_DATAA;
 
@@ -1674,7 +1674,7 @@ typedef _Struct_size_bytes_(FIELD_OFFSET(struct _DnsRecordW, Data) + wDataLength
         DNS_NSEC3_DATA      NSEC3, Nsec3;
         DNS_NSEC3PARAM_DATA	NSEC3PARAM, Nsec3Param;
         DNS_TLSA_DATA	    TLSA, Tlsa;
-        DNS_UNKNOWN_DATA    UNKNOWN, Unknown;	
+        DNS_UNKNOWN_DATA    UNKNOWN, Unknown;
         PBYTE               pDataPtr;
 
     } Data;
@@ -1772,7 +1772,7 @@ typedef _Struct_size_bytes_(FIELD_OFFSET(struct _DnsRecordA, Data) + wDataLength
         DNS_NSEC3_DATA      NSEC3, Nsec3;
         DNS_NSEC3PARAM_DATA NSEC3PARAM, Nsec3Param;
         DNS_TLSA_DATA	    TLSA, Tlsa;
-        DNS_UNKNOWN_DATA    UNKNOWN, Unknown;	
+        DNS_UNKNOWN_DATA    UNKNOWN, Unknown;
         PBYTE               pDataPtr;
 
     } Data;
@@ -2137,7 +2137,7 @@ typedef struct _DNS_QUERY_RESULT
 DNS_QUERY_RESULT, *PDNS_QUERY_RESULT;
 
 typedef
-VOID 
+VOID
 WINAPI
 DNS_QUERY_COMPLETION_ROUTINE(
     _In_        PVOID               pQueryContext,
@@ -2493,6 +2493,245 @@ WINAPI
 DnsFreeProxyName(
     _Frees_ptr_opt_ PWSTR   proxyName
     );
+
+//
+//  Connections Proxy configuration APIs
+//
+
+//
+// Connection Proxy APIs.
+//
+
+#define DNS_CONNECTION_NAME_MAX_LENGTH                      64
+#define DNS_CONNECTION_PROXY_INFO_CURRENT_VERSION           1
+#define DNS_CONNECTION_PROXY_INFO_SERVER_MAX_LENGTH         256
+#define DNS_CONNECTION_PROXY_INFO_FRIENDLY_NAME_MAX_LENGTH  64
+#define DNS_CONNECTION_PROXY_INFO_USERNAME_MAX_LENGTH       128
+#define DNS_CONNECTION_PROXY_INFO_PASSWORD_MAX_LENGTH       128
+#define DNS_CONNECTION_PROXY_INFO_EXCEPTION_MAX_LENGTH      1024
+#define DNS_CONNECTION_PROXY_INFO_EXTRA_INFO_MAX_LENGTH     1024
+
+//
+// Proxy type definition.
+//
+
+typedef enum _DNS_CONNECTION_PROXY_TYPE
+{
+    DNS_CONNECTION_PROXY_TYPE_NULL      = 0,
+    DNS_CONNECTION_PROXY_TYPE_HTTP      = 1,
+    DNS_CONNECTION_PROXY_TYPE_WAP       = 2,
+    DNS_CONNECTION_PROXY_TYPE_SOCKS4    = 4,
+    DNS_CONNECTION_PROXY_TYPE_SOCKS5    = 5
+} DNS_CONNECTION_PROXY_TYPE;
+
+//
+// This enum indicate whether the DNS_CONNECTION_PROXY_INFO data structure
+// contains the 'CONFIG' information or the 'SCRIPT' information.
+//
+
+typedef enum _DNS_CONNECTION_PROXY_INFO_SWITCH
+{
+    DNS_CONNECTION_PROXY_INFO_SWITCH_CONFIG = 0,
+    DNS_CONNECTION_PROXY_INFO_SWITCH_SCRIPT,
+    DNS_CONNECTION_PROXY_INFO_SWITCH_WPAD
+} DNS_CONNECTION_PROXY_INFO_SWITCH;
+
+//
+// These flags can be ORed to form the 'Flags' field of DNS_CONNECTION_PROXY_INFO.
+//
+
+#define DNS_CONNECTION_PROXY_INFO_FLAG_DISABLED     0x1
+#define DNS_CONNECTION_PROXY_INFO_FLAG_BYPASSLOCAL  0x2
+
+#pragma warning(push)
+#pragma warning(disable: 4201)
+
+typedef struct _DNS_CONNECTION_PROXY_INFO
+{
+    DWORD Version;
+    WCHAR *pwszFriendlyName;
+    DWORD Flags;
+    DNS_CONNECTION_PROXY_INFO_SWITCH Switch;
+    union
+    {
+        struct _DNS_CONNECTION_PROXY_INFO_CONFIG
+        {
+            WCHAR *pwszServer;
+            WCHAR *pwszUsername;
+            WCHAR *pwszPassword;
+            WCHAR *pwszException;
+            WCHAR *pwszExtraInfo;
+            WORD Port;
+        } Config;
+
+        struct _DNS_CONNECTION_PROXY_INFO_SCRIPT
+        {
+            WCHAR *pwszScript;
+            WCHAR *pwszUsername;
+            WCHAR *pwszPassword;
+        } Script;
+    };
+} DNS_CONNECTION_PROXY_INFO, *PDNS_CONNECTION_PROXY_INFO;
+
+#pragma warning(pop)
+
+typedef struct _DNS_CONNECTION_PROXY_INFO_EX
+{
+    DNS_CONNECTION_PROXY_INFO ProxyInfo;
+    DWORD dwInterfaceIndex;
+    WCHAR *pwszConnectionName;
+    BOOL fDirectConfiguration;
+    HANDLE hConnection;
+} DNS_CONNECTION_PROXY_INFO_EX, *PDNS_CONNECTION_PROXY_INFO_EX;
+
+typedef struct _DNS_CONNECTION_PROXY_ELEMENT
+{
+    DNS_CONNECTION_PROXY_TYPE Type;
+    DNS_CONNECTION_PROXY_INFO Info;
+} DNS_CONNECTION_PROXY_ELEMENT;
+
+typedef struct _DNS_CONNECTION_PROXY_LIST
+{
+    DWORD cProxies;
+    DNS_CONNECTION_PROXY_ELEMENT *pProxies;
+} DNS_CONNECTION_PROXY_LIST;
+
+typedef struct _DNS_CONNECTION_NAME
+{
+    WCHAR wszName[DNS_CONNECTION_NAME_MAX_LENGTH + 1];
+} DNS_CONNECTION_NAME;
+
+typedef struct _DNS_CONNECTION_NAME_LIST
+{
+    DWORD cNames;
+    DNS_CONNECTION_NAME *pNames;
+} DNS_CONNECTION_NAME_LIST;
+
+DWORD
+DnsConnectionGetProxyInfoForHostUrl(
+    _In_z_ PCWSTR pwszHostUrl,
+    _In_reads_opt_(dwSelectionContextLength) BYTE *pSelectionContext,
+    _In_ DWORD dwSelectionContextLength,
+    _In_ DWORD dwExplicitInterfaceIndex,
+    _Out_ DNS_CONNECTION_PROXY_INFO_EX *pProxyInfoEx
+);
+
+VOID
+DnsConnectionFreeProxyInfoEx(
+    _Inout_ DNS_CONNECTION_PROXY_INFO_EX *pProxyInfoEx
+);
+
+DWORD
+DnsConnectionGetProxyInfo(
+    _In_z_ PCWSTR pwszConnectionName,
+    _In_ DNS_CONNECTION_PROXY_TYPE Type,
+    _Out_ DNS_CONNECTION_PROXY_INFO *pProxyInfo
+);
+
+VOID
+DnsConnectionFreeProxyInfo(
+    _Inout_ DNS_CONNECTION_PROXY_INFO *pProxyInfo
+);
+
+DWORD
+DnsConnectionSetProxyInfo(
+    _In_z_ PCWSTR pwszConnectionName,
+    _In_ DNS_CONNECTION_PROXY_TYPE Type,
+    _In_ const DNS_CONNECTION_PROXY_INFO *pProxyInfo
+);
+
+DWORD
+DnsConnectionDeleteProxyInfo(
+    _In_z_ PCWSTR pwszConnectionName,
+    _In_  DNS_CONNECTION_PROXY_TYPE Type
+);
+
+DWORD
+DnsConnectionGetProxyList(
+    _In_z_ PCWSTR pwszConnectionName,
+    _Out_ DNS_CONNECTION_PROXY_LIST *pProxyList
+);
+
+VOID
+DnsConnectionFreeProxyList(
+    _Inout_ DNS_CONNECTION_PROXY_LIST *pProxyList
+);
+
+DWORD
+DnsConnectionGetNameList(
+    _Out_ DNS_CONNECTION_NAME_LIST *pNameList
+);
+
+VOID
+DnsConnectionFreeNameList(
+    _Inout_ DNS_CONNECTION_NAME_LIST *pNameList
+);
+
+//
+// Connection <-> Active Interface Index mapping APIs
+//
+
+typedef struct _DNS_CONNECTION_IFINDEX_ENTRY
+{
+    PCWSTR pwszConnectionName;
+    DWORD dwIfIndex;
+} DNS_CONNECTION_IFINDEX_ENTRY;
+
+typedef struct _DNS_CONNECTION_IFINDEX_LIST
+{
+    DNS_CONNECTION_IFINDEX_ENTRY *pConnectionIfIndexEntries;
+    DWORD nEntries;
+}  DNS_CONNECTION_IFINDEX_LIST;
+
+DWORD
+DnsConnectionUpdateIfIndexTable(
+    _In_ DNS_CONNECTION_IFINDEX_LIST *pConnectionIfIndexEntries
+);
+
+//
+// Connection Policy Configuration APIs
+//
+
+#define DNS_CONNECTION_POLICY_ENTRY_ONDEMAND 0x00000001
+
+typedef struct _DNS_CONNECTION_POLICY_ENTRY
+{
+    PCWSTR pwszHost;
+    PCWSTR pwszAppId;
+    DWORD cbAppSid;
+    PBYTE pbAppSid;
+    DWORD nConnections;
+    PCWSTR *ppwszConnections;
+    DWORD dwPolicyEntryFlags;
+} DNS_CONNECTION_POLICY_ENTRY, *PDNS_CONNECTION_POLICY_ENTRY;
+
+typedef struct _DNS_CONNECTION_POLICY_ENTRY_LIST
+{
+#ifdef MIDL_PASS
+    [size_is(nEntries)] DNS_CONNECTION_POLICY_ENTRY *pPolicyEntries;
+#else
+    DNS_CONNECTION_POLICY_ENTRY *pPolicyEntries;
+#endif
+    DWORD nEntries;
+} DNS_CONNECTION_POLICY_ENTRY_LIST;
+
+typedef enum
+{
+    TAG_DNS_CONNECTION_POLICY_TAG_DEFAULT = 0,
+    TAG_DNS_CONNECTION_POLICY_TAG_CONNECTION_MANAGER,
+    TAG_DNS_CONNECTION_POLICY_TAG_WWWPT
+} DNS_CONNECTION_POLICY_TAG;
+
+DWORD
+DnsConnectionSetPolicyEntries(
+    _In_ DNS_CONNECTION_POLICY_TAG PolicyEntryTag,
+    _In_ DNS_CONNECTION_POLICY_ENTRY_LIST *pPolicyEntryList
+);
+
+DWORD
+DnsConnectionDeletePolicyEntries(
+    _In_ DNS_CONNECTION_POLICY_TAG PolicyEntryTag
+);
 
 
 #ifdef __cplusplus

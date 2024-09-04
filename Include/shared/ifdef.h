@@ -154,6 +154,9 @@ typedef UINT16 NET_IFTYPE, *PNET_IFTYPE;        // Interface Type (IANA ifType)
 #define NET_IFINDEX_UNSPECIFIED (NET_IFINDEX)(0)    // Not a valid ifIndex
 #define NET_IFLUID_UNSPECIFIED (0)    // Not a valid if Luid
 
+#ifndef __IF_INDEX_DEFINED__
+#define __IF_INDEX_DEFINED__
+
 //
 // IF_INDEX
 //
@@ -162,6 +165,8 @@ typedef UINT16 NET_IFTYPE, *PNET_IFTYPE;        // Interface Type (IANA ifType)
 // This must be unsigned (not an enum) to replace previous uses of
 // an index that used a DWORD type.
 //
+
+#endif // __IF_INDEX_DEFINED__
 
 typedef NET_IFINDEX IF_INDEX, *PIF_INDEX;
 

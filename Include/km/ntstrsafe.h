@@ -13097,7 +13097,7 @@ _Post_satisfies_(*pcchSrcLength*sizeof(wchar_t) == SourceString->MaximumLength)
 
         if ((*ppszSrc == NULL) && (dwFlags & STRSAFE_IGNORE_NULLS))
         {
-            *ppszSrc = L"";
+            *ppszSrc = (wchar_t*)L"";
         }
     }
 

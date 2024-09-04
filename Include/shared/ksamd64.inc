@@ -85,6 +85,8 @@ RECURSIVE_NMI equ 00111H
 KERNEL_SECURITY_CHECK_FAILURE equ 00139H
 UNSUPPORTED_INSTRUCTION_MODE equ 00151H
 BUGCHECK_CONTEXT_MODIFIER equ 080000000H
+INVALID_CALLBACK_STACK_ADDRESS equ 001CDH
+INVALID_KERNEL_STACK_ADDRESS equ 001CEH
 
 ;
 ;  Breakpoint type definitions
@@ -99,28 +101,6 @@ STATUS_ASSERTION_FAILURE equ 0C0000420H
 
 CidUniqueProcess equ 00000H
 CidUniqueThread equ 00008H
-
-;
-;  Critical Section Structure Offset Definitions
-;
-
-CsDebugInfo equ 00000H
-CsLockCount equ 00008H
-CsRecursionCount equ 0000CH
-CsOwningThread equ 00010H
-CsLockSemaphore equ 00018H
-CsSpinCount equ 00020H
-
-;
-;  Critical Section Debug Information Structure Offset Definitions
-;
-
-CsType equ 00000H
-CsCreatorBackTraceIndex equ 00002H
-CsCriticalSection equ 00008H
-CsProcessLocksList equ 00010H
-CsEntryCount equ 00020H
-CsContentionCount equ 00024H
 
 ;
 ;  Exception Record Offset, Flag, and Enumerated Type Definitions
@@ -205,6 +185,7 @@ StrBuffer equ 00008H
 ;
 
 IbCfgBitMap equ 000B0H
+IbWow64CfgBitMap equ 000C0H
 IbMitigationOptionsMap equ 000A0H
 PS_MITIGATION_OPTION_BITS_PER_OPTION equ 00004H
 PS_MITIGATION_OPTION_ALWAYS_ON equ 00001H
@@ -334,6 +315,7 @@ FAST_FAIL_INVALID_BUFFER_ACCESS equ 0001CH
 FAST_FAIL_INVALID_NEXT_THREAD equ 0001EH
 FAST_FAIL_INVALID_CONTROL_STACK equ 0002FH
 FAST_FAIL_SET_CONTEXT_DENIED equ 00030H
+FAST_FAIL_ENCLAVE_CALL_FAILURE equ 00035H
 
 ;
 ;  Bounds Callback Status Code Definitions
@@ -464,7 +446,7 @@ PrKernelTime equ 0026CH
 PrUserTime equ 00270H
 PrInstrumentationCallback equ 002C8H
 KernelProcessObjectLength equ 002D8H
-ExecutiveProcessObjectLength equ 00818H
+ExecutiveProcessObjectLength equ 00838H
 Win32BatchFlushCallout equ 00007H
 
 ;
@@ -501,7 +483,7 @@ QueueObjectLength equ 00040H
 ;
 
 EtCid equ 00638H
-EtPicoContext equ 00798H
+EtPicoContext equ 007A0H
 
 ;
 ;  User Mode Scheduling Definitions
@@ -548,11 +530,12 @@ ThTeb equ 000F0H
 ThTimer equ 00100H
 thProcess equ 00220H
 
-KTHREAD_AUTO_ALIGNMENT_BIT equ 00000H
-KTHREAD_GUI_THREAD_MASK equ 00040H
-KTHREAD_RESTRICTED_GUI_THREAD_MASK equ 0100000H
+KTHREAD_AUTO_ALIGNMENT_BIT equ 00002H
+KTHREAD_GUI_THREAD_MASK equ 00080H
+KTHREAD_RESTRICTED_GUI_THREAD_MASK equ 0200000H
 KTHREAD_SYSTEM_THREAD_BIT equ 0000AH
-KTHREAD_QUEUE_DEFER_PREEMPTION_BIT equ 0000AH
+KTHREAD_QUEUE_DEFER_PREEMPTION_BIT equ 0000BH
+KTHREAD_BAM_QOS_LEVEL_MASK equ 00003H
 DEBUG_ACTIVE_PRIMARY_THREAD equ 00080H
 DEBUG_ACTIVE_PRIMARY_THREAD_BIT equ 00007H
 DEBUG_ACTIVE_PRIMARY_THREAD_LOCK_BIT equ 0001FH
@@ -578,8 +561,8 @@ ThProcess equ 00220H
 ThWin32Thread equ 001C8H
 ThStackBase equ 00038H
 ThLegoData equ 002D0H
-KernelThreadObjectLength equ 005E8H
-ExecutiveThreadObjectLength equ 00810H
+KernelThreadObjectLength equ 005F0H
+ExecutiveThreadObjectLength equ 00818H
 
 
 ;
@@ -663,7 +646,7 @@ UmsSchedulerThreadYield equ 00002H
 PeBeingDebugged equ 00002H
 PeProcessParameters equ 00020H
 PeKernelCallbackTable equ 00058H
-ProcessEnvironmentBlockLength equ 007A0H
+ProcessEnvironmentBlockLength equ 007B0H
 
 ;
 ;  Process Parameters Block Structure Offset Definitions
@@ -844,8 +827,8 @@ CxxXStateLength equ 00014H
 AfCount equ 00000H
 AfBitmap equ 00008H
 CFlushSize equ 000E8H
-PbEntropyCount equ 063A0H
-PbEntropyBuffer equ 063A4H
+PbEntropyCount equ 062E0H
+PbEntropyBuffer equ 062E4H
 KENTROPY_TIMING_INTERRUPTS_PER_BUFFER equ 00400H
 KENTROPY_TIMING_BUFFER_MASK equ 007FFH
 KENTROPY_TIMING_ANALYSIS equ 00000H
@@ -945,11 +928,11 @@ PcCpuType equ 001C0H
 PcCpuID equ 001C1H
 PcCpuStep equ 001C2H
 PcCpuVendor equ 0020DH
-PcVirtualApicAssist equ 06288H
-PcFeatureBits equ 064E8H
+PcVirtualApicAssist equ 06208H
+PcFeatureBits equ 06420H
 PcNmiActive equ 05A66H
-PcSfCode equ 06B00H
-PcSfVa equ 06B08H
+PcSfCode equ 066A8H
+PcSfVa equ 066B0H
 CPU_AMD equ 00001H
 CPU_INTEL equ 00002H
 CPU_VIA equ 00003H
@@ -961,7 +944,7 @@ PcDpcRoutineActive equ 02FEAH
 PcInterruptCount equ 05D00H
 PcDebuggerSavedIRQL equ 05D18H
 PcStartCycles equ 05D40H
-ProcessorControlRegisterLength equ 010B80H
+ProcessorControlRegisterLength equ 01AAC0H
 
 ;
 ;  Defines for user shared data
@@ -1046,7 +1029,7 @@ KI_SPINLOCK_ORDER_PRCB_LOCK equ 00040H
 PbGroup equ 000D0H
 PbGroupIndex equ 000D1H
 PbProcessorState equ 00100H
-PbContext equ 06380H
+PbContext equ 062C0H
 PbCpuType equ 00040H
 PbCpuID equ 00041H
 PbCpuStep equ 00042H
@@ -1061,6 +1044,7 @@ PbApicMask equ 000DCH
 PbCFlushSize equ 000E8H
 PbAcpiReserved equ 000E0H
 PbInitialApicId equ 000D4H
+PbBamFlags equ 000ECH
 PbPriorityState equ 00038H
 PbLockQueue equ 006F0H
 PbPPLookasideList equ 00800H
@@ -1079,13 +1063,13 @@ PbOtherTransferCount equ 02D78H
 PbContextSwitches equ 02D3CH
 PbTargetCount equ 02D84H
 PbIpiFrozen equ 02D88H
-PbRequestMailbox equ 06A00H
-PbMailbox equ 069C0H
+PbRequestMailbox equ 06940H
+PbMailbox equ 06900H
 PbDpcList equ 02E00H
 PbDpcLock equ 02E10H
 PbDpcCount equ 02E1CH
 PbDpcStack equ 02E50H
-PbIsrStack equ 06398H
+PbIsrStack equ 062D8H
 PbMaximumDpcQueueDepth equ 02E58H
 PbDpcRequestRate equ 02E5CH
 PbMinimumDpcRate equ 02E60H
@@ -1106,21 +1090,21 @@ PbInterruptTime equ 05B90H
 PbAdjustDpcThreshold equ 05B94H
 PbParentNode equ 000C0H
 PbStartCycles equ 05BC0H
-PbPageColor equ 05C64H
-PbNodeColor equ 05C68H
-PbNodeShiftedColor equ 05C6CH
-PbSecondaryColorMask equ 05C70H
-PbCycleTime equ 05C78H
+PbPageColor equ 05C10H
+PbNodeColor equ 05C14H
+PbNodeShiftedColor equ 05C18H
+PbSecondaryColorMask equ 05C1CH
+PbCycleTime equ 05C38H
 PbFastReadNoWait equ 02D44H
 PbFastReadWait equ 02D48H
 PbFastReadNotPossible equ 02D4CH
 PbCopyReadNoWait equ 02D50H
 PbCopyReadWait equ 02D54H
 PbCopyReadNoWaitMiss equ 02D58H
-PbAlignmentFixupCount equ 05FF0H
-PbExceptionDispatchCount equ 05BB4H
-PbVendorString equ 06358H
-ProcessorBlockLength equ 06A40H
+PbAlignmentFixupCount equ 06038H
+PbExceptionDispatchCount equ 05BB0H
+PbVendorString equ 06290H
+ProcessorBlockLength equ 06980H
 
 ;
 ;  Time Fields (TIME_FIELDS) Structure Offset Definitions
@@ -1336,6 +1320,7 @@ EXCEPTION_GP_FAULT equ 0000DH
 EXCEPTION_RESERVED_TRAP equ 0000FH
 EXCEPTION_NPX_ERROR equ 00010H
 EXCEPTION_ALIGNMENT_CHECK equ 00011H
+EXCEPTION_VIRTUALIZATION_FAULT equ 00020H
 
 ;
 ;  Exception Frame Offset Definitions and Length
@@ -1771,9 +1756,9 @@ ThNpxState equ 00250H
 ;  ETHREAD
 ;
 
-ThSetContextState equ 007D8H
-ThUserFsBase equ 007A0H
-ThUserGsBase equ 007A8H
+ThSetContextState equ 007E0H
+ThUserFsBase equ 007A8H
+ThUserGsBase equ 007B0H
 
 ;
 ;  EPROCESS
@@ -1827,6 +1812,17 @@ CuOutputBuffer equ 000D8H
 CuOutputLength equ 000E0H
 
 ;
+;  Enclave call dispatch frame
+;
+
+EcEnclaveNumber equ 00020H
+EcParameterAddress equ 00028H
+EcParameterValue equ 00030H
+EcOriginalReturn equ 00038H
+EcFramePointer equ 00040H
+EcReturnAddress equ 00048H
+
+;
 ;  Hypervisor Enlightenment Definitions
 ;
 
@@ -1839,6 +1835,9 @@ HV_DEPRECATE_AUTO_EOI equ 01000H
 HV_X64_MSR_EOI equ 040000070H
 HV_VIRTUAL_APIC_NO_EOI_REQUIRED equ 00000H
 HvApicFlags equ 00000H
+HvVirtualFaultCode equ 00044H
+HvVirtualFaultParam equ 00048H
+HvExtVirtualizationFaultEpf equ 00001H
 
 ;
 ;  IO Status Block Offset Definitions

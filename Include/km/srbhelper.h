@@ -16,7 +16,7 @@ Abstract:
 #ifndef _NTSRBHELPER_
 #define _NTSRBHELPER_
 
-#if !defined(_NTSTORPORT_) && !defined(_NTSRB_)
+#if !defined(_NTSTORPORT_) && !defined(_NTSTORPORTP_) && !defined(_NTSRB_)
 #include <srb.h>
 #include <scsi.h>
 #endif
@@ -35,7 +35,7 @@ Abstract:
 #define SRB_ALIGN_SIZEOF(x) (((ULONG_PTR)(sizeof(x) + sizeof(PVOID) - 1)) & ~(sizeof(PVOID) - 1))
 #endif
  
-#if defined(_NTSTORPORT_) 
+#if defined(_NTSTORPORT_)  || defined(_NTSTORPORTP_)
 #define SrbMoveMemory(Destination, Source, Length) StorPortMoveMemory(Destination, Source, Length) 
 #elif defined(_NTDDK_)
 #define SrbMoveMemory(Destination, Source, Length) RtlMoveMemory(Destination, Source, Length)  

@@ -342,6 +342,7 @@ typedef struct _SERVER_ALIAS_INFO_0 {
 #define STYPE_RESERVED2         0x02000000            
 #define STYPE_RESERVED3         0x04000000
 #define STYPE_RESERVED4         0x08000000
+#define STYPE_RESERVED5         0x00100000
 #define STYPE_RESERVED_ALL      0x3FFFFF00
 
 #define STYPE_TEMPORARY         0x40000000
@@ -372,6 +373,9 @@ typedef struct _SERVER_ALIAS_INFO_0 {
 #define SHI1005_FLAGS_ENABLE_CA                 0x04000          // Enable continuously available
 #define SHI1005_FLAGS_ENCRYPT_DATA              0x08000          // Require encryption
 #define SHI1005_FLAGS_RESERVED                  0x10000          // Reserved for internal use
+#define SHI1005_FLAGS_DISABLE_CLIENT_BUFFERING  0x20000          // Used to set the allowed client buffering
+#define SHI1005_FLAGS_IDENTITY_REMOTING         0x40000          // Allows auth tunneling
+#define SHI1005_FLAGS_CLUSTER_MANAGED           0x80000          // Used to prevent share from being modified by users 
 
 //
 // The subset of 1005 infolevel flags that can be set via the API
@@ -384,8 +388,11 @@ typedef struct _SERVER_ALIAS_INFO_0 {
                                     SHI1005_FLAGS_ACCESS_BASED_DIRECTORY_ENUM|  \
                                     SHI1005_FLAGS_FORCE_LEVELII_OPLOCK|         \
                                     SHI1005_FLAGS_ENABLE_HASH|                  \
-                                    SHI1005_FLAGS_ENABLE_CA |		        \
-                                    SHI1005_FLAGS_ENCRYPT_DATA |	        \
+                                    SHI1005_FLAGS_ENABLE_CA |                        \
+                                    SHI1005_FLAGS_ENCRYPT_DATA |                \
+                                    SHI1005_FLAGS_DISABLE_CLIENT_BUFFERING |    \
+                                    SHI1005_FLAGS_IDENTITY_REMOTING |           \
+                                    SHI1005_FLAGS_CLUSTER_MANAGED |             \
                                     SHI1005_FLAGS_RESERVED)
 
 #endif // _LMSHARE_

@@ -240,7 +240,7 @@ EXTERN_C const IID IID_IReplica;
             /* [in] */ VARIANT_BOOL replicability) = 0;
         
         virtual /* [helpcontext] */ HRESULT STDMETHODCALLTYPE MakeReplicable( 
-            /* [defaultvalue][in] */ __RPC__in BSTR connectionString = L"",
+            /* [defaultvalue][in] */ __RPC__in BSTR connectionString = (BSTR)L"",
             /* [defaultvalue][in] */ VARIANT_BOOL columnTracking = -1) = 0;
         
         virtual /* [helpcontext] */ HRESULT STDMETHODCALLTYPE PopulatePartial( 

@@ -24,7 +24,7 @@
 #if !defined(_USER32_)
 #define WINUSERAPI DECLSPEC_IMPORT
 #else
-#define WINUSERAPI
+#define WINUSERAPI extern "C"
 #endif
 #endif
 
@@ -268,13 +268,13 @@ typedef DESKTOPENUMPROCA    DESKTOPENUMPROC;
 
 #endif /* !NORESOURCE */
 
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+
 #if defined(DEPRECATE_SUPPORTED)
 #pragma warning(push)
 #pragma warning(disable:4995)
 #endif
-
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
 WINUSERAPI
 int
@@ -942,6 +942,9 @@ typedef struct tagWTSSESSION_NOTIFICATION
 
 #if(_WIN32_WINNT >= 0x0602)
 #define HSHELL_MONITORCHANGED            16
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS3
+
 #endif /* _WIN32_WINNT >= 0x0602 */
 
 
@@ -6492,6 +6495,12 @@ WINAPI
 IsMouseInPointerEnabled(
     VOID);
 
+#if WDK_NTDDI_VERSION >= NTDDI_WIN10_RS3
+WINUSERAPI
+BOOL
+WINAPI
+EnableMouseInPointerForThread();
+#endif
 
 #define TOUCH_HIT_TESTING_DEFAULT 0x0
 #define TOUCH_HIT_TESTING_CLIENT  0x1
@@ -10327,6 +10336,11 @@ CopyCursor(
 #define IDC_HELP            MAKEINTRESOURCE(32651)
 #endif /* WINVER >= 0x0400 */
 
+#if(WINVER >= 0x0606)
+#define IDC_PIN            MAKEINTRESOURCE(32671)
+#define IDC_PERSON         MAKEINTRESOURCE(32672)
+#endif /* WINVER >= 0x0606 */
+
 #pragma region Desktop Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
@@ -12303,6 +12317,9 @@ typedef struct tagTouchPredictionParameters
 #define SPI_SETSYSTEMLANGUAGEBAR            0x1051
 #endif /* WINVER >= 0x0601 */
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS3
+
 #define SPI_GETFOREGROUNDLOCKTIMEOUT        0x2000
 #define SPI_SETFOREGROUNDLOCKTIMEOUT        0x2001
 #define SPI_GETACTIVEWNDTRKTIMEOUT          0x2002
@@ -12395,6 +12412,11 @@ typedef struct tagTouchPredictionParameters
 #define PENARBITRATIONTYPE_SPT                   0x0003
 #define PENARBITRATIONTYPE_MAX                   0x0004
 #endif /* WINVER >= 0x0604 */
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+#define SPI_GETCARETTIMEOUT                      0x2022
+#define SPI_SETCARETTIMEOUT                      0x2023
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS3
 
 #endif /* WINVER >= 0x0500 */
 

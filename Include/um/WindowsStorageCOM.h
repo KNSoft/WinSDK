@@ -359,6 +359,10 @@ EXTERN_C const IID IID_IUnbufferedFileHandleProvider;
 /* interface __MIDL_itf_windowsstoragecom_0000_0003 */
 /* [local] */ 
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
+#pragma region Application Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
 typedef /* [v1_enum] */ 
 enum HANDLE_OPTIONS
     {
@@ -670,6 +674,10 @@ EXTERN_C const IID IID_IStorageFolderHandleAccess;
 /* interface __MIDL_itf_windowsstoragecom_0000_0006 */
 /* [local] */ 
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#pragma endregion
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 typedef /* [v1_enum] */ 
 enum CreateProcessMethod
     {
@@ -706,7 +714,8 @@ EXTERN_C const IID IID_IDDEInitializer;
             /* [in] */ __RPC__in_opt IUnknown *site,
             /* [string][in] */ __RPC__in_string LPCWSTR application,
             /* [string][in] */ __RPC__in_string LPCWSTR targetFile,
-            /* [string][in] */ __RPC__in_string LPCWSTR arguments) = 0;
+            /* [string][in] */ __RPC__in_string LPCWSTR arguments,
+            /* [string][in] */ __RPC__in_string LPCWSTR verb) = 0;
         
     };
     
@@ -738,7 +747,8 @@ EXTERN_C const IID IID_IDDEInitializer;
             /* [in] */ __RPC__in_opt IUnknown *site,
             /* [string][in] */ __RPC__in_string LPCWSTR application,
             /* [string][in] */ __RPC__in_string LPCWSTR targetFile,
-            /* [string][in] */ __RPC__in_string LPCWSTR arguments);
+            /* [string][in] */ __RPC__in_string LPCWSTR arguments,
+            /* [string][in] */ __RPC__in_string LPCWSTR verb);
         
         END_INTERFACE
     } IDDEInitializerVtbl;
@@ -763,8 +773,8 @@ EXTERN_C const IID IID_IDDEInitializer;
     ( (This)->lpVtbl -> Release(This) ) 
 
 
-#define IDDEInitializer_Initialize(This,fileExtensionOrProtocol,method,currentDirectory,execTarget,site,application,targetFile,arguments)	\
-    ( (This)->lpVtbl -> Initialize(This,fileExtensionOrProtocol,method,currentDirectory,execTarget,site,application,targetFile,arguments) ) 
+#define IDDEInitializer_Initialize(This,fileExtensionOrProtocol,method,currentDirectory,execTarget,site,application,targetFile,arguments,verb)	\
+    ( (This)->lpVtbl -> Initialize(This,fileExtensionOrProtocol,method,currentDirectory,execTarget,site,application,targetFile,arguments,verb) ) 
 
 #endif /* COBJMACROS */
 

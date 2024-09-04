@@ -1,12 +1,9 @@
+/* Header file automatically generated from windows.devices.spi.provider.idl */
+/*
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ */
 
-
-/* this ALWAYS GENERATED file contains the definitions for the interfaces */
-
-
- /* File created by MIDL compiler version 8.01.0622 */
-/* @@MIDL_FILE_HEADING(  ) */
-
-
+#pragma warning( disable: 4049 )  /* more than 64k source lines */
 
 /* verify that the <rpcndr.h> version is high enough to compile this file*/
 #ifndef __REQUIRED_RPCNDR_H_VERSION__
@@ -18,666 +15,860 @@
 #define __REQUIRED_RPCSAL_H_VERSION__ 100
 #endif
 
-#include "rpc.h"
-#include "rpcndr.h"
+#include <rpc.h>
+#include <rpcndr.h>
 
 #ifndef __RPCNDR_H_VERSION__
 #error this stub requires an updated version of <rpcndr.h>
 #endif /* __RPCNDR_H_VERSION__ */
 
 #ifndef COM_NO_WINDOWS_H
-#include "windows.h"
-#include "ole2.h"
+#include <windows.h>
+#include <ole2.h>
 #endif /*COM_NO_WINDOWS_H*/
-
 #ifndef __windows2Edevices2Espi2Eprovider_h__
 #define __windows2Edevices2Espi2Eprovider_h__
+#ifndef __windows2Edevices2Espi2Eprovider_p_h__
+#define __windows2Edevices2Espi2Eprovider_p_h__
 
-#if defined(_MSC_VER) && (_MSC_VER >= 1020)
+
 #pragma once
+
+//
+// Deprecated attribute support
+//
+
+#pragma push_macro("DEPRECATED")
+#undef DEPRECATED
+
+#if !defined(DISABLE_WINRT_DEPRECATION)
+#if defined(__cplusplus)
+#if __cplusplus >= 201402
+#define DEPRECATED(x) [[deprecated(x)]]
+#elif defined(_MSC_VER)
+#if _MSC_VER >= 1900
+#define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
+#else
+#define DEPRECATED(x) __declspec(deprecated(x))
+#define DEPRECATEDENUMERATOR(x)
+#endif // _MSC_VER >= 1900
+#else // Not Standard C++ or MSVC, ignore the construct.
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif  // C++ deprecation
+#else // C - disable deprecation
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif
+#else // Deprecation is disabled
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif  /* DEPRECATED */
+
+// Disable Deprecation for this header, MIDL verifies that cross-type access is acceptable
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#else
+#pragma warning(push)
+#pragma warning(disable: 4996)
 #endif
 
-/* Forward Declarations */ 
-
-#ifndef ____FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_FWD_DEFINED__
-#define ____FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_FWD_DEFINED__
-typedef interface __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider;
-
-#endif 	/* ____FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_FWD_DEFINED__ */
-
-
-#ifndef ____FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_FWD_DEFINED__
-#define ____FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_FWD_DEFINED__
-typedef interface __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider;
-
-#endif 	/* ____FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_FWD_DEFINED__ */
+#pragma push_macro("MIDL_CONST_ID")
+#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
+#define MIDL_CONST_ID constexpr const
+#else
+#define MIDL_CONST_ID const __declspec(selectany)
+#endif
 
 
-#ifndef ____FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_FWD_DEFINED__
-#define ____FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_FWD_DEFINED__
-typedef interface __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider;
+//  API Contract Inclusion Definitions
+#if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
+#if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
-#endif 	/* ____FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_FWD_DEFINED__ */
+#if !defined(WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION)
+#define WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION)
+
+#if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
+#define WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
+
+#if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
+#define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
+
+#if !defined(WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION)
+#define WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION)
+
+#if !defined(WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION)
+#define WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION)
+
+#endif // defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 
 
-#ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_FWD_DEFINED__
-#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_FWD_DEFINED__
-typedef interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider;
+// Header files for imported files
+#include "inspectable.h"
+#include "AsyncInfo.h"
+#include "EventToken.h"
+#include "windowscontracts.h"
+#include "Windows.Foundation.h"
+#include "Windows.Devices.h"
+// Importing Collections header
+#include <windows.foundation.collections.h>
 
-#endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_FWD_DEFINED__ */
-
-
-#ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_FWD_DEFINED__
-#define ____FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_FWD_DEFINED__
-typedef interface __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider;
-
-#endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_FWD_DEFINED__ */
-
-
+#if defined(__cplusplus) && !defined(CINTERFACE)
+/* Forward Declarations */
 #ifndef ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace Devices {
             namespace Spi {
                 namespace Provider {
                     interface IProviderSpiConnectionSettings;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* Devices */
+        } /* Spi */
+    } /* Provider */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings ABI::Windows::Devices::Spi::Provider::IProviderSpiConnectionSettings
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace Devices {
             namespace Spi {
                 namespace Provider {
                     interface IProviderSpiConnectionSettingsFactory;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* Devices */
+        } /* Spi */
+    } /* Provider */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory ABI::Windows::Devices::Spi::Provider::IProviderSpiConnectionSettingsFactory
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace Devices {
             namespace Spi {
                 namespace Provider {
                     interface ISpiControllerProvider;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* Devices */
+        } /* Spi */
+    } /* Provider */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace Devices {
             namespace Spi {
                 namespace Provider {
                     interface ISpiDeviceProvider;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* Devices */
+        } /* Spi */
+    } /* Provider */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider ABI::Windows::Devices::Spi::Provider::ISpiDeviceProvider
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace Devices {
             namespace Spi {
                 namespace Provider {
                     interface ISpiProvider;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* Devices */
+        } /* Spi */
+    } /* Provider */} /* ABI */
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider ABI::Windows::Devices::Spi::Provider::ISpiProvider
 
-#endif /* __cplusplus */
+#endif // ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_FWD_DEFINED__
 
-#endif 	/* ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_FWD_DEFINED__ */
+// Parameterized interface forward declarations (C++)
 
+// Collection interface definitions
 
-/* header files for imported files */
-#include "inspectable.h"
-#include "AsyncInfo.h"
-#include "EventToken.h"
-#include "Windows.Foundation.h"
-#include "Windows.Devices.h"
-
-#ifdef __cplusplus
-extern "C"{
-#endif 
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0000 */
-/* [local] */ 
-
-#ifdef __cplusplus
-} /*extern "C"*/ 
-#endif
-#include <windows.foundation.collections.h>
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace Devices {
-namespace Spi {
-namespace Provider {
-interface ISpiControllerProvider;
-} /*Provider*/
-} /*Spi*/
-} /*Devices*/
-} /*Windows*/
-}
-#endif
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0000 */
-/* [local] */ 
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0000_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0362 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0362 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0362_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0362_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0001 */
-/* [local] */ 
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 #ifndef DEF___FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_USE
 #define DEF___FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("cf1d15d3-a6c8-56dd-80c8-e8d960262277"))
-IIterator<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*> : IIterator_impl<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterator`1<Windows.Devices.Spi.Provider.ISpiControllerProvider>"; }
+IIterator<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*> : IIterator_impl<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.Devices.Spi.Provider.ISpiControllerProvider>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterator<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*> __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_t;
-#define ____FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_FWD_DEFINED__
 #define __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*>
+//#define __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0001 */
-/* [local] */ 
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0001_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0363 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0363 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0363_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0363_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0002 */
-/* [local] */ 
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 #ifndef DEF___FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_USE
 #define DEF___FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("71ba027d-8c84-58b1-8d66-9177c11698eb"))
-IIterable<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*> : IIterable_impl<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterable`1<Windows.Devices.Spi.Provider.ISpiControllerProvider>"; }
+IIterable<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*> : IIterable_impl<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.Devices.Spi.Provider.ISpiControllerProvider>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterable<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*> __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_t;
-#define ____FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_FWD_DEFINED__
 #define __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*>
+//#define __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0002 */
-/* [local] */ 
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0002_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0364 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0364 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0364_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0364_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0003 */
-/* [local] */ 
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 #ifndef DEF___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_USE
 #define DEF___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("96a4919b-3229-5e41-8b10-c8198c44f10c"))
-IVectorView<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*> : IVectorView_impl<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVectorView`1<Windows.Devices.Spi.Provider.ISpiControllerProvider>"; }
+IVectorView<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*> : IVectorView_impl<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Windows.Devices.Spi.Provider.ISpiControllerProvider>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IVectorView<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*> __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_t;
-#define ____FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_FWD_DEFINED__
 #define __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*>
+//#define __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0003 */
-/* [local] */ 
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0003_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0365 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0365 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0365_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0365_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0004 */
-/* [local] */ 
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_USE
 #define DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
 struct __declspec(uuid("e9e2ae03-42d6-5211-ab52-325e722e2611"))
-IAsyncOperationCompletedHandler<__FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider*> : IAsyncOperationCompletedHandler_impl<__FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider*> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IVectorView`1<Windows.Devices.Spi.Provider.ISpiControllerProvider>>"; }
+IAsyncOperationCompletedHandler<__FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider*> : IAsyncOperationCompletedHandler_impl<__FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IVectorView`1<Windows.Devices.Spi.Provider.ISpiControllerProvider>>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IAsyncOperationCompletedHandler<__FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider*> __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_t;
-#define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_FWD_DEFINED__
 #define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider ABI::Windows::Foundation::__FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*>*>
+//#define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_t ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*>*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_USE */
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0004 */
-/* [local] */ 
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0004_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0366 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0366 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0366_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0366_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0005 */
-/* [local] */ 
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 #ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_USE
 #define DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
 struct __declspec(uuid("b3af3490-dede-59d1-b562-1f6be71ae139"))
-IAsyncOperation<__FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider*> : IAsyncOperation_impl<__FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider*> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVectorView`1<Windows.Devices.Spi.Provider.ISpiControllerProvider>>"; }
+IAsyncOperation<__FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider*> : IAsyncOperation_impl<__FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider*> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVectorView`1<Windows.Devices.Spi.Provider.ISpiControllerProvider>>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IAsyncOperation<__FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider*> __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_t;
-#define ____FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_FWD_DEFINED__
 #define __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*>*>
+//#define __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_t ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider*>*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_USE */
-#if defined(__cplusplus)
-}
-#endif // defined(__cplusplus)
-#include <Windows.Foundation.h>
-#if !defined(__windows2Edevices_h__)
-#include <Windows.Devices.h>
-#endif // !defined(__windows2Edevices_h__)
-#if defined(__cplusplus)
-extern "C" {
-#endif // defined(__cplusplus)
-
-#if !defined(__cplusplus)
-#if !defined(__cplusplus)
-
-typedef enum __x_ABI_CWindows_CDevices_CSpi_CProvider_CProviderSpiMode __x_ABI_CWindows_CDevices_CSpi_CProvider_CProviderSpiMode;
 
 
-#endif /* end if !defined(__cplusplus) */
-
-
-#endif
-#if !defined(__cplusplus)
-#if !defined(__cplusplus)
-
-typedef enum __x_ABI_CWindows_CDevices_CSpi_CProvider_CProviderSpiSharingMode __x_ABI_CWindows_CDevices_CSpi_CProvider_CProviderSpiSharingMode;
-
-
-#endif /* end if !defined(__cplusplus) */
-
-
-#endif
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 
 
 
-#ifdef __cplusplus
+
+
+#ifndef ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
 namespace ABI {
-namespace Windows {
-namespace Devices {
-namespace Spi {
-namespace Provider {
-class ProviderSpiConnectionSettings;
-} /*Provider*/
-} /*Spi*/
-} /*Devices*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace Foundation {
+            interface IClosable;
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+#define __x_ABI_CWindows_CFoundation_CIClosable ABI::Windows::Foundation::IClosable
 
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0005 */
-/* [local] */ 
+#endif // ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
 
 
 
-#ifdef __cplusplus
 
-} /* end extern "C" */
 namespace ABI {
     namespace Windows {
         namespace Devices {
             namespace Spi {
                 namespace Provider {
                     
-                    typedef enum ProviderSpiMode ProviderSpiMode;
+                    typedef enum ProviderSpiMode : int ProviderSpiMode;
                     
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* Devices */
+        } /* Spi */
+    } /* Provider */} /* ABI */
 
-extern "C" { 
-#endif
-
-#ifdef __cplusplus
-
-} /* end extern "C" */
 namespace ABI {
     namespace Windows {
         namespace Devices {
             namespace Spi {
                 namespace Provider {
                     
-                    typedef enum ProviderSpiSharingMode ProviderSpiSharingMode;
+                    typedef enum ProviderSpiSharingMode : int ProviderSpiSharingMode;
                     
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* Devices */
+        } /* Spi */
+    } /* Provider */} /* ABI */
 
-extern "C" { 
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Spi {
+                namespace Provider {
+                    class ProviderSpiConnectionSettings;
+                } /* Windows */
+            } /* Devices */
+        } /* Spi */
+    } /* Provider */} /* ABI */
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ *
+ * Struct Windows.Devices.Spi.Provider.ProviderSpiMode
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 2.0
+ *
+ *
+ */
+
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Spi {
+                namespace Provider {
+                    /* [v1_enum, contract] */
+                    enum ProviderSpiMode : int
+                    {
+                        ProviderSpiMode_Mode0 = 0,
+                        ProviderSpiMode_Mode1 = 1,
+                        ProviderSpiMode_Mode2 = 2,
+                        ProviderSpiMode_Mode3 = 3,
+                    };
+                    
+                } /* Windows */
+            } /* Devices */
+        } /* Spi */
+    } /* Provider */} /* ABI */
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Struct Windows.Devices.Spi.Provider.ProviderSpiSharingMode
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 2.0
+ *
+ *
+ */
+
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Spi {
+                namespace Provider {
+                    /* [v1_enum, contract] */
+                    enum ProviderSpiSharingMode : int
+                    {
+                        ProviderSpiSharingMode_Exclusive = 0,
+                        ProviderSpiSharingMode_Shared = 1,
+                    };
+                    
+                } /* Windows */
+            } /* Devices */
+        } /* Spi */
+    } /* Provider */} /* ABI */
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 2.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Spi.Provider.ProviderSpiConnectionSettings
+ *
+ *
+ */
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+#if !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Spi_Provider_IProviderSpiConnectionSettings[] = L"Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Spi {
+                namespace Provider {
+                    /* [object, uuid("F6034550-A542-4EC0-9601-A4DD68F8697B"), exclusiveto, contract] */
+                    MIDL_INTERFACE("F6034550-A542-4EC0-9601-A4DD68F8697B")
+                    IProviderSpiConnectionSettings : IInspectable
+                    {
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ChipSelectLine(
+                            /* [retval, out] */__RPC__out INT32 * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ChipSelectLine(
+                            /* [in] */INT32 value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Mode(
+                            /* [retval, out] */__RPC__out ABI::Windows::Devices::Spi::Provider::ProviderSpiMode * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Mode(
+                            /* [in] */ABI::Windows::Devices::Spi::Provider::ProviderSpiMode value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DataBitLength(
+                            /* [retval, out] */__RPC__out INT32 * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_DataBitLength(
+                            /* [in] */INT32 value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ClockFrequency(
+                            /* [retval, out] */__RPC__out INT32 * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_ClockFrequency(
+                            /* [in] */INT32 value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SharingMode(
+                            /* [retval, out] */__RPC__out ABI::Windows::Devices::Spi::Provider::ProviderSpiSharingMode * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_SharingMode(
+                            /* [in] */ABI::Windows::Devices::Spi::Provider::ProviderSpiSharingMode value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IProviderSpiConnectionSettings=_uuidof(IProviderSpiConnectionSettings);
+                    
+                } /* Windows */
+            } /* Devices */
+        } /* Spi */
+    } /* Provider */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_INTERFACE_DEFINED__) */
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.Devices.Spi.Provider.IProviderSpiConnectionSettingsFactory
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 2.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Spi.Provider.ProviderSpiConnectionSettings
+ *
+ *
+ */
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+#if !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Spi_Provider_IProviderSpiConnectionSettingsFactory[] = L"Windows.Devices.Spi.Provider.IProviderSpiConnectionSettingsFactory";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Spi {
+                namespace Provider {
+                    /* [object, uuid("66456B5A-0C79-43E3-9F3C-E59780AC18FA"), exclusiveto, contract] */
+                    MIDL_INTERFACE("66456B5A-0C79-43E3-9F3C-E59780AC18FA")
+                    IProviderSpiConnectionSettingsFactory : IInspectable
+                    {
+                        virtual HRESULT STDMETHODCALLTYPE Create(
+                            /* [in] */INT32 chipSelectLine,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Spi::Provider::IProviderSpiConnectionSettings * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IProviderSpiConnectionSettingsFactory=_uuidof(IProviderSpiConnectionSettingsFactory);
+                    
+                } /* Windows */
+            } /* Devices */
+        } /* Spi */
+    } /* Provider */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.Devices.Spi.Provider.ISpiControllerProvider
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 2.0
+ *
+ *
+ */
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+#if !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Spi_Provider_ISpiControllerProvider[] = L"Windows.Devices.Spi.Provider.ISpiControllerProvider";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Spi {
+                namespace Provider {
+                    /* [object, uuid("C1686504-02CE-4226-A385-4F11FB04B41B"), contract] */
+                    MIDL_INTERFACE("C1686504-02CE-4226-A385-4F11FB04B41B")
+                    ISpiControllerProvider : IInspectable
+                    {
+                        virtual HRESULT STDMETHODCALLTYPE GetDeviceProvider(
+                            /* [in] */__RPC__in_opt ABI::Windows::Devices::Spi::Provider::IProviderSpiConnectionSettings * settings,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Spi::Provider::ISpiDeviceProvider * * result
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_ISpiControllerProvider=_uuidof(ISpiControllerProvider);
+                    
+                } /* Windows */
+            } /* Devices */
+        } /* Spi */
+    } /* Provider */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_INTERFACE_DEFINED__) */
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.Devices.Spi.Provider.ISpiDeviceProvider
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 2.0
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.Foundation.IClosable
+ *
+ *
+ */
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+#if !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Spi_Provider_ISpiDeviceProvider[] = L"Windows.Devices.Spi.Provider.ISpiDeviceProvider";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Spi {
+                namespace Provider {
+                    /* [object, uuid("0D1C3443-304B-405C-B4F7-F5AB1074461E"), contract] */
+                    MIDL_INTERFACE("0D1C3443-304B-405C-B4F7-F5AB1074461E")
+                    ISpiDeviceProvider : IInspectable
+                    {
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_DeviceId(
+                            /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_ConnectionSettings(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Devices::Spi::Provider::IProviderSpiConnectionSettings * * value
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE Write(
+                            /* [in] */UINT32 __bufferSize,
+                            /* [size_is(__bufferSize), in] */__RPC__in_ecount_full(__bufferSize) BYTE * buffer
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE Read(
+                            /* [in, range(0, 2147483647)] */__RPC__in_range(0,0x7fffffff) UINT32 __bufferSize,
+                            /* [size_is(__bufferSize), out] */__RPC__out_ecount_full(__bufferSize) BYTE * buffer
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE TransferSequential(
+                            /* [in] */UINT32 __writeBufferSize,
+                            /* [size_is(__writeBufferSize), in] */__RPC__in_ecount_full(__writeBufferSize) BYTE * writeBuffer,
+                            /* [in, range(0, 2147483647)] */__RPC__in_range(0,0x7fffffff) UINT32 __readBufferSize,
+                            /* [size_is(__readBufferSize), out] */__RPC__out_ecount_full(__readBufferSize) BYTE * readBuffer
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE TransferFullDuplex(
+                            /* [in] */UINT32 __writeBufferSize,
+                            /* [size_is(__writeBufferSize), in] */__RPC__in_ecount_full(__writeBufferSize) BYTE * writeBuffer,
+                            /* [in, range(0, 2147483647)] */__RPC__in_range(0,0x7fffffff) UINT32 __readBufferSize,
+                            /* [size_is(__readBufferSize), out] */__RPC__out_ecount_full(__readBufferSize) BYTE * readBuffer
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_ISpiDeviceProvider=_uuidof(ISpiDeviceProvider);
+                    
+                } /* Windows */
+            } /* Devices */
+        } /* Spi */
+    } /* Provider */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_INTERFACE_DEFINED__) */
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Interface Windows.Devices.Spi.Provider.ISpiProvider
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 2.0
+ *
+ *
+ */
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+#if !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Spi_Provider_ISpiProvider[] = L"Windows.Devices.Spi.Provider.ISpiProvider";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Spi {
+                namespace Provider {
+                    /* [object, uuid("96B461E2-77D4-48CE-AAA0-75715A8362CF"), contract] */
+                    MIDL_INTERFACE("96B461E2-77D4-48CE-AAA0-75715A8362CF")
+                    ISpiProvider : IInspectable
+                    {
+                        virtual HRESULT STDMETHODCALLTYPE GetControllersAsync(
+                            /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * * result
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_ISpiProvider=_uuidof(ISpiProvider);
+                    
+                } /* Windows */
+            } /* Devices */
+        } /* Spi */
+    } /* Provider */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_INTERFACE_DEFINED__) */
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+
+
+/*
+ *
+ * Class Windows.Devices.Spi.Provider.ProviderSpiConnectionSettings
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 2.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.Devices.Spi.Provider.IProviderSpiConnectionSettingsFactory interface starting with version 2.0 of the Windows.Devices.DevicesLowLevelContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+
+#ifndef RUNTIMECLASS_Windows_Devices_Spi_Provider_ProviderSpiConnectionSettings_DEFINED
+#define RUNTIMECLASS_Windows_Devices_Spi_Provider_ProviderSpiConnectionSettings_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Spi_Provider_ProviderSpiConnectionSettings[] = L"Windows.Devices.Spi.Provider.ProviderSpiConnectionSettings";
 #endif
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 
 
 
 
+#else // !defined(__cplusplus)
+/* Forward Declarations */
+#ifndef ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings;
 
+#endif // ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_FWD_DEFINED__
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0005_v0_0_s_ifspec;
+#ifndef ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0367 */
+#endif // ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider;
 
+#endif // ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider;
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0367 */
+#endif // ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider;
 
+#endif // ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_FWD_DEFINED__
 
+// Parameterized interface forward declarations (C)
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0367_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0367_v0_0_s_ifspec;
+// Collection interface definitions
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0006 */
-/* [local] */ 
-
-#ifndef DEF___FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider
-#define DEF___FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0006 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0006_v0_0_s_ifspec;
-
-#ifndef ____FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+#if !defined(____FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__)
 #define ____FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__
 
-/* interface __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider */
-/* [unique][uuid][object] */ 
+typedef interface __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider;
 
-
-
-/* interface __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("cf1d15d3-a6c8-56dd-80c8-e8d960262277")
-    __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider : public IInspectable
-    {
-    public:
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider **current) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
-            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
-            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
-            __RPC__in __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider **current);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
-            __RPC__in __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [retval][out] */ __RPC__out boolean *hasCurrent);
-        
-        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
-            __RPC__in __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [retval][out] */ __RPC__out boolean *hasCurrent);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual);
-        
-        END_INTERFACE
-    } __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl;
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
 
-    interface __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider
-    {
-        CONST_VTBL struct __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl *lpVtbl;
-    };
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
 
-    
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl;
+
+interface __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider
+{
+    CONST_VTBL struct __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl *lpVtbl;
+};
+
+
 
 #ifdef COBJMACROS
 
@@ -717,131 +908,53 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiC
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__
+
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 
-
-
-#endif 	/* ____FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0007 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider */
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0007 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0007_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0368 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0368 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0368_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0368_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0008 */
-/* [local] */ 
-
-#ifndef DEF___FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider
-#define DEF___FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0008 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0008_v0_0_s_ifspec;
-
-#ifndef ____FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+#if !defined(____FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__)
 #define ____FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__
 
-/* interface __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider */
-/* [unique][uuid][object] */ 
+typedef interface __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider;
 
-
-
-/* interface __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("71ba027d-8c84-58b1-8d66-9177c11698eb")
-    __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE First( 
-            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider **first) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef  struct __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *First )( 
-            __RPC__in __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider **first);
-        
-        END_INTERFACE
-    } __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl;
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
 
-    interface __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider
-    {
-        CONST_VTBL struct __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl *lpVtbl;
-    };
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This);
 
-    
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider **first);
+
+    END_INTERFACE
+} __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl;
+
+interface __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider
+{
+    CONST_VTBL struct __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
-
 
 #define __FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
@@ -869,161 +982,77 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiC
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__
+
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 
-
-
-#endif 	/* ____FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0009 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIIterable_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider */
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0009 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0009_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0369 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0369 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0369_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0369_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0010 */
-/* [local] */ 
-
-#ifndef DEF___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider
-#define DEF___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0010 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0010_v0_0_s_ifspec;
-
-#ifndef ____FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+#if !defined(____FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__)
 #define ____FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__
 
-/* interface __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider */
-/* [unique][uuid][object] */ 
+typedef interface __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider;
 
-
-
-/* interface __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("96a4919b-3229-5e41-8b10-c8198c44f10c")
-    __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE GetAt( 
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider **item) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
-            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
-            /* [in] */ __RPC__in_opt ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider *item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
             /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
             /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
-            __RPC__in __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider **item);
-        
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider * *item);
+
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
             __RPC__in __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
             /* [retval][out] */ __RPC__out unsigned int *size);
-        
+
         HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
-            __RPC__in __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider *item,
+                                               __RPC__in __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
+            /* [in] */ __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider * item,
             /* [out] */ __RPC__out unsigned int *index,
             /* [retval][out] */ __RPC__out boolean *found);
-        
+
         HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
+                                               __RPC__in __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
             /* [in] */ unsigned int startIndex,
             /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider **items,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider * *items,
             /* [retval][out] */ __RPC__out unsigned int *actual);
-        
+
         END_INTERFACE
-    } __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl;
+} __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl;
 
-    interface __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider
-    {
-        CONST_VTBL struct __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl *lpVtbl;
-    };
+interface __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider
+{
+    CONST_VTBL struct __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl *lpVtbl;
+};
 
-    
+
 
 #ifdef COBJMACROS
 
@@ -1063,1285 +1092,807 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISp
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+
+#endif // ____FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__
+
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 
-
-
-#endif 	/* ____FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0011 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider */
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0011 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0011_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0370 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0370 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0370_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0370_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0012 */
-/* [local] */ 
-
-#ifndef DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider
-#define DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0012 */
-/* [local] */ 
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0012_v0_0_s_ifspec;
-
-#ifndef ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+#if !defined(____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__)
 #define ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__
 
-/* interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider */
-/* [unique][uuid][object] */ 
+typedef interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider;
 
-
-
-/* interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("e9e2ae03-42d6-5211-ab52-325e722e2611")
-    __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider : public IUnknown
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE Invoke( 
-            /* [in] */ __RPC__in_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider *asyncInfo,
-            /* [in] */ AsyncStatus status) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+// Forward declare the async operation.
+typedef interface __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider;
 
-    typedef struct __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            __RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [in] */ __RPC__in_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider *asyncInfo,
-            /* [in] */ AsyncStatus status);
-        
-        END_INTERFACE
-    } __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl;
+typedef struct __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl
+{
+    BEGIN_INTERFACE
 
-    interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider
-    {
-        CONST_VTBL struct __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl *lpVtbl;
-    };
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This);
 
-    
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,/* [in] */ __RPC__in_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider *asyncInfo, /* [in] */ AsyncStatus status);
+    END_INTERFACE
+} __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl;
+
+interface __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider
+{
+    CONST_VTBL struct __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
-
-
 #define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
 #define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_AddRef(This)	\
     ( (This)->lpVtbl -> AddRef(This) ) 
-
 #define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_Release(This)	\
     ( (This)->lpVtbl -> Release(This) ) 
 
-
 #define __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_Invoke(This,asyncInfo,status)	\
     ( (This)->lpVtbl -> Invoke(This,asyncInfo,status) ) 
-
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__
+
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 
-
-
-#endif 	/* ____FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0013 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider */
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0013 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0013_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0371 */
-
-
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0371 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0371_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider2Eidl_0000_0371_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0014 */
-/* [local] */ 
-
-#ifndef DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider
-#define DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0014 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0014_v0_0_s_ifspec;
-
-#ifndef ____FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+#if !defined(____FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__)
 #define ____FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__
 
-/* interface __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider */
-/* [unique][uuid][object] */ 
+typedef interface __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider;
 
-
-
-/* interface __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("b3af3490-dede-59d1-b562-1f6be71ae139")
-    __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider : public IInspectable
-    {
-    public:
-        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Completed( 
-            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider *handler) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Completed( 
-            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider **handler) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetResults( 
-            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider **results) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This);
 
-    typedef struct __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )( 
-            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider *handler);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )( 
-            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider **handler);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetResults )( 
-            __RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
-            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider **results);
-        
-        END_INTERFACE
-    } __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl;
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
 
-    interface __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider
-    {
-        CONST_VTBL struct __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl *lpVtbl;
-    };
+    /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Completed )(__RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This, /* [in] */ __RPC__in_opt __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider *handler);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Completed )(__RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This, /* [retval][out] */ __RPC__deref_out_opt __FIAsyncOperationCompletedHandler_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider **handler);
+    HRESULT ( STDMETHODCALLTYPE *GetResults )(__RPC__in __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * This, /* [retval][out] */ __RPC__out __FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * *results);
+    END_INTERFACE
+} __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl;
 
-    
+interface __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider
+{
+    CONST_VTBL struct __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProviderVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
-
-
 #define __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
 #define __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_AddRef(This)	\
     ( (This)->lpVtbl -> AddRef(This) ) 
-
 #define __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_Release(This)	\
     ( (This)->lpVtbl -> Release(This) ) 
 
-
 #define __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_GetIids(This,iidCount,iids)	\
     ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
 #define __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_GetRuntimeClassName(This,className)	\
     ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
 #define __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_GetTrustLevel(This,trustLevel)	\
     ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
 
-
 #define __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_put_Completed(This,handler)	\
     ( (This)->lpVtbl -> put_Completed(This,handler) ) 
-
 #define __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_get_Completed(This,handler)	\
     ( (This)->lpVtbl -> get_Completed(This,handler) ) 
-
 #define __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_GetResults(This,results)	\
     ( (This)->lpVtbl -> GetResults(This,results) ) 
-
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__
+
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 
 
 
-#endif 	/* ____FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_INTERFACE_DEFINED__ */
+
+#ifndef ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CFoundation_CIClosable __x_ABI_CWindows_CFoundation_CIClosable;
+
+#endif // ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
 
 
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0015 */
-/* [local] */ 
 
-#endif /* pinterface */
-#endif /* DEF___FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider */
-#if !defined(__cplusplus)
 
-#if !defined(__cplusplus)
-/* [v1_enum] */ 
+
+typedef enum __x_ABI_CWindows_CDevices_CSpi_CProvider_CProviderSpiMode __x_ABI_CWindows_CDevices_CSpi_CProvider_CProviderSpiMode;
+
+
+typedef enum __x_ABI_CWindows_CDevices_CSpi_CProvider_CProviderSpiSharingMode __x_ABI_CWindows_CDevices_CSpi_CProvider_CProviderSpiSharingMode;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ *
+ * Struct Windows.Devices.Spi.Provider.ProviderSpiMode
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 2.0
+ *
+ *
+ */
+
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+/* [v1_enum, contract] */
 enum __x_ABI_CWindows_CDevices_CSpi_CProvider_CProviderSpiMode
-    {
-        ProviderSpiMode_Mode0	= 0,
-        ProviderSpiMode_Mode1	= 1,
-        ProviderSpiMode_Mode2	= 2,
-        ProviderSpiMode_Mode3	= 3
-    } ;
-#endif /* end if !defined(__cplusplus) */
+{
+    ProviderSpiMode_Mode0 = 0,
+    ProviderSpiMode_Mode1 = 1,
+    ProviderSpiMode_Mode2 = 2,
+    ProviderSpiMode_Mode3 = 3,
+};
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
-#endif
-#if !defined(__cplusplus)
 
-#if !defined(__cplusplus)
-/* [v1_enum] */ 
+/*
+ *
+ * Struct Windows.Devices.Spi.Provider.ProviderSpiSharingMode
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 2.0
+ *
+ *
+ */
+
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+/* [v1_enum, contract] */
 enum __x_ABI_CWindows_CDevices_CSpi_CProvider_CProviderSpiSharingMode
-    {
-        ProviderSpiSharingMode_Exclusive	= 0,
-        ProviderSpiSharingMode_Shared	= 1
-    } ;
-#endif /* end if !defined(__cplusplus) */
+{
+    ProviderSpiSharingMode_Exclusive = 0,
+    ProviderSpiSharingMode_Shared = 1,
+};
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
-#endif
+
+/*
+ *
+ * Interface Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 2.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Spi.Provider.ProviderSpiConnectionSettings
+ *
+ *
+ */
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 #if !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Spi_Provider_IProviderSpiConnectionSettings[] = L"Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings";
-#endif /* !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0015 */
-/* [local] */ 
-
-#ifdef __cplusplus
-} /* end extern "C" */
-namespace ABI {
-    namespace Windows {
-        namespace Devices {
-            namespace Spi {
-                namespace Provider {
-                    
-                    /* [v1_enum] */ 
-                    enum ProviderSpiMode
-                        {
-                            ProviderSpiMode_Mode0	= 0,
-                            ProviderSpiMode_Mode1	= 1,
-                            ProviderSpiMode_Mode2	= 2,
-                            ProviderSpiMode_Mode3	= 3
-                        } ;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-extern "C" { 
-#endif
-
-#ifdef __cplusplus
-} /* end extern "C" */
-namespace ABI {
-    namespace Windows {
-        namespace Devices {
-            namespace Spi {
-                namespace Provider {
-                    
-                    /* [v1_enum] */ 
-                    enum ProviderSpiSharingMode
-                        {
-                            ProviderSpiSharingMode_Exclusive	= 0,
-                            ProviderSpiSharingMode_Shared	= 1
-                        } ;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-extern "C" { 
-#endif
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0015_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Spi_Provider_IProviderSpiConnectionSettings[] = L"Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings";
+/* [object, uuid("F6034550-A542-4EC0-9601-A4DD68F8697B"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-/* interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings */
-/* [uuid][object] */ 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ChipSelectLine )(
+        __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
+        /* [retval, out] */__RPC__out INT32 * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ChipSelectLine )(
+        __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
+        /* [in] */INT32 value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Mode )(
+        __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CDevices_CSpi_CProvider_CProviderSpiMode * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Mode )(
+        __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
+        /* [in] */__x_ABI_CWindows_CDevices_CSpi_CProvider_CProviderSpiMode value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_DataBitLength )(
+        __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
+        /* [retval, out] */__RPC__out INT32 * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_DataBitLength )(
+        __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
+        /* [in] */INT32 value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ClockFrequency )(
+        __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
+        /* [retval, out] */__RPC__out INT32 * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_ClockFrequency )(
+        __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
+        /* [in] */INT32 value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SharingMode )(
+        __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CDevices_CSpi_CProvider_CProviderSpiSharingMode * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_SharingMode )(
+        __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
+        /* [in] */__x_ABI_CWindows_CDevices_CSpi_CProvider_CProviderSpiSharingMode value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsVtbl;
+
+interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_get_ChipSelectLine(This,value) \
+    ( (This)->lpVtbl->get_ChipSelectLine(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_put_ChipSelectLine(This,value) \
+    ( (This)->lpVtbl->put_ChipSelectLine(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_get_Mode(This,value) \
+    ( (This)->lpVtbl->get_Mode(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_put_Mode(This,value) \
+    ( (This)->lpVtbl->put_Mode(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_get_DataBitLength(This,value) \
+    ( (This)->lpVtbl->get_DataBitLength(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_put_DataBitLength(This,value) \
+    ( (This)->lpVtbl->put_DataBitLength(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_get_ClockFrequency(This,value) \
+    ( (This)->lpVtbl->get_ClockFrequency(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_put_ClockFrequency(This,value) \
+    ( (This)->lpVtbl->put_ClockFrequency(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_get_SharingMode(This,value) \
+    ( (This)->lpVtbl->get_SharingMode(This,value) )
+
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_put_SharingMode(This,value) \
+    ( (This)->lpVtbl->put_SharingMode(This,value) )
 
 
-
-/* interface ABI::Windows::Devices::Spi::Provider::IProviderSpiConnectionSettings */
-/* [uuid][object] */ 
+#endif /* COBJMACROS */
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_INTERFACE_DEFINED__) */
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace Devices {
-                namespace Spi {
-                    namespace Provider {
-                        
-                        MIDL_INTERFACE("F6034550-A542-4EC0-9601-A4DD68F8697B")
-                        IProviderSpiConnectionSettings : public IInspectable
-                        {
-                        public:
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ChipSelectLine( 
-                                /* [out][retval] */ __RPC__out INT32 *value) = 0;
-                            
-                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ChipSelectLine( 
-                                /* [in] */ INT32 value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Mode( 
-                                /* [out][retval] */ __RPC__out ABI::Windows::Devices::Spi::Provider::ProviderSpiMode *value) = 0;
-                            
-                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Mode( 
-                                /* [in] */ ABI::Windows::Devices::Spi::Provider::ProviderSpiMode value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DataBitLength( 
-                                /* [out][retval] */ __RPC__out INT32 *value) = 0;
-                            
-                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_DataBitLength( 
-                                /* [in] */ INT32 value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ClockFrequency( 
-                                /* [out][retval] */ __RPC__out INT32 *value) = 0;
-                            
-                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_ClockFrequency( 
-                                /* [in] */ INT32 value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SharingMode( 
-                                /* [out][retval] */ __RPC__out ABI::Windows::Devices::Spi::Provider::ProviderSpiSharingMode *value) = 0;
-                            
-                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_SharingMode( 
-                                /* [in] */ ABI::Windows::Devices::Spi::Provider::ProviderSpiSharingMode value) = 0;
-                            
-                        };
 
-                        extern const __declspec(selectany) IID & IID_IProviderSpiConnectionSettings = __uuidof(IProviderSpiConnectionSettings);
+/*
+ *
+ * Interface Windows.Devices.Spi.Provider.IProviderSpiConnectionSettingsFactory
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 2.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Spi.Provider.ProviderSpiConnectionSettings
+ *
+ *
+ */
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+#if !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Spi_Provider_IProviderSpiConnectionSettingsFactory[] = L"Windows.Devices.Spi.Provider.IProviderSpiConnectionSettingsFactory";
+/* [object, uuid("66456B5A-0C79-43E3-9F3C-E59780AC18FA"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *Create )(
+        __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory * This,
+        /* [in] */INT32 chipSelectLine,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * * value
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactoryVtbl;
 
-    typedef struct __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ChipSelectLine )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
-            /* [out][retval] */ __RPC__out INT32 *value);
-        
-        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ChipSelectLine )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
-            /* [in] */ INT32 value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Mode )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
-            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CDevices_CSpi_CProvider_CProviderSpiMode *value);
-        
-        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Mode )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
-            /* [in] */ __x_ABI_CWindows_CDevices_CSpi_CProvider_CProviderSpiMode value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DataBitLength )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
-            /* [out][retval] */ __RPC__out INT32 *value);
-        
-        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_DataBitLength )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
-            /* [in] */ INT32 value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ClockFrequency )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
-            /* [out][retval] */ __RPC__out INT32 *value);
-        
-        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_ClockFrequency )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
-            /* [in] */ INT32 value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SharingMode )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
-            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CDevices_CSpi_CProvider_CProviderSpiSharingMode *value);
-        
-        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_SharingMode )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * This,
-            /* [in] */ __x_ABI_CWindows_CDevices_CSpi_CProvider_CProviderSpiSharingMode value);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsVtbl;
-
-    interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactoryVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_Create(This,chipSelectLine,value) \
+    ( (This)->lpVtbl->Create(This,chipSelectLine,value) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_get_ChipSelectLine(This,value)	\
-    ( (This)->lpVtbl -> get_ChipSelectLine(This,value) ) 
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_put_ChipSelectLine(This,value)	\
-    ( (This)->lpVtbl -> put_ChipSelectLine(This,value) ) 
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_get_Mode(This,value)	\
-    ( (This)->lpVtbl -> get_Mode(This,value) ) 
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_put_Mode(This,value)	\
-    ( (This)->lpVtbl -> put_Mode(This,value) ) 
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_get_DataBitLength(This,value)	\
-    ( (This)->lpVtbl -> get_DataBitLength(This,value) ) 
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_put_DataBitLength(This,value)	\
-    ( (This)->lpVtbl -> put_DataBitLength(This,value) ) 
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_get_ClockFrequency(This,value)	\
-    ( (This)->lpVtbl -> get_ClockFrequency(This,value) ) 
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_put_ClockFrequency(This,value)	\
-    ( (This)->lpVtbl -> put_ClockFrequency(This,value) ) 
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_get_SharingMode(This,value)	\
-    ( (This)->lpVtbl -> get_SharingMode(This,value) ) 
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_put_SharingMode(This,value)	\
-    ( (This)->lpVtbl -> put_SharingMode(This,value) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0016 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Spi_Provider_IProviderSpiConnectionSettingsFactory[] = L"Windows.Devices.Spi.Provider.IProviderSpiConnectionSettingsFactory";
-#endif /* !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0016 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0016_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::Devices::Spi::Provider::IProviderSpiConnectionSettingsFactory */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace Devices {
-                namespace Spi {
-                    namespace Provider {
-                        
-                        MIDL_INTERFACE("66456B5A-0C79-43E3-9F3C-E59780AC18FA")
-                        IProviderSpiConnectionSettingsFactory : public IInspectable
-                        {
-                        public:
-                            virtual HRESULT STDMETHODCALLTYPE Create( 
-                                /* [in] */ INT32 chipSelectLine,
-                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::Spi::Provider::IProviderSpiConnectionSettings **value) = 0;
-                            
-                        };
 
-                        extern const __declspec(selectany) IID & IID_IProviderSpiConnectionSettingsFactory = __uuidof(IProviderSpiConnectionSettingsFactory);
+/*
+ *
+ * Interface Windows.Devices.Spi.Provider.ISpiControllerProvider
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 2.0
+ *
+ *
+ */
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+#if !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Spi_Provider_ISpiControllerProvider[] = L"Windows.Devices.Spi.Provider.ISpiControllerProvider";
+/* [object, uuid("C1686504-02CE-4226-A385-4F11FB04B41B"), contract] */
+typedef struct __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProviderVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetDeviceProvider )(
+        __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * settings,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * * result
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProviderVtbl;
 
-    typedef struct __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactoryVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *Create )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory * This,
-            /* [in] */ INT32 chipSelectLine,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings **value);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactoryVtbl;
-
-    interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactoryVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProviderVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_GetDeviceProvider(This,settings,result) \
+    ( (This)->lpVtbl->GetDeviceProvider(This,settings,result) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_Create(This,chipSelectLine,value)	\
-    ( (This)->lpVtbl -> Create(This,chipSelectLine,value) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettingsFactory_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0017 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Spi_Provider_ISpiControllerProvider[] = L"Windows.Devices.Spi.Provider.ISpiControllerProvider";
-#endif /* !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0017 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0017_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::Devices::Spi::Provider::ISpiControllerProvider */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_INTERFACE_DEFINED__) */
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace Devices {
-                namespace Spi {
-                    namespace Provider {
-                        
-                        MIDL_INTERFACE("C1686504-02CE-4226-A385-4F11FB04B41B")
-                        ISpiControllerProvider : public IInspectable
-                        {
-                        public:
-                            virtual HRESULT STDMETHODCALLTYPE GetDeviceProvider( 
-                                /* [in] */ __RPC__in_opt ABI::Windows::Devices::Spi::Provider::IProviderSpiConnectionSettings *settings,
-                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::Spi::Provider::ISpiDeviceProvider **result) = 0;
-                            
-                        };
 
-                        extern const __declspec(selectany) IID & IID_ISpiControllerProvider = __uuidof(ISpiControllerProvider);
+/*
+ *
+ * Interface Windows.Devices.Spi.Provider.ISpiDeviceProvider
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 2.0
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.Foundation.IClosable
+ *
+ *
+ */
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+#if !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Spi_Provider_ISpiDeviceProvider[] = L"Windows.Devices.Spi.Provider.ISpiDeviceProvider";
+/* [object, uuid("0D1C3443-304B-405C-B4F7-F5AB1074461E"), contract] */
+typedef struct __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProviderVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_DeviceId )(
+        __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_ConnectionSettings )(
+        __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings * * value
+        );
+    HRESULT ( STDMETHODCALLTYPE *Write )(
+        __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This,
+        /* [in] */UINT32 __bufferSize,
+        /* [size_is(__bufferSize), in] */__RPC__in_ecount_full(__bufferSize) BYTE * buffer
+        );
+    HRESULT ( STDMETHODCALLTYPE *Read )(
+        __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This,
+        /* [in, range(0, 2147483647)] */__RPC__in_range(0,0x7fffffff) UINT32 __bufferSize,
+        /* [size_is(__bufferSize), out] */__RPC__out_ecount_full(__bufferSize) BYTE * buffer
+        );
+    HRESULT ( STDMETHODCALLTYPE *TransferSequential )(
+        __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This,
+        /* [in] */UINT32 __writeBufferSize,
+        /* [size_is(__writeBufferSize), in] */__RPC__in_ecount_full(__writeBufferSize) BYTE * writeBuffer,
+        /* [in, range(0, 2147483647)] */__RPC__in_range(0,0x7fffffff) UINT32 __readBufferSize,
+        /* [size_is(__readBufferSize), out] */__RPC__out_ecount_full(__readBufferSize) BYTE * readBuffer
+        );
+    HRESULT ( STDMETHODCALLTYPE *TransferFullDuplex )(
+        __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This,
+        /* [in] */UINT32 __writeBufferSize,
+        /* [size_is(__writeBufferSize), in] */__RPC__in_ecount_full(__writeBufferSize) BYTE * writeBuffer,
+        /* [in, range(0, 2147483647)] */__RPC__in_range(0,0x7fffffff) UINT32 __readBufferSize,
+        /* [size_is(__readBufferSize), out] */__RPC__out_ecount_full(__readBufferSize) BYTE * readBuffer
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProviderVtbl;
 
-    typedef struct __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProviderVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetDeviceProvider )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings *settings,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider **result);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProviderVtbl;
-
-    interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProviderVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProviderVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_get_DeviceId(This,value) \
+    ( (This)->lpVtbl->get_DeviceId(This,value) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_get_ConnectionSettings(This,value) \
+    ( (This)->lpVtbl->get_ConnectionSettings(This,value) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_Write(This,__bufferSize,buffer) \
+    ( (This)->lpVtbl->Write(This,__bufferSize,buffer) )
 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_Read(This,__bufferSize,buffer) \
+    ( (This)->lpVtbl->Read(This,__bufferSize,buffer) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_GetDeviceProvider(This,settings,result)	\
-    ( (This)->lpVtbl -> GetDeviceProvider(This,settings,result) ) 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_TransferSequential(This,__writeBufferSize,writeBuffer,__readBufferSize,readBuffer) \
+    ( (This)->lpVtbl->TransferSequential(This,__writeBufferSize,writeBuffer,__readBufferSize,readBuffer) )
+
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_TransferFullDuplex(This,__writeBufferSize,writeBuffer,__readBufferSize,readBuffer) \
+    ( (This)->lpVtbl->TransferFullDuplex(This,__writeBufferSize,writeBuffer,__readBufferSize,readBuffer) )
+
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiControllerProvider_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0018 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Spi_Provider_ISpiDeviceProvider[] = L"Windows.Devices.Spi.Provider.ISpiDeviceProvider";
-#endif /* !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0018 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0018_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::Devices::Spi::Provider::ISpiDeviceProvider */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_INTERFACE_DEFINED__) */
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace Devices {
-                namespace Spi {
-                    namespace Provider {
-                        
-                        MIDL_INTERFACE("0D1C3443-304B-405C-B4F7-F5AB1074461E")
-                        ISpiDeviceProvider : public IInspectable
-                        {
-                        public:
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_DeviceId( 
-                                /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ConnectionSettings( 
-                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Devices::Spi::Provider::IProviderSpiConnectionSettings **value) = 0;
-                            
-                            virtual HRESULT STDMETHODCALLTYPE Write( 
-                                /* [in] */ UINT32 __bufferSize,
-                                /* [in][size_is] */ __RPC__in_ecount_full(__bufferSize) BYTE *buffer) = 0;
-                            
-                            virtual HRESULT STDMETHODCALLTYPE Read( 
-                                /* [range][in] */ __RPC__in_range(0,2147483647) UINT32 __bufferSize,
-                                /* [out][size_is] */ __RPC__out_ecount_full(__bufferSize) BYTE *buffer) = 0;
-                            
-                            virtual HRESULT STDMETHODCALLTYPE TransferSequential( 
-                                /* [in] */ UINT32 __writeBufferSize,
-                                /* [in][size_is] */ __RPC__in_ecount_full(__writeBufferSize) BYTE *writeBuffer,
-                                /* [range][in] */ __RPC__in_range(0,2147483647) UINT32 __readBufferSize,
-                                /* [out][size_is] */ __RPC__out_ecount_full(__readBufferSize) BYTE *readBuffer) = 0;
-                            
-                            virtual HRESULT STDMETHODCALLTYPE TransferFullDuplex( 
-                                /* [in] */ UINT32 __writeBufferSize,
-                                /* [in][size_is] */ __RPC__in_ecount_full(__writeBufferSize) BYTE *writeBuffer,
-                                /* [range][in] */ __RPC__in_range(0,2147483647) UINT32 __readBufferSize,
-                                /* [out][size_is] */ __RPC__out_ecount_full(__readBufferSize) BYTE *readBuffer) = 0;
-                            
-                        };
 
-                        extern const __declspec(selectany) IID & IID_ISpiDeviceProvider = __uuidof(ISpiDeviceProvider);
+/*
+ *
+ * Interface Windows.Devices.Spi.Provider.ISpiProvider
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 2.0
+ *
+ *
+ */
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
+#if !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Spi_Provider_ISpiProvider[] = L"Windows.Devices.Spi.Provider.ISpiProvider";
+/* [object, uuid("96B461E2-77D4-48CE-AAA0-75715A8362CF"), contract] */
+typedef struct __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProviderVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetControllersAsync )(
+        __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider * * result
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProviderVtbl;
 
-    typedef struct __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProviderVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_DeviceId )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This,
-            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ConnectionSettings )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CDevices_CSpi_CProvider_CIProviderSpiConnectionSettings **value);
-        
-        HRESULT ( STDMETHODCALLTYPE *Write )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This,
-            /* [in] */ UINT32 __bufferSize,
-            /* [in][size_is] */ __RPC__in_ecount_full(__bufferSize) BYTE *buffer);
-        
-        HRESULT ( STDMETHODCALLTYPE *Read )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This,
-            /* [range][in] */ __RPC__in_range(0,2147483647) UINT32 __bufferSize,
-            /* [out][size_is] */ __RPC__out_ecount_full(__bufferSize) BYTE *buffer);
-        
-        HRESULT ( STDMETHODCALLTYPE *TransferSequential )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This,
-            /* [in] */ UINT32 __writeBufferSize,
-            /* [in][size_is] */ __RPC__in_ecount_full(__writeBufferSize) BYTE *writeBuffer,
-            /* [range][in] */ __RPC__in_range(0,2147483647) UINT32 __readBufferSize,
-            /* [out][size_is] */ __RPC__out_ecount_full(__readBufferSize) BYTE *readBuffer);
-        
-        HRESULT ( STDMETHODCALLTYPE *TransferFullDuplex )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider * This,
-            /* [in] */ UINT32 __writeBufferSize,
-            /* [in][size_is] */ __RPC__in_ecount_full(__writeBufferSize) BYTE *writeBuffer,
-            /* [range][in] */ __RPC__in_range(0,2147483647) UINT32 __readBufferSize,
-            /* [out][size_is] */ __RPC__out_ecount_full(__readBufferSize) BYTE *readBuffer);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProviderVtbl;
-
-    interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProviderVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProviderVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_GetControllersAsync(This,result) \
+    ( (This)->lpVtbl->GetControllersAsync(This,result) )
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_get_DeviceId(This,value)	\
-    ( (This)->lpVtbl -> get_DeviceId(This,value) ) 
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_get_ConnectionSettings(This,value)	\
-    ( (This)->lpVtbl -> get_ConnectionSettings(This,value) ) 
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_Write(This,__bufferSize,buffer)	\
-    ( (This)->lpVtbl -> Write(This,__bufferSize,buffer) ) 
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_Read(This,__bufferSize,buffer)	\
-    ( (This)->lpVtbl -> Read(This,__bufferSize,buffer) ) 
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_TransferSequential(This,__writeBufferSize,writeBuffer,__readBufferSize,readBuffer)	\
-    ( (This)->lpVtbl -> TransferSequential(This,__writeBufferSize,writeBuffer,__readBufferSize,readBuffer) ) 
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_TransferFullDuplex(This,__writeBufferSize,writeBuffer,__readBufferSize,readBuffer)	\
-    ( (This)->lpVtbl -> TransferFullDuplex(This,__writeBufferSize,writeBuffer,__readBufferSize,readBuffer) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiDeviceProvider_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0019 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Spi_Provider_ISpiProvider[] = L"Windows.Devices.Spi.Provider.ISpiProvider";
-#endif /* !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0019 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0019_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::Devices::Spi::Provider::ISpiProvider */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace Devices {
-                namespace Spi {
-                    namespace Provider {
-                        
-                        MIDL_INTERFACE("96B461E2-77D4-48CE-AAA0-75715A8362CF")
-                        ISpiProvider : public IInspectable
-                        {
-                        public:
-                            virtual HRESULT STDMETHODCALLTYPE GetControllersAsync( 
-                                /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider **result) = 0;
-                            
-                        };
-
-                        extern const __declspec(selectany) IID & IID_ISpiProvider = __uuidof(ISpiProvider);
-
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
-    
-#else 	/* C style interface */
-
-    typedef struct __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProviderVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetControllersAsync )( 
-            __RPC__in __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider * This,
-            /* [out][retval] */ __RPC__deref_out_opt __FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider **result);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProviderVtbl;
-
-    interface __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProviderVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_INTERFACE_DEFINED__) */
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_GetControllersAsync(This,result)	\
-    ( (This)->lpVtbl -> GetControllersAsync(This,result) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CDevices_CSpi_CProvider_CISpiProvider_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0020 */
-/* [local] */ 
+/*
+ *
+ * Class Windows.Devices.Spi.Provider.ProviderSpiConnectionSettings
+ *
+ * Introduced to Windows.Devices.DevicesLowLevelContract in version 2.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.Devices.Spi.Provider.IProviderSpiConnectionSettingsFactory interface starting with version 2.0 of the Windows.Devices.DevicesLowLevelContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 #ifndef RUNTIMECLASS_Windows_Devices_Spi_Provider_ProviderSpiConnectionSettings_DEFINED
 #define RUNTIMECLASS_Windows_Devices_Spi_Provider_ProviderSpiConnectionSettings_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Spi_Provider_ProviderSpiConnectionSettings[] = L"Windows.Devices.Spi.Provider.ProviderSpiConnectionSettings";
 #endif
-
-
-/* interface __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0020 */
-/* [local] */ 
+#endif // WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION >= 0x20000
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Edevices2Espi2Eprovider_0000_0020_v0_0_s_ifspec;
 
-/* Additional Prototypes for ALL interfaces */
 
-unsigned long             __RPC_USER  HSTRING_UserSize(     __RPC__in unsigned long *, unsigned long            , __RPC__in HSTRING * ); 
-unsigned char * __RPC_USER  HSTRING_UserMarshal(  __RPC__in unsigned long *, __RPC__inout_xcount(0) unsigned char *, __RPC__in HSTRING * ); 
-unsigned char * __RPC_USER  HSTRING_UserUnmarshal(__RPC__in unsigned long *, __RPC__in_xcount(0) unsigned char *, __RPC__out HSTRING * ); 
-void                      __RPC_USER  HSTRING_UserFree(     __RPC__in unsigned long *, __RPC__in HSTRING * ); 
+#endif // defined(__cplusplus)
+#pragma pop_macro("MIDL_CONST_ID")
+// Restore the original value of the 'DEPRECATED' macro
+#pragma pop_macro("DEPRECATED")
 
-unsigned long             __RPC_USER  HSTRING_UserSize64(     __RPC__in unsigned long *, unsigned long            , __RPC__in HSTRING * ); 
-unsigned char * __RPC_USER  HSTRING_UserMarshal64(  __RPC__in unsigned long *, __RPC__inout_xcount(0) unsigned char *, __RPC__in HSTRING * ); 
-unsigned char * __RPC_USER  HSTRING_UserUnmarshal64(__RPC__in unsigned long *, __RPC__in_xcount(0) unsigned char *, __RPC__out HSTRING * ); 
-void                      __RPC_USER  HSTRING_UserFree64(     __RPC__in unsigned long *, __RPC__in HSTRING * ); 
-
-/* end of Additional Prototypes */
-
-#ifdef __cplusplus
-}
+#ifdef __clang__
+#pragma clang diagnostic pop // deprecated-declarations
+#else
+#pragma warning(pop)
 #endif
+#endif // __windows2Edevices2Espi2Eprovider_p_h__
 
-#endif
-
-
+#endif // __windows2Edevices2Espi2Eprovider_h__

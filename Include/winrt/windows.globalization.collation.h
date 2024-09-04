@@ -1,12 +1,9 @@
+/* Header file automatically generated from windows.globalization.collation.idl */
+/*
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ */
 
-
-/* this ALWAYS GENERATED file contains the definitions for the interfaces */
-
-
- /* File created by MIDL compiler version 8.01.0622 */
-/* @@MIDL_FILE_HEADING(  ) */
-
-
+#pragma warning( disable: 4049 )  /* more than 64k source lines */
 
 /* verify that the <rpcndr.h> version is high enough to compile this file*/
 #ifndef __REQUIRED_RPCNDR_H_VERSION__
@@ -18,447 +15,543 @@
 #define __REQUIRED_RPCSAL_H_VERSION__ 100
 #endif
 
-#include "rpc.h"
-#include "rpcndr.h"
+#include <rpc.h>
+#include <rpcndr.h>
 
 #ifndef __RPCNDR_H_VERSION__
 #error this stub requires an updated version of <rpcndr.h>
 #endif /* __RPCNDR_H_VERSION__ */
 
 #ifndef COM_NO_WINDOWS_H
-#include "windows.h"
-#include "ole2.h"
+#include <windows.h>
+#include <ole2.h>
 #endif /*COM_NO_WINDOWS_H*/
-
 #ifndef __windows2Eglobalization2Ecollation_h__
 #define __windows2Eglobalization2Ecollation_h__
+#ifndef __windows2Eglobalization2Ecollation_p_h__
+#define __windows2Eglobalization2Ecollation_p_h__
 
-#if defined(_MSC_VER) && (_MSC_VER >= 1020)
+
 #pragma once
+
+//
+// Deprecated attribute support
+//
+
+#pragma push_macro("DEPRECATED")
+#undef DEPRECATED
+
+#if !defined(DISABLE_WINRT_DEPRECATION)
+#if defined(__cplusplus)
+#if __cplusplus >= 201402
+#define DEPRECATED(x) [[deprecated(x)]]
+#elif defined(_MSC_VER)
+#if _MSC_VER >= 1900
+#define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
+#else
+#define DEPRECATED(x) __declspec(deprecated(x))
+#define DEPRECATEDENUMERATOR(x)
+#endif // _MSC_VER >= 1900
+#else // Not Standard C++ or MSVC, ignore the construct.
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif  // C++ deprecation
+#else // C - disable deprecation
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif
+#else // Deprecation is disabled
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif  /* DEPRECATED */
+
+// Disable Deprecation for this header, MIDL verifies that cross-type access is acceptable
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#else
+#pragma warning(push)
+#pragma warning(disable: 4996)
 #endif
 
-/* Forward Declarations */ 
-
-#ifndef ____FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping_FWD_DEFINED__
-#define ____FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping_FWD_DEFINED__
-typedef interface __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping;
-
-#endif 	/* ____FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping_FWD_DEFINED__ */
-
-
-#ifndef ____FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping_FWD_DEFINED__
-#define ____FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping_FWD_DEFINED__
-typedef interface __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping;
-
-#endif 	/* ____FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping_FWD_DEFINED__ */
+#pragma push_macro("MIDL_CONST_ID")
+#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
+#define MIDL_CONST_ID constexpr const
+#else
+#define MIDL_CONST_ID const __declspec(selectany)
+#endif
 
 
-#ifndef ____FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping_FWD_DEFINED__
-#define ____FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping_FWD_DEFINED__
-typedef interface __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping;
+//  API Contract Inclusion Definitions
+#if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
+#if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
-#endif 	/* ____FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping_FWD_DEFINED__ */
+#if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
+#define WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
+
+#if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
+#define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
+
+#if !defined(WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION)
+#define WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION)
+
+#if !defined(WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION)
+#define WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION)
+
+#endif // defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 
 
+// Header files for imported files
+#include "inspectable.h"
+#include "AsyncInfo.h"
+#include "EventToken.h"
+#include "windowscontracts.h"
+#include "Windows.Foundation.h"
+// Importing Collections header
+#include <windows.foundation.collections.h>
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+/* Forward Declarations */
 #ifndef ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace Globalization {
             namespace Collation {
                 interface ICharacterGrouping;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* Globalization */
+    } /* Collation */} /* ABI */
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping ABI::Windows::Globalization::Collation::ICharacterGrouping
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace Globalization {
             namespace Collation {
                 interface ICharacterGroupings;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* Globalization */
+    } /* Collation */} /* ABI */
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings ABI::Windows::Globalization::Collation::ICharacterGroupings
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace Globalization {
             namespace Collation {
                 interface ICharacterGroupingsFactory;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* Globalization */
+    } /* Collation */} /* ABI */
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory ABI::Windows::Globalization::Collation::ICharacterGroupingsFactory
 
-#endif /* __cplusplus */
+#endif // ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_FWD_DEFINED__
 
-#endif 	/* ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_FWD_DEFINED__ */
+// Parameterized interface forward declarations (C++)
 
-
-/* header files for imported files */
-#include "inspectable.h"
-#include "AsyncInfo.h"
-#include "EventToken.h"
-#include "Windows.Foundation.h"
-
-#ifdef __cplusplus
-extern "C"{
-#endif 
-
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0000 */
-/* [local] */ 
-
-#ifdef __cplusplus
-} /*extern "C"*/ 
-#endif
-#include <windows.foundation.collections.h>
-#ifdef __cplusplus
-extern "C" {
-#endif
-#ifdef __cplusplus
+// Collection interface definitions
 namespace ABI {
-namespace Windows {
-namespace Globalization {
-namespace Collation {
-class CharacterGrouping;
-} /*Collation*/
-} /*Globalization*/
-} /*Windows*/
-}
-#endif
-
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace Globalization {
-namespace Collation {
-interface ICharacterGrouping;
-} /*Collation*/
-} /*Globalization*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace Globalization {
+            namespace Collation {
+                class CharacterGrouping;
+            } /* Windows */
+        } /* Globalization */
+    } /* Collation */} /* ABI */
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0000 */
-/* [local] */ 
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0000_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0331 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0331 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0331_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0331_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0001 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping_USE
 #define DEF___FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("57e89bbc-9220-5df2-844b-ddfe6605db5f"))
-IIterator<ABI::Windows::Globalization::Collation::CharacterGrouping*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Globalization::Collation::CharacterGrouping*, ABI::Windows::Globalization::Collation::ICharacterGrouping*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterator`1<Windows.Globalization.Collation.CharacterGrouping>"; }
+IIterator<ABI::Windows::Globalization::Collation::CharacterGrouping*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Globalization::Collation::CharacterGrouping*, ABI::Windows::Globalization::Collation::ICharacterGrouping*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.Globalization.Collation.CharacterGrouping>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterator<ABI::Windows::Globalization::Collation::CharacterGrouping*> __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping_t;
-#define ____FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping_FWD_DEFINED__
 #define __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Globalization::Collation::ICharacterGrouping*>
+//#define __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Globalization::Collation::ICharacterGrouping*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping_USE */
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0001 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0001_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0332 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0332 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0332_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0332_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0002 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping_USE
 #define DEF___FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("82e3abf0-06e3-5609-ba39-c51eb2f5fae6"))
-IIterable<ABI::Windows::Globalization::Collation::CharacterGrouping*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Globalization::Collation::CharacterGrouping*, ABI::Windows::Globalization::Collation::ICharacterGrouping*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterable`1<Windows.Globalization.Collation.CharacterGrouping>"; }
+IIterable<ABI::Windows::Globalization::Collation::CharacterGrouping*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Globalization::Collation::CharacterGrouping*, ABI::Windows::Globalization::Collation::ICharacterGrouping*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.Globalization.Collation.CharacterGrouping>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterable<ABI::Windows::Globalization::Collation::CharacterGrouping*> __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping_t;
-#define ____FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping_FWD_DEFINED__
 #define __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Globalization::Collation::ICharacterGrouping*>
+//#define __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Globalization::Collation::ICharacterGrouping*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping_USE */
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0002 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0002_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0333 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0333 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0333_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0333_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0003 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping_USE
 #define DEF___FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("f7cf5a4a-2b7a-5bc9-a0c4-9dce07ff61c9"))
-IVectorView<ABI::Windows::Globalization::Collation::CharacterGrouping*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Globalization::Collation::CharacterGrouping*, ABI::Windows::Globalization::Collation::ICharacterGrouping*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVectorView`1<Windows.Globalization.Collation.CharacterGrouping>"; }
+IVectorView<ABI::Windows::Globalization::Collation::CharacterGrouping*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::Globalization::Collation::CharacterGrouping*, ABI::Windows::Globalization::Collation::ICharacterGrouping*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Windows.Globalization.Collation.CharacterGrouping>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IVectorView<ABI::Windows::Globalization::Collation::CharacterGrouping*> __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping_t;
-#define ____FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping_FWD_DEFINED__
 #define __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Globalization::Collation::ICharacterGrouping*>
+//#define __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Globalization::Collation::ICharacterGrouping*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping_USE */
-#if defined(__cplusplus)
-}
-#endif // defined(__cplusplus)
-#include <Windows.Foundation.h>
-#if defined(__cplusplus)
-extern "C" {
-#endif // defined(__cplusplus)
 
 
-#ifdef __cplusplus
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+
+
+
+
+
+
+
+
 namespace ABI {
-namespace Windows {
-namespace Globalization {
-namespace Collation {
-class CharacterGroupings;
-} /*Collation*/
-} /*Globalization*/
-} /*Windows*/
-}
+    namespace Windows {
+        namespace Globalization {
+            namespace Collation {
+                class CharacterGroupings;
+            } /* Windows */
+        } /* Globalization */
+    } /* Collation */} /* ABI */
+
+
+
+
+
+
+
+
+
+
+/*
+ *
+ * Interface Windows.Globalization.Collation.ICharacterGrouping
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Globalization.Collation.CharacterGrouping
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Globalization_Collation_ICharacterGrouping[] = L"Windows.Globalization.Collation.ICharacterGrouping";
+namespace ABI {
+    namespace Windows {
+        namespace Globalization {
+            namespace Collation {
+                /* [object, uuid("FAE761BB-805D-4BB0-95BB-C1F7C3E8EB8E"), exclusiveto, contract] */
+                MIDL_INTERFACE("FAE761BB-805D-4BB0-95BB-C1F7C3E8EB8E")
+                ICharacterGrouping : IInspectable
+                {
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_First(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Label(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICharacterGrouping=_uuidof(ICharacterGrouping);
+                
+            } /* Windows */
+        } /* Globalization */
+    } /* Collation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping;
+#endif /* !defined(____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Globalization.Collation.ICharacterGroupings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Globalization.Collation.CharacterGroupings
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.Foundation.Collections.IVectorView_1_Windows.Globalization.Collation.CharacterGrouping
+ *     Windows.Foundation.Collections.IIterable_1_Windows.Globalization.Collation.CharacterGrouping
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Globalization_Collation_ICharacterGroupings[] = L"Windows.Globalization.Collation.ICharacterGroupings";
+namespace ABI {
+    namespace Windows {
+        namespace Globalization {
+            namespace Collation {
+                /* [object, uuid("B8D20A75-D4CF-4055-80E5-CE169C226496"), exclusiveto, contract] */
+                MIDL_INTERFACE("B8D20A75-D4CF-4055-80E5-CE169C226496")
+                ICharacterGroupings : IInspectable
+                {
+                    virtual HRESULT STDMETHODCALLTYPE Lookup(
+                        /* [in] */__RPC__in HSTRING text,
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICharacterGroupings=_uuidof(ICharacterGroupings);
+                
+            } /* Windows */
+        } /* Globalization */
+    } /* Collation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings;
+#endif /* !defined(____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.Globalization.Collation.ICharacterGroupingsFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Globalization.Collation.CharacterGroupings
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if !defined(____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Globalization_Collation_ICharacterGroupingsFactory[] = L"Windows.Globalization.Collation.ICharacterGroupingsFactory";
+namespace ABI {
+    namespace Windows {
+        namespace Globalization {
+            namespace Collation {
+                /* [object, uuid("99EA9FD9-886D-4401-9F98-69C82D4C2F78"), exclusiveto, contract] */
+                MIDL_INTERFACE("99EA9FD9-886D-4401-9F98-69C82D4C2F78")
+                ICharacterGroupingsFactory : IInspectable
+                {
+                    virtual HRESULT STDMETHODCALLTYPE Create(
+                        /* [in] */__RPC__in HSTRING language,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Globalization::Collation::ICharacterGroupings * * result
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICharacterGroupingsFactory=_uuidof(ICharacterGroupingsFactory);
+                
+            } /* Windows */
+        } /* Globalization */
+    } /* Collation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory;
+#endif /* !defined(____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+
+
+/*
+ *
+ * Class Windows.Globalization.Collation.CharacterGrouping
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Globalization.Collation.ICharacterGrouping ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_Globalization_Collation_CharacterGrouping_DEFINED
+#define RUNTIMECLASS_Windows_Globalization_Collation_CharacterGrouping_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Globalization_Collation_CharacterGrouping[] = L"Windows.Globalization.Collation.CharacterGrouping";
 #endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0003 */
-/* [local] */ 
+/*
+ *
+ * Class Windows.Globalization.Collation.CharacterGroupings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.Globalization.Collation.ICharacterGroupingsFactory interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Type can be activated via RoActivateInstance starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Globalization.Collation.ICharacterGroupings ** Default Interface **
+ *    Windows.Foundation.Collections.IVectorView_1_Windows.Globalization.Collation.CharacterGrouping
+ *    Windows.Foundation.Collections.IIterable_1_Windows.Globalization.Collation.CharacterGrouping
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0003_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0334 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0334 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0334_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0334_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0004 */
-/* [local] */ 
-
-#ifndef DEF___FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping
-#define DEF___FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0004 */
-/* [local] */ 
+#ifndef RUNTIMECLASS_Windows_Globalization_Collation_CharacterGroupings_DEFINED
+#define RUNTIMECLASS_Windows_Globalization_Collation_CharacterGroupings_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Globalization_Collation_CharacterGroupings[] = L"Windows.Globalization.Collation.CharacterGroupings";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0004_v0_0_s_ifspec;
 
-#ifndef ____FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping_INTERFACE_DEFINED__
+#else // !defined(__cplusplus)
+/* Forward Declarations */
+#ifndef ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping;
+
+#endif // ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings;
+
+#endif // ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory;
+
+#endif // ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_FWD_DEFINED__
+
+// Parameterized interface forward declarations (C)
+
+// Collection interface definitions
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping_INTERFACE_DEFINED__)
 #define ____FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping_INTERFACE_DEFINED__
 
-/* interface __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping */
-/* [unique][uuid][object] */ 
+typedef interface __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping;
 
-
-
-/* interface __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("57e89bbc-9220-5df2-844b-ddfe6605db5f")
-    __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping : public IInspectable
-    {
-    public:
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Globalization::Collation::ICharacterGrouping **current) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
-            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
-            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::Globalization::Collation::ICharacterGrouping **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGroupingVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGroupingVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
-            __RPC__in __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping **current);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
-            __RPC__in __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
-            /* [retval][out] */ __RPC__out boolean *hasCurrent);
-        
-        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
-            __RPC__in __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
-            /* [retval][out] */ __RPC__out boolean *hasCurrent);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual);
-        
-        END_INTERFACE
-    } __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGroupingVtbl;
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
 
-    interface __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping
-    {
-        CONST_VTBL struct __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGroupingVtbl *lpVtbl;
-    };
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
 
-    
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGroupingVtbl;
+
+interface __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping
+{
+    CONST_VTBL struct __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGroupingVtbl *lpVtbl;
+};
+
+
 
 #ifdef COBJMACROS
 
@@ -498,131 +591,53 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CGlobalization__CCollation__CChar
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0005 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping */
-
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0005 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0005_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0335 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0335 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0335_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0335_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0006 */
-/* [local] */ 
-
-#ifndef DEF___FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping
-#define DEF___FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0006 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0006_v0_0_s_ifspec;
-
-#ifndef ____FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping_INTERFACE_DEFINED__)
 #define ____FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping_INTERFACE_DEFINED__
 
-/* interface __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping */
-/* [unique][uuid][object] */ 
+typedef interface __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping;
 
-
-
-/* interface __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("82e3abf0-06e3-5609-ba39-c51eb2f5fae6")
-    __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE First( 
-            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping **first) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef  struct __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGroupingVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGroupingVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *First )( 
-            __RPC__in __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
-            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping **first);
-        
-        END_INTERFACE
-    } __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGroupingVtbl;
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
 
-    interface __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping
-    {
-        CONST_VTBL struct __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGroupingVtbl *lpVtbl;
-    };
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This);
 
-    
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CGlobalization__CCollation__CCharacterGrouping **first);
+
+    END_INTERFACE
+} __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGroupingVtbl;
+
+interface __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping
+{
+    CONST_VTBL struct __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGroupingVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
-
 
 #define __FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
@@ -650,161 +665,77 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CGlobalization__CCollation__CChar
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0007 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIIterable_1_Windows__CGlobalization__CCollation__CCharacterGrouping */
-
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0007 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0007_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0336 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0336 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0336_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation2Eidl_0000_0336_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0008 */
-/* [local] */ 
-
-#ifndef DEF___FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping
-#define DEF___FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0008 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0008_v0_0_s_ifspec;
-
-#ifndef ____FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping_INTERFACE_DEFINED__)
 #define ____FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping_INTERFACE_DEFINED__
 
-/* interface __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping */
-/* [unique][uuid][object] */ 
+typedef interface __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping;
 
-
-
-/* interface __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("f7cf5a4a-2b7a-5bc9-a0c4-9dce07ff61c9")
-    __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE GetAt( 
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::Globalization::Collation::ICharacterGrouping **item) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
-            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
-            /* [in] */ __RPC__in_opt ABI::Windows::Globalization::Collation::ICharacterGrouping *item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::Globalization::Collation::ICharacterGrouping **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGroupingVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGroupingVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
             /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
             /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
-            __RPC__in __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping **item);
-        
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping * *item);
+
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
             __RPC__in __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
             /* [retval][out] */ __RPC__out unsigned int *size);
-        
+
         HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
-            __RPC__in __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping *item,
+                                               __RPC__in __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
+            /* [in] */ __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping * item,
             /* [out] */ __RPC__out unsigned int *index,
             /* [retval][out] */ __RPC__out boolean *found);
-        
+
         HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
+                                               __RPC__in __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping * This,
             /* [in] */ unsigned int startIndex,
             /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping **items,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping * *items,
             /* [retval][out] */ __RPC__out unsigned int *actual);
-        
+
         END_INTERFACE
-    } __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGroupingVtbl;
+} __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGroupingVtbl;
 
-    interface __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping
-    {
-        CONST_VTBL struct __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGroupingVtbl *lpVtbl;
-    };
+interface __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping
+{
+    CONST_VTBL struct __FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGroupingVtbl *lpVtbl;
+};
 
-    
+
 
 #ifdef COBJMACROS
 
@@ -844,480 +775,385 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CGlobalization__CCollation__CCh
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+
+#endif // ____FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
 
-#endif 	/* ____FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0009 */
-/* [local] */ 
 
-#endif /* pinterface */
-#endif /* DEF___FIVectorView_1_Windows__CGlobalization__CCollation__CCharacterGrouping */
+
+
+
+
+
+
+
+
+
+
+
+/*
+ *
+ * Interface Windows.Globalization.Collation.ICharacterGrouping
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Globalization.Collation.CharacterGrouping
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Globalization_Collation_ICharacterGrouping[] = L"Windows.Globalization.Collation.ICharacterGrouping";
-#endif /* !defined(____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0009 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0009_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_INTERFACE_DEFINED__
 #define ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Globalization_Collation_ICharacterGrouping[] = L"Windows.Globalization.Collation.ICharacterGrouping";
+/* [object, uuid("FAE761BB-805D-4BB0-95BB-C1F7C3E8EB8E"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-/* interface __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping */
-/* [uuid][object] */ 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_First )(
+        __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Label )(
+        __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingVtbl;
+
+interface __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping
+{
+    CONST_VTBL struct __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
+
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_get_First(This,value) \
+    ( (This)->lpVtbl->get_First(This,value) )
+
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_get_Label(This,value) \
+    ( (This)->lpVtbl->get_Label(This,value) )
 
 
-
-/* interface ABI::Windows::Globalization::Collation::ICharacterGrouping */
-/* [uuid][object] */ 
+#endif /* COBJMACROS */
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping;
+#endif /* !defined(____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace Globalization {
-                namespace Collation {
-                    
-                    MIDL_INTERFACE("FAE761BB-805D-4BB0-95BB-C1F7C3E8EB8E")
-                    ICharacterGrouping : public IInspectable
-                    {
-                    public:
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_First( 
-                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
-                        
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Label( 
-                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_ICharacterGrouping = __uuidof(ICharacterGrouping);
+/*
+ *
+ * Interface Windows.Globalization.Collation.ICharacterGroupings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Globalization.Collation.CharacterGroupings
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.Foundation.Collections.IVectorView_1_Windows.Globalization.Collation.CharacterGrouping
+ *     Windows.Foundation.Collections.IIterable_1_Windows.Globalization.Collation.CharacterGrouping
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Globalization_Collation_ICharacterGroupings[] = L"Windows.Globalization.Collation.ICharacterGroupings";
+/* [object, uuid("B8D20A75-D4CF-4055-80E5-CE169C226496"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *Lookup )(
+        __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings * This,
+        /* [in] */__RPC__in HSTRING text,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * result
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsVtbl;
 
-    typedef struct __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_First )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping * This,
-            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Label )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping * This,
-            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingVtbl;
-
-    interface __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings
+{
+    CONST_VTBL struct __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_Lookup(This,text,result) \
+    ( (This)->lpVtbl->Lookup(This,text,result) )
 
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_get_First(This,value)	\
-    ( (This)->lpVtbl -> get_First(This,value) ) 
-
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_get_Label(This,value)	\
-    ( (This)->lpVtbl -> get_Label(This,value) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGrouping_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0010 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Globalization_Collation_ICharacterGroupings[] = L"Windows.Globalization.Collation.ICharacterGroupings";
-#endif /* !defined(____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0010 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0010_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::Globalization::Collation::ICharacterGroupings */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings;
+#endif /* !defined(____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace Globalization {
-                namespace Collation {
-                    
-                    MIDL_INTERFACE("B8D20A75-D4CF-4055-80E5-CE169C226496")
-                    ICharacterGroupings : public IInspectable
-                    {
-                    public:
-                        virtual HRESULT STDMETHODCALLTYPE Lookup( 
-                            /* [in] */ __RPC__in HSTRING text,
-                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *result) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_ICharacterGroupings = __uuidof(ICharacterGroupings);
+/*
+ *
+ * Interface Windows.Globalization.Collation.ICharacterGroupingsFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.Globalization.Collation.CharacterGroupings
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
+#if !defined(____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Globalization_Collation_ICharacterGroupingsFactory[] = L"Windows.Globalization.Collation.ICharacterGroupingsFactory";
+/* [object, uuid("99EA9FD9-886D-4401-9F98-69C82D4C2F78"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *Create )(
+        __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory * This,
+        /* [in] */__RPC__in HSTRING language,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings * * result
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactoryVtbl;
 
-    typedef struct __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *Lookup )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings * This,
-            /* [in] */ __RPC__in HSTRING text,
-            /* [out][retval] */ __RPC__deref_out_opt HSTRING *result);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsVtbl;
-
-    interface __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactoryVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_Create(This,language,result) \
+    ( (This)->lpVtbl->Create(This,language,result) )
 
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_Lookup(This,text,result)	\
-    ( (This)->lpVtbl -> Lookup(This,text,result) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0011 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Globalization_Collation_ICharacterGroupingsFactory[] = L"Windows.Globalization.Collation.ICharacterGroupingsFactory";
-#endif /* !defined(____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0011 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0011_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::Globalization::Collation::ICharacterGroupingsFactory */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace Globalization {
-                namespace Collation {
-                    
-                    MIDL_INTERFACE("99EA9FD9-886D-4401-9F98-69C82D4C2F78")
-                    ICharacterGroupingsFactory : public IInspectable
-                    {
-                    public:
-                        virtual HRESULT STDMETHODCALLTYPE Create( 
-                            /* [in] */ __RPC__in HSTRING language,
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Globalization::Collation::ICharacterGroupings **result) = 0;
-                        
-                    };
-
-                    extern const __declspec(selectany) IID & IID_ICharacterGroupingsFactory = __uuidof(ICharacterGroupingsFactory);
-
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
-    
-#else 	/* C style interface */
-
-    typedef struct __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactoryVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *Create )( 
-            __RPC__in __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory * This,
-            /* [in] */ __RPC__in HSTRING language,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupings **result);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactoryVtbl;
-
-    interface __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactoryVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
+#endif /* !defined(____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x40000
 
 
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_Create(This,language,result)	\
-    ( (This)->lpVtbl -> Create(This,language,result) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CGlobalization_CCollation_CICharacterGroupingsFactory_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0012 */
-/* [local] */ 
+/*
+ *
+ * Class Windows.Globalization.Collation.CharacterGrouping
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.Globalization.Collation.ICharacterGrouping ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef RUNTIMECLASS_Windows_Globalization_Collation_CharacterGrouping_DEFINED
 #define RUNTIMECLASS_Windows_Globalization_Collation_CharacterGrouping_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Globalization_Collation_CharacterGrouping[] = L"Windows.Globalization.Collation.CharacterGrouping";
 #endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.Globalization.Collation.CharacterGroupings
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.Globalization.Collation.ICharacterGroupingsFactory interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Type can be activated via RoActivateInstance starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.Globalization.Collation.ICharacterGroupings ** Default Interface **
+ *    Windows.Foundation.Collections.IVectorView_1_Windows.Globalization.Collation.CharacterGrouping
+ *    Windows.Foundation.Collections.IIterable_1_Windows.Globalization.Collation.CharacterGrouping
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
 #ifndef RUNTIMECLASS_Windows_Globalization_Collation_CharacterGroupings_DEFINED
 #define RUNTIMECLASS_Windows_Globalization_Collation_CharacterGroupings_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Globalization_Collation_CharacterGroupings[] = L"Windows.Globalization.Collation.CharacterGroupings";
 #endif
-
-
-/* interface __MIDL_itf_windows2Eglobalization2Ecollation_0000_0012 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eglobalization2Ecollation_0000_0012_v0_0_s_ifspec;
 
-/* Additional Prototypes for ALL interfaces */
+#endif // defined(__cplusplus)
+#pragma pop_macro("MIDL_CONST_ID")
+// Restore the original value of the 'DEPRECATED' macro
+#pragma pop_macro("DEPRECATED")
 
-unsigned long             __RPC_USER  HSTRING_UserSize(     __RPC__in unsigned long *, unsigned long            , __RPC__in HSTRING * ); 
-unsigned char * __RPC_USER  HSTRING_UserMarshal(  __RPC__in unsigned long *, __RPC__inout_xcount(0) unsigned char *, __RPC__in HSTRING * ); 
-unsigned char * __RPC_USER  HSTRING_UserUnmarshal(__RPC__in unsigned long *, __RPC__in_xcount(0) unsigned char *, __RPC__out HSTRING * ); 
-void                      __RPC_USER  HSTRING_UserFree(     __RPC__in unsigned long *, __RPC__in HSTRING * ); 
-
-unsigned long             __RPC_USER  HSTRING_UserSize64(     __RPC__in unsigned long *, unsigned long            , __RPC__in HSTRING * ); 
-unsigned char * __RPC_USER  HSTRING_UserMarshal64(  __RPC__in unsigned long *, __RPC__inout_xcount(0) unsigned char *, __RPC__in HSTRING * ); 
-unsigned char * __RPC_USER  HSTRING_UserUnmarshal64(__RPC__in unsigned long *, __RPC__in_xcount(0) unsigned char *, __RPC__out HSTRING * ); 
-void                      __RPC_USER  HSTRING_UserFree64(     __RPC__in unsigned long *, __RPC__in HSTRING * ); 
-
-/* end of Additional Prototypes */
-
-#ifdef __cplusplus
-}
+#ifdef __clang__
+#pragma clang diagnostic pop // deprecated-declarations
+#else
+#pragma warning(pop)
 #endif
+#endif // __windows2Eglobalization2Ecollation_p_h__
 
-#endif
-
-
+#endif // __windows2Eglobalization2Ecollation_h__

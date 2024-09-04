@@ -512,7 +512,13 @@ HRESULT RIL_ManageCalls_V2(HRIL hRil, LPVOID lpContext, DWORD dwExecutor, RILMAN
     // Async out: none (status only)
 
 // modifies the state of circuit switched or packet switched calls.
-HRESULT RIL_ManageCalls(HRIL hRil, LPVOID lpContext, DWORD dwExecutor, RILMANAGECALLPARAMSCOMMAND dwCommand, DWORD dwID, const LPRILCALLMEDIAOFFERANSWERSET lprcmOfferAnswer, const LPRILADDRESS lpraAddress);
+HRESULT RIL_ManageCalls_V3(HRIL hRil, LPVOID lpContext, DWORD dwExecutor, RILMANAGECALLPARAMSCOMMAND dwCommand, DWORD dwID, const LPRILCALLMEDIAOFFERANSWERSET lprcmOfferAnswer, const LPRILADDRESS lpraAddress);
+    // RIL_COMMAND_MANAGECALLS
+    // In: RILMANAGECALLSPARAMS_V3
+    // Async out: none (status only)
+
+// modifies the state of circuit switched or packet switched calls.
+HRESULT RIL_ManageCalls(HRIL hRil, LPVOID lpContext, DWORD dwExecutor, RILMANAGECALLPARAMSCOMMAND dwCommand, DWORD dwID, const LPRILCALLMEDIAOFFERANSWERSET lprcmOfferAnswer, const LPRILADDRESS lpraAddress, RILCALLRTTACTION dwRTTAction);
     // RIL_COMMAND_MANAGECALLS
     // In: RILMANAGECALLSPARAMS_V3
     // Async out: none (status only)
@@ -628,6 +634,12 @@ HRESULT RIL_SendSupServiceDataResponse(HRIL hRil, LPVOID lpContext, DWORD dwExec
 HRESULT RIL_CancelSupServiceDataSession(HRIL hRil, LPVOID lpContext, DWORD dwExecutor);
     // RIL_COMMAND_SENDSUPSERVICEDATA
     // In: CANCELSUPSERVICEDATA_PARAMS
+    // Async out: none (status only)
+
+// Responsible for sending RTT data text on packet switched calls.
+HRESULT RIL_SendRTT(HRIL hRil, LPVOID lpContext, DWORD dwID, DWORD dwExecutor, const WCHAR *lpwszRTTText);
+    // RIL_COMMAND_SENDRTT
+    // In: RILSENDRTTDATAPARAMS
     // Async out: none (status only)
 
 //////////////////////////////////

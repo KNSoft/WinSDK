@@ -167,15 +167,15 @@ DECLARE_INTERFACE_IID_(IXAPOHrtfParameters, IUnknown, "15B3CD66-E9DE-4464-B6E6-2
 
     // HRTF params
     //! The position of the sound relative to the listener.
-    STDMETHOD(SetSourcePosition)(THIS_ _In_ const HrtfPosition* position);
+    STDMETHOD(SetSourcePosition)(THIS_ _In_ const HrtfPosition* position) PURE;
     //! The rotation matrix for the source orientation, with respect to the listener's frame of reference (the listener's coordinate system).
-    STDMETHOD(SetSourceOrientation)(THIS_ _In_ const HrtfOrientation* orientation);
+    STDMETHOD(SetSourceOrientation)(THIS_ _In_ const HrtfOrientation* orientation) PURE;
     //! The custom direct path gain value for the current source position. Valid only for sounds played with the HrtfDistanceDecayType. Custom decay type.
-    STDMETHOD(SetSourceGain)(THIS_ _In_ float gain);
+    STDMETHOD(SetSourceGain)(THIS_ _In_ float gain) PURE;
 
     // Distance cue params
     //! Selects the acoustic environment to simulate.
-    STDMETHOD(SetEnvironment)(THIS_ _In_ HrtfEnvironment environment);
+    STDMETHOD(SetEnvironment)(THIS_ _In_ HrtfEnvironment environment) PURE;
 };
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */

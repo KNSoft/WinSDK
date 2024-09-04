@@ -402,7 +402,8 @@ typedef struct _D3DKMT_FLIPMODEL_PRESENTHISTORYTOKENFLAGS
             UINT  IndependentFlipCheckNeeded    :  1;   // 0x00400000
             UINT  IndependentFlipTrueImmediate  :  1;   // 0x00800000
             UINT  IndependentFlipRequestDwmExit :  1;   // 0x01000000
-            UINT  Reserved                      :  7;   // 0xFE000000
+            UINT  CompSurfaceNotifiedEarly      :  1;   // 0x02000000
+            UINT  Reserved                      :  6;   // 0xFC000000
 #else
             UINT  Reserved                      : 29;   // 0xFFFFFFF8
 #endif
@@ -498,9 +499,12 @@ typedef struct _D3DKMT_FLIPMODEL_PRESENTHISTORYTOKEN
     UINT                                       PresentCount;
     FLOAT                                      RevealColor[4]; // index 0 == R, ... , 3 == A
     D3DDDI_ROTATION                            Rotation;
-    D3DKMT_SCATTERBLTS                         ScatterBlts;
-    D3DKMT_HANDLE                              hSyncObject;     // The local handle of a sync object from D3D runtimes.
-                                                                // The global handle of the sync object coming to DWM.
+    union
+    {
+        D3DKMT_SCATTERBLTS                     ScatterBlts;     // Unused
+        HANDLE                                 hSyncObject;     // NT handle to FlipEx fence.
+    };
+    D3DKMT_HANDLE                              Reserved;        // Unused
     RECT                                       SourceRect;
     UINT                                       DestWidth;
     UINT                                       DestHeight;
@@ -616,6 +620,28 @@ typedef struct _D3DKMT_PRESENT
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_0)
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM1_3)
 } D3DKMT_PRESENT;
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+typedef struct _D3DKMT_PRESENT_REDIRECTEDS_FLAGS
+{
+    union
+    {
+        struct
+        {
+            UINT Reserved : 32; // 0xFFFFFFFF
+        };
+        UINT Value;
+    };
+}D3DKMT_PRESENT_REDIRECTED_FLAGS;
+
+typedef struct _D3DKMT_PRESENT_REDIRECTED
+{
+    D3DKMT_HANDLE                   hSyncObj;              // in: Sync object PHT waits on
+    ULONGLONG                       WaitedFenceValue;      // in: Fence value of hSyncObj that PHT waits on
+    D3DKMT_PRESENTHISTORYTOKEN      PresentHistoryToken;
+    D3DKMT_PRESENT_REDIRECTED_FLAGS Flags;
+}D3DKMT_PRESENT_REDIRECTED;
+#endif 
 
 #define D3DKMT_MAX_MULTIPLANE_OVERLAY_PLANES                   8
 #define D3DKMT_MAX_MULTIPLANE_OVERLAY_ALLOCATIONS_PER_PLANE   256
@@ -825,6 +851,9 @@ typedef struct _D3DKMT_MULTIPLANE_OVERLAY_ATTRIBUTES3
     _Field_size_(DirtyRectCount) RECT*           pDirtyRects;
     D3DDDI_COLOR_SPACE_TYPE                      ColorSpace;   
     DXGKMT_MULTIPLANE_OVERLAY_STRETCH_QUALITY    StretchQuality;        // DXGK_MULTIPLANE_OVERLAY_STRETCH_QUALITY
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+    UINT                                         SDRWhiteLevel;
+#endif
 } D3DKMT_MULTIPLANE_OVERLAY_ATTRIBUTES3;
 
 typedef struct _D3DKMT_CHECK_MULTIPLANE_OVERLAY_PLANE3
@@ -1122,6 +1151,42 @@ typedef struct _D3DKMT_RENDER
     UINT                            PrivateDriverDataSize;      // in: size of private driver data. _ADVSCH_
 } D3DKMT_RENDER;
 
+typedef enum _D3DKMT_STANDARDALLOCATIONTYPE
+{
+    D3DKMT_STANDARDALLOCATIONTYPE_EXISTINGHEAP = 1,
+} D3DKMT_STANDARDALLOCATIONTYPE;
+
+typedef struct _D3DKMT_STANDARDALLOCATION_EXISTINGHEAP
+{
+    SIZE_T Size;        // in: Size in bytes of existing heap
+} D3DKMT_STANDARDALLOCATION_EXISTINGHEAP;
+
+typedef struct _D3DKMT_CREATESTANDARDALLOCATIONFLAGS
+{
+    union
+    {
+        struct 
+        {
+            UINT Reserved : 32; // 0xFFFFFFFF
+        };
+        UINT Value;
+    };
+} D3DKMT_CREATESTANDARDALLOCATIONFLAGS;
+
+typedef struct _D3DKMT_CREATESTANDARDALLOCATION
+{
+    // 
+    // update onecoreuap/windows/core/ntuser/inc/whwin32.tpl when adding new memeber
+    // to this struct
+    //
+    D3DKMT_STANDARDALLOCATIONTYPE Type;
+    union
+    {
+        D3DKMT_STANDARDALLOCATION_EXISTINGHEAP ExistingHeapData;
+    };
+    D3DKMT_CREATESTANDARDALLOCATIONFLAGS Flags;
+} D3DKMT_CREATESTANDARDALLOCATION;
+
 typedef struct _D3DKMT_CREATEALLOCATIONFLAGS
 {
     UINT    CreateResource              :  1;    // 0x00000001
@@ -1142,7 +1207,13 @@ typedef struct _D3DKMT_CREATEALLOCATIONFLAGS
     UINT    PartialSharedCreation       :  1;    // 0x00002000 
     UINT    Zeroed                      :  1;    // 0x00004000  // in: specify request for zeroed pages, out: set when allocation fulfilled by zero pages
     UINT    WriteWatch                  :  1;    // 0x00008000  // in: request Mm to track writes to pages of this allocation
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+    UINT    StandardAllocation          :  1;    // 0x00010000  // in: use pStandardAllocation instead of pPrivateDriverData
+    UINT    ExistingSection             :  1;    // 0x00020000  // in: Use Section Handle instead of SysMem in D3DDI_ALLOCATIONINFO2
+    UINT    Reserved                    : 14;    // 0xFFFD0000
+#else
     UINT    Reserved                    : 16;    // 0xFFFF0000
+#endif //(DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
 #else
     UINT    Zeroed                      :  1;    // 0x00000800  // in: specify request for zeroed pages, out: set when allocation fulfilled by zero pages
     UINT    Reserved                    : 20;    // 0xFFFFF000
@@ -1155,23 +1226,34 @@ typedef struct _D3DKMT_CREATEALLOCATIONFLAGS
 
 typedef struct _D3DKMT_CREATEALLOCATION
 {
-                                            D3DKMT_HANDLE                   hDevice;
-                                            D3DKMT_HANDLE                   hResource;      //in/out:valid only within device
-                                            D3DKMT_HANDLE                   hGlobalShare;   //out:Shared handle if CreateShared and not NtSecuritySharing
-    _Field_size_bytes_(PrivateRuntimeDataSize)  CONST VOID*                     pPrivateRuntimeData;
-                                            UINT                            PrivateRuntimeDataSize;
-    _Field_size_bytes_(PrivateDriverDataSize)   CONST VOID*                     pPrivateDriverData;
-                                            UINT                            PrivateDriverDataSize;
-                                            UINT                            NumAllocations;
-   union {
-       _Field_size_(NumAllocations)       D3DDDI_ALLOCATIONINFO*          pAllocationInfo;
+    D3DKMT_HANDLE                   hDevice;
+    D3DKMT_HANDLE                   hResource;      //in/out:valid only within device
+    D3DKMT_HANDLE                   hGlobalShare;   //out:Shared handle if CreateShared and not NtSecuritySharing
+    _Field_size_bytes_(PrivateRuntimeDataSize)  
+    CONST VOID*                     pPrivateRuntimeData;
+    UINT                            PrivateRuntimeDataSize;
+    union 
+    {
+        // 
+        // update onecoreuap/windows/core/ntuser/inc/whwin32.tpl when adding new memeber
+        // to this union
+        //
+        D3DKMT_CREATESTANDARDALLOCATION* pStandardAllocation;
+        _Field_size_bytes_(PrivateDriverDataSize)
+        CONST VOID*                       pPrivateDriverData;
+    };
+    UINT                            PrivateDriverDataSize;
+    UINT                            NumAllocations;
+    union 
+    {
+        _Field_size_(NumAllocations)       D3DDDI_ALLOCATIONINFO*   pAllocationInfo;
 #if ((DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WIN7) || \
      (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WIN7))
-       _Field_size_(NumAllocations)       D3DDDI_ALLOCATIONINFO2*         pAllocationInfo2; // _ADVSCH_
+        _Field_size_(NumAllocations)       D3DDDI_ALLOCATIONINFO2*  pAllocationInfo2; // _ADVSCH_
 #endif
-   };
-                                            D3DKMT_CREATEALLOCATIONFLAGS    Flags;
-                                            HANDLE                          hPrivateRuntimeResourceHandle; // opaque handle used for event tracing
+    };
+    D3DKMT_CREATEALLOCATIONFLAGS    Flags;
+    HANDLE                          hPrivateRuntimeResourceHandle; // opaque handle used for event tracing
 } D3DKMT_CREATEALLOCATION;
 
 typedef struct _D3DKMT_OPENRESOURCE
@@ -1351,6 +1433,7 @@ typedef enum _KMTUMDVERSION
     KMTUMDVERSION_DX10,
     KMTUMDVERSION_DX11,
     KMTUMDVERSION_DX12,
+    NUM_KMTUMDVERSIONS
 } KMTUMDVERSION;
 
 typedef struct _D3DKMT_UMDFILENAMEINFO
@@ -1460,6 +1543,9 @@ typedef enum _QAI_DRIVERVERSION
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
     KMT_DRIVERVERSION_WDDM_2_2 = 2200,
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_2
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+    KMT_DRIVERVERSION_WDDM_2_3 = 2300,
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_3
 } D3DKMT_DRIVERVERSION;
 
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WIN8)
@@ -1477,7 +1563,14 @@ typedef struct _D3DKMT_ADAPTERTYPE
             UINT   HybridDiscrete        :  1;
             UINT   HybridIntegrated      :  1;
             UINT   IndirectDisplayDevice :  1;
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+            UINT   Paravirtualized              :  1;
+            UINT   ACGSupported                 :  1;
+            UINT   SupportSetTimingsFromVidPn   :  1;
+            UINT   Reserved                     : 22;
+#else
             UINT   Reserved              : 25;
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
 #else
             UINT   Reserved              : 28;
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM1_3)
@@ -1852,7 +1945,7 @@ typedef enum _D3DKMT_ESCAPETYPE
     D3DKMT_ESCAPE_DEVICE                        =  4,
     D3DKMT_ESCAPE_DMM                           =  5,
     D3DKMT_ESCAPE_DEBUG_SNAPSHOT                =  6,
-    D3DKMT_ESCAPE_SETDRIVERUPDATESTATUS         =  7,
+    // unused (7 was previously used to set driver update in-progress status, D3DKMT_ESCAPE_SETDRIVERUPDATESTATUS)
     D3DKMT_ESCAPE_DRT_TEST                      =  8,
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WIN8)
     D3DKMT_ESCAPE_DIAGNOSTICS                   =  9,
@@ -1869,7 +1962,7 @@ typedef enum _D3DKMT_ESCAPETYPE
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM1_3)
     D3DKMT_ESCAPE_MIRACAST_DISPLAY_REQUEST      = 20,
     D3DKMT_ESCAPE_HISTORY_BUFFER_STATUS         = 21,
-    // unused (22 can be reused for future needs as it was never exposed for external purposes)
+    // 22 can be reused for future needs as it was never exposed for external purposes
     D3DKMT_ESCAPE_MIRACAST_ADAPTER_DIAG_INFO    = 23,
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_0)
     D3DKMT_ESCAPE_FORCE_BDDFALLBACK_HEADLESS    = 24,
@@ -1886,6 +1979,9 @@ typedef enum _D3DKMT_ESCAPETYPE
     D3DKMT_ESCAPE_LOG_USERMODE_DAIG_PACKET      = 33,
     D3DKMT_ESCAPE_GET_EXTERNAL_DIAGNOSTICS      = 34,
     D3DKMT_ESCAPE_GET_PREFERRED_MODE            = 35,
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+    D3DKMT_ESCAPE_GET_DISPLAY_CONFIGURATIONS    = 36,
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_3
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_2
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_1
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_0
@@ -1905,6 +2001,8 @@ typedef enum _D3DKMT_ESCAPETYPE
     D3DKMT_ESCAPE_WIN32K_HMD_ENUM               = 1032,
     D3DKMT_ESCAPE_WIN32K_HMD_CONTROL            = 1033,
     D3DKMT_ESCAPE_WIN32K_LPMDISPLAY_CONTROL     = 1034,
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_2
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_0
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM1_3
 #endif // DXGKDDI_INTERFACE_VERSION_WIN8
@@ -2046,6 +2144,8 @@ typedef enum _D3DKMT_DEFRAG_ESCAPE_OPERATION
     D3DKMT_DEFRAG_ESCAPE_GET_FRAGMENTATION_STATS       =  0,
     D3DKMT_DEFRAG_ESCAPE_DEFRAG_UPWARD                 =  1,
     D3DKMT_DEFRAG_ESCAPE_DEFRAG_DOWNWARD               =  2,
+    D3DKMT_DEFRAG_ESCAPE_DEFRAG_PASS                   =  3,
+    D3DKMT_DEFRAG_ESCAPE_VERIFY_TRANSFER               =  4,
 } D3DKMT_DEFRAG_ESCAPE_OPERATION;
 
 typedef struct _D3DKMT_PAGE_TABLE_LEVEL_DESC
@@ -2411,24 +2511,26 @@ typedef union _D3DKMT_ADAPTER_VERIFIER_VIDMM_FLAGS
 {
     struct
     {
-        UINT AlwaysRepatch              : 1;    
-        UINT FailSharedPrimary          : 1;
-        UINT FailProbeAndLock           : 1;
-        UINT AlwaysDiscardOffer         : 1;
-        UINT NeverDiscardOffer          : 1;
-        UINT ForceComplexLock           : 1;
-        UINT NeverPrepatch              : 1;
-        UINT ExpectPreparationFailure   : 1;
-        UINT TakeSplitPoint             : 1;
-        UINT FailAcquireSwizzlingRange  : 1;
-        UINT PagingPathLockSubrange     : 1;
-        UINT PagingPathLockMinrange     : 1;
-        UINT FailVaRotation             : 1;
-        UINT NoDemotion                 : 1;
-        UINT FailDefragPass             : 1;
-        UINT AlwaysProcessOfferList     : 1;
-        UINT AlwaysDecommitOffer        : 1;
-        UINT Reserved                   : 15;
+        UINT AlwaysRepatch                      : 1;    
+        UINT FailSharedPrimary                  : 1;
+        UINT FailProbeAndLock                   : 1;
+        UINT AlwaysDiscardOffer                 : 1;
+        UINT NeverDiscardOffer                  : 1;
+        UINT ForceComplexLock                   : 1;
+        UINT NeverPrepatch                      : 1;
+        UINT ExpectPreparationFailure           : 1;
+        UINT TakeSplitPoint                     : 1;
+        UINT FailAcquireSwizzlingRange          : 1;
+        UINT PagingPathLockSubrange             : 1;
+        UINT PagingPathLockMinrange             : 1;
+        UINT FailVaRotation                     : 1;
+        UINT NoDemotion                         : 1;
+        UINT FailDefragPass                     : 1;
+        UINT AlwaysProcessOfferList             : 1;
+        UINT AlwaysDecommitOffer                : 1;
+        UINT NeverMoveDefrag                    : 1;
+        UINT AlwaysRelocateDisplayableResources : 1;
+        UINT Reserved                           : 13;
     };
     UINT32 Value;
 } D3DKMT_ADAPTER_VERIFIER_VIDMM_FLAGS;
@@ -2563,7 +2665,8 @@ typedef struct _D3DKMT_VIDPNSOURCEOWNER_FLAGS
         {
             UINT AllowOutputDuplication : 1;
             UINT DisableDWMVirtualMode  : 1;
-            UINT Reserved               : 30;
+            UINT UseNtHandles           : 1;
+            UINT Reserved               : 29;
         };
         UINT Value;
     };
@@ -2584,6 +2687,14 @@ typedef struct _D3DKMT_SETVIDPNSOURCEOWNER1
     D3DKMT_SETVIDPNSOURCEOWNER              Version0;
     D3DKMT_VIDPNSOURCEOWNER_FLAGS           Flags;
 } D3DKMT_SETVIDPNSOURCEOWNER1;
+#endif
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+typedef struct _D3DKMT_SETVIDPNSOURCEOWNER2
+{
+    D3DKMT_SETVIDPNSOURCEOWNER1             Version1;
+    CONST HANDLE*                           pVidPnSourceNtHandles; // in: VidPn source owner DispMgr NT handles
+} D3DKMT_SETVIDPNSOURCEOWNER2;
 #endif
 
 typedef struct _D3DKMT_CHECKVIDPNEXCLUSIVEOWNERSHIP
@@ -2694,6 +2805,22 @@ typedef struct _D3DKMT_ADJUSTFULLSCREENGAMMA
     D3DDDI_DXGI_RGB                 Scale;
     D3DDDI_DXGI_RGB                 Offset;
 } D3DKMT_ADJUSTFULLSCREENGAMMA;
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+
+typedef struct _D3DKMT_SET_COLORSPACE_TRANSFORM
+{
+    _In_ LUID  AdapterLuid;
+    _In_ D3DDDI_VIDEO_PRESENT_TARGET_ID  VidPnTargetId;
+    _In_ D3DDDI_GAMMARAMP_TYPE  Type;
+    _In_ UINT  Size;
+    union
+    {
+        _In_reads_bytes_opt_(Size) D3DKMDT_3x4_COLORSPACE_TRANSFORM*  pColorSpaceTransform;
+    };
+} D3DKMT_SET_COLORSPACE_TRANSFORM;
+
+#endif // DXGKDDI_INTERFACE_VERSION_WDDM2_3
 
 typedef struct _D3DKMT_SETVIDPNSOURCEHWPROTECTION
 {
@@ -3087,10 +3214,35 @@ typedef struct _D3DKMT_OPENSWAPCHAIN
     _Field_size_opt_(SurfaceCount) HANDLE*        pNtSurfaceHandles;        // out: Array of Nt handles
 } D3DKMT_OPENSWAPCHAIN;
 
+typedef struct _D3DKMT_ADDSURFACETOSWAPCHAIN
+{
+    HANDLE                           hNtSwapChain;                 // in: NT handle for swapchain in this process
+    BOOL                             bProducer;                    // in: Indicates if producer or consumer    
+    HANDLE                           hNtSurfaceHandle;             // in: NT Hanlde of surface to add
+    UINT                             BufferIdx;                    // out: Index of were is the surface table the texture was placed
+} D3DKMT_ADDSURFACETOSWAPCHAIN;
+
+typedef struct _D3DKMT_REMOVESURFACEFROMSWAPCHAIN
+{
+    HANDLE                           hNtSwapChain;                 // in: NT handle for swapchain in this process
+    BOOL                             bProducer;                    // in: Indicates if producer or consumer    
+    HANDLE                           hNtSurfaceHandle;             // in: NT Hanlde of surface to remove
+    UINT                             BufferIdx;                    // in: Buffer index of the surface to remove
+} D3DKMT_REMOVESURFACEFROMSWAPCHAIN;
+
 typedef struct _D3DKMT_ABANDONSWAPCHAIN
 {
     HANDLE                           hNtSwapChain;             // in: NT handle for swapchain in this process
 } D3DKMT_ABANDONSWAPCHAIN;
+
+typedef struct _D3DKMT_UNORDEREDPRESENTSWAPCHAIN
+{
+    HANDLE                                  hNtSwapChain;               // in: NT handle for swapchain in this process
+    BOOL                                    bProducer;                  // in: Indicate if producer or consumer
+    UINT                                    PresentBufferIdx;           // in: Index of buffer to present
+    UINT                                    MetaDataSize;               // in: Size of metadata
+    _Field_size_bytes_(MetaDataSize) PVOID  pMetaData;                  // in: Point to metadata for frame
+} D3DKMT_UNORDEREDPRESENTSWAPCHAIN;
 
 typedef struct _D3DKMT_RELEASESWAPCHAIN
 {
@@ -3226,9 +3378,7 @@ typedef struct _D3DKMT_OUTPUTDUPLCREATIONFLAGS
 
 typedef struct _D3DKMT_OUTPUTDUPL_KEYEDMUTEX
 {
-    D3DKMT_HANDLE hSharedSurfaceGlobal;
-    D3DKMT_HANDLE hGPUFencefaceGlobal;
-    D3DKMT_HANDLE hKeyedMutexGlobal;
+    HANDLE hSharedSurfaceNt;
 }D3DKMT_OUTPUTDUPL_KEYEDMUTEX;
 
 #define OUTPUTDUPL_CREATE_MAX_KEYEDMUTXES 3
@@ -3890,6 +4040,99 @@ typedef struct _D3DKMT_QUERYFSEBLOCK
 } D3DKMT_QUERYFSEBLOCK;
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_1)
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+
+typedef struct _D3DKMT_CREATEPROTECTEDSESSION
+{
+    D3DKMT_HANDLE                                           hDevice;                // in: device handle
+    D3DKMT_HANDLE                                           hSyncObject;            // in: monitored fence handle associated to this session (kernel handle)
+    _Field_size_bytes_(PrivateDriverDataSize)   CONST VOID* pPrivateDriverData;     // in: Private driver data
+    UINT                                                    PrivateDriverDataSize;  // in: Size of private runtime data
+    _Field_size_bytes_(PrivateRuntimeDataSize)  CONST VOID* pPrivateRuntimeData;    // in: Private runtime data
+    UINT                                                    PrivateRuntimeDataSize; // in: Size of private runtime data
+
+    D3DKMT_HANDLE                                           hHandle;                // out: protected session handle (kernel handle)
+
+} D3DKMT_CREATEPROTECTEDSESSION;
+
+typedef struct _D3DKMT_DESTROYPROTECTEDSESSION
+{
+    D3DKMT_HANDLE                                           hHandle; // in: protected session handle (kernel handle)
+
+} D3DKMT_DESTROYPROTECTEDSESSION;
+
+typedef enum _D3DKMT_PROTECTED_SESSION_STATUS
+{
+    D3DKMT_PROTECTED_SESSION_STATUS_OK         = 0,
+    D3DKMT_PROTECTED_SESSION_STATUS_INVALID    = 1,
+} D3DKMT_PROTECTED_SESSION_STATUS;
+
+typedef struct _D3DKMT_QUERYPROTECTEDSESSIONSTATUS
+{
+    D3DKMT_HANDLE                                           hHandle; // in: protected session handle (kernel handle)
+    D3DKMT_PROTECTED_SESSION_STATUS                         Status;  // out: protected session status
+
+} D3DKMT_QUERYPROTECTEDSESSIONSTATUS;
+
+typedef struct _D3DKMT_QUERYPROTECTEDSESSIONINFOFROMNTHANDLE
+{
+    HANDLE                                                  hNtHandle;              // in: protected session handle (NT handle)
+    _Field_size_bytes_(PrivateDriverDataSize)   CONST VOID* pPrivateDriverData;     // in: Private driver data
+    UINT                                                    PrivateDriverDataSize;  // in/out: Size of private runtime data
+    _Field_size_bytes_(PrivateRuntimeDataSize)  CONST VOID* pPrivateRuntimeData;    // in: Private runtime data
+    UINT                                                    PrivateRuntimeDataSize; // in/out: Size of private runtime data
+
+} D3DKMT_QUERYPROTECTEDSESSIONINFOFROMNTHANDLE;
+
+typedef struct _D3DKMT_OPENPROTECTEDSESSIONFROMNTHANDLE
+{
+    HANDLE                                                  hNtHandle; // in: protected session handle (NT handle)
+    D3DKMT_HANDLE                                           hHandle;   // out: protected session handle (kernel handle)
+
+} D3DKMT_OPENPROTECTEDSESSIONFROMNTHANDLE;
+
+typedef struct _D3DKMT_CREATEBUNDLEOBJECT
+{
+    _In_range_(1, D3DKMT_MAX_OBJECTS_PER_HANDLE) UINT cObjects;                // in: number of DXGK object to be bundled
+    _In_reads_(cObjects) CONST D3DKMT_HANDLE *        phObjects;               // in: pointer to array of DXGK object to be bundled
+    _In_reads_(cObjects) POBJECT_ATTRIBUTES *         ppObjectAttributes;      // in: array of pointer to object attributes for DXGK objects
+    _In_ POBJECT_ATTRIBUTES                           pBundleObjectAttributes; // in: object attributes for bundled object
+    _In_ DWORD                                        dwBundleDesiredAccess;   // in: desired access for bundle handle
+
+    _Out_ HANDLE                                      hNtBundleHandle;         // out: bundle handle (NT handle)
+
+} D3DKMT_CREATEBUNDLEOBJECT;
+
+typedef struct _D3DKMT_EXTRACTBUNDLEOBJECT
+{
+    _In_ HANDLE                                       hNtBundleHandle;   // in: bundle handle (NT handle)
+    _In_range_(1, D3DKMT_MAX_OBJECTS_PER_HANDLE) UINT cObjects;          // in: number of DXGK object to be unbundled
+    _In_reads_(cObjects) DWORD *                      pdwDesiredAccess;  // in: desired access for each NT handles for DXGK objects.
+
+    _Out_writes_(cObjects) HANDLE *                   phNtHandles;       // out: pointer to array of NT handles for each DXGK objects
+
+} D3DKMT_EXTRACTBUNDLEOBJECT;
+
+typedef struct _D3DKMT_SETDEVICELOSTSUPPORT
+{
+    D3DKMT_HANDLE   hDevice; // in: Handle to the device
+    BOOLEAN         Support; // in: Whether or not the device can recover from graphics device lost
+
+} D3DKMT_SETDEVICELOSTSUPPORT;
+
+typedef struct _D3DKMT_GETPROCESSDEVICELOSTSUPPORT
+{
+    HANDLE  hProcess;    // in: Process handle
+    LUID    AdapterLuid; // in: Luid of Adapter that is potentially being detached
+    BOOLEAN Support;     // out: Whether or not all devices of the process using the adapter can recover from graphics device lost
+
+} D3DKMT_GETPROCESSDEVICELOSTSUPPORT;
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+
 
 typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_CREATEALLOCATION)(_Inout_ D3DKMT_CREATEALLOCATION*);
 typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_CREATEALLOCATION2)(_Inout_ D3DKMT_CREATEALLOCATION*); // _ADVSCH_
@@ -4084,6 +4327,11 @@ typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_GETMULTIPLANEOVERLAYCAPS)(_
 typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_GETPOSTCOMPOSITIONCAPS)(_Inout_ D3DKMT_GET_POST_COMPOSITION_CAPS*);
 #endif
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_SETVIDPNSOURCEOWNER2)(_In_ CONST D3DKMT_SETVIDPNSOURCEOWNER2*);
+typedef _Check_return_ NTSTATUS (APIENTRY *PFND3DKMT_GETPROCESSDEVICELOSTSUPPORT)(_Inout_ D3DKMT_GETPROCESSDEVICELOSTSUPPORT*);
+#endif
+
 #if !defined(D3DKMDT_SPECIAL_MULTIPLATFORM_TOOL)
 
 #ifdef __cplusplus
@@ -4212,8 +4460,8 @@ EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTPresentMultiPlaneOverlay(_In_ CO
 EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTGetSharedResourceAdapterLuid(_Inout_ D3DKMT_GETSHAREDRESOURCEADAPTERLUID*);
 #endif
 
-
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM1_3)
+
 EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTCheckMultiPlaneOverlaySupport(_Inout_ D3DKMT_CHECKMULTIPLANEOVERLAYSUPPORT*);
 EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTSetContextInProcessSchedulingPriority(_In_ CONST D3DKMT_SETCONTEXTINPROCESSSCHEDULINGPRIORITY*);
 EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTGetContextInProcessSchedulingPriority(_Inout_ D3DKMT_GETCONTEXTINPROCESSSCHEDULINGPRIORITY*);
@@ -4290,6 +4538,29 @@ EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTGetPostCompositionCaps(_Inout_ D
 
 #endif
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTSetVidPnSourceOwner2(_In_ CONST D3DKMT_SETVIDPNSOURCEOWNER2*);
+
+
+EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTSetMonitorColorSpaceTransform(_In_ D3DKMT_SET_COLORSPACE_TRANSFORM*);
+
+#endif
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+
+EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTCreateProtectedSession(_Inout_ D3DKMT_CREATEPROTECTEDSESSION*);
+EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTDestroyProtectedSession(_Inout_ D3DKMT_DESTROYPROTECTEDSESSION*);
+EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTQueryProtectedSessionStatus(_Inout_ D3DKMT_QUERYPROTECTEDSESSIONSTATUS*);
+EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTQueryProtectedSessionInfoFromNtHandle(_Inout_ D3DKMT_QUERYPROTECTEDSESSIONINFOFROMNTHANDLE*);
+EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTOpenProtectedSessionFromNtHandle(_Inout_ D3DKMT_OPENPROTECTEDSESSIONFROMNTHANDLE*);
+
+EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTCreateBundleObject(_Inout_ D3DKMT_CREATEBUNDLEOBJECT*);
+EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTExtractBundleObject(_Inout_ D3DKMT_EXTRACTBUNDLEOBJECT*);
+
+EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTSetDeviceLostSupport(_In_ D3DKMT_SETDEVICELOSTSUPPORT*);
+EXTERN_C _Check_return_ NTSTATUS APIENTRY D3DKMTGetProcessDeviceLostSupport(_Inout_ D3DKMT_GETPROCESSDEVICELOSTSUPPORT*);
+
+#endif
 
 //
 // Interface used for shared power component management
@@ -4302,9 +4573,11 @@ DEFINE_GUID(GUID_DEVINTERFACE_GRAPHICSPOWER, 0xea5c6870, 0xe93c, 0x4588, 0xbe, 0
     CTL_CODE(FILE_DEVICE_VIDEO, 0xa01, METHOD_NEITHER, FILE_ANY_ACCESS)
 
 #define DXGK_GRAPHICSPOWER_VERSION_1_0 0x1000
-#define DXGK_GRAPHICSPOWER_VERSION DXGK_GRAPHICSPOWER_VERSION_1_0
+#define DXGK_GRAPHICSPOWER_VERSION_1_1 0x1001
+#define DXGK_GRAPHICSPOWER_VERSION DXGK_GRAPHICSPOWER_VERSION_1_1
 
 typedef
+    _IRQL_requires_max_(PASSIVE_LEVEL)
 VOID
 (*PDXGK_POWER_NOTIFICATION)(
     PVOID GraphicsDeviceHandle,
@@ -4314,18 +4587,35 @@ VOID
     );
 
 typedef
+    _IRQL_requires_max_(PASSIVE_LEVEL)
 VOID
 (*PDXGK_REMOVAL_NOTIFICATION)(
     PVOID GraphicsDeviceHandle,
     PVOID PrivateHandle
     );
 
-typedef struct _DXGK_GRAPHICSPOWER_REGISTER_INPUT {
+typedef
+    _IRQL_requires_max_(DISPATCH_LEVEL)
+VOID
+(*PDXGK_FSTATE_NOTIFICATION)(
+    PVOID GraphicsDeviceHandle,
+    ULONG ComponentIndex,
+    UINT NewFState,
+    BOOLEAN PreNotification,
+    PVOID PrivateHandle
+    );
+
+
+typedef struct _DXGK_GRAPHICSPOWER_REGISTER_INPUT_V_1_1 {
     ULONG Version;
     PVOID PrivateHandle;
     PDXGK_POWER_NOTIFICATION PowerNotificationCb;
     PDXGK_REMOVAL_NOTIFICATION RemovalNotificationCb;
-} DXGK_GRAPHICSPOWER_REGISTER_INPUT, *PDXGK_GRAPHICSPOWER_REGISTER_INPUT;
+    PDXGK_FSTATE_NOTIFICATION FStateNotificationCb;
+} DXGK_GRAPHICSPOWER_REGISTER_INPUT_V_1_1, *PDXGK_GRAPHICSPOWER_REGISTER_INPUT_V_1_1;
+
+typedef DXGK_GRAPHICSPOWER_REGISTER_INPUT_V_1_1 DXGK_GRAPHICSPOWER_REGISTER_INPUT;
+typedef DXGK_GRAPHICSPOWER_REGISTER_INPUT *PDXGK_GRAPHICSPOWER_REGISTER_INPUT;
 
 typedef
     _Check_return_

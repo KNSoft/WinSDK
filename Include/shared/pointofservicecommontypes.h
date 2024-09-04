@@ -46,6 +46,15 @@ typedef enum DriverUnifiedPosPowerReportingType
     Advanced = 2
 } DriverUnifiedPosPowerReportingType;
 
+typedef enum DriverUnifiedPosPowerState
+{
+    PowerStateUnknown = 2000,
+    PowerStateOnline,
+    PowerStateOff,
+    PowerStateOffline,
+    PowerStateOffOffline
+} DriverUnifiedPosPowerState;
+
 // Indicates the type of health which may be performed by the checkHealth method.
 typedef enum DriverUnifiedPosHealthCheckLevel
 {
@@ -391,7 +400,7 @@ typedef struct _LineDisplayCapabilitiesType
     UINT32 CanBlink;                            //CapBlink (LineDisplayCharactersSelection values)
     BOOLEAN CanChangeBlinkRate;                 //CapBlinkRate
     BOOLEAN IsBrightnessSupported;              //CapBrightness
-    BOOLEAN IsCursorSupported;                  //CapCursorType
+    LONG CursorType;                            //CapCursorType
     BOOLEAN IsHorizontalMarqueeSupported;       //CapHMarquee
     BOOLEAN IsVerticalMarqueeSupported;         //CapVMarquee
     BOOLEAN IsInterCharacterWaitSupported;      //CapICharWait
@@ -399,11 +408,35 @@ typedef struct _LineDisplayCapabilitiesType
     UINT32 SupportedWindows;                    //DeviceWindows
 } LineDisplayCapabilitiesType;
 
+enum LineDisplayCursorCapabilities
+{
+    CursorNone = 0x00000000,
+    CursorFixed = 0x00000001,
+    CursorBlock = 0x00000002,
+    CursorHalfBlock = 0x00000004,
+    CursorUnderline = 0x00000008,
+    CursorReverse = 0x00000010,
+    CursorOther = 0x00000020,
+    CursorBlink = 0x00000040
+};
+
 typedef struct _LineDisplayCharactersSize
 {
     UINT32 Rows;
     UINT32 Columns;
 } LineDisplayCharactersSize;
+
+typedef struct _LineDisplaySizeInPixelsType
+{
+    UINT32 Width;
+    UINT32 Height;
+} LineDisplaySizeInPixelsType;
+
+typedef struct _LineDisplayCursorCoordinates
+{
+    UINT32 Row;
+    UINT32 Column;
+} LineDisplayCursorCoordinates;
 
 typedef enum _BarcodeSymbology
 {
@@ -640,10 +673,10 @@ typedef struct _PosDeviceInformation
 
 typedef enum _LineDisplayTextDisplayAttribute
 {
-    Normal = 0,
-    Blink,
-    Reverse,
-    ReverseBlink
+    TextNormal = 0,
+    TextBlink,
+    TextReverse,
+    TextReverseBlink
 } LineDisplayTextDisplayAttribute;
 
 typedef enum _LineDisplayTextScrollDirection
@@ -660,6 +693,62 @@ typedef enum _LineDisplayCharactersSelection
     EntireDisplay,
     PerCharacter
 } LineDisplayCharactersSelection;
+
+enum LineDisplayCursorTypeFlags
+{
+    CursorTypeNone = 0,
+    CursorTypeFixed = 1,
+    CursorTypeBlock = 2,
+    CursorTypeHalfBlock = 3,
+    CursorTypeUnderline = 4,
+    CursorTypeReverse = 5,
+    CursorTypeOther = 6,
+    CursorTypeBlink = 0x10000000
+};
+
+enum LineDisplayHorizontalBitmapAlignment
+{
+    HorizontalAlignmentLeft = -1,
+    HorizontalAlignmentCenter = -2,
+    HorizontalAlignmentRight = -3,
+};
+
+enum LineDisplayVerticalBitmapAlignment
+{
+    VerticalAlignmentTop = -1,
+    VerticalAlignmentCenter = -2,
+    VerticalAlignmentBottom = -3,
+};
+
+enum LineDisplayBitmapWidth
+{
+    AsIs = -11
+};
+
+typedef enum _LineDisplayStatusType
+{
+    LineDisplayStatusType_Unknown = 0,
+    LineDisplayStatusType_Online = 1,
+    LineDisplayStatusType_Off = 2,
+    LineDisplayStatusType_Offline = 3,
+    LineDisplayStatusType_OffOrOffline = 4
+} LineDisplayStatusType;
+
+typedef enum _LineDisplayMarqueeTypeType
+{
+    MarqueeTypeNone = 0,
+    MarqueeTypeUp = 1,
+    MarqueeTypeDown = 2,
+    MarqueeTypeLeft = 3,
+    MarqueeTypeRight = 4,
+    MarqueeTypeInit = 5
+} LineDisplayMarqueeTypeType;
+
+typedef enum _LineDisplayMarqueeFormatType
+{
+    MarqueeFormatWalk = 0,
+    MarqueeFormatPlace = 1
+} LineDisplayMarqueeFormatType;
 
 //------------------------------------
 // Common Control Data formats

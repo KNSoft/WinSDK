@@ -123,6 +123,13 @@ typedef interface IMediaActivityNotifySite IMediaActivityNotifySite;
 #endif 	/* __IMediaActivityNotifySite_FWD_DEFINED__ */
 
 
+#ifndef __IAudioSessionSite_FWD_DEFINED__
+#define __IAudioSessionSite_FWD_DEFINED__
+typedef interface IAudioSessionSite IAudioSessionSite;
+
+#endif 	/* __IAudioSessionSite_FWD_DEFINED__ */
+
+
 #ifndef __IPrintTaskRequestHandler_FWD_DEFINED__
 #define __IPrintTaskRequestHandler_FWD_DEFINED__
 typedef interface IPrintTaskRequestHandler IPrintTaskRequestHandler;
@@ -1318,6 +1325,106 @@ EXTERN_C const IID IID_IMediaActivityNotifySite;
 #endif 	/* __IMediaActivityNotifySite_INTERFACE_DEFINED__ */
 
 
+#ifndef __IAudioSessionSite_INTERFACE_DEFINED__
+#define __IAudioSessionSite_INTERFACE_DEFINED__
+
+/* interface IAudioSessionSite */
+/* [uuid][unique][object] */ 
+
+
+EXTERN_C const IID IID_IAudioSessionSite;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("d7d8b684-d02d-4517-b6b7-19e3dfe29c45")
+    IAudioSessionSite : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetAudioSessionGuid( 
+            /* [out][retval] */ __RPC__out GUID *audioSessionGuid) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE OnAudioStreamCreated( 
+            /* [string][in] */ __RPC__in_string LPCWSTR endpointID) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE OnAudioStreamDestroyed( 
+            /* [string][in] */ __RPC__in_string LPCWSTR endpointID) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IAudioSessionSiteVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in IAudioSessionSite * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in IAudioSessionSite * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in IAudioSessionSite * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetAudioSessionGuid )( 
+            __RPC__in IAudioSessionSite * This,
+            /* [out][retval] */ __RPC__out GUID *audioSessionGuid);
+        
+        HRESULT ( STDMETHODCALLTYPE *OnAudioStreamCreated )( 
+            __RPC__in IAudioSessionSite * This,
+            /* [string][in] */ __RPC__in_string LPCWSTR endpointID);
+        
+        HRESULT ( STDMETHODCALLTYPE *OnAudioStreamDestroyed )( 
+            __RPC__in IAudioSessionSite * This,
+            /* [string][in] */ __RPC__in_string LPCWSTR endpointID);
+        
+        END_INTERFACE
+    } IAudioSessionSiteVtbl;
+
+    interface IAudioSessionSite
+    {
+        CONST_VTBL struct IAudioSessionSiteVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IAudioSessionSite_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IAudioSessionSite_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IAudioSessionSite_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IAudioSessionSite_GetAudioSessionGuid(This,audioSessionGuid)	\
+    ( (This)->lpVtbl -> GetAudioSessionGuid(This,audioSessionGuid) ) 
+
+#define IAudioSessionSite_OnAudioStreamCreated(This,endpointID)	\
+    ( (This)->lpVtbl -> OnAudioStreamCreated(This,endpointID) ) 
+
+#define IAudioSessionSite_OnAudioStreamDestroyed(This,endpointID)	\
+    ( (This)->lpVtbl -> OnAudioStreamDestroyed(This,endpointID) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IAudioSessionSite_INTERFACE_DEFINED__ */
+
+
 #ifndef __IPrintTaskRequestHandler_INTERFACE_DEFINED__
 #define __IPrintTaskRequestHandler_INTERFACE_DEFINED__
 
@@ -1872,14 +1979,14 @@ EXTERN_C const IID IID_IActiveXUIHandlerSite3;
 #endif 	/* __IActiveXUIHandlerSite3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_ie12plugin_0000_0018 */
+/* interface __MIDL_itf_ie12plugin_0000_0019 */
 /* [local] */ 
 
 //;end_internal
 
 
-extern RPC_IF_HANDLE __MIDL_itf_ie12plugin_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_ie12plugin_0000_0018_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_ie12plugin_0000_0019_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_ie12plugin_0000_0019_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

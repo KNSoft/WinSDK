@@ -46,9 +46,9 @@ extern "C" {
 #define APICONTRACT
 #endif
 
-#pragma region Desktop Family
+#pragma region Application Family
 
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
 
 typedef
 VOID
@@ -82,7 +82,7 @@ UnregisterAppStateChangeNotification(
 
 #endif // (NTDDI_VERSION >= NTDDI_WINBLUE)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
 
 #ifdef __cplusplus

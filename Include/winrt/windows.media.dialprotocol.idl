@@ -13,23 +13,6 @@ import "Windows.Foundation.idl";
 import "Windows.Devices.Enumeration.idl";
 import "Windows.Storage.Streams.idl";
 import "Windows.UI.Popups.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Edevices2Eenumeration_h__)")
-cpp_quote("#include <Windows.Devices.Enumeration.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Eenumeration_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Eui2Epopups_h__)")
-cpp_quote("#include <Windows.UI.Popups.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Epopups_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -48,6 +31,8 @@ namespace Windows
 {
     namespace Foundation
     {
+        interface IAsyncAction;
+
         typedef struct Rect Rect;
 
         apicontract UniversalApiContract;
@@ -105,6 +90,10 @@ namespace Windows
 
             interface IDialDisconnectButtonClickedEventArgs;
 
+            interface IDialReceiverApp;
+
+            interface IDialReceiverAppStatics;
+
             runtimeclass DialApp;
 
             runtimeclass DialAppStateDetails;
@@ -118,6 +107,8 @@ namespace Windows
             runtimeclass DialDeviceSelectedEventArgs;
 
             runtimeclass DialDisconnectButtonClickedEventArgs;
+
+            runtimeclass DialReceiverApp;
         }
     }
 }
@@ -287,6 +278,23 @@ namespace Windows
                 [propget] HRESULT Device([out] [retval] Windows.Media.DialProtocol.DialDevice** value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Media.DialProtocol.DialReceiverApp)]
+            [uuid(FD3E7C57-5045-470E-B304-4DD9B13E7D11)]
+            interface IDialReceiverApp : IInspectable
+            {
+                HRESULT GetAdditionalDataAsync([out] [retval] Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IMap<HSTRING, HSTRING>*>** operation);
+                HRESULT SetAdditionalDataAsync([in] Windows.Foundation.Collections.IIterable<Windows.Foundation.Collections.IKeyValuePair<HSTRING, HSTRING>*>* additionalData, [out] [retval] Windows.Foundation.IAsyncAction** operation);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Media.DialProtocol.DialReceiverApp)]
+            [uuid(53183A3C-4C36-4D02-B28A-F2A9DA38EC52)]
+            interface IDialReceiverAppStatics : IInspectable
+            {
+                [propget] HRESULT Current([out] [retval] Windows.Media.DialProtocol.DialReceiverApp** value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
             [threading(both)]
@@ -344,6 +352,15 @@ namespace Windows
             runtimeclass DialDisconnectButtonClickedEventArgs
             {
                 [default] interface Windows.Media.DialProtocol.IDialDisconnectButtonClickedEventArgs;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [static(Windows.Media.DialProtocol.IDialReceiverAppStatics, Windows.Foundation.UniversalApiContract, 5.0)]
+            [threading(both)]
+            runtimeclass DialReceiverApp
+            {
+                [default] interface Windows.Media.DialProtocol.IDialReceiverApp;
             }
         }
     }

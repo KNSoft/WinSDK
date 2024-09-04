@@ -2,6 +2,8 @@
 * Copyright (c) Microsoft Corporation. All rights reserved.
 */
 
+#pragma once
+
 #pragma region Desktop Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
@@ -33,6 +35,7 @@ void DestroyIndexedResults(
     _In_opt_ PWSTR resourceUri,
     _In_ ULONG qualifierCount,
     _In_reads_opt_(qualifierCount) IndexedResourceQualifier* qualifiers);
+
 
 #ifdef __cplusplus
 }

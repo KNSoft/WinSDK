@@ -141,7 +141,7 @@ class POLARITY CHString
         inline const CHString& operator=(CHString *p) throw ( CHeap_Exception ) { *this = *p; return *this; }
         inline const CHString& operator=(char ch) throw ( CHeap_Exception ) { *this = (WCHAR)ch; return *this; }        
         
-        inline const CHString& CHString::operator+=(char ch) throw ( CHeap_Exception ) { *this += (WCHAR)ch; return *this; }
+        inline const CHString&  operator+=(char ch) throw ( CHeap_Exception ) { *this += (WCHAR)ch; return *this; }
         friend inline CHString  operator+(const CHString& string, char ch) throw ( CHeap_Exception ) { return string + (WCHAR)ch; }
         friend inline CHString  operator+(char ch, const CHString& string) throw ( CHeap_Exception ) { return (WCHAR)ch + string; }
 

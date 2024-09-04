@@ -105,6 +105,9 @@ Abstract:
 
 #if !defined(_68K_) && !defined(_MPPC_) && !defined(_X86_) && !defined(_IA64_) && !defined(_AMD64_) && !defined(_ARM_) && !defined(_ARM64_) && defined(_M_IX86)
 #define _X86_
+#if !defined(_CHPE_X86_ARM64_) && defined(_M_HYBRID)
+#define _CHPE_X86_ARM64_
+#endif
 #endif
 
 #if !defined(_68K_) && !defined(_MPPC_) && !defined(_X86_) && !defined(_IA64_) && !defined(_AMD64_) && !defined(_ARM_) && !defined(_ARM64_) && defined(_M_AMD64)

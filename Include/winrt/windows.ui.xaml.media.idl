@@ -18,38 +18,6 @@ import "Windows.UI.Xaml.idl";
 import "Windows.UI.Xaml.Controls.idl";
 import "Windows.UI.Xaml.Controls.Primitives.idl";
 import "Windows.UI.Xaml.Media.Media3D.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Emedia2Eplayback_h__)")
-cpp_quote("#include <Windows.Media.Playback.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Eplayback_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Eui_h__)")
-cpp_quote("#include <Windows.UI.h>")
-cpp_quote("#endif // !defined(__windows2Eui_h__)")
-cpp_quote("#if !defined(__windows2Eui2Ecomposition_h__)")
-cpp_quote("#include <Windows.UI.Composition.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Ecomposition_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#include <Windows.UI.Xaml.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Econtrols_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Controls.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Econtrols_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Econtrols2Eprimitives_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Controls.Primitives.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Econtrols2Eprimitives_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Emedia2Emedia3d_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Media.Media3D.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Emedia2Emedia3d_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -113,6 +81,16 @@ namespace Windows
             runtimeclass CompositionLight;
 
             interface ICompositionSurface;
+        }
+    }
+}
+namespace Windows
+{
+    namespace UI
+    {
+        namespace Xaml
+        {
+            typedef enum ApplicationTheme ApplicationTheme;
         }
     }
 }
@@ -199,6 +177,8 @@ namespace Windows
         {
             namespace Media
             {
+                typedef enum AcrylicBackgroundSource AcrylicBackgroundSource;
+
                 typedef enum AlignmentX AlignmentX;
 
                 typedef enum AlignmentY AlignmentY;
@@ -229,6 +209,8 @@ namespace Windows
 
                 typedef enum PenLineJoin PenLineJoin;
 
+                typedef enum RevealBrushState RevealBrushState;
+
                 typedef enum Stereo3DVideoPackingMode Stereo3DVideoPackingMode;
 
                 typedef enum Stereo3DVideoRenderMode Stereo3DVideoRenderMode;
@@ -244,6 +226,12 @@ namespace Windows
                 delegate RateChangedRoutedEventHandler;
 
                 delegate TimelineMarkerRoutedEventHandler;
+
+                interface IAcrylicBrush;
+
+                interface IAcrylicBrushFactory;
+
+                interface IAcrylicBrushStatics;
 
                 interface IArcSegment;
 
@@ -399,6 +387,20 @@ namespace Windows
 
                 interface IRenderingEventArgs;
 
+                interface IRevealBackgroundBrush;
+
+                interface IRevealBackgroundBrushFactory;
+
+                interface IRevealBorderBrush;
+
+                interface IRevealBorderBrushFactory;
+
+                interface IRevealBrush;
+
+                interface IRevealBrushFactory;
+
+                interface IRevealBrushStatics;
+
                 interface IRotateTransform;
 
                 interface IRotateTransformStatics;
@@ -466,6 +468,8 @@ namespace Windows
                 interface IXamlLightProtected;
 
                 interface IXamlLightStatics;
+
+                runtimeclass AcrylicBrush;
 
                 runtimeclass ArcSegment;
 
@@ -556,6 +560,12 @@ namespace Windows
                 runtimeclass RectangleGeometry;
 
                 runtimeclass RenderingEventArgs;
+
+                runtimeclass RevealBackgroundBrush;
+
+                runtimeclass RevealBorderBrush;
+
+                runtimeclass RevealBrush;
 
                 runtimeclass RotateTransform;
 
@@ -686,6 +696,13 @@ namespace Windows
         {
             namespace Media
             {
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                enum AcrylicBackgroundSource
+                {
+                    HostBackdrop = 0,
+                    Backdrop     = 1
+                };
+
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 enum AlignmentX
                 {
@@ -823,6 +840,14 @@ namespace Windows
                     Round = 2
                 };
 
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                enum RevealBrushState
+                {
+                    Normal      = 0,
+                    PointerOver = 1,
+                    Pressed     = 2
+                };
+
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 enum Stereo3DVideoPackingMode
                 {
@@ -883,6 +908,43 @@ namespace Windows
                 [uuid(72E2FA9C-6DEA-4CBE-A159-06CE95FBECED)]
                 delegate
                     HRESULT TimelineMarkerRoutedEventHandler([in] IInspectable* sender, [in] Windows.UI.Xaml.Media.TimelineMarkerRoutedEventArgs* e);
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Media.AcrylicBrush)]
+                [uuid(79BBCF4E-CD66-4F1B-A8B6-CD6D2977C18D)]
+                interface IAcrylicBrush : IInspectable
+                {
+                    [propget] HRESULT BackgroundSource([out] [retval] Windows.UI.Xaml.Media.AcrylicBackgroundSource* value);
+                    [propput] HRESULT BackgroundSource([in] Windows.UI.Xaml.Media.AcrylicBackgroundSource value);
+                    [propget] HRESULT TintColor([out] [retval] Windows.UI.Color* result);
+                    [propput] HRESULT TintColor([in] Windows.UI.Color value);
+                    [propget] HRESULT TintOpacity([out] [retval] DOUBLE* value);
+                    [propput] HRESULT TintOpacity([in] DOUBLE value);
+                    [propget] HRESULT TintTransitionDuration([out] [retval] Windows.Foundation.TimeSpan* value);
+                    [propput] HRESULT TintTransitionDuration([in] Windows.Foundation.TimeSpan value);
+                    [propget] HRESULT AlwaysUseFallback([out] [retval] boolean* result);
+                    [propput] HRESULT AlwaysUseFallback([in] boolean value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Media.AcrylicBrush)]
+                [uuid(81A32568-F6CC-4013-8363-928AE23B7A61)]
+                interface IAcrylicBrushFactory : IInspectable
+                {
+                    HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Media.AcrylicBrush** instance);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Media.AcrylicBrush)]
+                [uuid(2787FD79-A3DA-423F-B81A-599147971523)]
+                interface IAcrylicBrushStatics : IInspectable
+                {
+                    [propget] HRESULT BackgroundSourceProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    [propget] HRESULT TintColorProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    [propget] HRESULT TintOpacityProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    [propget] HRESULT TintTransitionDurationProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    [propget] HRESULT AlwaysUseFallbackProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [exclusiveto(Windows.UI.Xaml.Media.ArcSegment)]
@@ -1663,6 +1725,70 @@ namespace Windows
                     [propget] HRESULT RenderingTime([out] [retval] Windows.Foundation.TimeSpan* value);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Media.RevealBackgroundBrush)]
+                [uuid(261DCC0E-1991-4CDF-AEE0-6350A3F90BB9)]
+                interface IRevealBackgroundBrush : IInspectable
+                {
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Media.RevealBackgroundBrush)]
+                [uuid(8C56BCAA-02A5-4F45-8506-8D39228F5D3F)]
+                interface IRevealBackgroundBrushFactory : IInspectable
+                {
+                    HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Media.RevealBackgroundBrush** instance);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Media.RevealBorderBrush)]
+                [uuid(060BA115-C542-483C-8202-5F03331866C9)]
+                interface IRevealBorderBrush : IInspectable
+                {
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Media.RevealBorderBrush)]
+                [uuid(94C25298-F5F8-4482-A25C-6758501A8626)]
+                interface IRevealBorderBrushFactory : IInspectable
+                {
+                    HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Media.RevealBorderBrush** instance);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Media.RevealBrush)]
+                [uuid(2036A0ED-8271-4398-9019-25872093F13F)]
+                interface IRevealBrush : IInspectable
+                {
+                    [propget] HRESULT Color([out] [retval] Windows.UI.Color* result);
+                    [propput] HRESULT Color([in] Windows.UI.Color value);
+                    [propget] HRESULT TargetTheme([out] [retval] Windows.UI.Xaml.ApplicationTheme* value);
+                    [propput] HRESULT TargetTheme([in] Windows.UI.Xaml.ApplicationTheme value);
+                    [propget] HRESULT AlwaysUseFallback([out] [retval] boolean* result);
+                    [propput] HRESULT AlwaysUseFallback([in] boolean value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Media.RevealBrush)]
+                [uuid(9D9379CE-E3A0-4AAF-BE37-EA9D9DD43105)]
+                interface IRevealBrushFactory : IInspectable
+                {
+                    HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Media.RevealBrush** instance);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Media.RevealBrush)]
+                [uuid(190F2625-7209-4D42-A847-1AC4BBBB3499)]
+                interface IRevealBrushStatics : IInspectable
+                {
+                    [propget] HRESULT ColorProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    [propget] HRESULT TargetThemeProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    [propget] HRESULT AlwaysUseFallbackProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    [propget] HRESULT StateProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    HRESULT SetState([in] Windows.UI.Xaml.UIElement* element, [in] Windows.UI.Xaml.Media.RevealBrushState value);
+                    HRESULT GetState([in] Windows.UI.Xaml.UIElement* element, [out] [retval] Windows.UI.Xaml.Media.RevealBrushState* result);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [exclusiveto(Windows.UI.Xaml.Media.RotateTransform)]
                 [uuid(688EA9B9-1E4E-4596-86E3-428B27334FAF)]
@@ -1994,6 +2120,16 @@ namespace Windows
                     HRESULT RemoveTargetElement([in] HSTRING lightId, [in] Windows.UI.Xaml.UIElement* element);
                     HRESULT AddTargetBrush([in] HSTRING lightId, [in] Windows.UI.Xaml.Media.Brush* brush);
                     HRESULT RemoveTargetBrush([in] HSTRING lightId, [in] Windows.UI.Xaml.Media.Brush* brush);
+                }
+
+                [composable(Windows.UI.Xaml.Media.IAcrylicBrushFactory, public, Windows.Foundation.UniversalApiContract, 5.0)]
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [marshaling_behavior(agile)]
+                [static(Windows.UI.Xaml.Media.IAcrylicBrushStatics, Windows.Foundation.UniversalApiContract, 5.0)]
+                [threading(both)]
+                runtimeclass AcrylicBrush : Windows.UI.Xaml.Media.XamlCompositionBrushBase
+                {
+                    [default] interface Windows.UI.Xaml.Media.IAcrylicBrush;
                 }
 
                 [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2432,6 +2568,34 @@ namespace Windows
                 runtimeclass RenderingEventArgs
                 {
                     [default] interface Windows.UI.Xaml.Media.IRenderingEventArgs;
+                }
+
+                [composable(Windows.UI.Xaml.Media.IRevealBackgroundBrushFactory, public, Windows.Foundation.UniversalApiContract, 5.0)]
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [marshaling_behavior(agile)]
+                [threading(both)]
+                runtimeclass RevealBackgroundBrush : Windows.UI.Xaml.Media.RevealBrush
+                {
+                    [default] interface Windows.UI.Xaml.Media.IRevealBackgroundBrush;
+                }
+
+                [composable(Windows.UI.Xaml.Media.IRevealBorderBrushFactory, public, Windows.Foundation.UniversalApiContract, 5.0)]
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [marshaling_behavior(agile)]
+                [threading(both)]
+                runtimeclass RevealBorderBrush : Windows.UI.Xaml.Media.RevealBrush
+                {
+                    [default] interface Windows.UI.Xaml.Media.IRevealBorderBrush;
+                }
+
+                [composable(Windows.UI.Xaml.Media.IRevealBrushFactory, protected, Windows.Foundation.UniversalApiContract, 5.0)]
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [marshaling_behavior(agile)]
+                [static(Windows.UI.Xaml.Media.IRevealBrushStatics, Windows.Foundation.UniversalApiContract, 5.0)]
+                [threading(both)]
+                runtimeclass RevealBrush : Windows.UI.Xaml.Media.XamlCompositionBrushBase
+                {
+                    [default] interface Windows.UI.Xaml.Media.IRevealBrush;
                 }
 
                 [activatable(Windows.Foundation.UniversalApiContract, 1.0)]

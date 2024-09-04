@@ -772,6 +772,9 @@ class MSFT_StorageNodeToStorageEnclosure {
         Values { "Healthy", "Warning", "Unhealthy", "Unknown" }]
     UInt16 HealthStatus;
 
+    [Read]
+    UInt16 SlotOperationalStatus[];
+
     [Description(
         "An array containing the operational status of each "
         "power supply of the enclosure. \n"

@@ -18,38 +18,6 @@ import "Windows.Media.MediaProperties.idl";
 import "Windows.Media.Transcoding.idl";
 import "Windows.Storage.idl";
 import "Windows.UI.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Egraphics2Edirectx2Edirect3d11_h__)")
-cpp_quote("#include <Windows.Graphics.DirectX.Direct3D11.h>")
-cpp_quote("#endif // !defined(__windows2Egraphics2Edirectx2Edirect3d11_h__)")
-cpp_quote("#if !defined(__windows2Egraphics2Eimaging_h__)")
-cpp_quote("#include <Windows.Graphics.Imaging.h>")
-cpp_quote("#endif // !defined(__windows2Egraphics2Eimaging_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Ecore_h__)")
-cpp_quote("#include <Windows.Media.Core.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Ecore_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Eeffects_h__)")
-cpp_quote("#include <Windows.Media.Effects.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Eeffects_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Emediaproperties_h__)")
-cpp_quote("#include <Windows.Media.MediaProperties.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Emediaproperties_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Etranscoding_h__)")
-cpp_quote("#include <Windows.Media.Transcoding.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Etranscoding_h__)")
-cpp_quote("#if !defined(__windows2Estorage_h__)")
-cpp_quote("#include <Windows.Storage.h>")
-cpp_quote("#endif // !defined(__windows2Estorage_h__)")
-cpp_quote("#if !defined(__windows2Eui_h__)")
-cpp_quote("#include <Windows.UI.h>")
-cpp_quote("#endif // !defined(__windows2Eui_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows

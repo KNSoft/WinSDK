@@ -18,6 +18,21 @@ class MSFT_HealthAction : MSFT_StorageObject
     String Reason;
 
     [Read, Description(
+        "A identifier of the object that triggered the action."
+        )]
+    String ReportingObjectId;
+
+    [Read, Description(
+        "A unique identifier of the object that triggered the action."
+        )]
+    String ReportingObjectUniqueId;
+
+    [Read, Description(
+        "A string that uniquely identifies the type of the object that triggered the action."
+        )]
+    String ReportingObjectType;
+
+    [Read, Description(
         "The message parameters that are plugged into the default message template for the "
         "Health Action type. These can be plugged into a custom message."
         )]

@@ -208,6 +208,13 @@ enum __MIDL_IGPUPMitigationDevice_0002
         GpupPowerDeviceMaximum	= ( GpupPowerDevicePrepareForHibernation + 1 ) 
     } 	GPUP_POWER_DEVICE_STATE;
 
+typedef /* [public][public][public][public][public][public][v1_enum] */ 
+enum __MIDL_IGPUPMitigationDevice_0003
+    {
+        GpupSaveInvalid	= 0,
+        GpupSaveMaximum	= ( GpupSaveInvalid + 1 ) 
+    } 	GPUP_SAVE_RESTORE_PAUSE_STATE;
+
 
 EXTERN_C const IID IID_IGPUPMitigationDevice;
 
@@ -218,28 +225,58 @@ EXTERN_C const IID IID_IGPUPMitigationDevice;
     {
     public:
         virtual HRESULT STDMETHODCALLTYPE Initialize( 
-            /* [in] */ PLUID deviceLUID,
-            /* [in] */ HANDLE deviceHandle,
-            /* [in] */ HANDLE vmBusHandle,
-            /* [in] */ IUnknown *gpupServices) = 0;
+            /* [in] */ GUID *VmGuid,
+            /* [in] */ PLUID DeviceLuid,
+            /* [in] */ HANDLE DeviceHandle,
+            /* [in] */ HANDLE VmBusHandle,
+            /* [in] */ IUnknown *GpupServices) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE PowerTransitionComplete( 
-            /* [in] */ PLUID deviceLUID,
-            /* [in] */ GPUP_POWER_DEVICE_STATE gpupPowerState) = 0;
+            /* [in] */ PLUID DeviceLuid,
+            /* [in] */ GPUP_POWER_DEVICE_STATE GpupPowerState) = 0;
         
-        virtual HRESULT STDMETHODCALLTYPE ReadInterceptedGPUP( 
-            /* [in] */ PLUID deviceLUID,
+        virtual HRESULT STDMETHODCALLTYPE ReadInterceptedGpup( 
+            /* [in] */ PLUID DeviceLuid,
             /* [in] */ VGPU_BAR_SELECTOR BarIndex,
             /* [in] */ ULONG64 Offset,
             /* [in] */ ULONG64 Length,
             /* [out] */ BYTE *ValueRead) = 0;
         
-        virtual HRESULT STDMETHODCALLTYPE WriteInterceptedGPUP( 
-            /* [in] */ PLUID deviceLUID,
+        virtual HRESULT STDMETHODCALLTYPE WriteInterceptedGpup( 
+            /* [in] */ PLUID DeviceLuid,
             /* [in] */ VGPU_BAR_SELECTOR BarIndex,
             /* [in] */ ULONG64 Offset,
             /* [in] */ ULONG64 Length,
             /* [in] */ const BYTE WriteValue[  ]) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE PauseGpup( 
+            /* [in] */ PLUID DeviceLuid,
+            /* [in] */ GPUP_SAVE_RESTORE_PAUSE_STATE Flags) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE ResumeGpup( 
+            /* [in] */ PLUID DeviceLuid,
+            /* [in] */ GPUP_SAVE_RESTORE_PAUSE_STATE Flags) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE SaveGpupBegin( 
+            /* [in] */ PLUID DeviceLuid,
+            /* [in] */ GPUP_SAVE_RESTORE_PAUSE_STATE Flags,
+            /* [out][in] */ ULONG *Length,
+            /* [out] */ BYTE SaveBuffer[  ]) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE SaveGpupContinue( 
+            /* [in] */ PLUID DeviceLuid,
+            /* [in] */ GPUP_SAVE_RESTORE_PAUSE_STATE Flags,
+            /* [out][in] */ ULONG *Length,
+            /* [out] */ ULONG *RequestedLength,
+            /* [out] */ BYTE SaveBuffer[  ]) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE RestoreGpup( 
+            /* [in] */ PLUID DeviceLuid,
+            /* [in] */ GPUP_SAVE_RESTORE_PAUSE_STATE Flags,
+            /* [in] */ ULONG Length,
+            /* [in] */ ULONG Offset,
+            /* [in] */ ULONG TotalLength,
+            /* [in] */ BYTE RestoreBuffer[  ]) = 0;
         
     };
     
@@ -264,31 +301,66 @@ EXTERN_C const IID IID_IGPUPMitigationDevice;
         
         HRESULT ( STDMETHODCALLTYPE *Initialize )( 
             IGPUPMitigationDevice * This,
-            /* [in] */ PLUID deviceLUID,
-            /* [in] */ HANDLE deviceHandle,
-            /* [in] */ HANDLE vmBusHandle,
-            /* [in] */ IUnknown *gpupServices);
+            /* [in] */ GUID *VmGuid,
+            /* [in] */ PLUID DeviceLuid,
+            /* [in] */ HANDLE DeviceHandle,
+            /* [in] */ HANDLE VmBusHandle,
+            /* [in] */ IUnknown *GpupServices);
         
         HRESULT ( STDMETHODCALLTYPE *PowerTransitionComplete )( 
             IGPUPMitigationDevice * This,
-            /* [in] */ PLUID deviceLUID,
-            /* [in] */ GPUP_POWER_DEVICE_STATE gpupPowerState);
+            /* [in] */ PLUID DeviceLuid,
+            /* [in] */ GPUP_POWER_DEVICE_STATE GpupPowerState);
         
-        HRESULT ( STDMETHODCALLTYPE *ReadInterceptedGPUP )( 
+        HRESULT ( STDMETHODCALLTYPE *ReadInterceptedGpup )( 
             IGPUPMitigationDevice * This,
-            /* [in] */ PLUID deviceLUID,
+            /* [in] */ PLUID DeviceLuid,
             /* [in] */ VGPU_BAR_SELECTOR BarIndex,
             /* [in] */ ULONG64 Offset,
             /* [in] */ ULONG64 Length,
             /* [out] */ BYTE *ValueRead);
         
-        HRESULT ( STDMETHODCALLTYPE *WriteInterceptedGPUP )( 
+        HRESULT ( STDMETHODCALLTYPE *WriteInterceptedGpup )( 
             IGPUPMitigationDevice * This,
-            /* [in] */ PLUID deviceLUID,
+            /* [in] */ PLUID DeviceLuid,
             /* [in] */ VGPU_BAR_SELECTOR BarIndex,
             /* [in] */ ULONG64 Offset,
             /* [in] */ ULONG64 Length,
             /* [in] */ const BYTE WriteValue[  ]);
+        
+        HRESULT ( STDMETHODCALLTYPE *PauseGpup )( 
+            IGPUPMitigationDevice * This,
+            /* [in] */ PLUID DeviceLuid,
+            /* [in] */ GPUP_SAVE_RESTORE_PAUSE_STATE Flags);
+        
+        HRESULT ( STDMETHODCALLTYPE *ResumeGpup )( 
+            IGPUPMitigationDevice * This,
+            /* [in] */ PLUID DeviceLuid,
+            /* [in] */ GPUP_SAVE_RESTORE_PAUSE_STATE Flags);
+        
+        HRESULT ( STDMETHODCALLTYPE *SaveGpupBegin )( 
+            IGPUPMitigationDevice * This,
+            /* [in] */ PLUID DeviceLuid,
+            /* [in] */ GPUP_SAVE_RESTORE_PAUSE_STATE Flags,
+            /* [out][in] */ ULONG *Length,
+            /* [out] */ BYTE SaveBuffer[  ]);
+        
+        HRESULT ( STDMETHODCALLTYPE *SaveGpupContinue )( 
+            IGPUPMitigationDevice * This,
+            /* [in] */ PLUID DeviceLuid,
+            /* [in] */ GPUP_SAVE_RESTORE_PAUSE_STATE Flags,
+            /* [out][in] */ ULONG *Length,
+            /* [out] */ ULONG *RequestedLength,
+            /* [out] */ BYTE SaveBuffer[  ]);
+        
+        HRESULT ( STDMETHODCALLTYPE *RestoreGpup )( 
+            IGPUPMitigationDevice * This,
+            /* [in] */ PLUID DeviceLuid,
+            /* [in] */ GPUP_SAVE_RESTORE_PAUSE_STATE Flags,
+            /* [in] */ ULONG Length,
+            /* [in] */ ULONG Offset,
+            /* [in] */ ULONG TotalLength,
+            /* [in] */ BYTE RestoreBuffer[  ]);
         
         END_INTERFACE
     } IGPUPMitigationDeviceVtbl;
@@ -313,17 +385,32 @@ EXTERN_C const IID IID_IGPUPMitigationDevice;
     ( (This)->lpVtbl -> Release(This) ) 
 
 
-#define IGPUPMitigationDevice_Initialize(This,deviceLUID,deviceHandle,vmBusHandle,gpupServices)	\
-    ( (This)->lpVtbl -> Initialize(This,deviceLUID,deviceHandle,vmBusHandle,gpupServices) ) 
+#define IGPUPMitigationDevice_Initialize(This,VmGuid,DeviceLuid,DeviceHandle,VmBusHandle,GpupServices)	\
+    ( (This)->lpVtbl -> Initialize(This,VmGuid,DeviceLuid,DeviceHandle,VmBusHandle,GpupServices) ) 
 
-#define IGPUPMitigationDevice_PowerTransitionComplete(This,deviceLUID,gpupPowerState)	\
-    ( (This)->lpVtbl -> PowerTransitionComplete(This,deviceLUID,gpupPowerState) ) 
+#define IGPUPMitigationDevice_PowerTransitionComplete(This,DeviceLuid,GpupPowerState)	\
+    ( (This)->lpVtbl -> PowerTransitionComplete(This,DeviceLuid,GpupPowerState) ) 
 
-#define IGPUPMitigationDevice_ReadInterceptedGPUP(This,deviceLUID,BarIndex,Offset,Length,ValueRead)	\
-    ( (This)->lpVtbl -> ReadInterceptedGPUP(This,deviceLUID,BarIndex,Offset,Length,ValueRead) ) 
+#define IGPUPMitigationDevice_ReadInterceptedGpup(This,DeviceLuid,BarIndex,Offset,Length,ValueRead)	\
+    ( (This)->lpVtbl -> ReadInterceptedGpup(This,DeviceLuid,BarIndex,Offset,Length,ValueRead) ) 
 
-#define IGPUPMitigationDevice_WriteInterceptedGPUP(This,deviceLUID,BarIndex,Offset,Length,WriteValue)	\
-    ( (This)->lpVtbl -> WriteInterceptedGPUP(This,deviceLUID,BarIndex,Offset,Length,WriteValue) ) 
+#define IGPUPMitigationDevice_WriteInterceptedGpup(This,DeviceLuid,BarIndex,Offset,Length,WriteValue)	\
+    ( (This)->lpVtbl -> WriteInterceptedGpup(This,DeviceLuid,BarIndex,Offset,Length,WriteValue) ) 
+
+#define IGPUPMitigationDevice_PauseGpup(This,DeviceLuid,Flags)	\
+    ( (This)->lpVtbl -> PauseGpup(This,DeviceLuid,Flags) ) 
+
+#define IGPUPMitigationDevice_ResumeGpup(This,DeviceLuid,Flags)	\
+    ( (This)->lpVtbl -> ResumeGpup(This,DeviceLuid,Flags) ) 
+
+#define IGPUPMitigationDevice_SaveGpupBegin(This,DeviceLuid,Flags,Length,SaveBuffer)	\
+    ( (This)->lpVtbl -> SaveGpupBegin(This,DeviceLuid,Flags,Length,SaveBuffer) ) 
+
+#define IGPUPMitigationDevice_SaveGpupContinue(This,DeviceLuid,Flags,Length,RequestedLength,SaveBuffer)	\
+    ( (This)->lpVtbl -> SaveGpupContinue(This,DeviceLuid,Flags,Length,RequestedLength,SaveBuffer) ) 
+
+#define IGPUPMitigationDevice_RestoreGpup(This,DeviceLuid,Flags,Length,Offset,TotalLength,RestoreBuffer)	\
+    ( (This)->lpVtbl -> RestoreGpup(This,DeviceLuid,Flags,Length,Offset,TotalLength,RestoreBuffer) ) 
 
 #endif /* COBJMACROS */
 
@@ -468,7 +555,7 @@ EXTERN_C const IID IID_IVmGPUPGuestMsiAccess;
     {
     public:
         virtual HRESULT STDMETHODCALLTYPE DeliverInterrupt( 
-            /* [in] */ UINT64 DestAddr,
+            /* [in] */ UINT32 DestAddr,
             /* [in] */ UINT32 Data) = 0;
         
     };
@@ -494,7 +581,7 @@ EXTERN_C const IID IID_IVmGPUPGuestMsiAccess;
         
         HRESULT ( STDMETHODCALLTYPE *DeliverInterrupt )( 
             IVmGPUPGuestMsiAccess * This,
-            /* [in] */ UINT64 DestAddr,
+            /* [in] */ UINT32 DestAddr,
             /* [in] */ UINT32 Data);
         
         END_INTERFACE

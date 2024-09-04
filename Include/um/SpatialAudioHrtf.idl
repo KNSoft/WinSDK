@@ -29,7 +29,7 @@ typedef enum SpatialAudioHrtfEnvironmentType
     SpatialAudioHrtfEnvironment_Medium,              // A medium-sized room.
     SpatialAudioHrtfEnvironment_Large,               // A large enclosed space.
     SpatialAudioHrtfEnvironment_Outdoors,            // An outdoor space.
-    SpatialAudioHrtfEnvironment_Average              // An average-sized room.
+    SpatialAudioHrtfEnvironment_Average              // Reserved. Do not use.
 } SpatialAudioHrtfEnvironmentType;
 
 

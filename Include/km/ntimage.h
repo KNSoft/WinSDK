@@ -874,6 +874,7 @@ typedef enum IMAGE_AUX_SYMBOL_TYPE {
 #define IMAGE_WEAK_EXTERN_SEARCH_NOLIBRARY  1
 #define IMAGE_WEAK_EXTERN_SEARCH_LIBRARY    2
 #define IMAGE_WEAK_EXTERN_SEARCH_ALIAS      3
+#define IMAGE_WEAK_EXTERN_ANTI_DEPENDENCY   4
 
 //
 // Relocation format.
@@ -1788,6 +1789,8 @@ typedef struct _IMAGE_LOAD_CONFIG_DIRECTORY32 {
     USHORT  Reserved2;
     ULONG   GuardRFVerifyStackPointerFunctionPointer; // VA
     ULONG   HotPatchTableOffset;
+    ULONG   Reserved3;
+    ULONG   EnclaveConfigurationPointer;    // VA
 } IMAGE_LOAD_CONFIG_DIRECTORY32, *PIMAGE_LOAD_CONFIG_DIRECTORY32;
 
 typedef struct _IMAGE_LOAD_CONFIG_DIRECTORY64 {
@@ -1830,6 +1833,8 @@ typedef struct _IMAGE_LOAD_CONFIG_DIRECTORY64 {
     USHORT     Reserved2;
     ULONGLONG  GuardRFVerifyStackPointerFunctionPointer; // VA
     ULONG      HotPatchTableOffset;
+    ULONG      Reserved3;
+    ULONGLONG  EnclaveConfigurationPointer;     // VA
 } IMAGE_LOAD_CONFIG_DIRECTORY64, *PIMAGE_LOAD_CONFIG_DIRECTORY64;
 
 // end_ntoshvp 
@@ -1846,6 +1851,8 @@ typedef struct _IMAGE_CHPE_METADATA_X86 {
     ULONG  WowA64DispatchRetFunctionPointer;
     ULONG  WowA64DispatchRetLeafFunctionPointer;
     ULONG  WowA64DispatchJumpFunctionPointer;
+    ULONG  CompilerIATPointer;         // Present if Version >= 2
+    ULONG  WowA64RdtscFunctionPointer; // Present if Version >= 3
 } IMAGE_CHPE_METADATA_X86, *PIMAGE_CHPE_METADATA_X86;
 
 typedef struct _IMAGE_CHPE_RANGE_ENTRY {
@@ -1879,6 +1886,7 @@ typedef struct _IMAGE_HOT_PATCH_INFO {
     ULONG SequenceNumber;
     ULONG BaseImageList;
     ULONG BaseImageCount;
+    ULONG BufferOffset; // V2 and later
 } IMAGE_HOT_PATCH_INFO, *PIMAGE_HOT_PATCH_INFO;
 
 typedef struct _IMAGE_HOT_PATCH_BASE {
@@ -1889,6 +1897,7 @@ typedef struct _IMAGE_HOT_PATCH_BASE {
     ULONG CodeIntegrityInfo;
     ULONG CodeIntegritySize;
     ULONG PatchTable;
+    ULONG BufferOffset; // V2 and later
 } IMAGE_HOT_PATCH_BASE, *PIMAGE_HOT_PATCH_BASE;
 
 typedef struct _IMAGE_HOT_PATCH_HASHES {
@@ -2045,6 +2054,75 @@ typedef  _IMAGE_RUNTIME_FUNCTION_ENTRY  IMAGE_RUNTIME_FUNCTION_ENTRY;
 typedef _PIMAGE_RUNTIME_FUNCTION_ENTRY PIMAGE_RUNTIME_FUNCTION_ENTRY;
 
 #endif
+
+//
+// Sofware enclave information
+//
+
+#define IMAGE_ENCLAVE_LONG_ID_LENGTH    32
+#define IMAGE_ENCLAVE_SHORT_ID_LENGTH   16
+
+typedef struct _IMAGE_ENCLAVE_CONFIG32 {
+    ULONG Size;
+    ULONG MinimumRequiredConfigSize;
+    ULONG PolicyFlags;
+    ULONG NumberOfImports;
+    ULONG ImportList;
+    ULONG ImportEntrySize;
+    UCHAR FamilyID[IMAGE_ENCLAVE_SHORT_ID_LENGTH];
+    UCHAR ImageID[IMAGE_ENCLAVE_SHORT_ID_LENGTH];
+    ULONG ImageVersion;
+    ULONG SecurityVersion;
+    ULONG EnclaveSize;
+    ULONG NumberOfThreads;
+    ULONG EnclaveFlags;
+} IMAGE_ENCLAVE_CONFIG32, *PIMAGE_ENCLAVE_CONFIG32;
+
+typedef struct _IMAGE_ENCLAVE_CONFIG64 {
+    ULONG Size;
+    ULONG MinimumRequiredConfigSize;
+    ULONG PolicyFlags;
+    ULONG NumberOfImports;
+    ULONG ImportList;
+    ULONG ImportEntrySize;
+    UCHAR FamilyID[IMAGE_ENCLAVE_SHORT_ID_LENGTH];
+    UCHAR ImageID[IMAGE_ENCLAVE_SHORT_ID_LENGTH];
+    ULONG ImageVersion;
+    ULONG SecurityVersion;
+    ULONGLONG EnclaveSize;
+    ULONG NumberOfThreads;
+    ULONG EnclaveFlags;
+} IMAGE_ENCLAVE_CONFIG64, *PIMAGE_ENCLAVE_CONFIG64;
+
+#ifdef _WIN64
+typedef IMAGE_ENCLAVE_CONFIG64          IMAGE_ENCLAVE_CONFIG;
+typedef PIMAGE_ENCLAVE_CONFIG64         PIMAGE_ENCLAVE_CONFIG;
+#else
+typedef IMAGE_ENCLAVE_CONFIG32          IMAGE_ENCLAVE_CONFIG;
+typedef PIMAGE_ENCLAVE_CONFIG32         PIMAGE_ENCLAVE_CONFIG;
+#endif
+
+#define IMAGE_ENCLAVE_MINIMUM_CONFIG_SIZE   FIELD_OFFSET(IMAGE_ENCLAVE_CONFIG, EnclaveFlags)
+
+#define IMAGE_ENCLAVE_POLICY_DEBUGGABLE     0x00000001
+
+#define IMAGE_ENCLAVE_FLAG_PRIMARY_IMAGE    0x00000001
+
+typedef struct _IMAGE_ENCLAVE_IMPORT {
+    ULONG MatchType;
+    ULONG MinimumSecurityVersion;
+    UCHAR UniqueOrAuthorID[IMAGE_ENCLAVE_LONG_ID_LENGTH];
+    UCHAR FamilyID[IMAGE_ENCLAVE_SHORT_ID_LENGTH];
+    UCHAR ImageID[IMAGE_ENCLAVE_SHORT_ID_LENGTH];
+    ULONG ImportName;
+    ULONG Reserved;
+} IMAGE_ENCLAVE_IMPORT, *PIMAGE_ENCLAVE_IMPORT;
+
+#define IMAGE_ENCLAVE_IMPORT_MATCH_NONE             0x00000000
+#define IMAGE_ENCLAVE_IMPORT_MATCH_UNIQUE_ID        0x00000001
+#define IMAGE_ENCLAVE_IMPORT_MATCH_AUTHOR_ID        0x00000002
+#define IMAGE_ENCLAVE_IMPORT_MATCH_FAMILY_ID        0x00000003
+#define IMAGE_ENCLAVE_IMPORT_MATCH_IMAGE_ID         0x00000004
 
 //
 // Debug Format

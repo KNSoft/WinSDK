@@ -90,6 +90,7 @@ cpp_quote("#define FWPM_NET_EVENT_KEYWORD_CLASSIFY_ALLOW (0x00000010)")
 cpp_quote("#define FWPM_ENGINE_OPTION_PACKET_QUEUE_NONE (0x00000000)")
 cpp_quote("#define FWPM_ENGINE_OPTION_PACKET_QUEUE_INBOUND (0x00000001)")
 cpp_quote("#define FWPM_ENGINE_OPTION_PACKET_QUEUE_FORWARD (0x00000002)")
+cpp_quote("#define FWPM_ENGINE_OPTION_PACKET_BATCH_INBOUND (0x00000004)")
 
 
 // Configurable options for the filter engine.
@@ -433,6 +434,65 @@ typedef struct FWPM_PROVIDER_CONTEXT2_
 } FWPM_PROVIDER_CONTEXT2;
 cpp_quote("#endif // (NTDDI_VERSION >= NTDDI_WIN8)")
 
+cpp_quote("#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)")
+// Version-3 of type that stores the state associated with a provider context.
+typedef struct FWPM_PROVIDER_CONTEXT3_
+{
+   // Information supplied when adding objects.
+
+   // Uniquely identifies the provider context. If the GUID is zero-initialized
+   // in the call to Add, BFE will generate one.
+   GUID providerContextKey;
+   // Allows provider contexts to be annotated in a human-readable form.
+   FWPM_DISPLAY_DATA0 displayData;
+   // Flags
+   UINT32 flags;
+   // Optional GUID of the policy provider that manages this object.
+   [unique] GUID* providerKey;
+   // Optional provider-specific data; allows providers to store additional
+   // context info with the object.
+   FWP_BYTE_BLOB providerData;
+   // Tagged union containing the provider-specific data.
+   FWPM_PROVIDER_CONTEXT_TYPE type;
+   [switch_type(FWPM_PROVIDER_CONTEXT_TYPE), switch_is(type)]
+   union
+   {
+      [case(FWPM_IPSEC_KEYING_CONTEXT)]
+         [unique] IPSEC_KEYING_POLICY1* keyingPolicy;
+      [case(FWPM_IPSEC_IKE_QM_TRANSPORT_CONTEXT)]
+         [unique] IPSEC_TRANSPORT_POLICY2* ikeQmTransportPolicy;
+      [case(FWPM_IPSEC_IKE_QM_TUNNEL_CONTEXT)]
+         [unique] IPSEC_TUNNEL_POLICY3* ikeQmTunnelPolicy;
+      [case(FWPM_IPSEC_AUTHIP_QM_TRANSPORT_CONTEXT)]
+         [unique] IPSEC_TRANSPORT_POLICY2* authipQmTransportPolicy;
+      [case(FWPM_IPSEC_AUTHIP_QM_TUNNEL_CONTEXT)]
+         [unique] IPSEC_TUNNEL_POLICY3* authipQmTunnelPolicy;
+      [case(FWPM_IPSEC_IKE_MM_CONTEXT)]
+         [unique] IKEEXT_POLICY2* ikeMmPolicy;
+      [case(FWPM_IPSEC_AUTHIP_MM_CONTEXT)]
+         [unique] IKEEXT_POLICY2* authIpMmPolicy;
+      [case(FWPM_GENERAL_CONTEXT)]
+         [unique] FWP_BYTE_BLOB* dataBuffer;
+      [case(FWPM_CLASSIFY_OPTIONS_CONTEXT)]
+         [unique] FWPM_CLASSIFY_OPTIONS0* classifyOptions;
+      [case(FWPM_IPSEC_IKEV2_QM_TUNNEL_CONTEXT)]
+         [unique] IPSEC_TUNNEL_POLICY3* ikeV2QmTunnelPolicy;
+      [case(FWPM_IPSEC_IKEV2_QM_TRANSPORT_CONTEXT)]
+         [unique] IPSEC_TRANSPORT_POLICY2* ikeV2QmTransportPolicy;
+      [case(FWPM_IPSEC_IKEV2_MM_CONTEXT)]
+         [unique] IKEEXT_POLICY2* ikeV2MmPolicy;
+      [case(FWPM_IPSEC_DOSP_CONTEXT)]
+         [unique] IPSEC_DOSP_OPTIONS0* idpOptions;
+   };
+   // Additional information returned when getting/enumerating objects.
+
+   // LUID identifying the context. This is the context value stored in the
+   // FWPS_FILTER for filters that reference a provider context.
+   UINT64 providerContextId;
+} FWPM_PROVIDER_CONTEXT3;
+cpp_quote("#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS3)")
+
+
 // Used for enumerating provider contexts.
 typedef struct FWPM_PROVIDER_CONTEXT_ENUM_TEMPLATE0_
 {
@@ -765,6 +825,11 @@ cpp_quote("#define FWPM_FILTER_FLAG_SYSTEMOS_ONLY (0x00000100)")
 cpp_quote("#define FWPM_FILTER_FLAG_GAMEOS_ONLY (0x00000200)")
 // The filter is in silent mode
 cpp_quote("#define FWPM_FILTER_FLAG_SILENT_MODE (0x00000400)")
+// (used for s2s IPsec tunnel policies) 
+// Do not initiate IPsec acquire, if packet matches a IPsec policy from a filter with this flag
+cpp_quote("#define FWPM_FILTER_FLAG_IPSEC_NO_ACQUIRE_INITIATE   (0x00000800)")
+
+
 
 
 // Stores the state associated with a filter.
@@ -915,6 +980,32 @@ typedef struct FWPM_STATISTICS0_
    UINT32 outboundActiveConnectionsV4;
    UINT32 inboundActiveConnectionsV6;
    UINT32 outboundActiveConnectionsV6;
+   UINT64 reauthDirInbound;
+   UINT64 reauthDirOutbound;
+   UINT64 reauthFamilyV4;
+   UINT64 reauthFamilyV6;
+   UINT64 reauthProtoOther;
+   UINT64 reauthProtoIPv4;
+   UINT64 reauthProtoIPv6;
+   UINT64 reauthProtoICMP;
+   UINT64 reauthProtoICMP6;
+   UINT64 reauthProtoUDP;
+   UINT64 reauthProtoTCP;
+   UINT64 reauthReasonPolicyChange;
+   UINT64 reauthReasonNewArrivalInterface;
+   UINT64 reauthReasonNewNextHopInterface;
+   UINT64 reauthReasonProfileCrossing;
+   UINT64 reauthReasonClassifyCompletion;
+   UINT64 reauthReasonIPSecPropertiesChanged;
+   UINT64 reauthReasonMidStreamInspection;
+   UINT64 reauthReasonSocketPropertyChanged;
+   UINT64 reauthReasonNewInboundMCastBCastPacket;
+   UINT64 reauthReasonEDPPolicyChanged;
+   UINT64 reauthReasonLocalAddressUniFiltersChanged;
+   UINT64 reauthReasonRemoteAddressUniFiltersChanged;
+   UINT64 reauthReasonLocalPortUniFiltersChanges;
+   UINT64 reauthReasonRemotePortUniFiltersChanges;
+   UINT64 reauthReasonProxyHandleChanged;
 } FWPM_STATISTICS0;
 
 

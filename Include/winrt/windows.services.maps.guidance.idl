@@ -13,23 +13,6 @@ import "Windows.Foundation.idl";
 import "Windows.Devices.Geolocation.idl";
 import "Windows.Services.Maps.idl";
 import "Windows.UI.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Edevices2Egeolocation_h__)")
-cpp_quote("#include <Windows.Devices.Geolocation.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Egeolocation_h__)")
-cpp_quote("#if !defined(__windows2Eservices2Emaps_h__)")
-cpp_quote("#include <Windows.Services.Maps.h>")
-cpp_quote("#endif // !defined(__windows2Eservices2Emaps_h__)")
-cpp_quote("#if !defined(__windows2Eui_h__)")
-cpp_quote("#include <Windows.UI.h>")
-cpp_quote("#endif // !defined(__windows2Eui_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -115,6 +98,8 @@ namespace Windows
                 interface IGuidanceReroutedEventArgs;
 
                 interface IGuidanceRoadSegment;
+
+                interface IGuidanceRoadSegment2;
 
                 interface IGuidanceRoadSignpost;
 
@@ -452,6 +437,14 @@ namespace Windows
                     [propget] HRESULT IsTollRoad([out] [retval] boolean* value);
                 }
 
+                [contract(Windows.Services.Maps.GuidanceContract, 3.0)]
+                [exclusiveto(Windows.Services.Maps.Guidance.GuidanceRoadSegment)]
+                [uuid(2474A61D-1723-49F1-895B-47A2C4AA9C55)]
+                interface IGuidanceRoadSegment2 : IInspectable
+                {
+                    [propget] HRESULT IsScenic([out] [retval] boolean* value);
+                }
+
                 [contract(Windows.Services.Maps.GuidanceContract, 1.0)]
                 [exclusiveto(Windows.Services.Maps.Guidance.GuidanceRoadSignpost)]
                 [uuid(F1A728B6-F77A-4742-8312-53300F9845F0)]
@@ -587,6 +580,7 @@ namespace Windows
                 runtimeclass GuidanceRoadSegment
                 {
                     [default] interface Windows.Services.Maps.Guidance.IGuidanceRoadSegment;
+                    [contract(Windows.Services.Maps.GuidanceContract, 3.0)] interface Windows.Services.Maps.Guidance.IGuidanceRoadSegment2;
                 }
 
                 [contract(Windows.Services.Maps.GuidanceContract, 1.0)]

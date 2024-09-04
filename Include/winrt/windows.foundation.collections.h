@@ -165,7 +165,7 @@ namespace Windows { namespace Foundation { namespace Collections
     template <class K, class V>
     struct IMap_impl;
 
-    enum CollectionsChange;
+    enum CollectionsChange : int;
 
     struct IVectorChangedEventArgs;
 
@@ -434,7 +434,7 @@ namespace Windows { namespace Foundation { namespace Collections
         HRESULT _IteratorGetMany(_In_ U* pThis, _In_ unsigned capacity, _Out_writes_to_(capacity,*actual) T *value, _Out_ unsigned *actual)
         {
             HRESULT hr = S_OK;
-            boolean fHasCurrent = false;
+            ::boolean fHasCurrent = false;
             unsigned count = 0;
             ZeroMemory(value, sizeof(*value) * capacity); 
             *actual = 0;

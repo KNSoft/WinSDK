@@ -11,17 +11,6 @@ import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
 import "Windows.Storage.Streams.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -58,6 +47,24 @@ namespace Windows
 }
 
 // Generic instantiations
+namespace Windows
+{
+    namespace Web
+    {
+        declare
+        {
+            interface Windows.Foundation.Collections.IIterable<Windows.Web.WebErrorStatus>;
+
+            interface Windows.Foundation.Collections.IIterator<Windows.Web.WebErrorStatus>;
+
+            interface Windows.Foundation.Collections.IVectorView<Windows.Web.WebErrorStatus>;
+
+            interface Windows.Foundation.Collections.IVector<Windows.Web.WebErrorStatus>;
+
+            interface Windows.Foundation.IReference<Windows.Web.WebErrorStatus>;
+        }
+    }
+}
 
 // Type definition
 namespace Windows
@@ -89,6 +96,10 @@ namespace Windows
             UnexpectedRedirection            = 19,
             UnexpectedClientError            = 20,
             UnexpectedServerError            = 21,
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            InsufficientRangeSupport         = 22,
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            MissingContentLengthSupport      = 23,
             MultipleChoices                  = 300,
             MovedPermanently                 = 301,
             Found                            = 302,

@@ -99,13 +99,19 @@
 
   <xs:simpleType name="ST_ExecutableNoPath">
     <xs:restriction base="ST_FileName">
-      <xs:pattern value="[^\\]+\.(exe)"/>
+      <xs:pattern value="[^\\]+\.([Ee][Xx][Ee])"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ST_ExecutableAnyCase">
+    <xs:restriction base="ST_FileName">
+      <xs:pattern value=".+\.([Ee][Xx][Ee])"/>
     </xs:restriction>
   </xs:simpleType>
 
   <xs:simpleType name="ST_DllFile">
     <xs:restriction base="ST_FileName">
-      <xs:pattern value=".+\.(dll)"/>
+      <xs:pattern value=".+\.([Dd][Ll][Ll])"/>
     </xs:restriction>
   </xs:simpleType>
   
@@ -199,9 +205,23 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="ST_DomainNameWithStarSubDomain">
+    <xs:restriction base="ST_NonEmptyString">
+      <xs:pattern value="((\*\.)?[0-9a-zA-Z]+(-[0-9a-zA-Z]+)*\.)+[a-zA-Z]{1,63}"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="ST_GUID">
     <xs:restriction base="ST_NonEmptyString">
       <xs:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ST_MediaCodecSubType">
+    <xs:restriction base="ST_NonEmptyString">
+      <!-- ST_GUID or 4 character code -->
+      <xs:pattern value="([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})|([^\s]{1,4})"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -231,6 +251,12 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="ST_Date">
+    <xs:restriction base="xs:date">
+      <xs:pattern value=".{10}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="ST_URI">
     <xs:restriction base="ST_NonEmptyString">
       <xs:maxLength value="2084"/>
@@ -244,6 +270,33 @@
       <xs:enumeration value="arm"/>
       <xs:enumeration value="arm64"/>
       <xs:enumeration value="neutral"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ST_Architecture_v2">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="x86"/>
+      <xs:enumeration value="x64"/>
+      <xs:enumeration value="arm"/>
+      <xs:enumeration value="arm64"/>
+      <xs:enumeration value="x86a64"/>
+      <xs:enumeration value="neutral"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ST_ArchitectureNonNeutral">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="x86"/>
+      <xs:enumeration value="x64"/>
+      <xs:enumeration value="arm"/>
+      <xs:enumeration value="arm64"/>
+      <xs:enumeration value="x86a64"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="ST_ArchitectureUnrestricted">
+    <xs:restriction base="ST_AsciiIdentifier">
+      <xs:maxLength value="7"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -607,6 +660,17 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="ST_ApplicationExtensionCategory_Uap5">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="windows.userActivity"/>
+      <xs:enumeration value="windows.mediaSource"/>
+      <xs:enumeration value="windows.videoRendererEffect"/>
+      <xs:enumeration value="windows.activatableClass.outOfProcessServer"/>
+      <xs:enumeration value="windows.startupTask"/>
+      <xs:enumeration value="windows.appExecutionAlias"/>
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="ST_ExtensionCategory_Com">
     <xs:restriction base="xs:string">
       <xs:enumeration value="windows.comServer"/>
@@ -642,6 +706,13 @@
       <!-- Package Extensions -->
       <xs:enumeration value="windows.firewallRules"/>
       <xs:enumeration value="windows.desktopEventLogging"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ST_ApplicationExtensionCategory_Desktop3">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="windows.cloudFiles"/>
+      <xs:enumeration value="windows.autoPlayHandler"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -899,7 +970,7 @@
   </xs:simpleType>
 
   <xs:attributeGroup name="ExtensionBaseAttributes">
-    <xs:attribute name="Executable" type="ST_Executable" use="optional"/>
+    <xs:attribute name="Executable" type="ST_ExecutableAnyCase" use="optional"/>
     <xs:attribute name="EntryPoint" type="ST_EntryPoint" use="optional"/>
     <xs:attribute name="RuntimeType" type="ST_ActivatableClassId" use="optional"/>
     <xs:attribute name="StartPage" type="ST_FileName" use="optional"/>

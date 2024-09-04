@@ -771,6 +771,7 @@
 #define CONFIGFLAG_FINISHINSTALL_UI     0x00010000      // Show the finish install wizard pages for the installed device.
 #define CONFIGFLAG_FINISHINSTALL_ACTION 0x00020000      // Call installer with DIF_FINISHINSTALL_ACTION in client context.
 #define CONFIGFLAG_BOOT_DEVICE          0x00040000      // Configured devnode during boot phase
+#define CONFIGFLAG_NEEDS_CLASS_CONFIG   0x00080000      // Device needs additional class configuration to start
 
 #define CSCONFIGFLAG_BITS               0x00000007      // OR of below bits
 #define CSCONFIGFLAG_DISABLED           0x00000001      // Set if

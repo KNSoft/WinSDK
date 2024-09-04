@@ -1554,7 +1554,7 @@ interface IXSLProcessor : IDispatch
 
     [id(DISPID_XMLDOM_PROCESSOR_SETSTARTMODE), helpstring("set XSL mode and it's namespace")]
     HRESULT setStartMode([in] BSTR mode, 
-                         [in, defaultvalue("")] BSTR namespaceURI);
+                         [in, defaultvalue(NULL)] BSTR namespaceURI);
 
     [propget, id(DISPID_XMLDOM_PROCESSOR_STARTMODE), helpstring("starting XSL mode")]
     HRESULT startMode([out, retval] BSTR * mode);
@@ -1580,7 +1580,7 @@ interface IXSLProcessor : IDispatch
     [id(DISPID_XMLDOM_PROCESSOR_ADDPARAMETER), helpstring("set <xsl:param> values")]
     HRESULT addParameter([in] BSTR baseName, 
                      [in] VARIANT parameter, 
-                     [in, defaultvalue("")] BSTR namespaceURI);
+                     [in, defaultvalue(NULL)] BSTR namespaceURI);
 
     [id(DISPID_XMLDOM_PROCESSOR_ADDOBJECT), helpstring("pass object to stylesheet")]
     HRESULT addObject([in] IDispatch* obj, 

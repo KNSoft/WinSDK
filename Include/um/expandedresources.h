@@ -32,14 +32,16 @@
 /* APISET_NAME: api-ms-win-gaming-expandedresources-l1 */
 /* APISET_TAG: public */
 
+// #if _APISET_TARGET_VERSION
+// #ifdef _APISET_TARGET_VERSION
 #if !defined(RC_INVOKED)
 
 #ifndef _APISET_GAMING_EXPANDEDRESOURCES_VER
 #ifdef _APISET_TARGET_VERSION
 #if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS2
 #define _APISET_GAMING_EXPANDEDRESOURCES_VER 0x0100
-#endif // #if _APISET_TARGET_VERSION
-#endif // #ifdef _APISET_TARGET_VERSION
+#endif
+#endif
 #endif
 
 #endif // !defined(RC_INVOKED)
@@ -49,10 +51,6 @@
 #if defined(__cplusplus)
 extern "C" {
 #endif
-
-#pragma region Application Family
-
-#if WINAPI_FAMILY == WINAPI_FAMILY_APP
 
 HRESULT
 WINAPI
@@ -73,9 +71,6 @@ WINAPI
 ReleaseExclusiveCpuSets(
     );
 
-
-#endif // WINAPI_FAMILY == WINAPI_FAMILY_APP
-#pragma endregion
 
 
 #if defined(__cplusplus)

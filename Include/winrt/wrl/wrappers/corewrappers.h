@@ -50,8 +50,8 @@ struct HANDLENullTraits
     }
 
     inline static Type GetInvalidValue() throw()
-    { 
-        return nullptr; 
+    {
+        return nullptr;
     }
 };
 
@@ -65,8 +65,8 @@ struct HANDLETraits
     }
 
     inline static HANDLE GetInvalidValue() throw()
-    { 
-        return INVALID_HANDLE_VALUE; 
+    {
+        return INVALID_HANDLE_VALUE;
     }
 };
 
@@ -78,9 +78,9 @@ struct CriticalSectionTraits
 {
     typedef CRITICAL_SECTION* Type;
 
-    inline static Type GetInvalidValue() throw() 
-    { 
-        return nullptr; 
+    inline static Type GetInvalidValue() throw()
+    {
+        return nullptr;
     }
 
     _Releases_lock_(*cs)
@@ -97,7 +97,7 @@ struct MutexTraits : HANDLENullTraits
     {
         if (::ReleaseMutex(h) == FALSE)
         {
-            // If we cannot release mutex it indicates 
+            // If we cannot release mutex it indicates
             // bug in somebody code thus we raise an exception
             ::Microsoft::WRL::Details::RaiseException(HRESULT_FROM_WIN32(GetLastError()));
         }
@@ -110,7 +110,7 @@ struct SemaphoreTraits : HANDLENullTraits
     {
         if (::ReleaseSemaphore(h, 1, NULL) == FALSE)
         {
-            // If we cannot release semaphore it indicates 
+            // If we cannot release semaphore it indicates
             // bug in somebody code thus we raise an exception
             ::Microsoft::WRL::Details::RaiseException(HRESULT_FROM_WIN32(GetLastError()));
         }
@@ -127,7 +127,7 @@ struct SRWLockSharedTraits
 
     inline static Type GetInvalidValue() throw()
     {
-        return nullptr; 
+        return nullptr;
     }
 
     _Releases_shared_lock_(*srwlock)
@@ -142,8 +142,8 @@ struct SRWLockExclusiveTraits
     typedef SRWLOCK* Type;
 
     inline static Type GetInvalidValue() throw()
-    { 
-        return nullptr; 
+    {
+        return nullptr;
     }
 
     _Releases_exclusive_lock_(*srwlock)
@@ -160,7 +160,7 @@ template <typename HandleTraits>
 class HandleT
 {
 public:
-    explicit HandleT(typename HandleTraits::Type h = HandleTraits::GetInvalidValue()) throw() : 
+    explicit HandleT(typename HandleTraits::Type h = HandleTraits::GetInvalidValue()) throw() :
         handle_(h)
     {
     }
@@ -203,7 +203,7 @@ public:
     }
 
     typename HandleTraits::Type Get() const throw()
-    { 
+    {
         return handle_;
     }
 
@@ -216,7 +216,7 @@ public:
             {
                 // If we cannot close the handle it indicates
                 // bug in somebody code thus we raise an exception
-                ::Microsoft::WRL::Details::RaiseException(HRESULT_FROM_WIN32(GetLastError()));            
+                ::Microsoft::WRL::Details::RaiseException(HRESULT_FROM_WIN32(GetLastError()));
             }
             handle_ = HandleTraits::GetInvalidValue();
         }
@@ -244,24 +244,24 @@ protected:
     {
         return HandleTraits::Close(handle_);
     }
-    
+
     typename HandleTraits::Type handle_;
 };
 
 // HandleT comparison operators
-template<class T> 
+template<class T>
 bool operator==(const HandleT<T>& rhs, const HandleT<T>& lhs) throw()
 {
     return rhs.Get() == lhs.Get();
 }
 
-template<class T> 
+template<class T>
 bool operator==(const typename HandleT<T>::Traits::Type& lhs, const HandleT<T>& rhs) throw()
 {
     return lhs == rhs.Get();
 }
 
-template<class T> 
+template<class T>
 bool operator==(const HandleT<T>& lhs, const typename HandleT<T>::Traits::Type& rhs) throw()
 {
     return lhs.Get() == rhs;
@@ -273,13 +273,13 @@ bool operator!=(const HandleT<T>& lhs, const HandleT<T>& rhs) throw()
     return lhs.Get() != rhs.Get();
 }
 
-template<class T> 
+template<class T>
 bool operator!=(const typename HandleT<T>::Traits::Type& lhs, const HandleT<T>& rhs) throw()
 {
     return lhs != rhs.Get();
 }
 
-template<class T> 
+template<class T>
 bool operator!=(const HandleT<T>& lhs, const typename HandleT<T>::Traits::Type& rhs) throw()
 {
     return lhs.Get() != rhs;
@@ -344,7 +344,7 @@ protected:
     }
 
     CRITICAL_SECTION* sync_;
-    
+
 private:
     _Releases_lock_(*sync_)
     void InternalUnlock() throw()
@@ -355,7 +355,7 @@ private:
             // and should not be passed across threads.
             // Unlock can fail if it is called from the wrong thread
             // or with an Invalid Handle, both of which are bugs
-            // Traits::Unlock should raise an SEH in case it cannot 
+            // Traits::Unlock should raise an SEH in case it cannot
             // release the lock
 
             HandleTraits::CriticalSectionTraits::Unlock(sync_);
@@ -395,15 +395,15 @@ public:
     }
 
     friend class Wrappers::SRWLock;
-    
+
 protected:
     explicit SyncLockExclusive(SRWLOCK* sync = HandleTraits::SRWLockExclusiveTraits::GetInvalidValue()) throw() : sync_(sync)
     {
 
     }
-    
+
     SRWLOCK* sync_;
-    
+
 private:
     _Releases_exclusive_lock_(*sync_)
     void InternalUnlock() throw()
@@ -447,7 +447,7 @@ public:
     }
 
     friend class Wrappers::SRWLock;
-    
+
 protected:
     explicit SyncLockShared(SRWLOCK* sync = HandleTraits::SRWLockSharedTraits::GetInvalidValue()) throw() : sync_(sync)
     {
@@ -455,7 +455,7 @@ protected:
     }
 
     SRWLOCK* sync_;
-    
+
 private:
     _Releases_shared_lock_(*sync_)
     void InternalUnlock() throw()
@@ -479,7 +479,8 @@ template <typename SyncTraits>
 class SyncLockWithStatusT
 {
 public:
-    SyncLockWithStatusT(_Inout_ SyncLockWithStatusT&& other) throw() : sync_(other.sync_), status_(other.status_)
+    SyncLockWithStatusT(_Inout_ SyncLockWithStatusT&& other) throw()
+        : status_(other.status_), sync_(other.sync_)
     {
         other.sync_ = SyncTraits::GetInvalidValue();
     }
@@ -511,8 +512,8 @@ public:
     friend class Wrappers::Mutex;
     friend class Wrappers::Semaphore;
 protected:
-    explicit SyncLockWithStatusT(typename SyncTraits::Type sync, DWORD status) throw() : 
-        sync_(sync), status_(status)
+    explicit SyncLockWithStatusT(typename SyncTraits::Type sync, DWORD status) throw()
+        : status_(status), sync_(sync)
     {
     }
 
@@ -527,10 +528,10 @@ private:
             // and should not be passed across threads.
             // Unlock can fail if it is called from the wrong thread
             // or with an Invalid Handle, both of which are bugs
-            // Traits::Unlock should raise an SEH in case it cannot 
+            // Traits::Unlock should raise an SEH in case it cannot
             // release the lock
- 
-// Cannot use _Analysis_assume_lock_held_(sync) 
+
+// Cannot use _Analysis_assume_lock_held_(sync)
 // because template instantiations have differing
 // levels of indirection to the lock
 #pragma warning(suppress:26110)
@@ -631,7 +632,7 @@ public:
     {
         DWORD const status = ::WaitForSingleObjectEx(h, milliseconds, FALSE);
         return SyncLock(h, status == WAIT_OBJECT_0 ? 0 : status);
-    }    
+    }
 private:
     void Close();
     HANDLE Detach();
@@ -648,7 +649,7 @@ public:
 
     explicit Semaphore(HANDLE h) throw() : HandleT(h)
     {
-    }    
+    }
 
     Semaphore(_Inout_ Semaphore&& h) throw() : HandleT(::Microsoft::WRL::Details::Move(h))
     {
@@ -777,7 +778,7 @@ public:
         _Analysis_assume_lock_held_(*lock);
         return SyncLockShared((acquired) ? lock : nullptr);
     }
-    
+
 protected:
     SRWLOCK SRWLock_;
 };
@@ -827,19 +828,19 @@ public:
     HRESULT Set(const wchar_t (&str)[sizeDest]) throw()
     {
         static_assert(static_cast<size_t>(static_cast<UINT32>(sizeDest-1)) == sizeDest - 1, "String length underflow or overflow");
-        
+
         return Set(str, sizeDest - 1);
     }
 
     // Initialize the string from a non-const array of wchar_t. A copy is made in this call.
     // The input array must include a terminating NULL. This case differs from the
     // one immediately above. This is intended to handle the case where the buffer size is known
-    // but the buffer may be oversized. This practice of using a buffer of known size that is 
-    // guaranteed to be larger than necessary is a common optimization. This overload of initialize 
+    // but the buffer may be oversized. This practice of using a buffer of known size that is
+    // guaranteed to be larger than necessary is a common optimization. This overload of initialize
     // calls wcslen to get the length of the string and uses the size up to the first null as the length.
-    // If the caller desires to use a non-const buffer but is interested in getting support for 
-    // embedded nulls, then the caller should use the overload that takes a length. 
-    // Without this overload, the template above would match, and we actually want different behavior. 
+    // If the caller desires to use a non-const buffer but is interested in getting support for
+    // embedded nulls, then the caller should use the overload that takes a length.
+    // Without this overload, the template above would match, and we actually want different behavior.
     template <size_t sizeDest>
     HRESULT Set(_In_z_ wchar_t (&strRef)[sizeDest]) throw()
     {
@@ -850,7 +851,7 @@ public:
         {
             hr = Set(str, length);
         }
-        
+
         return hr;
     }
 
@@ -872,7 +873,7 @@ public:
         __in_opt const T &strRef,    // const-ref required in case caller has a type convertible to const wchar_t*, but not copy-able
         typename ::Microsoft::WRL::Details::EnableIf< __is_convertible_to(T,const wchar_t*), ::Microsoft::WRL::Details::Dummy>::type = ::Microsoft::WRL::Details::Dummy()) throw()
     {
-        HRESULT hr = E_POINTER;
+        HRESULT hr = S_OK;
         const wchar_t* str = static_cast<PCWSTR>(strRef);
         _Analysis_assume_nullterminated_(static_cast<void*>(const_cast<wchar_t*>(str))); // we trust the caller's conversion gave us a null-terminated string as-advertised.
 
@@ -920,6 +921,12 @@ public:
 
     HSTRING* GetAddressOf() throw()
     {
+        Release(); // Note, this is a non-standard implementation, others don't release the resource.
+        return &hstr_;
+    }
+
+    HSTRING* ReleaseAndGetAddressOf() throw()
+    {
         Release();
         return &hstr_;
     }
@@ -957,7 +964,7 @@ public:
     static HStringReference MakeReference(wchar_t const (&str)[sizeDest], unsigned int len) throw();
 protected:
     HSTRING hstr_;
-}; 
+};
 
 class HStringReference
 {
@@ -1012,7 +1019,7 @@ public:
     template<unsigned int sizeDest>
     explicit HStringReference(wchar_t const (&str)[sizeDest]) throw() : hstr_(nullptr)
     {
-        static_assert(static_cast<size_t>(static_cast<unsigned int>(sizeDest-1)) == sizeDest-1, 
+        static_assert(static_cast<size_t>(static_cast<unsigned int>(sizeDest-1)) == sizeDest-1,
             "String length underflow or overflow");
 
         CreateReference(str, sizeDest, sizeDest - 1);
@@ -1025,7 +1032,7 @@ public:
     explicit HStringReference(_In_z_ wchar_t (&strRef)[sizeDest]) throw()
     {
         const wchar_t* str = static_cast<const wchar_t*>(strRef);
-        
+
         unsigned int length;
         HRESULT hr = SizeTToUInt32(::wcslen(str), &length);
         if (FAILED(hr))
@@ -1046,7 +1053,6 @@ public:
     {
         const wchar_t* str = static_cast<const wchar_t*>(strRef);
         _Analysis_assume_nullterminated_(static_cast<void*>(const_cast<wchar_t*>(str)));
-        _Analysis_assume_(strlen(reinterpret_cast<const char*>(str)) >= sizeof(wchar_t));
 
         unsigned int length;
         HRESULT hr = SizeTToUInt32(::wcslen(str), &length);
@@ -1081,7 +1087,7 @@ public:
         unsigned int lengthPlusOne = AddOne(length);
         CreateReference(value, lengthPlusOne, length);
 
-        return *this;    
+        return *this;
     }
 
     HSTRING Get() const throw()
@@ -1109,7 +1115,7 @@ protected:
 template<unsigned int sizeDest>
 inline HStringReference HString::MakeReference(wchar_t const (&str)[sizeDest]) throw()
 {
-    static_assert(static_cast<size_t>(static_cast<unsigned int>(sizeDest-1)) == sizeDest-1, 
+    static_assert(static_cast<size_t>(static_cast<unsigned int>(sizeDest-1)) == sizeDest-1,
         "String length underflow or overflow");
 
     HStringReference hstringRef;

@@ -13,12 +13,12 @@ struct FLOATSAFE
     KFLOATING_SAVE     FloatSave;
     NTSTATUS           ntStatus;
 
-    FLOATSAFE::FLOATSAFE(void)
+    FLOATSAFE(void)
     {
         ntStatus = KeSaveFloatingPointState(&FloatSave);
     }
 
-    FLOATSAFE::~FLOATSAFE(void)
+    ~FLOATSAFE(void)
     {
         if (NT_SUCCESS(ntStatus))
         {

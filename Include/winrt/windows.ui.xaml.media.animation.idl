@@ -15,29 +15,6 @@ import "Windows.UI.Composition.idl";
 import "Windows.UI.Xaml.idl";
 import "Windows.UI.Xaml.Controls.idl";
 import "Windows.UI.Xaml.Controls.Primitives.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eui_h__)")
-cpp_quote("#include <Windows.UI.h>")
-cpp_quote("#endif // !defined(__windows2Eui_h__)")
-cpp_quote("#if !defined(__windows2Eui2Ecomposition_h__)")
-cpp_quote("#include <Windows.UI.Composition.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Ecomposition_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#include <Windows.UI.Xaml.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Econtrols_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Controls.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Econtrols_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Econtrols2Eprimitives_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Controls.Primitives.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Econtrols2Eprimitives_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows

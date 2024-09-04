@@ -1071,6 +1071,23 @@ VmbChannelEnable(
     _In_    VMBCHANNEL  Channel
     );
 
+/// \page VmbChannelSetInterruptLatency VmbChannelSetInterruptLatency
+/// Guest VM updates to the outgoing monitor latency for MNF interrupts.
+///
+/// This call is valid for opened channels, that is between the calls to 
+/// EvtChannelOpened and EvtChannelClosed, inclusive.
+///
+/// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
+/// \param Latency Desired Monitor Latency in 100ns units.
+/// \param OriginalLatency on success, set to the previous latency value.
+_Must_inspect_result_
+NTSTATUS
+VmbChannelSetInterruptLatency(
+    _In_ VMBCHANNEL Channel,
+    _In_ UINT16 Latency,
+    _Out_ PUINT16 OriginalLatency
+    );
+
 /// \page VmbChannelDisable VmbChannelDisable
 /// Disables a channel, closing it for client channels and revoking the channel
 /// offer for server channels. Waits until the channel is completely torn down
@@ -1143,7 +1160,7 @@ VmbChannelSaveBegin(
 /// \retval STATUS_SUCCESS The state was saved.
 /// \retval STATUS_BUFFER_TOO_SMALL The save buffer was too small.  BytesNeeded
 ///     contains the number of bytes that are required to make any progress.
-/// \retval STATUS_STATUS_BUFFER_OVERFLOW Some data was written to the save
+/// \retval STATUS_BUFFER_OVERFLOW Some data was written to the save
 ///     buffer, but there's more data to be saved.
 _Must_inspect_result_
 NTSTATUS

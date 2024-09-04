@@ -10504,6 +10504,41 @@ class Header_ProviderBinaryPath_TypeGroup:EventTraceEvent
 };
 
 [Dynamic,
+ Description("Partition Info Extension") : amended,
+ EventType{80},
+ EventTypeName{"PartitionInfoExtension"} :amended
+]
+class Header_PartitionInfoExtension_TypeGroup:EventTraceEvent
+{
+    [WmiDataId(1),
+     Description("Event Version") : amended,
+     read]
+     uint16 EventVersion;
+    [WmiDataId(2),
+     Description("Reserved") : amended,
+     read]
+     uint16 Reserved;
+    [WmiDataId(3),
+     Description("Partition Type") : amended,
+     read]
+     uint32 PartitionType;
+   [WmiDataId(4),
+     Description("Qpc Offset From Root") : amended,
+     read]
+     sint64 QpcOffsetFromRoot;
+   [WmiDataId(5),
+     Description("Partition ID") : amended,
+     extension("GUID"),
+     read]
+     object PartitionId;
+   [WmiDataId(6),
+     Description("Parent ID") : amended,
+     extension("GUID"),
+     read]
+     object ParentId;
+};
+
+[Dynamic,
  Description("Process Create/Exit Event") : amended,
  Guid("{3d6fa8d0-fe05-11d0-9dda-00c04fd7ba7c}"),
  EventVersion(0),
@@ -11301,7 +11336,7 @@ class Thread_V2_TypeGroup1:Thread_V2
 
 [Dynamic,
  Description("Thread Set Name Event") : amended,
- EventType(10),
+ EventType(72),
  EventTypeName("SetName") : amended
 ]
 class ThreadSetName:Thread_V2
@@ -11329,7 +11364,7 @@ class ThreadSetName:Thread_V2
  EventType(36),
  EventTypeName("CSwitch") : amended
 ]
-class CSwitch:Thread_V2
+class CSwitch_V2:Thread_V2
 {
     [WmiDataId(1),
      Description("NewThreadId") : amended,
@@ -11859,6 +11894,66 @@ class ThreadPriority:Thread_V3
 };
 
 [Dynamic,
+ Description("Context Switch Event") : amended,
+ EventType(36),
+ EventTypeName("CSwitch") : amended
+]
+class CSwitch_V3:Thread_V3
+{
+    [WmiDataId(1),
+     Description("NewThreadId") : amended,
+     format("x"),
+     read]
+     uint32  NewThreadId;
+    [WmiDataId(2),
+     Description("OldThreadId") : amended,
+     format("x"),
+     read]
+     uint32  OldThreadId;
+    [WmiDataId(3),
+     Description("NewThreadPriority") : amended,
+     read]
+     sint8  NewThreadPriority;
+    [WmiDataId(4),
+     Description("OldThreadPriority") : amended,
+     read]
+     sint8  OldThreadPriority;
+    [WmiDataId(5),
+     Description("PreviousCState or OldThreadRank") : amended,
+     read]
+     uint8  PreviousCState;
+    [WmiDataId(6),
+     Description("SpareByte") : amended,
+     read]
+     sint8  SpareByte;
+    [WmiDataId(7),
+     Description("OldThreadWaitReason") : amended,
+     read]
+     sint8  OldThreadWaitReason;
+    [WmiDataId(8),
+     Description("ThreadFlags") : amended,
+     read]
+     sint8  ThreadFlags;
+    [WmiDataId(9),
+     Description("OldThreadState") : amended,
+     read]
+     sint8  OldThreadState;
+    [WmiDataId(10),
+     Description("OldThreadWaitIdealProcessor") : amended,
+     read]
+     sint8  OldThreadWaitIdealProcessor;
+    [WmiDataId(11),
+     Description("NewThreadWaitTime") : amended,
+     format("x"),
+     read]
+     uint32  NewThreadWaitTime;
+    [WmiDataId(12),
+     Description("Reserved") : amended,
+     read]
+     uint32  Reserved;
+};
+
+[Dynamic,
  Description("Thread Create/Exit Event") : amended,
  Guid("{3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c}"),
  EventVersion(4),
@@ -11948,6 +12043,66 @@ class Thread_TypeGroup1:Thread_V4
      format("w"),
      read]
      string ThreadName;
+};
+
+[Dynamic,
+ Description("Context Switch Event") : amended,
+ EventType(36),
+ EventTypeName("CSwitch") : amended
+]
+class CSwitch_V4:Thread_V4
+{
+    [WmiDataId(1),
+     Description("NewThreadId") : amended,
+     format("x"),
+     read]
+     uint32  NewThreadId;
+    [WmiDataId(2),
+     Description("OldThreadId") : amended,
+     format("x"),
+     read]
+     uint32  OldThreadId;
+    [WmiDataId(3),
+     Description("NewThreadPriority") : amended,
+     read]
+     sint8  NewThreadPriority;
+    [WmiDataId(4),
+     Description("OldThreadPriority") : amended,
+     read]
+     sint8  OldThreadPriority;
+    [WmiDataId(5),
+     Description("PreviousCState or OldThreadRank") : amended,
+     read]
+     uint8  PreviousCState;
+    [WmiDataId(6),
+     Description("SpareByte") : amended,
+     read]
+     sint8  SpareByte;
+    [WmiDataId(7),
+     Description("OldThreadWaitReason") : amended,
+     read]
+     sint8  OldThreadWaitReason;
+    [WmiDataId(8),
+     Description("ThreadFlags") : amended,
+     read]
+     sint8  ThreadFlags;
+    [WmiDataId(9),
+     Description("OldThreadState") : amended,
+     read]
+     sint8  OldThreadState;
+    [WmiDataId(10),
+     Description("OldThreadWaitIdealProcessor") : amended,
+     read]
+     sint8  OldThreadWaitIdealProcessor;
+    [WmiDataId(11),
+     Description("NewThreadWaitTime") : amended,
+     format("x"),
+     read]
+     uint32  NewThreadWaitTime;
+    [WmiDataId(12),
+     Description("Reserved") : amended,
+     read]
+     uint32  Reserved;
 };
 
 [Dynamic,
@@ -19372,6 +19527,42 @@ class SystemConfig_V2_FlightIds:SystemConfig_V2
      format("w"),
      read]
      string  FlightIdList;
+};
+
+[Dynamic,
+ Description("System Configuration") : amended,
+ EventType(35),
+ EventTypeName("Processors") : amended
+]
+class SystemConfig_V2_Processors:SystemConfig_V2
+{
+    [WmiDataId(1),
+     Description("ProcessorIndex") : amended,
+     read]
+     uint32  ProcessorIndex;
+    [WmiDataId(2),
+     Description("FeatureSet") : amended,
+     read]
+     uint32  FeatureSet;
+    [WmiDataId(3),
+     Description("ProcessorSpeed") : amended,
+     read]
+     uint32  ProcessorSpeed;
+    [WmiDataId(4),
+     Description("ProcessorName") : amended,
+     format("s"),
+     read]
+     char16  ProcessorName[64];
+    [WmiDataId(5),
+     Description("VendorIdentifier") : amended,
+     format("s"),
+     read]
+     char16  VendorIdentifier[16];
+    [WmiDataId(6),
+     Description("ProcessorIdentifier") : amended,
+     format("s"),
+     read]
+     char16  ProcessorIdentifier[128];
 };
 
 [Dynamic,

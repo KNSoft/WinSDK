@@ -113,6 +113,7 @@ Revision History:
 #define FILE_DEVICE_PERSISTENT_MEMORY   0x00000059
 #define FILE_DEVICE_NVDIMM              0x0000005a
 #define FILE_DEVICE_HOLOGRAPHIC         0x0000005b
+#define FILE_DEVICE_SDFXHCI             0x0000005c
 
 //
 // Macro definition for defining IOCTL and FSCTL function control codes.  Note

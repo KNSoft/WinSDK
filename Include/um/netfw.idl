@@ -160,10 +160,13 @@ cpp_quote("")
 
 cpp_quote("")
 cpp_quote("typedef void (CALLBACK *PNETISO_EDP_ID_CALLBACK_FN) (")
-cpp_quote("    _In_opt_ void *context,")
+cpp_quote("    _Inout_opt_ void *context,")
 cpp_quote("    _In_opt_z_ const LPCWSTR wszEnterpriseId,")
 cpp_quote("    _In_ DWORD dwErr")
 cpp_quote("    );")
+
+cpp_quote("#define NETISO_GEID_FOR_WDAG 0x01")
+cpp_quote("#define NETISO_GEID_FOR_NEUTRAL_AWARE 0x02")
 cpp_quote("DWORD")
 cpp_quote("NetworkIsolationGetEnterpriseIdAsync(")
 cpp_quote("    _In_z_ LPCWSTR wszServerName,")
@@ -922,7 +925,7 @@ interface INetFwRule : IDispatch
    [id(16), propput]
    HRESULT Profiles(
               [in] long  profileTypesBitmask
-              );              
+              );
 
    // The EdgeTraversal property of the rule. Default is false for new rules.
    [id(17), propget]
@@ -942,7 +945,7 @@ interface INetFwRule : IDispatch
    HRESULT Action(
               [in] NET_FW_ACTION action
               );
-              
+
 }
 
 
@@ -955,7 +958,7 @@ interface INetFwRule : IDispatch
 ]
 interface INetFwRule2 : INetFwRule
 {
-    
+
     [id(19), propget]
     HRESULT EdgeTraversalOptions(
                 [out, retval] long* lOptions
@@ -978,7 +981,7 @@ interface INetFwRule2 : INetFwRule
 ]
 interface INetFwRule3 : INetFwRule2
 {
-    
+
     [id(20), propget]
     HRESULT LocalAppPackageId(
                 [out, retval] BSTR* wszPackageId
@@ -988,7 +991,7 @@ interface INetFwRule3 : INetFwRule2
     HRESULT LocalAppPackageId(
                 [in] BSTR wszPackageId
                 );
-    
+
     [id(21), propget]
     HRESULT LocalUserOwner(
                 [out, retval] BSTR* wszUserOwner
@@ -998,7 +1001,7 @@ interface INetFwRule3 : INetFwRule2
     HRESULT LocalUserOwner(
                 [in] BSTR wszUserOwner
                 );
-    
+
     [id(22), propget]
     HRESULT LocalUserAuthorizedList(
                 [out, retval] BSTR* wszUserAuthList
@@ -1271,7 +1274,7 @@ interface INetFwPolicy2 : IDispatch
               [in] NET_FW_PROFILE_TYPE2 profileType,
               [in] VARIANT_BOOL         enabled
               );
-              
+
 
    // Exclude firewall settings on these interfaces.
    [id(3), propget]
@@ -1346,7 +1349,7 @@ interface INetFwPolicy2 : IDispatch
               [in] BSTR           group,
               [in] VARIANT_BOOL   enable
               );
-              
+
    // Determines if a group of rules with the specified grouping string are
    // active.
    [id(10)]
@@ -1355,11 +1358,11 @@ interface INetFwPolicy2 : IDispatch
               [in] BSTR                     group,
               [out, retval] VARIANT_BOOL*   enabled
               );
-              
+
    // Restores the local configuration to its default state.
    [id(11)]
    HRESULT RestoreLocalFirewallDefaults();
-              
+
    // The default inbound action of the firewall per-profile
    [id(12), propget]
    HRESULT DefaultInboundAction(
@@ -1384,7 +1387,7 @@ interface INetFwPolicy2 : IDispatch
    HRESULT DefaultOutboundAction(
               [in] NET_FW_PROFILE_TYPE2 profileType,
               [in] NET_FW_ACTION action
-              );              
+              );
 
    // The current state of a firewall group of rules
    [id(14), propget]

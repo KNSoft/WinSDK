@@ -21,13 +21,13 @@ Notes:
 
 #pragma once
 
-#if defined(NET_ADAPTER_CX_1_0)
-#    if (NET_ADAPTER_CX_1_0 != 1)
-#        error NetRingBuffer.h can be used only with NetAdapterCx 1.0
-#    endif // NET_ADAPTER_CX_1_0 != 1
-#else // defined(NET_ADAPTER_CX_1_0)
+#if (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1))
+#    if (NET_ADAPTER_CX_1_0 != 1 && NET_ADAPTER_CX_1_1 != 1)
+#        error NetPacket.h can be used only with NetAdapterCx 1.0 or 1.1
+#    endif
+#else
 #    error Include NetAdapterCx.h
-#endif // defined(NET_ADAPTER_CX_1_0)
+#endif // (defined(NET_ADAPTER_CX_1_0) || defined(NET_ADAPTER_CX_1_1))
 
 // This structure holds opaque elements in a ring buffer.
 typedef struct DECLSPEC_CACHEALIGN _NET_RING_BUFFER

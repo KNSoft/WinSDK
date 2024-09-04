@@ -118,6 +118,8 @@ typedef enum    _PNP_VETO_TYPE {
 #define CM_PROB_UNSIGNED_DRIVER            (0x00000034)   // Failed load driver due to unsigned image.
 #define CM_PROB_USED_BY_DEBUGGER           (0x00000035)   // Device is being used by kernel debugger
 #define CM_PROB_DEVICE_RESET               (0x00000036)   // Device is being reset
+#define CM_PROB_CONSOLE_LOCKED             (0x00000037)   // Device is blocked while console is locked
+#define CM_PROB_NEED_CLASS_CONFIG          (0x00000038)   // Device needs extended class configuration to start
 
 #define NUM_CM_PROB_V1                     (0x00000025)
 #define NUM_CM_PROB_V2                     (0x00000032)
@@ -126,8 +128,13 @@ typedef enum    _PNP_VETO_TYPE {
 #define NUM_CM_PROB_V5                     (0x00000035)
 #define NUM_CM_PROB_V6                     (0x00000036)
 #define NUM_CM_PROB_V7                     (0x00000037)
+#define NUM_CM_PROB_V8                     (0x00000039)
 
-#if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+
+#define NUM_CM_PROB NUM_CM_PROB_V8
+
+#elif (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
 #define NUM_CM_PROB NUM_CM_PROB_V7
 

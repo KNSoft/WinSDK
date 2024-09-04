@@ -196,6 +196,33 @@ typedef struct IPSEC_SA_IDLE_TIMEOUT0_
     UINT32 idleTimeoutSecondsFailOver;
     } 	IPSEC_SA_IDLE_TIMEOUT0;
 
+typedef struct IPSEC_TRAFFIC_SELECTOR0_
+    {
+    UINT8 protocolId;
+    UINT16 portStart;
+    UINT16 portEnd;
+    FWP_IP_VERSION ipVersion;
+    /* [switch_is][switch_type] */ union 
+        {
+        /* [case()] */ UINT32 startV4Address;
+        /* [case()] */ UINT8 startV6Address[ 16 ];
+        } 	;
+    /* [switch_is][switch_type] */ union 
+        {
+        /* [case()] */ UINT32 endV4Address;
+        /* [case()] */ UINT8 endV6Address[ 16 ];
+        } 	;
+    } 	IPSEC_TRAFFIC_SELECTOR0;
+
+typedef struct IPSEC_TRAFFIC_SELECTOR_POLICY0_
+    {
+    UINT32 flags;
+    UINT32 numLocalTrafficSelectors;
+    /* [unique][size_is] */ IPSEC_TRAFFIC_SELECTOR0 *localTrafficSelectors;
+    UINT32 numRemoteTrafficSelectors;
+    /* [unique][size_is] */ IPSEC_TRAFFIC_SELECTOR0 *remoteTrafficSelectors;
+    } 	IPSEC_TRAFFIC_SELECTOR_POLICY0;
+
 #define IPSEC_POLICY_FLAG_ND_SECURE     (0x00000002)
 #define IPSEC_POLICY_FLAG_ND_BOUNDARY   (0x00000004)
 #define IPSEC_POLICY_FLAG_CLEAR_DF_ON_TUNNEL   (0x00000008)
@@ -215,6 +242,9 @@ typedef struct IPSEC_SA_IDLE_TIMEOUT0_
 #define IPSEC_POLICY_FLAG_KEY_MANAGER_ALLOW_NOTIFY_KEY (0x00004000)
 #define IPSEC_POLICY_FLAG_RESERVED1 (0x00008000)
 #endif // (NTDDI_VERSION >= NTDDI_WIN8)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+#define IPSEC_POLICY_FLAG_SITE_TO_SITE_TUNNEL (0x00010000)
+#endif // (NTDDI_VERSION > NTDDI_WIN10_RS3)
 typedef struct IPSEC_TRANSPORT_POLICY0_
     {
     UINT32 numIpsecProposals;
@@ -348,6 +378,22 @@ typedef struct IPSEC_TUNNEL_POLICY2_
     } 	IPSEC_TUNNEL_POLICY2;
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN8)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+typedef struct IPSEC_TUNNEL_POLICY3_
+    {
+    UINT32 flags;
+    UINT32 numIpsecProposals;
+    /* [ref][size_is] */ IPSEC_PROPOSAL0 *ipsecProposals;
+    IPSEC_TUNNEL_ENDPOINTS2 tunnelEndpoints;
+    IPSEC_SA_IDLE_TIMEOUT0 saIdleTimeout;
+    /* [unique] */ IKEEXT_EM_POLICY2 *emPolicy;
+    UINT32 fwdPathSaLifetime;
+    UINT32 compartmentId;
+    UINT32 numTrafficSelectorPolicy;
+    /* [unique][size_is] */ IPSEC_TRAFFIC_SELECTOR_POLICY0 *trafficSelectorPolicies;
+    } 	IPSEC_TUNNEL_POLICY3;
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS3)
 typedef struct IPSEC_KEYING_POLICY0_
     {
     UINT32 numKeyMods;

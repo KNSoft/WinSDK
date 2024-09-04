@@ -15891,7 +15891,7 @@ FaxSecurity2;
 
 /* [helpstring] */ const long lDEFAULT_PREFETCH_SIZE	=	prv_DEFAULT_PREFETCH_SIZE;
 
-/* [helpstring] */ const BSTR bstrGROUPNAME_ALLDEVICES	=	L"<All Devices>";
+/* [helpstring] */ const BSTR bstrGROUPNAME_ALLDEVICES	=	( BSTR  )L"<All Devices>";
 
 /* [helpstring] */ const wchar_t wcharREASSIGN_RECIPIENTS_DELIMITER	=	L';';
 

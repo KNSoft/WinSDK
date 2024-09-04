@@ -11,17 +11,7 @@ import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
 import "Windows.Devices.Geolocation.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Edevices2Egeolocation_h__)")
-cpp_quote("#include <Windows.Devices.Geolocation.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Egeolocation_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
+import "Windows.UI.Popups.idl";
 
 // Forward Declare
 namespace Windows
@@ -35,6 +25,8 @@ namespace Windows
             runtimeclass Geopath;
 
             runtimeclass Geopoint;
+
+            interface IGeoshape;
         }
     }
 }
@@ -42,9 +34,21 @@ namespace Windows
 {
     namespace Foundation
     {
+        typedef struct Rect Rect;
+
         typedef struct TimeSpan TimeSpan;
 
         apicontract UniversalApiContract;
+    }
+}
+namespace Windows
+{
+    namespace UI
+    {
+        namespace Popups
+        {
+            typedef enum Placement Placement;
+        }
     }
 }
 namespace Windows
@@ -107,6 +111,8 @@ namespace Windows
 
             interface IMapRoute3;
 
+            interface IMapRoute4;
+
             interface IMapRouteDrivingOptions;
 
             interface IMapRouteFinderResult;
@@ -137,6 +143,12 @@ namespace Windows
 
             interface IMapServiceStatics4;
 
+            interface IPlaceInfo;
+
+            interface IPlaceInfoCreateOptions;
+
+            interface IPlaceInfoStatics;
+
             runtimeclass EnhancedWaypoint;
 
             runtimeclass ManeuverWarning;
@@ -164,6 +176,10 @@ namespace Windows
             runtimeclass MapRouteManeuver;
 
             runtimeclass MapService;
+
+            runtimeclass PlaceInfo;
+
+            runtimeclass PlaceInfoCreateOptions;
         }
     }
 }
@@ -226,12 +242,12 @@ namespace Windows
     {
         namespace Maps
         {
-            [contractversion(2.0)]
+            [contractversion(3.0)]
             apicontract GuidanceContract
             {
             }
 
-            [contractversion(3.0)]
+            [contractversion(4.0)]
             apicontract LocalSearchContract
             {
             }
@@ -367,7 +383,9 @@ namespace Windows
             {
                 Time            = 0,
                 Distance        = 1,
-                TimeWithTraffic = 2
+                TimeWithTraffic = 2,
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                Scenic          = 3
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -542,6 +560,14 @@ namespace Windows
                 [propget] HRESULT TrafficCongestion([out] [retval] Windows.Services.Maps.TrafficCongestion* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Services.Maps.MapRoute)]
+            [uuid(366C8CA5-3053-4FA1-80FF-D475F3ED1E6E)]
+            interface IMapRoute4 : IInspectable
+            {
+                [propget] HRESULT IsScenic([out] [retval] boolean* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Services.Maps.MapRouteDrivingOptions)]
             [uuid(6815364D-C6DC-4697-A452-B18F8F0B67A1)]
@@ -694,6 +720,43 @@ namespace Windows
                 [propget] HRESULT DataUsagePreference([out] [retval] Windows.Services.Maps.MapServiceDataUsagePreference* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Services.Maps.PlaceInfo)]
+            [uuid(9A0810B6-31C8-4F6A-9F18-950B4C38951A)]
+            interface IPlaceInfo : IInspectable
+            {
+                [overload("Show")] HRESULT Show([in] Windows.Foundation.Rect selection);
+                [overload("Show")] HRESULT ShowWithPreferredPlacement([in] Windows.Foundation.Rect selection, [in] Windows.UI.Popups.Placement preferredPlacement);
+                [propget] HRESULT Identifier([out] [retval] HSTRING* value);
+                [propget] HRESULT DisplayName([out] [retval] HSTRING* value);
+                [propget] HRESULT DisplayAddress([out] [retval] HSTRING* value);
+                [propget] HRESULT Geoshape([out] [retval] Windows.Devices.Geolocation.IGeoshape** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Services.Maps.PlaceInfoCreateOptions)]
+            [uuid(CD33C125-67F1-4BB3-9907-ECCE939B0399)]
+            interface IPlaceInfoCreateOptions : IInspectable
+            {
+                [propput] HRESULT DisplayName([in] HSTRING value);
+                [propget] HRESULT DisplayName([out] [retval] HSTRING* value);
+                [propput] HRESULT DisplayAddress([in] HSTRING value);
+                [propget] HRESULT DisplayAddress([out] [retval] HSTRING* value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Services.Maps.PlaceInfo)]
+            [uuid(82B9FF71-6CD0-48A4-AFD9-5ED82097936B)]
+            interface IPlaceInfoStatics : IInspectable
+            {
+                [overload("Create")] HRESULT Create([in] Windows.Devices.Geolocation.Geopoint* referencePoint, [out] [retval] Windows.Services.Maps.PlaceInfo** resultValue);
+                [overload("Create")] HRESULT CreateWithGeopointAndOptions([in] Windows.Devices.Geolocation.Geopoint* referencePoint, [in] Windows.Services.Maps.PlaceInfoCreateOptions* options, [out] [retval] Windows.Services.Maps.PlaceInfo** resultValue);
+                [overload("CreateFromIdentifier")] HRESULT CreateFromIdentifier([in] HSTRING identifier, [out] [retval] Windows.Services.Maps.PlaceInfo** resultValue);
+                [overload("CreateFromIdentifier")] HRESULT CreateFromIdentifierWithOptions([in] HSTRING identifier, [in] Windows.Devices.Geolocation.Geopoint* defaultPoint, [in] Windows.Services.Maps.PlaceInfoCreateOptions* options, [out] [retval] Windows.Services.Maps.PlaceInfo** resultValue);
+                HRESULT CreateFromMapLocation([in] Windows.Services.Maps.MapLocation* location, [out] [retval] Windows.Services.Maps.PlaceInfo** resultValue);
+                [propget] HRESULT IsShowSupported([out] [retval] boolean* value);
+            }
+
             [activatable(Windows.Services.Maps.IEnhancedWaypointFactory, Windows.Foundation.UniversalApiContract, 4.0)]
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
@@ -761,6 +824,7 @@ namespace Windows
                 [default] interface Windows.Services.Maps.IMapRoute;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Services.Maps.IMapRoute2;
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.Services.Maps.IMapRoute3;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Services.Maps.IMapRoute4;
             }
 
             [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -819,6 +883,24 @@ namespace Windows
             [threading(both)]
             runtimeclass MapService
             {
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [static(Windows.Services.Maps.IPlaceInfoStatics, Windows.Foundation.UniversalApiContract, 5.0)]
+            [threading(both)]
+            runtimeclass PlaceInfo
+            {
+                [default] interface Windows.Services.Maps.IPlaceInfo;
+            }
+
+            [activatable(Windows.Foundation.UniversalApiContract, 5.0)]
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass PlaceInfoCreateOptions
+            {
+                [default] interface Windows.Services.Maps.IPlaceInfoCreateOptions;
             }
         }
     }

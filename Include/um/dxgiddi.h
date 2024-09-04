@@ -67,11 +67,13 @@ typedef struct DXGI_DDI_PRESENT_FLAGS
     {
         struct
         {
-            UINT    Blt                 : 1;        // 0x00000001
-            UINT    Flip                : 1;        // 0x00000002
-            UINT    PreferRight         : 1;        // 0x00000004
-            UINT    TemporaryMono       : 1;        // 0x00000008
-            UINT    Reserved            :28;
+            UINT    Blt                      : 1;        // 0x00000001
+            UINT    Flip                     : 1;        // 0x00000002
+            UINT    PreferRight              : 1;        // 0x00000004
+            UINT    TemporaryMono            : 1;        // 0x00000008
+            UINT    AllowTearing             : 1;        // 0x00000010
+            UINT    AllowFlexibleRefresh     : 1;        // 0x00000020
+            UINT    Reserved                 :26;
         };
         UINT    Value;
     };

@@ -37,6 +37,38 @@ extern "C" {
 #pragma warning(disable:4820) // padding added after data member
 #endif
 
+//
+// Deprecated attribute support for NLS
+//
+#pragma push_macro("DEPRECATED")
+#undef DEPRECATED
+
+// Disable NLS deprecation for the moment
+#if !defined(DISABLE_NLS_DEPRECATION)
+#define DISABLE_NLS_DEPRECATION
+#endif
+
+// Deprecated NLS types/functions
+#if !defined(DISABLE_NLS_DEPRECATION)
+#if defined(__cplusplus)
+#if __cplusplus >= 201402
+#define DEPRECATED(x) [[deprecated(x)]]
+#elif defined(_MSC_VER)
+#if _MSC_VER > 1900
+#define DEPRECATED(x) [[deprecated(x)]]
+#else
+#define DEPRECATED(x) __declspec(deprecated(x))
+#endif // _MSC_VER > 1900
+#else // Not Standard C++ or MSVC, ignore the construct.
+#define DEPRECATED(x)
+#endif  // C++ deprecation
+#else // C - disable deprecation
+#define DEPRECATED(x)
+#endif
+#else // Deprecation is disabled
+#define DEPRECATED(x)
+#endif  /* DISABLE_NLS_DEPRECATION */
+
 
 #ifndef NONLS
 
@@ -104,16 +136,25 @@ extern "C" {
 
 //
 //  MBCS and Unicode Translation Flags.
+//  Please use Unicode, either UTF-16 (WCHAR) or UTF-8 (CP_UTF8)
 //
-#define MB_PRECOMPOSED            0x00000001  // use precomposed chars
-#define MB_COMPOSITE              0x00000002  // use composite chars
-#define MB_USEGLYPHCHARS          0x00000004  // use glyph chars, not ctrl chars
+// MB_PRECOMPOSED and MB_COMPOSITE are deprecated, not recommended, and
+// provide out-of-date behavior.
+// Windows typically uses Unicode Normalization Form C type sequences,
+// If explicit normalization forms are required, please use NormalizeString.
+#define MB_PRECOMPOSED            0x00000001  // DEPRECATED: use single precomposed characters when possible.
+#define MB_COMPOSITE              0x00000002  // DEPRECATED: use multiple discrete characters when possible.
+#define MB_USEGLYPHCHARS          0x00000004  // DEPRECATED: use glyph chars, not ctrl chars
 #define MB_ERR_INVALID_CHARS      0x00000008  // error for invalid chars
 
+// WC_COMPOSITECHECK, WC_DISCARDNS and WC_SEPCHARS are deprecated, not recommended,
+// and provide out-of-date behavior.
+// Windows typically uses Unicode Normalization Form C type sequences,
+// If explicit normalization forms are required, please use NormalizeString.
 #define WC_COMPOSITECHECK         0x00000200  // convert composite to precomposed
-#define WC_DISCARDNS              0x00000010  // discard non-spacing chars
-#define WC_SEPCHARS               0x00000020  // generate separate chars
-#define WC_DEFAULTCHAR            0x00000040  // replace w/ default char
+#define WC_DISCARDNS              0x00000010  // discard non-spacing chars          // Used with WC_COMPOSITECHECK
+#define WC_SEPCHARS               0x00000020  // generate separate chars            // Used with WC_COMPOSITECHECK
+#define WC_DEFAULTCHAR            0x00000040  // replace w/ default char            // Used with WC_COMPOSITECHECK
 #if (WINVER >= 0x0600)
 #define WC_ERR_INVALID_CHARS      0x00000080  // error for invalid chars
 #endif
@@ -251,7 +292,15 @@ extern "C" {
 
 
 //
-//  Language Group Enumeration Flags.
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
+// Language Group Enumeration Flags.
+//
+// The "Language Group" concept is an obsolete concept.
+// The groups returned are not well defined, arbitrary, inconsistent, inaccurate,
+// no longer maintained, and no longer supported.
+//
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
 //
 #define LGRPID_INSTALLED          0x00000001  // installed language group ids
 #define LGRPID_SUPPORTED          0x00000002  // supported language group ids
@@ -336,6 +385,7 @@ extern "C" {
 
 //
 //  Code Page Default Values.
+//  Please Use Unicode, either UTF-16 (as in WCHAR) or UTF-8 (code page CP_ACP)
 //
 #define CP_ACP                    0           // default to ANSI code page
 #define CP_OEMCP                  1           // default to OEM  code page
@@ -347,7 +397,18 @@ extern "C" {
 #define CP_UTF8                   65001       // UTF-8 translation
 
 //
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
 //  Country/Region Codes.
+//
+//  DEPRECATED: The GEOID  concept is deprecated, please use
+//  Country/Region Names instead, eg: "US" instead of a GEOID like 244.
+//  See the documentation for GetGeoInfoEx.
+//
+//  WARNING: These values are arbitrarily assigned values, please use
+//           standard country/region names instead, such as "US".
+//
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
 //
 #define CTRY_DEFAULT              0
 
@@ -477,15 +538,16 @@ extern "C" {
 //    LOCALE_NOUSEROVERRIDE is also used in GetTimeFormat and
 //    GetDateFormat.
 //
-//    LOCALE_USE_CP_ACP is used in many of the A (Ansi) apis that need
-//    to do string translation.
-//
 //    LOCALE_RETURN_NUMBER will return the result from GetLocaleInfo as a
 //    number instead of a string.  This flag is only valid for the LCTypes
 //    beginning with LOCALE_I.
 //
-#define LOCALE_NOUSEROVERRIDE         0x80000000   // do not use user overrides
-#define LOCALE_USE_CP_ACP             0x40000000   // use the system ACP
+//    DEPRECATED: LOCALE_USE_CP_ACP is used in many of the A (Ansi) apis that need
+//                to do string translation.  Callers are encouraged to use the W
+//                (WCHAR/Unicode) apis instead.
+//
+#define LOCALE_NOUSEROVERRIDE         0x80000000   // Not Recommended - do not use user overrides
+#define LOCALE_USE_CP_ACP             0x40000000   // DEPRECATED, call Unicode APIs instead: use the system ACP
 
 #if(WINVER >= 0x0400)
 #define LOCALE_RETURN_NUMBER          0x20000000   // return number instead of string
@@ -521,34 +583,8 @@ extern "C" {
 #define LOCALE_SENGLISHCOUNTRYNAME    0x00001002   // English name of country/region, eg "Germany"
 #define LOCALE_SNATIVECOUNTRYNAME     0x00000008   // native name of country/region, eg "Deutschland"
 
-//
-// Legacy labels for the locale name values
-//
-#define LOCALE_SLANGUAGE              0x00000002   // localized name of locale, eg "German (Germany)" in UI language
-#if (WINVER >= _WIN32_WINNT_VISTA)
-#define LOCALE_SLANGDISPLAYNAME       0x0000006f   // Language Display Name for a language, eg "German" in UI language
-#endif //(WINVER >= _WIN32_WINNT_VISTA)
-#define LOCALE_SENGLANGUAGE           0x00001001   // English name of language, eg "German"
-#define LOCALE_SNATIVELANGNAME        0x00000004   // native name of language, eg "Deutsch"
-#define LOCALE_SCOUNTRY               0x00000006   // localized name of country/region, eg "Germany" in UI language
-#define LOCALE_SENGCOUNTRY            0x00001002   // English name of country/region, eg "Germany"
-#define LOCALE_SNATIVECTRYNAME        0x00000008   // native name of country/region, eg "Deutschland"
-
 // Additional LCTypes
-#define LOCALE_ILANGUAGE              0x00000001   // language id, LOCALE_SNAME preferred
-
-#define LOCALE_SABBREVLANGNAME        0x00000003   // arbitrary abbreviated language name, LOCALE_SISO639LANGNAME preferred
-
 #define LOCALE_IDIALINGCODE           0x00000005   // country/region dialing code, example: en-US and en-CA return 1.
-#define LOCALE_ICOUNTRY               0x00000005   // Deprecated synonym for LOCALE_IDIALINGCODE, use LOCALE_SISO3166CTRYNAME to query for a region identifier.
-#define LOCALE_SABBREVCTRYNAME        0x00000007   // arbitrary abbreviated country/region name, LOCALE_SISO3166CTRYNAME preferred
-#define LOCALE_IGEOID                 0x0000005B   // geographical location id, eg "244"
-
-#define LOCALE_IDEFAULTLANGUAGE       0x00000009   // default language id, deprecated
-#define LOCALE_IDEFAULTCOUNTRY        0x0000000A   // default country/region code, deprecated
-#define LOCALE_IDEFAULTCODEPAGE       0x0000000B   // default oem code page (use of Unicode is recommended instead)
-#define LOCALE_IDEFAULTANSICODEPAGE   0x00001004   // default ansi code page (use of Unicode is recommended instead)
-#define LOCALE_IDEFAULTMACCODEPAGE    0x00001011   // default mac code page (use of Unicode is recommended instead)
 
 #define LOCALE_SLIST                  0x0000000C   // list item separator, eg "," for "1,2,3,4"
 #define LOCALE_IMEASURE               0x0000000D   // 0 = metric, 1 = US measurement system
@@ -567,27 +603,14 @@ extern "C" {
 #define LOCALE_SMONTHOUSANDSEP        0x00000017   // monetary thousand separator, eg "," for $1,234.00
 #define LOCALE_SMONGROUPING           0x00000018   // monetary grouping, eg "3;0" for $1,000,000.00
 #define LOCALE_ICURRDIGITS            0x00000019   // # local monetary digits, eg 2 for $1.00
-#define LOCALE_IINTLCURRDIGITS        0x0000001A   // # intl monetary digits, eg 2 for $1.00
-#define LOCALE_ICURRENCY              0x0000001B   // positive currency mode, 0-3, see documenation
+#define LOCALE_ICURRENCY              0x0000001B   // positive currency mode, 0-3, see documentation
 #define LOCALE_INEGCURR               0x0000001C   // negative currency mode, 0-15, see documentation
 
-#define LOCALE_SDATE                  0x0000001D   // date separator (derived from LOCALE_SSHORTDATE, use that instead)
-#define LOCALE_STIME                  0x0000001E   // time separator (derived from LOCALE_STIMEFORMAT, use that instead)
 #define LOCALE_SSHORTDATE             0x0000001F   // short date format string, eg "MM/dd/yyyy"
 #define LOCALE_SLONGDATE              0x00000020   // long date format string, eg "dddd, MMMM dd, yyyy"
 #define LOCALE_STIMEFORMAT            0x00001003   // time format string, eg "HH:mm:ss"
-#define LOCALE_IDATE                  0x00000021   // short date format ordering (derived from LOCALE_SSHORTDATE, use that instead)
-#define LOCALE_ILDATE                 0x00000022   // long date format ordering (derived from LOCALE_SLONGDATE, use that instead)
-#define LOCALE_ITIME                  0x00000023   // time format specifier (derived from LOCALE_STIMEFORMAT, use that instead)
-#define LOCALE_ITIMEMARKPOSN          0x00001005   // time marker position (derived from LOCALE_STIMEFORMAT, use that instead)
-#define LOCALE_ICENTURY               0x00000024   // century format specifier (short date, LOCALE_SSHORTDATE is preferred)
-#define LOCALE_ITLZERO                0x00000025   // leading zeros in time field (derived from LOCALE_STIMEFORMAT, use that instead)
-#define LOCALE_IDAYLZERO              0x00000026   // leading zeros in day field (short date, LOCALE_SSHORTDATE is preferred)
-#define LOCALE_IMONLZERO              0x00000027   // leading zeros in month field (short date, LOCALE_SSHORTDATE is preferred)
 #define LOCALE_SAM                    0x00000028   // AM designator, eg "AM"
-#define LOCALE_S1159                  LOCALE_SAM
 #define LOCALE_SPM                    0x00000029   // PM designator, eg "PM"
-#define LOCALE_S2359                  LOCALE_SPM
 
 #define LOCALE_ICALENDARTYPE          0x00001009   // type of calendar specifier, eg CAL_GREGORIAN
 #define LOCALE_IOPTIONALCALENDAR      0x0000100B   // additional calendar types specifier, eg CAL_GREGORIAN_US
@@ -651,7 +674,6 @@ extern "C" {
 #endif /* WINVER >= 0x0400 */
 
 #if(WINVER >= 0x0500)
-#define LOCALE_IDEFAULTEBCDICCODEPAGE 0x00001012   // default ebcdic code page (use of Unicode is recommended instead)
 #define LOCALE_IPAPERSIZE             0x0000100A   // 1 = letter, 5 = legal, 8 = a3, 9 = a4
 #define LOCALE_SENGCURRNAME           0x00001007   // english name of currency, eg "Euro"
 #define LOCALE_SNATIVECURRNAME        0x00001008   // native name of currency, eg "euro"
@@ -664,7 +686,6 @@ extern "C" {
 #if (WINVER >= 0x0600)
 #define LOCALE_SNAME                  0x0000005c   // locale name (ie: en-us)
 #define LOCALE_SDURATION              0x0000005d   // time duration format, eg "hh:mm:ss"
-#define LOCALE_SKEYBOARDSTOINSTALL    0x0000005e   // Used internally, see GetKeyboardLayoutName() function
 #define LOCALE_SSHORTESTDAYNAME1      0x00000060   // Shortest day name for Monday
 #define LOCALE_SSHORTESTDAYNAME2      0x00000061   // Shortest day name for Tuesday
 #define LOCALE_SSHORTESTDAYNAME3      0x00000062   // Shortest day name for Wednesday
@@ -707,6 +728,65 @@ extern "C" {
 #define LOCALE_SSHORTESTAM            0x0000007e   // Shortest AM designator, eg "A"
 #define LOCALE_SSHORTESTPM            0x0000007f   // Shortest PM designator, eg "P"
 #endif
+
+//
+// DEPRECATED LCTYPEs
+//
+
+// DEPRECATED LCTYPEs for Code Pages
+// Applications are strongly encouraged to Use Unicode, such as UTF-16 (WCHAR type)
+// or the CP_UTF8 Code Page.  Legacy encodings are unable to represent the full
+// set of scripts/language and characters (& emoji!) available on modern computers.
+// Use of legacy code pages (encodings) is a leading cause of data loss and corruption.
+#define LOCALE_IDEFAULTCODEPAGE       0x0000000B   // default oem code page for locale (user may configure as UTF-8, use of Unicode is recommended instead)
+#define LOCALE_IDEFAULTANSICODEPAGE   0x00001004   // default ansi code page for locale (user may configure as UTF-8, use of Unicode is recommended instead)
+#define LOCALE_IDEFAULTMACCODEPAGE    0x00001011   // default mac code page for locale (user may configure as UTF-8, use of Unicode is recommended instead)
+#if(WINVER >= 0x0500)
+#define LOCALE_IDEFAULTEBCDICCODEPAGE 0x00001012   // default ebcdic code page for a locale (use of Unicode is recommended instead)
+#endif /* WINVER >= 0x0500 */
+
+// LCTYPEs using out-of-date concepts
+#define LOCALE_ILANGUAGE              0x00000001   // DEPRECATED language id (LCID), LOCALE_SNAME preferred
+#define LOCALE_SABBREVLANGNAME        0x00000003   // DEPRECATED arbitrary abbreviated language name, LOCALE_SISO639LANGNAME instead.
+#define LOCALE_SABBREVCTRYNAME        0x00000007   // DEPRECATED arbitrary abbreviated country/region name, LOCALE_SISO3166CTRYNAME instead.
+#define LOCALE_IGEOID                 0x0000005B   // DEPRECATED geographical location id, use LOCALE_SISO3166CTRYNAME instead.
+#define LOCALE_IDEFAULTLANGUAGE       0x00000009   // DEPRECATED default language id, deprecated
+#define LOCALE_IDEFAULTCOUNTRY        0x0000000A   // DEPRECATED default country/region code, deprecated
+#define LOCALE_IINTLCURRDIGITS        0x0000001A   // DEPRECATED, use LOCALE_ICURRDIGITS # intl monetary digits, eg 2 for $1.00
+
+// Derived legacy date & time values for compatibility only.
+// Please use the appropriate date or time pattern instead.
+// These can be misleading, for example a locale configured as 12h24m52s could have a time separator of "h".
+#define LOCALE_SDATE                  0x0000001D   // DEPRECATED date separator (derived from LOCALE_SSHORTDATE, use that instead)
+#define LOCALE_STIME                  0x0000001E   // DEPRECATED time separator (derived from LOCALE_STIMEFORMAT, use that instead)
+#define LOCALE_IDATE                  0x00000021   // DEPRECATED short date format ordering (derived from LOCALE_SSHORTDATE, use that instead)
+#define LOCALE_ILDATE                 0x00000022   // DEPRECATED long date format ordering (derived from LOCALE_SLONGDATE, use that instead)
+#define LOCALE_ITIME                  0x00000023   // DEPRECATED time format specifier (derived from LOCALE_STIMEFORMAT, use that instead)
+#define LOCALE_ITIMEMARKPOSN          0x00001005   // DEPRECATED time marker position (derived from LOCALE_STIMEFORMAT, use that instead)
+#define LOCALE_ICENTURY               0x00000024   // DEPRECATED century format specifier (short date, LOCALE_SSHORTDATE is preferred)
+#define LOCALE_ITLZERO                0x00000025   // DEPRECATED leading zeros in time field (derived from LOCALE_STIMEFORMAT, use that instead)
+#define LOCALE_IDAYLZERO              0x00000026   // DEPRECATED leading zeros in day field (short date, LOCALE_SSHORTDATE is preferred)
+#define LOCALE_IMONLZERO              0x00000027   // DEPRECATED leading zeros in month field (short date, LOCALE_SSHORTDATE is preferred)
+
+#if(WINVER >= 0x0600)
+#define LOCALE_SKEYBOARDSTOINSTALL    0x0000005e   // Used internally, see GetKeyboardLayoutName() function
+#endif /* WINVER >= 0x0600 */
+
+// LCTYPEs which have been renamed to enable more understandable source code.
+#define LOCALE_SLANGUAGE              LOCALE_SLOCALIZEDDISPLAYNAME   // DEPRECATED as new name is more readable.
+#if (WINVER >= _WIN32_WINNT_VISTA)
+#define LOCALE_SLANGDISPLAYNAME       LOCALE_SLOCALIZEDLANGUAGENAME  // DEPRECATED as new name is more readable.
+#endif //(WINVER >= _WIN32_WINNT_VISTA)
+#define LOCALE_SENGLANGUAGE           LOCALE_SENGLISHLANGUAGENAME    // DEPRECATED as new name is more readable.
+#define LOCALE_SNATIVELANGNAME        LOCALE_SNATIVELANGUAGENAME     // DEPRECATED as new name is more readable.
+#define LOCALE_SCOUNTRY               LOCALE_SLOCALIZEDCOUNTRYNAME   // DEPRECATED as new name is more readable.
+#define LOCALE_SENGCOUNTRY            LOCALE_SENGLISHCOUNTRYNAME     // DEPRECATED as new name is more readable.
+#define LOCALE_SNATIVECTRYNAME        LOCALE_SNATIVECOUNTRYNAME      // DEPRECATED as new name is more readable.
+// DEPRECATED: Use LOCALE_SISO3166CTRYNAME to query for a region identifier, LOCALE_ICOUNTRY is not a region identifier.
+#define LOCALE_ICOUNTRY               LOCALE_IDIALINGCODE   // Deprecated synonym for LOCALE_IDIALINGCODE
+#define LOCALE_S1159                  LOCALE_SAM   // DEPRECATED: Please use LOCALE_SAM, which is more readable.
+#define LOCALE_S2359                  LOCALE_SPM   // DEPRECATED: Please use LOCALE_SPM, which is more readable.
+
 
 //
 //  Time Flags for GetTimeFormat.
@@ -752,16 +832,17 @@ extern "C" {
 //
 //    CAL_NOUSEROVERRIDE
 //
-//    CAL_USE_CP_ACP is used in the A (Ansi) apis that need to do string
-//    translation.
-//
 //    CAL_RETURN_NUMBER will return the result from GetCalendarInfo as a
 //    number instead of a string.  This flag is only valid for the CalTypes
 //    beginning with CAL_I.
 //
+//    DEPRECATED: CAL_USE_CP_ACP is used in many of the A (Ansi) apis that need
+//                to do string translation.  Callers are encouraged to use the W
+//                (WCHAR/Unicode) apis instead.
+//
 #if(WINVER >= 0x0500)
-#define CAL_NOUSEROVERRIDE        LOCALE_NOUSEROVERRIDE         // do not use user overrides
-#define CAL_USE_CP_ACP            LOCALE_USE_CP_ACP             // use the system ACP
+#define CAL_NOUSEROVERRIDE        LOCALE_NOUSEROVERRIDE         // Not Recommended - do not use user overrides
+#define CAL_USE_CP_ACP            LOCALE_USE_CP_ACP             // DEPRECATED, call Unicode APIs instead: use the system ACP
 #define CAL_RETURN_NUMBER         LOCALE_RETURN_NUMBER          // return number instead of string
 #endif /* WINVER >= 0x0500 */
 
@@ -874,7 +955,15 @@ extern "C" {
 #define CAL_UMALQURA                   23     // UmAlQura Hijri (Arabic Lunar) calendar
 
 //
-//  Language Group ID Values (Deprecated)
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
+//  Language Group ID Values
+//
+// The "Language Group" concept is an obsolete concept.
+// The groups returned are not well defined, arbitrary, inconsistent, inaccurate,
+// no longer maintained, and no longer supported.
+//
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
 //
 #define LGRPID_WESTERN_EUROPE        0x0001   // Western Europe & U.S.
 #define LGRPID_CENTRAL_EUROPE        0x0002   // Central Europe
@@ -951,7 +1040,15 @@ extern "C" {
 ////////////////////////////////////////////////////////////////////////////
 
 //
-//  Language Group ID.
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
+//  Language Group ID 
+//
+// The "Language Group" concept is an obsolete concept.
+// The groups returned are not well defined, arbitrary, inconsistent, inaccurate,
+// no longer maintained, and no longer supported.
+//
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
 //
 typedef DWORD LGRPID;
 
@@ -975,13 +1072,20 @@ typedef DWORD CALID;
 //
 //  CP Info.
 //
-
+// Deprecated.  Applications should use Unicode (WCHAR / UTF-16 or UTF-8)
+//
+// WARNING: These structures fail for some encodings, including UTF-8, which
+//          do not fit into the assumptions of these APIs.
+//
+DEPRECATED("Use Unicode. The information in this structure cannot represent all encodings accurately and may be unreliable on many machines. Set DISABLE_NLS_DEPRECATION to disable this warning.")
 typedef struct _cpinfo {
     UINT    MaxCharSize;                    // max length (in bytes) of a char
     BYTE    DefaultChar[MAX_DEFAULTCHAR];   // default character
     BYTE    LeadByte[MAX_LEADBYTES];        // lead byte ranges
 } CPINFO, *LPCPINFO;
 
+
+DEPRECATED("Use Unicode. The information in this structure cannot represent all encodings accurately and may be unreliable on many machines. Set DISABLE_NLS_DEPRECATION to disable this warning.")
 typedef struct _cpinfoexA {
     UINT    MaxCharSize;                    // max length (in bytes) of a char
     BYTE    DefaultChar[MAX_DEFAULTCHAR];   // default character (MB)
@@ -990,6 +1094,7 @@ typedef struct _cpinfoexA {
     UINT    CodePage;                       // code page id
     CHAR    CodePageName[MAX_PATH];         // code page name (Unicode)
 } CPINFOEXA, *LPCPINFOEXA;
+DEPRECATED("Use Unicode. The information in this structure cannot represent all encodings accurately and may be unreliable on many machines. Set DISABLE_NLS_DEPRECATION to disable this warning.")
 typedef struct _cpinfoexW {
     UINT    MaxCharSize;                    // max length (in bytes) of a char
     BYTE    DefaultChar[MAX_DEFAULTCHAR];   // default character (MB)
@@ -1126,34 +1231,53 @@ typedef struct _nlsversioninfoex{
 //
 //  GEO defines
 //
-
-typedef LONG    GEOID;
 typedef DWORD   GEOTYPE;
 typedef DWORD   GEOCLASS;
+//
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
+//  DEPRECATED: The GEOID  concept is deprecated, please use
+//  Country/Region Names instead, eg: "US" instead of a GEOID like 244.
+//  See the documentation for GetGeoInfoEx.
+//
+//  WARNING: These values are arbitrarily assigned values, please use
+//           standard country/region names instead, such as "US".
+//
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
+typedef LONG    GEOID;
 
 #define GEOID_NOT_AVAILABLE -1
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+#define GEO_NAME_USER_DEFAULT NULL
+#endif
 
 //
 //  GEO information types for clients to query
 //
-
+// Please use GetGeoInfoEx and query by country/region name instead of GEOID (eg: "US" instead of 244)
 enum SYSGEOTYPE {
-    GEO_NATION      =       0x0001,
+    GEO_NATION      =       0x0001, // DEPRECATED Not used by name API
     GEO_LATITUDE    =       0x0002,
     GEO_LONGITUDE   =       0x0003,
     GEO_ISO2        =       0x0004,
     GEO_ISO3        =       0x0005,
-    GEO_RFC1766     =       0x0006,
-    GEO_LCID        =       0x0007,
+    GEO_RFC1766     =       0x0006, // DEPRECATED and misleading, not used by name API
+    GEO_LCID        =       0x0007, // DEPRECATED Not used by name API
     GEO_FRIENDLYNAME=       0x0008,
     GEO_OFFICIALNAME=       0x0009,
-    GEO_TIMEZONES   =       0x000A,
-    GEO_OFFICIALLANGUAGES = 0x000B,
+    GEO_TIMEZONES   =       0x000A, // Not implemented
+    GEO_OFFICIALLANGUAGES = 0x000B, // Not implemented
     GEO_ISO_UN_NUMBER =     0x000C,
     GEO_PARENT      =       0x000D,
     GEO_DIALINGCODE =       0x000E,
-    GEO_CURRENCYCODE=       0x000F,
-    GEO_CURRENCYSYMBOL=     0x0010
+    GEO_CURRENCYCODE=       0x000F, // eg: USD
+    GEO_CURRENCYSYMBOL=     0x0010, // eg: $
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+    GEO_NAME        =       0x0011, // Name, eg: US or 001
+    GEO_ID          =       0x0012  // DEPRECATED - For compatibility, please avoid
+#endif
 };
 
 //
@@ -1201,53 +1325,57 @@ typedef enum _NORM_FORM {
 
 #ifdef STRICT
 
-typedef BOOL (CALLBACK* LANGUAGEGROUP_ENUMPROCA)(LGRPID, LPSTR, LPSTR, DWORD, LONG_PTR);
-typedef BOOL (CALLBACK* LANGGROUPLOCALE_ENUMPROCA)(LGRPID, LCID, LPSTR, LONG_PTR);
-typedef BOOL (CALLBACK* UILANGUAGE_ENUMPROCA)(LPSTR, LONG_PTR);
-typedef BOOL (CALLBACK* CODEPAGE_ENUMPROCA)(LPSTR);
-typedef BOOL (CALLBACK* DATEFMT_ENUMPROCA)(LPSTR);
-typedef BOOL (CALLBACK* DATEFMT_ENUMPROCEXA)(LPSTR, CALID);
-typedef BOOL (CALLBACK* TIMEFMT_ENUMPROCA)(LPSTR);
-typedef BOOL (CALLBACK* CALINFO_ENUMPROCA)(LPSTR);
-typedef BOOL (CALLBACK* CALINFO_ENUMPROCEXA)(LPSTR, CALID);
-typedef BOOL (CALLBACK* LOCALE_ENUMPROCA)(LPSTR);
-typedef BOOL (CALLBACK* LOCALE_ENUMPROCW)(LPWSTR);
-
-typedef BOOL (CALLBACK* LANGUAGEGROUP_ENUMPROCW)(LGRPID, LPWSTR, LPWSTR, DWORD, LONG_PTR);
-typedef BOOL (CALLBACK* LANGGROUPLOCALE_ENUMPROCW)(LGRPID, LCID, LPWSTR, LONG_PTR);
+typedef BOOL (CALLBACK* LANGUAGEGROUP_ENUMPROCA)(LGRPID, LPSTR, LPSTR, DWORD, LONG_PTR);    // Deprecated, please use Unicode
+typedef BOOL (CALLBACK* LANGGROUPLOCALE_ENUMPROCA)(LGRPID, LCID, LPSTR, LONG_PTR);          // Deprecated, please use Unicode
+typedef BOOL (CALLBACK* UILANGUAGE_ENUMPROCA)(LPSTR, LONG_PTR);                             // Deprecated, please use Unicode
+typedef BOOL (CALLBACK* CODEPAGE_ENUMPROCA)(LPSTR);                                         // Deprecated, please use Unicode
+typedef BOOL (CALLBACK* DATEFMT_ENUMPROCA)(LPSTR);                                          // Deprecated, please use Unicode
+typedef BOOL (CALLBACK* DATEFMT_ENUMPROCEXA)(LPSTR, CALID);                                 // Deprecated, please use Unicode
+typedef BOOL (CALLBACK* TIMEFMT_ENUMPROCA)(LPSTR);                                          // Deprecated, please use Unicode
+typedef BOOL (CALLBACK* CALINFO_ENUMPROCA)(LPSTR);                                          // Deprecated, please use Unicode
+typedef BOOL (CALLBACK* CALINFO_ENUMPROCEXA)(LPSTR, CALID);                                 // Deprecated, please use Unicode
+typedef BOOL (CALLBACK* LOCALE_ENUMPROCA)(LPSTR);                                           // Deprecated, please use Unicode
+typedef BOOL (CALLBACK* LOCALE_ENUMPROCW)(LPWSTR);                                          // DEPRECATED: please use LOCALE_ENUMPROCEX
+typedef BOOL (CALLBACK* LANGUAGEGROUP_ENUMPROCW)(LGRPID, LPWSTR, LPWSTR, DWORD, LONG_PTR);  // DEPRECATED: Language groups are no longer supported
+typedef BOOL (CALLBACK* LANGGROUPLOCALE_ENUMPROCW)(LGRPID, LCID, LPWSTR, LONG_PTR);         // DEPRECATED: Language groups are no longer supported
 typedef BOOL (CALLBACK* UILANGUAGE_ENUMPROCW)(LPWSTR, LONG_PTR);
-typedef BOOL (CALLBACK* CODEPAGE_ENUMPROCW)(LPWSTR);
+typedef BOOL (CALLBACK* CODEPAGE_ENUMPROCW)(LPWSTR);            // Please use Unicode / UTF-8
 typedef BOOL (CALLBACK* DATEFMT_ENUMPROCW)(LPWSTR);
 typedef BOOL (CALLBACK* DATEFMT_ENUMPROCEXW)(LPWSTR, CALID);
 typedef BOOL (CALLBACK* TIMEFMT_ENUMPROCW)(LPWSTR);
 typedef BOOL (CALLBACK* CALINFO_ENUMPROCW)(LPWSTR);
 typedef BOOL (CALLBACK* CALINFO_ENUMPROCEXW)(LPWSTR, CALID);
-typedef BOOL (CALLBACK* GEO_ENUMPROC)(GEOID);
+typedef BOOL (CALLBACK* GEO_ENUMPROC)(GEOID);                   // DEPRECATED, use GEO_ENUMNAMEPROC instead
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+typedef BOOL (CALLBACK* GEO_ENUMNAMEPROC)(PWSTR, LPARAM);
+#endif
 
 #else // !STRICT
 
-typedef FARPROC LANGUAGEGROUP_ENUMPROCA;
-typedef FARPROC LANGGROUPLOCALE_ENUMPROCA;
-typedef FARPROC UILANGUAGE_ENUMPROCA;
-typedef FARPROC CODEPAGE_ENUMPROCA;
-typedef FARPROC DATEFMT_ENUMPROCA;
-typedef FARPROC DATEFMT_ENUMPROCEXA;
-typedef FARPROC TIMEFMT_ENUMPROCA;
-typedef FARPROC CALINFO_ENUMPROCA;
-typedef FARPROC CALINFO_ENUMPROCEXA;
-typedef FARPROC GEO_ENUMPROC;
-typedef FARPROC LOCALE_ENUMPROCA;
-typedef FARPROC LOCALE_ENUMPROCW;
-
-typedef FARPROC LANGUAGEGROUP_ENUMPROCW;
-typedef FARPROC LANGGROUPLOCALE_ENUMPROCW;
+typedef FARPROC LANGUAGEGROUP_ENUMPROCA;       // Deprecated, please use Unicode
+typedef FARPROC LANGGROUPLOCALE_ENUMPROCA;     // Deprecated, please use Unicode
+typedef FARPROC UILANGUAGE_ENUMPROCA;          // Deprecated, please use Unicode
+typedef FARPROC CODEPAGE_ENUMPROCA;            // Deprecated, please use Unicode
+typedef FARPROC DATEFMT_ENUMPROCA;             // Deprecated, please use Unicode
+typedef FARPROC DATEFMT_ENUMPROCEXA;           // Deprecated, please use Unicode
+typedef FARPROC TIMEFMT_ENUMPROCA;             // Deprecated, please use Unicode
+typedef FARPROC CALINFO_ENUMPROCA;             // Deprecated, please use Unicode
+typedef FARPROC CALINFO_ENUMPROCEXA;           // Deprecated, please use Unicode
+typedef FARPROC GEO_ENUMPROC;                  // DEPRECATED, use GEO_ENUMNAMEPROC instead
+typedef FARPROC LOCALE_ENUMPROCA;              // Deprecated, please use Unicode
+typedef FARPROC LOCALE_ENUMPROCW;              // DEPRECATED: please use LOCALE_ENUMPROCEX
+typedef FARPROC LANGUAGEGROUP_ENUMPROCW;       // DEPRECATED: Language groups are no longer supported
+typedef FARPROC LANGGROUPLOCALE_ENUMPROCW;     // DEPRECATED: Language groups are no longer supported
 typedef FARPROC UILANGUAGE_ENUMPROCW;
-typedef FARPROC CODEPAGE_ENUMPROCW;
+typedef FARPROC CODEPAGE_ENUMPROCW;            // Please use Unicode / UTF-8
 typedef FARPROC DATEFMT_ENUMPROCW;
 typedef FARPROC DATEFMT_ENUMPROCEXW;
 typedef FARPROC TIMEFMT_ENUMPROCW;
 typedef FARPROC CALINFO_ENUMPROCW;
 typedef FARPROC CALINFO_ENUMPROCEXW;
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+typedef FARPROC GEO_ENUMNAMEPROC;
+#endif
 
 #endif // !STRICT
 
@@ -1366,6 +1494,8 @@ typedef struct _FILEMUIINFO {
 //
 //  Code Page Dependent APIs.
 //
+//  Applications should use Unicode (WCHAR / UTF-16 &/or UTF-8)
+//
 
 WINBASEAPI
 BOOL
@@ -1395,6 +1525,7 @@ GetOEMCP(void);
 #pragma region Desktop or Pc Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP|WINAPI_PARTITION_PC_APP | WINAPI_PARTITION_SYSTEM)
 
+DEPRECATED("Use Unicode. The information in this structure cannot represent all encodings accuratedly and may be unreliable on many machines. Set DISABLE_NLS_DEPRECATION to disable this warning.")
 WINBASEAPI
 BOOL
 WINAPI
@@ -1402,6 +1533,7 @@ GetCPInfo(
     _In_ UINT       CodePage,
     _Out_ LPCPINFO  lpCPInfo);
 
+DEPRECATED("Use Unicode. The information in this structure cannot represent all encodings accurately and may be unreliable on many machines. Set DISABLE_NLS_DEPRECATION to disable this warning.")
 WINBASEAPI
 BOOL
 WINAPI
@@ -1409,6 +1541,7 @@ GetCPInfoExA(
     _In_ UINT          CodePage,
     _In_ DWORD         dwFlags,
     _Out_ LPCPINFOEXA  lpCPInfoEx);
+DEPRECATED("Use Unicode. The information in this structure cannot represent all encodings accurately and may be unreliable on many machines. Set DISABLE_NLS_DEPRECATION to disable this warning.")
 WINBASEAPI
 BOOL
 WINAPI
@@ -1432,7 +1565,7 @@ GetCPInfoExW(
 //  Locale Dependent APIs.
 //
 
-// For Windows Vista and above CompareStringEx is preferred
+// DEPRECATED: CompareStringEx is preferred
 WINBASEAPI
 int
 WINAPI
@@ -1478,7 +1611,7 @@ CompareString(
 
 #if (WINVER >= 0x0600)
 
-// For Windows Vista and above FindNLSStringEx is preferred
+// DEPRECATED: FindNLSStringEx is preferred
 WINBASEAPI
 int
 WINAPI
@@ -1493,7 +1626,7 @@ FindNLSString(
 
 #endif //(WINVER >= 0x0600)
 
-// For Windows Vista and above LCMapStringEx is preferred
+// DEPRECATED: LCMapStringEx is preferred
 WINBASEAPI
 int
 WINAPI
@@ -1508,6 +1641,7 @@ LCMapStringW(
 #define LCMapString  LCMapStringW
 #endif
 
+// DEPRECATED: Use Unicode, LCMapStringEx is preferred
 WINBASEAPI
 int
 WINAPI
@@ -1528,7 +1662,7 @@ LCMapStringA(
 #pragma region Application Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
-// For Windows Vista and above GetLocaleInfoEx is preferred
+// DEPRECATED: GetLocaleInfoEx is preferred
 WINBASEAPI
 int
 WINAPI
@@ -1542,6 +1676,7 @@ GetLocaleInfoW(
 #define GetLocaleInfo  GetLocaleInfoW
 #endif
 
+// DEPRECATED: Use Unicode. GetLocaleInfoEx is preferred
 WINBASEAPI
 int 
 WINAPI 
@@ -1584,7 +1719,7 @@ SetLocaleInfoW(
 
 #if (WINVER >= 0x040A)
 
-// For Windows Vista and above GetCalendarInfoEx is preferred
+// DEPRECATED: GetCalendarInfoEx is preferred
 WINBASEAPI
 int
 WINAPI
@@ -1595,7 +1730,7 @@ GetCalendarInfoA(
     _Out_writes_opt_(cchData) LPSTR   lpCalData,
     _In_ int      cchData,
     _Out_opt_ LPDWORD  lpValue);
-// For Windows Vista and above GetCalendarInfoEx is preferred
+// DEPRECATED: GetCalendarInfoEx is preferred
 WINBASEAPI
 int
 WINAPI
@@ -1672,6 +1807,7 @@ LoadStringByReference(
 #pragma region Application Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
+DEPRECATED("Use Unicode. The information provided by this structure is inaccurate for some encodings and may be unreliable on many machines.")
 WINBASEAPI         
 BOOL               
 WINAPI             
@@ -1679,6 +1815,7 @@ IsDBCSLeadByte(
     _In_ BYTE  TestChar 
     );
 
+DEPRECATED("Use Unicode. The information provided by this structure is inaccurate for some encodings and may be unreliable on many machines.")
 WINBASEAPI
 BOOL
 WINAPI
@@ -1688,6 +1825,8 @@ IsDBCSLeadByteEx(
     );
 
 #if (WINVER >= 0x0600)
+// Use of Locale Names is preferred, LCIDs are deprecated.
+// This function is provided to enable compatibility with legacy data sets only.
 WINBASEAPI
 int
 WINAPI
@@ -1697,6 +1836,8 @@ LCIDToLocaleName(
     _In_ int      cchName,
     _In_ DWORD    dwFlags);
 
+// Use of Locale Names is preferred, LCIDs are deprecated.
+// This function is provided to enable compatibility with legacy data sets only.
 WINBASEAPI
 LCID
 WINAPI
@@ -1712,7 +1853,7 @@ LocaleNameToLCID(
 #pragma region Desktop Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
-// For Windows Vista and above GetDurationFormatEx is preferred
+// DEPRECATED: GetDurationFormatEx is preferred
 #if (WINVER >= 0x0600)
 WINBASEAPI
 int
@@ -1733,7 +1874,7 @@ GetDurationFormat(
 #pragma region Desktop Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
-// For Windows Vista and above GetNumberFormatEx is preferred
+// DEPRECATED: GetNumberFormatEx is preferred
 WINBASEAPI
 int
 WINAPI
@@ -1744,7 +1885,7 @@ GetNumberFormatA(
     _In_opt_ CONST NUMBERFMTA *lpFormat,
     _Out_writes_opt_(cchNumber) LPSTR          lpNumberStr,
     _In_ int              cchNumber);
-// For Windows Vista and above GetNumberFormatEx is preferred
+// DEPRECATED: GetNumberFormatEx is preferred
 WINBASEAPI
 int
 WINAPI
@@ -1761,7 +1902,7 @@ GetNumberFormatW(
 #define GetNumberFormat  GetNumberFormatA
 #endif // !UNICODE
 
-// For Windows Vista and above GetCurrencyFormatEx is preferred
+// DEPRECATED: GetCurrencyFormatEx is preferred
 WINBASEAPI
 int
 WINAPI
@@ -1772,7 +1913,7 @@ GetCurrencyFormatA(
     _In_opt_ CONST CURRENCYFMTA *lpFormat,
     _Out_writes_opt_(cchCurrency) LPSTR            lpCurrencyStr,
     _In_ int                cchCurrency);
-// For Windows Vista and above GetCurrencyFormatEx is preferred
+// DEPRECATED: GetCurrencyFormatEx is preferred
 WINBASEAPI
 int
 WINAPI
@@ -1789,7 +1930,7 @@ GetCurrencyFormatW(
 #define GetCurrencyFormat  GetCurrencyFormatA
 #endif // !UNICODE
 
-// For Windows Vista and above EnumCalendarInfoExEx is preferred
+// DEPRECATED: EnumCalendarInfoExEx is preferred
 WINBASEAPI
 BOOL
 WINAPI
@@ -1798,7 +1939,7 @@ EnumCalendarInfoA(
     _In_ LCID              Locale,
     _In_ CALID             Calendar,
     _In_ CALTYPE           CalType);
-// For Windows Vista and above EnumCalendarInfoExEx is preferred
+// DEPRECATED: EnumCalendarInfoExEx is preferred
 WINBASEAPI
 BOOL
 WINAPI
@@ -1814,7 +1955,7 @@ EnumCalendarInfoW(
 #endif // !UNICODE
 
 #if(WINVER >= 0x0500)
-// For Windows Vista and above EnumCalendarInfoExEx is preferred
+// DEPRECATED: EnumCalendarInfoExEx is preferred
 WINBASEAPI
 BOOL
 WINAPI
@@ -1823,7 +1964,7 @@ EnumCalendarInfoExA(
     _In_ LCID                Locale,
     _In_ CALID               Calendar,
     _In_ CALTYPE             CalType);
-// For Windows Vista and above EnumCalendarInfoExEx is preferred
+// DEPRECATED: EnumCalendarInfoExEx is preferred
 WINBASEAPI
 BOOL
 WINAPI
@@ -1839,7 +1980,7 @@ EnumCalendarInfoExW(
 #endif // !UNICODE
 #endif /* WINVER >= 0x0500 */
 
-// For Windows Vista and above EnumTimeFormatsEx is preferred
+// DEPRECATED: EnumTimeFormatsEx is preferred
 WINBASEAPI
 BOOL
 WINAPI
@@ -1847,7 +1988,7 @@ EnumTimeFormatsA(
     _In_ TIMEFMT_ENUMPROCA lpTimeFmtEnumProc,
     _In_ LCID              Locale,
     _In_ DWORD             dwFlags);
-// For Windows Vista and above EnumTimeFormatsEx is preferred
+// DEPRECATED: EnumTimeFormatsEx is preferred
 WINBASEAPI
 BOOL
 WINAPI
@@ -1861,7 +2002,7 @@ EnumTimeFormatsW(
 #define EnumTimeFormats  EnumTimeFormatsA
 #endif // !UNICODE
 
-// For Windows Vista and above EnumDateFormatsExEx is preferred
+// DEPRECATED: EnumDateFormatsExEx is preferred
 WINBASEAPI
 BOOL
 WINAPI
@@ -1869,7 +2010,7 @@ EnumDateFormatsA(
     _In_ DATEFMT_ENUMPROCA lpDateFmtEnumProc,
     _In_ LCID              Locale,
     _In_ DWORD             dwFlags);
-// For Windows Vista and above EnumDateFormatsExEx is preferred
+// DEPRECATED: EnumDateFormatsExEx is preferred
 WINBASEAPI
 BOOL
 WINAPI
@@ -1884,7 +2025,7 @@ EnumDateFormatsW(
 #endif // !UNICODE
 
 #if(WINVER >= 0x0500)
-// For Windows Vista and above EnumDateFormatsExEx is preferred
+// DEPRECATED: EnumDateFormatsExEx is preferred
 WINBASEAPI
 BOOL
 WINAPI
@@ -1892,7 +2033,7 @@ EnumDateFormatsExA(
     _In_ DATEFMT_ENUMPROCEXA lpDateFmtEnumProcEx,
     _In_ LCID                Locale,
     _In_ DWORD               dwFlags);
-// For Windows Vista and above EnumDateFormatsExEx is preferred
+// DEPRECATED: EnumDateFormatsExEx is preferred
 WINBASEAPI
 BOOL
 WINAPI
@@ -1908,6 +2049,7 @@ EnumDateFormatsExW(
 #endif /* WINVER >= 0x0500 */
 
 #if(WINVER >= 0x0500)
+// DEPRECATED: The Language Group concept is obsolete and no longer supported.
 WINBASEAPI
 BOOL
 WINAPI
@@ -1916,7 +2058,7 @@ IsValidLanguageGroup(
     _In_ DWORD   dwFlags);
 #endif /* WINVER >= 0x0500 */
 
-// For Windows Vista and above GetNLSVersionEx is preferred
+// DEPRECATED: GetNLSVersionEx is preferred
 WINBASEAPI
 BOOL
 WINAPI
@@ -1935,7 +2077,7 @@ IsNLSDefinedString(
     _In_reads_(cchStr) LPCWSTR          lpString,
     _In_ INT              cchStr);
 
-// For Windows Vista and above IsValidLocaleName is preferred
+// DEPRECATED: IsValidLocaleName is preferred
 WINBASEAPI
 BOOL
 WINAPI
@@ -1949,6 +2091,7 @@ IsValidLocale(
 #pragma region Application Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
+// GetGeoInfoEx is preferred where available
 WINBASEAPI
 int
 WINAPI
@@ -1958,6 +2101,7 @@ GetGeoInfoA(
     _Out_writes_opt_(cchData) LPSTR     lpGeoData,
     _In_ int         cchData,
     _In_ LANGID      LangId);
+// GetGeoInfoEx is preferred where available
 WINBASEAPI
 int
 WINAPI
@@ -1972,12 +2116,25 @@ GetGeoInfoW(
 #else
 #define GetGeoInfo  GetGeoInfoA
 #endif // !UNICODE
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+WINBASEAPI
+int
+WINAPI
+GetGeoInfoEx(
+    _In_ PWSTR       location,
+    _In_ GEOTYPE     geoType,
+    _Out_writes_opt_(geoDataCount) PWSTR    geoData,
+    _In_ int         geoDataCount);
+#endif
+
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #pragma region Desktop or PC Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_PC_APP | WINAPI_PARTITION_SYSTEM)
 
+// EnumSystemGeoNames is preferred where available
 WINBASEAPI
 BOOL
 WINAPI
@@ -1986,6 +2143,16 @@ EnumSystemGeoID(
     _In_ GEOID           ParentGeoId,
     _In_ GEO_ENUMPROC    lpGeoEnumProc);
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+WINBASEAPI
+BOOL
+WINAPI
+EnumSystemGeoNames(
+    _In_ GEOCLASS            geoClass,
+    _In_ GEO_ENUMNAMEPROC    geoEnumProc,
+    _In_opt_ LPARAM          data);
+#endif
+
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_PC_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
@@ -1993,11 +2160,20 @@ EnumSystemGeoID(
 #pragma region Application Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
+// GetUserDefaultGeoName is preferred where available
 WINBASEAPI
 GEOID
 WINAPI
 GetUserGeoID(
     _In_ GEOCLASS    GeoClass);
+
+WINBASEAPI
+int
+WINAPI
+GetUserDefaultGeoName(
+    _Out_writes_(geoName) LPWSTR geoName,
+    _In_ int geoNameCount
+);
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
@@ -2005,12 +2181,24 @@ GetUserGeoID(
 #pragma region Desktop Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
+// GetUserDefaultGeoName is preferred where available
+// Applications are recommended to not change user settings themselves.
 WINBASEAPI
 BOOL
 WINAPI
 SetUserGeoID(
     _In_ GEOID       GeoId);
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+// Applications are recommended to not change user settings themselves.
+WINBASEAPI
+BOOL
+WINAPI
+SetUserGeoName(
+    _In_ PWSTR       geoName);
+#endif
+
+// DEPRECATED: Please use ResolveLocaleName
 WINBASEAPI
 LCID
 WINAPI
@@ -2030,6 +2218,7 @@ SetThreadLocale(
     );
 
 #if(WINVER >= 0x0500)
+// DEPRECATED: Please use the user's language profile.
 WINBASEAPI
 LANGID
 WINAPI
@@ -2041,12 +2230,14 @@ GetSystemDefaultUILanguage(void);
 #pragma region Application Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
+// DEPRECATED: Please use the user's language profile.
 WINBASEAPI
 LANGID
 WINAPI
 GetUserDefaultUILanguage(void);
 #endif /* WINVER >= 0x0500 */
 
+// DEPRECATED: Please use GetUserDefaultLocaleName
 WINBASEAPI
 LANGID
 WINAPI
@@ -2058,16 +2249,19 @@ GetUserDefaultLangID(void);
 #pragma region Desktop Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
+// DEPRECATED: Please use GetUserDefaultLocaleName or the user's Language Profile
 WINBASEAPI
 LANGID
 WINAPI
 GetSystemDefaultLangID(void);
 
+// DEPRECATED: Please use GetUserDefaultLocaleName or the user's Language Profile
 WINBASEAPI
 LCID
 WINAPI
 GetSystemDefaultLCID(void);
 
+// DEPRECATED: Please use GetUserDefaultLocaleName
 WINBASEAPI
 LCID
 WINAPI
@@ -2228,7 +2422,7 @@ BOOL
 WINAPI
 NotifyUILanguageChange(
     _In_        DWORD dwFlags,
-    _In_opt_        PCWSTR pcwstrNewLanguage,
+    _In_opt_    PCWSTR pcwstrNewLanguage,
     _In_opt_    PCWSTR pcwstrPreviousLanguage,
     _In_        DWORD dwReserved,
     _Out_opt_   PDWORD pdwStatusRtrn
@@ -2253,7 +2447,7 @@ WINAPI
 GetStringTypeExA(
     _In_                 LCID       Locale,
     _In_                 DWORD      dwInfoType,
-    _In_reads_(cchSrc)  LPCSTR   lpSrcStr,
+    _In_reads_(cchSrc)   LPCSTR   lpSrcStr,
     _In_                 int        cchSrc,
     _Out_writes_(cchSrc) LPWORD     lpCharType);
 #ifndef UNICODE
@@ -2302,12 +2496,14 @@ FoldStringA(
 
 #if(WINVER >= 0x0500)
 
+// DEPRECATED, please use Locale Names and call EnumSystemLocalesEx
 WINBASEAPI
 BOOL
 WINAPI
 EnumSystemLocalesA(
     _In_ LOCALE_ENUMPROCA lpLocaleEnumProc,
     _In_ DWORD            dwFlags);
+// DEPRECATED, please use Locale Names and call EnumSystemLocalesEx
 WINBASEAPI
 BOOL
 WINAPI
@@ -2324,6 +2520,7 @@ EnumSystemLocalesW(
 
 #if(WINVER >= 0x0500)
 
+// DEPRECATED, language groups are obsolete and erratic.
 WINBASEAPI
 BOOL
 WINAPI
@@ -2331,6 +2528,7 @@ EnumSystemLanguageGroupsA(
     _In_ LANGUAGEGROUP_ENUMPROCA lpLanguageGroupEnumProc,
     _In_ DWORD                   dwFlags,
     _In_ LONG_PTR                lParam);
+// DEPRECATED, language groups are obsolete and erratic.
 WINBASEAPI
 BOOL
 WINAPI
@@ -2344,6 +2542,7 @@ EnumSystemLanguageGroupsW(
 #define EnumSystemLanguageGroups  EnumSystemLanguageGroupsA
 #endif // !UNICODE
 
+// DEPRECATED, language groups are obsolete and erratic.
 WINBASEAPI
 BOOL
 WINAPI
@@ -2352,6 +2551,7 @@ EnumLanguageGroupLocalesA(
     _In_ LGRPID                    LanguageGroup,
     _In_ DWORD                     dwFlags,
     _In_ LONG_PTR                  lParam);
+// DEPRECATED, language groups are obsolete and erratic.
 WINBASEAPI
 BOOL
 WINAPI
@@ -2372,6 +2572,7 @@ EnumLanguageGroupLocalesW(
 #pragma region Application Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
+// DEPRECATED: use the user language profile instead.
 WINBASEAPI
 BOOL
 WINAPI
@@ -2379,6 +2580,7 @@ EnumUILanguagesA(
     _In_ UILANGUAGE_ENUMPROCA lpUILanguageEnumProc,
     _In_ DWORD                dwFlags,
     _In_ LONG_PTR             lParam);
+// DEPRECATED: use the user language profile instead.
 WINBASEAPI
 BOOL
 WINAPI
@@ -2400,12 +2602,14 @@ EnumUILanguagesW(
 #pragma region Desktop or PC Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_PC_APP  | WINAPI_PARTITION_SYSTEM)
 
+// Please use Unicode instead.  Use of other code pages/encodings is discouraged.
 WINBASEAPI
 BOOL
 WINAPI
 EnumSystemCodePagesA(
     _In_ CODEPAGE_ENUMPROCA lpCodePageEnumProc,
     _In_ DWORD              dwFlags);
+// Please use Unicode instead.  Use of other code pages/encodings is discouraged.
 WINBASEAPI
 BOOL
 WINAPI
@@ -2785,6 +2989,9 @@ ResolveLocaleName(
 
 #endif // NONLS
 
+
+// Restore the original value of the 'DEPRECATED' macro");
+#pragma pop_macro("DEPRECATED")
 
 #if _MSC_VER >= 1200 
 #pragma warning(pop)

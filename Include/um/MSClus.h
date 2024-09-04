@@ -979,6 +979,7 @@ enum __MIDL___MIDL_itf_msclus_0000_0000_0001
         ClusGroupTypeStorageReplica	= 119,
         ClusGroupTypeVMReplicaCoordinator	= 120,
         ClusGroupTypeCrossClusterOrchestrator	= 121,
+        ClusGroupTypeInfrastructureFileServer	= 122,
         ClusGroupTypeUnknown	= 9999
     } 	CLUSGROUP_TYPE;
 
@@ -1003,6 +1004,27 @@ enum __MIDL___MIDL_itf_msclus_0000_0000_0002
 
 typedef /* [public] */ 
 enum __MIDL___MIDL_itf_msclus_0000_0000_0003
+    {
+        CLUSTER_MGMT_POINT_RESTYPE_AUTO	= 0,
+        CLUSTER_MGMT_POINT_RESTYPE_SNN	= 1,
+        CLUSTER_MGMT_POINT_RESTYPE_DNN	= 2
+    } 	CLUSTER_MGMT_POINT_RESTYPE;
+
+typedef enum __MIDL___MIDL_itf_msclus_0000_0000_0003 *PCLUSTER_MGMT_POINT_RESTYPE;
+
+typedef /* [public] */ 
+enum __MIDL___MIDL_itf_msclus_0000_0000_0004
+    {
+        CLUSTER_CLOUD_TYPE_NONE	= 0,
+        CLUSTER_CLOUD_TYPE_AZURE	= 1,
+        CLUSTER_CLOUD_TYPE_MIXED	= 2,
+        CLUSTER_CLOUD_TYPE_UNKNOWN	= -1
+    } 	CLUSTER_CLOUD_TYPE;
+
+typedef enum __MIDL___MIDL_itf_msclus_0000_0000_0004 *PCLUSTER_CLOUD_TYPE;
+
+typedef /* [public] */ 
+enum __MIDL___MIDL_itf_msclus_0000_0000_0005
     {
         CLUS_GROUP_START_ALWAYS	= 0,
         CLUS_GROUP_DO_NOT_START	= 1,
@@ -1285,6 +1307,17 @@ enum CLUSTER_NODE_STATE
         ClusterNodePaused	= ( ClusterNodeDown + 1 ) ,
         ClusterNodeJoining	= ( ClusterNodePaused + 1 ) 
     } 	CLUSTER_NODE_STATE;
+
+typedef 
+enum CLUSTER_STORAGENODE_STATE
+    {
+        ClusterStorageNodeStateUnknown	= 0,
+        ClusterStorageNodeUp	= ( ClusterStorageNodeStateUnknown + 1 ) ,
+        ClusterStorageNodeDown	= ( ClusterStorageNodeUp + 1 ) ,
+        ClusterStorageNodePaused	= ( ClusterStorageNodeDown + 1 ) ,
+        ClusterStorageNodeStarting	= ( ClusterStorageNodePaused + 1 ) ,
+        ClusterStorageNodeStopping	= ( ClusterStorageNodeStarting + 1 ) 
+    } 	CLUSTER_STORAGENODE_STATE;
 
 typedef 
 enum CLUSTER_NODE_DRAIN_STATUS
@@ -1688,6 +1721,7 @@ enum CLCTL_CODES
         CLCTL_SET_DNS_DOMAIN	= ( ( ( 0x2 << 0 )  | ( ( 0 + 194 )  << 2 )  )  | ( 0x1 << 22 )  ) ,
         CTCTL_GET_ROUTESTATUS_BASIC	= ( ( ( 0x1 << 0 )  | ( ( 0 + 195 )  << 2 )  )  | ( 0 << 22 )  ) ,
         CTCTL_GET_ROUTESTATUS_EXTENDED	= ( ( ( 0x1 << 0 )  | ( ( 0 + 196 )  << 2 )  )  | ( 0 << 22 )  ) ,
+        CTCTL_GET_FAULT_DOMAIN_STATE	= ( ( ( 0x1 << 0 )  | ( ( 0 + 197 )  << 2 )  )  | ( 0 << 22 )  ) ,
         CLCTL_STORAGE_GET_AVAILABLE_DISKS_EX2_INT	= ( ( ( 0x1 << 0 )  | ( ( 0 + 2040 )  << 2 )  )  | ( 0 << 22 )  ) ,
         CLCTL_CLOUD_WITNESS_RESOURCE_TYPE_VALIDATE_CREDENTIALS	= ( ( ( 0x1 << 0 )  | ( ( 0 + 2104 )  << 2 )  )  | ( 0 << 22 )  ) ,
         CLCTL_CLOUD_WITNESS_RESOURCE_UPDATE_TOKEN	= ( ( ( 0x2 << 0 )  | ( ( 0 + 2105 )  << 2 )  )  | ( 0x1 << 22 )  ) ,
@@ -1712,6 +1746,13 @@ enum CLCTL_CODES
         CLCTL_GROUPSET_GET_PROVIDER_GROUPSETS	= ( ( ( 0x1 << 0 )  | ( ( 0 + 2910 )  << 2 )  )  | ( 0 << 22 )  ) ,
         CLCTL_GROUP_GET_PROVIDER_GROUPS	= ( ( ( 0x1 << 0 )  | ( ( 0 + 2911 )  << 2 )  )  | ( 0 << 22 )  ) ,
         CLCTL_GROUP_GET_PROVIDER_GROUPSETS	= ( ( ( 0x1 << 0 )  | ( ( 0 + 2912 )  << 2 )  )  | ( 0 << 22 )  ) ,
+        CLCTL_GROUP_SET_CCF_FROM_MASTER	= ( ( ( 0x2 << 0 )  | ( ( 0 + 2913 )  << 2 )  )  | ( 0x1 << 22 )  ) ,
+        CLCTL_GET_INFRASTRUCTURE_SOFS_BUFFER	= ( ( ( 0x1 << 0 )  | ( ( 0 + 2914 )  << 2 )  )  | ( 0 << 22 )  ) ,
+        CLCTL_SET_INFRASTRUCTURE_SOFS_BUFFER	= ( ( ( 0x2 << 0 )  | ( ( 0 + 2915 )  << 2 )  )  | ( 0x1 << 22 )  ) ,
+        CLCTL_NOTIFY_INFRASTRUCTURE_SOFS_CHANGED	= ( ( ( 0x2 << 0 )  | ( ( 0 + 2916 )  << 2 )  )  | ( 0x1 << 22 )  ) ,
+        CLCTL_SCALEOUT_COMMAND	= ( ( ( 0x2 << 0 )  | ( ( 0 + 2917 )  << 2 )  )  | ( 0x1 << 22 )  ) ,
+        CLCTL_SCALEOUT_CONTROL	= ( ( ( 0x2 << 0 )  | ( ( 0 + 2918 )  << 2 )  )  | ( 0x1 << 22 )  ) ,
+        CLCTL_SCALEOUT_GET_CLUSTERS	= ( ( ( 0x1 << 0 )  | ( ( 0 + 2919 )  << 2 )  )  | ( 0x1 << 22 )  ) ,
         CLCTL_DELETE	= ( ( ( ( 0x2 << 0 )  | ( 1 << 20 )  )  | ( ( 0 + 1 )  << 2 )  )  | ( 0x1 << 22 )  ) ,
         CLCTL_INSTALL_NODE	= ( ( ( ( 0x2 << 0 )  | ( 1 << 20 )  )  | ( ( 0 + 2 )  << 2 )  )  | ( 0x1 << 22 )  ) ,
         CLCTL_EVICT_NODE	= ( ( ( ( 0x2 << 0 )  | ( 1 << 20 )  )  | ( ( 0 + 3 )  << 2 )  )  | ( 0x1 << 22 )  ) ,
@@ -1843,7 +1884,12 @@ enum CLUSCTL_RESOURCE_CODES
         CLUSCTL_CLOUD_WITNESS_RESOURCE_UPDATE_KEY	= ( ( CLUS_OBJECT_RESOURCE << 24 )  | CLCTL_CLOUD_WITNESS_RESOURCE_UPDATE_KEY ) ,
         CLUSCTL_RESOURCE_PREPARE_UPGRADE	= ( ( CLUS_OBJECT_RESOURCE << 24 )  | CLCTL_RESOURCE_PREPARE_UPGRADE ) ,
         CLUSCTL_RESOURCE_UPGRADE_COMPLETED	= ( ( CLUS_OBJECT_RESOURCE << 24 )  | CLCTL_RESOURCE_UPGRADE_COMPLETED ) ,
-        CLUSCTL_RESOURCE_GET_STATE_CHANGE_TIME	= ( ( CLUS_OBJECT_RESOURCE << 24 )  | CLCTL_GET_STATE_CHANGE_TIME ) 
+        CLUSCTL_RESOURCE_GET_STATE_CHANGE_TIME	= ( ( CLUS_OBJECT_RESOURCE << 24 )  | CLCTL_GET_STATE_CHANGE_TIME ) ,
+        CLUSCTL_RESOURCE_GET_INFRASTRUCTURE_SOFS_BUFFER	= ( ( CLUS_OBJECT_RESOURCE << 24 )  | CLCTL_GET_INFRASTRUCTURE_SOFS_BUFFER ) ,
+        CLUSCTL_RESOURCE_SET_INFRASTRUCTURE_SOFS_BUFFER	= ( ( CLUS_OBJECT_RESOURCE << 24 )  | CLCTL_SET_INFRASTRUCTURE_SOFS_BUFFER ) ,
+        CLUSCTL_RESOURCE_SCALEOUT_COMMAND	= ( ( CLUS_OBJECT_RESOURCE << 24 )  | CLCTL_SCALEOUT_COMMAND ) ,
+        CLUSCTL_RESOURCE_SCALEOUT_CONTROL	= ( ( CLUS_OBJECT_RESOURCE << 24 )  | CLCTL_SCALEOUT_CONTROL ) ,
+        CLUSCTL_RESOURCE_SCALEOUT_GET_CLUSTERS	= ( ( CLUS_OBJECT_RESOURCE << 24 )  | CLCTL_SCALEOUT_GET_CLUSTERS ) 
     } 	CLUSCTL_RESOURCE_CODES;
 
 typedef 
@@ -1935,7 +1981,8 @@ enum CLUSCTL_GROUP_CODES
         CLUSCTL_GROUP_GET_COMMON_PROPERTY_FMTS	= ( ( CLUS_OBJECT_GROUP << 24 )  | CLCTL_GET_COMMON_PROPERTY_FMTS ) ,
         CLUSCTL_GROUP_GET_PRIVATE_PROPERTY_FMTS	= ( ( CLUS_OBJECT_GROUP << 24 )  | CLCTL_GET_PRIVATE_PROPERTY_FMTS ) ,
         CLUSCTL_GROUP_GET_FAILURE_INFO	= ( ( CLUS_OBJECT_GROUP << 24 )  | CLCTL_GET_FAILURE_INFO ) ,
-        CLUSCTL_GROUP_GET_LAST_MOVE_TIME	= ( ( CLUS_OBJECT_GROUP << 24 )  | CLCTL_GROUP_GET_LAST_MOVE_TIME ) 
+        CLUSCTL_GROUP_GET_LAST_MOVE_TIME	= ( ( CLUS_OBJECT_GROUP << 24 )  | CLCTL_GROUP_GET_LAST_MOVE_TIME ) ,
+        CLUSCTL_GROUP_SET_CCF_FROM_MASTER	= ( ( CLUS_OBJECT_GROUP << 24 )  | CLCTL_GROUP_SET_CCF_FROM_MASTER ) 
     } 	CLUSCTL_GROUP_CODES;
 
 typedef 

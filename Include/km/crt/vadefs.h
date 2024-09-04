@@ -89,7 +89,7 @@ typedef _Writable_bytes_(_Inexpressible_("length varies")) char *  va_list;
 #define _ADDRESSOF(v)   ( &(v) )
 #endif
 
-#if     defined(_M_ARM_NT) && !defined(_M_CEE_PURE)
+#if     (defined(_M_ARM_NT) || defined(_M_HYBRID_X86_ARM64)) && !defined(_M_CEE_PURE)
 #define _VA_ALIGN       4
 #define _SLOTSIZEOF(t)   ( (sizeof(t) + _VA_ALIGN - 1) & ~(_VA_ALIGN - 1) )
 

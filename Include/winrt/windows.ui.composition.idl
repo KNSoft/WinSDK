@@ -14,34 +14,9 @@ import "Windows.Foundation.Numerics.idl";
 import "Windows.Graphics.idl";
 import "Windows.Graphics.DirectX.idl";
 import "Windows.Graphics.Effects.idl";
+import "Windows.System.idl";
 import "Windows.UI.idl";
 import "Windows.UI.Core.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Efoundation2Enumerics_h__)")
-cpp_quote("#include <Windows.Foundation.Numerics.h>")
-cpp_quote("#endif // !defined(__windows2Efoundation2Enumerics_h__)")
-cpp_quote("#if !defined(__windows2Egraphics_h__)")
-cpp_quote("#include <Windows.Graphics.h>")
-cpp_quote("#endif // !defined(__windows2Egraphics_h__)")
-cpp_quote("#if !defined(__windows2Egraphics2Edirectx_h__)")
-cpp_quote("#include <Windows.Graphics.DirectX.h>")
-cpp_quote("#endif // !defined(__windows2Egraphics2Edirectx_h__)")
-cpp_quote("#if !defined(__windows2Egraphics2Eeffects_h__)")
-cpp_quote("#include <Windows.Graphics.Effects.h>")
-cpp_quote("#endif // !defined(__windows2Egraphics2Eeffects_h__)")
-cpp_quote("#if !defined(__windows2Eui_h__)")
-cpp_quote("#include <Windows.UI.h>")
-cpp_quote("#endif // !defined(__windows2Eui_h__)")
-cpp_quote("#if !defined(__windows2Eui2Ecore_h__)")
-cpp_quote("#include <Windows.UI.Core.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Ecore_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -119,6 +94,13 @@ namespace Windows
 }
 namespace Windows
 {
+    namespace System
+    {
+        runtimeclass DispatcherQueue;
+    }
+}
+namespace Windows
+{
     namespace UI
     {
         typedef struct Color Color;
@@ -160,19 +142,27 @@ namespace Windows
 
             typedef enum CompositionCompositeMode CompositionCompositeMode;
 
+            typedef enum CompositionDropShadowSourcePolicy CompositionDropShadowSourcePolicy;
+
             typedef enum CompositionEffectFactoryLoadStatus CompositionEffectFactoryLoadStatus;
 
             typedef enum CompositionGetValueStatus CompositionGetValueStatus;
 
+            typedef enum CompositionGradientExtendMode CompositionGradientExtendMode;
+
             typedef enum CompositionStretch CompositionStretch;
 
             interface IAmbientLight;
+
+            interface IAmbientLight2;
 
             interface IColorKeyFrameAnimation;
 
             interface ICompositionAnimation;
 
             interface ICompositionAnimation2;
+
+            interface ICompositionAnimation3;
 
             interface ICompositionAnimationBase;
 
@@ -200,6 +190,10 @@ namespace Windows
 
             interface ICompositionColorBrush;
 
+            interface ICompositionColorGradientStop;
+
+            interface ICompositionColorGradientStopCollection;
+
             interface ICompositionCommitBatch;
 
             interface ICompositionDrawingSurface;
@@ -220,13 +214,21 @@ namespace Windows
 
             interface ICompositionEffectSourceParameterFactory;
 
+            interface ICompositionGradientBrush;
+
+            interface ICompositionGradientBrushFactory;
+
             interface ICompositionGraphicsDevice;
 
             interface ICompositionGraphicsDevice2;
 
             interface ICompositionLight;
 
+            interface ICompositionLight2;
+
             interface ICompositionLightFactory;
+
+            interface ICompositionLinearGradientBrush;
 
             interface ICompositionMaskBrush;
 
@@ -235,6 +237,8 @@ namespace Windows
             interface ICompositionObject;
 
             interface ICompositionObject2;
+
+            interface ICompositionObject3;
 
             interface ICompositionObjectFactory;
 
@@ -256,6 +260,8 @@ namespace Windows
 
             interface ICompositionTarget;
 
+            interface ICompositionTargetFactory;
+
             interface ICompositionVirtualDrawingSurface;
 
             interface ICompositionVirtualDrawingSurfaceFactory;
@@ -266,6 +272,8 @@ namespace Windows
 
             interface ICompositor3;
 
+            interface ICompositor4;
+
             interface IContainerVisual;
 
             interface IContainerVisualFactory;
@@ -274,7 +282,11 @@ namespace Windows
 
             interface IDistantLight;
 
+            interface IDistantLight2;
+
             interface IDropShadow;
+
+            interface IDropShadow2;
 
             interface IExpressionAnimation;
 
@@ -292,9 +304,17 @@ namespace Windows
 
             interface ILayerVisual;
 
+            interface ILayerVisual2;
+
             interface ILinearEasingFunction;
 
+            interface INaturalMotionAnimation;
+
+            interface INaturalMotionAnimationFactory;
+
             interface IPointLight;
+
+            interface IPointLight2;
 
             interface IQuaternionKeyFrameAnimation;
 
@@ -302,7 +322,19 @@ namespace Windows
 
             interface IScalarKeyFrameAnimation;
 
+            interface IScalarNaturalMotionAnimation;
+
+            interface IScalarNaturalMotionAnimationFactory;
+
             interface ISpotLight;
+
+            interface ISpotLight2;
+
+            interface ISpringScalarNaturalMotionAnimation;
+
+            interface ISpringVector2NaturalMotionAnimation;
+
+            interface ISpringVector3NaturalMotionAnimation;
 
             interface ISpriteVisual;
 
@@ -312,7 +344,15 @@ namespace Windows
 
             interface IVector2KeyFrameAnimation;
 
+            interface IVector2NaturalMotionAnimation;
+
+            interface IVector2NaturalMotionAnimationFactory;
+
             interface IVector3KeyFrameAnimation;
+
+            interface IVector3NaturalMotionAnimation;
+
+            interface IVector3NaturalMotionAnimationFactory;
 
             interface IVector4KeyFrameAnimation;
 
@@ -346,6 +386,10 @@ namespace Windows
 
             runtimeclass CompositionColorBrush;
 
+            runtimeclass CompositionColorGradientStop;
+
+            runtimeclass CompositionColorGradientStopCollection;
+
             runtimeclass CompositionCommitBatch;
 
             runtimeclass CompositionDrawingSurface;
@@ -358,9 +402,13 @@ namespace Windows
 
             runtimeclass CompositionEffectSourceParameter;
 
+            runtimeclass CompositionGradientBrush;
+
             runtimeclass CompositionGraphicsDevice;
 
             runtimeclass CompositionLight;
+
+            runtimeclass CompositionLinearGradientBrush;
 
             runtimeclass CompositionMaskBrush;
 
@@ -394,6 +442,8 @@ namespace Windows
 
             runtimeclass ImplicitAnimationCollection;
 
+            runtimeclass InitialValueExpressionCollection;
+
             runtimeclass InsetClip;
 
             runtimeclass KeyFrameAnimation;
@@ -401,6 +451,8 @@ namespace Windows
             runtimeclass LayerVisual;
 
             runtimeclass LinearEasingFunction;
+
+            runtimeclass NaturalMotionAnimation;
 
             runtimeclass PointLight;
 
@@ -410,7 +462,15 @@ namespace Windows
 
             runtimeclass ScalarKeyFrameAnimation;
 
+            runtimeclass ScalarNaturalMotionAnimation;
+
             runtimeclass SpotLight;
+
+            runtimeclass SpringScalarNaturalMotionAnimation;
+
+            runtimeclass SpringVector2NaturalMotionAnimation;
+
+            runtimeclass SpringVector3NaturalMotionAnimation;
 
             runtimeclass SpriteVisual;
 
@@ -418,7 +478,11 @@ namespace Windows
 
             runtimeclass Vector2KeyFrameAnimation;
 
+            runtimeclass Vector2NaturalMotionAnimation;
+
             runtimeclass Vector3KeyFrameAnimation;
+
+            runtimeclass Vector3NaturalMotionAnimation;
 
             runtimeclass Vector4KeyFrameAnimation;
 
@@ -444,11 +508,15 @@ namespace Windows
 
                 interface Windows.Foundation.Collections.IIterable<Windows.UI.Composition.CompositionAnimation*>;
 
+                interface Windows.Foundation.Collections.IIterable<Windows.UI.Composition.CompositionColorGradientStop*>;
+
                 interface Windows.Foundation.Collections.IIterable<Windows.UI.Composition.Visual*>;
 
                 interface Windows.Foundation.Collections.IIterator<Windows.Foundation.Collections.IKeyValuePair<HSTRING, Windows.UI.Composition.ICompositionAnimationBase*>*>;
 
                 interface Windows.Foundation.Collections.IIterator<Windows.UI.Composition.CompositionAnimation*>;
+
+                interface Windows.Foundation.Collections.IIterator<Windows.UI.Composition.CompositionColorGradientStop*>;
 
                 interface Windows.Foundation.Collections.IIterator<Windows.UI.Composition.Visual*>;
 
@@ -457,6 +525,10 @@ namespace Windows
                 interface Windows.Foundation.Collections.IMapView<HSTRING, Windows.UI.Composition.ICompositionAnimationBase*>;
 
                 interface Windows.Foundation.Collections.IMap<HSTRING, Windows.UI.Composition.ICompositionAnimationBase*>;
+
+                interface Windows.Foundation.Collections.IVectorView<Windows.UI.Composition.CompositionColorGradientStop*>;
+
+                interface Windows.Foundation.Collections.IVector<Windows.UI.Composition.CompositionColorGradientStop*>;
 
                 interface Windows.Foundation.TypedEventHandler<IInspectable*, Windows.UI.Composition.CompositionBatchCompletedEventArgs*>;
 
@@ -541,9 +613,13 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             enum CompositionColorSpace
             {
-                Auto = 0,
-                Hsl  = 1,
-                Rgb  = 2
+                Auto      = 0,
+                Hsl       = 1,
+                Rgb       = 2,
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                HslLinear = 3,
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                RgbLinear = 4
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -554,6 +630,13 @@ namespace Windows
                 DestinationInvert = 2,
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)]
                 MinBlend          = 3
+            };
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            enum CompositionDropShadowSourcePolicy
+            {
+                Default                  = 0,
+                InheritFromVisualContent = 1
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -573,6 +656,14 @@ namespace Windows
                 NotFound     = 2
             };
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            enum CompositionGradientExtendMode
+            {
+                Clamp  = 0,
+                Wrap   = 1,
+                Mirror = 2
+            };
+
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             enum CompositionStretch
             {
@@ -589,6 +680,15 @@ namespace Windows
             {
                 [propget] HRESULT Color([out] [retval] Windows.UI.Color* value);
                 [propput] HRESULT Color([in] Windows.UI.Color value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.AmbientLight)]
+            [uuid(3B64A6BF-5F97-4C94-86E5-042DD386B27D)]
+            interface IAmbientLight2 : IInspectable
+            {
+                [propget] HRESULT Intensity([out] [retval] FLOAT* value);
+                [propput] HRESULT Intensity([in] FLOAT value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -628,6 +728,14 @@ namespace Windows
                 HRESULT SetBooleanParameter([in] HSTRING key, [in] boolean value);
                 [propget] HRESULT Target([out] [retval] HSTRING* value);
                 [propput] HRESULT Target([in] HSTRING value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.CompositionAnimation)]
+            [uuid(D51E030D-7DA4-4BD7-BC2D-F4517529F43A)]
+            interface ICompositionAnimation3 : IInspectable
+            {
+                [propget] HRESULT InitialValueExpressions([out] [retval] Windows.UI.Composition.InitialValueExpressionCollection** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -747,6 +855,27 @@ namespace Windows
                 [propput] HRESULT Color([in] Windows.UI.Color value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.CompositionColorGradientStop)]
+            [uuid(6F00CA92-C801-4E41-9A8F-A53E20F57778)]
+            interface ICompositionColorGradientStop : IInspectable
+            {
+                [propget] HRESULT Color([out] [retval] Windows.UI.Color* value);
+                [propput] HRESULT Color([in] Windows.UI.Color value);
+                [propget] HRESULT Offset([out] [retval] FLOAT* value);
+                [propput] HRESULT Offset([in] FLOAT value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.CompositionColorGradientStopCollection)]
+            [uuid(9F1D20EC-7B04-4B1D-90BC-9FA32C0CFD26)]
+            interface ICompositionColorGradientStopCollection : IInspectable
+                requires
+                    Windows.Foundation.Collections.IVector<Windows.UI.Composition.CompositionColorGradientStop*>,
+                    Windows.Foundation.Collections.IIterable<Windows.UI.Composition.CompositionColorGradientStop*>
+            {
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [exclusiveto(Windows.UI.Composition.CompositionCommitBatch)]
             [uuid(0D00DAD0-CA07-4400-8C8E-CB5DB08559CC)]
@@ -839,6 +968,39 @@ namespace Windows
                 HRESULT Create([in] HSTRING name, [out] [retval] Windows.UI.Composition.CompositionEffectSourceParameter** instance);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.CompositionGradientBrush)]
+            [uuid(1D9709E0-FFC6-4C0E-A9AB-34144D4C9098)]
+            interface ICompositionGradientBrush : IInspectable
+            {
+                [propget] HRESULT AnchorPoint([out] [retval] Windows.Foundation.Numerics.Vector2* value);
+                [propput] HRESULT AnchorPoint([in] Windows.Foundation.Numerics.Vector2 value);
+                [propget] HRESULT CenterPoint([out] [retval] Windows.Foundation.Numerics.Vector2* value);
+                [propput] HRESULT CenterPoint([in] Windows.Foundation.Numerics.Vector2 value);
+                [propget] HRESULT ColorStops([out] [retval] Windows.UI.Composition.CompositionColorGradientStopCollection** value);
+                [propget] HRESULT ExtendMode([out] [retval] Windows.UI.Composition.CompositionGradientExtendMode* value);
+                [propput] HRESULT ExtendMode([in] Windows.UI.Composition.CompositionGradientExtendMode value);
+                [propget] HRESULT InterpolationSpace([out] [retval] Windows.UI.Composition.CompositionColorSpace* value);
+                [propput] HRESULT InterpolationSpace([in] Windows.UI.Composition.CompositionColorSpace value);
+                [propget] HRESULT Offset([out] [retval] Windows.Foundation.Numerics.Vector2* value);
+                [propput] HRESULT Offset([in] Windows.Foundation.Numerics.Vector2 value);
+                [propget] HRESULT RotationAngle([out] [retval] FLOAT* value);
+                [propput] HRESULT RotationAngle([in] FLOAT value);
+                [propget] HRESULT RotationAngleInDegrees([out] [retval] FLOAT* value);
+                [propput] HRESULT RotationAngleInDegrees([in] FLOAT value);
+                [propget] HRESULT Scale([out] [retval] Windows.Foundation.Numerics.Vector2* value);
+                [propput] HRESULT Scale([in] Windows.Foundation.Numerics.Vector2 value);
+                [propget] HRESULT TransformMatrix([out] [retval] Windows.Foundation.Numerics.Matrix3x2* value);
+                [propput] HRESULT TransformMatrix([in] Windows.Foundation.Numerics.Matrix3x2 value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.CompositionGradientBrush)]
+            [uuid(56D765D7-F189-48C9-9C8D-94DAF1BEC010)]
+            interface ICompositionGradientBrushFactory : IInspectable
+            {
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [exclusiveto(Windows.UI.Composition.CompositionGraphicsDevice)]
             [uuid(FB22C6E1-80A2-4667-9936-DBEAF6EEFE95)]
@@ -866,11 +1028,30 @@ namespace Windows
                 [propget] HRESULT Targets([out] [retval] Windows.UI.Composition.VisualUnorderedCollection** value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.CompositionLight)]
+            [uuid(A7BCDA72-F35D-425D-9B98-23F4205F6669)]
+            interface ICompositionLight2 : IInspectable
+            {
+                [propget] HRESULT ExclusionsFromTargets([out] [retval] Windows.UI.Composition.VisualUnorderedCollection** value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
             [exclusiveto(Windows.UI.Composition.CompositionLight)]
             [uuid(069CF306-DA3C-4B44-838A-5E03D51ACE55)]
             interface ICompositionLightFactory : IInspectable
             {
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.CompositionLinearGradientBrush)]
+            [uuid(983BC519-A9DB-413C-A2D8-2A9056FC525E)]
+            interface ICompositionLinearGradientBrush : IInspectable
+            {
+                [propget] HRESULT EndPoint([out] [retval] Windows.Foundation.Numerics.Vector2* value);
+                [propput] HRESULT EndPoint([in] Windows.Foundation.Numerics.Vector2 value);
+                [propget] HRESULT StartPoint([out] [retval] Windows.Foundation.Numerics.Vector2* value);
+                [propput] HRESULT StartPoint([in] Windows.Foundation.Numerics.Vector2 value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -938,6 +1119,14 @@ namespace Windows
                 [propput] HRESULT ImplicitAnimations([in] Windows.UI.Composition.ImplicitAnimationCollection* value);
                 HRESULT StartAnimationGroup([in] Windows.UI.Composition.ICompositionAnimationBase* value);
                 HRESULT StopAnimationGroup([in] Windows.UI.Composition.ICompositionAnimationBase* value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.CompositionObject)]
+            [uuid(4BC27925-DACD-4CF2-98B1-986B76E7EBE6)]
+            interface ICompositionObject3 : IInspectable
+            {
+                [propget] HRESULT DispatcherQueue([out] [retval] Windows.System.DispatcherQueue** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -1060,6 +1249,13 @@ namespace Windows
                 [propput] HRESULT Root([in] Windows.UI.Composition.Visual* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.CompositionTarget)]
+            [uuid(93CD9D2B-8516-4B14-A8CE-F49E2119EC42)]
+            interface ICompositionTargetFactory : IInspectable
+            {
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [exclusiveto(Windows.UI.Composition.CompositionVirtualDrawingSurface)]
             [uuid(A9C384DB-8740-4F94-8B9D-B68521E7863D)]
@@ -1134,6 +1330,19 @@ namespace Windows
                 HRESULT CreateHostBackdropBrush([out] [retval] Windows.UI.Composition.CompositionBackdropBrush** result);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.Compositor)]
+            [uuid(AE47E78A-7910-4425-A482-A05B758ADCE9)]
+            interface ICompositor4 : IInspectable
+            {
+                [overload("CreateColorGradientStop")] HRESULT CreateColorGradientStop([out] [retval] Windows.UI.Composition.CompositionColorGradientStop** result);
+                [overload("CreateColorGradientStop")] HRESULT CreateColorGradientStopWithOffsetAndColor([in] FLOAT offset, [in] Windows.UI.Color color, [out] [retval] Windows.UI.Composition.CompositionColorGradientStop** result);
+                HRESULT CreateLinearGradientBrush([out] [retval] Windows.UI.Composition.CompositionLinearGradientBrush** result);
+                HRESULT CreateSpringScalarAnimation([out] [retval] Windows.UI.Composition.SpringScalarNaturalMotionAnimation** result);
+                HRESULT CreateSpringVector2Animation([out] [retval] Windows.UI.Composition.SpringVector2NaturalMotionAnimation** result);
+                HRESULT CreateSpringVector3Animation([out] [retval] Windows.UI.Composition.SpringVector3NaturalMotionAnimation** result);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [exclusiveto(Windows.UI.Composition.ContainerVisual)]
             [uuid(02F6BC74-ED20-4773-AFE6-D49B4A93DB32)]
@@ -1171,6 +1380,15 @@ namespace Windows
                 [propput] HRESULT Direction([in] Windows.Foundation.Numerics.Vector3 value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.DistantLight)]
+            [uuid(DBCDAA1C-294B-48D7-B60E-76DF64AA392B)]
+            interface IDistantLight2 : IInspectable
+            {
+                [propget] HRESULT Intensity([out] [retval] FLOAT* value);
+                [propput] HRESULT Intensity([in] FLOAT value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
             [exclusiveto(Windows.UI.Composition.DropShadow)]
             [uuid(CB977C07-A154-4851-85E7-A8924C84FAD8)]
@@ -1186,6 +1404,15 @@ namespace Windows
                 [propput] HRESULT Offset([in] Windows.Foundation.Numerics.Vector3 value);
                 [propget] HRESULT Opacity([out] [retval] FLOAT* value);
                 [propput] HRESULT Opacity([in] FLOAT value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.DropShadow)]
+            [uuid(6C4218BC-15B9-4C2D-8D4A-0767DF11977A)]
+            interface IDropShadow2 : IInspectable
+            {
+                [propget] HRESULT SourcePolicy([out] [retval] Windows.UI.Composition.CompositionDropShadowSourcePolicy* value);
+                [propput] HRESULT SourcePolicy([in] Windows.UI.Composition.CompositionDropShadowSourcePolicy value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -1276,10 +1503,39 @@ namespace Windows
                 [propput] HRESULT Effect([in] Windows.UI.Composition.CompositionEffectBrush* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.LayerVisual)]
+            [uuid(98F9AEEB-6F23-49F1-90B1-1F59A14FBCE3)]
+            interface ILayerVisual2 : IInspectable
+            {
+                [propget] HRESULT Shadow([out] [retval] Windows.UI.Composition.CompositionShadow** value);
+                [propput] HRESULT Shadow([in] Windows.UI.Composition.CompositionShadow* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [exclusiveto(Windows.UI.Composition.LinearEasingFunction)]
             [uuid(9400975A-C7A6-46B3-ACF7-1A268A0A117D)]
             interface ILinearEasingFunction : IInspectable
+            {
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.NaturalMotionAnimation)]
+            [uuid(438DE12D-769B-4821-A949-284A6547E873)]
+            interface INaturalMotionAnimation : IInspectable
+            {
+                [propget] HRESULT DelayBehavior([out] [retval] Windows.UI.Composition.AnimationDelayBehavior* value);
+                [propput] HRESULT DelayBehavior([in] Windows.UI.Composition.AnimationDelayBehavior value);
+                [propget] HRESULT DelayTime([out] [retval] Windows.Foundation.TimeSpan* value);
+                [propput] HRESULT DelayTime([in] Windows.Foundation.TimeSpan value);
+                [propget] HRESULT StopBehavior([out] [retval] Windows.UI.Composition.AnimationStopBehavior* value);
+                [propput] HRESULT StopBehavior([in] Windows.UI.Composition.AnimationStopBehavior value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.NaturalMotionAnimation)]
+            [uuid(F53ACB06-CF6A-4387-A3FE-5221F3E7E0E0)]
+            interface INaturalMotionAnimationFactory : IInspectable
             {
             }
 
@@ -1300,6 +1556,15 @@ namespace Windows
                 [propput] HRESULT Offset([in] Windows.Foundation.Numerics.Vector3 value);
                 [propget] HRESULT QuadraticAttenuation([out] [retval] FLOAT* value);
                 [propput] HRESULT QuadraticAttenuation([in] FLOAT value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.PointLight)]
+            [uuid(EFE98F2C-0678-4F69-B164-A810D995BCB7)]
+            interface IPointLight2 : IInspectable
+            {
+                [propget] HRESULT Intensity([out] [retval] FLOAT* value);
+                [propput] HRESULT Intensity([in] FLOAT value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -1326,6 +1591,26 @@ namespace Windows
             {
                 [overload("InsertKeyFrame")] HRESULT InsertKeyFrame([in] FLOAT normalizedProgressKey, [in] FLOAT value);
                 [overload("InsertKeyFrame")] HRESULT InsertKeyFrameWithEasingFunction([in] FLOAT normalizedProgressKey, [in] FLOAT value, [in] Windows.UI.Composition.CompositionEasingFunction* easingFunction);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.ScalarNaturalMotionAnimation)]
+            [uuid(94A94581-BF92-495B-B5BD-D2C659430737)]
+            interface IScalarNaturalMotionAnimation : IInspectable
+            {
+                [propget] HRESULT FinalValue([out] [retval] Windows.Foundation.IReference<FLOAT>** value);
+                [propput] HRESULT FinalValue([in] Windows.Foundation.IReference<FLOAT>* value);
+                [propget] HRESULT InitialValue([out] [retval] Windows.Foundation.IReference<FLOAT>** value);
+                [propput] HRESULT InitialValue([in] Windows.Foundation.IReference<FLOAT>* value);
+                [propget] HRESULT InitialVelocity([out] [retval] FLOAT* value);
+                [propput] HRESULT InitialVelocity([in] FLOAT value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.ScalarNaturalMotionAnimation)]
+            [uuid(835AA4FC-671C-41DD-AF48-AE8DEF8B1529)]
+            interface IScalarNaturalMotionAnimationFactory : IInspectable
+            {
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -1357,6 +1642,50 @@ namespace Windows
                 [propput] HRESULT OuterConeColor([in] Windows.UI.Color value);
                 [propget] HRESULT QuadraticAttenuation([out] [retval] FLOAT* value);
                 [propput] HRESULT QuadraticAttenuation([in] FLOAT value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.SpotLight)]
+            [uuid(64EE615E-0686-4DEA-A9E8-BC3A8C701459)]
+            interface ISpotLight2 : IInspectable
+            {
+                [propget] HRESULT InnerConeIntensity([out] [retval] FLOAT* value);
+                [propput] HRESULT InnerConeIntensity([in] FLOAT value);
+                [propget] HRESULT OuterConeIntensity([out] [retval] FLOAT* value);
+                [propput] HRESULT OuterConeIntensity([in] FLOAT value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.SpringScalarNaturalMotionAnimation)]
+            [uuid(0572A95F-37F9-4FBE-B87B-5CD03A89501C)]
+            interface ISpringScalarNaturalMotionAnimation : IInspectable
+            {
+                [propget] HRESULT DampingRatio([out] [retval] FLOAT* value);
+                [propput] HRESULT DampingRatio([in] FLOAT value);
+                [propget] HRESULT Period([out] [retval] Windows.Foundation.TimeSpan* value);
+                [propput] HRESULT Period([in] Windows.Foundation.TimeSpan value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.SpringVector2NaturalMotionAnimation)]
+            [uuid(23F494B5-EE73-4F0F-A423-402B946DF4B3)]
+            interface ISpringVector2NaturalMotionAnimation : IInspectable
+            {
+                [propget] HRESULT DampingRatio([out] [retval] FLOAT* value);
+                [propput] HRESULT DampingRatio([in] FLOAT value);
+                [propget] HRESULT Period([out] [retval] Windows.Foundation.TimeSpan* value);
+                [propput] HRESULT Period([in] Windows.Foundation.TimeSpan value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.SpringVector3NaturalMotionAnimation)]
+            [uuid(6C8749DF-D57B-4794-8E2D-CECB11E194E5)]
+            interface ISpringVector3NaturalMotionAnimation : IInspectable
+            {
+                [propget] HRESULT DampingRatio([out] [retval] FLOAT* value);
+                [propput] HRESULT DampingRatio([in] FLOAT value);
+                [propget] HRESULT Period([out] [retval] Windows.Foundation.TimeSpan* value);
+                [propput] HRESULT Period([in] Windows.Foundation.TimeSpan value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -1403,6 +1732,26 @@ namespace Windows
                 [overload("InsertKeyFrame")] HRESULT InsertKeyFrameWithEasingFunction([in] FLOAT normalizedProgressKey, [in] Windows.Foundation.Numerics.Vector2 value, [in] Windows.UI.Composition.CompositionEasingFunction* easingFunction);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.Vector2NaturalMotionAnimation)]
+            [uuid(0F3E0B7D-E512-479D-A00C-77C93A30A395)]
+            interface IVector2NaturalMotionAnimation : IInspectable
+            {
+                [propget] HRESULT FinalValue([out] [retval] Windows.Foundation.IReference<Windows.Foundation.Numerics.Vector2>** value);
+                [propput] HRESULT FinalValue([in] Windows.Foundation.IReference<Windows.Foundation.Numerics.Vector2>* value);
+                [propget] HRESULT InitialValue([out] [retval] Windows.Foundation.IReference<Windows.Foundation.Numerics.Vector2>** value);
+                [propput] HRESULT InitialValue([in] Windows.Foundation.IReference<Windows.Foundation.Numerics.Vector2>* value);
+                [propget] HRESULT InitialVelocity([out] [retval] Windows.Foundation.Numerics.Vector2* value);
+                [propput] HRESULT InitialVelocity([in] Windows.Foundation.Numerics.Vector2 value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.Vector2NaturalMotionAnimation)]
+            [uuid(8C74FF61-0761-48A2-BDDB-6AFCC52B89D8)]
+            interface IVector2NaturalMotionAnimationFactory : IInspectable
+            {
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [exclusiveto(Windows.UI.Composition.Vector3KeyFrameAnimation)]
             [uuid(C8039DAA-A281-43C2-A73D-B68E3C533C40)]
@@ -1410,6 +1759,26 @@ namespace Windows
             {
                 [overload("InsertKeyFrame")] HRESULT InsertKeyFrame([in] FLOAT normalizedProgressKey, [in] Windows.Foundation.Numerics.Vector3 value);
                 [overload("InsertKeyFrame")] HRESULT InsertKeyFrameWithEasingFunction([in] FLOAT normalizedProgressKey, [in] Windows.Foundation.Numerics.Vector3 value, [in] Windows.UI.Composition.CompositionEasingFunction* easingFunction);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.Vector3NaturalMotionAnimation)]
+            [uuid(9C17042C-E2CA-45AD-969E-4E78B7B9AD41)]
+            interface IVector3NaturalMotionAnimation : IInspectable
+            {
+                [propget] HRESULT FinalValue([out] [retval] Windows.Foundation.IReference<Windows.Foundation.Numerics.Vector3>** value);
+                [propput] HRESULT FinalValue([in] Windows.Foundation.IReference<Windows.Foundation.Numerics.Vector3>* value);
+                [propget] HRESULT InitialValue([out] [retval] Windows.Foundation.IReference<Windows.Foundation.Numerics.Vector3>** value);
+                [propput] HRESULT InitialValue([in] Windows.Foundation.IReference<Windows.Foundation.Numerics.Vector3>* value);
+                [propget] HRESULT InitialVelocity([out] [retval] Windows.Foundation.Numerics.Vector3* value);
+                [propput] HRESULT InitialVelocity([in] Windows.Foundation.Numerics.Vector3 value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Composition.Vector3NaturalMotionAnimation)]
+            [uuid(21A81D2F-0880-457B-AC87-B609018C876D)]
+            interface IVector3NaturalMotionAnimationFactory : IInspectable
+            {
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -1516,6 +1885,7 @@ namespace Windows
             runtimeclass AmbientLight : Windows.UI.Composition.CompositionLight
             {
                 [default] interface Windows.UI.Composition.IAmbientLight;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Composition.IAmbientLight2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -1535,6 +1905,7 @@ namespace Windows
                 [default] interface Windows.UI.Composition.ICompositionAnimation;
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.UI.Composition.ICompositionAnimation2;
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.UI.Composition.ICompositionAnimationBase;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Composition.ICompositionAnimation3;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -1599,6 +1970,24 @@ namespace Windows
                 [default] interface Windows.UI.Composition.ICompositionColorBrush;
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass CompositionColorGradientStop : Windows.UI.Composition.CompositionObject
+            {
+                [default] interface Windows.UI.Composition.ICompositionColorGradientStop;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass CompositionColorGradientStopCollection
+            {
+                [default] interface Windows.UI.Composition.ICompositionColorGradientStopCollection;
+                interface Windows.Foundation.Collections.IIterable<Windows.UI.Composition.CompositionColorGradientStop*>;
+                interface Windows.Foundation.Collections.IVector<Windows.UI.Composition.CompositionColorGradientStop*>;
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [marshaling_behavior(agile)]
             [threading(both)]
@@ -1653,6 +2042,15 @@ namespace Windows
                 interface Windows.Graphics.Effects.IGraphicsEffectSource;
             }
 
+            [composable(Windows.UI.Composition.ICompositionGradientBrushFactory, protected, Windows.Foundation.UniversalApiContract, 5.0)]
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass CompositionGradientBrush : Windows.UI.Composition.CompositionBrush
+            {
+                [default] interface Windows.UI.Composition.ICompositionGradientBrush;
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [marshaling_behavior(agile)]
             [threading(both)]
@@ -1669,6 +2067,15 @@ namespace Windows
             runtimeclass CompositionLight : Windows.UI.Composition.CompositionObject
             {
                 [default] interface Windows.UI.Composition.ICompositionLight;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Composition.ICompositionLight2;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass CompositionLinearGradientBrush : Windows.UI.Composition.CompositionGradientBrush
+            {
+                [default] interface Windows.UI.Composition.ICompositionLinearGradientBrush;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -1696,6 +2103,7 @@ namespace Windows
                 [default] interface Windows.UI.Composition.ICompositionObject;
                 interface Windows.Foundation.IClosable;
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.UI.Composition.ICompositionObject2;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Composition.ICompositionObject3;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -1733,6 +2141,7 @@ namespace Windows
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.UI.Composition.ICompositionSurfaceBrush2;
             }
 
+            [composable(Windows.UI.Composition.ICompositionTargetFactory, protected, Windows.Foundation.UniversalApiContract, 5.0)]
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [marshaling_behavior(agile)]
             [threading(both)]
@@ -1760,6 +2169,7 @@ namespace Windows
                 interface Windows.Foundation.IClosable;
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.UI.Composition.ICompositor2;
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.UI.Composition.ICompositor3;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Composition.ICompositor4;
             }
 
             [composable(Windows.UI.Composition.IContainerVisualFactory, protected, Windows.Foundation.UniversalApiContract, 2.0)]
@@ -1785,6 +2195,7 @@ namespace Windows
             runtimeclass DistantLight : Windows.UI.Composition.CompositionLight
             {
                 [default] interface Windows.UI.Composition.IDistantLight;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Composition.IDistantLight2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -1793,6 +2204,7 @@ namespace Windows
             runtimeclass DropShadow : Windows.UI.Composition.CompositionShadow
             {
                 [default] interface Windows.UI.Composition.IDropShadow;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Composition.IDropShadow2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -1811,6 +2223,15 @@ namespace Windows
                 [default] interface Windows.UI.Composition.IImplicitAnimationCollection;
                 interface Windows.Foundation.Collections.IIterable<Windows.Foundation.Collections.IKeyValuePair<HSTRING, Windows.UI.Composition.ICompositionAnimationBase*>*>;
                 interface Windows.Foundation.Collections.IMap<HSTRING, Windows.UI.Composition.ICompositionAnimationBase*>;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass InitialValueExpressionCollection : Windows.UI.Composition.CompositionObject
+            {
+                [default] interface Windows.Foundation.Collections.IMap<HSTRING, HSTRING>;
+                interface Windows.Foundation.Collections.IIterable<Windows.Foundation.Collections.IKeyValuePair<HSTRING, HSTRING>*>;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -1838,6 +2259,7 @@ namespace Windows
             runtimeclass LayerVisual : Windows.UI.Composition.ContainerVisual
             {
                 [default] interface Windows.UI.Composition.ILayerVisual;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Composition.ILayerVisual2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -1848,12 +2270,22 @@ namespace Windows
                 [default] interface Windows.UI.Composition.ILinearEasingFunction;
             }
 
+            [composable(Windows.UI.Composition.INaturalMotionAnimationFactory, protected, Windows.Foundation.UniversalApiContract, 5.0)]
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass NaturalMotionAnimation : Windows.UI.Composition.CompositionAnimation
+            {
+                [default] interface Windows.UI.Composition.INaturalMotionAnimation;
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
             [marshaling_behavior(agile)]
             [threading(both)]
             runtimeclass PointLight : Windows.UI.Composition.CompositionLight
             {
                 [default] interface Windows.UI.Composition.IPointLight;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Composition.IPointLight2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -1880,12 +2312,46 @@ namespace Windows
                 [default] interface Windows.UI.Composition.IScalarKeyFrameAnimation;
             }
 
+            [composable(Windows.UI.Composition.IScalarNaturalMotionAnimationFactory, protected, Windows.Foundation.UniversalApiContract, 5.0)]
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass ScalarNaturalMotionAnimation : Windows.UI.Composition.NaturalMotionAnimation
+            {
+                [default] interface Windows.UI.Composition.IScalarNaturalMotionAnimation;
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
             [marshaling_behavior(agile)]
             [threading(both)]
             runtimeclass SpotLight : Windows.UI.Composition.CompositionLight
             {
                 [default] interface Windows.UI.Composition.ISpotLight;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Composition.ISpotLight2;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass SpringScalarNaturalMotionAnimation : Windows.UI.Composition.ScalarNaturalMotionAnimation
+            {
+                [default] interface Windows.UI.Composition.ISpringScalarNaturalMotionAnimation;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass SpringVector2NaturalMotionAnimation : Windows.UI.Composition.Vector2NaturalMotionAnimation
+            {
+                [default] interface Windows.UI.Composition.ISpringVector2NaturalMotionAnimation;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass SpringVector3NaturalMotionAnimation : Windows.UI.Composition.Vector3NaturalMotionAnimation
+            {
+                [default] interface Windows.UI.Composition.ISpringVector3NaturalMotionAnimation;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
@@ -1913,12 +2379,30 @@ namespace Windows
                 [default] interface Windows.UI.Composition.IVector2KeyFrameAnimation;
             }
 
+            [composable(Windows.UI.Composition.IVector2NaturalMotionAnimationFactory, protected, Windows.Foundation.UniversalApiContract, 5.0)]
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass Vector2NaturalMotionAnimation : Windows.UI.Composition.NaturalMotionAnimation
+            {
+                [default] interface Windows.UI.Composition.IVector2NaturalMotionAnimation;
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [marshaling_behavior(agile)]
             [threading(both)]
             runtimeclass Vector3KeyFrameAnimation : Windows.UI.Composition.KeyFrameAnimation
             {
                 [default] interface Windows.UI.Composition.IVector3KeyFrameAnimation;
+            }
+
+            [composable(Windows.UI.Composition.IVector3NaturalMotionAnimationFactory, protected, Windows.Foundation.UniversalApiContract, 5.0)]
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass Vector3NaturalMotionAnimation : Windows.UI.Composition.NaturalMotionAnimation
+            {
+                [default] interface Windows.UI.Composition.IVector3NaturalMotionAnimation;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]

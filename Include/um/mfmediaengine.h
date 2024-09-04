@@ -158,6 +158,13 @@ typedef interface IMFMediaSourceExtension IMFMediaSourceExtension;
 #endif 	/* __IMFMediaSourceExtension_FWD_DEFINED__ */
 
 
+#ifndef __IMFMediaSourceExtensionLiveSeekableRange_FWD_DEFINED__
+#define __IMFMediaSourceExtensionLiveSeekableRange_FWD_DEFINED__
+typedef interface IMFMediaSourceExtensionLiveSeekableRange IMFMediaSourceExtensionLiveSeekableRange;
+
+#endif 	/* __IMFMediaSourceExtensionLiveSeekableRange_FWD_DEFINED__ */
+
+
 #ifndef __IMFMediaEngineEME_FWD_DEFINED__
 #define __IMFMediaEngineEME_FWD_DEFINED__
 typedef interface IMFMediaEngineEME IMFMediaEngineEME;
@@ -3909,7 +3916,101 @@ EXTERN_C const IID IID_IMFMediaSourceExtension;
 #endif 	/* __IMFMediaSourceExtension_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_mfmediaengine_0000_0017 */
+#ifndef __IMFMediaSourceExtensionLiveSeekableRange_INTERFACE_DEFINED__
+#define __IMFMediaSourceExtensionLiveSeekableRange_INTERFACE_DEFINED__
+
+/* interface IMFMediaSourceExtensionLiveSeekableRange */
+/* [local][unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IMFMediaSourceExtensionLiveSeekableRange;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("5D1ABFD6-450A-4D92-9EFC-D6B6CBC1F4DA")
+    IMFMediaSourceExtensionLiveSeekableRange : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE SetLiveSeekableRange( 
+            /* [annotation][in] */ 
+            _In_  double start,
+            /* [annotation][in] */ 
+            _In_  double end) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE ClearLiveSeekableRange( void) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IMFMediaSourceExtensionLiveSeekableRangeVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IMFMediaSourceExtensionLiveSeekableRange * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IMFMediaSourceExtensionLiveSeekableRange * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IMFMediaSourceExtensionLiveSeekableRange * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *SetLiveSeekableRange )( 
+            IMFMediaSourceExtensionLiveSeekableRange * This,
+            /* [annotation][in] */ 
+            _In_  double start,
+            /* [annotation][in] */ 
+            _In_  double end);
+        
+        HRESULT ( STDMETHODCALLTYPE *ClearLiveSeekableRange )( 
+            IMFMediaSourceExtensionLiveSeekableRange * This);
+        
+        END_INTERFACE
+    } IMFMediaSourceExtensionLiveSeekableRangeVtbl;
+
+    interface IMFMediaSourceExtensionLiveSeekableRange
+    {
+        CONST_VTBL struct IMFMediaSourceExtensionLiveSeekableRangeVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IMFMediaSourceExtensionLiveSeekableRange_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IMFMediaSourceExtensionLiveSeekableRange_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IMFMediaSourceExtensionLiveSeekableRange_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IMFMediaSourceExtensionLiveSeekableRange_SetLiveSeekableRange(This,start,end)	\
+    ( (This)->lpVtbl -> SetLiveSeekableRange(This,start,end) ) 
+
+#define IMFMediaSourceExtensionLiveSeekableRange_ClearLiveSeekableRange(This)	\
+    ( (This)->lpVtbl -> ClearLiveSeekableRange(This) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IMFMediaSourceExtensionLiveSeekableRange_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_mfmediaengine_0000_0018 */
 /* [local] */ 
 
 
@@ -3919,8 +4020,8 @@ EXTERN_C const IID IID_IMFMediaSourceExtension;
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0017_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0018_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0018_v0_0_s_ifspec;
 
 #ifndef __IMFMediaEngineEME_INTERFACE_DEFINED__
 #define __IMFMediaEngineEME_INTERFACE_DEFINED__
@@ -4181,15 +4282,15 @@ EXTERN_C const IID IID_IMFMediaEngineSrcElementsEx;
 #endif 	/* __IMFMediaEngineSrcElementsEx_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_mfmediaengine_0000_0019 */
+/* interface __MIDL_itf_mfmediaengine_0000_0020 */
 /* [local] */ 
 
 EXTERN_GUID(MF_MEDIA_ENGINE_NEEDKEY_CALLBACK,
 0x7ea80843, 0xb6e4, 0x432c, 0x8e, 0xa4, 0x78, 0x48, 0xff, 0xe4, 0x22, 0x0e);
 
 
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0019_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0020_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0020_v0_0_s_ifspec;
 
 #ifndef __IMFMediaEngineNeedKeyNotify_INTERFACE_DEFINED__
 #define __IMFMediaEngineNeedKeyNotify_INTERFACE_DEFINED__
@@ -4415,7 +4516,7 @@ EXTERN_C const IID IID_IMFMediaKeys;
 #endif 	/* __IMFMediaKeys_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_mfmediaengine_0000_0021 */
+/* interface __MIDL_itf_mfmediaengine_0000_0022 */
 /* [local] */ 
 
 typedef 
@@ -4431,8 +4532,8 @@ enum _MF_MEDIA_ENGINE_KEYERR
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0021_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0022_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0022_v0_0_s_ifspec;
 
 #ifndef __IMFMediaKeySession_INTERFACE_DEFINED__
 #define __IMFMediaKeySession_INTERFACE_DEFINED__
@@ -4768,7 +4869,7 @@ EXTERN_C const IID IID_IMFCdmSuspendNotify;
 #endif 	/* __IMFCdmSuspendNotify_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_mfmediaengine_0000_0024 */
+/* interface __MIDL_itf_mfmediaengine_0000_0025 */
 /* [local] */ 
 
 typedef 
@@ -4781,8 +4882,8 @@ enum _MF_HDCP_STATUS
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0024_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0025_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0025_v0_0_s_ifspec;
 
 #ifndef __IMFHDCPStatus_INTERFACE_DEFINED__
 #define __IMFHDCPStatus_INTERFACE_DEFINED__
@@ -4882,7 +4983,7 @@ EXTERN_C const IID IID_IMFHDCPStatus;
 #endif 	/* __IMFHDCPStatus_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_mfmediaengine_0000_0025 */
+/* interface __MIDL_itf_mfmediaengine_0000_0026 */
 /* [local] */ 
 
 typedef 
@@ -4898,8 +4999,8 @@ enum MF_MEDIA_ENGINE_OPM_STATUS
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0025_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0026_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0026_v0_0_s_ifspec;
 
 #ifndef __IMFMediaEngineOPMInfo_INTERFACE_DEFINED__
 #define __IMFMediaEngineOPMInfo_INTERFACE_DEFINED__
@@ -4987,7 +5088,7 @@ EXTERN_C const IID IID_IMFMediaEngineOPMInfo;
 #endif 	/* __IMFMediaEngineOPMInfo_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_mfmediaengine_0000_0026 */
+/* interface __MIDL_itf_mfmediaengine_0000_0027 */
 /* [local] */ 
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
@@ -5078,8 +5179,8 @@ enum MF_MEDIA_ENGINE_PROTECTION_FLAGS
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0026_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0027_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0027_v0_0_s_ifspec;
 
 #ifndef __IMFMediaEngineClassFactory_INTERFACE_DEFINED__
 #define __IMFMediaEngineClassFactory_INTERFACE_DEFINED__
@@ -5195,7 +5296,7 @@ EXTERN_C const IID IID_IMFMediaEngineClassFactory;
 #endif 	/* __IMFMediaEngineClassFactory_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_mfmediaengine_0000_0027 */
+/* interface __MIDL_itf_mfmediaengine_0000_0028 */
 /* [local] */ 
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
@@ -5204,8 +5305,8 @@ EXTERN_C const IID IID_IMFMediaEngineClassFactory;
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
 
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0027_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0028_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0028_v0_0_s_ifspec;
 
 #ifndef __IMFMediaEngineClassFactoryEx_INTERFACE_DEFINED__
 #define __IMFMediaEngineClassFactoryEx_INTERFACE_DEFINED__
@@ -5672,14 +5773,14 @@ EXTERN_C const IID IID_IMFMediaEngineSupportsSourceTransfer;
 #endif 	/* __IMFMediaEngineSupportsSourceTransfer_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_mfmediaengine_0000_0031 */
+/* interface __MIDL_itf_mfmediaengine_0000_0032 */
 /* [local] */ 
 
 #if (WINVER >= _WIN32_WINNT_WINTHRESHOLD) 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0031_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0032_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0032_v0_0_s_ifspec;
 
 #ifndef __IMFMediaEngineTransferSource_INTERFACE_DEFINED__
 #define __IMFMediaEngineTransferSource_INTERFACE_DEFINED__
@@ -5763,7 +5864,7 @@ EXTERN_C const IID IID_IMFMediaEngineTransferSource;
 #endif 	/* __IMFMediaEngineTransferSource_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_mfmediaengine_0000_0032 */
+/* interface __MIDL_itf_mfmediaengine_0000_0033 */
 /* [local] */ 
 
 #endif // (WINVER >= _WIN32_WINNT_WINTHRESHOLD) 
@@ -5887,8 +5988,8 @@ enum MF_TIMED_TEXT_TRACK_READY_STATE
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0032_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0033_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0033_v0_0_s_ifspec;
 
 #ifndef __IMFTimedText_INTERFACE_DEFINED__
 #define __IMFTimedText_INTERFACE_DEFINED__
@@ -7718,7 +7819,7 @@ EXTERN_C const IID IID_IMFTimedTextCueList;
 #endif 	/* __IMFTimedTextCueList_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_mfmediaengine_0000_0042 */
+/* interface __MIDL_itf_mfmediaengine_0000_0043 */
 /* [local] */ 
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
@@ -7750,8 +7851,8 @@ EXTERN_GUID(MF_MEDIA_ENGINE_EME_CALLBACK,
 0x494553a7, 0xa481, 0x4cb7, 0xbe, 0xc5, 0x38, 0x09, 0x03, 0x51, 0x37, 0x31);
 
 
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0042_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0043_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0043_v0_0_s_ifspec;
 
 #ifndef __IMFMediaEngineEMENotify_INTERFACE_DEFINED__
 #define __IMFMediaEngineEMENotify_INTERFACE_DEFINED__
@@ -7851,7 +7952,7 @@ EXTERN_C const IID IID_IMFMediaEngineEMENotify;
 #endif 	/* __IMFMediaEngineEMENotify_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_mfmediaengine_0000_0043 */
+/* interface __MIDL_itf_mfmediaengine_0000_0044 */
 /* [local] */ 
 
 typedef 
@@ -7864,8 +7965,8 @@ enum MF_MEDIAKEYS_REQUIREMENT
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0043_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0044_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0044_v0_0_s_ifspec;
 
 #ifndef __IMFMediaKeySessionNotify2_INTERFACE_DEFINED__
 #define __IMFMediaKeySessionNotify2_INTERFACE_DEFINED__
@@ -8202,7 +8303,7 @@ EXTERN_C const IID IID_IMFMediaEngineClassFactory3;
 #endif 	/* __IMFMediaEngineClassFactory3_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_mfmediaengine_0000_0046 */
+/* interface __MIDL_itf_mfmediaengine_0000_0047 */
 /* [local] */ 
 
 EXTERN_C const DECLSPEC_SELECTANY PROPERTYKEY MF_EME_INITDATATYPES =     { { 0x497d231b, 0x4eb9, 0x4df0, { 0xb4, 0x74, 0xb9, 0xaf, 0xeb, 0x0a, 0xdf, 0x38 } }, PID_FIRST_USABLE+0x00000001 }; 
@@ -8218,8 +8319,8 @@ EXTERN_C const DECLSPEC_SELECTANY PROPERTYKEY MF_EME_CDM_INPRIVATESTOREPATH = { 
 EXTERN_C const DECLSPEC_SELECTANY PROPERTYKEY MF_EME_CDM_STOREPATH =          { { 0xf795841e, 0x99f9, 0x44d7, { 0xaf, 0xc0, 0xd3, 0x09, 0xc0, 0x4c, 0x94, 0xab } }, PID_FIRST_USABLE+0x00000002 }; 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0046_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0047_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0047_v0_0_s_ifspec;
 
 #ifndef __IMFMediaKeys2_INTERFACE_DEFINED__
 #define __IMFMediaKeys2_INTERFACE_DEFINED__
@@ -8579,7 +8680,7 @@ EXTERN_C const IID IID_IMFMediaKeySession2;
 #endif 	/* __IMFMediaKeySession2_INTERFACE_DEFINED__ */
 
 
-/* interface __MIDL_itf_mfmediaengine_0000_0048 */
+/* interface __MIDL_itf_mfmediaengine_0000_0049 */
 /* [local] */ 
 
 #endif // (WINVER >= _WIN32_WINNT_WINTHRESHOLD) 
@@ -8587,8 +8688,8 @@ EXTERN_C const IID IID_IMFMediaKeySession2;
 #pragma endregion
 
 
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0048_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0049_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfmediaengine_0000_0049_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

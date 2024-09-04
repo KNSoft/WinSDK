@@ -13,23 +13,6 @@ import "Windows.Foundation.idl";
 import "Windows.ApplicationModel.idl";
 import "Windows.System.idl";
 import "Windows.System.RemoteSystems.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eapplicationmodel_h__)")
-cpp_quote("#include <Windows.ApplicationModel.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel_h__)")
-cpp_quote("#if !defined(__windows2Esystem_h__)")
-cpp_quote("#include <Windows.System.h>")
-cpp_quote("#endif // !defined(__windows2Esystem_h__)")
-cpp_quote("#if !defined(__windows2Esystem2Eremotesystems_h__)")
-cpp_quote("#include <Windows.System.RemoteSystems.h>")
-cpp_quote("#endif // !defined(__windows2Esystem2Eremotesystems_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -106,6 +89,8 @@ namespace Windows
             interface IAppServiceTriggerDetails;
 
             interface IAppServiceTriggerDetails2;
+
+            interface IAppServiceTriggerDetails3;
 
             runtimeclass AppServiceCatalog;
 
@@ -292,6 +277,14 @@ namespace Windows
                 [propget] HRESULT IsRemoteSystemConnection([out] [retval] boolean* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.ApplicationModel.AppService.AppServiceTriggerDetails)]
+            [uuid(FBD71E21-7939-4E68-9E3C-7780147AABB6)]
+            interface IAppServiceTriggerDetails3 : IInspectable
+            {
+                HRESULT CheckCallerForCapabilityAsync([in] HSTRING capabilityName, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [static(Windows.ApplicationModel.AppService.IAppServiceCatalogStatics, Windows.Foundation.UniversalApiContract, 1.0)]
             runtimeclass AppServiceCatalog
@@ -356,6 +349,7 @@ namespace Windows
             {
                 [default] interface Windows.ApplicationModel.AppService.IAppServiceTriggerDetails;
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.ApplicationModel.AppService.IAppServiceTriggerDetails2;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.ApplicationModel.AppService.IAppServiceTriggerDetails3;
             }
         }
     }

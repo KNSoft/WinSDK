@@ -375,12 +375,25 @@ typedef HRESULT
 typedef HRESULT
 (WINAPI *PIBIO_SENSOR_ASYNC_IMPORT_SECURE_BUFFER_FN)(
     _Inout_ PWINBIO_PIPELINE Pipeline, 
-    _In_reads_bytes_opt_(SecureBufferSize) PUCHAR SecureBufferAddress,
-    _In_ SIZE_T SecureBufferSize,
+    _In_ GUID SecureBufferIdentifier,
     _In_reads_bytes_opt_(MetadataBufferSize) PUCHAR MetadataBufferAddress,
     _In_ SIZE_T MetadataBufferSize, 
     _Outptr_result_bytebuffer_maybenull_(*ResultBufferSize) PUCHAR *ResultBufferAddress, 
     _Out_opt_ SIZE_T *ResultBufferSize
+    );
+
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+//
+// Additional methods available in V5.0 and later
+//
+typedef HRESULT
+(WINAPI *PIBIO_SENSOR_QUERY_PRIVATE_SENSOR_TYPE_FN)(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _Out_writes_bytes_to_(TypeInfoBufferSize, *TypeInfoDataSize) PUCHAR TypeInfoBufferAddress,
+    _In_ SIZE_T TypeInfoBufferSize,
+    _Out_ SIZE_T *TypeInfoDataSize
     );
 
 #endif
@@ -405,6 +418,10 @@ typedef HRESULT
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 #define WINBIO_SENSOR_INTERFACE_VERSION_4    WINBIO_MAKE_INTERFACE_VERSION(4,0)
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+#define WINBIO_SENSOR_INTERFACE_VERSION_5    WINBIO_MAKE_INTERFACE_VERSION(5,0)
 #endif
 
 typedef struct _WINBIO_SENSOR_INTERFACE {
@@ -462,6 +479,13 @@ typedef struct _WINBIO_SENSOR_INTERFACE {
     //
     PIBIO_SENSOR_ASYNC_IMPORT_RAW_BUFFER_FN     AsyncImportRawBuffer;
     PIBIO_SENSOR_ASYNC_IMPORT_SECURE_BUFFER_FN  AsyncImportSecureBuffer;
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+    //
+    // V5.0 methods begin here...
+    //
+    PIBIO_SENSOR_QUERY_PRIVATE_SENSOR_TYPE_FN   QueryPrivateSensorType;
 #endif
 
 } WINBIO_SENSOR_INTERFACE, *PWINBIO_SENSOR_INTERFACE;
@@ -1105,8 +1129,7 @@ WbioSensorAsyncImportRawBuffer(
 inline HRESULT
 WbioSensorAsyncImportSecureBuffer(
     _Inout_ PWINBIO_PIPELINE Pipeline, 
-    _In_reads_bytes_opt_(SecureBufferSize) PUCHAR SecureBufferAddress,
-    _In_ SIZE_T SecureBufferSize,
+    _In_ GUID SecureBufferIdentifier,
     _In_reads_bytes_opt_(MetadataBufferSize) PUCHAR MetadataBufferAddress,
     _In_ SIZE_T MetadataBufferSize, 
     _Outptr_result_bytebuffer_maybenull_(*ResultBufferSize) PUCHAR *ResultBufferAddress, 
@@ -1126,12 +1149,46 @@ WbioSensorAsyncImportSecureBuffer(
     {
         return Pipeline->SensorInterface->AsyncImportSecureBuffer(
                                             Pipeline,
-                                            SecureBufferAddress,
-                                            SecureBufferSize,
+                                            SecureBufferIdentifier,
                                             MetadataBufferAddress,
                                             MetadataBufferSize,
                                             ResultBufferAddress,
                                             ResultBufferSize
+                                            );
+    }
+}
+//-----------------------------------------------------------------------------
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+//
+// V5.0 methods begin here...
+//
+
+inline HRESULT
+WbioSensorQueryPrivateSensorType(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _Out_writes_bytes_to_(TypeInfoBufferSize, *TypeInfoDataSize) PUCHAR TypeInfoBufferAddress,
+    _In_ SIZE_T TypeInfoBufferSize,
+    _Out_ SIZE_T *TypeInfoDataSize
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else if (!ARGUMENT_PRESENT(Pipeline->SensorInterface->QueryPrivateSensorType))
+    {
+        return E_NOTIMPL;
+    }
+    else
+    {
+        return Pipeline->SensorInterface->QueryPrivateSensorType(
+                                            Pipeline,
+                                            TypeInfoBufferAddress,
+                                            TypeInfoBufferSize,
+                                            TypeInfoDataSize
                                             );
     }
 }
@@ -1463,6 +1520,20 @@ typedef HRESULT
 
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+//
+// Additional methods available in V5.0 and later
+//
+
+typedef HRESULT
+(WINAPI *PIBIO_ENGINE_ACCEPT_PRIVATE_SENSOR_TYPE_INFO_FN)(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_reads_(TypeInfoBufferSize) const UCHAR* TypeInfoBufferAddress,
+    _In_ SIZE_T TypeInfoBufferSize
+    );
+
+#endif
+
 ///////////////////////////////////////////////////////////////////////////////
 //
 // Engine Adapter interface table.
@@ -1483,6 +1554,10 @@ typedef HRESULT
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS1)
 #define WINBIO_ENGINE_INTERFACE_VERSION_4   WINBIO_MAKE_INTERFACE_VERSION(4,0)
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+#define WINBIO_ENGINE_INTERFACE_VERSION_5   WINBIO_MAKE_INTERFACE_VERSION(5,0)
 #endif
 
 typedef struct _WINBIO_ENGINE_INTERFACE {
@@ -1553,6 +1628,13 @@ typedef struct _WINBIO_ENGINE_INTERFACE {
     //
     PIBIO_ENGINE_CREATE_KEY_FN                     CreateKey;
     PIBIO_ENGINE_IDENTIFY_FEATURE_SET_SECURE_FN    IdentifyFeatureSetSecure;
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+    //
+    // V5.0 methods begin here...
+    //
+    PIBIO_ENGINE_ACCEPT_PRIVATE_SENSOR_TYPE_INFO_FN AcceptPrivateSensorTypeInfo;
 #endif
 
 } WINBIO_ENGINE_INTERFACE, *PWINBIO_ENGINE_INTERFACE;
@@ -2634,6 +2716,39 @@ WbioEngineIdentifyFeatureSetSecure(
 										    RejectDetail,
                                             Authorization,
                                             AuthorizationSize);
+    }
+}
+//-----------------------------------------------------------------------------
+
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+//
+// V5.0 methods begin here...
+//
+
+inline HRESULT
+WbioEngineAcceptPrivateSensorTypeInfo(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_reads_(TypeInfoBufferSize) const UCHAR* TypeInfoBufferAddress,
+    _In_ SIZE_T TypeInfoBufferSize
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->EngineInterface))
+    {
+        return E_POINTER;
+    }
+    else if (!ARGUMENT_PRESENT(Pipeline->EngineInterface->AcceptPrivateSensorTypeInfo))
+    {
+        return E_NOTIMPL;
+    }
+    else
+    {
+        return Pipeline->EngineInterface->AcceptPrivateSensorTypeInfo(
+                                              Pipeline,
+                                              TypeInfoBufferAddress,
+                                              TypeInfoBufferSize);
     }
 }
 //-----------------------------------------------------------------------------
@@ -3880,17 +3995,6 @@ typedef HRESULT
 // Methods available in V5.0 and later
 //
 typedef HRESULT
-(WINAPI *PIBIO_FRAMEWORK_VSM_SENSOR_ASYNC_IMPORT_SECURE_BUFFER_FN)(
-    _Inout_ PWINBIO_PIPELINE Pipeline, 
-    _In_ GUID SecureBufferIdentifier,
-    _In_ GUID SecureScenarioIdentifier,
-    _In_reads_bytes_opt_(MetadataBufferSize) PUCHAR MetadataBufferAddress,
-    _In_ SIZE_T MetadataBufferSize, 
-    _Outptr_result_bytebuffer_maybenull_(*ResultBufferSize) PUCHAR *ResultBufferAddress, 
-    _Out_opt_ SIZE_T *ResultBufferSize
-    );
-
-typedef HRESULT
 (WINAPI *PIBIO_FRAMEWORK_VSM_STORAGE_RECORD_MIGRATE_BEGIN_FN)(
     _Inout_ PWINBIO_PIPELINE Pipeline,
     _In_ SIZE_T RequiredCapacity,
@@ -3935,6 +4039,27 @@ typedef HRESULT
 
 #endif  // NTDDI_VERSION >= NTDDI_WIN10_RS2
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2) // BUGBUG: convert to NTDDI_WIN10_RS3 when build system is updated
+
+//
+// Methods available in V6.0 and later
+//
+typedef HRESULT
+(WINAPI *PIBIO_FRAMEWORK_LOCK_AND_VALIDATE_SECURE_BUFFER_FN)(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ GUID SecureBufferIdentifier,
+    _Outptr_result_bytebuffer_(*SecureBufferSize) PVOID *SecureBufferAddress,
+    _Out_ SIZE_T *SecureBufferSize
+    );
+
+typedef HRESULT
+(WINAPI *PIBIO_FRAMEWORK_RELEASE_SECURE_BUFFER_FN)(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ GUID SecureBufferIdentifier
+    );
+#endif
+
+
 ///////////////////////////////////////////////////////////////////////////////
 //
 // Framework interface table.
@@ -3951,6 +4076,10 @@ typedef HRESULT
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 #define WINBIO_FRAMEWORK_INTERFACE_VERSION_5_0  WINBIO_MAKE_INTERFACE_VERSION(5,0)
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2) // BUGBUG: convert to NTDDI_WIN10_RS3 when build system is updated
+#define WINBIO_FRAMEWORK_INTERFACE_VERSION_6_0  WINBIO_MAKE_INTERFACE_VERSION(6,0)
 #endif
 
 typedef struct _WINBIO_FRAMEWORK_INTERFACE {
@@ -4012,7 +4141,7 @@ typedef struct _WINBIO_FRAMEWORK_INTERFACE {
     PIBIO_SENSOR_ACTIVATE_FN                                    VsmSensorActivate;
     PIBIO_SENSOR_DEACTIVATE_FN                                  VsmSensorDeactivate;
     PIBIO_SENSOR_ASYNC_IMPORT_RAW_BUFFER_FN                     VsmSensorAsyncImportRawBuffer;
-    PIBIO_FRAMEWORK_VSM_SENSOR_ASYNC_IMPORT_SECURE_BUFFER_FN    VsmSensorAsyncImportSecureBuffer;
+    PIBIO_SENSOR_ASYNC_IMPORT_SECURE_BUFFER_FN                  VsmSensorAsyncImportSecureBuffer;
 
     PIBIO_FRAMEWORK_VSM_STORAGE_RECORD_MIGRATE_BEGIN_FN         VsmStorageRecordMigrateBegin;
     PIBIO_FRAMEWORK_VSM_STORAGE_RECORD_MIGRATE_NEXT_FN          VsmStorageRecordMigrateNext;
@@ -4023,9 +4152,19 @@ typedef struct _WINBIO_FRAMEWORK_INTERFACE {
     //
     // (Upcalls...)
     //
-    PIBIO_FRAMEWORK_ALLOCATE_MEMORY_FN                  AllocateMemory;
-    PIBIO_FRAMEWORK_FREE_MEMORY_FN                      FreeMemory;
-    PIBIO_FRAMEWORK_GET_PROPERTY_FN                     GetProperty;
+    PIBIO_FRAMEWORK_ALLOCATE_MEMORY_FN                          AllocateMemory;
+    PIBIO_FRAMEWORK_FREE_MEMORY_FN                              FreeMemory;
+    PIBIO_FRAMEWORK_GET_PROPERTY_FN                             GetProperty;
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2) // BUGBUG: convert to NTDDI_WIN10_RS3 when build system is updated
+    //
+    // V6.0 methods begin here...
+    //
+    // (Upcalls...)
+    //
+    PIBIO_FRAMEWORK_LOCK_AND_VALIDATE_SECURE_BUFFER_FN          LockAndValidateSecureBuffer;
+    PIBIO_FRAMEWORK_RELEASE_SECURE_BUFFER_FN                    ReleaseSecureBuffer;
 #endif
 
 } WINBIO_FRAMEWORK_INTERFACE, *PWINBIO_FRAMEWORK_INTERFACE;
@@ -4730,6 +4869,7 @@ WbioFrameworkVsmStorageCacheExportEnd(
 #endif  // NTDDI_VERSION >= NTDDI_WIN10_RS1
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
 inline HRESULT
 WbioFrameworkVsmSensorAttach(
     _Inout_ PWINBIO_PIPELINE Pipeline
@@ -4817,8 +4957,42 @@ WbioFrameworkVsmSensorClearContext(
 }
 //-----------------------------------------------------------------------------
 
-// PUSH DATA TO ENGINE GOES HERE...
+inline HRESULT
+WbioFrameworkVsmSensorPushDataToEngine(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ WINBIO_BIR_PURPOSE Purpose,
+    _In_ WINBIO_BIR_DATA_FLAGS Flags,
+    _Out_ PWINBIO_REJECT_DETAIL RejectDetail
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_5_0;
 
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->VsmSensorPushDataToEngine))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->VsmSensorPushDataToEngine(
+                                                    Pipeline,
+                                                    Purpose,
+                                                    Flags,
+                                                    RejectDetail
+                                                    );
+        }
+    }
+}
+//-----------------------------------------------------------------------------
 
 inline HRESULT
 WbioFrameworkVsmSensorNotifyPowerChange(
@@ -5012,7 +5186,6 @@ inline HRESULT
 WbioFrameworkVsmSensorAsyncImportSecureBuffer(
     _Inout_ PWINBIO_PIPELINE Pipeline, 
     _In_ GUID SecureBufferIdentifier,
-    _In_ GUID SecureScenarioIdentifier,
     _In_reads_bytes_opt_(MetadataBufferSize) PUCHAR MetadataBufferAddress,
     _In_ SIZE_T MetadataBufferSize, 
     _Outptr_result_bytebuffer_maybenull_(*ResultBufferSize) PUCHAR *ResultBufferAddress, 
@@ -5040,7 +5213,6 @@ WbioFrameworkVsmSensorAsyncImportSecureBuffer(
             return Pipeline->FrameworkInterface->VsmSensorAsyncImportSecureBuffer(
                                                     Pipeline,
                                                     SecureBufferIdentifier,
-                                                    SecureScenarioIdentifier,
                                                     MetadataBufferAddress,
                                                     MetadataBufferSize,
                                                     ResultBufferAddress,
@@ -5332,6 +5504,80 @@ WbioFrameworkGetProperty(
 //-----------------------------------------------------------------------------
 
 #endif // NTDDI_VERSION >= NTDDI_WIN10_RS2
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2) // BUGBUG: convert to NTDDI_WIN10_RS3 when build system is updated
+
+inline HRESULT
+WbioFrameworkLockAndValidateSecureBuffer(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ GUID SecureBufferIdentifier,
+    _Outptr_result_bytebuffer_(*SecureBufferSize) PVOID *SecureBufferAddress,
+    _Out_ SIZE_T *SecureBufferSize
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_6_0;
+
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->SetUnitStatus))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->LockAndValidateSecureBuffer(
+                                                    Pipeline,
+                                                    SecureBufferIdentifier,
+                                                    SecureBufferAddress,
+                                                    SecureBufferSize
+                                                    );
+        }
+    }
+}
+//-----------------------------------------------------------------------------
+
+inline HRESULT
+WbioFrameworkReleaseSecureBuffer(
+    _Inout_ PWINBIO_PIPELINE Pipeline,
+    _In_ GUID SecureBufferIdentifier
+    )
+{
+    if (!ARGUMENT_PRESENT(Pipeline) ||
+        !ARGUMENT_PRESENT(Pipeline->SensorInterface))
+    {
+        return E_POINTER;
+    }
+    else
+    {
+        WINBIO_ADAPTER_INTERFACE_VERSION requiredFrameworkVersion = WINBIO_FRAMEWORK_INTERFACE_VERSION_6_0;
+
+        if (Pipeline->SensorInterface->Version.MinorVersion == 0 ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface) ||
+            !WINBIO_IS_FRAMEWORK_VERSION_COMPATIBLE(Pipeline, requiredFrameworkVersion) ||
+            !ARGUMENT_PRESENT(Pipeline->FrameworkInterface->SetUnitStatus))
+        {
+            return E_NOTIMPL;
+        }
+        else
+        {
+            return Pipeline->FrameworkInterface->ReleaseSecureBuffer(
+                                                    Pipeline,
+                                                    SecureBufferIdentifier
+                                                    );
+        }
+    }
+}
+//-----------------------------------------------------------------------------
+
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS3
 
 #ifdef __cplusplus
 } // extern "C"

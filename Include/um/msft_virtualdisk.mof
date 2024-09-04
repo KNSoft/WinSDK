@@ -1038,6 +1038,10 @@ class MSFT_VirtualDisk : MSFT_StorageObject {
         );
 
 
+    //
+    // Method: Attach
+    //
+
     [Description(
         "Attaches a Storage Spaces based virtual disk to the system. This operation is similar "
         "to Show and Hide, however there is no need for target and initiator configuration "
@@ -1081,6 +1085,10 @@ class MSFT_VirtualDisk : MSFT_StorageObject {
         String ExtendedStatus
         );
 
+
+    //
+    // Method: Detach
+    //
 
     [Description(
         "Detaches a Storage Spaces based virtual disk from the system. This operation is similar "
@@ -1129,6 +1137,10 @@ class MSFT_VirtualDisk : MSFT_StorageObject {
         String ExtendedStatus
         );
 
+
+    //
+    // Method: AddPhysicalDisk
+    //
 
     [Description(
         "This method will add one or more physical disks for manual allocation."
@@ -1184,6 +1196,31 @@ class MSFT_VirtualDisk : MSFT_StorageObject {
         String ExtendedStatus
     );
 
+
+    //
+    // Method: AddPhysicalDisk2
+    //
+
+    UInt32 AddPhysicalDisk2(
+
+        [In, Required]
+        MSFT_PhysicalDisk REF PhysicalDisks[],
+
+        [In]
+        UInt16 Usage,
+
+        [Out]
+        MSFT_StorageJob REF CreatedStorageJob,
+
+        [Out, EmbeddedInstance("MSFT_StorageExtendedStatus")]
+        String ExtendedStatus
+    );
+
+
+    //
+    // Method: RemovePhysicalDisk
+    //
+
     [Description(
         "This method will remove one or more physical disks from manual allocation."
         ),
@@ -1231,20 +1268,10 @@ class MSFT_VirtualDisk : MSFT_StorageObject {
         String ExtendedStatus
     );
 
-    UInt32 AddPhysicalDisk2(
 
-        [In, Required]
-        MSFT_PhysicalDisk REF PhysicalDisks[],
-
-        [In]
-        UInt16 Usage,
-
-        [Out]
-        MSFT_StorageJob REF CreatedStorageJob,
-
-        [Out, EmbeddedInstance("MSFT_StorageExtendedStatus")]
-        String ExtendedStatus
-    );
+    //
+    // Method: RemovePhysicalDisk2
+    //
 
     UInt32 RemovePhysicalDisk2(
 
@@ -1258,6 +1285,39 @@ class MSFT_VirtualDisk : MSFT_StorageObject {
         String ExtendedStatus
     );
 
+
+    //
+    // Method: AddStorageFaultDomain
+    //
+
+    UInt32 AddStorageFaultDomain(
+
+        [In, Required]
+        MSFT_StorageFaultDomain REF StorageFaultDomains[],
+
+        [Out]
+        MSFT_StorageJob REF CreatedStorageJob,
+
+        [Out, EmbeddedInstance("MSFT_StorageExtendedStatus")]
+        String ExtendedStatus
+        );
+
+
+    //
+    // Method: RemoveStorageFaultDomain
+    //
+
+    UInt32 RemoveStorageFaultDomain(
+
+        [In, Required]
+        MSFT_StorageFaultDomain REF StorageFaultDomains[],
+
+        [Out]
+        MSFT_StorageJob REF CreatedStorageJob,
+
+        [Out, EmbeddedInstance("MSFT_StorageExtendedStatus")]
+        String ExtendedStatus
+        );
 
     //
     // Method: CreateReplica

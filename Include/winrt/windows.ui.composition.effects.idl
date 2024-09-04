@@ -11,17 +11,6 @@ import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
 import "Windows.Graphics.Effects.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Egraphics2Eeffects_h__)")
-cpp_quote("#include <Windows.Graphics.Effects.h>")
-cpp_quote("#endif // !defined(__windows2Egraphics2Eeffects_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -51,7 +40,11 @@ namespace Windows
         {
             namespace Effects
             {
+                typedef enum SceneLightingEffectReflectanceModel SceneLightingEffectReflectanceModel;
+
                 interface ISceneLightingEffect;
+
+                interface ISceneLightingEffect2;
 
                 runtimeclass SceneLightingEffect;
             }
@@ -70,6 +63,13 @@ namespace Windows
         {
             namespace Effects
             {
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                enum SceneLightingEffectReflectanceModel
+                {
+                    BlinnPhong                = 0,
+                    PhysicallyBasedBlinnPhong = 1
+                };
+
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)]
                 [exclusiveto(Windows.UI.Composition.Effects.SceneLightingEffect)]
                 [uuid(91BB5E52-95D1-4F8B-9A5A-6408B24B8C6A)]
@@ -87,6 +87,15 @@ namespace Windows
                     [propput] HRESULT SpecularShine([in] FLOAT value);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Composition.Effects.SceneLightingEffect)]
+                [uuid(9E270E81-72F0-4C5C-95F8-8A6E0024F409)]
+                interface ISceneLightingEffect2 : IInspectable
+                {
+                    [propget] HRESULT ReflectanceModel([out] [retval] Windows.UI.Composition.Effects.SceneLightingEffectReflectanceModel* value);
+                    [propput] HRESULT ReflectanceModel([in] Windows.UI.Composition.Effects.SceneLightingEffectReflectanceModel value);
+                }
+
                 [activatable(Windows.Foundation.UniversalApiContract, 3.0)]
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)]
                 [marshaling_behavior(agile)]
@@ -96,6 +105,7 @@ namespace Windows
                     [default] interface Windows.UI.Composition.Effects.ISceneLightingEffect;
                     interface Windows.Graphics.Effects.IGraphicsEffect;
                     interface Windows.Graphics.Effects.IGraphicsEffectSource;
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Composition.Effects.ISceneLightingEffect2;
                 }
             }
         }

@@ -14,26 +14,6 @@ import "Windows.Devices.Perception.idl";
 import "Windows.Foundation.Numerics.idl";
 import "Windows.Graphics.Imaging.idl";
 import "Windows.Media.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Edevices2Eperception_h__)")
-cpp_quote("#include <Windows.Devices.Perception.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Eperception_h__)")
-cpp_quote("#if !defined(__windows2Efoundation2Enumerics_h__)")
-cpp_quote("#include <Windows.Foundation.Numerics.h>")
-cpp_quote("#endif // !defined(__windows2Efoundation2Enumerics_h__)")
-cpp_quote("#if !defined(__windows2Egraphics2Eimaging_h__)")
-cpp_quote("#include <Windows.Graphics.Imaging.h>")
-cpp_quote("#endif // !defined(__windows2Egraphics2Eimaging_h__)")
-cpp_quote("#if !defined(__windows2Emedia_h__)")
-cpp_quote("#include <Windows.Media.h>")
-cpp_quote("#endif // !defined(__windows2Emedia_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows

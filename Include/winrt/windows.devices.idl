@@ -15,29 +15,6 @@ import "Windows.Devices.Gpio.Provider.idl";
 import "Windows.Devices.I2c.Provider.idl";
 import "Windows.Devices.Pwm.Provider.idl";
 import "Windows.Devices.Spi.Provider.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Edevices2Eadc2Eprovider_h__)")
-cpp_quote("#include <Windows.Devices.Adc.Provider.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Eadc2Eprovider_h__)")
-cpp_quote("#if !defined(__windows2Edevices2Egpio2Eprovider_h__)")
-cpp_quote("#include <Windows.Devices.Gpio.Provider.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Egpio2Eprovider_h__)")
-cpp_quote("#if !defined(__windows2Edevices2Ei2c2Eprovider_h__)")
-cpp_quote("#include <Windows.Devices.I2c.Provider.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Ei2c2Eprovider_h__)")
-cpp_quote("#if !defined(__windows2Edevices2Epwm2Eprovider_h__)")
-cpp_quote("#include <Windows.Devices.Pwm.Provider.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Epwm2Eprovider_h__)")
-cpp_quote("#if !defined(__windows2Edevices2Espi2Eprovider_h__)")
-cpp_quote("#include <Windows.Devices.Spi.Provider.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Espi2Eprovider_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows

@@ -10,14 +10,6 @@ import "AsyncInfo.idl";
 import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -62,6 +54,8 @@ namespace Windows
                 interface Windows.Foundation.IReference<Windows.Foundation.Numerics.Matrix4x4>;
 
                 interface Windows.Foundation.IReference<Windows.Foundation.Numerics.Quaternion>;
+
+                interface Windows.Foundation.IReference<Windows.Foundation.Numerics.Vector2>;
 
                 interface Windows.Foundation.IReference<Windows.Foundation.Numerics.Vector3>;
             }

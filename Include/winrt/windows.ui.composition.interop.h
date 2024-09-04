@@ -17,10 +17,8 @@ namespace Windows {
 namespace UI {
 namespace Composition {
 
-typedef interface ICompositionLinearGradientBrush ICompositionLinearGradientBrush;
 typedef interface ICompositionDrawingSurfaceInterop ICompositionDrawingSurfaceInterop;
 typedef interface ICompositorInterop ICompositorInterop;
-typedef interface ICompositorInterop2 ICompositorInterop2;
 
 //------------------------------------------------------------------------------
 //
@@ -107,21 +105,6 @@ DECLARE_INTERFACE_IID_(ICompositorInterop, IUnknown, "25297D5C-3AD4-4C9C-B5CF-E3
         ) PURE;
 };
 
-
-//------------------------------------------------------------------------------
-//
-// interface ICompositorInterop2
-//
-//------------------------------------------------------------------------------
-
-#undef INTERFACE
-#define INTERFACE ICompositorInterop2
-DECLARE_INTERFACE_IID_(ICompositorInterop2, ICompositorInterop, "4DC01FC2-FB9B-4C25-ACB3-5F090CDBFD36")
-{
-    IFACEMETHOD(CreateLinearGradientBrush)(
-        _In_ ICompositionGraphicsDevice * device,
-        _COM_Outptr_ ICompositionLinearGradientBrush ** result);
-};
 
 } // namespace Composition
 } // namespace UI

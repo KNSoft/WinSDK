@@ -20,44 +20,6 @@ import "Windows.Media.Devices.Core.idl";
 import "Windows.Media.MediaProperties.idl";
 import "Windows.Perception.Spatial.idl";
 import "Windows.Storage.Streams.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Edevices2Eenumeration_h__)")
-cpp_quote("#include <Windows.Devices.Enumeration.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Eenumeration_h__)")
-cpp_quote("#if !defined(__windows2Egraphics2Edirectx2Edirect3d11_h__)")
-cpp_quote("#include <Windows.Graphics.DirectX.Direct3D11.h>")
-cpp_quote("#endif // !defined(__windows2Egraphics2Edirectx2Edirect3d11_h__)")
-cpp_quote("#if !defined(__windows2Egraphics2Eimaging_h__)")
-cpp_quote("#include <Windows.Graphics.Imaging.h>")
-cpp_quote("#endif // !defined(__windows2Egraphics2Eimaging_h__)")
-cpp_quote("#if !defined(__windows2Emedia_h__)")
-cpp_quote("#include <Windows.Media.h>")
-cpp_quote("#endif // !defined(__windows2Emedia_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Ecapture_h__)")
-cpp_quote("#include <Windows.Media.Capture.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Ecapture_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Edevices_h__)")
-cpp_quote("#include <Windows.Media.Devices.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Edevices_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Edevices2Ecore_h__)")
-cpp_quote("#include <Windows.Media.Devices.Core.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Edevices2Ecore_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Emediaproperties_h__)")
-cpp_quote("#include <Windows.Media.MediaProperties.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Emediaproperties_h__)")
-cpp_quote("#if !defined(__windows2Eperception2Espatial_h__)")
-cpp_quote("#include <Windows.Perception.Spatial.h>")
-cpp_quote("#endif // !defined(__windows2Eperception2Espatial_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -186,6 +148,8 @@ namespace Windows
         {
             namespace Frames
             {
+                typedef enum MediaFrameReaderAcquisitionMode MediaFrameReaderAcquisitionMode;
+
                 typedef enum MediaFrameReaderStartStatus MediaFrameReaderStartStatus;
 
                 typedef enum MediaFrameSourceGetPropertyStatus MediaFrameSourceGetPropertyStatus;
@@ -212,6 +176,8 @@ namespace Windows
 
                 interface IMediaFrameReader;
 
+                interface IMediaFrameReader2;
+
                 interface IMediaFrameReference;
 
                 interface IMediaFrameSource;
@@ -231,6 +197,8 @@ namespace Windows
                 interface IMultiSourceMediaFrameArrivedEventArgs;
 
                 interface IMultiSourceMediaFrameReader;
+
+                interface IMultiSourceMediaFrameReader2;
 
                 interface IMultiSourceMediaFrameReference;
 
@@ -355,6 +323,13 @@ namespace Windows
         {
             namespace Frames
             {
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                enum MediaFrameReaderAcquisitionMode
+                {
+                    Realtime = 0,
+                    Buffered = 1
+                };
+
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)]
                 enum MediaFrameReaderStartStatus
                 {
@@ -490,6 +465,15 @@ namespace Windows
                     HRESULT StopAsync([out] [retval] Windows.Foundation.IAsyncAction** action);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.Media.Capture.Frames.MediaFrameReader)]
+                [uuid(871127B3-8531-4050-87CC-A13733CF3E9B)]
+                interface IMediaFrameReader2 : IInspectable
+                {
+                    [propput] HRESULT AcquisitionMode([in] Windows.Media.Capture.Frames.MediaFrameReaderAcquisitionMode value);
+                    [propget] HRESULT AcquisitionMode([out] [retval] Windows.Media.Capture.Frames.MediaFrameReaderAcquisitionMode* value);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)]
                 [exclusiveto(Windows.Media.Capture.Frames.MediaFrameReference)]
                 [uuid(F6B88641-F0DC-4044-8DC9-961CEDD05BAD)]
@@ -605,6 +589,15 @@ namespace Windows
                     HRESULT StopAsync([out] [retval] Windows.Foundation.IAsyncAction** action);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.Media.Capture.Frames.MultiSourceMediaFrameReader)]
+                [uuid(EF5C8ABD-FC5C-4C6B-9D81-3CB9CC637C26)]
+                interface IMultiSourceMediaFrameReader2 : IInspectable
+                {
+                    [propput] HRESULT AcquisitionMode([in] Windows.Media.Capture.Frames.MediaFrameReaderAcquisitionMode value);
+                    [propget] HRESULT AcquisitionMode([out] [retval] Windows.Media.Capture.Frames.MediaFrameReaderAcquisitionMode* value);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)]
                 [exclusiveto(Windows.Media.Capture.Frames.MultiSourceMediaFrameReference)]
                 [uuid(21964B1A-7FE2-44D6-92E5-298E6D2810E9)]
@@ -697,6 +690,7 @@ namespace Windows
                 {
                     [default] interface Windows.Media.Capture.Frames.IMediaFrameReader;
                     interface Windows.Foundation.IClosable;
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Media.Capture.Frames.IMediaFrameReader2;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -765,6 +759,7 @@ namespace Windows
                 {
                     [default] interface Windows.Media.Capture.Frames.IMultiSourceMediaFrameReader;
                     interface Windows.Foundation.IClosable;
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Media.Capture.Frames.IMultiSourceMediaFrameReader2;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)]

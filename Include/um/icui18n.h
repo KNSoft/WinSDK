@@ -2,6 +2,17 @@
 // Code unused or not supported in the Windows ICU SDK has been removed.
 #include "icucommon.h"
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+#ifndef SUPPRESS_LEGACY_ICU_HEADER_WARNINGS
+
+// For more information on the ICU breaking change to use char16_t by default, please see the page here:
+// https://go.microsoft.com/fwlink/?linkid=851033
+
+#pragma message("The wchar_t versions of the ICU headers are no longer being updated, please use the char16_t based header icu.h instead; see https://go.microsoft.com/fwlink/?linkid=851033 for more info. To suppress this warning, define the macro SUPPRESS_LEGACY_ICU_HEADER_WARNINGS before including this header.")
+
+#endif /* SUPPRESS_LEGACY_ICU_HEADER_WARNINGS */
+
 // alphaindex.h
 /*
 *******************************************************************************
@@ -13990,3 +14001,5 @@ utrans_getSourceSet(const UTransliterator* trans,
 
 // vtzone.h
 // No supported content
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)

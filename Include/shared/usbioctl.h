@@ -41,7 +41,6 @@ Revision History:
 
 
 
-
 #include "usb200.h"
 
 #if _MSC_VER >= 1200
@@ -291,7 +290,7 @@ ioStackLocation->Parameters.Others.Argument1
 >>IdeCallbackInfo
 A pointer to a structure containing the callback routine and a context value.
 
-_IRQL_requires_max_(PASSIVE_LEVEL) 
+_IRQL_requires_max_(PASSIVE_LEVEL)
 typedef
 VOID
 (*USB_IDLE_CALLBACK)(
@@ -381,7 +380,7 @@ typedef struct _USB_START_FAILDATA {
                                                       USB_GET_TT_DEVICE_HANDLE, \
                                                       METHOD_NEITHER,  \
                                                       FILE_ANY_ACCESS)
-                                                      
+
 /*  IOCTL_INTERNAL_USB_GET_TOPOLOGY_ADDRESS  */
 
 typedef struct _USB_TOPOLOGY_ADDRESS {
@@ -393,12 +392,12 @@ typedef struct _USB_TOPOLOGY_ADDRESS {
         USHORT HubPortNumber[5];
         USHORT Reserved2;
 } USB_TOPOLOGY_ADDRESS, *PUSB_TOPOLOGY_ADDRESS;
-        
+
 #define IOCTL_INTERNAL_USB_GET_TOPOLOGY_ADDRESS   CTL_CODE(FILE_DEVICE_USB,  \
                                                       USB_GET_TOPOLOGY_ADDRESS, \
                                                       METHOD_NEITHER,  \
                                                       FILE_ANY_ACCESS)
-                                                      
+
 #define IOCTL_INTERNAL_USB_GET_DEVICE_CONFIG_INFO    CTL_CODE(FILE_DEVICE_USB,  \
                                                       USB_GET_HUB_CONFIG_INFO, \
                                                       METHOD_NEITHER,  \
@@ -411,7 +410,7 @@ typedef struct _USB_TOPOLOGY_ADDRESS {
 /*
    USB kernel Mode IOCTLS defined for Win8 and later.
    Pivot on NTDDI_VERSION instead of _WIN32_WINNT
-   Note: These ioctls use FILE_DEVICE_USBEX. 
+   Note: These ioctls use FILE_DEVICE_USBEX.
    All previously defined USB Ioctls use FILE_DEVICE_USB (aka FILE_DEVICE_UNKNOWN).
 */
 
@@ -499,7 +498,7 @@ The following IOCTLS are always sent to the HCD symbolic name
                                                 HCD_DIAGNOSTIC_MODE_ON,  \
                                                 METHOD_BUFFERED,  \
                                                 FILE_ANY_ACCESS)
-#endif                                                
+#endif
 
 #ifndef IOCTL_USB_DIAGNOSTIC_MODE_OFF
 #define IOCTL_USB_DIAGNOSTIC_MODE_OFF  CTL_CODE(FILE_DEVICE_USB,  \
@@ -520,7 +519,7 @@ The following IOCTLS are always sent to the HCD symbolic name
                                                 HCD_GET_DRIVERKEY_NAME,  \
                                                 METHOD_BUFFERED,  \
                                                 FILE_ANY_ACCESS)
-#endif                                                
+#endif
 
 /**************************************************************************
 The following IOCTLS are always sent to symbolic names
@@ -723,7 +722,7 @@ information can be used to calculate bandwidthusage.
                     USB_RESET_HUB,\
                     METHOD_BUFFERED,  \
                     FILE_ANY_ACCESS)
-                    
+
 #define IOCTL_USB_GET_HUB_CAPABILITIES_EX  \
                                 CTL_CODE(FILE_DEVICE_USB,  \
                                     USB_GET_HUB_CAPABILITIES_EX,  \
@@ -754,6 +753,62 @@ information can be used to calculate bandwidthusage.
                                     METHOD_BUFFERED,  \
                                     FILE_ANY_ACCESS)
 #endif
+
+#endif //#ifndef USB_KERNEL_IOCTL
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+
+#define IOCTL_USB_GET_TRANSPORT_CHARACTERISTICS  \
+                                CTL_CODE(FILE_DEVICE_USB,  \
+                                    USB_GET_TRANSPORT_CHARACTERISTICS,  \
+                                    METHOD_BUFFERED,  \
+                                    FILE_ANY_ACCESS)
+
+#define IOCTL_USB_REGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE  \
+                                CTL_CODE(FILE_DEVICE_USB,  \
+                                    USB_REGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE,  \
+                                    METHOD_BUFFERED,  \
+                                    FILE_ANY_ACCESS)
+
+#define IOCTL_USB_NOTIFY_ON_TRANSPORT_CHARACTERISTICS_CHANGE   \
+                                CTL_CODE(FILE_DEVICE_USB,  \
+                                    USB_NOTIFY_ON_TRANSPORT_CHARACTERISTICS_CHANGE,  \
+                                    METHOD_BUFFERED,  \
+                                    FILE_ANY_ACCESS)
+
+#define IOCTL_USB_UNREGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE   \
+                                CTL_CODE(FILE_DEVICE_USB,  \
+                                    USB_UNREGISTER_FOR_TRANSPORT_CHARACTERISTICS_CHANGE,  \
+                                    METHOD_BUFFERED,  \
+                                    FILE_ANY_ACCESS)
+
+#define IOCTL_USB_START_TRACKING_FOR_TIME_SYNC  \
+                                CTL_CODE(FILE_DEVICE_USB,  \
+                                    USB_START_TRACKING_FOR_TIME_SYNC,  \
+                                    METHOD_BUFFERED,  \
+                                    FILE_ANY_ACCESS)
+
+#define IOCTL_USB_GET_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC  \
+                                CTL_CODE(FILE_DEVICE_USB,  \
+                                    USB_GET_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC,  \
+                                    METHOD_BUFFERED,  \
+                                    FILE_ANY_ACCESS)
+
+#define IOCTL_USB_STOP_TRACKING_FOR_TIME_SYNC  \
+                                CTL_CODE(FILE_DEVICE_USB,  \
+                                    USB_STOP_TRACKING_FOR_TIME_SYNC,  \
+                                    METHOD_BUFFERED,  \
+                                    FILE_ANY_ACCESS)
+
+#define IOCTL_USB_GET_DEVICE_CHARACTERISTICS  \
+                                CTL_CODE(FILE_DEVICE_USB,  \
+                                    USB_GET_DEVICE_CHARACTERISTICS,  \
+                                    METHOD_BUFFERED,  \
+                                    FILE_ANY_ACCESS)
+
+#endif
+
+#ifndef USB_KERNEL_IOCTL
 
 /*
    structures for user mode ioctls
@@ -1012,7 +1067,7 @@ typedef struct _USB_HUB_CAPABILITIES_EX {
 typedef struct _USB_CYCLE_PORT_PARAMS {
     /* one based port number */
     ULONG ConnectionIndex;  /* INPUT */
-  
+
     ULONG StatusReturned; /* OUTPUT */
 } USB_CYCLE_PORT_PARAMS, *PUSB_CYCLE_PORT_PARAMS;
 
@@ -1343,47 +1398,47 @@ typedef struct _USB_DEVICE_STATE {
 //
 
 typedef struct _USB_HUB_PORT_INFORMATION{
-    
+
     USB_DEVICE_STATE DeviceState;
-    
+
     USHORT PortNumber;
 
     USHORT DeviceAddress;
-    
+
     // Legacy ConnectionIndex used with USB user IOCTLS
     ULONG ConnectionIndex;
-    
+
     // Legacy ConnectionStatus
     USB_CONNECTION_STATUS ConnectionStatus;
-     
+
 } USB_HUB_PORT_INFORMATION, *PUSB_HUB_PORT_INFORMATION;
 
 typedef struct _USB_HUB_DEVICE_INFO {
-    
+
     // Hub Descriptor
     USB_HUB_DESCRIPTOR HubDescriptor;
-    
+
     // Unique Hub number
     ULONG HubNumber;
-    
+
     // Device Address
     USHORT DeviceAddress;
-    
+
     // Hub power bit
     BOOLEAN HubIsSelfPowered;
-    
+
     // Root hub
     BOOLEAN HubIsRootHub;
-    
+
     // Hub capabilities
     USB_HUB_CAPABILITIES HubCapabilities;
-    
+
     // Number of hub ports
     ULONG NumberOfHubPorts;
-    
+
     // Variable length array of info about hub ports
     USB_HUB_PORT_INFORMATION PortInfo[1];
-    
+
 } USB_HUB_DEVICE_INFO, *PUSB_HUB_DEVICE_INFO;
 
 //
@@ -1393,30 +1448,30 @@ typedef struct _USB_HUB_DEVICE_INFO {
 typedef struct _USB_COMPOSITE_FUNCTION_INFO{
 
     UCHAR FunctionNumber;
-    
+
     UCHAR BaseInterfaceNumber;
-    
+
     UCHAR NumberOfInterfaces;
-    
+
     BOOLEAN FunctionIsIdle;
-    
+
 } USB_COMPOSITE_FUNCTION_INFO, *PUSB_COMPOSITE_FUNCTION_INFO;
-    
+
 
 typedef struct _USB_COMPOSITE_DEVICE_INFO {
 
     // USB Device Descriptor
     USB_DEVICE_DESCRIPTOR DeviceDescriptor;
-    
+
     // Usb Configuration Descriptor
     USB_CONFIGURATION_DESCRIPTOR CurrentConfigDescriptor;
-    
+
     // 0-based configuration number
     UCHAR CurrentConfigurationValue;
-    
+
     // Number of composite PDOs
     UCHAR NumberOfFunctions;
-    
+
     USB_COMPOSITE_FUNCTION_INFO FunctionInfo[1];
 
 } USB_COMPOSITE_DEVICE_INFO, *PUSB_COMPOSITE_DEVICE_INFO;
@@ -1426,7 +1481,7 @@ typedef struct _USB_COMPOSITE_DEVICE_INFO {
 //
 
 typedef struct _USB_CONTROLLER_DEVICE_INFO {
-    
+
     ULONG PciVendorId;
     ULONG PciDeviceId;
     ULONG PciRevision;
@@ -1442,46 +1497,46 @@ typedef struct _USB_CONTROLLER_DEVICE_INFO {
 //
 
 typedef struct _USB_DEVICE_INFO{
-    
+
     // Device State
     USB_DEVICE_STATE DeviceState;
 
     // Hub Port Number
     USHORT PortNumber;
-    
+
     // USB Device Descriptor
     USB_DEVICE_DESCRIPTOR DeviceDescriptor;
-    
+
     // Current configuration value
     UCHAR CurrentConfigurationValue;
-    
+
     // Device speed
     USB_DEVICE_SPEED Speed;
-    
+
     // Device Address
     USHORT DeviceAddress;
 
     // Legacy ConnectionIndex used with USB user IOCTLS
     ULONG ConnectionIndex;
-    
+
     // Legacy ConnectionStatus
     USB_CONNECTION_STATUS ConnectionStatus;
- 
+
     // PNP HardwareID in multi-string format
     WCHAR PnpHardwareId[128];
-    
+
     // PNP Compatible ID in multi-string format
     WCHAR PnpCompatibleId[128];
-    
+
     // USB Serial Number string if present
     WCHAR SerialNumberId[128];
-    
+
     // PNP Device Description
     WCHAR PnpDeviceDescription[128];
-    
+
     // Number of pipes contained in the PipeList
     ULONG NumberOfOpenPipes;
-    
+
     // Variable length list of open pipes
     USB_PIPE_INFO PipeList[1];
 
@@ -1489,22 +1544,22 @@ typedef struct _USB_DEVICE_INFO{
 
 #pragma warning( disable : 4201 )
 typedef struct _USB_DEVICE_NODE_INFO {
-    
+
     // Structure signature
     ULONG Sig;
-    
+
     // Length of structure
     ULONG LengthInBytes;
-    
+
     // Device Description
     WCHAR DeviceDescription[40];
-    
+
     // Device Type
     USB_WMI_DEVICE_NODE_TYPE NodeType;
-    
+
     // Bus Address
     USB_TOPOLOGY_ADDRESS BusAddress;
-   
+
     // device information
     union{
         USB_DEVICE_INFO UsbDeviceInfo;
@@ -1513,7 +1568,7 @@ typedef struct _USB_DEVICE_NODE_INFO {
         USB_CONTROLLER_DEVICE_INFO ControllerDeviceInfo;
         UCHAR DeviceInformation[4];
     };
-    
+
 } USB_DEVICE_NODE_INFO, *PUSB_DEVICE_NODE_INFO;
 #pragma warning( default : 4201 )
 
@@ -1548,15 +1603,15 @@ typedef struct _USB_DEVICE_PERFORMANCE_INFO {
     // for all periods
     //
     ULONG AllocedInterrupt[6];
-    
-    // Iso BW allocated for all iso endpoints on the device.  
+
+    // Iso BW allocated for all iso endpoints on the device.
     // Reported in bits/32ms(32 frames)
     //
     ULONG AllocedIso;
 
     // Total USB controller BW available in bits/32ms.
     ULONG Total32secBandwidth;
-    
+
     // Total USB BW available on the device's TT in bits/32ms
     ULONG TotalTtBandwidth;
 
@@ -1565,23 +1620,23 @@ typedef struct _USB_DEVICE_PERFORMANCE_INFO {
 
     // operating speed of the device
     USB_DEVICE_SPEED DeviceSpeed;
-    
+
     // total number of ms iso transfers have waited after being scheduled
     ULONG TotalIsoLatency;
-    
+
     // Number of ISO packets that were not scheduled or processed by the controller
     ULONG DroppedIsoPackets;
-    
+
     // Number of transfers completing with an error
     ULONG TransferErrors;
-    
+
     //
     //  Following values are for CONTROLLER instances only.
     //
-    
+
     // Number of controller interrupts
     ULONG PciInterruptCount;
-    
+
     // HC Idle State -- non zero if the HC is not running
     ULONG HcIdleState;
 
@@ -1616,15 +1671,15 @@ typedef enum _USB_HUB_TYPE {
 
 typedef struct _USB_HUB_INFORMATION_EX {
     USB_HUB_TYPE             HubType;
-  
+
     // The higest valid port number on the hub
     USHORT   HighestPortNumber;
-    
+
     union {
         USB_HUB_DESCRIPTOR  UsbHubDescriptor;
-        USB_30_HUB_DESCRIPTOR  Usb30HubDescriptor;    
+        USB_30_HUB_DESCRIPTOR  Usb30HubDescriptor;
     } u;
-    
+
 } USB_HUB_INFORMATION_EX, *PUSB_HUB_INFORMATION_EX;
 
 
@@ -1632,7 +1687,7 @@ typedef struct _USB_HUB_INFORMATION_EX {
 
 typedef union _USB_PORT_PROPERTIES {
     ULONG  ul;
-    
+
     struct {
         ULONG PortIsUserConnectable  :1;
         ULONG PortIsDebugCapable  :1;
@@ -1647,21 +1702,21 @@ typedef union _USB_PORT_PROPERTIES {
 
 typedef struct _USB_PORT_CONNECTOR_PROPERTIES {
     // one based port number
-    ULONG  ConnectionIndex;  
+    ULONG  ConnectionIndex;
 
     // The number of bytes required to hold the entire USB_PORT_CONNECTOR_PROPERTIES
     // structure, including the full CompanionHubSymbolicLinkName string
     ULONG  ActualLength;
-    
+
     // bitmask of flags indicating properties and capabilities of the port
     USB_PORT_PROPERTIES  UsbPortProperties;
 
-    // Zero based index number of the companion port being queried.  
+    // Zero based index number of the companion port being queried.
     USHORT                CompanionIndex;
-    
+
     // Port number of the companion port
     USHORT                CompanionPortNumber;
-    
+
     // Symbolic link name for the companion hub
     WCHAR                 CompanionHubSymbolicLinkName[1];
 } USB_PORT_CONNECTOR_PROPERTIES, *PUSB_PORT_CONNECTOR_PROPERTIES;
@@ -1670,14 +1725,14 @@ typedef struct _USB_PORT_CONNECTOR_PROPERTIES {
 
 typedef union _USB_PROTOCOLS {
     ULONG  ul;
-  
+
     struct {
         ULONG Usb110 :1;
         ULONG Usb200 :1;
         ULONG Usb300 :1;
         ULONG ReservedMBZ  :29;
     };
-    
+
 } USB_PROTOCOLS, *PUSB_PROTOCOLS;
 
 
@@ -1700,7 +1755,7 @@ typedef union _USB_NODE_CONNECTION_INFORMATION_EX_V2_FLAGS {
 typedef struct _USB_NODE_CONNECTION_INFORMATION_EX_V2 {
     // one based port number
     ULONG  ConnectionIndex;
-    
+
     // length of the structure
     ULONG  Length;
 
@@ -1716,8 +1771,106 @@ typedef struct _USB_NODE_CONNECTION_INFORMATION_EX_V2 {
 
 #include <poppack.h>
 
-
 #endif //#if USB_KERNEL_IOCTL
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+
+#include <pshpack1.h>
+
+#define USB_TRANSPORT_CHARACTERISTICS_VERSION_1                 0x01
+
+#define USB_TRANSPORT_CHARACTERISTICS_LATENCY_AVAILABLE     0x1
+#define USB_TRANSPORT_CHARACTERISTICS_BANDWIDTH_AVAILABLE   0x2
+
+typedef struct _USB_TRANSPORT_CHARACTERISTICS {
+    ULONG   Version;
+    ULONG   TransportCharacteristicsFlags;
+    ULONG64 CurrentRoundtripLatencyInMilliSeconds;
+    ULONG64 MaxPotentialBandwidth;
+} USB_TRANSPORT_CHARACTERISTICS, *PUSB_TRANSPORT_CHARACTERISTICS;
+
+#define USB_REGISTER_FOR_TRANSPORT_LATENCY_CHANGE   0x1
+#define USB_REGISTER_FOR_TRANSPORT_BANDWIDTH_CHANGE 0x2
+
+DECLARE_HANDLE(USB_CHANGE_REGISTRATION_HANDLE);
+
+typedef struct _USB_TRANSPORT_CHARACTERISTICS_CHANGE_REGISTRATION {
+    ULONG ChangeNotificationInputFlags;
+    USB_CHANGE_REGISTRATION_HANDLE Handle;
+    USB_TRANSPORT_CHARACTERISTICS UsbTransportCharacteristics;
+} USB_TRANSPORT_CHARACTERISTICS_CHANGE_REGISTRATION, *PUSB_TRANSPORT_CHARACTERISTICS_CHANGE_REGISTRATION;
+
+typedef struct _USB_TRANSPORT_CHARACTERISTICS_CHANGE_NOTIFICATION {
+    USB_CHANGE_REGISTRATION_HANDLE Handle;
+    USB_TRANSPORT_CHARACTERISTICS UsbTransportCharacteristics;
+} USB_TRANSPORT_CHARACTERISTICS_CHANGE_NOTIFICATION, *PUSB_TRANSPORT_CHARACTERISTICS_CHANGE_NOTIFICATION;
+
+typedef struct _USB_TRANSPORT_CHARACTERISTICS_CHANGE_UNREGISTRATION {
+    USB_CHANGE_REGISTRATION_HANDLE Handle;
+} USB_TRANSPORT_CHARACTERISTICS_CHANGE_UNREGISTRATION, *PUSB_TRANSPORT_CHARACTERISTICS_CHANGE_UNREGISTRATION;
+
+#define USB_DEVICE_CHARACTERISTICS_VERSION_1                    0x01
+
+#define USB_DEVICE_CHARACTERISTICS_MAXIMUM_PATH_DELAYS_AVAILABLE 	0x1
+
+typedef struct _USB_DEVICE_CHARACTERISTICS {
+    ULONG                   Version;
+    ULONG                   Reserved[2];
+    ULONG                   UsbDeviceCharacteristicsFlags;
+    ULONG                   MaximumSendPathDelayInMilliSeconds;
+    ULONG                   MaximumCompletionPathDelayInMilliSeconds;
+} USB_DEVICE_CHARACTERISTICS, *PUSB_DEVICE_CHARACTERISTICS;
+
+
+#ifndef __USB_TIME_SYNC_DEFINED
+#define __USB_TIME_SYNC_DEFINED
+
+typedef struct _USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION {
+
+    HANDLE          TimeTrackingHandle;
+    BOOLEAN         IsStartupDelayTolerable;
+
+} USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION, *PUSB_START_TRACKING_FOR_TIME_SYNC_INFORMATION;
+
+typedef struct _USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION {
+
+    HANDLE          TimeTrackingHandle;
+
+} USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION, *PUSB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION;
+
+typedef struct _USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION {
+
+    //
+    // Input
+    //
+
+    HANDLE          TimeTrackingHandle;
+    ULONG           InputFrameNumber;
+    ULONG           InputMicroFrameNumber;
+
+    //
+    // Output
+    //
+
+    LARGE_INTEGER   QueryPerformanceCounterAtInputFrameOrMicroFrame;
+    LARGE_INTEGER   QueryPerformanceCounterFrequency;
+    ULONG           PredictedAccuracyInMicroSeconds;
+
+    ULONG           CurrentGenerationID;
+    LARGE_INTEGER   CurrentQueryPerformanceCounter;
+    ULONG           CurrentHardwareFrameNumber;         // 11 bits from hardware/MFINDEX
+    ULONG           CurrentHardwareMicroFrameNumber;    //  3 bits from hardware/MFINDEX
+    ULONG           CurrentUSBFrameNumber;              // 32 bit USB Frame Number
+
+} USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION, *PUSB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION;
+
+#endif
+
+
+#include <poppack.h>
+
+#endif
+
 
 #if _MSC_VER >= 1200
 #pragma warning(pop)
@@ -1729,4 +1882,5 @@ typedef struct _USB_NODE_CONNECTION_INFORMATION_EX_V2 {
 #pragma endregion
 
 #endif /* __USBIOCTL_H__ */
+
 

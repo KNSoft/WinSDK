@@ -211,10 +211,12 @@ Abstract:
 
 // begin_winnt
 
+#ifndef DECLSPEC_IMPORT
 #if (defined(_M_IX86) || defined(_M_IA64) || defined(_M_AMD64) || defined(_M_ARM) || defined(_M_ARM64)) && !defined(MIDL_PASS)
 #define DECLSPEC_IMPORT __declspec(dllimport)
 #else
 #define DECLSPEC_IMPORT
+#endif
 #endif
 
 #ifndef DECLSPEC_NORETURN
@@ -349,9 +351,17 @@ Abstract:
 
 #ifndef DECLSPEC_CHPE_GUEST
 #if _M_HYBRID
-#define DECLSPEC_CHPE_GUEST __declspec(hybrid_guest)
+#define DECLSPEC_CHPE_GUEST  __declspec(hybrid_guest)
 #else
 #define DECLSPEC_CHPE_GUEST
+#endif
+#endif
+
+#ifndef DECLSPEC_CHPE_PATCHABLE
+#if _M_HYBRID
+#define DECLSPEC_CHPE_PATCHABLE  __declspec(hybrid_patchable)
+#else
+#define DECLSPEC_CHPE_PATCHABLE
 #endif
 #endif
 
@@ -894,9 +904,19 @@ typedef CLONG *PCLONG;
 // NLS basics (Locale and Language Ids)
 //
 
-typedef ULONG LCID;         // winnt
-typedef PULONG PLCID;       // winnt
-typedef USHORT LANGID;      // winnt
+//
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
+// The LCID and LANGID concepts are deprecated and no longer supported.
+// Please use Locale Names instead.  See the documentation for GetLocaleInfoEx.
+//
+// There are numerous challenges with the LCID concept which makes it impossible for
+// them to support all of the languages and dialects that may be encountered by a
+// modern application.  Please use Locale Names.
+//
+typedef ULONG LCID;         // DEPRECATED, use Locale Names.  See documentation for GetLocaleInfoEx. // winnt
+typedef PULONG PLCID;       // DEPRECATED, use Locale Names.  See documentation for GetLocaleInfoEx. // winnt
+typedef USHORT LANGID;      // DEPRECATED, use Locale Names.  See documentation for GetLocaleInfoEx. // winnt
 
 // begin_winnt
 
@@ -917,14 +937,15 @@ typedef enum {
 // end_winnt
 
 // begin_ntoshvp
+// begin_wudfpwdm
 
 //
 // Logical Data Type - These are 32-bit logical values.
 //
-
 typedef ULONG LOGICAL;
 typedef ULONG *PLOGICAL;
 
+// end_wudfpwdm
 // end_ntoshvp
 
 // begin_ntndis begin_windbgkd
@@ -1447,6 +1468,7 @@ typedef enum _WAIT_TYPE {
 
 // begin_ntoshvp
 // begin_wudfwdm
+// begin_sdfwdm
 //
 // Pointer to an Asciiz string
 //
@@ -1473,6 +1495,7 @@ typedef STRING *PSTRING;
 typedef STRING ANSI_STRING;
 typedef PSTRING PANSI_STRING;
 
+// end_sdfwdm
 // end_wudfwdm
 
 typedef STRING OEM_STRING;
@@ -1492,6 +1515,7 @@ typedef CSTRING *PCSTRING;
 #define ANSI_NULL ((CHAR)0)     // winnt
 
 // begin_wudfwdm
+// begin_sdfwdm
 
 typedef STRING CANSI_STRING;
 typedef PSTRING PCANSI_STRING;
@@ -1512,6 +1536,7 @@ typedef struct _UNICODE_STRING {
 } UNICODE_STRING;
 typedef UNICODE_STRING *PUNICODE_STRING;
 typedef const UNICODE_STRING *PCUNICODE_STRING;
+// end_sdfwdm
 // end_wudfwdm
 
 #define UNICODE_NULL ((WCHAR)0) // winnt
@@ -1522,6 +1547,7 @@ typedef const UNICODE_STRING *PCUNICODE_STRING;
 #define UNICODE_STRING_MAX_CHARS (32767) // winnt
 
 // begin_wudfwdm
+// begin_sdfwdm
 
 #define DECLARE_CONST_UNICODE_STRING(_var, _string) \
 const WCHAR _var ## _buffer[] = _string; \
@@ -1540,6 +1566,7 @@ __pragma(warning(disable:4221)) __pragma(warning(disable:4204)) \
 UNICODE_STRING _var = { 0, (_size) * sizeof(WCHAR) , _var ## _buffer } \
 __pragma(warning(pop))
 
+// end_sdfwdm
 // end_wudfwdm
 
 #endif // _WIN32_WINNT >= 0x0500
@@ -2362,6 +2389,7 @@ typedef _Enum_is_bitflag_ enum _SUITE_TYPE {
 #define PRODUCT_AZURE_NANO_SERVER                   0x000000A9
 #define PRODUCT_ENTERPRISEG                         0x000000AB
 #define PRODUCT_ENTERPRISEGN                        0x000000AC
+#define PRODUCT_SERVERRDSH                          0x000000AF
 #define PRODUCT_CLOUD                               0x000000B2
 #define PRODUCT_CLOUDN                              0x000000B3
 
@@ -2376,11 +2404,15 @@ typedef _Enum_is_bitflag_ enum _SUITE_TYPE {
 // begin_winnt begin_r_winnt
 
 //
-//  Language IDs.
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
+//  DEPRECATED: The Language ID  concept is deprecated, please use
+//  Locale Names instead, eg: "en" instead of a LANGID like 0x09.
+//  See the documentation for GetLocaleInfoEx.
 //
 //  Note that the named locale APIs (eg GetLocaleInfoEx) are preferred.
 //
-//  Not all locales have unique Language IDs
+//  WARNING: Not all locales/languages have unique Language IDs
 //
 //  The following two combinations of primary language ID and
 //  sublanguage ID have special semantics:
@@ -2392,18 +2424,30 @@ typedef _Enum_is_bitflag_ enum _SUITE_TYPE {
 //    LANG_NEUTRAL          SUBLANG_SYS_DEFAULT System default language
 //    LANG_INVARIANT        SUBLANG_NEUTRAL     Invariant locale
 //
-//  It is recommended that applications test for locale names instead of
-//  Language IDs / LCIDs.
-
+//  This concept is deprecated.  It is strongly recommended that
+//  applications test for locale names instead of Language IDs / LCIDs.
 //
 //  Primary language IDs.
 //
-//  WARNING: These aren't always unique.  Bosnian, Serbian & Croation for example.
+//  WARNING: This pattern is broken and not followed for all languages.
+//           Serbian, Bosnian & Croatian are a few examples.
+//
+//  WARNING: There are > 6000 human languages.  The PRIMARYLANGID construct
+//           cannot support all languages your application may encounter.
+//           Please use Language Names, such as "en".
+//
+//  WARNING: Some languages may have more than one PRIMARYLANGID.  Please
+//           use Locale Names, such as "en-FJ".
+//
+//  WARNING: Some languages do not have assigned LANGIDs.  Please use
+//           Locale Names, such as "tlh-Piqd".
 //
 //  It is recommended that applications test for locale names or actual LCIDs.
 //
 //  Note that the LANG, SUBLANG construction is not always consistent.
 //  The named locale APIs (eg GetLocaleInfoEx) are recommended.
+//
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
 //
 #define LANG_NEUTRAL                     0x00
 #define LANG_INVARIANT                   0x7f
@@ -2548,7 +2592,11 @@ typedef _Enum_is_bitflag_ enum _SUITE_TYPE {
 #define LANG_ZULU                        0x35
 
 //
-//  Sublanguage IDs.
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
+//  DEPRECATED: The Sublanguage ID concept is deprecated, please use
+//  Locale Names instead, eg: "en-US" instead of an LCID like 0x0409.
+//  See the documentation for GetLocaleInfoEx.
 //
 //  The name immediately following SUBLANG_ dictates which primary
 //  language ID that sublanguage ID can be combined with to form a
@@ -2557,7 +2605,35 @@ typedef _Enum_is_bitflag_ enum _SUITE_TYPE {
 //  Note that the LANG, SUBLANG construction is not always consistent.
 //  The named locale APIs (eg GetLocaleInfoEx) are recommended.
 //
-
+//  WARNING: The pattern is broken and not followed for all languages.
+//           Serbian, Bosnian & Croatian are a few examples.
+//
+//  WARNING: The "SUBLANG" depends on the primary language and is inconsistent.
+//           SUBLANG_ENGLISH_US is 0x1 and SUBLANG_SPANISH_US is 0x15, so
+//           it is impossible to determine region merely by inspecting the
+//           SUBLANG.  Please use Locale Names such as "en-US" instead.
+//
+//  WARNING: Numerous SUBLANGS are assigned the same value, so 0x01 could be
+//           US, French, or many other variations.  Please use Locale Names
+//           such as "en-US" instead.  If that is not possible, consider
+//           testing the entire LCID, eg: 0x0409.
+//
+//  WARNING: There are > 6000 human languages.  The PRIMARYLANGID construct
+//           cannot support all languages your application may encounter.
+//           Please use Language Names, such as "en".
+//
+//  WARNING: There are > 200 country-regions.  The SUBLANGID construct cannot
+//           represent all valid dialects of languages such as English.
+//           Please use Locale Names, such as "en-US".
+//
+//  WARNING: Some languages may have more than one PRIMARYLANGID.  Please
+//           use Locale Names, such as "en-FJ".
+//
+//  WARNING: Some languages do not have assigned LANGIDs.  Please use
+//           Locale Names, such as "tlh-Piqd".
+//
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
 #define SUBLANG_NEUTRAL                             0x00    // language neutral
 #define SUBLANG_DEFAULT                             0x01    // user default
 #define SUBLANG_SYS_DEFAULT                         0x02    // system default
@@ -2843,6 +2919,12 @@ typedef _Enum_is_bitflag_ enum _SUITE_TYPE {
 // end_r_winnt
 
 //
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
+//  DEPRECATED: The LCID/LANGID/SORTID concept is deprecated, please use
+//  Locale Names instead, eg: "en-US" instead of an LCID like 0x0409.
+//  See the documentation for GetLocaleInfoEx.
+//
 //  A language ID is a 16 bit value which is the combination of a
 //  primary language ID and a secondary language ID.  The bits are
 //  allocated as follows:
@@ -2852,10 +2934,25 @@ typedef _Enum_is_bitflag_ enum _SUITE_TYPE {
 //       +-----------------------+-------------------------+
 //        15                   10 9                       0   bit
 //
-//  WARNING:  This pattern isn't always follows, Serbina, Bosnian & Croation
-//            for example.
+//  WARNING:  This pattern is broken and not followed for all languages.
+//            Serbian, Bosnian & Croatian are a few examples.
 //
-//  It is recommended that applications test for locale names or actual LCIDs.
+//  WARNING:  There are > 6000 human languages.  The PRIMARYLANGID construct
+//            cannot support all languages your application may encounter.
+//            Please use Language Names, such as "en".
+//
+//  WARNING:  There are > 200 country-regions.  The SUBLANGID construct cannot
+//            represent all valid dialects of languages such as English.
+//            Please use Locale Names, such as "en-US".
+//
+//  WARNING:  Some languages may have more than one PRIMARYLANGID.  Please
+//            use Locale Names, such as "en-FJ".
+//
+//  WARNING:  Some languages do not have assigned LANGIDs.  Please use
+//            Locale Names, such as "tlh-Piqd".
+//
+//  It is recommended that applications test for locale names rather than
+//  attempting to construct/deconstruct LANGID/PRIMARYLANGID/SUBLANGID
 //
 //  Language ID creation/extraction macros:
 //
@@ -2867,13 +2964,20 @@ typedef _Enum_is_bitflag_ enum _SUITE_TYPE {
 //  Note that the LANG, SUBLANG construction is not always consistent.
 //  The named locale APIs (eg GetLocaleInfoEx) are recommended.
 //
-//  Language IDs do not exist for all locales
+//  DEPRECATED: Language IDs do not exist for all locales
+//
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
 //
 #define MAKELANGID(p, s)       ((((USHORT)(s)) << 10) | (USHORT)(p))
 #define PRIMARYLANGID(lgid)    ((USHORT)(lgid) & 0x3ff)
 #define SUBLANGID(lgid)        ((USHORT)(lgid) >> 10)
 
-
+//
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
+//  DEPRECATED: The LCID/LANGID/SORTID concept is deprecated, please use
+//  Locale Names instead, eg: en-US instead of an LCID like 0x0409.
+//  See the documentation for GetLocaleInfoEx.
 //
 //  A locale ID is a 32 bit value which is the combination of a
 //  language ID, a sort ID, and a reserved area.  The bits are
@@ -2886,9 +2990,13 @@ typedef _Enum_is_bitflag_ enum _SUITE_TYPE {
 //
 //  WARNING: This pattern isn't always followed (es-ES_tradnl vs es-ES for example)
 //
-//  It is recommended that applications test for locale names or actual LCIDs.
+//  WARNING: Some locales do not have assigned LCIDs.  Please use
+//           Locale Names, such as "tlh-Piqd".
 //
-//  Locale ID creation/extraction macros:
+//  It is recommended that applications test for locale names rather than
+//  attempting to rely on LCID or LANGID behavior.
+//
+//  DEPRECATED: Locale ID creation/extraction macros:
 //
 //    MAKELCID            - construct the locale id from a language id and a sort id.
 //    MAKESORTLCID        - construct the locale id from a language id, sort id, and sort version.
@@ -2899,7 +3007,9 @@ typedef _Enum_is_bitflag_ enum _SUITE_TYPE {
 //  Note that the LANG, SUBLANG construction is not always consistent.
 //  The named locale APIs (eg GetLocaleInfoEx) are recommended.
 //
-//  LCIDs do not exist for all locales.
+//  DEPRECATED: LCIDs do not exist for all locales.
+//
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
 //
 #define NLS_VALID_LOCALE_MASK  0x000fffff
 
@@ -2912,18 +3022,21 @@ typedef _Enum_is_bitflag_ enum _SUITE_TYPE {
 #define SORTIDFROMLCID(lcid)   ((USHORT)((((ULONG)(lcid)) >> 16) & 0xf))
 #define SORTVERSIONFROMLCID(lcid)  ((USHORT)((((ULONG)(lcid)) >> 20) & 0xf))
 
-// 8 characters for language
-// 8 characters for region
-// 64 characters for suffix (script)
-// 2 characters for '-' separators
-// 2 characters for prefix like "i-" or "x-"
-// 1 null termination
+// Maximum Locale Name Length in Windows
+// Locale names are preferred to the deprecated LCID/LANGID concepts.
+//
+// Locale names should follow the BCP47 recommendations and typically
+// include language, script, regional variant, and perhaps additional specifiers.
+// BCP47 allows some variation, eg: en-US is preferred to en-Latn-US.
 #define LOCALE_NAME_MAX_LENGTH   85
 
 //
-//  Default System and User IDs for language and locale.
+// ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED ** DEPRECATED **
+//
+//  Deprecated default System and User IDs for language and locale.
+//
 //  Locale names such as LOCALE_NAME_SYSTEM_DEFAULT, LOCALE_NAME_USER_DEFAULT,
-//  and LOCALE_NAME_INVARIANT are preferred.
+//  and LOCALE_NAME_INVARIANT are preferred.  See documentation for GetLocaleInfoEx.
 //
 
 #define LANG_SYSTEM_DEFAULT    (MAKELANGID(LANG_NEUTRAL, SUBLANG_SYS_DEFAULT))
@@ -2934,6 +3047,10 @@ typedef _Enum_is_bitflag_ enum _SUITE_TYPE {
 
 //
 //  Other special IDs for language and locale.
+//
+//  DEPRECATED: These identifiers are all underspecified and lose information.
+//              Please use Locale Names such as "en-FJ".
+//              See documentation for GetLocaleInfoEx.
 //
 #define LOCALE_CUSTOM_DEFAULT                                                 \
           (MAKELCID(MAKELANGID(LANG_NEUTRAL, SUBLANG_CUSTOM_DEFAULT), SORT_DEFAULT))
@@ -2954,6 +3071,11 @@ typedef _Enum_is_bitflag_ enum _SUITE_TYPE {
 // Transient keyboard Locale IDs (LCIDs)
 // Should only be used for keyboard layout identification
 //
+//  DEPRECATED: These identifiers are all transient and will change, even at
+//              different times on the same system.
+//              Please use Locale Names such as "en-FJ".
+//              See documentation for GetLocaleInfoEx.
+//
 #define LOCALE_TRANSIENT_KEYBOARD1  0x2000
 #define LOCALE_TRANSIENT_KEYBOARD2  0x2400
 #define LOCALE_TRANSIENT_KEYBOARD3  0x2800
@@ -2963,6 +3085,8 @@ typedef _Enum_is_bitflag_ enum _SUITE_TYPE {
 // Locale with an unassigned LCID
 // These locales cannot be queried by LCID
 // Currently same as LOCALE_CUSTOM_UNSPECIFIED
+//
+// DEPRECATED: Please use Locale Names; see documentation for GetLocaleInfoEx.
 //
 #define LOCALE_UNASSIGNED_LCID LOCALE_CUSTOM_UNSPECIFIED
 
@@ -2992,9 +3116,9 @@ typedef _Enum_is_bitflag_ enum _SUITE_TYPE {
 #ifdef _PREFAST_
 
 void _Prefast_unreferenced_parameter_impl_(const char*, ...);
-#define UNREFERENCED_PARAMETER(P)          _Prefast_unreferenced_parameter_impl_("PREfast", (P))
-#define DBG_UNREFERENCED_PARAMETER(P)      _Prefast_unreferenced_parameter_impl_("PREfast", (P))
-#define DBG_UNREFERENCED_LOCAL_VARIABLE(V) _Prefast_unreferenced_parameter_impl_("PREfast", (V))
+#define UNREFERENCED_PARAMETER(P)          _Prefast_unreferenced_parameter_impl_("PREfast", ((void) (P), 0))
+#define DBG_UNREFERENCED_PARAMETER(P)      _Prefast_unreferenced_parameter_impl_("PREfast", ((void) (P), 0))
+#define DBG_UNREFERENCED_LOCAL_VARIABLE(V) _Prefast_unreferenced_parameter_impl_("PREfast", ((void) (V), 0))
 
 #else // _PREFAST_
 

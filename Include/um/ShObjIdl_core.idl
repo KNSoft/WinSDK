@@ -725,7 +725,7 @@ cpp_quote("#define SFGAO_DROPTARGET        0x00000100L     // Objects are drop t
 cpp_quote("#define SFGAO_CAPABILITYMASK    0x00000177L")
 //         unused                          0x00000200
 //         unused                          0x00000400
-//         unused                          0x00000800
+cpp_quote("#define SFGAO_PLACEHOLDER       0x00000800L     // File or folder is not fully present and recalled on open or access")
 cpp_quote("#define SFGAO_SYSTEM            0x00001000L     // System object")
 cpp_quote("#define SFGAO_ENCRYPTED         0x00002000L     // Object is encrypted (use alt color)")
 cpp_quote("#define SFGAO_ISSLOW            0x00004000L     // 'Slow' object")
@@ -765,9 +765,21 @@ typedef [v1_enum] enum SYNC_TRANSFER_STATUS
     STS_HASERROR               = 0x00000010,  // An error was encountered on the last sync
     STS_FETCHING_METADATA      = 0x00000020,  // Sync engine is fetching metadata from cloud.  Only found on the root folder.
     STS_USER_REQUESTED_REFRESH = 0x00000040,  // Sync engine is performing a user-requested refresh.  Only found on the root folder.
+    STS_HASWARNING             = 0x00000080,  // An error was encountered on the last sync
+    STS_EXCLUDED               = 0x00000100,  // The file won't be synced by the sync engine
+    STS_INCOMPLETE             = 0x00000200,  // The reported state may be missing states due to indexing delays
 } SYNC_TRANSFER_STATUS;
 
 cpp_quote("DEFINE_ENUM_FLAG_OPERATORS(SYNC_TRANSFER_STATUS)")
+
+typedef [v1_enum] enum STORAGE_PROVIDER_FILE_FLAGS
+{
+    SPFF_NONE                       = 0x00000000,
+    SPFF_DOWNLOAD_BY_DEFAULT        = 0x00000001,   // Sync engine intends to download new files by default when specified on a parent folder
+    SPFF_CREATED_ON_THIS_DEVICE     = 0x00000002,   // Sync engine identifies this file or folder as locally created
+} STORAGE_PROVIDER_FILE_FLAGS;
+
+cpp_quote("DEFINE_ENUM_FLAG_OPERATORS(STORAGE_PROVIDER_FILE_FLAGS)")
 
 // Specifies the states a placeholder file can have.
 // Retrieve this value using PKEY_FilePlaceholderStatus (System.FilePlaceholderStatus)
@@ -776,8 +788,13 @@ typedef [v1_enum] enum PLACEHOLDER_STATES
     PS_NONE                            = 0x00000000,
     PS_MARKED_FOR_OFFLINE_AVAILABILITY = 0x00000001, // may already be or eventually will be available offline.
     PS_FULL_PRIMARY_STREAM_AVAILABLE   = 0x00000002, // The primary stream has been made fully available.
-    PS_CREATE_FILE_ACCESSIBLE          = 0x00000004, // The file is accessible by a CreateFile call (without requesting opening of reparse points)
-    PS_ALL                             = PS_MARKED_FOR_OFFLINE_AVAILABILITY | PS_FULL_PRIMARY_STREAM_AVAILABLE | PS_CREATE_FILE_ACCESSIBLE, // Bitmask for all valid status flags.
+    PS_CREATE_FILE_ACCESSIBLE          = 0x00000004, // (deprecated, same as PS_FULL_PRIMARY_STREAM_AVAILABLE)
+    PS_CLOUDFILE_PLACEHOLDER           = 0x00000008, // Placeholder was created by the cloud files api
+    // Bitmask for default value set that can be returned for local files
+    PS_DEFAULT                         = PS_MARKED_FOR_OFFLINE_AVAILABILITY | PS_FULL_PRIMARY_STREAM_AVAILABLE | PS_CREATE_FILE_ACCESSIBLE,
+
+    // Bitmask for all valid status flags
+    PS_ALL                             = PS_MARKED_FOR_OFFLINE_AVAILABILITY | PS_FULL_PRIMARY_STREAM_AVAILABLE | PS_CREATE_FILE_ACCESSIBLE | PS_CLOUDFILE_PLACEHOLDER,
 } PLACEHOLDER_STATES;
 
 cpp_quote("DEFINE_ENUM_FLAG_OPERATORS(PLACEHOLDER_STATES)")
@@ -1642,19 +1659,11 @@ interface IFolderView : IUnknown
         [in] int iItem,
         [in] DWORD /* SVSIF */ dwFlags);
 
-#ifdef ALLOW_DISABLE_CONSISTENCY_CHECK
     HRESULT SelectAndPositionItems(
         [in] UINT cidl,
         [in, size_is(cidl)] PCUITEMID_CHILD_ARRAY apidl,
         [disable_consistency_check, in, unique, size_is(cidl)] POINT* apt,
         [in] DWORD /* SVSIF */ dwFlags);
-#else
-    HRESULT SelectAndPositionItems(
-        [in] UINT cidl,
-        [in, size_is(cidl)] PCUITEMID_CHILD_ARRAY apidl,
-        [in, unique, size_is(cidl)] POINT* apt,
-        [in] DWORD /* SVSIF */ dwFlags);
-#endif
 }
 cpp_quote("#define SID_SFolderView IID_IFolderView    // folder view, usually IFolderView")
 
@@ -2572,7 +2581,6 @@ interface IShellItem : IUnknown
         SIGDN_PARENTRELATIVE              = (int) 0x80080001, // SHGDN_INFOLDER
         SIGDN_PARENTRELATIVEFORUI         = (int) 0x80094001, // SHGDN_INFOLDER | SHGDN_FORADDRESSBAR
     } SIGDN;
-
 
     //  SICHINT_DISPLAY         iOrder based on display in a folder view
     //  SICHINT_ALLFIELDS       exact instance compare
@@ -6598,7 +6606,7 @@ typedef DWORD KF_REDIRECT_FLAGS;
                                                                       // currently we only allow redirection for
                                                                       // common and user's folders.
                                                                       // Fixed and virtual can not be redirected
-                                                                      
+
     KF_REDIRECTION_CAPABILITIES_DENY_ALL                = 0x000FFF00, // If any of there flags set then redirection is blocked
     KF_REDIRECTION_CAPABILITIES_DENY_POLICY_REDIRECTED  = 0x00000100, // Folder can not be redirected because it is redirected by group policy
     KF_REDIRECTION_CAPABILITIES_DENY_POLICY             = 0x00000200, // Folder can not be redirected because the policy prohibits redirecting this folder
@@ -7983,7 +7991,7 @@ typedef [v1_enum] enum ACTIVATEOPTIONS
                                      // the site chain established on the activation manager.  The splash screen normally
                                      // shown when an application is activated will also not appear.  Most activations
                                      // will not use this flag.
-    AO_NOERRORUI      = 0x00000002,  // Do not show an error dialog if the app fails to activate.                                
+    AO_NOERRORUI      = 0x00000002,  // Do not show an error dialog if the app fails to activate.
     AO_NOSPLASHSCREEN = 0x00000004,  // Do not show the splash screen when activating the app.
     AO_PRELAUNCH      = 0x02000000,  // The application is being activated in Prelaunch mode.
 } ACTIVATEOPTIONS;
@@ -8446,7 +8454,7 @@ interface IFrameworkInputPane : IUnknown
     HRESULT Advise([in] IUnknown *pWindow,
                    [in] IFrameworkInputPaneHandler *pHandler,
                    [out] DWORD *pdwCookie);
-    
+
     // This is an alternative signature to Advise directly using an HWND as opposed to an ICoreWindow.
     HRESULT AdviseWithHWND([in] HWND hwnd,
                            [in] IFrameworkInputPaneHandler *pHandler,
@@ -8560,8 +8568,8 @@ interface IPackageDebugSettings : IUnknown
     HRESULT SetTargetSessionId([in, annotation("_In_")] ULONG sessionId);
 
     HRESULT EnumerateBackgroundTasks(
-        [in, annotation("_In_")] LPCWSTR packageFullName, 
-        [out, annotation("_Out_")] ULONG *taskCount, 
+        [in, annotation("_In_")] LPCWSTR packageFullName,
+        [out, annotation("_Out_")] ULONG *taskCount,
         [out, size_is(,*taskCount), annotation("_Outptr_result_buffer_(*taskCount)")] LPCGUID *taskIds,
         [out, size_is(,*taskCount), annotation("_Outptr_result_buffer_(*taskCount)")] LPCWSTR **taskNames
         );
@@ -8630,8 +8638,8 @@ typedef [v1_enum] enum EC_HOST_UI_MODE
 } EC_HOST_UI_MODE;
 
 // IExecuteCommandHost is implemented by the host who invokes an ExplorerCommand based shell verb via
-// ShellExecuteEx() or IContextMenu::InvokeCommand(). This interface is implemented on an object 
-// reachable via the site chain provided to ShellExecuteEx() or the context menu and retrieved by 
+// ShellExecuteEx() or IContextMenu::InvokeCommand(). This interface is implemented on an object
+// reachable via the site chain provided to ShellExecuteEx() or the context menu and retrieved by
 // IServiceProvider::QueryService(..., SID_ExecuteCommandHost, ...).
 // IExecuteCommandHost::GetUIMode is called by an ExplorerCommand based verb handler to query the host UI mode.
 [
@@ -8840,7 +8848,7 @@ interface IInitializeWithWindow : IUnknown
 
 // Provided to the IHandlerActivationHost methods, provides information about the handler.
 // May also be retrieved using IServiceProvider::QueryService(SID_HandlerInfo) on the site
-// chain provided in ShellExecute and verb handler invocations. 
+// chain provided in ShellExecute and verb handler invocations.
 [
     uuid(997706ef-f880-453b-8118-39e1a2d2655a),
     object,
@@ -8860,12 +8868,12 @@ interface IHandlerInfo : IUnknown
 // Used to retrieve an IHandlerInfo instance
 cpp_quote("#define SID_HandlerInfo IID_IHandlerInfo")
 
-// Clients of shell item activation including callers of ShellExecuteEx() and 
+// Clients of shell item activation including callers of ShellExecuteEx() and
 // IContextMenu::InvokeCommand() can implement IHandlerActivationHost
 // to be given a chance to veto or perform some action before the activation of verb handlers.
-// This interface is implemented by an object reachable through the site chain provided 
+// This interface is implemented by an object reachable through the site chain provided
 // to ShellExecuteEx or the context menu handler. Applications will return this object
-// in there IServiceProvider::QueryService() implementation when asked for the 
+// in there IServiceProvider::QueryService() implementation when asked for the
 // serviceId SID_SHandlerActivationHost.
 //
 // Handlers are identified by either a COM CLSID or the .exe file that will be passed to
@@ -8882,11 +8890,11 @@ interface IHandlerActivationHost : IUnknown
     // HRESULT_FROM_WIN32(ERROR_CANCELLED) should be returned. EXECUTE_E_LAUNCH_APPLICATION
     // can be returned to indicate that this verb implementation should be skipped and the next
     // one tried (if there is one). Generally these error codes will propagate out of the sub system activating the handlers.
-    HRESULT BeforeCoCreateInstance([in] REFCLSID clsidHandler, 
+    HRESULT BeforeCoCreateInstance([in] REFCLSID clsidHandler,
         [in] IShellItemArray *itemsBeingActivated, [in] IHandlerInfo *handlerInfo);
     // The applicationPath will normally be a fully qualified path to an application .exe
     // but it can also be a .dll in the case of rundll32.exe based handlers.
-    HRESULT BeforeCreateProcess([in] LPCWSTR applicationPath, 
+    HRESULT BeforeCreateProcess([in] LPCWSTR applicationPath,
         [in] LPCWSTR commandLine, [in] IHandlerInfo *handlerInfo);
 }
 
@@ -8945,8 +8953,8 @@ interface IContactManagerInterop : IUnknown
     // Default browser will use this method to launch contact card from its tab window, specified
     // by the appWindow parameter.
     HRESULT ShowContactCardForWindow(
-        [in] HWND appWindow, 
-        // Must be a Windows::ApplicationModel::Contacts::IContact object. 
+        [in] HWND appWindow,
+        // Must be a Windows::ApplicationModel::Contacts::IContact object.
         // Use IUnknown here because classic COM IDL cannot use WinRT types.
         [in] IUnknown *contact,
         [in] RECT const *selection,

@@ -248,6 +248,9 @@ typedef struct tagPROPERTYRESTRICTION
     PROPVARIANT prval;
     } 	PROPERTYRESTRICTION;
 
+// NOTE: When using the /permissive- compiler switch the below structure
+// will not compile due to the case(RTOr) member 'or'. Please compile without
+// the /permissive- switch
 
 struct tagRESTRICTION
     {

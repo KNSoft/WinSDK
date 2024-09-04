@@ -190,6 +190,13 @@ typedef interface ISelectionProvider ISelectionProvider;
 #endif 	/* __ISelectionProvider_FWD_DEFINED__ */
 
 
+#ifndef __ISelectionProvider2_FWD_DEFINED__
+#define __ISelectionProvider2_FWD_DEFINED__
+typedef interface ISelectionProvider2 ISelectionProvider2;
+
+#endif 	/* __ISelectionProvider2_FWD_DEFINED__ */
+
+
 #ifndef __IScrollProvider_FWD_DEFINED__
 #define __IScrollProvider_FWD_DEFINED__
 typedef interface IScrollProvider IScrollProvider;
@@ -741,6 +748,24 @@ enum VisualEffects
         VisualEffects_Glow	= ( 1 << 2 ) ,
         VisualEffects_SoftEdges	= ( 1 << 3 ) ,
         VisualEffects_Bevel	= ( 1 << 4 ) 
+    } ;
+
+enum NotificationProcessing
+    {
+        NotificationProcessing_ImportantAll	= 0,
+        NotificationProcessing_ImportantMostRecent	= 1,
+        NotificationProcessing_All	= 2,
+        NotificationProcessing_MostRecent	= 3,
+        NotificationProcessing_CurrentThenMostRecent	= 4
+    } ;
+
+enum NotificationKind
+    {
+        NotificationKind_ItemAdded	= 0,
+        NotificationKind_ItemRemoved	= 1,
+        NotificationKind_ActionCompleted	= 2,
+        NotificationKind_ActionAborted	= 3,
+        NotificationKind_Other	= 4
     } ;
 typedef int PROPERTYID;
 
@@ -3116,6 +3141,138 @@ EXTERN_C const IID IID_ISelectionProvider;
 
 
 #endif 	/* __ISelectionProvider_INTERFACE_DEFINED__ */
+
+
+#ifndef __ISelectionProvider2_INTERFACE_DEFINED__
+#define __ISelectionProvider2_INTERFACE_DEFINED__
+
+/* interface ISelectionProvider2 */
+/* [oleautomation][unique][uuid][object] */ 
+
+
+EXTERN_C const IID IID_ISelectionProvider2;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("14f68475-ee1c-44f6-a869-d239381f0fe7")
+    ISelectionProvider2 : public ISelectionProvider
+    {
+    public:
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_FirstSelectedItem( 
+            /* [retval][out] */ __RPC__deref_out_opt IRawElementProviderSimple **retVal) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_LastSelectedItem( 
+            /* [retval][out] */ __RPC__deref_out_opt IRawElementProviderSimple **retVal) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CurrentSelectedItem( 
+            /* [retval][out] */ __RPC__deref_out_opt IRawElementProviderSimple **retVal) = 0;
+        
+        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ItemCount( 
+            /* [retval][out] */ __RPC__out int *retVal) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct ISelectionProvider2Vtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            __RPC__in ISelectionProvider2 * This,
+            /* [in] */ __RPC__in REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            __RPC__in ISelectionProvider2 * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            __RPC__in ISelectionProvider2 * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetSelection )( 
+            __RPC__in ISelectionProvider2 * This,
+            /* [retval][out] */ __RPC__deref_out_opt SAFEARRAY * *pRetVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CanSelectMultiple )( 
+            __RPC__in ISelectionProvider2 * This,
+            /* [retval][out] */ __RPC__out BOOL *pRetVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_IsSelectionRequired )( 
+            __RPC__in ISelectionProvider2 * This,
+            /* [retval][out] */ __RPC__out BOOL *pRetVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_FirstSelectedItem )( 
+            __RPC__in ISelectionProvider2 * This,
+            /* [retval][out] */ __RPC__deref_out_opt IRawElementProviderSimple **retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_LastSelectedItem )( 
+            __RPC__in ISelectionProvider2 * This,
+            /* [retval][out] */ __RPC__deref_out_opt IRawElementProviderSimple **retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CurrentSelectedItem )( 
+            __RPC__in ISelectionProvider2 * This,
+            /* [retval][out] */ __RPC__deref_out_opt IRawElementProviderSimple **retVal);
+        
+        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ItemCount )( 
+            __RPC__in ISelectionProvider2 * This,
+            /* [retval][out] */ __RPC__out int *retVal);
+        
+        END_INTERFACE
+    } ISelectionProvider2Vtbl;
+
+    interface ISelectionProvider2
+    {
+        CONST_VTBL struct ISelectionProvider2Vtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define ISelectionProvider2_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define ISelectionProvider2_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define ISelectionProvider2_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define ISelectionProvider2_GetSelection(This,pRetVal)	\
+    ( (This)->lpVtbl -> GetSelection(This,pRetVal) ) 
+
+#define ISelectionProvider2_get_CanSelectMultiple(This,pRetVal)	\
+    ( (This)->lpVtbl -> get_CanSelectMultiple(This,pRetVal) ) 
+
+#define ISelectionProvider2_get_IsSelectionRequired(This,pRetVal)	\
+    ( (This)->lpVtbl -> get_IsSelectionRequired(This,pRetVal) ) 
+
+
+#define ISelectionProvider2_get_FirstSelectedItem(This,retVal)	\
+    ( (This)->lpVtbl -> get_FirstSelectedItem(This,retVal) ) 
+
+#define ISelectionProvider2_get_LastSelectedItem(This,retVal)	\
+    ( (This)->lpVtbl -> get_LastSelectedItem(This,retVal) ) 
+
+#define ISelectionProvider2_get_CurrentSelectedItem(This,retVal)	\
+    ( (This)->lpVtbl -> get_CurrentSelectedItem(This,retVal) ) 
+
+#define ISelectionProvider2_get_ItemCount(This,retVal)	\
+    ( (This)->lpVtbl -> get_ItemCount(This,retVal) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __ISelectionProvider2_INTERFACE_DEFINED__ */
 
 
 #ifndef __IScrollProvider_INTERFACE_DEFINED__

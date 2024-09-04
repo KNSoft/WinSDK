@@ -5,7 +5,6 @@ Copyright (c) Microsoft Corporation. All rights reserved.
 File: shlobj_core.h
 
 ===========================================================================*/
-
 #include <winapifamily.h>
 
 #pragma region Desktop Family
@@ -80,7 +79,9 @@ File: shlobj_core.h
 #include <shlguid.h>
 #endif /* !INITGUID */
 
+
 #include <shtypes.h>
+
 #include <shobjidl_core.h>
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1200)
@@ -439,7 +440,7 @@ typedef enum {
 #endif
 #else
     SLDF_VALID                                  = 0x003FF7FF,   // bits that are valid for ::SetFlags()
-#endif 
+#endif
 #endif
     SLDF_RESERVED                               = (int) 0x80000000,   // Reserved-- so we can use the low word as an index value in the future
 #endif
@@ -661,7 +662,7 @@ SHSTDAPI_(BOOL)                 ILRemoveLastID(_Inout_opt_ PUIDLIST_RELATIVE pid
 SHSTDAPI_(BOOL)                 ILIsEqual(_In_ PCIDLIST_ABSOLUTE pidl1, _In_ PCIDLIST_ABSOLUTE pidl2);
 SHSTDAPI_(BOOL)                 ILIsParent(_In_ PCIDLIST_ABSOLUTE pidl1, _In_ PCIDLIST_ABSOLUTE pidl2, BOOL fImmediate);
 SHSTDAPI                        ILSaveToStream(_In_ IStream *pstm, _In_ PCUIDLIST_RELATIVE pidl);
-DECLSPEC_DEPRECATED SHSTDAPI    ILLoadFromStream(_In_ IStream *pstm, _Inout_ PIDLIST_RELATIVE *pidl);
+EXTERN_C DECLSPEC_DEPRECATED HRESULT STDAPICALLTYPE ILLoadFromStream(_In_ IStream *pstm, _Inout_ PIDLIST_RELATIVE *pidl); // use ILLoadFromStreamEx instead
 #if (NTDDI_VERSION >= NTDDI_VISTA)
 SHSTDAPI                        ILLoadFromStreamEx(_In_ IStream *pstm, _Outptr_ PIDLIST_RELATIVE *pidl);
 #endif // NTDDI_VISTA
@@ -945,24 +946,53 @@ STDAPI SHGetFolderPathAndSubDirW(_Reserved_ HWND hwnd, _In_ int csidl, _In_opt_ 
 typedef enum
 {
     KF_FLAG_DEFAULT         = 0x00000000,
-    
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+    // When called from packaged app, LocalAppData/RoamingAppData folders are redirected to
+    // app private locations that match the paths returned from WinRT API:
+    //   Windows.Storage.ApplicationData.Current.{LocalFolder|RoamingFolder}
+    // A few other folders are redirected to subdirectories of LocalAppData.
+    KF_FLAG_FORCE_APP_DATA_REDIRECTION = 0x00080000,
+#endif //NTDDI_WIN10_RS3
+
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
-    // When running inside an AppContainer, or when poviding an AppContainer token, some folders are redirected to package-specific locations.
-    // Specifying this flag will force the AppContainer redirection, even if the path isn't normally redirected, if redirection is supported for the token.
+    // When running in a Centennial process, some file system locations are redirected to 
+    // package-specific locations by the file system. Specifying this flag will cause the
+    // target of the redirection to be returned for these locations. This is useful in
+    // cases where the real location in the file system needs to be known.
+    KF_FLAG_RETURN_FILTER_REDIRECTION_TARGET = 0x00040000,
+
+    // New form for KF_FLAG_FORCE_APPCONTAINER_REDIRECTION and KF_FLAG_NO_APPCONTAINER_REDIRECTION
+    // The new forms should be used and will exhibit the same behavior as the old flags.
+
+    // When running inside an AppContainer process, or when providing an AppContainer token,
+    // some folders are redirected to AppContainer-specific locations within the package's location.
+    // Specifying this flag will force this redirection for folders that are not normally 
+    // redirected for centennial processes. Useful for sharing files between between UWA and 
+    // Centennial apps that are within the same package.
+    KF_FLAG_FORCE_PACKAGE_REDIRECTION = 0x00020000,
+
+    // When running inside a packaged process (Centennial,  AppContainer, etc.), or when providing 
+    // a packaged process token, some folders are redirected to package-specific locations.
+    // Specifying this flag will disable redirection on locations where it applied,
+    // and instead return the non-redirected location.
+    KF_FLAG_NO_PACKAGE_REDIRECTION = 0x00010000,
+
+    // see comment for KF_FLAG_FORCE_PACKAGE_REDIRECTION
     KF_FLAG_FORCE_APPCONTAINER_REDIRECTION = 0x00020000,
 #endif //NTDDI_WIN10_RS2
 
 #if (NTDDI_VERSION >= NTDDI_WIN7)
-    // When running inside an AppContainer, or when poviding an AppContainer token, specifying this flag will prevent redirection to AppContainer 
+    // When running inside an AppContainer, or when poviding an AppContainer token, specifying this flag will prevent redirection to AppContainer
     // folders and instead return the path that would be returned when not running inside an AppContainer
     KF_FLAG_NO_APPCONTAINER_REDIRECTION = 0x00010000,
 #endif //NTDDI_WIN7
-    
+
     // Make sure that the folder already exists or create it and apply security specified in folder definition
     // If folder can not be created then function will return failure and no folder path (IDList) will be returned
     // If folder is located on the network the function may take long time to execute
     KF_FLAG_CREATE          = 0x00008000,
-    
+
     // If this flag is specified then the folder path is returned and no verification is performed
     // Use this flag is you want to get folder's path (IDList) and do not need to verify folder's existence
     //
@@ -989,13 +1019,13 @@ typedef enum
 
     // Get the default path, will also verify folder existence unless KF_FLAG_DONT_VERIFY is also specified
     KF_FLAG_DEFAULT_PATH    = 0x00000400,
-    
+
     // Get the not-parent-relative default path. Only valid with KF_FLAG_DEFAULT_PATH
     KF_FLAG_NOT_PARENT_RELATIVE = 0x00000200,
 
     // Build simple IDList
     KF_FLAG_SIMPLE_IDLIST   = 0x00000100,
-    
+
     // only return the aliased IDLists, don't fallback to file system path
     KF_FLAG_ALIAS_ONLY      = 0x80000000,
 } KNOWN_FOLDER_FLAG;
@@ -2086,9 +2116,9 @@ typedef enum
     SHARD_APPIDINFO       = 0x00000004L, // indicates the data type is a pointer to a SHARDAPPIDINFO structure
     SHARD_APPIDINFOIDLIST = 0x00000005L, // indicates the data type is a pointer to a SHARDAPPIDINFOIDLIST structure
     SHARD_LINK            = 0x00000006L, // indicates the data type is a pointer to an IShellLink instance
-    SHARD_APPIDINFOLINK   = 0x00000007L, // indicates the data type is a pointer to a SHARDAPPIDINFOLINK structure 
+    SHARD_APPIDINFOLINK   = 0x00000007L, // indicates the data type is a pointer to a SHARDAPPIDINFOLINK structure
     SHARD_SHELLITEM       = 0x00000008L, // indicates the data type is a pointer to an IShellItem instance
-#endif    
+#endif
 } SHARD;
 
 #if (NTDDI_VERSION >= NTDDI_WIN7)
@@ -2107,13 +2137,13 @@ typedef struct SHARDAPPIDINFOIDLIST
 
 typedef struct SHARDAPPIDINFOLINK
 {
-    IShellLink *psl;        // An IShellLink instance that when launched opens a recently used item in the specified 
+    IShellLink *psl;        // An IShellLink instance that when launched opens a recently used item in the specified
                             // application. This link is not added to the recent docs folder, but will be added to the
                             // specified application's destination list.
     PCWSTR pszAppID;        // The id of the application that should be associated with this recent doc.
 } SHARDAPPIDINFOLINK;
 
-#endif 
+#endif
 
 #ifdef UNICODE
 #define SHARD_PATH  SHARD_PATHW
@@ -3391,7 +3421,7 @@ __inline BOOL IDListContainerIsConsistent(_In_reads_bytes_(cbAlloc) PCUIDLIST_RE
     //  test to make sure that the pidl does not overrun itself
     //  this is for callers that un-persist pidl data, and
     //  assumes that the caller knows the allocated size of the pidl
-    //  similar to ILGetSize(pidl) <= cbAlloc except that 
+    //  similar to ILGetSize(pidl) <= cbAlloc except that
     //  it doesnt assert or throw exceptions
     UINT cbPidl = sizeof(pidl->mkid.cb);
     while (cbPidl <= cbAlloc &&                         // can read pidl->mkid.cb
@@ -3567,4 +3597,3 @@ typedef enum tagIESHORTCUTFLAGS
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
-

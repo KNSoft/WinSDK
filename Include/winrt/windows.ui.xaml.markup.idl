@@ -13,23 +13,6 @@ import "Windows.Foundation.idl";
 import "Windows.Storage.Streams.idl";
 import "Windows.UI.Xaml.idl";
 import "Windows.UI.Xaml.Interop.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#include <Windows.UI.Xaml.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Einterop_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Interop.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Einterop_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -114,6 +97,12 @@ namespace Windows
 
                 interface IDataTemplateComponent;
 
+                interface IMarkupExtension;
+
+                interface IMarkupExtensionFactory;
+
+                interface IMarkupExtensionOverrides;
+
                 interface IXamlBinaryWriter;
 
                 interface IXamlBinaryWriterStatics;
@@ -135,6 +124,8 @@ namespace Windows
                 interface IXamlReaderStatics;
 
                 interface IXamlType;
+
+                runtimeclass MarkupExtension;
 
                 runtimeclass XamlBinaryWriter;
 
@@ -194,6 +185,29 @@ namespace Windows
                 {
                     HRESULT Recycle();
                     HRESULT ProcessBindings([in] IInspectable* item, [in] INT32 itemIndex, [in] INT32 phase, [out] INT32* nextPhase);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Markup.MarkupExtension)]
+                [uuid(1EE3416D-562B-486E-9EE5-0F0CBCC8048C)]
+                interface IMarkupExtension : IInspectable
+                {
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Markup.MarkupExtension)]
+                [uuid(65329C05-FB5A-4567-9D55-5CDFBADA2739)]
+                interface IMarkupExtensionFactory : IInspectable
+                {
+                    HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Markup.MarkupExtension** instance);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Markup.MarkupExtension)]
+                [uuid(393779BF-B9C0-4FFB-A57F-58E7356E425F)]
+                interface IMarkupExtensionOverrides : IInspectable
+                {
+                    HRESULT ProvideValue([out] [retval] IInspectable** returnValue);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -324,6 +338,16 @@ namespace Windows
                     HRESULT AddToVector([in] IInspectable* instance, [in] IInspectable* value);
                     HRESULT AddToMap([in] IInspectable* instance, [in] IInspectable* key, [in] IInspectable* value);
                     HRESULT RunInitializer();
+                }
+
+                [composable(Windows.UI.Xaml.Markup.IMarkupExtensionFactory, public, Windows.Foundation.UniversalApiContract, 5.0)]
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [marshaling_behavior(agile)]
+                [threading(both)]
+                runtimeclass MarkupExtension
+                {
+                    [default] interface Windows.UI.Xaml.Markup.IMarkupExtension;
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)] [overridable] interface Windows.UI.Xaml.Markup.IMarkupExtensionOverrides;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]

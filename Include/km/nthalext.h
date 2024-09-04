@@ -277,11 +277,24 @@ Author:
 #define TIMER_REQUIRES_ABSOLUTE_ARMING 0x00400000
 
 //
+// Set to indicate that this timer is subject to ARM A73 rollover errata.
+//
+
+#define TIMER_HAS_ROLLOVER_ERRATA 0x00800000
+
+//
+// Set to indicate that the timer supports advanced querying.
+// In the case of the TSC, this indicates that rdtscp is available.
+//
+
+#define TIMER_SUPPORTS_ADVANCED_QUERY 0x01000000
+
+//
 // Defines the total valid timer capability flags. Timer plugins must not set
 // flags outside this mask, as they are reserved for future use.
 //
 
-#define TIMER_VALID_CAPABILITIES 0x007FFFFF
+#define TIMER_VALID_CAPABILITIES 0x01FFFFFF
 
 // end_ntoshvp
 
@@ -346,6 +359,7 @@ typedef enum _KNOWN_TIMER_TYPE {
     TimerWDAT,
     TimerGitWatchdog,
     TimerART,
+    TimerGitAux,
     TimerUnknown = 0x1000
 } KNOWN_TIMER_TYPE, *PKNOWN_TIMER_TYPE;
 

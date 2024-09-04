@@ -383,6 +383,16 @@ DEFINE_GUID(GUID_DEVINTERFACE_OPM_2, 0x7F098726, 0x2EBB, 0x4FF3, 0xA2, 0x7F, 0x1
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_0)
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+
+//
+// GUID_DEVINTERFACE_OPM_3 {693A2CB1-8C8D-4AB6-9555-4B85EF2C7C6B}
+//
+
+DEFINE_GUID(GUID_DEVINTERFACE_OPM_3, 0x693a2cb1, 0x8c8d, 0x4ab6, 0x95, 0x55, 0x4b, 0x85, 0xef, 0x2c, 0x7c, 0x6b);
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+
 //
 // GUID_DEVINTERFACE_BRIGHTNESS {FDE5BBA4-B3F9-46FB-BDAA-0728CE3100B4}
 //
@@ -661,6 +671,59 @@ typedef struct _DXGK_OPM_INTERFACE_2 {
 } DXGK_OPM_INTERFACE_2, *PDXGK_OPM_INTERFACE_2;
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_0)
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+//
+// OPM Interface V3 from the miniport.
+//
+
+#define DXGK_OPM_INTERFACE_VERSION_3 0x04
+
+typedef
+_Function_class_DXGK_(DXGKDDI_OPM_SET_SRM_LIST)
+_IRQL_requires_DXGK_(PASSIVE_LEVEL)
+NTSTATUS
+(*DXGKDDI_OPM_SET_SRM_LIST)(
+    _In_ PVOID MiniportDeviceContext,
+    _In_ ULONG SrmListSize,
+    _In_reads_bytes_(SrmListSize) PVOID SrmListBuffer
+    );
+
+typedef
+_Function_class_DXGK_(DXGKDDI_OPM_GET_SRM_LIST_VERSION)
+_IRQL_requires_DXGK_(PASSIVE_LEVEL)
+NTSTATUS
+(*DXGKDDI_OPM_GET_SRM_LIST_VERSION)(
+    _In_ PVOID MiniportDeviceContext,
+    _Inout_ PULONG SrmListVersionSize,
+    _Out_writes_bytes_(*SrmListVersionSize) PVOID SrmListVersionBuffer
+    );
+
+typedef struct _DXGK_OPM_INTERFACE_3 {
+    USHORT Size;
+    USHORT Version;
+    PVOID Context;
+    PINTERFACE_REFERENCE InterfaceReference;
+    PINTERFACE_DEREFERENCE InterfaceDereference;
+
+    // v1 Ddi's
+    DXGKDDI_OPM_GET_CERTIFICATE_SIZE                        DxgkDdiOPMGetCertificateSize;
+    DXGKDDI_OPM_GET_CERTIFICATE                             DxgkDdiOPMGetCertificate;
+    DXGKDDI_OPM_CREATE_PROTECTED_OUTPUT                     DxgkDdiOPMCreateProtectedOutput;
+    DXGKDDI_OPM_GET_RANDOM_NUMBER                           DxgkDdiOPMGetRandomNumber;
+    DXGKDDI_OPM_SET_SIGNING_KEY_AND_SEQUENCE_NUMBERS        DxgkDdiOPMSetSigningKeyAndSequenceNumbers;
+    DXGKDDI_OPM_GET_INFORMATION                             DxgkDdiOPMGetInformation;
+    DXGKDDI_OPM_GET_COPP_COMPATIBLE_INFORMATION             DxgkDdiOPMGetCOPPCompatibleInformation;
+    DXGKDDI_OPM_CONFIGURE_PROTECTED_OUTPUT                  DxgkDdiOPMConfigureProtectedOutput;
+    DXGKDDI_OPM_DESTROY_PROTECTED_OUTPUT                    DxgkDdiOPMDestroyProtectedOutput;
+
+    // v2 Ddi
+    DXGKDDI_OPM_CREATE_PROTECTED_OUTPUT_NONLOCAL_DISPLAY    DxgkDdiOPMCreateProtectedOutputNonLocalDisplay;
+
+    // v3 Ddi's
+    DXGKDDI_OPM_SET_SRM_LIST                                DxgkDdiOPMSetSrmList;
+    DXGKDDI_OPM_GET_SRM_LIST_VERSION                        DxgkDdiOPMGetSrmListVersion;
+} DXGK_OPM_INTERFACE_3, *PDXGK_OPM_INTERFACE_3;
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
 
 #define DXGK_BRIGHTNESS_INTERFACE_VERSION_1 0x01
 
@@ -1486,6 +1549,12 @@ typedef struct _DXGKRNL_INTERFACE {
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+
+    DXGKCB_SETPROTECTEDSESSIONSTATUS        DxgkCbSetProtectedSessionStatus;
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+
 } DXGKRNL_INTERFACE, *PDXGKRNL_INTERFACE;
 
 //
@@ -2128,6 +2197,15 @@ typedef struct _DRIVER_INITIALIZATION_DATA {
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+
+    PDXGKDDI_UPDATEHWCONTEXTSTATE           DxgkDdiUpdateHwContextState;
+
+    PDXGKDDI_CREATEPROTECTEDSESSION         DxgkDdiCreateProtectedSession;
+    PDXGKDDI_DESTROYPROTECTEDSESSION        DxgkDdiDestroyProtectedSession;
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+
 } DRIVER_INITIALIZATION_DATA, *PDRIVER_INITIALIZATION_DATA;
 
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WIN8)
@@ -2576,11 +2654,15 @@ DlUnmapMemory(
 // {462BC153-40EB-484A-8168-9972E3CD5AEF}
 DEFINE_GUID(GUID_DXGKDDI_GPU_PARTITION_INTERFACE, 0x462bc153, 0x40eb, 0x484a, 0x81, 0x68, 0x99, 0x72, 0xe3, 0xcd, 0x5a, 0xef);
 
-// must be the same as flexiov.h #define IOV_FLAG_ACS_CAPABLE 0x080
+// must be the same as flexiov.h #define FIOV_FLAG_ACS_CAPABLE 0x080
 #define DXGK_VIRTUALIZED_ACS_CAPABLE 0x80 
-// must be the same as flexiov.h #define IOV_FLAG_UNIQUE_RID_PER_VF 0x100
+// must be the same as flexiov.h #define FIOV_FLAG_UNIQUE_RID_PER_VF 0x100
 #define DXGK_VIRTUALIZED_UNIQUE_RID 0x100 
-// must be the same as flexiov.h #define IOV_FLAG_HOST_VIRTUAL_DEVICE 0x800
+// must be the same as flexiov.h #define FIOV_FLAG_PARAVIRTUALIZED 0x400
+// This implies the host device is shared and virtualization is accomplished by software
+#define DXGK_VIRTUALIZED_PARAVIRTUALIZED 0x400
+// must be the same as flexiov.h #define FIOV_FLAG_HOST_VIRTUAL_DEVICE 0x800
+// This implies the host device is a fully virtual device and no hardware is present
 #define DXGK_VIRTUALIZED_HOST_VIRTUAL_DEVICE 0x800 
 
 
@@ -3152,6 +3234,8 @@ typedef struct _DXGK_MITIGATEDRANGEINFO
 {
     _Out_ ULONG64 BasePageNumber;
     _Out_ ULONG   PageCount;
+    _Out_ BOOLEAN InterceptReads;
+    _Out_ BOOLEAN InterceptWrites;
 } DXGK_MITIGATEDRANGEINFO, *PDXGK_MITIGATEDRANGEINFO;
 
 typedef struct _DXGKARG_QUERYMITIGATEDRANGES

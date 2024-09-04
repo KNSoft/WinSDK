@@ -17,16 +17,16 @@
 /* APISET_NAME: api-ms-win-core-com-l1 */
 /* APISET_TAG: public */
 
+//TODO version number should be bumped when _APISET_TARGET_VERSION_WIN10_RS2 becomes available
 #if !defined(RC_INVOKED)
 
 #ifndef _APISET_COM_VER
 #ifdef _APISET_TARGET_VERSION
-//TODO version number should be bumped when _APISET_TARGET_VERSION_WIN10_RS2 becomes available
 #if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS1
 #define _APISET_COM_VER 0x0102
 #elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WINBLUE
 #define _APISET_COM_VER 0x0101
-#elif _APISET_TARGET_VERSION == _APISET_TARGET_VERSION_WIN8
+#elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN8
 #define _APISET_COM_VER 0x0100
 #endif
 #endif
@@ -1539,7 +1539,7 @@ CoTaskMemRealloc(
 
 WINOLEAPI_(void)
 CoTaskMemFree(
-    _Pre_maybenull_ __drv_freesMem(Mem) _Post_invalid_ LPVOID pv
+    _Frees_ptr_opt_ LPVOID pv
     );
 
 

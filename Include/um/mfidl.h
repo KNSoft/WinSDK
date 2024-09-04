@@ -823,6 +823,41 @@ typedef interface IMFSensorTransformFactory IMFSensorTransformFactory;
 #endif 	/* __IMFSensorTransformFactory_FWD_DEFINED__ */
 
 
+#ifndef __IMFSensorProcessActivity_FWD_DEFINED__
+#define __IMFSensorProcessActivity_FWD_DEFINED__
+typedef interface IMFSensorProcessActivity IMFSensorProcessActivity;
+
+#endif 	/* __IMFSensorProcessActivity_FWD_DEFINED__ */
+
+
+#ifndef __IMFSensorActivityReport_FWD_DEFINED__
+#define __IMFSensorActivityReport_FWD_DEFINED__
+typedef interface IMFSensorActivityReport IMFSensorActivityReport;
+
+#endif 	/* __IMFSensorActivityReport_FWD_DEFINED__ */
+
+
+#ifndef __IMFSensorActivitiesReport_FWD_DEFINED__
+#define __IMFSensorActivitiesReport_FWD_DEFINED__
+typedef interface IMFSensorActivitiesReport IMFSensorActivitiesReport;
+
+#endif 	/* __IMFSensorActivitiesReport_FWD_DEFINED__ */
+
+
+#ifndef __IMFSensorActivitiesReportCallback_FWD_DEFINED__
+#define __IMFSensorActivitiesReportCallback_FWD_DEFINED__
+typedef interface IMFSensorActivitiesReportCallback IMFSensorActivitiesReportCallback;
+
+#endif 	/* __IMFSensorActivitiesReportCallback_FWD_DEFINED__ */
+
+
+#ifndef __IMFSensorActivityMonitor_FWD_DEFINED__
+#define __IMFSensorActivityMonitor_FWD_DEFINED__
+typedef interface IMFSensorActivityMonitor IMFSensorActivityMonitor;
+
+#endif 	/* __IMFSensorActivityMonitor_FWD_DEFINED__ */
+
+
 /* header files for imported files */
 #include "mfobjects.h"
 #include "mftransform.h"
@@ -876,6 +911,7 @@ EXTERN_GUID( MF_NALU_LENGTH_INFORMATION,  0x19124E7C, 0xAD4B, 0x465F, 0xBB, 0x18
 EXTERN_GUID( MF_USER_DATA_PAYLOAD,  0xd1d4985d, 0xdc92, 0x457a, 0xb3, 0xa0, 0x65, 0x1a, 0x33, 0xa3, 0x10, 0x47);
 EXTERN_GUID( MF_MPEG4SINK_SPSPPS_PASSTHROUGH, 0x5601a134, 0x2005, 0x4ad2, 0xb3, 0x7d, 0x22, 0xa6, 0xc5, 0x54, 0xde, 0xb2);
 EXTERN_GUID( MF_MPEG4SINK_MOOV_BEFORE_MDAT, 0xf672e3ac, 0xe1e6, 0x4f10, 0xb5, 0xec, 0x5f, 0x3b, 0x30, 0x82, 0x88, 0x16);
+EXTERN_GUID( MF_MPEG4SINK_MINIMUM_PROPERTIES_SIZE, 0xdca1ed52, 0x450e, 0x4a22, 0x8c, 0x62, 0x4e, 0xd4, 0x52, 0xf7, 0xa1, 0x87);
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
 #pragma region Desktop Family
@@ -1137,6 +1173,7 @@ enum __MIDL___MIDL_itf_mfidl_0000_0001_0001
         MF_RESOLUTION_PLUGIN_CONTROL_POLICY_APPROVED_ONLY	= 0x80,
         MF_RESOLUTION_PLUGIN_CONTROL_POLICY_WEB_ONLY	= 0x100,
         MF_RESOLUTION_PLUGIN_CONTROL_POLICY_WEB_ONLY_EDGEMODE	= 0x200,
+        MF_RESOLUTION_ENABLE_STORE_PLUGINS	= 0x400,
         MF_RESOLUTION_READ	= 0x10000,
         MF_RESOLUTION_WRITE	= 0x20000
     } ;
@@ -17115,7 +17152,8 @@ enum MF_MEDIAKEYSESSION_TYPE
     {
         MF_MEDIAKEYSESSION_TYPE_TEMPORARY	= 0,
         MF_MEDIAKEYSESSION_TYPE_PERSISTENT_LICENSE	= ( MF_MEDIAKEYSESSION_TYPE_TEMPORARY + 1 ) ,
-        MF_MEDIAKEYSESSION_TYPE_PERSISTENT_RELEASE_MESSAGE	= ( MF_MEDIAKEYSESSION_TYPE_PERSISTENT_LICENSE + 1 ) 
+        MF_MEDIAKEYSESSION_TYPE_PERSISTENT_RELEASE_MESSAGE	= ( MF_MEDIAKEYSESSION_TYPE_PERSISTENT_LICENSE + 1 ) ,
+        MF_MEDIAKEYSESSION_TYPE_PERSISTENT_USAGE_RECORD	= ( MF_MEDIAKEYSESSION_TYPE_PERSISTENT_RELEASE_MESSAGE + 1 ) 
     } 	MF_MEDIAKEYSESSION_TYPE;
 
 typedef 
@@ -17126,7 +17164,9 @@ enum MF_MEDIAKEY_STATUS
         MF_MEDIAKEY_STATUS_OUTPUT_DOWNSCALED	= ( MF_MEDIAKEY_STATUS_EXPIRED + 1 ) ,
         MF_MEDIAKEY_STATUS_OUTPUT_NOT_ALLOWED	= ( MF_MEDIAKEY_STATUS_OUTPUT_DOWNSCALED + 1 ) ,
         MF_MEDIAKEY_STATUS_STATUS_PENDING	= ( MF_MEDIAKEY_STATUS_OUTPUT_NOT_ALLOWED + 1 ) ,
-        MF_MEDIAKEY_STATUS_INTERNAL_ERROR	= ( MF_MEDIAKEY_STATUS_STATUS_PENDING + 1 ) 
+        MF_MEDIAKEY_STATUS_INTERNAL_ERROR	= ( MF_MEDIAKEY_STATUS_STATUS_PENDING + 1 ) ,
+        MF_MEDIAKEY_STATUS_RELEASED	= ( MF_MEDIAKEY_STATUS_INTERNAL_ERROR + 1 ) ,
+        MF_MEDIAKEY_STATUS_OUTPUT_RESTRICTED	= ( MF_MEDIAKEY_STATUS_RELEASED + 1 ) 
     } 	MF_MEDIAKEY_STATUS;
 
 typedef struct MFMediaKeyStatus
@@ -18210,7 +18250,7 @@ enum __MIDL___MIDL_itf_mfidl_0000_0108_0002
         MFSensorStreamType_Output	= ( MFSensorStreamType_Input + 1 ) 
     } 	MFSensorStreamType;
 
-typedef /* [public][public][public] */ 
+typedef /* [public][public][public][public] */ 
 enum __MIDL___MIDL_itf_mfidl_0000_0108_0003
     {
         MFSensorDeviceMode_Controller	= 0,
@@ -19128,11 +19168,563 @@ MFCreateSensorStream(
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
-#endif // (WINVER >= _WIN32_WINNT_WINTHRESHOLD) 
 
 
 extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0112_v0_0_c_ifspec;
 extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0112_v0_0_s_ifspec;
+
+#ifndef __IMFSensorProcessActivity_INTERFACE_DEFINED__
+#define __IMFSensorProcessActivity_INTERFACE_DEFINED__
+
+/* interface IMFSensorProcessActivity */
+/* [local][helpstring][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IMFSensorProcessActivity;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("39DC7F4A-B141-4719-813C-A7F46162A2B8")
+    IMFSensorProcessActivity : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetProcessId( 
+            /* [annotation][out] */ 
+            _Out_  ULONG *pPID) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetStreamingState( 
+            /* [annotation][out] */ 
+            _Out_  BOOL *pfStreaming) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetStreamingMode( 
+            /* [annotation][out] */ 
+            _Out_  MFSensorDeviceMode *pMode) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetReportTime( 
+            /* [annotation][out] */ 
+            _Out_  FILETIME *pft) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IMFSensorProcessActivityVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IMFSensorProcessActivity * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IMFSensorProcessActivity * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IMFSensorProcessActivity * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetProcessId )( 
+            IMFSensorProcessActivity * This,
+            /* [annotation][out] */ 
+            _Out_  ULONG *pPID);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetStreamingState )( 
+            IMFSensorProcessActivity * This,
+            /* [annotation][out] */ 
+            _Out_  BOOL *pfStreaming);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetStreamingMode )( 
+            IMFSensorProcessActivity * This,
+            /* [annotation][out] */ 
+            _Out_  MFSensorDeviceMode *pMode);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetReportTime )( 
+            IMFSensorProcessActivity * This,
+            /* [annotation][out] */ 
+            _Out_  FILETIME *pft);
+        
+        END_INTERFACE
+    } IMFSensorProcessActivityVtbl;
+
+    interface IMFSensorProcessActivity
+    {
+        CONST_VTBL struct IMFSensorProcessActivityVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IMFSensorProcessActivity_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IMFSensorProcessActivity_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IMFSensorProcessActivity_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IMFSensorProcessActivity_GetProcessId(This,pPID)	\
+    ( (This)->lpVtbl -> GetProcessId(This,pPID) ) 
+
+#define IMFSensorProcessActivity_GetStreamingState(This,pfStreaming)	\
+    ( (This)->lpVtbl -> GetStreamingState(This,pfStreaming) ) 
+
+#define IMFSensorProcessActivity_GetStreamingMode(This,pMode)	\
+    ( (This)->lpVtbl -> GetStreamingMode(This,pMode) ) 
+
+#define IMFSensorProcessActivity_GetReportTime(This,pft)	\
+    ( (This)->lpVtbl -> GetReportTime(This,pft) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IMFSensorProcessActivity_INTERFACE_DEFINED__ */
+
+
+#ifndef __IMFSensorActivityReport_INTERFACE_DEFINED__
+#define __IMFSensorActivityReport_INTERFACE_DEFINED__
+
+/* interface IMFSensorActivityReport */
+/* [local][helpstring][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IMFSensorActivityReport;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("3E8C4BE1-A8C2-4528-90DE-2851BDE5FEAD")
+    IMFSensorActivityReport : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetFriendlyName( 
+            /* [annotation][size_is][out] */ 
+            _Out_writes_z_(cchFriendlyName)  LPWSTR FriendlyName,
+            /* [annotation][in] */ 
+            _In_  ULONG cchFriendlyName,
+            /* [annotation][out] */ 
+            _Out_  ULONG *pcchWritten) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetSymbolicLink( 
+            /* [annotation][size_is][out] */ 
+            _Out_writes_z_(cchSymbolicLink)  LPWSTR SymbolicLink,
+            /* [annotation][in] */ 
+            _In_  ULONG cchSymbolicLink,
+            /* [annotation][out] */ 
+            _Out_  ULONG *pcchWritten) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetProcessCount( 
+            /* [annotation][out] */ 
+            _Out_  ULONG *pcCount) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetProcessActivity( 
+            /* [annotation][in] */ 
+            _In_  ULONG Index,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFSensorProcessActivity **ppProcessActivity) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IMFSensorActivityReportVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IMFSensorActivityReport * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IMFSensorActivityReport * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IMFSensorActivityReport * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetFriendlyName )( 
+            IMFSensorActivityReport * This,
+            /* [annotation][size_is][out] */ 
+            _Out_writes_z_(cchFriendlyName)  LPWSTR FriendlyName,
+            /* [annotation][in] */ 
+            _In_  ULONG cchFriendlyName,
+            /* [annotation][out] */ 
+            _Out_  ULONG *pcchWritten);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetSymbolicLink )( 
+            IMFSensorActivityReport * This,
+            /* [annotation][size_is][out] */ 
+            _Out_writes_z_(cchSymbolicLink)  LPWSTR SymbolicLink,
+            /* [annotation][in] */ 
+            _In_  ULONG cchSymbolicLink,
+            /* [annotation][out] */ 
+            _Out_  ULONG *pcchWritten);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetProcessCount )( 
+            IMFSensorActivityReport * This,
+            /* [annotation][out] */ 
+            _Out_  ULONG *pcCount);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetProcessActivity )( 
+            IMFSensorActivityReport * This,
+            /* [annotation][in] */ 
+            _In_  ULONG Index,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFSensorProcessActivity **ppProcessActivity);
+        
+        END_INTERFACE
+    } IMFSensorActivityReportVtbl;
+
+    interface IMFSensorActivityReport
+    {
+        CONST_VTBL struct IMFSensorActivityReportVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IMFSensorActivityReport_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IMFSensorActivityReport_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IMFSensorActivityReport_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IMFSensorActivityReport_GetFriendlyName(This,FriendlyName,cchFriendlyName,pcchWritten)	\
+    ( (This)->lpVtbl -> GetFriendlyName(This,FriendlyName,cchFriendlyName,pcchWritten) ) 
+
+#define IMFSensorActivityReport_GetSymbolicLink(This,SymbolicLink,cchSymbolicLink,pcchWritten)	\
+    ( (This)->lpVtbl -> GetSymbolicLink(This,SymbolicLink,cchSymbolicLink,pcchWritten) ) 
+
+#define IMFSensorActivityReport_GetProcessCount(This,pcCount)	\
+    ( (This)->lpVtbl -> GetProcessCount(This,pcCount) ) 
+
+#define IMFSensorActivityReport_GetProcessActivity(This,Index,ppProcessActivity)	\
+    ( (This)->lpVtbl -> GetProcessActivity(This,Index,ppProcessActivity) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IMFSensorActivityReport_INTERFACE_DEFINED__ */
+
+
+#ifndef __IMFSensorActivitiesReport_INTERFACE_DEFINED__
+#define __IMFSensorActivitiesReport_INTERFACE_DEFINED__
+
+/* interface IMFSensorActivitiesReport */
+/* [local][helpstring][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IMFSensorActivitiesReport;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("683F7A5E-4A19-43CD-B1A9-DBF4AB3F7777")
+    IMFSensorActivitiesReport : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE GetCount( 
+            /* [annotation][out] */ 
+            _Out_  ULONG *pcCount) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetActivityReport( 
+            /* [annotation][in] */ 
+            _In_  ULONG Index,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFSensorActivityReport **sensorActivityReport) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE GetActivityReportByDeviceName( 
+            /* [annotation][in] */ 
+            _In_z_  LPCWSTR SymbolicName,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFSensorActivityReport **sensorActivityReport) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IMFSensorActivitiesReportVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IMFSensorActivitiesReport * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IMFSensorActivitiesReport * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IMFSensorActivitiesReport * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetCount )( 
+            IMFSensorActivitiesReport * This,
+            /* [annotation][out] */ 
+            _Out_  ULONG *pcCount);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetActivityReport )( 
+            IMFSensorActivitiesReport * This,
+            /* [annotation][in] */ 
+            _In_  ULONG Index,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFSensorActivityReport **sensorActivityReport);
+        
+        HRESULT ( STDMETHODCALLTYPE *GetActivityReportByDeviceName )( 
+            IMFSensorActivitiesReport * This,
+            /* [annotation][in] */ 
+            _In_z_  LPCWSTR SymbolicName,
+            /* [annotation][out] */ 
+            _COM_Outptr_  IMFSensorActivityReport **sensorActivityReport);
+        
+        END_INTERFACE
+    } IMFSensorActivitiesReportVtbl;
+
+    interface IMFSensorActivitiesReport
+    {
+        CONST_VTBL struct IMFSensorActivitiesReportVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IMFSensorActivitiesReport_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IMFSensorActivitiesReport_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IMFSensorActivitiesReport_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IMFSensorActivitiesReport_GetCount(This,pcCount)	\
+    ( (This)->lpVtbl -> GetCount(This,pcCount) ) 
+
+#define IMFSensorActivitiesReport_GetActivityReport(This,Index,sensorActivityReport)	\
+    ( (This)->lpVtbl -> GetActivityReport(This,Index,sensorActivityReport) ) 
+
+#define IMFSensorActivitiesReport_GetActivityReportByDeviceName(This,SymbolicName,sensorActivityReport)	\
+    ( (This)->lpVtbl -> GetActivityReportByDeviceName(This,SymbolicName,sensorActivityReport) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IMFSensorActivitiesReport_INTERFACE_DEFINED__ */
+
+
+#ifndef __IMFSensorActivitiesReportCallback_INTERFACE_DEFINED__
+#define __IMFSensorActivitiesReportCallback_INTERFACE_DEFINED__
+
+/* interface IMFSensorActivitiesReportCallback */
+/* [local][helpstring][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IMFSensorActivitiesReportCallback;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("DE5072EE-DBE3-46DC-8A87-B6F631194751")
+    IMFSensorActivitiesReportCallback : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE OnActivitiesReport( 
+            /* [annotation][in] */ 
+            _In_  IMFSensorActivitiesReport *sensorActivitiesReport) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IMFSensorActivitiesReportCallbackVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IMFSensorActivitiesReportCallback * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IMFSensorActivitiesReportCallback * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IMFSensorActivitiesReportCallback * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *OnActivitiesReport )( 
+            IMFSensorActivitiesReportCallback * This,
+            /* [annotation][in] */ 
+            _In_  IMFSensorActivitiesReport *sensorActivitiesReport);
+        
+        END_INTERFACE
+    } IMFSensorActivitiesReportCallbackVtbl;
+
+    interface IMFSensorActivitiesReportCallback
+    {
+        CONST_VTBL struct IMFSensorActivitiesReportCallbackVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IMFSensorActivitiesReportCallback_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IMFSensorActivitiesReportCallback_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IMFSensorActivitiesReportCallback_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IMFSensorActivitiesReportCallback_OnActivitiesReport(This,sensorActivitiesReport)	\
+    ( (This)->lpVtbl -> OnActivitiesReport(This,sensorActivitiesReport) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IMFSensorActivitiesReportCallback_INTERFACE_DEFINED__ */
+
+
+#ifndef __IMFSensorActivityMonitor_INTERFACE_DEFINED__
+#define __IMFSensorActivityMonitor_INTERFACE_DEFINED__
+
+/* interface IMFSensorActivityMonitor */
+/* [local][helpstring][uuid][object] */ 
+
+
+EXTERN_C const IID IID_IMFSensorActivityMonitor;
+
+#if defined(__cplusplus) && !defined(CINTERFACE)
+    
+    MIDL_INTERFACE("D0CEF145-B3F4-4340-A2E5-7A5080CA05CB")
+    IMFSensorActivityMonitor : public IUnknown
+    {
+    public:
+        virtual HRESULT STDMETHODCALLTYPE Start( void) = 0;
+        
+        virtual HRESULT STDMETHODCALLTYPE Stop( void) = 0;
+        
+    };
+    
+    
+#else 	/* C style interface */
+
+    typedef struct IMFSensorActivityMonitorVtbl
+    {
+        BEGIN_INTERFACE
+        
+        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+            IMFSensorActivityMonitor * This,
+            /* [in] */ REFIID riid,
+            /* [annotation][iid_is][out] */ 
+            _COM_Outptr_  void **ppvObject);
+        
+        ULONG ( STDMETHODCALLTYPE *AddRef )( 
+            IMFSensorActivityMonitor * This);
+        
+        ULONG ( STDMETHODCALLTYPE *Release )( 
+            IMFSensorActivityMonitor * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Start )( 
+            IMFSensorActivityMonitor * This);
+        
+        HRESULT ( STDMETHODCALLTYPE *Stop )( 
+            IMFSensorActivityMonitor * This);
+        
+        END_INTERFACE
+    } IMFSensorActivityMonitorVtbl;
+
+    interface IMFSensorActivityMonitor
+    {
+        CONST_VTBL struct IMFSensorActivityMonitorVtbl *lpVtbl;
+    };
+
+    
+
+#ifdef COBJMACROS
+
+
+#define IMFSensorActivityMonitor_QueryInterface(This,riid,ppvObject)	\
+    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+
+#define IMFSensorActivityMonitor_AddRef(This)	\
+    ( (This)->lpVtbl -> AddRef(This) ) 
+
+#define IMFSensorActivityMonitor_Release(This)	\
+    ( (This)->lpVtbl -> Release(This) ) 
+
+
+#define IMFSensorActivityMonitor_Start(This)	\
+    ( (This)->lpVtbl -> Start(This) ) 
+
+#define IMFSensorActivityMonitor_Stop(This)	\
+    ( (This)->lpVtbl -> Stop(This) ) 
+
+#endif /* COBJMACROS */
+
+
+#endif 	/* C style interface */
+
+
+
+
+#endif 	/* __IMFSensorActivityMonitor_INTERFACE_DEFINED__ */
+
+
+/* interface __MIDL_itf_mfidl_0000_0117 */
+/* [local] */ 
+
+
+STDAPI
+MFCreateSensorActivityMonitor(
+    _In_ IMFSensorActivitiesReportCallback* pCallback,
+    _COM_Outptr_ IMFSensorActivityMonitor** ppActivityMonitor
+    );
+#endif // (WINVER >= _WIN32_WINNT_WINTHRESHOLD) 
+
+
+extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0117_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_mfidl_0000_0117_v0_0_s_ifspec;
 
 /* Additional Prototypes for ALL interfaces */
 

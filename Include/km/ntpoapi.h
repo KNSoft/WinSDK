@@ -466,6 +466,13 @@ DEFINE_GUID( GUID_ALLOW_STANDBY_STATES, 0xabfc2519, 0x3608, 0x4c2a, 0x94, 0xea, 
 DEFINE_GUID( GUID_ALLOW_RTC_WAKE, 0xBD3B718A, 0x0680, 0x4D9D, 0x8A, 0xB2, 0xE1, 0xD2, 0xB4, 0xAC, 0x80, 0x6D );
 
 //
+// Defines a guid for enabling/disabling legacy RTC mitigations.
+//
+// {1A34BDC3-7E6B-442E-A9D0-64B6EF378E84}
+//
+DEFINE_GUID( GUID_LEGACY_RTC_MITIGATION, 0x1A34BDC3, 0x7E6B, 0x442E, 0xA9, 0xD0, 0x64, 0xB6, 0xEF, 0x37, 0x8E, 0x84 );
+
+//
 // Defines a guid for enabling/disabling the ability to create system required
 // power requests.
 //
@@ -1270,6 +1277,23 @@ DEFINE_GUID( GUID_PROCESSOR_CLASS0_FLOOR_PERF, 0xfddc842b, 0x8364, 0x4edc, 0x94,
 DEFINE_GUID( GUID_PROCESSOR_CLASS1_INITIAL_PERF, 0x1facfc65, 0xa930, 0x4bc5, 0x9f, 0x38, 0x50, 0x4e, 0xc0, 0x97, 0xbb, 0xc0);
 
 //
+// Specifies the scheduling policy for threads in a given QoS class.
+//
+// {93B8B6DC-0698-4d1c-9EE4-0644E900C85D}
+//
+DEFINE_GUID( GUID_PROCESSOR_THREAD_SCHEDULING_POLICY,
+0x93b8b6dc, 0x698, 0x4d1c, 0x9e, 0xe4, 0x6, 0x44, 0xe9, 0x0, 0xc8, 0x5d);
+
+//
+// Specifies the scheduling policy for short running threads in a given QoS
+// class.
+//
+// {BAE08B81-2D5E-4688-AD6A-13243356654B}
+//
+DEFINE_GUID( GUID_PROCESSOR_SHORT_THREAD_SCHEDULING_POLICY,
+0xbae08b81, 0x2d5e, 0x4688, 0xad, 0x6a, 0x13, 0x24, 0x33, 0x56, 0x65, 0x4b);
+
+//
 // Specifies active vs passive cooling.  Although not directly related to
 // processor settings, it is the processor that gets throttled if we're doing
 // passive cooling, so it is fairly strongly related.
@@ -1308,16 +1332,16 @@ DEFINE_GUID( GUID_CONNECTIVITY_IN_STANDBY, 0xF15576E8, 0x98B7, 0x4186, 0xB9, 0x4
 
 #define POWER_CONNECTIVITY_IN_STANDBY_DISABLED 0
 #define POWER_CONNECTIVITY_IN_STANDBY_ENABLED 1
-#define POWER_CONNECTIVITY_IN_STANDBY_DISABLED_LID_CLOSE 2
+#define POWER_CONNECTIVITY_IN_STANDBY_SYSTEM_MANAGED 2
 
 //
-// Specifies the mode for disconnected standby. 
-// 
+// Specifies the mode for disconnected standby.
+//
 // 68AFB2D9-EE95-47A8-8F50-4115088073B1
 DEFINE_GUID( GUID_DISCONNECTED_STANDBY_MODE, 0x68AFB2D9, 0xEE95, 0x47A8, 0x8F, 0x50, 0x41, 0x15, 0x08, 0x80, 0x73, 0xB1 );
 
 #define POWER_DISCONNECTED_STANDBY_MODE_NORMAL 0
-#define POWER_DISCONNECTED_STANDBY_MODE_AGGRESSIVE 1 
+#define POWER_DISCONNECTED_STANDBY_MODE_AGGRESSIVE 1
 
 // AC/DC power source
 // ------------------
@@ -1482,10 +1506,20 @@ DEFINE_GUID(GUID_INTSTEER_LOAD_PER_PROC_TRIGGER,
 DEFINE_GUID(GUID_INTSTEER_TIME_UNPARK_TRIGGER,
 0xd6ba4903, 0x386f, 0x4c2c, 0x8a, 0xdb, 0x5c, 0x21, 0xb3, 0x32, 0x8d, 0x25);
 
+// Other miscellaneous power notification GUIDs
+// ------------------------
+//
+
+// Specifies whether mixed reality mode is engaged.
+//
+// {1E626B4E-CF04-4f8d-9CC7-C97C5B0F2391}
+//
+
+DEFINE_GUID(GUID_MIXED_REALITY_MODE,
+0x1e626b4e, 0xcf04, 0x4f8d, 0x9c, 0xc7, 0xc9, 0x7c, 0x5b, 0xf, 0x23, 0x91);
+
 // end_winnt  end_wdm end_ntminiport
 #endif // (NTDDI_VERSION >= NTDDI_VISTA)
-
-
 
 
 #ifndef _NTPOAPI_
@@ -1586,7 +1620,8 @@ typedef struct _SYSTEM_POWER_STATE_CONTEXT {
             ULONG   CurrentSystemState    : 4;
             ULONG   IgnoreHibernationPath : 1;
             ULONG   PseudoTransition      : 1;
-            ULONG   Reserved2             : 10;
+            ULONG   KernelSoftReboot      : 1;
+            ULONG   Reserved2             : 9;
         } DUMMYSTRUCTNAME;
 
         ULONG ContextAsUlong;
@@ -1898,6 +1933,19 @@ typedef enum {
                                             // transition to S4/S5, please note this
                                             // reason is different than ReasonSxTransition.
     MonitorRequestReasonWinrt,
+    MonitorRequestReasonUserInputKeyboard,
+    MonitorRequestReasonUserInputMouse,
+    MonitorRequestReasonUserInputTouch,
+    MonitorRequestReasonUserInputPen,
+    MonitorRequestReasonUserInputAccelerometer,
+    MonitorRequestReasonUserInputHid,
+    MonitorRequestReasonUserInputPoUserPresent,
+    MonitorRequestReasonUserInputSessionSwitch,
+    MonitorRequestReasonUserInputInitialization,
+    MonitorRequestReasonPdcSignalWindowsMobilePwrNotif,         // PDC_SIGNAL_PROVIDER_PWRNOTIF_SVC
+    MonitorRequestReasonPdcSignalWindowsMobileShell,            // PDC_SIGNAL_PROVIDER_UM_CS_CONTROL
+    MonitorRequestReasonPdcSignalHeyCortana,                    // PDC_SIGNAL_PROVIDER_HEY_CORTANA
+    MonitorRequestReasonPdcSignalHolographicShell,              // PDC_SIGNAL_PROVIDER_HOLOSI_CRITICAL_BATTERY_WAKE
     MonitorRequestReasonMax
 } POWER_MONITOR_REQUEST_REASON;
 

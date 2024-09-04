@@ -222,6 +222,7 @@ __inline ULONG CountOfSetBitsUlongPtr(ULONG_PTR _X)
 #define CLASS_TAG_MULTIPATH                 'mPcS'
 #define CLASS_TAG_LOCK_TRACKING             'TLcS'
 #define CLASS_TAG_LB_PROVISIONING           'PLcS'
+#define CLASS_TAG_MANAGE_DATASET            'MDcS'
 
 #define MAXIMUM_RETRIES 4
 
@@ -1991,8 +1992,9 @@ typedef struct _CLASS_VPD_B1_DATA {
     NTSTATUS    CommandStatus;
     USHORT      MediumRotationRate;   // Non-rotating medium if the value is 0001h
     UCHAR       NominalFormFactor;
-    UCHAR       Reserved;
+    UCHAR       Zoned;
     ULONG       MediumProductType;
+    ULONG       DepopulationTime;
 } CLASS_VPD_B1_DATA, *PCLASS_VPD_B1_DATA;
 
 typedef struct _CLASS_VPD_B0_DATA {
@@ -2077,7 +2079,9 @@ typedef struct _CLASS_FUNCTION_SUPPORT_INFO {
         ULONG   BlockDeviceCharacteristics : 1;
         ULONG   LBProvisioning             : 1;
         ULONG   BlockDeviceRODLimits       : 1;
-        ULONG   Reserved                   : 28;
+        ULONG   ZonedBlockDeviceCharacteristics : 1;
+        ULONG   Reserved                   : 22;
+        ULONG   DeviceType                 : 5;
     } ValidInquiryPages;
 #if _MSC_VER >= 1600
 #pragma warning(pop)
@@ -2611,6 +2615,13 @@ typedef struct _PHYSICAL_DEVICE_EXTENSION {
 //
 
 #define DEV_USE_16BYTE_CDB  0x00000020
+
+//
+// Indicates that IRP_MJ_READ, IRP_MJ_WRITE, and IRP_MJ_FLUSH
+// should be forwarded directly to the underlying device
+//
+
+#define DEV_FORWARD_IO      0x00000040
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)

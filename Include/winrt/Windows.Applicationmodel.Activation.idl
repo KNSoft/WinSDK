@@ -32,80 +32,6 @@ import "Windows.Storage.Search.idl";
 import "Windows.System.idl";
 import "Windows.UI.Notifications.idl";
 import "Windows.UI.ViewManagement.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Eappointments2Eappointmentsprovider_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Appointments.AppointmentsProvider.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Eappointments2Eappointmentsprovider_h__)")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Ebackground_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Background.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Ebackground_h__)")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Ecalls_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Calls.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Ecalls_h__)")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Econtacts_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Contacts.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Econtacts_h__)")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Econtacts2Eprovider_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Contacts.Provider.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Econtacts2Eprovider_h__)")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Ecore_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Core.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Ecore_h__)")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Edatatransfer2Esharetarget_h__)")
-cpp_quote("#include <Windows.ApplicationModel.DataTransfer.ShareTarget.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Edatatransfer2Esharetarget_h__)")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Esearch_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Search.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Esearch_h__)")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Euserdataaccounts2Eprovider_h__)")
-cpp_quote("#include <Windows.ApplicationModel.UserDataAccounts.Provider.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Euserdataaccounts2Eprovider_h__)")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Ewallet_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Wallet.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Ewallet_h__)")
-cpp_quote("#if !defined(__windows2Edevices2Eenumeration_h__)")
-cpp_quote("#include <Windows.Devices.Enumeration.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Eenumeration_h__)")
-cpp_quote("#if !defined(__windows2Edevices2Eprinters2Eextensions_h__)")
-cpp_quote("#include <Windows.Devices.Printers.Extensions.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Eprinters2Eextensions_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Espeechrecognition_h__)")
-cpp_quote("#include <Windows.Media.SpeechRecognition.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Espeechrecognition_h__)")
-cpp_quote("#if !defined(__windows2Esecurity2Eauthentication2Eweb_h__)")
-cpp_quote("#include <Windows.Security.Authentication.Web.h>")
-cpp_quote("#endif // !defined(__windows2Esecurity2Eauthentication2Eweb_h__)")
-cpp_quote("#if !defined(__windows2Esecurity2Eauthentication2Eweb2Eprovider_h__)")
-cpp_quote("#include <Windows.Security.Authentication.Web.Provider.h>")
-cpp_quote("#endif // !defined(__windows2Esecurity2Eauthentication2Eweb2Eprovider_h__)")
-cpp_quote("#if !defined(__windows2Estorage_h__)")
-cpp_quote("#include <Windows.Storage.h>")
-cpp_quote("#endif // !defined(__windows2Estorage_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Epickers2Eprovider_h__)")
-cpp_quote("#include <Windows.Storage.Pickers.Provider.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Epickers2Eprovider_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Eprovider_h__)")
-cpp_quote("#include <Windows.Storage.Provider.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Eprovider_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Esearch_h__)")
-cpp_quote("#include <Windows.Storage.Search.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Esearch_h__)")
-cpp_quote("#if !defined(__windows2Esystem_h__)")
-cpp_quote("#include <Windows.System.h>")
-cpp_quote("#endif // !defined(__windows2Esystem_h__)")
-cpp_quote("#if !defined(__windows2Eui2Enotifications_h__)")
-cpp_quote("#include <Windows.UI.Notifications.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Enotifications_h__)")
-cpp_quote("#if !defined(__windows2Eui2Eviewmanagement_h__)")
-cpp_quote("#include <Windows.UI.ViewManagement.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Eviewmanagement_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -272,6 +198,8 @@ namespace Windows
     namespace Foundation
     {
         typedef struct DateTime DateTime;
+
+        runtimeclass Deferral;
 
         typedef struct Rect Rect;
 
@@ -443,6 +371,10 @@ namespace Windows
 
             interface ICameraSettingsActivatedEventArgs;
 
+            interface ICommandLineActivatedEventArgs;
+
+            interface ICommandLineActivationOperation;
+
             interface IContactActivatedEventArgs;
 
             interface IContactCallActivatedEventArgs;
@@ -521,6 +453,8 @@ namespace Windows
 
             interface ISplashScreen;
 
+            interface IStartupTaskActivatedEventArgs;
+
             interface ITileActivatedInfo;
 
             interface IToastNotificationActivatedEventArgs;
@@ -552,6 +486,10 @@ namespace Windows
             runtimeclass CachedFileUpdaterActivatedEventArgs;
 
             runtimeclass CameraSettingsActivatedEventArgs;
+
+            runtimeclass CommandLineActivatedEventArgs;
+
+            runtimeclass CommandLineActivationOperation;
 
             runtimeclass ContactCallActivatedEventArgs;
 
@@ -610,6 +548,8 @@ namespace Windows
             runtimeclass ShareTargetActivatedEventArgs;
 
             runtimeclass SplashScreen;
+
+            runtimeclass StartupTaskActivatedEventArgs;
 
             runtimeclass TileActivatedInfo;
 
@@ -736,7 +676,15 @@ namespace Windows
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)]
                 LockScreenComponent                 = 1016,
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)]
-                ContactPanel                        = 1017
+                ContactPanel                        = 1017,
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                PrintWorkflowForegroundTask         = 1018,
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                GameUIProvider                      = 1019,
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                StartupTask                         = 1020,
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                CommandLineLaunch                   = 1021
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -862,6 +810,27 @@ namespace Windows
             {
                 [propget] HRESULT VideoDeviceController([out] [retval] IInspectable** value);
                 [propget] HRESULT VideoDeviceExtension([out] [retval] IInspectable** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [uuid(4506472C-006A-48EB-8AFB-D07AB25E3366)]
+            interface ICommandLineActivatedEventArgs : IInspectable
+                requires
+                    Windows.ApplicationModel.Activation.IActivatedEventArgs
+            {
+                [propget] HRESULT Operation([out] [retval] Windows.ApplicationModel.Activation.CommandLineActivationOperation** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.ApplicationModel.Activation.CommandLineActivationOperation)]
+            [uuid(994B2841-C59E-4F69-BCFD-B61ED4E622EB)]
+            interface ICommandLineActivationOperation : IInspectable
+            {
+                [propget] HRESULT Arguments([out] [retval] HSTRING* value);
+                [propget] HRESULT CurrentDirectoryPath([out] [retval] HSTRING* value);
+                [propput] HRESULT ExitCode([in] INT32 value);
+                [propget] HRESULT ExitCode([out] [retval] INT32* value);
+                HRESULT GetDeferral([out] [retval] Windows.Foundation.Deferral** value);
             }
 
             [contract(Windows.ApplicationModel.Activation.ContactActivatedEventsContract, 1.0)]
@@ -1236,6 +1205,15 @@ namespace Windows
                 [eventremove] HRESULT Dismissed([in] EventRegistrationToken cookie);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [uuid(03B11A58-5276-4D91-8621-54611864D5FA)]
+            interface IStartupTaskActivatedEventArgs : IInspectable
+                requires
+                    Windows.ApplicationModel.Activation.IActivatedEventArgs
+            {
+                [propget] HRESULT TaskId([out] [retval] HSTRING* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
             [exclusiveto(Windows.ApplicationModel.Activation.TileActivatedInfo)]
             [uuid(80E4A3B1-3980-4F17-B738-89194E0B8F65)]
@@ -1383,6 +1361,22 @@ namespace Windows
             {
                 [default] interface Windows.ApplicationModel.Activation.ICameraSettingsActivatedEventArgs;
                 interface Windows.ApplicationModel.Activation.IActivatedEventArgs;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            runtimeclass CommandLineActivatedEventArgs
+            {
+                [default] interface Windows.ApplicationModel.Activation.ICommandLineActivatedEventArgs;
+                interface Windows.ApplicationModel.Activation.IActivatedEventArgs;
+                interface Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            runtimeclass CommandLineActivationOperation
+            {
+                [default] interface Windows.ApplicationModel.Activation.ICommandLineActivationOperation;
             }
 
             [contract(Windows.ApplicationModel.Activation.ContactActivatedEventsContract, 1.0)]
@@ -1666,6 +1660,15 @@ namespace Windows
             runtimeclass SplashScreen
             {
                 [default] interface Windows.ApplicationModel.Activation.ISplashScreen;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            runtimeclass StartupTaskActivatedEventArgs
+            {
+                [default] interface Windows.ApplicationModel.Activation.IStartupTaskActivatedEventArgs;
+                interface Windows.ApplicationModel.Activation.IActivatedEventArgs;
+                interface Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]

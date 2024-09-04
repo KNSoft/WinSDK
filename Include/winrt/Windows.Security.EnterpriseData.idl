@@ -13,23 +13,6 @@ import "Windows.Foundation.idl";
 import "Windows.Networking.idl";
 import "Windows.Storage.idl";
 import "Windows.Storage.Streams.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Enetworking_h__)")
-cpp_quote("#include <Windows.Networking.h>")
-cpp_quote("#endif // !defined(__windows2Enetworking_h__)")
-cpp_quote("#if !defined(__windows2Estorage_h__)")
-cpp_quote("#include <Windows.Storage.h>")
-cpp_quote("#endif // !defined(__windows2Estorage_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -114,6 +97,8 @@ namespace Windows
             interface IDataProtectionManagerStatics;
 
             interface IFileProtectionInfo;
+
+            interface IFileProtectionInfo2;
 
             interface IFileProtectionManagerStatics;
 
@@ -234,7 +219,7 @@ namespace Windows
     {
         namespace EnterpriseData
         {
-            [contractversion(4.0)]
+            [contractversion(5.0)]
             apicontract EnterpriseDataContract
             {
             }
@@ -367,6 +352,14 @@ namespace Windows
                 [propget] HRESULT Status([out] [retval] Windows.Security.EnterpriseData.FileProtectionStatus* value);
                 [propget] HRESULT IsRoamable([out] [retval] boolean* value);
                 [propget] HRESULT Identity([out] [retval] HSTRING* value);
+            }
+
+            [contract(Windows.Security.EnterpriseData.EnterpriseDataContract, 5.0)]
+            [exclusiveto(Windows.Security.EnterpriseData.FileProtectionInfo)]
+            [uuid(82123A4C-557A-498D-8E94-944CD5836432)]
+            interface IFileProtectionInfo2 : IInspectable
+            {
+                [propget] HRESULT IsProtectWhileOpenSupported([out] [retval] boolean* value);
             }
 
             [contract(Windows.Security.EnterpriseData.EnterpriseDataContract, 1.0)]
@@ -632,6 +625,7 @@ namespace Windows
             runtimeclass FileProtectionInfo
             {
                 [default] interface Windows.Security.EnterpriseData.IFileProtectionInfo;
+                [contract(Windows.Security.EnterpriseData.EnterpriseDataContract, 5.0)] interface Windows.Security.EnterpriseData.IFileProtectionInfo2;
             }
 
             [contract(Windows.Security.EnterpriseData.EnterpriseDataContract, 1.0)]

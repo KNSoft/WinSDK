@@ -21,6 +21,7 @@
 #include <mmsyscom.h> // mm common definitions
 
 /* APISET_NAME: api-ms-win-mm-playsound-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 

@@ -13,23 +13,6 @@ import "Windows.Foundation.idl";
 import "Windows.Media.Core.idl";
 import "Windows.Media.Protection.idl";
 import "Windows.Storage.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Emedia2Ecore_h__)")
-cpp_quote("#include <Windows.Media.Core.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Ecore_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Eprotection_h__)")
-cpp_quote("#include <Windows.Media.Protection.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Eprotection_h__)")
-cpp_quote("#if !defined(__windows2Estorage_h__)")
-cpp_quote("#include <Windows.Storage.h>")
-cpp_quote("#endif // !defined(__windows2Estorage_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -453,6 +436,10 @@ namespace Windows
                     Unprotected   = 0,
                     Aes128Ctr     = 1,
                     Cocktail      = 4,
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    Aes128Cbc     = 5,
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    Unspecified   = 65535,
                     Uninitialized = 2147483647
                 };
 
@@ -460,7 +447,9 @@ namespace Windows
                 enum PlayReadyHardwareDRMFeatures
                 {
                     HardwareDRM = 1,
-                    HEVC        = 2
+                    HEVC        = 2,
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    Aes128Cbc   = 3
                 };
 
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]

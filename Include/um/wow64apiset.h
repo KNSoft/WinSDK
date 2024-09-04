@@ -26,7 +26,9 @@
 
 #ifndef _APISET_WOW64_VER
 #ifdef _APISET_TARGET_VERSION
-#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WINTHRESHOLD
+#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS3
+#define _APISET_WOW64_VER 0x0102
+#elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WINTHRESHOLD
 #define _APISET_WOW64_VER 0x0101
 #elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN8
 #define _APISET_WOW64_VER 0x0100
@@ -69,6 +71,13 @@ Wow64RevertWow64FsRedirection(
 #endif // _WIN32_WINNT >= 0x0501
 #endif // !defined(RC_INVOKED)
 
+#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 
 #if (_WIN32_WINNT >= 0x0501)
 
@@ -82,6 +91,13 @@ IsWow64Process(
 
 
 #endif // _WIN32_WINNT >= 0x0501
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 
 #if !defined(_CONTRACT_GEN) || (_APISET_WOW64_VER >= 0x0101)
@@ -117,6 +133,30 @@ GetSystemWow64DirectoryW(
 #define GetSystemWow64Directory  GetSystemWow64DirectoryA
 #endif // !UNICODE
 
+#endif // _WIN32_WINNT >= 0x0501
+#endif // !defined(RC_INVOKED)
+
+
+#if (_WIN32_WINNT >= 0x0A00)
+
+WINBASEAPI
+USHORT
+WINAPI
+Wow64SetThreadDefaultGuestMachine(
+    _In_ USHORT Machine
+    );
+
+
+WINBASEAPI
+BOOL
+WINAPI
+IsWow64Process2(
+    _In_ HANDLE hProcess,
+    _Out_ USHORT * pProcessMachine,
+    _Out_opt_ USHORT * pNativeMachine
+    );
+
+
 WINBASEAPI
 _Must_inspect_result_
 _Success_(return != 0 && return < uSize)
@@ -145,33 +185,30 @@ GetSystemWow64Directory2W(
 #define GetSystemWow64Directory2  GetSystemWow64Directory2A
 #endif // !UNICODE
 
-#endif // _WIN32_WINNT >= 0x0501
-#endif // !defined(RC_INVOKED)
-
-
-#if (_WIN32_WINNT >= 0x0603)
-
-WINBASEAPI
-USHORT
-WINAPI
-Wow64SetThreadDefaultGuestMachine(
-    _In_ USHORT Machine
-    );
-
-
-WINBASEAPI
-BOOL
-WINAPI
-IsWow64Process2(
-    _In_ HANDLE hProcess,
-    _Out_ USHORT * pProcessMachine,
-    _Out_opt_ USHORT * pNativeMachine
-    );
-
-
-#endif // _WIN32_WINNT >= 0x0603
+#endif // _WIN32_WINNT >= 0x0A00
 
 #endif // !defined(_CONTRACT_GEN) || (_APISET_WOW64_VER >= 0x0101)
+
+
+#if !defined(_CONTRACT_GEN) || (_APISET_WOW64_VER >= 0x0102)
+
+
+#if (_WIN32_WINNT >= 0x0A00)
+
+WINBASEAPI
+_Must_inspect_result_
+HRESULT
+WINAPI
+IsWow64GuestMachineSupported(
+    _In_ USHORT WowGuestMachine,
+    _Out_ BOOL * MachineIsSupported
+    );
+
+
+#endif // _WIN32_WINNT >= 0x0A00
+
+#endif // !defined(_CONTRACT_GEN) || (_APISET_WOW64_VER >= 0x0102)
+
 
 #endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 #pragma endregion

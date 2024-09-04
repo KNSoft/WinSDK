@@ -12403,7 +12403,7 @@ EXTERN_C const IID IID_ISpeechObjectToken;
         
         virtual /* [id][hidden][helpstring] */ HRESULT STDMETHODCALLTYPE SetId( 
             /* [in] */ __RPC__in BSTR Id,
-            /* [defaultvalue][in] */ __RPC__in BSTR CategoryID = L"",
+            /* [defaultvalue][in] */ __RPC__in BSTR CategoryID = (BSTR)L"",
             /* [defaultvalue][in] */ VARIANT_BOOL CreateIfNotExist = 0) = 0;
         
         virtual /* [id][helpstring] */ HRESULT STDMETHODCALLTYPE GetAttribute( 
@@ -16913,7 +16913,7 @@ EXTERN_C const IID IID_ISpeechRecoGrammar;
             /* [in] */ SpeechRuleState State) = 0;
         
         virtual /* [id][helpstring] */ HRESULT STDMETHODCALLTYPE DictationLoad( 
-            /* [defaultvalue][in] */ __RPC__in const BSTR TopicName = L"",
+            /* [defaultvalue][in] */ __RPC__in const BSTR TopicName = (BSTR)L"",
             /* [defaultvalue][in] */ SpeechLoadOption LoadOption = SLOStatic) = 0;
         
         virtual /* [id][helpstring] */ HRESULT STDMETHODCALLTYPE DictationUnload( void) = 0;
@@ -17726,9 +17726,9 @@ EXTERN_C const IID IID_ISpeechGrammarRuleState;
         virtual /* [id][helpstring] */ HRESULT STDMETHODCALLTYPE AddWordTransition( 
             /* [in] */ __RPC__in_opt ISpeechGrammarRuleState *DestState,
             /* [in] */ __RPC__in const BSTR Words,
-            /* [defaultvalue][in] */ __RPC__in const BSTR Separators = L" ",
+            /* [defaultvalue][in] */ __RPC__in const BSTR Separators = (BSTR)L" ",
             /* [defaultvalue][in] */ SpeechGrammarWordType Type = SGLexical,
-            /* [defaultvalue][in] */ __RPC__in const BSTR PropertyName = L"",
+            /* [defaultvalue][in] */ __RPC__in const BSTR PropertyName = (BSTR)L"",
             /* [defaultvalue][in] */ long PropertyId = 0,
             /* [defaultvalue][in] */ __RPC__in VARIANT *PropertyValue = 0,
             /* [defaultvalue][in] */ float Weight = 1) = 0;
@@ -17736,7 +17736,7 @@ EXTERN_C const IID IID_ISpeechGrammarRuleState;
         virtual /* [id][helpstring] */ HRESULT STDMETHODCALLTYPE AddRuleTransition( 
             /* [in] */ __RPC__in_opt ISpeechGrammarRuleState *DestinationState,
             /* [in] */ __RPC__in_opt ISpeechGrammarRule *Rule,
-            /* [defaultvalue][in] */ __RPC__in const BSTR PropertyName = L"",
+            /* [defaultvalue][in] */ __RPC__in const BSTR PropertyName = (BSTR)L"",
             /* [defaultvalue][in] */ long PropertyId = 0,
             /* [defaultvalue][in] */ __RPC__in VARIANT *PropertyValue = 0,
             /* [defaultvalue][in] */ float Weight = 1) = 0;
@@ -17744,7 +17744,7 @@ EXTERN_C const IID IID_ISpeechGrammarRuleState;
         virtual /* [id][helpstring] */ HRESULT STDMETHODCALLTYPE AddSpecialTransition( 
             /* [in] */ __RPC__in_opt ISpeechGrammarRuleState *DestinationState,
             /* [in] */ SpeechSpecialTransitionType Type,
-            /* [defaultvalue][in] */ __RPC__in const BSTR PropertyName = L"",
+            /* [defaultvalue][in] */ __RPC__in const BSTR PropertyName = (BSTR)L"",
             /* [defaultvalue][in] */ long PropertyId = 0,
             /* [defaultvalue][in] */ __RPC__in VARIANT *PropertyValue = 0,
             /* [defaultvalue][in] */ float Weight = 1) = 0;
@@ -21132,7 +21132,7 @@ EXTERN_C const IID IID_ISpeechLexicon;
             /* [in] */ __RPC__in BSTR bstrWord,
             /* [in] */ SpeechLanguageId LangId,
             /* [defaultvalue][in] */ SpeechPartOfSpeech PartOfSpeech = SPSUnknown,
-            /* [defaultvalue][in] */ __RPC__in BSTR bstrPronunciation = L"") = 0;
+            /* [defaultvalue][in] */ __RPC__in BSTR bstrPronunciation = (BSTR)L"") = 0;
         
         virtual /* [id][hidden][helpstring] */ HRESULT STDMETHODCALLTYPE AddPronunciationByPhoneIds( 
             /* [in] */ __RPC__in BSTR bstrWord,
@@ -21144,7 +21144,7 @@ EXTERN_C const IID IID_ISpeechLexicon;
             /* [in] */ __RPC__in BSTR bstrWord,
             /* [in] */ SpeechLanguageId LangId,
             /* [defaultvalue][in] */ SpeechPartOfSpeech PartOfSpeech = SPSUnknown,
-            /* [defaultvalue][in] */ __RPC__in BSTR bstrPronunciation = L"") = 0;
+            /* [defaultvalue][in] */ __RPC__in BSTR bstrPronunciation = (BSTR)L"") = 0;
         
         virtual /* [id][hidden][helpstring] */ HRESULT STDMETHODCALLTYPE RemovePronunciationByPhoneIds( 
             /* [in] */ __RPC__in BSTR bstrWord,

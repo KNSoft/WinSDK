@@ -10,16 +10,30 @@ import "AsyncInfo.idl";
 import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
+import "Windows.Data.Json.idl";
+import "Windows.System.idl";
 
 // Forward Declare
+namespace Windows
+{
+    namespace Data
+    {
+        namespace Json
+        {
+            runtimeclass JsonObject;
+        }
+    }
+}
+namespace Windows
+{
+    namespace Foundation
+    {
+        namespace Collections
+        {
+            runtimeclass ValueSet;
+        }
+    }
+}
 namespace Windows
 {
     namespace Foundation
@@ -35,15 +49,36 @@ namespace Windows
 {
     namespace System
     {
+        runtimeclass AppDiagnosticInfo;
+
+        runtimeclass User;
+    }
+}
+namespace Windows
+{
+    namespace System
+    {
         namespace Diagnostics
         {
+            typedef enum DiagnosticActionState DiagnosticActionState;
+
+            interface IDiagnosticActionResult;
+
+            interface IDiagnosticInvoker;
+
+            interface IDiagnosticInvokerStatics;
+
             interface IProcessCpuUsage;
 
             interface IProcessCpuUsageReport;
 
             interface IProcessDiagnosticInfo;
 
+            interface IProcessDiagnosticInfo2;
+
             interface IProcessDiagnosticInfoStatics;
+
+            interface IProcessDiagnosticInfoStatics2;
 
             interface IProcessDiskUsage;
 
@@ -64,6 +99,10 @@ namespace Windows
             interface ISystemMemoryUsage;
 
             interface ISystemMemoryUsageReport;
+
+            runtimeclass DiagnosticActionResult;
+
+            runtimeclass DiagnosticInvoker;
 
             runtimeclass ProcessCpuUsage;
 
@@ -106,6 +145,10 @@ namespace Windows
                 interface Windows.Foundation.Collections.IIterator<Windows.System.Diagnostics.ProcessDiagnosticInfo*>;
 
                 interface Windows.Foundation.Collections.IVectorView<Windows.System.Diagnostics.ProcessDiagnosticInfo*>;
+
+                interface Windows.Foundation.Collections.IVector<Windows.System.Diagnostics.ProcessDiagnosticInfo*>;
+
+                interface Windows.Foundation.IAsyncOperationWithProgress<Windows.System.Diagnostics.DiagnosticActionResult*, Windows.System.Diagnostics.DiagnosticActionState>;
             }
         }
     }
@@ -118,6 +161,44 @@ namespace Windows
     {
         namespace Diagnostics
         {
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            enum DiagnosticActionState
+            {
+                Initializing        = 0,
+                Downloading         = 1,
+                VerifyingTrust      = 2,
+                Detecting           = 3,
+                Resolving           = 4,
+                VerifyingResolution = 5
+            };
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.System.Diagnostics.DiagnosticActionResult)]
+            [uuid(C265A296-E73B-4097-B28F-3442F03DD831)]
+            interface IDiagnosticActionResult : IInspectable
+            {
+                [propget] HRESULT ExtendedError([out] [retval] HRESULT* value);
+                [propget] HRESULT Results([out] [retval] Windows.Foundation.Collections.ValueSet** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.System.Diagnostics.DiagnosticInvoker)]
+            [uuid(187B270A-02E3-4F86-84FC-FDD892B5940F)]
+            interface IDiagnosticInvoker : IInspectable
+            {
+                HRESULT RunDiagnosticActionAsync([in] Windows.Data.Json.JsonObject* context, [out] [retval] Windows.Foundation.IAsyncOperationWithProgress<Windows.System.Diagnostics.DiagnosticActionResult*, Windows.System.Diagnostics.DiagnosticActionState>** operation);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.System.Diagnostics.DiagnosticInvoker)]
+            [uuid(5CFAD8DE-F15C-4554-A813-C113C3881B09)]
+            interface IDiagnosticInvokerStatics : IInspectable
+            {
+                HRESULT GetDefault([out] [retval] Windows.System.Diagnostics.DiagnosticInvoker** result);
+                HRESULT GetForUser([in] Windows.System.User* user, [out] [retval] Windows.System.Diagnostics.DiagnosticInvoker** result);
+                [propget] HRESULT IsSupported([out] [retval] boolean* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.System.Diagnostics.ProcessCpuUsage)]
             [uuid(0BBB2472-C8BF-423A-A810-B559AE4354E2)]
@@ -149,6 +230,15 @@ namespace Windows
                 [propget] HRESULT CpuUsage([out] [retval] Windows.System.Diagnostics.ProcessCpuUsage** value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.System.Diagnostics.ProcessDiagnosticInfo)]
+            [uuid(9558CB1A-3D0B-49EC-AB70-4F7A112805DE)]
+            interface IProcessDiagnosticInfo2 : IInspectable
+            {
+                HRESULT GetAppDiagnosticInfos([out] [retval] Windows.Foundation.Collections.IVector<Windows.System.AppDiagnosticInfo*>** result);
+                [propget] HRESULT IsPackaged([out] [retval] boolean* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.System.Diagnostics.ProcessDiagnosticInfo)]
             [uuid(2F41B260-B49F-428C-AA0E-84744F49CA95)]
@@ -156,6 +246,14 @@ namespace Windows
             {
                 HRESULT GetForProcesses([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.System.Diagnostics.ProcessDiagnosticInfo*>** processes);
                 HRESULT GetForCurrentProcess([out] [retval] Windows.System.Diagnostics.ProcessDiagnosticInfo** processes);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.System.Diagnostics.ProcessDiagnosticInfo)]
+            [uuid(4A869897-9899-4A44-A29B-091663BE09B6)]
+            interface IProcessDiagnosticInfoStatics2 : IInspectable
+            {
+                HRESULT TryGetForProcessId([in] UINT32 processId, [out] [retval] Windows.System.Diagnostics.ProcessDiagnosticInfo** result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -259,6 +357,23 @@ namespace Windows
                 [propget] HRESULT CommittedSizeInBytes([out] [retval] UINT64* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass DiagnosticActionResult
+            {
+                [default] interface Windows.System.Diagnostics.IDiagnosticActionResult;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [static(Windows.System.Diagnostics.IDiagnosticInvokerStatics, Windows.Foundation.UniversalApiContract, 5.0)]
+            [threading(both)]
+            runtimeclass DiagnosticInvoker
+            {
+                [default] interface Windows.System.Diagnostics.IDiagnosticInvoker;
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
             [threading(both)]
@@ -278,10 +393,12 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
             [static(Windows.System.Diagnostics.IProcessDiagnosticInfoStatics, Windows.Foundation.UniversalApiContract, 1.0)]
+            [static(Windows.System.Diagnostics.IProcessDiagnosticInfoStatics2, Windows.Foundation.UniversalApiContract, 5.0)]
             [threading(both)]
             runtimeclass ProcessDiagnosticInfo
             {
                 [default] interface Windows.System.Diagnostics.IProcessDiagnosticInfo;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.System.Diagnostics.IProcessDiagnosticInfo2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

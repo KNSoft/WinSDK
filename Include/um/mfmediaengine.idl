@@ -1156,6 +1156,29 @@ interface IMFMediaSourceExtension : IUnknown
         );
 };
 
+//+-----------------------------------------------------------------------------
+//
+//  Class:      IMFMediaSourceExtensionLiveSeekableRange
+//
+//  Synopsis:   Media Source extension interface for setting and clearing
+//              the live seekable range.
+//
+//------------------------------------------------------------------------------
+[
+    object,
+    uuid(5D1ABFD6-450A-4D92-9EFC-D6B6CBC1F4DA),
+    pointer_default(unique),
+    local
+]
+interface IMFMediaSourceExtensionLiveSeekableRange : IUnknown
+{
+    HRESULT SetLiveSeekableRange(
+        [in, annotation("_In_")] double start,
+        [in, annotation("_In_")] double end
+        );
+
+    HRESULT ClearLiveSeekableRange();
+};
 
 //////////////////////////////////////////////////////////////////////////////
 //

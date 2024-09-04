@@ -11,17 +11,7 @@ import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
 import "Windows.Storage.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Estorage_h__)")
-cpp_quote("#include <Windows.Storage.h>")
-cpp_quote("#endif // !defined(__windows2Estorage_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
+import "Windows.System.idl";
 
 // Forward Declare
 namespace Windows
@@ -47,7 +37,20 @@ namespace Windows
 {
     namespace Storage
     {
+        typedef enum FileAccessMode FileAccessMode;
+
         interface IStorageFile;
+
+        typedef enum StorageOpenOptions StorageOpenOptions;
+
+        runtimeclass StorageStreamTransaction;
+    }
+}
+namespace Windows
+{
+    namespace System
+    {
+        runtimeclass User;
     }
 }
 namespace Windows
@@ -57,6 +60,8 @@ namespace Windows
         namespace Streams
         {
             typedef enum ByteOrder ByteOrder;
+
+            typedef enum FileOpenDisposition FileOpenDisposition;
 
             typedef enum InputStreamOptions InputStreamOptions;
 
@@ -79,6 +84,8 @@ namespace Windows
             interface IDataWriter;
 
             interface IDataWriterFactory;
+
+            interface IFileRandomAccessStreamStatics;
 
             interface IInputStream;
 
@@ -176,6 +183,8 @@ namespace Windows
 
                 interface Windows.Foundation.Collections.IVectorView<Windows.Storage.Streams.IRandomAccessStream*>;
 
+                interface Windows.Foundation.Collections.IVector<Windows.Storage.Streams.IBuffer*>;
+
                 interface Windows.Foundation.Collections.IVector<Windows.Storage.Streams.IRandomAccessStream*>;
 
                 interface Windows.Foundation.IAsyncOperationWithProgress<Windows.Storage.Streams.IBuffer*, UINT32>;
@@ -218,6 +227,16 @@ namespace Windows
             {
                 LittleEndian = 0,
                 BigEndian    = 1
+            };
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            enum FileOpenDisposition
+            {
+                OpenExisting     = 0,
+                OpenAlways       = 1,
+                CreateNew        = 2,
+                CreateAlways     = 3,
+                TruncateExisting = 4
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -357,6 +376,21 @@ namespace Windows
             interface IDataWriterFactory : IInspectable
             {
                 HRESULT CreateDataWriter([in] Windows.Storage.Streams.IOutputStream* outputStream, [out] [retval] Windows.Storage.Streams.DataWriter** dataWriter);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Storage.Streams.FileRandomAccessStream)]
+            [uuid(73550107-3B57-4B5D-8345-554D2FC621F0)]
+            interface IFileRandomAccessStreamStatics : IInspectable
+            {
+                [overload("OpenAsync")] HRESULT OpenAsync([in] HSTRING filePath, [in] Windows.Storage.FileAccessMode accessMode, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Storage.Streams.IRandomAccessStream*>** operation);
+                [overload("OpenAsync")] HRESULT OpenWithOptionsAsync([in] HSTRING filePath, [in] Windows.Storage.FileAccessMode accessMode, [in] Windows.Storage.StorageOpenOptions sharingOptions, [in] Windows.Storage.Streams.FileOpenDisposition openDisposition, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Storage.Streams.IRandomAccessStream*>** operation);
+                [overload("OpenTransactedWriteAsync")] HRESULT OpenTransactedWriteAsync([in] HSTRING filePath, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Storage.StorageStreamTransaction*>** operation);
+                [overload("OpenTransactedWriteAsync")] HRESULT OpenTransactedWriteWithOptionsAsync([in] HSTRING filePath, [in] Windows.Storage.StorageOpenOptions openOptions, [in] Windows.Storage.Streams.FileOpenDisposition openDisposition, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Storage.StorageStreamTransaction*>** operation);
+                [overload("OpenForUserAsync")] HRESULT OpenForUserAsync([in] Windows.System.User* user, [in] HSTRING filePath, [in] Windows.Storage.FileAccessMode accessMode, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Storage.Streams.IRandomAccessStream*>** operation);
+                [overload("OpenForUserAsync")] HRESULT OpenForUserWithOptionsAsync([in] Windows.System.User* user, [in] HSTRING filePath, [in] Windows.Storage.FileAccessMode accessMode, [in] Windows.Storage.StorageOpenOptions sharingOptions, [in] Windows.Storage.Streams.FileOpenDisposition openDisposition, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Storage.Streams.IRandomAccessStream*>** operation);
+                [overload("OpenTransactedWriteForUserAsync")] HRESULT OpenTransactedWriteForUserAsync([in] Windows.System.User* user, [in] HSTRING filePath, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Storage.StorageStreamTransaction*>** operation);
+                [overload("OpenTransactedWriteForUserAsync")] HRESULT OpenTransactedWriteForUserWithOptionsAsync([in] Windows.System.User* user, [in] HSTRING filePath, [in] Windows.Storage.StorageOpenOptions openOptions, [in] Windows.Storage.Streams.FileOpenDisposition openDisposition, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Storage.StorageStreamTransaction*>** operation);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -507,6 +541,7 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
+            [static(Windows.Storage.Streams.IFileRandomAccessStreamStatics, Windows.Foundation.UniversalApiContract, 5.0)]
             runtimeclass FileRandomAccessStream
             {
                 [default] interface Windows.Storage.Streams.IRandomAccessStream;

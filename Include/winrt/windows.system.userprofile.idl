@@ -14,26 +14,6 @@ import "Windows.Globalization.idl";
 import "Windows.Storage.idl";
 import "Windows.Storage.Streams.idl";
 import "Windows.System.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eglobalization_h__)")
-cpp_quote("#include <Windows.Globalization.h>")
-cpp_quote("#endif // !defined(__windows2Eglobalization_h__)")
-cpp_quote("#if !defined(__windows2Estorage_h__)")
-cpp_quote("#include <Windows.Storage.h>")
-cpp_quote("#endif // !defined(__windows2Estorage_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Esystem_h__)")
-cpp_quote("#include <Windows.System.h>")
-cpp_quote("#endif // !defined(__windows2Esystem_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -111,6 +91,8 @@ namespace Windows
             interface IFirstSignInSettingsStatics;
 
             interface IGlobalizationPreferencesStatics;
+
+            interface IGlobalizationPreferencesStatics2;
 
             interface ILockScreenImageFeedStatics;
 
@@ -276,6 +258,15 @@ namespace Windows
                 [propget] HRESULT WeekStartsOn([out] [retval] Windows.Globalization.DayOfWeek* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.System.UserProfile.GlobalizationPreferences)]
+            [uuid(FCCE85F1-4300-4CD0-9CAC-1A8E7B7E18F4)]
+            interface IGlobalizationPreferencesStatics2 : IInspectable
+            {
+                HRESULT TrySetHomeGeographicRegion([in] HSTRING region, [out] [retval] boolean* result);
+                HRESULT TrySetLanguages([in] Windows.Foundation.Collections.IIterable<HSTRING>* languageTags, [out] [retval] boolean* result);
+            }
+
             [contract(Windows.System.UserProfile.UserProfileLockScreenContract, 1.0)]
             [exclusiveto(Windows.System.UserProfile.LockScreen)]
             [uuid(2C0D73F6-03A9-41A6-9B01-495251FF51D5)]
@@ -375,6 +366,7 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
             [static(Windows.System.UserProfile.IGlobalizationPreferencesStatics, Windows.Foundation.UniversalApiContract, 1.0)]
+            [static(Windows.System.UserProfile.IGlobalizationPreferencesStatics2, Windows.Foundation.UniversalApiContract, 5.0)]
             runtimeclass GlobalizationPreferences
             {
             }

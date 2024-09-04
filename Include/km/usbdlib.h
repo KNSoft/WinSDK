@@ -190,6 +190,7 @@ UsbBuildOpenStaticStreamsRequest(
 
 #endif
 
+
 //
 // Get the USB status code
 //
@@ -217,6 +218,7 @@ UsbBuildOpenStaticStreamsRequest(
 #define  GET_ISO_URB_SIZE(n) \
             (sizeof(struct _URB_ISOCH_TRANSFER) + \
             sizeof(USBD_ISO_PACKET_DESCRIPTOR)*(n))
+
 
 #ifndef _USBD_
 
@@ -345,8 +347,10 @@ USBD_ValidateConfigurationDescriptor(
 
 #define USBD_CLIENT_CONTRACT_VERSION_INVALID 0xFFFFFFFF
 #define USBD_CLIENT_CONTRACT_VERSION_602 0x602
+
 #define USBD_INTERFACE_VERSION_600 0x600
 #define USBD_INTERFACE_VERSION_602 0x602
+#define USBD_INTERFACE_VERSION_603 0x603
 
 DECLARE_HANDLE(USBD_HANDLE);
 
@@ -386,11 +390,12 @@ NTSTATUS
 USBD_IsochUrbAllocate(
     _In_      USBD_HANDLE  USBDHandle,
     _In_      ULONG        NumberOfIsochPacket,
-    _Outptr_result_bytebuffer_(sizeof(struct _URB_ISOCH_TRANSFER) 
+    _Outptr_result_bytebuffer_(sizeof(struct _URB_ISOCH_TRANSFER)
                                + (NumberOfIsochPackets * sizeof(USBD_ISO_PACKET_DESCRIPTOR))
-                               - sizeof(USBD_ISO_PACKET_DESCRIPTOR)) 
+                               - sizeof(USBD_ISO_PACKET_DESCRIPTOR))
               PURB        *Urb
 );
+
 
 _IRQL_requires_max_(DISPATCH_LEVEL)
 VOID
@@ -419,6 +424,7 @@ USBD_SelectInterfaceUrbAllocateAndBuild(
     _Out_ PURB                      *Urb
 );
 
+
 _IRQL_requires_max_(DISPATCH_LEVEL)
 VOID
 USBD_AssignUrbToIoStackLocation(
@@ -438,7 +444,7 @@ USBD_QueryUsbCapability(
     _When_(OutputBufferLength != 0 && ResultLength == NULL, _Out_writes_bytes_(OutputBufferLength))
     _When_(OutputBufferLength != 0 && ResultLength != NULL, _Out_writes_bytes_to_opt_(OutputBufferLength, *ResultLength))
         PUCHAR                        OutputBuffer,
-    _Out_opt_ 
+    _Out_opt_
     _When_(ResultLength != NULL, _Deref_out_range_(<=,OutputBufferLength))
         PULONG                        ResultLength
 );
@@ -470,10 +476,10 @@ typedef struct _REGISTER_COMPOSITE_DEVICE {
 VOID
 USBD_BuildRegisterCompositeDevice(
     _In_
-        USBD_HANDLE                   USBDHandle,  
-    _In_ 
+        USBD_HANDLE                   USBDHandle,
+    _In_
         COMPOSITE_DEVICE_CAPABILITIES CapabilityFlags,
-    _In_        
+    _In_
         ULONG                         FunctionCount,
     _Out_
         PREGISTER_COMPOSITE_DEVICE    RegisterCompositeDevice
@@ -489,7 +495,6 @@ typedef struct _REQUEST_REMOTE_WAKE_NOTIFICATION {
     ULONG                   Interface;
 } REQUEST_REMOTE_WAKE_NOTIFICATION, *PREQUEST_REMOTE_WAKE_NOTIFICATION;
 
-
 DEFINE_GUID(GUID_USB_CAPABILITY_CHAINED_MDLS,
     0xf5ceeb23, 0xad90, 0x458c, 0x97, 0x9a, 0xd5, 0x9b, 0x3a, 0xd6, 0x88, 0x4f);
 
@@ -502,7 +507,7 @@ DEFINE_GUID(GUID_USB_CAPABILITY_SELECTIVE_SUSPEND,
 DEFINE_GUID(GUID_USB_CAPABILITY_FUNCTION_SUSPEND,
     0xf4563183, 0xd66e, 0x42bd, 0xbd, 0x53, 0x1a, 0xc7, 0xb0, 0x4c, 0xd5, 0x9d);
 
-DEFINE_GUID(GUID_USB_CAPABILITY_HIGH_BANDWIDTH_ISOCH, 
+DEFINE_GUID(GUID_USB_CAPABILITY_HIGH_BANDWIDTH_ISOCH,
     0x9c8a8a27, 0x15f9, 0x42e3, 0xa3, 0x56, 0xcd, 0xa6, 0xae, 0x97, 0xa8, 0xc8);
 
 DEFINE_GUID(GUID_USB_CAPABILITY_DEVICE_CONNECTION_HIGH_SPEED_COMPATIBLE,
@@ -512,8 +517,12 @@ DEFINE_GUID(GUID_USB_CAPABILITY_DEVICE_CONNECTION_SUPER_SPEED_COMPATIBLE,
     0x8a2f776c, 0x9bd0, 0x4f29, 0x97, 0x71, 0xc7, 0xa3, 0x88, 0x46, 0xd4, 0xc7);
 
 
+DEFINE_GUID(GUID_USB_CAPABILITY_TIME_SYNC,
+    0xbb6e6472, 0x4be5, 0x44a3, 0x96, 0x41, 0x34, 0x5e, 0x56, 0xac, 0x34, 0x85);
+
 #endif /* (NTDDI_VERSION >= NTDDI_VISTA) */
 
 #pragma warning(pop) // un-sets any local warning changes
 
 #endif /* __USBDLIB_H__ */
+

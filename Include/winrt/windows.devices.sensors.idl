@@ -11,17 +11,6 @@ import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
 import "Windows.Graphics.Display.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Egraphics2Edisplay_h__)")
-cpp_quote("#include <Windows.Graphics.Display.h>")
-cpp_quote("#endif // !defined(__windows2Egraphics2Edisplay_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -83,6 +72,8 @@ namespace Windows
 
             interface IAccelerometerReading;
 
+            interface IAccelerometerReading2;
+
             interface IAccelerometerReadingChangedEventArgs;
 
             interface IAccelerometerShakenEventArgs;
@@ -90,6 +81,8 @@ namespace Windows
             interface IAccelerometerStatics;
 
             interface IAccelerometerStatics2;
+
+            interface IAccelerometerStatics3;
 
             interface IActivitySensor;
 
@@ -105,7 +98,11 @@ namespace Windows
 
             interface IAltimeter;
 
+            interface IAltimeter2;
+
             interface IAltimeterReading;
+
+            interface IAltimeterReading2;
 
             interface IAltimeterReadingChangedEventArgs;
 
@@ -113,19 +110,29 @@ namespace Windows
 
             interface IBarometer;
 
+            interface IBarometer2;
+
             interface IBarometerReading;
+
+            interface IBarometerReading2;
 
             interface IBarometerReadingChangedEventArgs;
 
             interface IBarometerStatics;
 
+            interface IBarometerStatics2;
+
             interface ICompass;
 
             interface ICompass2;
 
+            interface ICompass3;
+
             interface ICompassDeviceId;
 
             interface ICompassReading;
+
+            interface ICompassReading2;
 
             interface ICompassReadingChangedEventArgs;
 
@@ -133,25 +140,37 @@ namespace Windows
 
             interface ICompassStatics;
 
+            interface ICompassStatics2;
+
             interface IGyrometer;
 
             interface IGyrometer2;
+
+            interface IGyrometer3;
 
             interface IGyrometerDeviceId;
 
             interface IGyrometerReading;
 
+            interface IGyrometerReading2;
+
             interface IGyrometerReadingChangedEventArgs;
 
             interface IGyrometerStatics;
+
+            interface IGyrometerStatics2;
 
             interface IInclinometer;
 
             interface IInclinometer2;
 
+            interface IInclinometer3;
+
             interface IInclinometerDeviceId;
 
             interface IInclinometerReading;
+
+            interface IInclinometerReading2;
 
             interface IInclinometerReadingChangedEventArgs;
 
@@ -163,35 +182,53 @@ namespace Windows
 
             interface IInclinometerStatics3;
 
+            interface IInclinometerStatics4;
+
             interface ILightSensor;
+
+            interface ILightSensor2;
 
             interface ILightSensorDeviceId;
 
             interface ILightSensorReading;
 
+            interface ILightSensorReading2;
+
             interface ILightSensorReadingChangedEventArgs;
 
             interface ILightSensorStatics;
+
+            interface ILightSensorStatics2;
 
             interface IMagnetometer;
 
             interface IMagnetometer2;
 
+            interface IMagnetometer3;
+
             interface IMagnetometerDeviceId;
 
             interface IMagnetometerReading;
+
+            interface IMagnetometerReading2;
 
             interface IMagnetometerReadingChangedEventArgs;
 
             interface IMagnetometerStatics;
 
+            interface IMagnetometerStatics2;
+
             interface IOrientationSensor;
 
             interface IOrientationSensor2;
 
+            interface IOrientationSensor3;
+
             interface IOrientationSensorDeviceId;
 
             interface IOrientationSensorReading;
+
+            interface IOrientationSensorReading2;
 
             interface IOrientationSensorReadingChangedEventArgs;
 
@@ -202,6 +239,8 @@ namespace Windows
             interface IOrientationSensorStatics2;
 
             interface IOrientationSensorStatics3;
+
+            interface IOrientationSensorStatics4;
 
             interface IPedometer;
 
@@ -393,9 +432,25 @@ namespace Windows
 
                 interface Windows.Foundation.Collections.IVector<Windows.Devices.Sensors.ActivityType>;
 
+                interface Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.Accelerometer*>;
+
                 interface Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.ActivitySensor*>;
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.ActivitySensorReading*>;
+
+                interface Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.Barometer*>;
+
+                interface Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.Compass*>;
+
+                interface Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.Gyrometer*>;
+
+                interface Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.Inclinometer*>;
+
+                interface Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.LightSensor*>;
+
+                interface Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.Magnetometer*>;
+
+                interface Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.OrientationSensor*>;
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.Pedometer*>;
 
@@ -592,6 +647,15 @@ namespace Windows
                 [propget] HRESULT AccelerationZ([out] [retval] DOUBLE* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.AccelerometerReading)]
+            [uuid(0A864AA2-15AE-4A40-BE55-DB58D7DE7389)]
+            interface IAccelerometerReading2 : IInspectable
+            {
+                [propget] HRESULT PerformanceCount([out] [retval] Windows.Foundation.IReference<Windows.Foundation.TimeSpan>** value);
+                [propget] HRESULT Properties([out] [retval] Windows.Foundation.Collections.IMapView<HSTRING, IInspectable*>** value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Devices.Sensors.AccelerometerReadingChangedEventArgs)]
             [uuid(0095C65B-B6AC-475A-9F44-8B32D35A3F25)]
@@ -622,6 +686,15 @@ namespace Windows
             interface IAccelerometerStatics2 : IInspectable
             {
                 [overload("GetDefault")] HRESULT GetDefaultWithAccelerometerReadingType([in] Windows.Devices.Sensors.AccelerometerReadingType readingType, [out] [retval] Windows.Devices.Sensors.Accelerometer** result);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.Accelerometer)]
+            [uuid(9DE218CF-455D-4CF3-8200-70E1410340F8)]
+            interface IAccelerometerStatics3 : IInspectable
+            {
+                HRESULT FromIdAsync([in] HSTRING deviceId, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.Accelerometer*>** operation);
+                HRESULT GetDeviceSelector([in] Windows.Devices.Sensors.AccelerometerReadingType readingType, [out] [retval] HSTRING* result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -699,6 +772,16 @@ namespace Windows
                 [eventremove] HRESULT ReadingChanged([in] EventRegistrationToken token);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.Altimeter)]
+            [uuid(C9471BF9-2ADD-48F5-9F08-3D0C7660D938)]
+            interface IAltimeter2 : IInspectable
+            {
+                [propput] HRESULT ReportLatency([in] UINT32 value);
+                [propget] HRESULT ReportLatency([out] [retval] UINT32* value);
+                [propget] HRESULT MaxBatchSize([out] [retval] UINT32* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Devices.Sensors.AltimeterReading)]
             [uuid(FBE8EF73-7F5E-48C8-AA1A-F1F3BEFC1144)]
@@ -706,6 +789,15 @@ namespace Windows
             {
                 [propget] HRESULT Timestamp([out] [retval] Windows.Foundation.DateTime* value);
                 [propget] HRESULT AltitudeChangeInMeters([out] [retval] DOUBLE* value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.AltimeterReading)]
+            [uuid(543A1BD9-6D0B-42B2-BD69-BC8FAE0F782C)]
+            interface IAltimeterReading2 : IInspectable
+            {
+                [propget] HRESULT PerformanceCount([out] [retval] Windows.Foundation.IReference<Windows.Foundation.TimeSpan>** value);
+                [propget] HRESULT Properties([out] [retval] Windows.Foundation.Collections.IMapView<HSTRING, IInspectable*>** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -738,6 +830,16 @@ namespace Windows
                 [eventremove] HRESULT ReadingChanged([in] EventRegistrationToken token);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.Barometer)]
+            [uuid(32BCC418-3EEB-4D04-9574-7633A8781F9F)]
+            interface IBarometer2 : IInspectable
+            {
+                [propput] HRESULT ReportLatency([in] UINT32 value);
+                [propget] HRESULT ReportLatency([out] [retval] UINT32* value);
+                [propget] HRESULT MaxBatchSize([out] [retval] UINT32* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Devices.Sensors.BarometerReading)]
             [uuid(F5B9D2E6-1DF6-4A1A-A7AD-321D4F5DB247)]
@@ -745,6 +847,15 @@ namespace Windows
             {
                 [propget] HRESULT Timestamp([out] [retval] Windows.Foundation.DateTime* value);
                 [propget] HRESULT StationPressureInHectopascals([out] [retval] DOUBLE* value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.BarometerReading)]
+            [uuid(85A244EB-90C5-4875-891C-3865B4C357E7)]
+            interface IBarometerReading2 : IInspectable
+            {
+                [propget] HRESULT PerformanceCount([out] [retval] Windows.Foundation.IReference<Windows.Foundation.TimeSpan>** value);
+                [propget] HRESULT Properties([out] [retval] Windows.Foundation.Collections.IMapView<HSTRING, IInspectable*>** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -761,6 +872,15 @@ namespace Windows
             interface IBarometerStatics : IInspectable
             {
                 HRESULT GetDefault([out] [retval] Windows.Devices.Sensors.Barometer** result);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.Barometer)]
+            [uuid(8FC6B1E7-95FF-44AC-878E-D65C8308C34C)]
+            interface IBarometerStatics2 : IInspectable
+            {
+                HRESULT FromIdAsync([in] HSTRING deviceId, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.Barometer*>** operation);
+                HRESULT GetDeviceSelector([out] [retval] HSTRING* result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -785,6 +905,16 @@ namespace Windows
                 [propget] HRESULT ReadingTransform([out] [retval] Windows.Graphics.Display.DisplayOrientations* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.Compass)]
+            [uuid(A424801B-C5EA-4D45-A0EC-4B791F041A89)]
+            interface ICompass3 : IInspectable
+            {
+                [propput] HRESULT ReportLatency([in] UINT32 value);
+                [propget] HRESULT ReportLatency([out] [retval] UINT32* value);
+                [propget] HRESULT MaxBatchSize([out] [retval] UINT32* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Devices.Sensors.Compass)]
             [uuid(D181CA29-B085-4B1D-870A-4FF57BA74FD4)]
@@ -801,6 +931,15 @@ namespace Windows
                 [propget] HRESULT Timestamp([out] [retval] Windows.Foundation.DateTime* value);
                 [propget] HRESULT HeadingMagneticNorth([out] [retval] DOUBLE* value);
                 [propget] HRESULT HeadingTrueNorth([out] [retval] Windows.Foundation.IReference<DOUBLE>** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.CompassReading)]
+            [uuid(B13A661E-51BB-4A12-BEDD-AD47FF87D2E8)]
+            interface ICompassReading2 : IInspectable
+            {
+                [propget] HRESULT PerformanceCount([out] [retval] Windows.Foundation.IReference<Windows.Foundation.TimeSpan>** value);
+                [propget] HRESULT Properties([out] [retval] Windows.Foundation.Collections.IMapView<HSTRING, IInspectable*>** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -827,6 +966,15 @@ namespace Windows
                 HRESULT GetDefault([out] [retval] Windows.Devices.Sensors.Compass** result);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.Compass)]
+            [uuid(0ACE0EAD-3BAA-4990-9CE4-BE0913754ED2)]
+            interface ICompassStatics2 : IInspectable
+            {
+                HRESULT GetDeviceSelector([out] [retval] HSTRING* result);
+                HRESULT FromIdAsync([in] HSTRING deviceId, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.Compass*>** operation);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Devices.Sensors.Gyrometer)]
             [uuid(FDB9A9C4-84B1-4CA2-9763-9B589506C70C)]
@@ -849,6 +997,16 @@ namespace Windows
                 [propget] HRESULT ReadingTransform([out] [retval] Windows.Graphics.Display.DisplayOrientations* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.Gyrometer)]
+            [uuid(5D6F88D5-8FBC-4484-914B-528ADFD947B1)]
+            interface IGyrometer3 : IInspectable
+            {
+                [propput] HRESULT ReportLatency([in] UINT32 value);
+                [propget] HRESULT ReportLatency([out] [retval] UINT32* value);
+                [propget] HRESULT MaxBatchSize([out] [retval] UINT32* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Devices.Sensors.Gyrometer)]
             [uuid(1EE5E978-89A2-4275-9E95-7126F4708760)]
@@ -868,6 +1026,15 @@ namespace Windows
                 [propget] HRESULT AngularVelocityZ([out] [retval] DOUBLE* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.GyrometerReading)]
+            [uuid(16AFE13C-2B89-44BB-822B-D1E1556FF09B)]
+            interface IGyrometerReading2 : IInspectable
+            {
+                [propget] HRESULT PerformanceCount([out] [retval] Windows.Foundation.IReference<Windows.Foundation.TimeSpan>** value);
+                [propget] HRESULT Properties([out] [retval] Windows.Foundation.Collections.IMapView<HSTRING, IInspectable*>** value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Devices.Sensors.GyrometerReadingChangedEventArgs)]
             [uuid(0FDF1895-6F9E-42CE-8D58-388C0AB8356D)]
@@ -882,6 +1049,15 @@ namespace Windows
             interface IGyrometerStatics : IInspectable
             {
                 HRESULT GetDefault([out] [retval] Windows.Devices.Sensors.Gyrometer** result);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.Gyrometer)]
+            [uuid(EF83F7A1-D700-4204-9613-79C6B161DF4E)]
+            interface IGyrometerStatics2 : IInspectable
+            {
+                HRESULT GetDeviceSelector([out] [retval] HSTRING* result);
+                HRESULT FromIdAsync([in] HSTRING deviceId, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.Gyrometer*>** operation);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -907,6 +1083,16 @@ namespace Windows
                 [propget] HRESULT ReadingType([out] [retval] Windows.Devices.Sensors.SensorReadingType* type);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.Inclinometer)]
+            [uuid(3A095004-D765-4384-A3D7-0283F3ABE6AE)]
+            interface IInclinometer3 : IInspectable
+            {
+                [propput] HRESULT ReportLatency([in] UINT32 value);
+                [propget] HRESULT ReportLatency([out] [retval] UINT32* value);
+                [propget] HRESULT MaxBatchSize([out] [retval] UINT32* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Devices.Sensors.Inclinometer)]
             [uuid(01E91982-41FF-4406-AE83-62210FF16FE3)]
@@ -924,6 +1110,15 @@ namespace Windows
                 [propget] HRESULT PitchDegrees([out] [retval] FLOAT* value);
                 [propget] HRESULT RollDegrees([out] [retval] FLOAT* value);
                 [propget] HRESULT YawDegrees([out] [retval] FLOAT* value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.InclinometerReading)]
+            [uuid(4F164781-E90B-4658-8915-0103E08A805A)]
+            interface IInclinometerReading2 : IInspectable
+            {
+                [propget] HRESULT PerformanceCount([out] [retval] Windows.Foundation.IReference<Windows.Foundation.TimeSpan>** value);
+                [propget] HRESULT Properties([out] [retval] Windows.Foundation.Collections.IMapView<HSTRING, IInspectable*>** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -966,6 +1161,15 @@ namespace Windows
                 [overload("GetDefault")] HRESULT GetDefaultWithSensorReadingType([in] Windows.Devices.Sensors.SensorReadingType sensorReadingtype, [out] [retval] Windows.Devices.Sensors.Inclinometer** result);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.Inclinometer)]
+            [uuid(E8BA96F9-6E85-4A83-AED0-D7CDCC9856C8)]
+            interface IInclinometerStatics4 : IInspectable
+            {
+                HRESULT GetDeviceSelector([in] Windows.Devices.Sensors.SensorReadingType readingType, [out] [retval] HSTRING* result);
+                HRESULT FromIdAsync([in] HSTRING deviceId, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.Inclinometer*>** operation);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Devices.Sensors.LightSensor)]
             [uuid(F84C0718-0C54-47AE-922E-789F57FB03A0)]
@@ -977,6 +1181,16 @@ namespace Windows
                 [propget] HRESULT ReportInterval([out] [retval] UINT32* value);
                 [eventadd] HRESULT ReadingChanged([in] Windows.Foundation.TypedEventHandler<Windows.Devices.Sensors.LightSensor*, Windows.Devices.Sensors.LightSensorReadingChangedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                 [eventremove] HRESULT ReadingChanged([in] EventRegistrationToken token);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.LightSensor)]
+            [uuid(486B24E8-A94C-4090-8F48-09F782A9F7D5)]
+            interface ILightSensor2 : IInspectable
+            {
+                [propput] HRESULT ReportLatency([in] UINT32 value);
+                [propget] HRESULT ReportLatency([out] [retval] UINT32* value);
+                [propget] HRESULT MaxBatchSize([out] [retval] UINT32* value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -996,6 +1210,15 @@ namespace Windows
                 [propget] HRESULT IlluminanceInLux([out] [retval] FLOAT* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.LightSensorReading)]
+            [uuid(B7512185-44A3-44C9-8190-9EF6DE0A8A74)]
+            interface ILightSensorReading2 : IInspectable
+            {
+                [propget] HRESULT PerformanceCount([out] [retval] Windows.Foundation.IReference<Windows.Foundation.TimeSpan>** value);
+                [propget] HRESULT Properties([out] [retval] Windows.Foundation.Collections.IMapView<HSTRING, IInspectable*>** value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Devices.Sensors.LightSensorReadingChangedEventArgs)]
             [uuid(A3A2F4CF-258B-420C-B8AB-8EDD601ECF50)]
@@ -1010,6 +1233,15 @@ namespace Windows
             interface ILightSensorStatics : IInspectable
             {
                 HRESULT GetDefault([out] [retval] Windows.Devices.Sensors.LightSensor** result);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.LightSensor)]
+            [uuid(0EC0A650-DDC6-40AB-ACE3-EC3359D42C51)]
+            interface ILightSensorStatics2 : IInspectable
+            {
+                HRESULT GetDeviceSelector([out] [retval] HSTRING* result);
+                HRESULT FromIdAsync([in] HSTRING deviceId, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.LightSensor*>** operation);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1034,6 +1266,16 @@ namespace Windows
                 [propget] HRESULT ReadingTransform([out] [retval] Windows.Graphics.Display.DisplayOrientations* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.Magnetometer)]
+            [uuid(BE93DB7C-A625-48EF-ACF7-FAC104832671)]
+            interface IMagnetometer3 : IInspectable
+            {
+                [propput] HRESULT ReportLatency([in] UINT32 value);
+                [propget] HRESULT ReportLatency([out] [retval] UINT32* value);
+                [propget] HRESULT MaxBatchSize([out] [retval] UINT32* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Devices.Sensors.Magnetometer)]
             [uuid(58B498C2-7E4B-404C-9FC5-5DE8B40EBAE3)]
@@ -1054,6 +1296,15 @@ namespace Windows
                 [propget] HRESULT DirectionalAccuracy([out] [retval] Windows.Devices.Sensors.MagnetometerAccuracy* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.MagnetometerReading)]
+            [uuid(D4C95C61-61D9-404B-A328-066F177A1409)]
+            interface IMagnetometerReading2 : IInspectable
+            {
+                [propget] HRESULT PerformanceCount([out] [retval] Windows.Foundation.IReference<Windows.Foundation.TimeSpan>** value);
+                [propget] HRESULT Properties([out] [retval] Windows.Foundation.Collections.IMapView<HSTRING, IInspectable*>** value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Devices.Sensors.MagnetometerReadingChangedEventArgs)]
             [uuid(17EAE872-2EB9-4EE7-8AD0-3127537D949B)]
@@ -1068,6 +1319,15 @@ namespace Windows
             interface IMagnetometerStatics : IInspectable
             {
                 HRESULT GetDefault([out] [retval] Windows.Devices.Sensors.Magnetometer** result);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.Magnetometer)]
+            [uuid(2C0819F0-FFC6-4F89-A06F-18FA10792933)]
+            interface IMagnetometerStatics2 : IInspectable
+            {
+                HRESULT GetDeviceSelector([out] [retval] HSTRING* result);
+                HRESULT FromIdAsync([in] HSTRING deviceId, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.Magnetometer*>** operation);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1093,6 +1353,16 @@ namespace Windows
                 [propget] HRESULT ReadingType([out] [retval] Windows.Devices.Sensors.SensorReadingType* type);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.OrientationSensor)]
+            [uuid(2CCE578D-646B-48C5-B7EE-44FDC4C6AAFD)]
+            interface IOrientationSensor3 : IInspectable
+            {
+                [propput] HRESULT ReportLatency([in] UINT32 value);
+                [propget] HRESULT ReportLatency([out] [retval] UINT32* value);
+                [propget] HRESULT MaxBatchSize([out] [retval] UINT32* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Devices.Sensors.OrientationSensor)]
             [uuid(5A69B648-4C29-49EC-B28F-EA1D117B66F0)]
@@ -1109,6 +1379,15 @@ namespace Windows
                 [propget] HRESULT Timestamp([out] [retval] Windows.Foundation.DateTime* value);
                 [propget] HRESULT RotationMatrix([out] [retval] Windows.Devices.Sensors.SensorRotationMatrix** value);
                 [propget] HRESULT Quaternion([out] [retval] Windows.Devices.Sensors.SensorQuaternion** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.OrientationSensorReading)]
+            [uuid(00576E5F-49F8-4C05-9E07-24FAC79408C3)]
+            interface IOrientationSensorReading2 : IInspectable
+            {
+                [propget] HRESULT PerformanceCount([out] [retval] Windows.Foundation.IReference<Windows.Foundation.TimeSpan>** value);
+                [propget] HRESULT Properties([out] [retval] Windows.Foundation.Collections.IMapView<HSTRING, IInspectable*>** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1150,6 +1429,16 @@ namespace Windows
             {
                 [overload("GetDefault")] HRESULT GetDefaultWithSensorReadingType([in] Windows.Devices.Sensors.SensorReadingType sensorReadingtype, [out] [retval] Windows.Devices.Sensors.OrientationSensor** result);
                 [overload("GetDefault")] HRESULT GetDefaultWithSensorReadingTypeAndSensorOptimizationGoal([in] Windows.Devices.Sensors.SensorReadingType sensorReadingType, [in] Windows.Devices.Sensors.SensorOptimizationGoal optimizationGoal, [out] [retval] Windows.Devices.Sensors.OrientationSensor** result);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.Sensors.OrientationSensor)]
+            [uuid(A67FEB55-2C85-4B28-A0FE-58C4B20495F5)]
+            interface IOrientationSensorStatics4 : IInspectable
+            {
+                [overload("GetDeviceSelector")] HRESULT GetDeviceSelector([in] Windows.Devices.Sensors.SensorReadingType readingType, [out] [retval] HSTRING* result);
+                [overload("GetDeviceSelector")] HRESULT GetDeviceSelectorWithSensorReadingTypeAndSensorOptimizationGoal([in] Windows.Devices.Sensors.SensorReadingType readingType, [in] Windows.Devices.Sensors.SensorOptimizationGoal optimizationGoal, [out] [retval] HSTRING* result);
+                HRESULT FromIdAsync([in] HSTRING deviceId, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.OrientationSensor*>** operation);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1368,6 +1657,7 @@ namespace Windows
             [marshaling_behavior(agile)]
             [static(Windows.Devices.Sensors.IAccelerometerStatics, Windows.Foundation.UniversalApiContract, 1.0)]
             [static(Windows.Devices.Sensors.IAccelerometerStatics2, Windows.Foundation.UniversalApiContract, 3.0)]
+            [static(Windows.Devices.Sensors.IAccelerometerStatics3, Windows.Foundation.UniversalApiContract, 5.0)]
             [threading(both)]
             runtimeclass Accelerometer
             {
@@ -1384,6 +1674,7 @@ namespace Windows
             runtimeclass AccelerometerReading
             {
                 [default] interface Windows.Devices.Sensors.IAccelerometerReading;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.Sensors.IAccelerometerReading2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1450,6 +1741,7 @@ namespace Windows
             runtimeclass Altimeter
             {
                 [default] interface Windows.Devices.Sensors.IAltimeter;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.Sensors.IAltimeter2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1457,6 +1749,7 @@ namespace Windows
             runtimeclass AltimeterReading
             {
                 [default] interface Windows.Devices.Sensors.IAltimeterReading;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.Sensors.IAltimeterReading2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1469,10 +1762,12 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
             [static(Windows.Devices.Sensors.IBarometerStatics, Windows.Foundation.UniversalApiContract, 1.0)]
+            [static(Windows.Devices.Sensors.IBarometerStatics2, Windows.Foundation.UniversalApiContract, 5.0)]
             [threading(both)]
             runtimeclass Barometer
             {
                 [default] interface Windows.Devices.Sensors.IBarometer;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.Sensors.IBarometer2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1481,6 +1776,7 @@ namespace Windows
             runtimeclass BarometerReading
             {
                 [default] interface Windows.Devices.Sensors.IBarometerReading;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.Sensors.IBarometerReading2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1494,12 +1790,14 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
             [static(Windows.Devices.Sensors.ICompassStatics, Windows.Foundation.UniversalApiContract, 1.0)]
+            [static(Windows.Devices.Sensors.ICompassStatics2, Windows.Foundation.UniversalApiContract, 5.0)]
             [threading(both)]
             runtimeclass Compass
             {
                 [default] interface Windows.Devices.Sensors.ICompass;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Devices.Sensors.ICompassDeviceId;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Devices.Sensors.ICompass2;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.Sensors.ICompass3;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1509,6 +1807,7 @@ namespace Windows
             {
                 [default] interface Windows.Devices.Sensors.ICompassReading;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Devices.Sensors.ICompassReadingHeadingAccuracy;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.Sensors.ICompassReading2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1522,12 +1821,14 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
             [static(Windows.Devices.Sensors.IGyrometerStatics, Windows.Foundation.UniversalApiContract, 1.0)]
+            [static(Windows.Devices.Sensors.IGyrometerStatics2, Windows.Foundation.UniversalApiContract, 5.0)]
             [threading(both)]
             runtimeclass Gyrometer
             {
                 [default] interface Windows.Devices.Sensors.IGyrometer;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Devices.Sensors.IGyrometerDeviceId;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Devices.Sensors.IGyrometer2;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.Sensors.IGyrometer3;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1536,6 +1837,7 @@ namespace Windows
             runtimeclass GyrometerReading
             {
                 [default] interface Windows.Devices.Sensors.IGyrometerReading;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.Sensors.IGyrometerReading2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1551,12 +1853,14 @@ namespace Windows
             [static(Windows.Devices.Sensors.IInclinometerStatics, Windows.Foundation.UniversalApiContract, 1.0)]
             [static(Windows.Devices.Sensors.IInclinometerStatics2, Windows.Foundation.UniversalApiContract, 1.0)]
             [static(Windows.Devices.Sensors.IInclinometerStatics3, Windows.Foundation.UniversalApiContract, 3.0)]
+            [static(Windows.Devices.Sensors.IInclinometerStatics4, Windows.Foundation.UniversalApiContract, 5.0)]
             [threading(both)]
             runtimeclass Inclinometer
             {
                 [default] interface Windows.Devices.Sensors.IInclinometer;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Devices.Sensors.IInclinometerDeviceId;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Devices.Sensors.IInclinometer2;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.Sensors.IInclinometer3;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1566,6 +1870,7 @@ namespace Windows
             {
                 [default] interface Windows.Devices.Sensors.IInclinometerReading;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Devices.Sensors.IInclinometerReadingYawAccuracy;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.Sensors.IInclinometerReading2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1579,11 +1884,13 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
             [static(Windows.Devices.Sensors.ILightSensorStatics, Windows.Foundation.UniversalApiContract, 1.0)]
+            [static(Windows.Devices.Sensors.ILightSensorStatics2, Windows.Foundation.UniversalApiContract, 5.0)]
             [threading(both)]
             runtimeclass LightSensor
             {
                 [default] interface Windows.Devices.Sensors.ILightSensor;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Devices.Sensors.ILightSensorDeviceId;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.Sensors.ILightSensor2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1592,6 +1899,7 @@ namespace Windows
             runtimeclass LightSensorReading
             {
                 [default] interface Windows.Devices.Sensors.ILightSensorReading;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.Sensors.ILightSensorReading2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1605,12 +1913,14 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
             [static(Windows.Devices.Sensors.IMagnetometerStatics, Windows.Foundation.UniversalApiContract, 1.0)]
+            [static(Windows.Devices.Sensors.IMagnetometerStatics2, Windows.Foundation.UniversalApiContract, 5.0)]
             [threading(both)]
             runtimeclass Magnetometer
             {
                 [default] interface Windows.Devices.Sensors.IMagnetometer;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Devices.Sensors.IMagnetometerDeviceId;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Devices.Sensors.IMagnetometer2;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.Sensors.IMagnetometer3;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1619,6 +1929,7 @@ namespace Windows
             runtimeclass MagnetometerReading
             {
                 [default] interface Windows.Devices.Sensors.IMagnetometerReading;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.Sensors.IMagnetometerReading2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1634,12 +1945,14 @@ namespace Windows
             [static(Windows.Devices.Sensors.IOrientationSensorStatics, Windows.Foundation.UniversalApiContract, 1.0)]
             [static(Windows.Devices.Sensors.IOrientationSensorStatics2, Windows.Foundation.UniversalApiContract, 1.0)]
             [static(Windows.Devices.Sensors.IOrientationSensorStatics3, Windows.Foundation.UniversalApiContract, 3.0)]
+            [static(Windows.Devices.Sensors.IOrientationSensorStatics4, Windows.Foundation.UniversalApiContract, 5.0)]
             [threading(both)]
             runtimeclass OrientationSensor
             {
                 [default] interface Windows.Devices.Sensors.IOrientationSensor;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Devices.Sensors.IOrientationSensorDeviceId;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Devices.Sensors.IOrientationSensor2;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.Sensors.IOrientationSensor3;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1649,6 +1962,7 @@ namespace Windows
             {
                 [default] interface Windows.Devices.Sensors.IOrientationSensorReading;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Devices.Sensors.IOrientationSensorReadingYawAccuracy;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.Sensors.IOrientationSensorReading2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

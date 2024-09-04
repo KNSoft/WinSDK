@@ -45,6 +45,7 @@
 *   The range from 8004c000 to 8004dfff is reserved for PlayReady PK error codes.
 *       Exceptions:
 *            The sub-range 8004c600 to 8004c6ff is reserved for PlayReady Server and Services error codes.
+*            The sub-range 8004dd00 to 8004ddff is reserved for OEM-defined PlayReady PK error codes.
 *
 *   There's a range of error codes that is only applicable to the PC and should
 *   not be included here. These errors are in common\include, files:
@@ -104,11 +105,11 @@
  * Define the facility codes
  *
  */
-#define DRM_FACILITY_WIN32               0x7
 #define DRM_FACILITY_STANDARD            0x0
-#define DRM_FACILITY_NETSHOW             0xD
-#define DRM_FACILITY_CORE                0x4
 #define DRM_FACILITY_COM_STORAGE         0x3
+#define DRM_FACILITY_CORE                0x4
+#define DRM_FACILITY_WIN32               0x7
+#define DRM_FACILITY_NETSHOW             0xD
 
 
 /*
@@ -116,8 +117,8 @@
  *
  */
 #define DRM_SEVERITY_SUCCESS             0x0
-#define DRM_SEVERITY_NETSHOW_ERROR       0x3
 #define DRM_SEVERITY_ERROR               0x2
+#define DRM_SEVERITY_NETSHOW_ERROR       0x3
 
 
 /*
@@ -756,26 +757,6 @@
 #define DRM_E_LIC_BASECODE           ((DRM_RESULT)0x80041200L)
 
 /*
- * MessageId: DRM_E_LIC_PARAM_NOT_OPTIONAL
- *
- * MessageText:
- *
- *  DRM_E_LIC_PARAM_NOT_OPTIONAL
- *
- */
-#define DRM_E_LIC_PARAM_NOT_OPTIONAL     ((DRM_RESULT)0x80041203L)
-
-/*
- * MessageId: DRM_E_LIC_INVALID_LICENSE
- *
- * MessageText:
- *
- *  DRM_E_LIC_INVALID_LICENSE
- *
- */
-#define DRM_E_LIC_INVALID_LICENSE        ((DRM_RESULT)0x80041205L)
-
-/*
  * MessageId: DRM_E_LIC_UNSUPPORTED_VALUE
  *
  * MessageText:
@@ -816,14 +797,24 @@
 #define DRM_E_CDMI_PERSISTENT_LICENSE_FOR_NON_PERSISTENT_LICENSE_SESSION ((DRM_RESULT)0x80041302L)
 
 /*
- * MessageId: DRM_E_CDMI_UNABLE_TO_REMOVE_MEDIAKEYS
+ * MessageId: DRM_E_CDMI_SECURE_STOP_LICENSE_FOR_NON_PERSISTENT_USAGE_RECORD_SESSION
  *
  * MessageText:
  *
- * The existing MediaKeys object cannot be removed.
+ * A secure stop license was provided for a session that was not persistent-usage-record.
  *
  */
-#define DRM_E_CDMI_UNABLE_TO_REMOVE_MEDIAKEYS ((DRM_RESULT)0x80041303L)
+#define DRM_E_CDMI_SECURE_STOP_LICENSE_FOR_NON_PERSISTENT_USAGE_RECORD_SESSION ((DRM_RESULT)0x80041303L)
+
+/*
+ * MessageId: DRM_E_CDMI_TEMPORARY_LICENSE_FOR_NON_TEMPORARY_SESSION
+ *
+ * MessageText:
+ *
+ * An in-memory-only license without secure-stop was provided for a session that was not temporary.
+ *
+ */
+#define DRM_E_CDMI_TEMPORARY_LICENSE_FOR_NON_TEMPORARY_SESSION ((DRM_RESULT)0x80041304L)
 
 /*
  * MessageId: DRM_E_CDMI_UNSUPPORTED_KEY_SYSTEM
@@ -833,7 +824,7 @@
  * The requested key system is not supported by PlayReady.
  *
  */
-#define DRM_E_CDMI_UNSUPPORTED_KEY_SYSTEM ((DRM_RESULT)0x80041304L)
+#define DRM_E_CDMI_UNSUPPORTED_KEY_SYSTEM ((DRM_RESULT)0x80041305L)
 
 /*
  * MessageId: DRM_E_CDMI_UNSUPPORTED_INITIALIZATION_DATA_TYPES
@@ -843,7 +834,7 @@
  * None of the requested initialization data types are supported by PlayReady.
  *
  */
-#define DRM_E_CDMI_UNSUPPORTED_INITIALIZATION_DATA_TYPES ((DRM_RESULT)0x80041305L)
+#define DRM_E_CDMI_UNSUPPORTED_INITIALIZATION_DATA_TYPES ((DRM_RESULT)0x80041306L)
 
 /*
  * MessageId: DRM_E_CDMI_UNSUPPORTED_DISTINCTIVE_IDENTIFIER
@@ -853,7 +844,7 @@
  * The requested distinctive identifier setting is not supported by PlayReady.
  *
  */
-#define DRM_E_CDMI_UNSUPPORTED_DISTINCTIVE_IDENTIFIER ((DRM_RESULT)0x80041306L)
+#define DRM_E_CDMI_UNSUPPORTED_DISTINCTIVE_IDENTIFIER ((DRM_RESULT)0x80041307L)
 
 /*
  * MessageId: DRM_E_CDMI_UNSUPPORTED_SESSION_TYPE
@@ -863,7 +854,7 @@
  * The requested session type is not supported by PlayReady.
  *
  */
-#define DRM_E_CDMI_UNSUPPORTED_SESSION_TYPE ((DRM_RESULT)0x80041307L)
+#define DRM_E_CDMI_UNSUPPORTED_SESSION_TYPE ((DRM_RESULT)0x80041308L)
 
 /*
  * MessageId: DRM_E_CDMI_UNSUPPORTED_INITIALIZATION_DATA
@@ -873,27 +864,7 @@
  * The provided initialization data is not supported by PlayReady.
  *
  */
-#define DRM_E_CDMI_UNSUPPORTED_INITIALIZATION_DATA ((DRM_RESULT)0x80041308L)
-
-/*
- * MessageId: DRM_E_CDMI_UNSUPPORTED_OPERATION
- *
- * MessageText:
- *
- * The requested operation is not supported by PlayReady.
- *
- */
-#define DRM_E_CDMI_UNSUPPORTED_OPERATION ((DRM_RESULT)0x80041309L)
-
-/*
- * MessageId: DRM_E_CDMI_UNABLE_TO_REMOVE_MEDIAKEYS_AT_THIS_TIME
- *
- * MessageText:
- *
- * The existing MediaKeys object cannot be removed at this time.
- *
- */
-#define DRM_E_CDMI_UNABLE_TO_REMOVE_MEDIAKEYS_AT_THIS_TIME ((DRM_RESULT)0x8004130AL)
+#define DRM_E_CDMI_UNSUPPORTED_INITIALIZATION_DATA ((DRM_RESULT)0x80041309L)
 
 /*
  * MessageId: DRM_E_CDMI_SESSION_ALREADY_USED
@@ -903,7 +874,7 @@
  * The session has already been used.
  *
  */
-#define DRM_E_CDMI_SESSION_ALREADY_USED  ((DRM_RESULT)0x8004130BL)
+#define DRM_E_CDMI_SESSION_ALREADY_USED  ((DRM_RESULT)0x8004130AL)
 
 /*
  * MessageId: DRM_E_CDMI_SESSION_UNINITIALIZED
@@ -913,7 +884,7 @@
  * The session is not yet initialized.
  *
  */
-#define DRM_E_CDMI_SESSION_UNINITIALIZED ((DRM_RESULT)0x8004130CL)
+#define DRM_E_CDMI_SESSION_UNINITIALIZED ((DRM_RESULT)0x8004130BL)
 
 /*
  * MessageId: DRM_E_CDMI_SESSION_CLOSED
@@ -923,278 +894,27 @@
  * The session is closed.
  *
  */
-#define DRM_E_CDMI_SESSION_CLOSED        ((DRM_RESULT)0x8004130DL)
+#define DRM_E_CDMI_SESSION_CLOSED        ((DRM_RESULT)0x8004130CL)
 
 /*
- * MessageId: DRM_E_CDMI_SESSION_EXISTS
+ * MessageId: DRM_E_CDMI_SESSION_ID_NOT_FOUND
  *
  * MessageText:
  *
- * A non-closed session already exists for this sessionId.
+ * The given session ID could not be found.
  *
  */
-#define DRM_E_CDMI_SESSION_EXISTS        ((DRM_RESULT)0x8004130EL)
+#define DRM_E_CDMI_SESSION_ID_NOT_FOUND  ((DRM_RESULT)0x8004130DL)
 
 /*
- * MessageId: DRM_E_CDMI_SECURE_STOP_LICENSE_FOR_NON_PERSISTENT_USAGE_RECORD_SESSION
+ * MessageId: DRM_E_CDMI_SESSION_TYPE_MISMATCH
  *
  * MessageText:
  *
- * A secure stop license was provided for a session that was not persistent-usage-record.
+ * The given session was initialized with a different session type than the session being loaded or Load/Remove was called on a temporary session.
  *
  */
-#define DRM_E_CDMI_SECURE_STOP_LICENSE_FOR_NON_PERSISTENT_USAGE_RECORD_SESSION ((DRM_RESULT)0x8004130FL)
-
-
-/* ============================================================
-**
-** Expression evaluator results: error codes from 0x80041400-0x800414ff.
-**
-** ============================================================
-*/
-
-#define DRM_E_CPRMEXP_BASECODE       ((DRM_RESULT)0x80041400L)
-
-/*
- * MessageId: DRM_E_CPRMEXP_NOERROR
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_NOERROR
- *
- */
-#define DRM_E_CPRMEXP_NOERROR            ((DRM_RESULT)0x00041400L)
-
-/*
- * MessageId: DRM_E_CPRMEXP_NO_OPERANDS_IN_EXPRESSION
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_NO_OPERANDS_IN_EXPRESSION
- *
- */
-#define DRM_E_CPRMEXP_NO_OPERANDS_IN_EXPRESSION ((DRM_RESULT)0x80041403L)
-
-/*
- * MessageId: DRM_E_CPRMEXP_INVALID_TOKEN
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_INVALID_TOKEN
- *
- */
-#define DRM_E_CPRMEXP_INVALID_TOKEN      ((DRM_RESULT)0x80041404L)
-
-/*
- * MessageId: DRM_E_CPRMEXP_INVALID_CONSTANT
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_INVALID_CONSTANT
- *
- */
-#define DRM_E_CPRMEXP_INVALID_CONSTANT   ((DRM_RESULT)0x80041405L)
-
-/*
- * MessageId: DRM_E_CPRMEXP_INVALID_VARIABLE
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_INVALID_VARIABLE
- *
- */
-#define DRM_E_CPRMEXP_INVALID_VARIABLE   ((DRM_RESULT)0x80041406L)
-
-/*
- * MessageId: DRM_E_CPRMEXP_INVALID_FUNCTION
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_INVALID_FUNCTION
- *
- */
-#define DRM_E_CPRMEXP_INVALID_FUNCTION   ((DRM_RESULT)0x80041407L)
-
-/*
- * MessageId: DRM_E_CPRMEXP_INVALID_ARGUMENT
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_INVALID_ARGUMENT
- *
- */
-#define DRM_E_CPRMEXP_INVALID_ARGUMENT   ((DRM_RESULT)0x80041408L)
-
-/*
- * MessageId: DRM_E_CPRMEXP_INVALID_CONTEXT
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_INVALID_CONTEXT
- *
- */
-#define DRM_E_CPRMEXP_INVALID_CONTEXT    ((DRM_RESULT)0x80041409L)
-
-/*
- * MessageId: DRM_E_CPRMEXP_MISSING_OPERAND
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_MISSING_OPERAND
- *
- */
-#define DRM_E_CPRMEXP_MISSING_OPERAND    ((DRM_RESULT)0x8004140BL)
-
-/*
- * MessageId: DRM_E_CPRMEXP_OVERFLOW
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_OVERFLOW
- *
- */
-#define DRM_E_CPRMEXP_OVERFLOW           ((DRM_RESULT)0x8004140CL)
-
-/*
- * MessageId: DRM_E_CPRMEXP_UNDERFLOW
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_UNDERFLOW
- *
- */
-#define DRM_E_CPRMEXP_UNDERFLOW          ((DRM_RESULT)0x8004140DL)
-
-/*
- * MessageId: DRM_E_CPRMEXP_INCORRECT_NUM_ARGS
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_INCORRECT_NUM_ARGS
- *
- */
-#define DRM_E_CPRMEXP_INCORRECT_NUM_ARGS ((DRM_RESULT)0x8004140EL)
-
-/*
- * MessageId: DRM_E_CPRMEXP_VARIABLE_EXPECTED
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_VARIABLE_EXPECTED
- *
- */
-#define DRM_E_CPRMEXP_VARIABLE_EXPECTED  ((DRM_RESULT)0x8004140FL)
-
-/*
- * MessageId: DRM_E_CPRMEXP_RETRIEVAL_FAILURE
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_RETRIEVAL_FAILURE
- *
- */
-#define DRM_E_CPRMEXP_RETRIEVAL_FAILURE  ((DRM_RESULT)0x80041410L)
-
-/*
- * MessageId: DRM_E_CPRMEXP_UPDATE_FAILURE
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_UPDATE_FAILURE
- *
- */
-#define DRM_E_CPRMEXP_UPDATE_FAILURE     ((DRM_RESULT)0x80041411L)
-
-/*
- * MessageId: DRM_E_CPRMEXP_STRING_UNTERMINATED
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_STRING_UNTERMINATED
- *
- */
-#define DRM_E_CPRMEXP_STRING_UNTERMINATED ((DRM_RESULT)0x80041412L)
-
-/*
- * MessageId: DRM_E_CPRMEXP_UPDATE_UNSUPPORTED
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_UPDATE_UNSUPPORTED
- *
- */
-#define DRM_E_CPRMEXP_UPDATE_UNSUPPORTED ((DRM_RESULT)0x80041413L)
-
-/*
- * MessageId: DRM_E_CPRMEXP_ISOLATED_OPERAND_OR_OPERATOR
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_ISOLATED_OPERAND_OR_OPERATOR
- *
- */
-#define DRM_E_CPRMEXP_ISOLATED_OPERAND_OR_OPERATOR ((DRM_RESULT)0x80041414L)
-
-/*
- * MessageId: DRM_E_CPRMEXP_UNMATCHED
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_UNMATCHED
- *
- */
-#define DRM_E_CPRMEXP_UNMATCHED          ((DRM_RESULT)0x80041415L)
-
-/*
- * MessageId: DRM_E_CPRMEXP_WRONG_TYPE_OPERAND
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_WRONG_TYPE_OPERAND
- *
- */
-#define DRM_E_CPRMEXP_WRONG_TYPE_OPERAND ((DRM_RESULT)0x80041416L)
-
-/*
- * MessageId: DRM_E_CPRMEXP_TOO_MANY_OPERANDS
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_TOO_MANY_OPERANDS
- *
- */
-#define DRM_E_CPRMEXP_TOO_MANY_OPERANDS  ((DRM_RESULT)0x80041417L)
-
-/*
- * MessageId: DRM_E_CPRMEXP_UNKNOWN_PARSE_ERROR
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_UNKNOWN_PARSE_ERROR
- *
- */
-#define DRM_E_CPRMEXP_UNKNOWN_PARSE_ERROR ((DRM_RESULT)0x80041418L)
-
-/*
- * MessageId: DRM_E_CPRMEXP_UNSUPPORTED_FUNCTION
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_UNSUPPORTED_FUNCTION
- *
- */
-#define DRM_E_CPRMEXP_UNSUPPORTED_FUNCTION ((DRM_RESULT)0x80041419L)
-
-/*
- * MessageId: DRM_E_CPRMEXP_CLOCK_REQUIRED
- *
- * MessageText:
- *
- *  DRM_E_CPRMEXP_CLOCK_REQUIRED
- *
- */
-#define DRM_E_CPRMEXP_CLOCK_REQUIRED     ((DRM_RESULT)0x8004141AL)
-
+#define DRM_E_CDMI_SESSION_TYPE_MISMATCH ((DRM_RESULT)0x8004130EL)
 
 /* ============================================================
 **
@@ -2662,16 +2382,6 @@
  */
 #define DRM_E_LICEVAL_REQUIRED_REVOCATION_LIST_NOT_AVAILABLE ((DRM_RESULT)0x8004C0C4L)
 
-/*
- * MessageId: DRM_E_LICEVAL_INVALID_PRND_LICENSE
- *
- * MessageText:
- *
- * License is an invalid PRND license. PRND license cannot have metering ID, expire-after-first-play or domain properties.
- *
- */
-#define DRM_E_LICEVAL_INVALID_PRND_LICENSE ((DRM_RESULT)0x8004C0C5L)
-
 
 /* ------------------------------------------------------------
 **
@@ -3913,97 +3623,6 @@
 
 /* ------------------------------------------------------------
 **
-** PlayReady initiator format errors: error codes from DRM_E_BASECODE+0x780
-** to DRM_E_BASECODE+0x7FF, 0x8004c780-0x8004c7ff.
-**
-** ------------------------------------------------------------
-*/
-
-#define DRM_E_INITIATORS_BASECODE      DRM_E_BASECODE + 0x780
-
-/*
- * MessageId: DRM_E_INITIATORS_UNKNOWN_TYPE
- *
- * MessageText:
- *
- * The initiator type is unknown.
- *
- */
-#define DRM_E_INITIATORS_UNKNOWN_TYPE    ((DRM_RESULT)0x8004C780L)
-
-/*
- * MessageId: DRM_E_INITIATORS_INVALID_SERVICEID
- *
- * MessageText:
- *
- * The service ID data is not valid.
- *
- */
-#define DRM_E_INITIATORS_INVALID_SERVICEID ((DRM_RESULT)0x8004C781L)
-
-/*
- * MessageId: DRM_E_INITIATORS_INVALID_ACCOUNTID
- *
- * MessageText:
- *
- * The account ID data is not valid.
- *
- */
-#define DRM_E_INITIATORS_INVALID_ACCOUNTID ((DRM_RESULT)0x8004C782L)
-
-/*
- * MessageId: DRM_E_INITIATORS_INVALID_MID
- *
- * MessageText:
- *
- * The account ID data is not valid.
- *
- */
-#define DRM_E_INITIATORS_INVALID_MID     ((DRM_RESULT)0x8004C783L)
-
-/*
- * MessageId: DRM_E_INITIATORS_MISSING_DC_URL
- *
- * MessageText:
- *
- * Domain Controller URL is missing.
- *
- */
-#define DRM_E_INITIATORS_MISSING_DC_URL  ((DRM_RESULT)0x8004C784L)
-
-/*
- * MessageId: DRM_E_INITIATORS_MISSING_CONTENT_HEADER
- *
- * MessageText:
- *
- * Content header is missing.
- *
- */
-#define DRM_E_INITIATORS_MISSING_CONTENT_HEADER ((DRM_RESULT)0x8004C785L)
-
-/*
- * MessageId: DRM_E_INITIATORS_MISSING_LAURL_IN_CONTENT_HEADER
- *
- * MessageText:
- *
- * Missing license acquisition URL in content header.
- *
- */
-#define DRM_E_INITIATORS_MISSING_LAURL_IN_CONTENT_HEADER ((DRM_RESULT)0x8004C786L)
-
-/*
- * MessageId: DRM_E_INITIATORS_MISSING_METERCERT_URL
- *
- * MessageText:
- *
- * Meter certificate server URL is missing.
- *
- */
-#define DRM_E_INITIATORS_MISSING_METERCERT_URL ((DRM_RESULT)0x8004C787L)
-
-
-/* ------------------------------------------------------------
-**
 ** Binary certificate errors: error codes from DRM_E_BASECODE+0x800
 ** to DRM_E_BASECODE+0x8FF, 0x8004c800-0x8004c8ff.
 **
@@ -5000,285 +4619,6 @@
 
 /* ------------------------------------------------------------
 **
-** NDT/NDR results: error codes from DRM_E_BASECODE+0xE00
-** to DRM_E_BASECODE+0xEFF, 0x8004ce00-0x8004ceff.
-**
-** ------------------------------------------------------------
-*/
-
-#define DRM_ND_BASECODE           DRM_E_BASECODE + 0xE00
-
-/*
- * MessageId: DRM_E_ND_MUST_REVALIDATE
- *
- * MessageText:
- *
- * The client must be revalidated before executing the intended operation.
- *
- */
-#define DRM_E_ND_MUST_REVALIDATE         ((DRM_RESULT)0x8004CE00L)
-
-/*
- * MessageId: DRM_E_ND_INVALID_MESSAGE
- *
- * MessageText:
- *
- * A received message is garbled.
- *
- */
-#define DRM_E_ND_INVALID_MESSAGE         ((DRM_RESULT)0x8004CE01L)
-
-/*
- * MessageId: DRM_E_ND_INVALID_MESSAGE_TYPE
- *
- * MessageText:
- *
- * A received message contains an invalid message type.
- *
- */
-#define DRM_E_ND_INVALID_MESSAGE_TYPE    ((DRM_RESULT)0x8004CE02L)
-
-/*
- * MessageId: DRM_E_ND_INVALID_MESSAGE_VERSION
- *
- * MessageText:
- *
- * A received message contains an invalid message version.
- *
- */
-#define DRM_E_ND_INVALID_MESSAGE_VERSION ((DRM_RESULT)0x8004CE03L)
-
-/*
- * MessageId: DRM_E_ND_INVALID_SESSION
- *
- * MessageText:
- *
- * The requested session is invalid.
- *
- */
-#define DRM_E_ND_INVALID_SESSION         ((DRM_RESULT)0x8004CE04L)
-
-/*
- * MessageId: DRM_E_ND_MEDIA_SESSION_LIMIT_REACHED
- *
- * MessageText:
- *
- * A new session cannot be opened because the maximum number of sessions has already been opened.
- *
- */
-#define DRM_E_ND_MEDIA_SESSION_LIMIT_REACHED ((DRM_RESULT)0x8004CE05L)
-
-/*
- * MessageId: DRM_E_ND_UNABLE_TO_VERIFY_PROXIMITY
- *
- * MessageText:
- *
- * The proximity detection procedure could not confirm that the receiver is near the transmitter in the network.
- *
- */
-#define DRM_E_ND_UNABLE_TO_VERIFY_PROXIMITY ((DRM_RESULT)0x8004CE06L)
-
-/*
- * MessageId: DRM_E_ND_INVALID_PROXIMITY_RESPONSE
- *
- * MessageText:
- *
- * The response to the proximity detection challenge is invalid.
- *
- */
-#define DRM_E_ND_INVALID_PROXIMITY_RESPONSE ((DRM_RESULT)0x8004CE07L)
-
-/*
- * MessageId: DRM_E_ND_DEVICE_LIMIT_REACHED
- *
- * MessageText:
- *
- * The maximum number of devices in use has been reached. Unable to open additional devices.
- *
- */
-#define DRM_E_ND_DEVICE_LIMIT_REACHED    ((DRM_RESULT)0x8004CE08L)
-
-/*
- * MessageId: DRM_E_ND_BAD_REQUEST
- *
- * MessageText:
- *
- * The message format is invalid.
- *
- */
-#define DRM_E_ND_BAD_REQUEST             ((DRM_RESULT)0x8004CE09L)
-
-/*
- * MessageId: DRM_E_ND_FAILED_SEEK
- *
- * MessageText:
- *
- * It is not possible to seek to the specified mark-in point.
- *
- */
-#define DRM_E_ND_FAILED_SEEK             ((DRM_RESULT)0x8004CE0AL)
-
-/*
- * MessageId: DRM_E_ND_INVALID_CONTEXT
- *
- * MessageText:
- *
- * Manager context or at least one of it's children is missing (or corrupt).
- *
- */
-#define DRM_E_ND_INVALID_CONTEXT         ((DRM_RESULT)0x8004CE0BL)
-
-
-/* ------------------------------------------------------------
-**
-** ASF results: error codes from DRM_E_BASECODE+0xF00
-** to DRM_E_BASECODE+0xFFF, 0x8004ce00-0x8004cfff.
-**
-** ------------------------------------------------------------
-*/
-
-#define DRM_ASF_BASECODE           DRM_E_BASECODE + 0xF00
-
-/* ASF Parsing Errors */
-/* ------------------ */
-
-/*
- * MessageId: DRM_E_ASF_BAD_ASF_HEADER
- *
- * MessageText:
- *
- * The ASF file has a bad ASF header.
- *
- */
-#define DRM_E_ASF_BAD_ASF_HEADER         ((DRM_RESULT)0x8004CF00L)
-
-/*
- * MessageId: DRM_E_ASF_BAD_PACKET_HEADER
- *
- * MessageText:
- *
- * The ASF file has a bad packet header.
- *
- */
-#define DRM_E_ASF_BAD_PACKET_HEADER      ((DRM_RESULT)0x8004CF01L)
-
-/*
- * MessageId: DRM_E_ASF_BAD_PAYLOAD_HEADER
- *
- * MessageText:
- *
- * The ASF file has a bad payload header.
- *
- */
-#define DRM_E_ASF_BAD_PAYLOAD_HEADER     ((DRM_RESULT)0x8004CF02L)
-
-/*
- * MessageId: DRM_E_ASF_BAD_DATA_HEADER
- *
- * MessageText:
- *
- * The ASF file has a bad data header.
- *
- */
-#define DRM_E_ASF_BAD_DATA_HEADER        ((DRM_RESULT)0x8004CF03L)
-
-/*
- * MessageId: DRM_E_ASF_INVALID_OPERATION
- *
- * MessageText:
- *
- * The intended operation is invalid given the current processing state of the ASF file.
- *
- */
-#define DRM_E_ASF_INVALID_OPERATION      ((DRM_RESULT)0x8004CF04L)
-
-/*
- * MessageId: DRM_E_ASF_EXTENDED_STREAM_PROPERTIES_OBJ_NOT_FOUND
- *
- * MessageText:
- *
- * Extended stream properties object is not found; the file may be in non-supported outdated format.
- *
- */
-#define DRM_E_ASF_EXTENDED_STREAM_PROPERTIES_OBJ_NOT_FOUND ((DRM_RESULT)0x8004CF06L)
-
-
-/* ASF Muxing Errors */
-/* ----------------- */
-
-/*
- * MessageId: DRM_E_ASF_INVALID_DATA
- *
- * MessageText:
- *
- * The packet is overstuffed with data.
- *
- */
-#define DRM_E_ASF_INVALID_DATA           ((DRM_RESULT)0x8004CF20L)
-
-/*
- * MessageId: DRM_E_ASF_TOO_MANY_PAYLOADS
- *
- * MessageText:
- *
- * The number of payloads in the packet is greater than the maximum allowed.
- *
- */
-#define DRM_E_ASF_TOO_MANY_PAYLOADS      ((DRM_RESULT)0x8004CF21L)
-
-/*
- * MessageId: DRM_E_ASF_BANDWIDTH_OVERRUN
- *
- * MessageText:
- *
- * An object is overflowing the leaky bucket.
- *
- */
-#define DRM_E_ASF_BANDWIDTH_OVERRUN      ((DRM_RESULT)0x8004CF22L)
-
-/*
- * MessageId: DRM_E_ASF_INVALID_STREAM_NUMBER
- *
- * MessageText:
- *
- * The stream number is invalid; it is either zero, greater than the maximum value allowed, or has no associated data.
- *
- */
-#define DRM_E_ASF_INVALID_STREAM_NUMBER  ((DRM_RESULT)0x8004CF23L)
-
-/*
- * MessageId: DRM_E_ASF_LATE_SAMPLE
- *
- * MessageText:
- *
- * A sample was encountered with a presentation time outside of the mux's send window.
- *
- */
-#define DRM_E_ASF_LATE_SAMPLE            ((DRM_RESULT)0x8004CF24L)
-
-/*
- * MessageId: DRM_E_ASF_NOT_ACCEPTING
- *
- * MessageText:
- *
- * The sample does not fit in the remaining payload space.
- *
- */
-#define DRM_E_ASF_NOT_ACCEPTING          ((DRM_RESULT)0x8004CF25L)
-
-/*
- * MessageId: DRM_E_ASF_UNEXPECTED
- *
- * MessageText:
- *
- * An unexpected error occurred.
- *
- */
-#define DRM_E_ASF_UNEXPECTED             ((DRM_RESULT)0x8004CF26L)
-
-
-/* ------------------------------------------------------------
-**
 ** Nonce store errors: error codes from DRM_E_BASECODE+0x1000
 ** to DRM_E_BASECODE+0x10FF, 0x8004d000-0x8004d0ff.
 **
@@ -5358,116 +4698,6 @@
  */
 #define DRM_E_POLICYSTATE_CORRUPTED      ((DRM_RESULT)0x8004D201L)
 
-
-/* ------------------------------------------------------------
-**
-** Move errors: error codes from DRM_E_BASECODE+0x1300 to
-** DRM_E_BASECODE+0x13FF, 0x8004d300-0x8004d3ff.
-**
-** ------------------------------------------------------------
-*/
-
-#define DRM_E_MOVE_BASECODE              DRM_E_BASECODE+0x1300
-
-/*
- * MessageId: DRM_E_MOVE_DENIED
- *
- * MessageText:
- *
- * The requested move operation was denied by the service.
- *
- */
-#define DRM_E_MOVE_DENIED                ((DRM_RESULT)0x8004D300L)
-
-/*
- * MessageId: DRM_E_INVALID_MOVE_RESPONSE
- *
- * MessageText:
- *
- * The move response was incorrectly formed.
- *
- */
-#define DRM_E_INVALID_MOVE_RESPONSE      ((DRM_RESULT)0x8004D301L)
-
-/*
- * MessageId: DRM_E_MOVE_NONCE_MISMATCH
- *
- * MessageText:
- *
- * The nonce in the repsonse did not match the expected value.
- *
- */
-#define DRM_E_MOVE_NONCE_MISMATCH        ((DRM_RESULT)0x8004D302L)
-
-/*
- * MessageId: DRM_E_MOVE_STORE_OPEN_STORE
- *
- * MessageText:
- *
- * Failed to open the move store.
- *
- */
-#define DRM_E_MOVE_STORE_OPEN_STORE      ((DRM_RESULT)0x8004D304L)
-
-/*
- * MessageId: DRM_E_MOVE_STORE_CLOSE_STORE
- *
- * MessageText:
- *
- * Failed to close the move store.
- *
- */
-#define DRM_E_MOVE_STORE_CLOSE_STORE     ((DRM_RESULT)0x8004D305L)
-
-/*
- * MessageId: DRM_E_MOVE_STORE_ADD_DATA
- *
- * MessageText:
- *
- * Failed to add data into the move store.
- *
- */
-#define DRM_E_MOVE_STORE_ADD_DATA        ((DRM_RESULT)0x8004D306L)
-
-/*
- * MessageId: DRM_E_MOVE_STORE_GET_DATA
- *
- * MessageText:
- *
- * Failed to retrieve data from the move store.
- *
- */
-#define DRM_E_MOVE_STORE_GET_DATA        ((DRM_RESULT)0x8004D307L)
-
-/*
- * MessageId: DRM_E_MOVE_FORMAT_INVALID
- *
- * MessageText:
- *
- * The format of a move page or index is invalid.
- *
- */
-#define DRM_E_MOVE_FORMAT_INVALID        ((DRM_RESULT)0x8004D308L)
-
-/*
- * MessageId: DRM_E_MOVE_SIGNATURE_INVALID
- *
- * MessageText:
- *
- * The signature of a move index is invalid.
- *
- */
-#define DRM_E_MOVE_SIGNATURE_INVALID     ((DRM_RESULT)0x8004D309L)
-
-/*
- * MessageId: DRM_E_COPY_DENIED
- *
- * MessageText:
- *
- * The requested copy operation was denied by the service.
- *
- */
-#define DRM_E_COPY_DENIED                ((DRM_RESULT)0x8004D30AL)
 
 /* ------------------------------------------------------------
 **
@@ -5580,592 +4810,6 @@
 
 #define DRM_E_SERVICES_BASECODE_EX     (DRM_E_BASECODE + 0x1600)
 
-/* ------------------------------------------------------------
-**
-** PRND errors: error codes from DRM_E_BASECODE + 0x1700 to
-** DRM_E_BASECODE + 0x177f, 0x8004d700-0x8004d77f.
-**
-** ------------------------------------------------------------
-*/
-
-#define DRM_E_PRND_BASECODE			(DRM_E_BASECODE + 0x1700)
-
-/*
- * MessageId: DRM_E_PRND_MESSAGE_VERSION_INVALID
- *
- * MessageText:
- *
- * The PRND message version is not supported.
- *
- */
-#define DRM_E_PRND_MESSAGE_VERSION_INVALID ((DRM_RESULT)0x8004D700L)
-
-/*
- * MessageId: DRM_E_PRND_MESSAGE_WRONG_TYPE
- *
- * MessageText:
- *
- * This method does not processs this PRND message type.
- *
- */
-#define DRM_E_PRND_MESSAGE_WRONG_TYPE    ((DRM_RESULT)0x8004D701L)
-
-/*
- * MessageId: DRM_E_PRND_MESSAGE_INVALID
- *
- * MessageText:
- *
- * The PRND message does not conform to the PRND spec and is therefore invalid.
- *
- */
-#define DRM_E_PRND_MESSAGE_INVALID       ((DRM_RESULT)0x8004D702L)
-
-/*
- * MessageId: DRM_E_PRND_SESSION_ID_INVALID
- *
- * MessageText:
- *
- * The PRND message has a different Session ID than the one used in the PRND Registration Response Message and is therefore invalid.
- * The Receiver is unable to generate a renewal Registration Request Message using a different session.  Use the session matching the previous session ID.
- * The Transmitter is unable to process a renewal Registration Request Message using a different session.  Use the session matching the previous session ID.
- *
- */
-#define DRM_E_PRND_SESSION_ID_INVALID    ((DRM_RESULT)0x8004D703L)
-
-/*
- * MessageId: DRM_E_PRND_PROXIMITY_DETECTION_REQUEST_CHANNEL_TYPE_UNSUPPORTED
- *
- * MessageText:
- *
- * The PRND Registration Request Message indicated that it only supports Proximity Detection Channel Types that the Transmitter does not support.
- *
- */
-#define DRM_E_PRND_PROXIMITY_DETECTION_REQUEST_CHANNEL_TYPE_UNSUPPORTED ((DRM_RESULT)0x8004D704L)
-
-/*
- * MessageId: DRM_E_PRND_PROXIMITY_DETECTION_RESPONSE_INVALID
- *
- * MessageText:
- *
- * The PRND Proximity Detection Response Message was successfully parsed but the nonce is invalid.
- *
- */
-#define DRM_E_PRND_PROXIMITY_DETECTION_RESPONSE_INVALID ((DRM_RESULT)0x8004D705L)
-
-/*
- * MessageId: DRM_E_PRND_PROXIMITY_DETECTION_RESPONSE_TIMEOUT
- *
- * MessageText:
- *
- * The PRND Proximity Detection Response Message was successfully processed but did not arrive in time to verify that the Receiver is Near the Transmitter.
- *
- */
-#define DRM_E_PRND_PROXIMITY_DETECTION_RESPONSE_TIMEOUT ((DRM_RESULT)0x8004D706L)
-
-/*
- * MessageId: DRM_E_PRND_LICENSE_REQUEST_CID_CALLBACK_REQUIRED
- *
- * MessageText:
- *
- * The PRND License Request Message used Content Identifier Type Custom.  A Content Identifier Callback to convert the value to a KID is required.
- *
- */
-#define DRM_E_PRND_LICENSE_REQUEST_CID_CALLBACK_REQUIRED ((DRM_RESULT)0x8004D707L)
-
-/*
- * MessageId: DRM_E_PRND_LICENSE_RESPONSE_CLMID_INVALID
- *
- * MessageText:
- *
- * The PRND License Response Message had an invalid Current License Message ID.
- *
- */
-#define DRM_E_PRND_LICENSE_RESPONSE_CLMID_INVALID ((DRM_RESULT)0x8004D708L)
-
-/*
- * MessageId: DRM_E_PRND_CERTIFICATE_NOT_RECEIVER
- *
- * MessageText:
- *
- * The PRND Registration Request Message did not include a PlayReady certificate that supports the RECEIVER feature.
- *
- */
-#define DRM_E_PRND_CERTIFICATE_NOT_RECEIVER ((DRM_RESULT)0x8004D709L)
-
-/*
- * MessageId: DRM_E_PRND_CANNOT_RENEW_USING_NEW_SESSION
- *
- * MessageText:
- *
- * The Transmitter is unable to process a renewal Registration Request Message using a new session.  Use the existing session.
- * The Receiver is unable to generate a renewal Registration Request Message using a new session.  Use the existing session.
- *
- */
-#define DRM_E_PRND_CANNOT_RENEW_USING_NEW_SESSION ((DRM_RESULT)0x8004D70AL)
-
-/*
- * MessageId: DRM_E_PRND_INVALID_CUSTOM_DATA_TYPE
- *
- * MessageText:
- *
- * The Custom Data type is invalid. The first four bytes of Custom Data Type ID cannot be 0x4d534654 ( MSFT in ascii ).
- *
- */
-#define DRM_E_PRND_INVALID_CUSTOM_DATA_TYPE ((DRM_RESULT)0x8004D70BL)
-
-/*
- * MessageId: DRM_E_PRND_CLOCK_OUT_OF_SYNC
- *
- * MessageText:
- *
- * The clock on the Receiver is not synchronized with the clock on the Transmitter.  Synchronize the clocks.
- *
- */
-#define DRM_E_PRND_CLOCK_OUT_OF_SYNC     ((DRM_RESULT)0x8004D70CL)
-
-/*
- * MessageId: DRM_E_PRND_CANNOT_REBIND_PRND_RECEIVED_LICENSE
- *
- * MessageText:
- *
- * The license cannot be rebound to the PRND Receiver because it was itself received from a PRND Transmitter.
- *
- */
-#define DRM_E_PRND_CANNOT_REBIND_PRND_RECEIVED_LICENSE ((DRM_RESULT)0x8004D70DL)
-
-/*
- * MessageId: DRM_E_PRND_CANNOT_REGISTER_USING_EXISTING_SESSION
- *
- * MessageText:
- *
- * The Receiver is unable to generate a non-renewal Registration Request Message using an existing session.  End the existing session first or use a new session.
- *
- */
-#define DRM_E_PRND_CANNOT_REGISTER_USING_EXISTING_SESSION ((DRM_RESULT)0x8004D70EL)
-
-/*
- * MessageId: DRM_E_PRND_BUSY_PERFORMING_RENEWAL
- *
- * MessageText:
- *
- * The Receiver is currently unable to process a message of this type because it is in the middle of renewing the session.
- *
- */
-#define DRM_E_PRND_BUSY_PERFORMING_RENEWAL ((DRM_RESULT)0x8004D70FL)
-
-/*
- * MessageId: DRM_E_PRND_LICENSE_REQUEST_INVALID_ACTION
- *
- * MessageText:
- *
- * Play with no qualifier during license request is all that's supported in v1 of the PRND protocol.
- *
- */
-#define DRM_E_PRND_LICENSE_REQUEST_INVALID_ACTION ((DRM_RESULT)0x8004D710L)
-
-/*
- * MessageId: DRM_E_PRND_TRANSMITTER_UNAUTHORIZED
- *
- * MessageText:
- *
- * The Transmitter attempted to authorize with the Receiver but was unsuccessful.
- *
- */
-#define DRM_E_PRND_TRANSMITTER_UNAUTHORIZED ((DRM_RESULT)0x8004D711L)
-
-/*
- * MessageId: DRM_E_PRND_TX_SESSION_EXPIRED
- *
- * MessageText:
- *
- * The Transmitter session is expired.
- * Note: This error code has different semantic meaning on certain platforms.
- * It uses the define DRM_E_PRND_RECEIVER_SESSION_ALREADY_IN_USE
- * and means that the Receiver session is already in use.
- *
- */
-#define DRM_E_PRND_TX_SESSION_EXPIRED    ((DRM_RESULT)0x8004D712L)
-
-/*
- * MessageId: DRM_E_PRND_INCOMPLETE_PROXIMITY_DETECTION
- *
- * MessageText:
- *
- * The proximity detection hasn't completed successfully.
- *
- */
-#define DRM_E_PRND_INCOMPLETE_PROXIMITY_DETECTION ((DRM_RESULT)0x8004D713L)
-
-/*
- * MessageId: DRM_E_PRND_INVALID_CERT_DIGEST
- *
- * MessageText:
- *
- * The given certificate digest doesn't match the one stored in the MTKB
- *
- */
-#define DRM_E_PRND_INVALID_CERT_DIGEST   ((DRM_RESULT)0x8004D714L)
-
-
-/* ------------------------------------------------------------
-**
-** MPEG2 TS Encryptor errors: error codes from DRM_E_BASECODE+0x1800 to
-** DRM_E_BASECODE+0x18FF, 0x8004d800-0x8004d8ff.
-**
-** ------------------------------------------------------------
-*/
-#define DRM_E_M2TS_BASECODE                    (DRM_E_BASECODE + 0x1800)
-
-/*
- * MessageId: DRM_E_M2TS_PAT_PID_IS_NOT_ZERO
- *
- * MessageText:
- *
- * PID 0 is reserved for PAT and cannot be used for other type of packet.
- *
- */
-#define DRM_E_M2TS_PAT_PID_IS_NOT_ZERO   ((DRM_RESULT)0x8004D800L)
-
-/*
- * MessageId: DRM_E_M2TS_PTS_NOT_EXIST
- *
- * MessageText:
- *
- * The audio/video PES doesn' have the PTS data.
- *
- */
-#define DRM_E_M2TS_PTS_NOT_EXIST         ((DRM_RESULT)0x8004D801L)
-
-/*
- * MessageId: DRM_E_M2TS_PES_PACKET_LENGTH_NOT_SPECIFIED
- *
- * MessageText:
- *
- * The audio PES' packet length is 0 which is not allowed.
- *
- */
-#define DRM_E_M2TS_PES_PACKET_LENGTH_NOT_SPECIFIED ((DRM_RESULT)0x8004D802L)
-
-/*
- * MessageId: DRM_E_M2TS_OUTPUT_BUFFER_FULL
- *
- * MessageText:
- *
- * The output buffer for receiving the encrypted packets is full.
- *
- */
-#define DRM_E_M2TS_OUTPUT_BUFFER_FULL    ((DRM_RESULT)0x8004D803L)
-
-/*
- * MessageId: DRM_E_M2TS_CONTEXT_NOT_INITIALIZED
- *
- * MessageText:
- *
- * The encryptor context hasn't been initialized yet.
- *
- */
-#define DRM_E_M2TS_CONTEXT_NOT_INITIALIZED ((DRM_RESULT)0x8004D804L)
-
-/*
- * MessageId: DRM_E_M2TS_NEED_KEY_DATA
- *
- * MessageText:
- *
- * The key data for encrypting the sample is either hasn't been set or the encryptor needs next key due to key rotation.
- *
- */
-#define DRM_E_M2TS_NEED_KEY_DATA         ((DRM_RESULT)0x8004D805L)
-
-/*
- * MessageId: DRM_E_M2TS_DDPLUS_FORMAT_INVALID
- *
- * MessageText:
- *
- * Not supported DDPlus format.
- *
- */
-#define DRM_E_M2TS_DDPLUS_FORMAT_INVALID ((DRM_RESULT)0x8004D806L)
-
-/*
- * MessageId: DRM_E_M2TS_NOT_UNIT_START_PACKET
- *
- * MessageText:
- *
- * The encryptor expects a unit start packet.  The unit start packet should appear before the rest of the packets in the unit. 
- *
- */
-#define DRM_E_M2TS_NOT_UNIT_START_PACKET ((DRM_RESULT)0x8004D807L)
-
-/*
- * MessageId: DRM_E_M2TS_TOO_MANY_SUBSAMPLES
- *
- * MessageText:
- *
- * Too many subsamples over the limit that the ECM allows.
- *
- */
-#define DRM_E_M2TS_TOO_MANY_SUBSAMPLES   ((DRM_RESULT)0x8004D808L)
-
-/*
- * MessageId: DRM_E_M2TS_TABLE_ID_INVALID
- *
- * MessageText:
- *
- * The PAT or PMT packet contains an invalid table ID.
- *
- */
-#define DRM_E_M2TS_TABLE_ID_INVALID      ((DRM_RESULT)0x8004D809L)
-
-/*
- * MessageId: DRM_E_M2TS_PACKET_SYNC_BYTE_INVALID
- *
- * MessageText:
- *
- * The TS packet doesn't start with the 0x47 (sync byte).
- *
- */
-#define DRM_E_M2TS_PACKET_SYNC_BYTE_INVALID ((DRM_RESULT)0x8004D80AL)
-
-/*
- * MessageId: DRM_E_M2TS_ADAPTATION_LENGTH_INVALID
- *
- * MessageText:
- *
- * The adaptation field length is invalid.
- *
- */
-#define DRM_E_M2TS_ADAPTATION_LENGTH_INVALID ((DRM_RESULT)0x8004D80BL)
-
-/*
- * MessageId: DRM_E_M2TS_PAT_HEADER_INVALID
- *
- * MessageText:
- *
- * There is an error in PAT header, unable to parse it.
- *
- */
-#define DRM_E_M2TS_PAT_HEADER_INVALID    ((DRM_RESULT)0x8004D80CL)
-
-/*
- * MessageId: DRM_E_M2TS_PMT_HEADER_INVALID
- *
- * MessageText:
- *
- * There is an error in PMT header, unable to parse it.
- *
- */
-#define DRM_E_M2TS_PMT_HEADER_INVALID    ((DRM_RESULT)0x8004D80DL)
-
-/*
- * MessageId: DRM_E_M2TS_PES_START_CODE_NOT_FOUND
- *
- * MessageText:
- *
- * Cannot find the PES start code (0x000001).
- *
- */
-#define DRM_E_M2TS_PES_START_CODE_NOT_FOUND ((DRM_RESULT)0x8004D80EL)
-
-/*
- * MessageId: DRM_E_M2TS_STREAM_OR_PACKET_TYPE_CHANGED
- *
- * MessageText:
- *
- * The stream type or packet type of an existing PID has changed 
- *
- */
-#define DRM_E_M2TS_STREAM_OR_PACKET_TYPE_CHANGED ((DRM_RESULT)0x8004D80FL)
-
-/*
- * MessageId: DRM_E_M2TS_INTERNAL_ERROR
- *
- * MessageText:
- *
- * An internal error occurred during encryptrion.
- *
- */
-#define DRM_E_M2TS_INTERNAL_ERROR        ((DRM_RESULT)0x8004D810L)
-
-/*
- * MessageId: DRM_E_M2TS_ADTS_FORMAT_INVALID
- *
- * MessageText:
- *
- * Not supported ADTS format.
- *
- */
-#define DRM_E_M2TS_ADTS_FORMAT_INVALID   ((DRM_RESULT)0x8004D811L)
-
-/*
- * MessageId: DRM_E_M2TS_MPEGA_FORMAT_INVALID
- *
- * MessageText:
- *
- * Not supported MPEGA format.
- *
- */
-#define DRM_E_M2TS_MPEGA_FORMAT_INVALID  ((DRM_RESULT)0x8004D812L)
-
-/*
- * MessageId: DRM_E_M2TS_CA_DESCRIPTOR_LENGTH_INVALID
- *
- * MessageText:
- *
- * The CA_descruptor length is greater than ES_info length.
- *
- */
-#define DRM_E_M2TS_CA_DESCRIPTOR_LENGTH_INVALID ((DRM_RESULT)0x8004D813L)
-
-/*
- * MessageId: DRM_E_M2TS_CRC_FIELD_INVALID
- *
- * MessageText:
- *
- * The CRC field in the PAT or PMT packet is invalid.
- *
- */
-#define DRM_E_M2TS_CRC_FIELD_INVALID     ((DRM_RESULT)0x8004D814L)
-
-/*
- * MessageId: DRM_E_M2TS_INCOMPLETE_SECTION_HEADER
- *
- * MessageText:
- *
- * The section header of a PES is not completed while the next PES packet has started already
- *
- */
-#define DRM_E_M2TS_INCOMPLETE_SECTION_HEADER ((DRM_RESULT)0x8004D815L)
-
-/*
- * MessageId: DRM_E_M2TS_INVALID_UNALIGNED_DATA
- *
- * MessageText:
- *
- * Not allowed to have the overflow of the unaligned payload to accross more than one PES
- *
- */
-#define DRM_E_M2TS_INVALID_UNALIGNED_DATA ((DRM_RESULT)0x8004D816L)
-
-/*
- * MessageId: DRM_E_M2TS_GET_ENCRYPTED_DATA_FIRST
- *
- * MessageText:
- *
- * Do not pass additional data for encryption when the last encryption result is DRM_S_MORE_DATA
- *
- */
-#define DRM_E_M2TS_GET_ENCRYPTED_DATA_FIRST ((DRM_RESULT)0x8004D817L)
-
-/*
- * MessageId: DRM_E_M2TS_CANNOT_CHANGE_PARAMETER
- *
- * MessageText:
- *
- * Not allowed to change the encryption parameter once the encryption started, i.e. after Drm_M2ts_Encrypt is called
- *
- */
-#define DRM_E_M2TS_CANNOT_CHANGE_PARAMETER ((DRM_RESULT)0x8004D818L)
-
-/*
- * MessageId: DRM_E_M2TS_UNKNOWN_PACKET
- *
- * MessageText:
- *
- * This packet appears before the first PAT and/or PMT and will be dropped.
- *
- */
-#define DRM_E_M2TS_UNKNOWN_PACKET        ((DRM_RESULT)0x8004D819L)
-
-/*
- * MessageId: DRM_E_M2TS_DROP_PACKET
- *
- * MessageText:
- *
- * This packet should be dropped because at least one field in the packet contains an invalid data.
- *
- */
-#define DRM_E_M2TS_DROP_PACKET           ((DRM_RESULT)0x8004D820L)
-
-/*
- * MessageId: DRM_E_M2TS_DROP_PES
- *
- * MessageText:
- *
- * This PES packet should be dropped because the PES packet is not valid.
- *
- */
-#define DRM_E_M2TS_DROP_PES              ((DRM_RESULT)0x8004D821L)
-
-/*
- * MessageId: DRM_E_M2TS_INCOMPLETE_PES
- *
- * MessageText:
- *
- * This PES packet has one or more missing packets.
- *
- */
-#define DRM_E_M2TS_INCOMPLETE_PES        ((DRM_RESULT)0x8004D822L)
-
-/*
- * MessageId: DRM_E_M2TS_WAITED_TOO_LONG
- *
- * MessageText:
- *
- * This packet is dropped because its unit is not completed after a long period of time.
- *
- */
-#define DRM_E_M2TS_WAITED_TOO_LONG       ((DRM_RESULT)0x8004D823L)
-
-/*
- * MessageId: DRM_E_M2TS_SECTION_LENGTH_INVALID
- *
- * MessageText:
- *
- * The section length inside the PAT or PMT is less than the minimun PAT or PMT section.
- *
- */
-#define DRM_E_M2TS_SECTION_LENGTH_INVALID ((DRM_RESULT)0x8004D824L)
-
-/*
- * MessageId: DRM_E_M2TS_PROGRAM_INFO_LENGTH_INVALID
- *
- * MessageText:
- *
- * The sum of the program info length and the other fields in the PMT section don't match with the section length.
- *
- */
-#define DRM_E_M2TS_PROGRAM_INFO_LENGTH_INVALID ((DRM_RESULT)0x8004D825L)
-
-/*
- * MessageId: DRM_E_M2TS_PES_HEADER_INVALID
- *
- * MessageText:
- *
- * Failed to parse the PES header, the PES maybe too short.
- *
- */
-#define DRM_E_M2TS_PES_HEADER_INVALID    ((DRM_RESULT)0x8004D826L)
-
-/*
- * MessageId: DRM_E_M2TS_ECM_PAYLOAD_OVER_LIMIT
- *
- * MessageText:
- *
- * The size of the ECM payload exceeds the limit of 64k bytes
- *
- */
-#define DRM_E_M2TS_ECM_PAYLOAD_OVER_LIMIT ((DRM_RESULT)0x8004D827L)
-
-/*
- * MessageId: DRM_E_M2TS_SET_CA_PID_FAILED
- *
- * MessageText:
- *
- * Unable to assign a PID for CA_PID, all PIDs in the range of 0x0010 to 0x1FFE are used.
- *
- */
-#define DRM_E_M2TS_SET_CA_PID_FAILED     ((DRM_RESULT)0x8004D828L)
-
 
 /* ------------------------------------------------------------
 **
@@ -6188,26 +4832,6 @@
 #define DRM_E_LICGEN_CANNOT_PERSIST_LICENSE ((DRM_RESULT)0x8004D901L)
 
 /*
- * MessageId: DRM_E_LICGEN_PERSISTENT_REMOTE_LICENSE
- *
- * MessageText:
- *
- * A remote bound license should be non-persistent.
- *
- */
-#define DRM_E_LICGEN_PERSISTENT_REMOTE_LICENSE ((DRM_RESULT)0x8004D902L)
-
-/*
- * MessageId: DRM_E_LICGEN_EXPIRE_AFTER_FIRST_PLAY_REMOTE_LICENSE
- *
- * MessageText:
- *
- * A remote bound license should not have expire after first play property.
- *
- */
-#define DRM_E_LICGEN_EXPIRE_AFTER_FIRST_PLAY_REMOTE_LICENSE ((DRM_RESULT)0x8004D903L)
-
-/*
  * MessageId: DRM_E_LICGEN_ROOT_LICENSE_CANNOT_ENCRYPT
  *
  * MessageText:
@@ -6226,26 +4850,6 @@
  *
  */
 #define DRM_E_LICGEN_EMBED_LOCAL_LICENSE ((DRM_RESULT)0x8004D905L)
-
-/*
- * MessageId: DRM_E_LICGEN_LOCAL_LICENSE_WITH_REMOTE_CERTIFICATE
- *
- * MessageText:
- *
- * A local bound license cannot be bound to a remote certificate. 
- *
- */
-#define DRM_E_LICGEN_LOCAL_LICENSE_WITH_REMOTE_CERTIFICATE ((DRM_RESULT)0x8004D906L)
-
-/*
- * MessageId: DRM_E_LICGEN_PLAY_ENABLER_REMOTE_LICENSE
- *
- * MessageText:
- *
- * A remote bound license cannot have play enablers other than Passing to Unknown Output or Passing Constrained Resolution to Unknown Output.
- *
- */
-#define DRM_E_LICGEN_PLAY_ENABLER_REMOTE_LICENSE ((DRM_RESULT)0x8004D907L)
 
 /*
  * MessageId: DRM_E_LICGEN_DUPLICATE_PLAY_ENABLER
@@ -7516,9 +6120,104 @@
  */
 #define DRM_E_SECURETIME_SERVER_SECURITY_LEVEL_TOO_LOW ((DRM_RESULT)0x8004DE03L)
 
+
+/* ============================================================
+**
+** HDS Anti Rollback errors: error codes from DRM_E_BASECODE + 0x1F00 to
+** DRM_E_BASECODE + 0x1F05, 0x8004df00-0x8004df05.
+**
+** ============================================================
+*/
+
+#define DRM_E_HDSANTIROLLBACK_BASECODE  (DRM_E_BASECODE + 0x1F00)
+#define DRM_E_HDSANTIROLLBACK_FINALCODE (DRM_E_BASECODE + 0x1F05)
+
+/*
+ * MessageId: DRM_E_HDSANTIROLLBACK_DETECTED
+ *
+ * MessageText:
+ *
+ * HDS file rollback is detected.
+ *
+ */
+#define DRM_E_HDSANTIROLLBACK_DETECTED   ((DRM_RESULT)0x8004DF00L)
+
+/*
+ * MessageId: DRM_E_HDSANTIROLLBACK_INVALID_ACL
+ *
+ * MessageText:
+ *
+ * The ACL of the HDS Registry Subkey is invalid.
+ *
+ */
+#define DRM_E_HDSANTIROLLBACK_INVALID_ACL ((DRM_RESULT)0x8004DF01L)
+
+/*
+ * MessageId: DRM_E_HDSANTIROLLBACK_DETECTION_IN_PROGRESS
+ *
+ * MessageText:
+ *
+ * The client is currently processing HDS Anti Rollback check operation. Concurrent operations are not allowed.
+ *
+ */
+#define DRM_E_HDSANTIROLLBACK_DETECTION_IN_PROGRESS ((DRM_RESULT)0x8004DF02L)
+
+/*
+ * MessageId: DRM_E_HDSANTIROLLBACK_ACL_NOT_PRESENT
+ *
+ * MessageText:
+ *
+ * The security descriptor does not contain an ACL.
+ *
+ */
+#define DRM_E_HDSANTIROLLBACK_ACL_NOT_PRESENT ((DRM_RESULT)0x8004DF03L)
+
+/*
+ * MessageId: DRM_E_HDSANTIROLLBACK_INVALID_COMMAND
+ *
+ * MessageText:
+ *
+ * The PlayReady Process received an invalid command.
+ *
+ */
+#define DRM_E_HDSANTIROLLBACK_INVALID_COMMAND ((DRM_RESULT)0x8004DF04L)
+
+/*
+ * MessageId: DRM_E_HDSANTIROLLBACK_SEQUENCE_NUMBER_IS_AT_MAX_LIMIT
+ *
+ * MessageText:
+ *
+ * The HDS Anti Rollback sequence number has reached its maximum limit.
+ *
+ */
+#define DRM_E_HDSANTIROLLBACK_SEQUENCE_NUMBER_IS_AT_MAX_LIMIT ((DRM_RESULT)0x8004DF05L)
+
+
+/* ============================================================
+**
+** Secure Delete errors: error codes from DRM_E_BASECODE + 0x1FA0 to
+** DRM_E_BASECODE + 0x1FAF, 0x8004dfa0-0x8004dfaf.
+**
+** ============================================================
+*/
+
+#define DRM_E_SECUREDELETE_BASECODE  (DRM_E_BASECODE + 0x1FA0)
+#define DRM_E_SECUREDELETE_FINALCODE (DRM_E_BASECODE + 0x1FAF)
+
+/*
+ * MessageId: DRM_E_SECUREDELETE_INVALID_RESPONSE
+ *
+ * MessageText:
+ *
+ * The secure delete response is invalid.
+ *
+ */
+#define DRM_E_SECUREDELETE_INVALID_RESPONSE ((DRM_RESULT)0x8004DFA0L)
+
+
 /* ------------------------------------------------------------
 **
-** Available range 0x8004df00-0x8004dfff.
+** Available range 0x8004dfb0-0x8004dfff.
 **
 ** ------------------------------------------------------------
 */
@@ -7544,103 +6243,233 @@
 ** ============================================================
 */
 
-#define DRM_E_DEPRECATED_CH_UNSUPPORTED_HASH_ALGORITHM                            ((DRM_RESULT)0x8004110CL)
-#define DRM_E_DEPRECATED_CH_UNSUPPORTED_SIGN_ALGORITHM                            ((DRM_RESULT)0x8004110DL)
-#define DRM_E_DEPRECATED_CH_NOT_SIGNED                                            ((DRM_RESULT)0x80041113L)
-#define DRM_E_DEPRECATED_CH_UNKNOWN_ERROR                                         ((DRM_RESULT)0x80041116L)
-#define DRM_E_DEPRECATED_LIC_INIT_FAILURE                                         ((DRM_RESULT)0x80041201L)
-#define DRM_E_DEPRECATED_LIC_LICENSE_NOTSET                                       ((DRM_RESULT)0x80041202L)
-#define DRM_E_DEPRECATED_LIC_MEMORY_ALLOCATION_ERROR                              ((DRM_RESULT)0x80041204L)
-#define DRM_E_DEPRECATED_LIC_FIELD_MISSING                                        ((DRM_RESULT)0x80041206L)
-#define DRM_E_DEPRECATED_LIC_UNKNOWN_ERROR                                        ((DRM_RESULT)0x80041208L)
-#define DRM_E_DEPRECATED_LIC_INVALID_REVLIST                                      ((DRM_RESULT)0x80041209L)
-#define DRM_E_DEPRECATED_LIC_EXPIRED_CERT                                         ((DRM_RESULT)0x8004120AL)
-#define DRM_E_DEPRECATED_CPRMEXP_PARAM_NOT_OPTIONAL                               ((DRM_RESULT)0x80041401L)
-#define DRM_E_DEPRECATED_CPRMEXP_MEMORY_ALLOCATION_ERROR                          ((DRM_RESULT)0x80041402L)
-#define DRM_E_DEPRECATED_CPRMEXP_ENDOFBUFFER                                      ((DRM_RESULT)0x8004140AL)
-#define DRM_E_DEPRECATED_LIC_KEY_AND_CERT_MISMATCH                                ((DRM_RESULT)0x80048013L)
-#define DRM_E_DEPRECATED_SYNC_ENTRY_NOT_FOUND                                     ((DRM_RESULT)0x800480D0L)
-#define DRM_E_DEPRECATED_STACK_TOO_SMALL                                          ((DRM_RESULT)0x800480D1L)
-#define DRM_E_DEPRECATED_CONTRACT_FAILED                                          ((DRM_RESULT)0x8004A006L)
-#define DRM_E_DEPRECATED_NO_LICENSES_TO_SYNC                                      ((DRM_RESULT)0x8004A017L)
-#define DRM_E_DEPRECATED_INCOMPATABLE_LICENSE_SIZE                                ((DRM_RESULT)0x8004C004L)
-#define DRM_E_DEPRECATED_INVALID_LICENSE_FLAGS                                    ((DRM_RESULT)0x8004C005L)
-#define DRM_E_DEPRECATED_CONDITION_FAIL                                           ((DRM_RESULT)0x8004C007L)
-#define DRM_E_DEPRECATED_LICENSE_NOT_YET_VALID                                    ((DRM_RESULT)0x8004C00AL)
-#define DRM_E_DEPRECATED_NO_RIGHTS_REQUESTED                                      ((DRM_RESULT)0x8004C00EL)
-#define DRM_E_DEPRECATED_INVALID_TIME                                             ((DRM_RESULT)0x8004C011L)
-#define DRM_E_DEPRECATED_INVALID_BIND_ID                                          ((DRM_RESULT)0x8004C015L)
-#define DRM_E_DEPRECATED_ALGORITHM_NOT_SET                                        ((DRM_RESULT)0x8004C017L)
-#define DRM_E_DEPRECATED_LICENSE_SERVER_NEEDS_KEY                                 ((DRM_RESULT)0x8004C018L)
-#define DRM_E_DEPRECATED_CLIENT_TIME_INVALID                                      ((DRM_RESULT)0x8004C01CL)
-#define DRM_E_DEPRECATED_DST_NAMESPACE_FULL                                       ((DRM_RESULT)0x8004C022L)
-#define DRM_E_DEPRECATED_DST_NAMESPACE_IN_USE                                     ((DRM_RESULT)0x8004C028L)
-#define DRM_E_DEPRECATED_NO_ACTION_IN_LICENSE_REQUEST                             ((DRM_RESULT)0x8004C02CL)
-#define DRM_E_DEPRECATED_BACKUP_EXISTS                                            ((DRM_RESULT)0x8004C032L)
-#define DRM_E_DEPRECATED_DST_RESERVED_KEY_DETECTED                                ((DRM_RESULT)0x8004C03AL)
-#define DRM_E_DEPRECATED_CLK_UNSUPPORTED_VALUE                                    ((DRM_RESULT)0x8004C041L)
-#define DRM_E_DEPRECATED_DEVCERT_TEMPLATE_EXCEEDS_SIZE_LIMIT                      ((DRM_RESULT)0x8004C044L)
-#define DRM_E_DEPRECATED_DEVCERT_WRITE_ERROR                                      ((DRM_RESULT)0x8004C046L)
-#define DRM_E_DEPRECATED_PRIVKEY_WRITE_ERROR                                      ((DRM_RESULT)0x8004C048L)
-#define DRM_E_DEPRECATED_DEVCERT_INDIV_NOT_SUPPORTED                              ((DRM_RESULT)0x8004C04BL)
-#define DRM_E_DEPRECATED_WRONG_TOKEN_TYPE                                         ((DRM_RESULT)0x8004C058L)
-#define DRM_E_DEPRECATED_POLICY_ONLINE_DISABLED                                   ((DRM_RESULT)0x8004C05AL)
-#define DRM_E_DEPRECATED_INVALID_DEVSTORE_ATTRIBUTE                               ((DRM_RESULT)0x8004C067L)
-#define DRM_E_DEPRECATED_INVALID_DEVSTORE_ENTRY                                   ((DRM_RESULT)0x8004C068L)
-#define DRM_E_DEPRECATED_PRECISION_ARITHMETIC_FAIL                                ((DRM_RESULT)0x8004C06CL)
-#define DRM_E_DEPRECATED_REVOCATION_NOT_SUPPORTED                                 ((DRM_RESULT)0x8004C071L)
-#define DRM_E_DEPRECATED_LRB_NO_LGPUBKEY                                          ((DRM_RESULT)0x8004C0A0L)
-#define DRM_E_DEPRECATED_LRB_INVALID_SIGNATURE                                    ((DRM_RESULT)0x8004C0A1L)
-#define DRM_E_DEPRECATED_LRB_LGPUBKEY_MISMATCH                                    ((DRM_RESULT)0x8004C0A2L)
-#define DRM_E_DEPRECATED_LRB_INVALID_LICENSE_DATA                                 ((DRM_RESULT)0x8004C0A3L)
-#define DRM_E_DEPRECATED_NOT_CRL_BLOB                                             ((DRM_RESULT)0x8004C100L)
-#define DRM_E_DEPRECATED_BAD_CRL_BLOB                                             ((DRM_RESULT)0x8004C101L)
-#define DRM_E_DEPRECATED_TEST_DLA_NO_CONTENT_HEADER                               ((DRM_RESULT)0x8004C31FL)
-#define DRM_E_DEPRECATED_TEST_DLA_CONTENT_HEADER_FOUND                            ((DRM_RESULT)0x8004C320L)
-#define DRM_E_DEPRECATED_TEST_SYNC_LSD_INCORRECT                                  ((DRM_RESULT)0x8004C321L)
-#define DRM_E_DEPRECATED_FEATURE_NOT_SUPPORTED                                    ((DRM_RESULT)0x8004C3F4L)
-#define DRM_E_DEPRECATED_BCERT_CLIENT_ID_NOT_SPECIFIED                            ((DRM_RESULT)0x8004C810L)
-#define DRM_E_DEPRECATED_BCERT_HARDWARE_ID_NOT_SPECIFIED                          ((DRM_RESULT)0x8004C813L)
-#define DRM_E_DEPRECATED_BCERT_SERIAL_NUM_NOT_SPECIFIED                           ((DRM_RESULT)0x8004C815L)
-#define DRM_E_DEPRECATED_BCERT_INVALID_EXTDATA_SIGNED_LENGTH                      ((DRM_RESULT)0x8004C830L)
-#define DRM_E_DEPRECATED_BCERT_INVALID_EXTDATA_RECORD_TYPE                        ((DRM_RESULT)0x8004C831L)
-#define DRM_E_DEPRECATED_SECURE_TRACE_BAD_GLOBAL_DATA_POINTER                     ((DRM_RESULT)0x8004CD00L)
-#define DRM_E_DEPRECATED_SECURE_TRACE_INVALID_GLOBAL_DATA                         ((DRM_RESULT)0x8004CD01L)
-#define DRM_E_DEPRECATED_SECURE_TRACE_FORMATTING_ERROR                            ((DRM_RESULT)0x8004CD02L)
-#define DRM_E_DEPRECATED_SECURE_TRACE_BAD_SCHEME_DATA_POINTER                     ((DRM_RESULT)0x8004CD03L)
-#define DRM_E_DEPRECATED_SECURE_TRACE_BAD_PER_THREAD_AES_DATA_POINTER             ((DRM_RESULT)0x8004CD04L)
-#define DRM_E_DEPRECATED_SECURE_TRACE_BAD_PER_THREAD_AES_BUFFER_POINTER           ((DRM_RESULT)0x8004CD05L)
-#define DRM_E_DEPRECATED_SECURE_TRACE_AES_INSUFFICIENT_BUFFER                     ((DRM_RESULT)0x8004CD06L)
-#define DRM_E_DEPRECATED_SECURE_TRACE_VERSION_MISMATCH                            ((DRM_RESULT)0x8004CD07L)
-#define DRM_E_DEPRECATED_SECURE_TRACE_UNEXPECTED_ERROR                            ((DRM_RESULT)0x8004CD08L)
-#define DRM_E_DEPRECATED_ASF_AES_PAYLOAD_FOUND                                    ((DRM_RESULT)0x8004CF05L)
-#define DRM_E_DEPRECATED_LICGEN_POLICY_NOT_SUPPORTED                              ((DRM_RESULT)0x8004D100L)
-#define DRM_E_DEPRECATED_MOVE_TXID_MISMATCH                                       ((DRM_RESULT)0x8004D303L)
-#define DRM_E_DEPRECATED_KEYFILE_INVALID_PLATFORM                                 ((DRM_RESULT)0x8004D500L)
-#define DRM_E_DEPRECATED_KEYFILE_TOO_LARGE                                        ((DRM_RESULT)0x8004D501L)
-#define DRM_E_DEPRECATED_KEYFILE_PRIVATE_KEY_NOT_FOUND                            ((DRM_RESULT)0x8004D502L)
-#define DRM_E_DEPRECATED_KEYFILE_CERTIFICATE_CHAIN_NOT_FOUND                      ((DRM_RESULT)0x8004D503L)
-#define DRM_E_DEPRECATED_KEYFILE_KEY_NOT_FOUND                                    ((DRM_RESULT)0x8004D504L)
-#define DRM_E_DEPRECATED_KEYFILE_UNKNOWN_DECRYPTION_METHOD                        ((DRM_RESULT)0x8004D505L)
-#define DRM_E_DEPRECATED_KEYFILE_INVALID_SIGNATURE                                ((DRM_RESULT)0x8004D506L)
-#define DRM_E_DEPRECATED_KEYFILE_INTERNAL_DECRYPTION_BUFFER_TOO_SMALL             ((DRM_RESULT)0x8004D507L)
-#define DRM_E_DEPRECATED_KEYFILE_PLATFORMID_MISMATCH                              ((DRM_RESULT)0x8004D508L)
-#define DRM_E_DEPRECATED_KEYFILE_CERTIFICATE_ISSUER_KEY_MISMATCH                  ((DRM_RESULT)0x8004D509L)
-#define DRM_E_DEPRECATED_KEYFILE_ROBUSTNESSVERSION_MISMATCH                       ((DRM_RESULT)0x8004D50AL)
-#define DRM_E_DEPRECATED_KEYFILE_FILE_NOT_CLOSED                                  ((DRM_RESULT)0x8004D50BL)
-#define DRM_E_DEPRECATED_KEYFILE_NOT_INITED                                       ((DRM_RESULT)0x8004D50CL)
-#define DRM_E_DEPRECATED_KEYFILE_FORMAT_INVALID                                   ((DRM_RESULT)0x8004D50DL)
-#define DRM_E_DEPRECATED_KEYFILE_UPDATE_NOT_ALLOWED                               ((DRM_RESULT)0x8004D50EL)
-#define DRM_E_DEPRECATED_OEMHAL_NOT_INITIALIZED                                   ((DRM_RESULT)0x8004D780L)
-#define DRM_E_DEPRECATED_OEMHAL_OUT_OF_KEY_REGISTERS                              ((DRM_RESULT)0x8004D781L)
-#define DRM_E_DEPRECATED_OEMHAL_KEYS_IN_USE                                       ((DRM_RESULT)0x8004D782L)
-#define DRM_E_DEPRECATED_OEMHAL_NO_KEY                                            ((DRM_RESULT)0x8004D783L)
-#define DRM_E_DEPRECATED_OEMHAL_UNSUPPORTED_KEY_TYPE                              ((DRM_RESULT)0x8004D784L)
-#define DRM_E_DEPRECATED_OEMHAL_UNSUPPORTED_KEY_WRAPPING_FORMAT                   ((DRM_RESULT)0x8004D785L)
-#define DRM_E_DEPRECATED_OEMHAL_UNSUPPORTED_KEY_LENGTH                            ((DRM_RESULT)0x8004D786L)
-#define DRM_E_DEPRECATED_OEMHAL_UNSUPPORTED_HASH_TYPE                             ((DRM_RESULT)0x8004D787L)
-#define DRM_E_DEPRECATED_OEMHAL_UNSUPPORTED_SIGNATURE_SCHEME                      ((DRM_RESULT)0x8004D788L)
-#define DRM_E_DEPRECATED_OEMHAL_BUFFER_TOO_LARGE                                  ((DRM_RESULT)0x8004D789L)
-#define DRM_E_DEPRECATED_OEMHAL_SAMPLE_ENCRYPTION_MODE_NOT_PERMITTED              ((DRM_RESULT)0x8004D78AL)
+#define DRM_E_DEPRECATED_CH_UNSUPPORTED_HASH_ALGORITHM                             ((DRM_RESULT)0x8004110CL)
+#define DRM_E_DEPRECATED_CH_UNSUPPORTED_SIGN_ALGORITHM                             ((DRM_RESULT)0x8004110DL)
+#define DRM_E_DEPRECATED_CH_NOT_SIGNED                                             ((DRM_RESULT)0x80041113L)
+#define DRM_E_DEPRECATED_CH_UNKNOWN_ERROR                                          ((DRM_RESULT)0x80041116L)
+#define DRM_E_DEPRECATED_LIC_INIT_FAILURE                                          ((DRM_RESULT)0x80041201L)
+#define DRM_E_DEPRECATED_LIC_LICENSE_NOTSET                                        ((DRM_RESULT)0x80041202L)
+#define DRM_E_DEPRECATED_LIC_PARAM_NOT_OPTIONAL                                    ((DRM_RESULT)0x80041203L)
+#define DRM_E_DEPRECATED_LIC_MEMORY_ALLOCATION_ERROR                               ((DRM_RESULT)0x80041204L)
+#define DRM_E_DEPRECATED_LIC_INVALID_LICENSE                                       ((DRM_RESULT)0x80041205L)
+#define DRM_E_DEPRECATED_LIC_FIELD_MISSING                                         ((DRM_RESULT)0x80041206L)
+#define DRM_E_DEPRECATED_LIC_UNKNOWN_ERROR                                         ((DRM_RESULT)0x80041208L)
+#define DRM_E_DEPRECATED_LIC_INVALID_REVLIST                                       ((DRM_RESULT)0x80041209L)
+#define DRM_E_DEPRECATED_LIC_EXPIRED_CERT                                          ((DRM_RESULT)0x8004120AL)
+#define DRM_E_DEPRECATED_CPRMEXP_NOERROR                                           ((DRM_RESULT)0x80041400L)
+#define DRM_E_DEPRECATED_CPRMEXP_PARAM_NOT_OPTIONAL                                ((DRM_RESULT)0x80041401L)
+#define DRM_E_DEPRECATED_CPRMEXP_MEMORY_ALLOCATION_ERROR                           ((DRM_RESULT)0x80041402L)
+#define DRM_E_DEPRECATED_CPRMEXP_NO_OPERANDS_IN_EXPRESSION                         ((DRM_RESULT)0x80041403L)
+#define DRM_E_DEPRECATED_CPRMEXP_INVALID_TOKEN                                     ((DRM_RESULT)0x80041404L)
+#define DRM_E_DEPRECATED_CPRMEXP_INVALID_CONSTANT                                  ((DRM_RESULT)0x80041405L)
+#define DRM_E_DEPRECATED_CPRMEXP_INVALID_VARIABLE                                  ((DRM_RESULT)0x80041406L)
+#define DRM_E_DEPRECATED_CPRMEXP_INVALID_FUNCTION                                  ((DRM_RESULT)0x80041407L)
+#define DRM_E_DEPRECATED_CPRMEXP_INVALID_ARGUMENT                                  ((DRM_RESULT)0x80041408L)
+#define DRM_E_DEPRECATED_CPRMEXP_INVALID_CONTEXT                                   ((DRM_RESULT)0x80041409L)
+#define DRM_E_DEPRECATED_CPRMEXP_ENDOFBUFFER                                       ((DRM_RESULT)0x8004140AL)
+#define DRM_E_DEPRECATED_CPRMEXP_MISSING_OPERAND                                   ((DRM_RESULT)0x8004140BL)
+#define DRM_E_DEPRECATED_CPRMEXP_OVERFLOW                                          ((DRM_RESULT)0x8004140CL)
+#define DRM_E_DEPRECATED_CPRMEXP_UNDERFLOW                                         ((DRM_RESULT)0x8004140DL)
+#define DRM_E_DEPRECATED_CPRMEXP_INCORRECT_NUM_ARGS                                ((DRM_RESULT)0x8004140EL)
+#define DRM_E_DEPRECATED_CPRMEXP_VARIABLE_EXPECTED                                 ((DRM_RESULT)0x8004140FL)
+#define DRM_E_DEPRECATED_CPRMEXP_RETRIEVAL_FAILURE                                 ((DRM_RESULT)0x80041410L)
+#define DRM_E_DEPRECATED_CPRMEXP_UPDATE_FAILURE                                    ((DRM_RESULT)0x80041411L)
+#define DRM_E_DEPRECATED_CPRMEXP_STRING_UNTERMINATED                               ((DRM_RESULT)0x80041412L)
+#define DRM_E_DEPRECATED_CPRMEXP_UPDATE_UNSUPPORTED                                ((DRM_RESULT)0x80041413L)
+#define DRM_E_DEPRECATED_CPRMEXP_ISOLATED_OPERAND_OR_OPERATOR                      ((DRM_RESULT)0x80041414L)
+#define DRM_E_DEPRECATED_CPRMEXP_UNMATCHED                                         ((DRM_RESULT)0x80041415L)
+#define DRM_E_DEPRECATED_CPRMEXP_WRONG_TYPE_OPERAND                                ((DRM_RESULT)0x80041416L)
+#define DRM_E_DEPRECATED_CPRMEXP_TOO_MANY_OPERANDS                                 ((DRM_RESULT)0x80041417L)
+#define DRM_E_DEPRECATED_CPRMEXP_UNKNOWN_PARSE_ERROR                               ((DRM_RESULT)0x80041418L)
+#define DRM_E_DEPRECATED_CPRMEXP_UNSUPPORTED_FUNCTION                              ((DRM_RESULT)0x80041419L)
+#define DRM_E_DEPRECATED_CPRMEXP_CLOCK_REQUIRED                                    ((DRM_RESULT)0x8004141AL)
+#define DRM_E_DEPRECATED_LIC_KEY_AND_CERT_MISMATCH                                 ((DRM_RESULT)0x80048013L)
+#define DRM_E_DEPRECATED_SYNC_ENTRY_NOT_FOUND                                      ((DRM_RESULT)0x800480D0L)
+#define DRM_E_DEPRECATED_STACK_TOO_SMALL                                           ((DRM_RESULT)0x800480D1L)
+#define DRM_E_DEPRECATED_CONTRACT_FAILED                                           ((DRM_RESULT)0x8004A006L)
+#define DRM_E_DEPRECATED_NO_LICENSES_TO_SYNC                                       ((DRM_RESULT)0x8004A017L)
+#define DRM_E_DEPRECATED_INCOMPATABLE_LICENSE_SIZE                                 ((DRM_RESULT)0x8004C004L)
+#define DRM_E_DEPRECATED_INVALID_LICENSE_FLAGS                                     ((DRM_RESULT)0x8004C005L)
+#define DRM_E_DEPRECATED_CONDITION_FAIL                                            ((DRM_RESULT)0x8004C007L)
+#define DRM_E_DEPRECATED_LICENSE_NOT_YET_VALID                                     ((DRM_RESULT)0x8004C00AL)
+#define DRM_E_DEPRECATED_NO_RIGHTS_REQUESTED                                       ((DRM_RESULT)0x8004C00EL)
+#define DRM_E_DEPRECATED_INVALID_TIME                                              ((DRM_RESULT)0x8004C011L)
+#define DRM_E_DEPRECATED_INVALID_BIND_ID                                           ((DRM_RESULT)0x8004C015L)
+#define DRM_E_DEPRECATED_ALGORITHM_NOT_SET                                         ((DRM_RESULT)0x8004C017L)
+#define DRM_E_DEPRECATED_LICENSE_SERVER_NEEDS_KEY                                  ((DRM_RESULT)0x8004C018L)
+#define DRM_E_DEPRECATED_CLIENT_TIME_INVALID                                       ((DRM_RESULT)0x8004C01CL)
+#define DRM_E_DEPRECATED_DST_NAMESPACE_FULL                                        ((DRM_RESULT)0x8004C022L)
+#define DRM_E_DEPRECATED_DST_NAMESPACE_IN_USE                                      ((DRM_RESULT)0x8004C028L)
+#define DRM_E_DEPRECATED_NO_ACTION_IN_LICENSE_REQUEST                              ((DRM_RESULT)0x8004C02CL)
+#define DRM_E_DEPRECATED_BACKUP_EXISTS                                             ((DRM_RESULT)0x8004C032L)
+#define DRM_E_DEPRECATED_DST_RESERVED_KEY_DETECTED                                 ((DRM_RESULT)0x8004C03AL)
+#define DRM_E_DEPRECATED_CLK_UNSUPPORTED_VALUE                                     ((DRM_RESULT)0x8004C041L)
+#define DRM_E_DEPRECATED_DEVCERT_TEMPLATE_EXCEEDS_SIZE_LIMIT                       ((DRM_RESULT)0x8004C044L)
+#define DRM_E_DEPRECATED_DEVCERT_WRITE_ERROR                                       ((DRM_RESULT)0x8004C046L)
+#define DRM_E_DEPRECATED_PRIVKEY_WRITE_ERROR                                       ((DRM_RESULT)0x8004C048L)
+#define DRM_E_DEPRECATED_DEVCERT_INDIV_NOT_SUPPORTED                               ((DRM_RESULT)0x8004C04BL)
+#define DRM_E_DEPRECATED_WRONG_TOKEN_TYPE                                          ((DRM_RESULT)0x8004C058L)
+#define DRM_E_DEPRECATED_POLICY_ONLINE_DISABLED                                    ((DRM_RESULT)0x8004C05AL)
+#define DRM_E_DEPRECATED_INVALID_DEVSTORE_ATTRIBUTE                                ((DRM_RESULT)0x8004C067L)
+#define DRM_E_DEPRECATED_INVALID_DEVSTORE_ENTRY                                    ((DRM_RESULT)0x8004C068L)
+#define DRM_E_DEPRECATED_PRECISION_ARITHMETIC_FAIL                                 ((DRM_RESULT)0x8004C06CL)
+#define DRM_E_DEPRECATED_REVOCATION_NOT_SUPPORTED                                  ((DRM_RESULT)0x8004C071L)
+#define DRM_E_DEPRECATED_LRB_NO_LGPUBKEY                                           ((DRM_RESULT)0x8004C0A0L)
+#define DRM_E_DEPRECATED_LRB_INVALID_SIGNATURE                                     ((DRM_RESULT)0x8004C0A1L)
+#define DRM_E_DEPRECATED_LRB_LGPUBKEY_MISMATCH                                     ((DRM_RESULT)0x8004C0A2L)
+#define DRM_E_DEPRECATED_LRB_INVALID_LICENSE_DATA                                  ((DRM_RESULT)0x8004C0A3L)
+#define DRM_E_DEPRECATED_LICEVAL_INVALID_PRND_LICENSE                              ((DRM_RESULT)0x8004C0C5L)
+#define DRM_E_DEPRECATED_NOT_CRL_BLOB                                              ((DRM_RESULT)0x8004C100L)
+#define DRM_E_DEPRECATED_BAD_CRL_BLOB                                              ((DRM_RESULT)0x8004C101L)
+#define DRM_E_DEPRECATED_TEST_DLA_NO_CONTENT_HEADER                                ((DRM_RESULT)0x8004C31FL)
+#define DRM_E_DEPRECATED_TEST_DLA_CONTENT_HEADER_FOUND                             ((DRM_RESULT)0x8004C320L)
+#define DRM_E_DEPRECATED_TEST_SYNC_LSD_INCORRECT                                   ((DRM_RESULT)0x8004C321L)
+#define DRM_E_DEPRECATED_FEATURE_NOT_SUPPORTED                                     ((DRM_RESULT)0x8004C3F4L)
+#define DRM_E_DEPRECATED_INITIATORS_UNKNOWN_TYPE                                   ((DRM_RESULT)0x8004C780L)
+#define DRM_E_DEPRECATED_INITIATORS_INVALID_SERVICEID                              ((DRM_RESULT)0x8004C781L)
+#define DRM_E_DEPRECATED_INITIATORS_INVALID_ACCOUNTID                              ((DRM_RESULT)0x8004C782L)
+#define DRM_E_DEPRECATED_INITIATORS_INVALID_MID                                    ((DRM_RESULT)0x8004C783L)
+#define DRM_E_DEPRECATED_INITIATORS_MISSING_DC_URL                                 ((DRM_RESULT)0x8004C784L)
+#define DRM_E_DEPRECATED_INITIATORS_MISSING_CONTENT_HEADER                         ((DRM_RESULT)0x8004C785L)
+#define DRM_E_DEPRECATED_INITIATORS_MISSING_LAURL_IN_CONTENT_HEADER                ((DRM_RESULT)0x8004C786L)
+#define DRM_E_DEPRECATED_INITIATORS_MISSING_METERCERT_URL                          ((DRM_RESULT)0x8004C787L)
+#define DRM_E_DEPRECATED_BCERT_CLIENT_ID_NOT_SPECIFIED                             ((DRM_RESULT)0x8004C810L)
+#define DRM_E_DEPRECATED_BCERT_HARDWARE_ID_NOT_SPECIFIED                           ((DRM_RESULT)0x8004C813L)
+#define DRM_E_DEPRECATED_BCERT_SERIAL_NUM_NOT_SPECIFIED                            ((DRM_RESULT)0x8004C815L)
+#define DRM_E_DEPRECATED_BCERT_INVALID_EXTDATA_SIGNED_LENGTH                       ((DRM_RESULT)0x8004C830L)
+#define DRM_E_DEPRECATED_BCERT_INVALID_EXTDATA_RECORD_TYPE                         ((DRM_RESULT)0x8004C831L)
+#define DRM_E_DEPRECATED_SECURE_TRACE_BAD_GLOBAL_DATA_POINTER                      ((DRM_RESULT)0x8004CD00L)
+#define DRM_E_DEPRECATED_SECURE_TRACE_INVALID_GLOBAL_DATA                          ((DRM_RESULT)0x8004CD01L)
+#define DRM_E_DEPRECATED_SECURE_TRACE_FORMATTING_ERROR                             ((DRM_RESULT)0x8004CD02L)
+#define DRM_E_DEPRECATED_SECURE_TRACE_BAD_SCHEME_DATA_POINTER                      ((DRM_RESULT)0x8004CD03L)
+#define DRM_E_DEPRECATED_SECURE_TRACE_BAD_PER_THREAD_AES_DATA_POINTER              ((DRM_RESULT)0x8004CD04L)
+#define DRM_E_DEPRECATED_SECURE_TRACE_BAD_PER_THREAD_AES_BUFFER_POINTER            ((DRM_RESULT)0x8004CD05L)
+#define DRM_E_DEPRECATED_SECURE_TRACE_AES_INSUFFICIENT_BUFFER                      ((DRM_RESULT)0x8004CD06L)
+#define DRM_E_DEPRECATED_SECURE_TRACE_VERSION_MISMATCH                             ((DRM_RESULT)0x8004CD07L)
+#define DRM_E_DEPRECATED_SECURE_TRACE_UNEXPECTED_ERROR                             ((DRM_RESULT)0x8004CD08L)
+#define DRM_E_DEPRECATED_ND_MUST_REVALIDATE                                        ((DRM_RESULT)0x8004CE00L)
+#define DRM_E_DEPRECATED_ND_INVALID_MESSAGE                                        ((DRM_RESULT)0x8004CE01L)
+#define DRM_E_DEPRECATED_ND_INVALID_MESSAGE_TYPE                                   ((DRM_RESULT)0x8004CE02L)
+#define DRM_E_DEPRECATED_ND_INVALID_MESSAGE_VERSION                                ((DRM_RESULT)0x8004CE03L)
+#define DRM_E_DEPRECATED_ND_INVALID_SESSION                                        ((DRM_RESULT)0x8004CE04L)
+#define DRM_E_DEPRECATED_ND_MEDIA_SESSION_LIMIT_REACHED                            ((DRM_RESULT)0x8004CE05L)
+#define DRM_E_DEPRECATED_ND_UNABLE_TO_VERIFY_PROXIMITY                             ((DRM_RESULT)0x8004CE06L)
+#define DRM_E_DEPRECATED_ND_INVALID_PROXIMITY_RESPONSE                             ((DRM_RESULT)0x8004CE07L)
+#define DRM_E_DEPRECATED_ND_DEVICE_LIMIT_REACHED                                   ((DRM_RESULT)0x8004CE08L)
+#define DRM_E_DEPRECATED_ND_BAD_REQUEST                                            ((DRM_RESULT)0x8004CE09L)
+#define DRM_E_DEPRECATED_ND_FAILED_SEEK                                            ((DRM_RESULT)0x8004CE0AL)
+#define DRM_E_DEPRECATED_ND_INVALID_CONTEXT                                        ((DRM_RESULT)0x8004CE0BL)
+#define DRM_E_DEPRECATED_ASF_BAD_ASF_HEADER                                        ((DRM_RESULT)0x8004CF00L)
+#define DRM_E_DEPRECATED_ASF_BAD_PACKET_HEADER                                     ((DRM_RESULT)0x8004CF01L)
+#define DRM_E_DEPRECATED_ASF_BAD_PAYLOAD_HEADER                                    ((DRM_RESULT)0x8004CF02L)
+#define DRM_E_DEPRECATED_ASF_BAD_DATA_HEADER                                       ((DRM_RESULT)0x8004CF03L)
+#define DRM_E_DEPRECATED_ASF_INVALID_OPERATION                                     ((DRM_RESULT)0x8004CF04L)
+#define DRM_E_DEPRECATED_ASF_AES_PAYLOAD_FOUND                                     ((DRM_RESULT)0x8004CF05L)
+#define DRM_E_DEPRECATED_ASF_EXTENDED_STREAM_PROPERTIES_OBJ_NOT_FOUND              ((DRM_RESULT)0x8004CF06L)
+#define DRM_E_DEPRECATED_ASF_INVALID_DATA                                          ((DRM_RESULT)0x8004CF20L)
+#define DRM_E_DEPRECATED_ASF_TOO_MANY_PAYLOADS                                     ((DRM_RESULT)0x8004CF21L)
+#define DRM_E_DEPRECATED_ASF_BANDWIDTH_OVERRUN                                     ((DRM_RESULT)0x8004CF22L)
+#define DRM_E_DEPRECATED_ASF_INVALID_STREAM_NUMBER                                 ((DRM_RESULT)0x8004CF23L)
+#define DRM_E_DEPRECATED_ASF_LATE_SAMPLE                                           ((DRM_RESULT)0x8004CF24L)
+#define DRM_E_DEPRECATED_ASF_NOT_ACCEPTING                                         ((DRM_RESULT)0x8004CF25L)
+#define DRM_E_DEPRECATED_ASF_UNEXPECTED                                            ((DRM_RESULT)0x8004CF26L)
+#define DRM_E_DEPRECATED_LICGEN_POLICY_NOT_SUPPORTED                               ((DRM_RESULT)0x8004D100L)
+#define DRM_E_DEPRECATED_MOVE_DENIED                                               ((DRM_RESULT)0x8004D300L)
+#define DRM_E_DEPRECATED_INVALID_MOVE_RESPONSE                                     ((DRM_RESULT)0x8004D301L)
+#define DRM_E_DEPRECATED_MOVE_NONCE_MISMATCH                                       ((DRM_RESULT)0x8004D302L)
+#define DRM_E_DEPRECATED_MOVE_TXID_MISMATCH                                        ((DRM_RESULT)0x8004D303L)
+#define DRM_E_DEPRECATED_MOVE_STORE_OPEN_STORE                                     ((DRM_RESULT)0x8004D304L)
+#define DRM_E_DEPRECATED_MOVE_STORE_CLOSE_STORE                                    ((DRM_RESULT)0x8004D305L)
+#define DRM_E_DEPRECATED_MOVE_STORE_ADD_DATA                                       ((DRM_RESULT)0x8004D306L)
+#define DRM_E_DEPRECATED_MOVE_STORE_GET_DATA                                       ((DRM_RESULT)0x8004D307L)
+#define DRM_E_DEPRECATED_MOVE_FORMAT_INVALID                                       ((DRM_RESULT)0x8004D308L)
+#define DRM_E_DEPRECATED_MOVE_SIGNATURE_INVALID                                    ((DRM_RESULT)0x8004D309L)
+#define DRM_E_DEPRECATED_COPY_DENIED                                               ((DRM_RESULT)0x8004D30AL)
+#define DRM_E_DEPRECATED_KEYFILE_INVALID_PLATFORM                                  ((DRM_RESULT)0x8004D500L)
+#define DRM_E_DEPRECATED_KEYFILE_TOO_LARGE                                         ((DRM_RESULT)0x8004D501L)
+#define DRM_E_DEPRECATED_KEYFILE_PRIVATE_KEY_NOT_FOUND                             ((DRM_RESULT)0x8004D502L)
+#define DRM_E_DEPRECATED_KEYFILE_CERTIFICATE_CHAIN_NOT_FOUND                       ((DRM_RESULT)0x8004D503L)
+#define DRM_E_DEPRECATED_KEYFILE_KEY_NOT_FOUND                                     ((DRM_RESULT)0x8004D504L)
+#define DRM_E_DEPRECATED_KEYFILE_UNKNOWN_DECRYPTION_METHOD                         ((DRM_RESULT)0x8004D505L)
+#define DRM_E_DEPRECATED_KEYFILE_INVALID_SIGNATURE                                 ((DRM_RESULT)0x8004D506L)
+#define DRM_E_DEPRECATED_KEYFILE_INTERNAL_DECRYPTION_BUFFER_TOO_SMALL              ((DRM_RESULT)0x8004D507L)
+#define DRM_E_DEPRECATED_KEYFILE_PLATFORMID_MISMATCH                               ((DRM_RESULT)0x8004D508L)
+#define DRM_E_DEPRECATED_KEYFILE_CERTIFICATE_ISSUER_KEY_MISMATCH                   ((DRM_RESULT)0x8004D509L)
+#define DRM_E_DEPRECATED_KEYFILE_ROBUSTNESSVERSION_MISMATCH                        ((DRM_RESULT)0x8004D50AL)
+#define DRM_E_DEPRECATED_KEYFILE_FILE_NOT_CLOSED                                   ((DRM_RESULT)0x8004D50BL)
+#define DRM_E_DEPRECATED_KEYFILE_NOT_INITED                                        ((DRM_RESULT)0x8004D50CL)
+#define DRM_E_DEPRECATED_KEYFILE_FORMAT_INVALID                                    ((DRM_RESULT)0x8004D50DL)
+#define DRM_E_DEPRECATED_KEYFILE_UPDATE_NOT_ALLOWED                                ((DRM_RESULT)0x8004D50EL)
+#define DRM_E_DEPRECATED_PRND_MESSAGE_VERSION_INVALID                              ((DRM_RESULT)0x8004D700L)
+#define DRM_E_DEPRECATED_PRND_MESSAGE_WRONG_TYPE                                   ((DRM_RESULT)0x8004D701L)
+#define DRM_E_DEPRECATED_PRND_MESSAGE_INVALID                                      ((DRM_RESULT)0x8004D702L)
+#define DRM_E_DEPRECATED_PRND_SESSION_ID_INVALID                                   ((DRM_RESULT)0x8004D703L)
+#define DRM_E_DEPRECATED_PRND_PROXIMITY_DETECTION_REQUEST_CHANNEL_TYPE_UNSUPPORTED ((DRM_RESULT)0x8004D704L)
+#define DRM_E_DEPRECATED_PRND_PROXIMITY_DETECTION_RESPONSE_INVALID                 ((DRM_RESULT)0x8004D705L)
+#define DRM_E_DEPRECATED_PRND_PROXIMITY_DETECTION_RESPONSE_TIMEOUT                 ((DRM_RESULT)0x8004D706L)
+#define DRM_E_DEPRECATED_PRND_LICENSE_REQUEST_CID_CALLBACK_REQUIRED                ((DRM_RESULT)0x8004D707L)
+#define DRM_E_DEPRECATED_PRND_LICENSE_RESPONSE_CLMID_INVALID                       ((DRM_RESULT)0x8004D708L)
+#define DRM_E_DEPRECATED_PRND_CERTIFICATE_NOT_RECEIVER                             ((DRM_RESULT)0x8004D709L)
+#define DRM_E_DEPRECATED_PRND_CANNOT_RENEW_USING_NEW_SESSION                       ((DRM_RESULT)0x8004D70AL)
+#define DRM_E_DEPRECATED_PRND_INVALID_CUSTOM_DATA_TYPE                             ((DRM_RESULT)0x8004D70BL)
+#define DRM_E_DEPRECATED_PRND_CLOCK_OUT_OF_SYNC                                    ((DRM_RESULT)0x8004D70CL)
+#define DRM_E_DEPRECATED_PRND_CANNOT_REBIND_PRND_RECEIVED_LICENSE                  ((DRM_RESULT)0x8004D70DL)
+#define DRM_E_DEPRECATED_PRND_CANNOT_REGISTER_USING_EXISTING_SESSION               ((DRM_RESULT)0x8004D70EL)
+#define DRM_E_DEPRECATED_PRND_BUSY_PERFORMING_RENEWAL                              ((DRM_RESULT)0x8004D70FL)
+#define DRM_E_DEPRECATED_PRND_LICENSE_REQUEST_INVALID_ACTION                       ((DRM_RESULT)0x8004D710L)
+#define DRM_E_DEPRECATED_PRND_TRANSMITTER_UNAUTHORIZED                             ((DRM_RESULT)0x8004D711L)
+#define DRM_E_DEPRECATED_PRND_TX_SESSION_EXPIRED                                   ((DRM_RESULT)0x8004D712L)
+#define DRM_E_DEPRECATED_PRND_INCOMPLETE_PROXIMITY_DETECTION                       ((DRM_RESULT)0x8004D713L)
+#define DRM_E_DEPRECATED_PRND_INVALID_CERT_DIGEST                                  ((DRM_RESULT)0x8004D714L)
+#define DRM_E_DEPRECATED_OEMHAL_NOT_INITIALIZED                                    ((DRM_RESULT)0x8004D780L)
+#define DRM_E_DEPRECATED_OEMHAL_OUT_OF_KEY_REGISTERS                               ((DRM_RESULT)0x8004D781L)
+#define DRM_E_DEPRECATED_OEMHAL_KEYS_IN_USE                                        ((DRM_RESULT)0x8004D782L)
+#define DRM_E_DEPRECATED_OEMHAL_NO_KEY                                             ((DRM_RESULT)0x8004D783L)
+#define DRM_E_DEPRECATED_OEMHAL_UNSUPPORTED_KEY_TYPE                               ((DRM_RESULT)0x8004D784L)
+#define DRM_E_DEPRECATED_OEMHAL_UNSUPPORTED_KEY_WRAPPING_FORMAT                    ((DRM_RESULT)0x8004D785L)
+#define DRM_E_DEPRECATED_OEMHAL_UNSUPPORTED_KEY_LENGTH                             ((DRM_RESULT)0x8004D786L)
+#define DRM_E_DEPRECATED_OEMHAL_UNSUPPORTED_HASH_TYPE                              ((DRM_RESULT)0x8004D787L)
+#define DRM_E_DEPRECATED_OEMHAL_UNSUPPORTED_SIGNATURE_SCHEME                       ((DRM_RESULT)0x8004D788L)
+#define DRM_E_DEPRECATED_OEMHAL_BUFFER_TOO_LARGE                                   ((DRM_RESULT)0x8004D789L)
+#define DRM_E_DEPRECATED_OEMHAL_SAMPLE_ENCRYPTION_MODE_NOT_PERMITTED               ((DRM_RESULT)0x8004D78AL)
+#define DRM_E_DEPRECATED_M2TS_PAT_PID_IS_NOT_ZERO                                  ((DRM_RESULT)0x8004D800L)
+#define DRM_E_DEPRECATED_M2TS_PTS_NOT_EXIST                                        ((DRM_RESULT)0x8004D801L)
+#define DRM_E_DEPRECATED_M2TS_PES_PACKET_LENGTH_NOT_SPECIFIED                      ((DRM_RESULT)0x8004D802L)
+#define DRM_E_DEPRECATED_M2TS_OUTPUT_BUFFER_FULL                                   ((DRM_RESULT)0x8004D803L)
+#define DRM_E_DEPRECATED_M2TS_CONTEXT_NOT_INITIALIZED                              ((DRM_RESULT)0x8004D804L)
+#define DRM_E_DEPRECATED_M2TS_NEED_KEY_DATA                                        ((DRM_RESULT)0x8004D805L)
+#define DRM_E_DEPRECATED_M2TS_DDPLUS_FORMAT_INVALID                                ((DRM_RESULT)0x8004D806L)
+#define DRM_E_DEPRECATED_M2TS_NOT_UNIT_START_PACKET                                ((DRM_RESULT)0x8004D807L)
+#define DRM_E_DEPRECATED_M2TS_TOO_MANY_SUBSAMPLES                                  ((DRM_RESULT)0x8004D808L)
+#define DRM_E_DEPRECATED_M2TS_TABLE_ID_INVALID                                     ((DRM_RESULT)0x8004D809L)
+#define DRM_E_DEPRECATED_M2TS_PACKET_SYNC_BYTE_INVALID                             ((DRM_RESULT)0x8004D80AL)
+#define DRM_E_DEPRECATED_M2TS_ADAPTATION_LENGTH_INVALID                            ((DRM_RESULT)0x8004D80BL)
+#define DRM_E_DEPRECATED_M2TS_PAT_HEADER_INVALID                                   ((DRM_RESULT)0x8004D80CL)
+#define DRM_E_DEPRECATED_M2TS_PMT_HEADER_INVALID                                   ((DRM_RESULT)0x8004D80DL)
+#define DRM_E_DEPRECATED_M2TS_PES_START_CODE_NOT_FOUND                             ((DRM_RESULT)0x8004D80EL)
+#define DRM_E_DEPRECATED_M2TS_STREAM_OR_PACKET_TYPE_CHANGED                        ((DRM_RESULT)0x8004D80FL)
+#define DRM_E_DEPRECATED_M2TS_INTERNAL_ERROR                                       ((DRM_RESULT)0x8004D810L)
+#define DRM_E_DEPRECATED_M2TS_ADTS_FORMAT_INVALID                                  ((DRM_RESULT)0x8004D811L)
+#define DRM_E_DEPRECATED_M2TS_MPEGA_FORMAT_INVALID                                 ((DRM_RESULT)0x8004D812L)
+#define DRM_E_DEPRECATED_M2TS_CA_DESCRIPTOR_LENGTH_INVALID                         ((DRM_RESULT)0x8004D813L)
+#define DRM_E_DEPRECATED_M2TS_CRC_FIELD_INVALID                                    ((DRM_RESULT)0x8004D814L)
+#define DRM_E_DEPRECATED_M2TS_INCOMPLETE_SECTION_HEADER                            ((DRM_RESULT)0x8004D815L)
+#define DRM_E_DEPRECATED_M2TS_INVALID_UNALIGNED_DATA                               ((DRM_RESULT)0x8004D816L)
+#define DRM_E_DEPRECATED_M2TS_GET_ENCRYPTED_DATA_FIRST                             ((DRM_RESULT)0x8004D817L)
+#define DRM_E_DEPRECATED_M2TS_CANNOT_CHANGE_PARAMETER                              ((DRM_RESULT)0x8004D818L)
+#define DRM_E_DEPRECATED_M2TS_UNKNOWN_PACKET                                       ((DRM_RESULT)0x8004D819L)
+#define DRM_E_DEPRECATED_M2TS_DROP_PACKET                                          ((DRM_RESULT)0x8004D820L)
+#define DRM_E_DEPRECATED_M2TS_DROP_PES                                             ((DRM_RESULT)0x8004D821L)
+#define DRM_E_DEPRECATED_M2TS_INCOMPLETE_PES                                       ((DRM_RESULT)0x8004D822L)
+#define DRM_E_DEPRECATED_M2TS_WAITED_TOO_LONG                                      ((DRM_RESULT)0x8004D823L)
+#define DRM_E_DEPRECATED_M2TS_SECTION_LENGTH_INVALID                               ((DRM_RESULT)0x8004D824L)
+#define DRM_E_DEPRECATED_M2TS_PROGRAM_INFO_LENGTH_INVALID                          ((DRM_RESULT)0x8004D825L)
+#define DRM_E_DEPRECATED_M2TS_PES_HEADER_INVALID                                   ((DRM_RESULT)0x8004D826L)
+#define DRM_E_DEPRECATED_M2TS_ECM_PAYLOAD_OVER_LIMIT                               ((DRM_RESULT)0x8004D827L)
+#define DRM_E_DEPRECATED_M2TS_SET_CA_PID_FAILED                                    ((DRM_RESULT)0x8004D828L)
+#define DRM_E_DEPRECATED_LICGEN_PERSISTENT_REMOTE_LICENSE                          ((DRM_RESULT)0x8004D902L)
+#define DRM_E_DEPRECATED_LICGEN_EXPIRE_AFTER_FIRST_PLAY_REMOTE_LICENSE             ((DRM_RESULT)0x8004D903L)
+#define DRM_E_DEPRECATED_LICGEN_LOCAL_LICENSE_WITH_REMOTE_CERTIFICATE              ((DRM_RESULT)0x8004D906L)
+#define DRM_E_DEPRECATED_LICGEN_PLAY_ENABLER_REMOTE_LICENSE                        ((DRM_RESULT)0x8004D907L)
 #endif /*__WINDOWS_MEDIA_PROTECTION_PLAYREADY_RESULTS_H_ */
 

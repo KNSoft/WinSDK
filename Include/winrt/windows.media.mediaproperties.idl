@@ -10,22 +10,9 @@ import "AsyncInfo.idl";
 import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
+import "Windows.Media.Core.idl";
 import "Windows.Storage.idl";
 import "Windows.Storage.Streams.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Estorage_h__)")
-cpp_quote("#include <Windows.Storage.h>")
-cpp_quote("#endif // !defined(__windows2Estorage_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -33,6 +20,18 @@ namespace Windows
     namespace Foundation
     {
         apicontract UniversalApiContract;
+    }
+}
+namespace Windows
+{
+    namespace Media
+    {
+        namespace Core
+        {
+            runtimeclass AudioStreamDescriptor;
+
+            runtimeclass VideoStreamDescriptor;
+        }
     }
 }
 namespace Windows
@@ -95,6 +94,8 @@ namespace Windows
             interface IImageEncodingPropertiesStatics2;
 
             interface IMediaEncodingProfile;
+
+            interface IMediaEncodingProfile2;
 
             interface IMediaEncodingProfileStatics;
 
@@ -389,6 +390,17 @@ namespace Windows
                 [propget] HRESULT Container([out] [retval] Windows.Media.MediaProperties.ContainerEncodingProperties** value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Media.MediaProperties.MediaEncodingProfile)]
+            [uuid(349B3E0A-4035-488E-9877-85632865ED10)]
+            interface IMediaEncodingProfile2 : IInspectable
+            {
+                HRESULT SetAudioTracks([in] Windows.Foundation.Collections.IIterable<Windows.Media.Core.AudioStreamDescriptor*>* value);
+                HRESULT GetAudioTracks([out] [retval] Windows.Foundation.Collections.IVector<Windows.Media.Core.AudioStreamDescriptor*>** value);
+                HRESULT SetVideoTracks([in] Windows.Foundation.Collections.IIterable<Windows.Media.Core.VideoStreamDescriptor*>* value);
+                HRESULT GetVideoTracks([out] [retval] Windows.Foundation.Collections.IVector<Windows.Media.Core.VideoStreamDescriptor*>** value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Media.MediaProperties.MediaEncodingProfile)]
             [uuid(197F352C-2EDE-4A45-A896-817A4854F8FE)]
@@ -638,6 +650,7 @@ namespace Windows
             runtimeclass MediaEncodingProfile
             {
                 [default] interface Windows.Media.MediaProperties.IMediaEncodingProfile;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Media.MediaProperties.IMediaEncodingProfile2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

@@ -43,6 +43,11 @@ interface IUnbufferedFileHandleProvider : IUnknown
     HRESULT CloseUnbufferedFileHandle();
 }
 
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
+#pragma endregion
+
+#pragma region Application Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)")
 
 // This enum is a subset of the FILE_FLAG_* constants that are valid for use inside an app-container setting.
 typedef [v1_enum] enum HANDLE_OPTIONS
@@ -127,6 +132,12 @@ interface IStorageFolderHandleAccess : IUnknown
         );
 };
 
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
+#pragma endregion
+
+#pragma region Desktop Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)")
+
 // These values indicate which API should be used to create the new process
 typedef[v1_enum] enum CreateProcessMethod
 {
@@ -149,7 +160,8 @@ interface IDDEInitializer : IUnknown
         [in] IUnknown* site,
         [in, string] LPCWSTR application,
         [in, string] LPCWSTR targetFile,
-        [in, string] LPCWSTR arguments);
+        [in, string] LPCWSTR arguments,
+        [in, string] LPCWSTR verb);
 };
 
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")

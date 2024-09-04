@@ -168,6 +168,11 @@ cpp_quote("#define IKEEXT_CERT_AUTH_ALLOW_HTTP_CERT_LOOKUP  (0x00000010)")
 cpp_quote("#define IKEEXT_CERT_AUTH_URL_CONTAINS_BUNDLE  (0x00000020)")
 cpp_quote("#endif // (NTDDI_VERSION >= NTDDI_WIN7)")
 
+// Disable sending CERT_REQ payload from the Client
+cpp_quote("#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)")
+cpp_quote("#define IKEEXT_CERT_AUTH_FLAG_DISABLE_REQUEST_PAYLOAD (0x00000040)")
+cpp_quote("#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS3)")
+
 // Type of certificate configuration
 typedef [v1_enum] enum IKEEXT_CERT_CONFIG_TYPE_
 {
@@ -627,6 +632,8 @@ typedef [v1_enum] enum IKEEXT_CIPHER_TYPE_
    IKEEXT_CIPHER_AES_128,
    IKEEXT_CIPHER_AES_192,
    IKEEXT_CIPHER_AES_256,
+   IKEEXT_CIPHER_AES_GCM_128_16ICV,
+   IKEEXT_CIPHER_AES_GCM_256_16ICV,
    IKEEXT_CIPHER_TYPE_MAX
 } IKEEXT_CIPHER_TYPE;
 
@@ -707,6 +714,8 @@ cpp_quote("#define IKEEXT_POLICY_FLAG_NO_IMPERSONATION_LUID_VERIFY (0x00000004)"
 cpp_quote("#define IKEEXT_POLICY_FLAG_ENABLE_OPTIONAL_DH (0x00000008)")
 // IKEv2 only: Disable MOBIKE
 cpp_quote("#define IKEEXT_POLICY_FLAG_MOBIKE_NOT_SUPPORTED (0x00000010)")
+// IKEv2 Site to Site
+cpp_quote("#define IKEEXT_POLICY_FLAG_SITE_TO_SITE (0x00000020)")
 
 // Type used to store the IKE/Authip main mode negotiation policy
 typedef struct IKEEXT_POLICY0_

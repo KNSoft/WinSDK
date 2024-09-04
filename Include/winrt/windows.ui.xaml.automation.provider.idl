@@ -15,29 +15,6 @@ import "Windows.UI.Xaml.idl";
 import "Windows.UI.Xaml.Automation.idl";
 import "Windows.UI.Xaml.Automation.Peers.idl";
 import "Windows.UI.Xaml.Automation.Text.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eui_h__)")
-cpp_quote("#include <Windows.UI.h>")
-cpp_quote("#endif // !defined(__windows2Eui_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#include <Windows.UI.Xaml.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Eautomation_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Automation.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Eautomation_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Eautomation2Epeers_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Automation.Peers.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Eautomation2Epeers_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Eautomation2Etext_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Automation.Text.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Eautomation2Etext_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows

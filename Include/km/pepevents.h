@@ -24,7 +24,10 @@ extern "C" {
 #ifndef MCGEN_DISABLE_PROVIDER_CODE_GENERATION
 #if  !defined(McGenDebug)
 #define McGenDebug(a,b)
-#endif 
+#endif
+#ifndef MCGEN_EVENT_ENABLED
+#define MCGEN_EVENT_ENABLED(EventName) EventEnabled##EventName()
+#endif
 
 
 #if !defined(MCGEN_TRACE_CONTEXT_DEF)
@@ -37,7 +40,7 @@ typedef struct _MCGEN_TRACE_CONTEXT
     ULONGLONG              MatchAllKeyword;
     ULONG                  Flags;
     ULONG                  IsEnabled;
-    UCHAR                  Level; 
+    UCHAR                  Level;
     UCHAR                  Reserve;
     USHORT                 EnableBitsCount;
     PULONG                 EnableBitMask;
@@ -105,6 +108,16 @@ McGenEventEnabled(
 #define MCGEN_ENABLE_CHECK(Context, Descriptor) (Context.IsEnabled &&  McGenEventEnabled(&Context, &Descriptor))
 #endif
 
+#ifndef MCGEN_EVENTWRITE_KM
+#define MCGEN_EVENTWRITE_KM EtwWrite
+#endif
+#ifndef MCGEN_EVENTREGISTER_KM
+#define MCGEN_EVENTREGISTER_KM EtwRegister
+#endif
+#ifndef MCGEN_EVENTUNREGISTER_KM
+#define MCGEN_EVENTUNREGISTER_KM EtwUnregister
+#endif
+
 #if !defined(MCGEN_CONTROL_CALLBACK)
 #define MCGEN_CONTROL_CALLBACK
 
@@ -128,22 +141,22 @@ Routine Description:
 
 Arguments:
 
-    SourceId - The GUID that identifies the session that enabled the provider. 
+    SourceId - The GUID that identifies the session that enabled the provider.
 
-    ControlCode - The parameter indicates whether the provider 
+    ControlCode - The parameter indicates whether the provider
                   is being enabled or disabled.
 
     Level - The level at which the event is enabled.
 
-    MatchAnyKeyword - The bitmask of keywords that the provider uses to 
+    MatchAnyKeyword - The bitmask of keywords that the provider uses to
                       determine the category of events that it writes.
 
-    MatchAllKeyword - This bitmask additionally restricts the category 
-                      of events that the provider writes. 
+    MatchAllKeyword - This bitmask additionally restricts the category
+                      of events that the provider writes.
 
     FilterData - The provider-defined data.
 
-    CallbackContext - The context of the callback that is defined when the provider 
+    CallbackContext - The context of the callback that is defined when the provider
                       called EtwRegister to register itself.
 
 Remarks:
@@ -189,7 +202,7 @@ Remarks:
                 RtlZeroMemory(Ctx->EnableBitMask, (((Ctx->EnableBitsCount - 1) / 32) + 1) * sizeof(ULONG));
             }
             break;
- 
+
         default:
             break;
     }
@@ -208,12 +221,56 @@ Remarks:
         CallbackContext
         );
 #endif
-   
+
     return;
 }
 
 #endif
+
+#ifndef McGenEventWriteKM_def
+#define McGenEventWriteKM_def
+DECLSPEC_NOINLINE __inline
+ULONG __stdcall
+McGenEventWriteKM(
+    _In_ PMCGEN_TRACE_CONTEXT Context,
+    _In_ PCEVENT_DESCRIPTOR Descriptor,
+    _In_opt_ LPCGUID Activity,
+    _In_range_(1, 128) ULONG EventDataCount,
+    _Inout_updates_(EventDataCount) EVENT_DATA_DESCRIPTOR* EventData
+    )
+{
+    const USHORT UNALIGNED* Traits;
+    UCHAR DisallowedChannel;
+    ULONGLONG DescriptorCopy[2]; // ULONGLONG to suppress unnecessary cookie.
+
+    Traits = (const USHORT UNALIGNED*)(UINT_PTR)Context->Logger;
+
+    if (Traits == NULL) {
+        EventDataCount -= 1;
+        EventData += 1;
+        if (EventDataCount == 0) {
+            EventData = NULL;
+        }
+        DisallowedChannel = 12; // WINEVENT_CHANNEL_PROVIDERMETADATA
+    } else {
+        EventData[0].Ptr = (ULONG_PTR)Traits;
+        EventData[0].Size = *Traits;
+        EventData[0].Reserved = 2; // EVENT_DATA_DESCRIPTOR_TYPE_PROVIDER_METADATA
+        DisallowedChannel = 0;
+    }
+
+    if (Descriptor->Channel == DisallowedChannel) {
+        *(EVENT_DESCRIPTOR*)DescriptorCopy = *Descriptor;
+        ((EVENT_DESCRIPTOR*)DescriptorCopy)->Channel = (UCHAR)((Traits == NULL) ? 0 : 12);
+        Descriptor = (EVENT_DESCRIPTOR*)DescriptorCopy;
+    }
+
+    return MCGEN_EVENTWRITE_KM(Context->RegistrationHandle, Descriptor, Activity, EventDataCount, EventData);
+}
+#endif // McGenEventWriteKM_def
+
 #endif // MCGEN_DISABLE_PROVIDER_CODE_GENERATION
+
 //+
 // Provider Microsoft-Windows-Kernel-Pep Event Count 7
 //+
@@ -260,13 +317,13 @@ EXTERN_C __declspec(selectany) const EVENT_DESCRIPTOR POP_PEP_ETW_PLATFORM_IDLE_
 //
 // Note on Generate Code from Manifest for Windows Vista and above
 //
-//Structures :  are handled as a size and pointer pairs. The macro for the event will have an extra 
+//Structures :  are handled as a size and pointer pairs. The macro for the event will have an extra
 //parameter for the size in bytes of the structure. Make sure that your structures have no extra padding.
 //
-//Strings: There are several cases that can be described in the manifest. For array of variable length 
-//strings, the generated code will take the count of characters for the whole array as an input parameter. 
+//Strings: There are several cases that can be described in the manifest. For array of variable length
+//strings, the generated code will take the count of characters for the whole array as an input parameter.
 //
-//SID No support for array of SIDs, the macro will take a pointer to the SID and use appropriate 
+//SID No support for array of SIDs, the macro will take a pointer to the SID and use appropriate
 //GetLengthSid function to get the length.
 //
 
@@ -276,9 +333,12 @@ EXTERN_C __declspec(selectany) const EVENT_DESCRIPTOR POP_PEP_ETW_PLATFORM_IDLE_
 #ifndef MCGEN_DISABLE_PROVIDER_CODE_GENERATION
 
 //
-// Globals 
+// Globals
 //
 
+#ifndef POP_PEP_ETW_PROVIDER_Traits
+#define POP_PEP_ETW_PROVIDER_Traits NULL
+#endif
 
 //
 // Event Enablement Bits
@@ -287,9 +347,9 @@ EXTERN_C __declspec(selectany) const EVENT_DESCRIPTOR POP_PEP_ETW_PLATFORM_IDLE_
 EXTERN_C __declspec(selectany) DECLSPEC_CACHEALIGN ULONG Microsoft_Windows_Kernel_PepEnableBits[1];
 EXTERN_C __declspec(selectany) const ULONGLONG Microsoft_Windows_Kernel_PepKeywords[1] = {0x8000000000000001};
 EXTERN_C __declspec(selectany) const UCHAR Microsoft_Windows_Kernel_PepLevels[1] = {4};
-EXTERN_C __declspec(selectany) MCGEN_TRACE_CONTEXT POP_PEP_ETW_PROVIDER_Context = {0, 0, 0, 0, 0, 0, 0, 0, 1, Microsoft_Windows_Kernel_PepEnableBits, Microsoft_Windows_Kernel_PepKeywords, Microsoft_Windows_Kernel_PepLevels};
+EXTERN_C __declspec(selectany) MCGEN_TRACE_CONTEXT POP_PEP_ETW_PROVIDER_Context = {0, (ULONG_PTR)POP_PEP_ETW_PROVIDER_Traits, 0, 0, 0, 0, 0, 0, 1, Microsoft_Windows_Kernel_PepEnableBits, Microsoft_Windows_Kernel_PepKeywords, Microsoft_Windows_Kernel_PepLevels};
 
-EXTERN_C __declspec(selectany) REGHANDLE Microsoft_Windows_Kernel_PepHandle = (REGHANDLE)0;
+#define Microsoft_Windows_Kernel_PepHandle (POP_PEP_ETW_PROVIDER_Context.RegistrationHandle)
 
 #if !defined(McGenEventRegisterUnregister)
 #define McGenEventRegisterUnregister
@@ -310,7 +370,7 @@ Routine Description:
     This function registers the provider with ETW KERNEL mode.
 
 Arguments:
-    ProviderId - Provider ID to be register with ETW.
+    ProviderId - Provider ID to register with ETW.
 
     EnableCallback - Callback to be used.
 
@@ -334,7 +394,7 @@ Remarks:
         return STATUS_SUCCESS;
     }
 
-    Error = EtwRegister( ProviderId, EnableCallback, CallbackContext, RegHandle); 
+    Error = MCGEN_EVENTREGISTER_KM( ProviderId, EnableCallback, CallbackContext, RegHandle);
 
     return Error;
 }
@@ -367,24 +427,24 @@ Remarks:
         return STATUS_SUCCESS;
     }
 
-    Error = EtwUnregister(*RegHandle); 
+    Error = MCGEN_EVENTUNREGISTER_KM(*RegHandle);
     *RegHandle = (REGHANDLE)0;
-    
+
     return Error;
 }
 #endif
 //
-// Register with ETW Vista +
+// Register with ETW (Vista or later) using provider GUID determined from manifest
 //
 #ifndef EventRegisterMicrosoft_Windows_Kernel_Pep
-#define EventRegisterMicrosoft_Windows_Kernel_Pep() McGenEventRegister(&POP_PEP_ETW_PROVIDER, McGenControlCallbackV2, &POP_PEP_ETW_PROVIDER_Context, &Microsoft_Windows_Kernel_PepHandle) 
+#define EventRegisterMicrosoft_Windows_Kernel_Pep() McGenEventRegister(&POP_PEP_ETW_PROVIDER, McGenControlCallbackV2, &POP_PEP_ETW_PROVIDER_Context, &Microsoft_Windows_Kernel_PepHandle)
 #endif
 
 //
-// UnRegister with ETW
+// Unregister with ETW
 //
 #ifndef EventUnregisterMicrosoft_Windows_Kernel_Pep
-#define EventUnregisterMicrosoft_Windows_Kernel_Pep() McGenEventUnregister(&Microsoft_Windows_Kernel_PepHandle) 
+#define EventUnregisterMicrosoft_Windows_Kernel_Pep() McGenEventUnregister(&Microsoft_Windows_Kernel_PepHandle)
 #endif
 
 //
@@ -397,8 +457,8 @@ Remarks:
 // Event Macro for POP_PEP_ETW_RAIL_RUNDOWN
 //
 #define EventWritePOP_PEP_ETW_RAIL_RUNDOWN(Activity, VoltageRailId, VoltageRailName, CurrentVoltageMv, MaxVoltageMv)\
-        EventEnabledPOP_PEP_ETW_RAIL_RUNDOWN() ?\
-        Template_qzqq(Microsoft_Windows_Kernel_PepHandle, &POP_PEP_ETW_RAIL_RUNDOWN, Activity, VoltageRailId, VoltageRailName, CurrentVoltageMv, MaxVoltageMv)\
+        MCGEN_EVENT_ENABLED(POP_PEP_ETW_RAIL_RUNDOWN) ?\
+        McTemplateK0qzqq(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_RAIL_RUNDOWN, Activity, VoltageRailId, VoltageRailName, CurrentVoltageMv, MaxVoltageMv)\
         : STATUS_SUCCESS\
 
 //
@@ -411,8 +471,8 @@ Remarks:
 // Event Macro for POP_PEP_ETW_DEVICE_RUNDOWN
 //
 #define EventWritePOP_PEP_ETW_DEVICE_RUNDOWN(Activity, DeviceId, DeviceName, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency)\
-        EventEnabledPOP_PEP_ETW_DEVICE_RUNDOWN() ?\
-        Template_pzqNR2(Microsoft_Windows_Kernel_PepHandle, &POP_PEP_ETW_DEVICE_RUNDOWN, Activity, DeviceId, DeviceName, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency)\
+        MCGEN_EVENT_ENABLED(POP_PEP_ETW_DEVICE_RUNDOWN) ?\
+        McTemplateK0pzqNR2(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_DEVICE_RUNDOWN, Activity, DeviceId, DeviceName, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency)\
         : STATUS_SUCCESS\
 
 //
@@ -425,8 +485,8 @@ Remarks:
 // Event Macro for POP_PEP_ETW_COMPONENT_RUNDOWN
 //
 #define EventWritePOP_PEP_ETW_COMPONENT_RUNDOWN(Activity, VoltageRailId, DeviceId, ComponentIndex, CurrentFrequencyKHz, MaxFrequencyKHz, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency, ComponentDescriptionLength, ComponentDescription)\
-        EventEnabledPOP_PEP_ETW_COMPONENT_RUNDOWN() ?\
-        Template_qpqqqqNR5qzr7(Microsoft_Windows_Kernel_PepHandle, &POP_PEP_ETW_COMPONENT_RUNDOWN, Activity, VoltageRailId, DeviceId, ComponentIndex, CurrentFrequencyKHz, MaxFrequencyKHz, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency, ComponentDescriptionLength, ComponentDescription)\
+        MCGEN_EVENT_ENABLED(POP_PEP_ETW_COMPONENT_RUNDOWN) ?\
+        McTemplateK0qpqqqqNR5qzr7(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_COMPONENT_RUNDOWN, Activity, VoltageRailId, DeviceId, ComponentIndex, CurrentFrequencyKHz, MaxFrequencyKHz, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency, ComponentDescriptionLength, ComponentDescription)\
         : STATUS_SUCCESS\
 
 //
@@ -439,8 +499,8 @@ Remarks:
 // Event Macro for POP_PEP_ETW_RAIL_VOLTAGE_CHANGE
 //
 #define EventWritePOP_PEP_ETW_RAIL_VOLTAGE_CHANGE(Activity, VoltageRailId, OldRailVoltageMv, NewRailVoltageMv)\
-        EventEnabledPOP_PEP_ETW_RAIL_VOLTAGE_CHANGE() ?\
-        Template_qqq(Microsoft_Windows_Kernel_PepHandle, &POP_PEP_ETW_RAIL_VOLTAGE_CHANGE, Activity, VoltageRailId, OldRailVoltageMv, NewRailVoltageMv)\
+        MCGEN_EVENT_ENABLED(POP_PEP_ETW_RAIL_VOLTAGE_CHANGE) ?\
+        McTemplateK0qqq(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_RAIL_VOLTAGE_CHANGE, Activity, VoltageRailId, OldRailVoltageMv, NewRailVoltageMv)\
         : STATUS_SUCCESS\
 
 //
@@ -453,8 +513,8 @@ Remarks:
 // Event Macro for POP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE
 //
 #define EventWritePOP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE(Activity, DeviceId, ComponentIndex, OldComponentFrequencyKHz, NewComponentFrequencyKHz)\
-        EventEnabledPOP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE() ?\
-        Template_pqqq(Microsoft_Windows_Kernel_PepHandle, &POP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE, Activity, DeviceId, ComponentIndex, OldComponentFrequencyKHz, NewComponentFrequencyKHz)\
+        MCGEN_EVENT_ENABLED(POP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE) ?\
+        McTemplateK0pqqq(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE, Activity, DeviceId, ComponentIndex, OldComponentFrequencyKHz, NewComponentFrequencyKHz)\
         : STATUS_SUCCESS\
 
 //
@@ -467,8 +527,8 @@ Remarks:
 // Event Macro for POP_PEP_ETW_PLATFORM_IDLE_RESIDENCY
 //
 #define EventWritePOP_PEP_ETW_PLATFORM_IDLE_RESIDENCY(Activity, PlatformStateCount, PlatformIdleStateResidency_Len_, PlatformIdleStateResidency)\
-        EventEnabledPOP_PEP_ETW_PLATFORM_IDLE_RESIDENCY() ?\
-        Template_qNR0(Microsoft_Windows_Kernel_PepHandle, &POP_PEP_ETW_PLATFORM_IDLE_RESIDENCY, Activity, PlatformStateCount, PlatformIdleStateResidency_Len_, PlatformIdleStateResidency)\
+        MCGEN_EVENT_ENABLED(POP_PEP_ETW_PLATFORM_IDLE_RESIDENCY) ?\
+        McTemplateK0qNR0(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_PLATFORM_IDLE_RESIDENCY, Activity, PlatformStateCount, PlatformIdleStateResidency_Len_, PlatformIdleStateResidency)\
         : STATUS_SUCCESS\
 
 //
@@ -481,8 +541,8 @@ Remarks:
 // Event Macro for POP_PEP_ETW_PLATFORM_IDLE_TRANSITION
 //
 #define EventWritePOP_PEP_ETW_PLATFORM_IDLE_TRANSITION(Activity, OldPlatformState, NewPlatformState)\
-        EventEnabledPOP_PEP_ETW_PLATFORM_IDLE_TRANSITION() ?\
-        Template_qq(Microsoft_Windows_Kernel_PepHandle, &POP_PEP_ETW_PLATFORM_IDLE_TRANSITION, Activity, OldPlatformState, NewPlatformState)\
+        MCGEN_EVENT_ENABLED(POP_PEP_ETW_PLATFORM_IDLE_TRANSITION) ?\
+        McTemplateK0qq(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_PLATFORM_IDLE_TRANSITION, Activity, OldPlatformState, NewPlatformState)\
         : STATUS_SUCCESS\
 
 #endif // MCGEN_DISABLE_PROVIDER_CODE_GENERATION
@@ -494,17 +554,17 @@ Remarks:
 #ifndef MCGEN_DISABLE_PROVIDER_CODE_GENERATION
 
 //
-// Template Functions 
+// Template Functions
 //
 //
 //Template from manifest : tidPepRailRundown
 //
-#ifndef Template_qzqq_def
-#define Template_qzqq_def
+#ifndef McTemplateK0qzqq_def
+#define McTemplateK0qzqq_def
 ETW_INLINE
 ULONG
-Template_qzqq(
-    _In_ REGHANDLE RegHandle,
+McTemplateK0qzqq(
+    _In_ PMCGEN_TRACE_CONTEXT Context,
     _In_ PCEVENT_DESCRIPTOR Descriptor,
     _In_opt_ LPCGUID Activity,
     _In_ const unsigned int  _Arg0,
@@ -513,33 +573,33 @@ Template_qzqq(
     _In_ const unsigned int  _Arg3
     )
 {
-#define ARGUMENT_COUNT_qzqq 4
+#define McTemplateK0qzqq_ARGCOUNT 4
 
-    EVENT_DATA_DESCRIPTOR EventData[ARGUMENT_COUNT_qzqq];
+    EVENT_DATA_DESCRIPTOR EventData[McTemplateK0qzqq_ARGCOUNT + 1];
 
-    EventDataDescCreate(&EventData[0], &_Arg0, sizeof(const unsigned int)  );
+    EventDataDescCreate(&EventData[1],&_Arg0, sizeof(const unsigned int)  );
 
-    EventDataDescCreate(&EventData[1], 
+    EventDataDescCreate(&EventData[2],
                         (_Arg1 != NULL) ? _Arg1 : L"NULL",
                         (_Arg1 != NULL) ? (ULONG)((wcslen(_Arg1) + 1) * sizeof(WCHAR)) : (ULONG)sizeof(L"NULL"));
 
-    EventDataDescCreate(&EventData[2], &_Arg2, sizeof(const unsigned int)  );
+    EventDataDescCreate(&EventData[3],&_Arg2, sizeof(const unsigned int)  );
 
-    EventDataDescCreate(&EventData[3], &_Arg3, sizeof(const unsigned int)  );
+    EventDataDescCreate(&EventData[4],&_Arg3, sizeof(const unsigned int)  );
 
-    return EtwWrite(RegHandle, Descriptor, Activity, ARGUMENT_COUNT_qzqq, EventData);
+    return McGenEventWriteKM(Context, Descriptor, Activity, McTemplateK0qzqq_ARGCOUNT + 1, EventData);
 }
 #endif
 
 //
 //Template from manifest : tidPepDeviceRundown
 //
-#ifndef Template_pzqNR2_def
-#define Template_pzqNR2_def
+#ifndef McTemplateK0pzqNR2_def
+#define McTemplateK0pzqNR2_def
 ETW_INLINE
 ULONG
-Template_pzqNR2(
-    _In_ REGHANDLE RegHandle,
+McTemplateK0pzqNR2(
+    _In_ PMCGEN_TRACE_CONTEXT Context,
     _In_ PCEVENT_DESCRIPTOR Descriptor,
     _In_opt_ LPCGUID Activity,
     _In_opt_ const void *  _Arg0,
@@ -549,33 +609,33 @@ Template_pzqNR2(
     _In_ const PVOID  _Arg3
     )
 {
-#define ARGUMENT_COUNT_pzqNR2 4
+#define McTemplateK0pzqNR2_ARGCOUNT 4
 
-    EVENT_DATA_DESCRIPTOR EventData[ARGUMENT_COUNT_pzqNR2];
+    EVENT_DATA_DESCRIPTOR EventData[McTemplateK0pzqNR2_ARGCOUNT + 1];
 
-    EventDataDescCreate(&EventData[0], &_Arg0, sizeof(PVOID)  );
+    EventDataDescCreate(&EventData[1],&_Arg0, sizeof(PVOID)  );
 
-    EventDataDescCreate(&EventData[1], 
+    EventDataDescCreate(&EventData[2],
                         (_Arg1 != NULL) ? _Arg1 : L"NULL",
                         (_Arg1 != NULL) ? (ULONG)((wcslen(_Arg1) + 1) * sizeof(WCHAR)) : (ULONG)sizeof(L"NULL"));
 
-    EventDataDescCreate(&EventData[2], &_Arg2, sizeof(const unsigned int)  );
+    EventDataDescCreate(&EventData[3],&_Arg2, sizeof(const unsigned int)  );
 
-    EventDataDescCreate(&EventData[3], _Arg3, _Arg2 * _Arg3_Len_);
+    EventDataDescCreate(&EventData[4],_Arg3, _Arg2 * _Arg3_Len_);
 
-    return EtwWrite(RegHandle, Descriptor, Activity, ARGUMENT_COUNT_pzqNR2, EventData);
+    return McGenEventWriteKM(Context, Descriptor, Activity, McTemplateK0pzqNR2_ARGCOUNT + 1, EventData);
 }
 #endif
 
 //
 //Template from manifest : tidPepComponentRundown
 //
-#ifndef Template_qpqqqqNR5qzr7_def
-#define Template_qpqqqqNR5qzr7_def
+#ifndef McTemplateK0qpqqqqNR5qzr7_def
+#define McTemplateK0qpqqqqNR5qzr7_def
 ETW_INLINE
 ULONG
-Template_qpqqqqNR5qzr7(
-    _In_ REGHANDLE RegHandle,
+McTemplateK0qpqqqqNR5qzr7(
+    _In_ PMCGEN_TRACE_CONTEXT Context,
     _In_ PCEVENT_DESCRIPTOR Descriptor,
     _In_opt_ LPCGUID Activity,
     _In_ const unsigned int  _Arg0,
@@ -590,41 +650,41 @@ Template_qpqqqqNR5qzr7(
     _In_reads_(_Arg7) PCWCH  _Arg8
     )
 {
-#define ARGUMENT_COUNT_qpqqqqNR5qzr7 9
+#define McTemplateK0qpqqqqNR5qzr7_ARGCOUNT 9
 
-    EVENT_DATA_DESCRIPTOR EventData[ARGUMENT_COUNT_qpqqqqNR5qzr7];
+    EVENT_DATA_DESCRIPTOR EventData[McTemplateK0qpqqqqNR5qzr7_ARGCOUNT + 1];
 
-    EventDataDescCreate(&EventData[0], &_Arg0, sizeof(const unsigned int)  );
+    EventDataDescCreate(&EventData[1],&_Arg0, sizeof(const unsigned int)  );
 
-    EventDataDescCreate(&EventData[1], &_Arg1, sizeof(PVOID)  );
+    EventDataDescCreate(&EventData[2],&_Arg1, sizeof(PVOID)  );
 
-    EventDataDescCreate(&EventData[2], &_Arg2, sizeof(const unsigned int)  );
+    EventDataDescCreate(&EventData[3],&_Arg2, sizeof(const unsigned int)  );
 
-    EventDataDescCreate(&EventData[3], &_Arg3, sizeof(const unsigned int)  );
+    EventDataDescCreate(&EventData[4],&_Arg3, sizeof(const unsigned int)  );
 
-    EventDataDescCreate(&EventData[4], &_Arg4, sizeof(const unsigned int)  );
+    EventDataDescCreate(&EventData[5],&_Arg4, sizeof(const unsigned int)  );
 
-    EventDataDescCreate(&EventData[5], &_Arg5, sizeof(const unsigned int)  );
+    EventDataDescCreate(&EventData[6],&_Arg5, sizeof(const unsigned int)  );
 
-    EventDataDescCreate(&EventData[6], _Arg6, _Arg5 * _Arg6_Len_);
+    EventDataDescCreate(&EventData[7],_Arg6, _Arg5 * _Arg6_Len_);
 
-    EventDataDescCreate(&EventData[7], &_Arg7, sizeof(const unsigned int)  );
+    EventDataDescCreate(&EventData[8],&_Arg7, sizeof(const unsigned int)  );
 
-    EventDataDescCreate(&EventData[8], _Arg8, (ULONG)(sizeof(WCHAR)*_Arg7));
+    EventDataDescCreate(&EventData[9],_Arg8, (ULONG)(sizeof(WCHAR)*_Arg7));
 
-    return EtwWrite(RegHandle, Descriptor, Activity, ARGUMENT_COUNT_qpqqqqNR5qzr7, EventData);
+    return McGenEventWriteKM(Context, Descriptor, Activity, McTemplateK0qpqqqqNR5qzr7_ARGCOUNT + 1, EventData);
 }
 #endif
 
 //
 //Template from manifest : tidPepRailVoltageChange
 //
-#ifndef Template_qqq_def
-#define Template_qqq_def
+#ifndef McTemplateK0qqq_def
+#define McTemplateK0qqq_def
 ETW_INLINE
 ULONG
-Template_qqq(
-    _In_ REGHANDLE RegHandle,
+McTemplateK0qqq(
+    _In_ PMCGEN_TRACE_CONTEXT Context,
     _In_ PCEVENT_DESCRIPTOR Descriptor,
     _In_opt_ LPCGUID Activity,
     _In_ const unsigned int  _Arg0,
@@ -632,29 +692,29 @@ Template_qqq(
     _In_ const unsigned int  _Arg2
     )
 {
-#define ARGUMENT_COUNT_qqq 3
+#define McTemplateK0qqq_ARGCOUNT 3
 
-    EVENT_DATA_DESCRIPTOR EventData[ARGUMENT_COUNT_qqq];
+    EVENT_DATA_DESCRIPTOR EventData[McTemplateK0qqq_ARGCOUNT + 1];
 
-    EventDataDescCreate(&EventData[0], &_Arg0, sizeof(const unsigned int)  );
+    EventDataDescCreate(&EventData[1],&_Arg0, sizeof(const unsigned int)  );
 
-    EventDataDescCreate(&EventData[1], &_Arg1, sizeof(const unsigned int)  );
+    EventDataDescCreate(&EventData[2],&_Arg1, sizeof(const unsigned int)  );
 
-    EventDataDescCreate(&EventData[2], &_Arg2, sizeof(const unsigned int)  );
+    EventDataDescCreate(&EventData[3],&_Arg2, sizeof(const unsigned int)  );
 
-    return EtwWrite(RegHandle, Descriptor, Activity, ARGUMENT_COUNT_qqq, EventData);
+    return McGenEventWriteKM(Context, Descriptor, Activity, McTemplateK0qqq_ARGCOUNT + 1, EventData);
 }
 #endif
 
 //
 //Template from manifest : tidPepComponentFrequencyChange
 //
-#ifndef Template_pqqq_def
-#define Template_pqqq_def
+#ifndef McTemplateK0pqqq_def
+#define McTemplateK0pqqq_def
 ETW_INLINE
 ULONG
-Template_pqqq(
-    _In_ REGHANDLE RegHandle,
+McTemplateK0pqqq(
+    _In_ PMCGEN_TRACE_CONTEXT Context,
     _In_ PCEVENT_DESCRIPTOR Descriptor,
     _In_opt_ LPCGUID Activity,
     _In_opt_ const void *  _Arg0,
@@ -663,31 +723,31 @@ Template_pqqq(
     _In_ const unsigned int  _Arg3
     )
 {
-#define ARGUMENT_COUNT_pqqq 4
+#define McTemplateK0pqqq_ARGCOUNT 4
 
-    EVENT_DATA_DESCRIPTOR EventData[ARGUMENT_COUNT_pqqq];
+    EVENT_DATA_DESCRIPTOR EventData[McTemplateK0pqqq_ARGCOUNT + 1];
 
-    EventDataDescCreate(&EventData[0], &_Arg0, sizeof(PVOID)  );
+    EventDataDescCreate(&EventData[1],&_Arg0, sizeof(PVOID)  );
 
-    EventDataDescCreate(&EventData[1], &_Arg1, sizeof(const unsigned int)  );
+    EventDataDescCreate(&EventData[2],&_Arg1, sizeof(const unsigned int)  );
 
-    EventDataDescCreate(&EventData[2], &_Arg2, sizeof(const unsigned int)  );
+    EventDataDescCreate(&EventData[3],&_Arg2, sizeof(const unsigned int)  );
 
-    EventDataDescCreate(&EventData[3], &_Arg3, sizeof(const unsigned int)  );
+    EventDataDescCreate(&EventData[4],&_Arg3, sizeof(const unsigned int)  );
 
-    return EtwWrite(RegHandle, Descriptor, Activity, ARGUMENT_COUNT_pqqq, EventData);
+    return McGenEventWriteKM(Context, Descriptor, Activity, McTemplateK0pqqq_ARGCOUNT + 1, EventData);
 }
 #endif
 
 //
 //Template from manifest : tidPepPlatformIdleResidency
 //
-#ifndef Template_qNR0_def
-#define Template_qNR0_def
+#ifndef McTemplateK0qNR0_def
+#define McTemplateK0qNR0_def
 ETW_INLINE
 ULONG
-Template_qNR0(
-    _In_ REGHANDLE RegHandle,
+McTemplateK0qNR0(
+    _In_ PMCGEN_TRACE_CONTEXT Context,
     _In_ PCEVENT_DESCRIPTOR Descriptor,
     _In_opt_ LPCGUID Activity,
     _In_ const unsigned int  _Arg0,
@@ -695,42 +755,42 @@ Template_qNR0(
     _In_ const PVOID  _Arg1
     )
 {
-#define ARGUMENT_COUNT_qNR0 2
+#define McTemplateK0qNR0_ARGCOUNT 2
 
-    EVENT_DATA_DESCRIPTOR EventData[ARGUMENT_COUNT_qNR0];
+    EVENT_DATA_DESCRIPTOR EventData[McTemplateK0qNR0_ARGCOUNT + 1];
 
-    EventDataDescCreate(&EventData[0], &_Arg0, sizeof(const unsigned int)  );
+    EventDataDescCreate(&EventData[1],&_Arg0, sizeof(const unsigned int)  );
 
-    EventDataDescCreate(&EventData[1], _Arg1, _Arg0 * _Arg1_Len_);
+    EventDataDescCreate(&EventData[2],_Arg1, _Arg0 * _Arg1_Len_);
 
-    return EtwWrite(RegHandle, Descriptor, Activity, ARGUMENT_COUNT_qNR0, EventData);
+    return McGenEventWriteKM(Context, Descriptor, Activity, McTemplateK0qNR0_ARGCOUNT + 1, EventData);
 }
 #endif
 
 //
 //Template from manifest : tidPepPlatformIdleTransition
 //
-#ifndef Template_qq_def
-#define Template_qq_def
+#ifndef McTemplateK0qq_def
+#define McTemplateK0qq_def
 ETW_INLINE
 ULONG
-Template_qq(
-    _In_ REGHANDLE RegHandle,
+McTemplateK0qq(
+    _In_ PMCGEN_TRACE_CONTEXT Context,
     _In_ PCEVENT_DESCRIPTOR Descriptor,
     _In_opt_ LPCGUID Activity,
     _In_ const unsigned int  _Arg0,
     _In_ const unsigned int  _Arg1
     )
 {
-#define ARGUMENT_COUNT_qq 2
+#define McTemplateK0qq_ARGCOUNT 2
 
-    EVENT_DATA_DESCRIPTOR EventData[ARGUMENT_COUNT_qq];
+    EVENT_DATA_DESCRIPTOR EventData[McTemplateK0qq_ARGCOUNT + 1];
 
-    EventDataDescCreate(&EventData[0], &_Arg0, sizeof(const unsigned int)  );
+    EventDataDescCreate(&EventData[1],&_Arg0, sizeof(const unsigned int)  );
 
-    EventDataDescCreate(&EventData[1], &_Arg1, sizeof(const unsigned int)  );
+    EventDataDescCreate(&EventData[2],&_Arg1, sizeof(const unsigned int)  );
 
-    return EtwWrite(RegHandle, Descriptor, Activity, ARGUMENT_COUNT_qq, EventData);
+    return McGenEventWriteKM(Context, Descriptor, Activity, McTemplateK0qq_ARGCOUNT + 1, EventData);
 }
 #endif
 

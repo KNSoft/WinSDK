@@ -14,26 +14,6 @@ import "Windows.Data.Text.idl";
 import "Windows.Storage.idl";
 import "Windows.Storage.FileProperties.idl";
 import "Windows.Storage.Streams.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Edata2Etext_h__)")
-cpp_quote("#include <Windows.Data.Text.h>")
-cpp_quote("#endif // !defined(__windows2Edata2Etext_h__)")
-cpp_quote("#if !defined(__windows2Estorage_h__)")
-cpp_quote("#include <Windows.Storage.h>")
-cpp_quote("#endif // !defined(__windows2Estorage_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Efileproperties_h__)")
-cpp_quote("#include <Windows.Storage.FileProperties.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Efileproperties_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -263,9 +243,11 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             enum IndexerOption
             {
-                UseIndexerWhenAvailable = 0,
-                OnlyUseIndexer          = 1,
-                DoNotUseIndexer         = 2
+                UseIndexerWhenAvailable                       = 0,
+                OnlyUseIndexer                                = 1,
+                DoNotUseIndexer                               = 2,
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                OnlyUseIndexerAndOptimizeForIndexedProperties = 3
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

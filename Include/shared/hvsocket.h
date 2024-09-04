@@ -55,6 +55,16 @@ Abstract:
 //
 #define HVSOCKET_CONTAINER_PASSTHRU     0x02
 
+//
+// HVSOCKET_CONNECTED_SUSPEND:
+// Input:
+// Type: ULONG.
+// Description:
+// Set socket connected suspend flag. Non-zero value indicates the socket will not disconnect
+// on VM pause.
+//
+#define HVSOCKET_CONNECTED_SUSPEND     0x04
+
 
 //
 // Well-known GUIDs.
@@ -110,6 +120,34 @@ DEFINE_GUID(HV_GUID_LOOPBACK, 0xe0e16197, 0xdd56, 0x4a10, 0x91, 0x95, 0x5e, 0xe7
 //
 DEFINE_GUID(HV_GUID_PARENT, 0xa42e7cda, 0xd03f, 0x480c, 0x9c, 0xc2, 0xa4, 0xde, 0x20, 0xab, 0xb8, 0x78);
 
+
+//
+// HV_GUID_VSOCK_TEMPLATE:
+// 
+// Template to facilitate mapping between AF_HYPERV.ServiceId (GUID) and AF_VSOCK.port (uint32) 
+// Services offered to Linux guests must use a ServiceId that matches this template.
+//
+// Linux guests use AF_VSOCK to communicate to a Hyper-V host using Hyper-V Sockets.
+// The following mappings from cid to VmId are included in the Linux Hyper-V Socket driver:
+//      VMADDR_CID_HOST (2)                 HV_GUID_PARENT 
+//      VMADDR_CID_ANY (0xffffffff)         HV_GUID_WILDCARD 
+//
+// The Linux Hyper-V Socket driver will map the AF_VSOCK port to the Data1 value of a GUID where Data2, Data3, 
+// and Data4 match HV_GUID_VSOCK_TEMPLATE (i.e. <port>-facb-11e6-bd58-64006a7986d3)
+// Valid port mappings are 0-0x7FFFFFFF
+// Here is a table of possible mappings from port to GUID: 
+//              0                       00000000-facb-11e6-bd58-64006a7986d3
+//              1                       00000001-facb-11e6-bd58-64006a7986d3
+//              50                      00000032-facb-11e6-bd58-64006a7986d3
+//              2147483647              7fffffff-facb-11e6-bd58-64006a7986d3  
+//              
+// 00000000-facb-11e6-bd58-64006a7986d3
+//
+DEFINE_GUID(HV_GUID_VSOCK_TEMPLATE, 0x00000000, 0xfacb, 0x11e6, 0xbd, 0x58, 0x64, 0x00, 0x6a, 0x79, 0x86, 0xd3);
+
+
+
+
 #define HV_PROTOCOL_RAW 1
 
 typedef struct _SOCKADDR_HV
@@ -120,10 +158,6 @@ typedef struct _SOCKADDR_HV
      GUID ServiceId;
 }SOCKADDR_HV, *PSOCKADDR_HV;
 
-//
-// HvSocket control interface.
-//
-#define IOCTL_HVSOCKET_UPDATE_ADDRESS_INFO CTL_CODE(FILE_DEVICE_TRANSPORT, 0x01, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
 
 #define HVSOCKET_ADDRESS_FLAG_PASSTHRU 0x00000001
 
@@ -135,3 +169,4 @@ typedef struct _HVSOCKET_ADDRESS_INFO
     ULONG Flags;
 
 } HVSOCKET_ADDRESS_INFO, *PHVSOCKET_ADDRESS_INFO;
+

@@ -44,6 +44,10 @@ Revision History:
 #define _PortTraceNotification StorPortNotification
 #endif
 
+#ifdef _NTSTORPORTP_
+#define _PortTraceNotification StorPortNotification
+#endif
+
 //
 // Scsi miniport
 //
@@ -69,6 +73,10 @@ Revision History:
 #ifndef StorMoveMemory
 
 #ifdef _NTSTORPORT_
+#define StorMoveMemory  StorPortMoveMemory
+#endif
+
+#ifdef _NTSTORPORTP_
 #define StorMoveMemory  StorPortMoveMemory
 #endif
 

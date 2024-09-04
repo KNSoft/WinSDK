@@ -282,6 +282,12 @@ typedef enum _WWAN_ASYNC_GETSET_TYPE {
     WwanAsyncGetUiccSlotMapping,
     WwanAsyncSetUiccSlotMapping,
     WwanAsyncGetUiccSlotInfo,
+    WwanAsyncGetModemConfigInfo,
+    WwanAsyncGetPcoStatus,
+    WwanAsyncUiccGetReset,
+    WwanAsyncUiccSetReset,
+    WwanAsyncSetDeviceReset,
+    WwanAsyncGetCellInfo,
     WWAN_ASYNC_GETSET_TYPE_MAX
 } WWAN_ASYNC_GETSET_TYPE, *PWWAN_ASYNC_GETSET_TYPE;
 
@@ -532,7 +538,16 @@ typedef struct _WWAN_DEVICE_CAPS_EX2 {
 #define WWAN_OPTIONAL_SERVICE_CAPS_MULTI_SIM                        0x00000004
 #define WWAN_OPTIONAL_SERVICE_CAPS_SAR                              0x00000008
 #define WWAN_OPTIONAL_SERVICE_CAPS_NETWORK_BLACKLIST                0x00000010
+#endif
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3 || NDIS_SUPPORT_NDIS680)
+#define WWAN_OPTIONAL_SERVICE_CAPS_MODEM_BULK_CONFIG                0x00000020
+#define WWAN_OPTIONAL_SERVICE_CAPS_BASE_STATIONS_INFO               0x00000040
+#define WWAN_OPTIONAL_SERVICE_CAPS_PCO                              0x00000080
+#define WWAN_OPTIONAL_SERVICE_CAPS_UICC_RESET                       0x00000100
+#define WWAN_OPTIONAL_SERVICE_CAPS_DEVICE_RESET                     0x00000200
+#endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2 || NDIS_SUPPORT_NDIS670)
 typedef struct _WWAN_DEVICE_CAPS_EX {
     WWAN_DEVICE_TYPE    WwanDeviceType;
     WWAN_CELLULAR_CLASS WwanCellularClass;
@@ -1079,13 +1094,6 @@ typedef enum _WWAN_CONTEXT_LTE_ATTACH_ROAMING_CONTROL
     WwanContextLteAttachRoamingControlMaximum
 } WWAN_CONTEXT_LTE_ATTACH_ROAMING_CONTROL, *PWWAN_CONTEXT_LTE_ATTACH_ROAMING_CONTROL;
 
-typedef enum _WWAN_LTE_ATTACH_CONTEXT_MODE
-{
-    WwanLteAttachContextModeNetwork             = 0,
-    WwanLteAttachContextModeDevice,
-    WwanLteAttachContextModeMaximum
-} WWAN_LTE_ATTACH_CONTEXT_MODE, *PWWAN_LTE_ATTACH_CONTEXT_MODE;
-
 typedef enum _WWAN_CONTEXT_LTE_ATTACH_STATE
 {
     WwanContextLteAttachStateDetached          = 0,
@@ -1127,7 +1135,7 @@ typedef struct _WWAN_CONTEXT_V2 {
     WWAN_CONTEXT_ROAMING_CONTROL        Roaming;
     WWAN_CONTEXT_MEDIA_TYPE             MediaType;
     WWAN_CONFIGURATION_SOURCE           Source;
-    WWAN_LTE_ATTACH_CONTEXT_MODE        LteAttachContextMode;
+    int                                 Reserved;   // reserve this field to match the structure size released in RS2, may be used for other purpose in future release
 } WWAN_CONTEXT_V2, *PWWAN_CONTEXT_V2;
 
 typedef struct _WWAN_SET_CONTEXT_V2
@@ -1139,7 +1147,7 @@ typedef struct _WWAN_SET_CONTEXT_V2
     WWAN_CONTEXT_ROAMING_CONTROL        Roaming;
     WWAN_CONTEXT_MEDIA_TYPE             MediaType;
     WWAN_CONFIGURATION_SOURCE           Source;
-    WWAN_LTE_ATTACH_CONTEXT_MODE        ContextMode;
+    int                                 Reserved;   // reserve this field to match the structure size released in RS2, may be used for other purpose in future release
 } WWAN_SET_CONTEXT_V2, *PWWAN_SET_CONTEXT_V2;
 
 #ifndef TotalRoamingConditions
@@ -1642,6 +1650,10 @@ typedef enum _WWAN_UICCSLOT_STATE {
     WwanUiccSlotStateNotReady,
     WwanUiccSlotStateActive,
     WwanUiccSlotStateError,
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+    WwanUiccSlotStateActiveEsim,
+    WwanUiccSlotStateActiveEsimNoProfile,
+#endif
     WwanUiccSlotStateMax
 } WWAN_UICCSLOT_STATE, *PWWAN_UICCSLOT_STATE;
 
@@ -1707,7 +1719,7 @@ typedef struct _WWAN_NITZ_INFO {
 
 typedef struct _WWAN_NETWORK_IDLE_HINT
 {
-    BOOLEAN      IsEnabled;
+    ULONG      IsEnabled;
 } WWAN_NETWORK_IDLE_HINT, *PWWAN_NETWORK_IDLE_HINT;
 
 #endif
@@ -1892,6 +1904,266 @@ typedef struct _WWAN_NETWORK_BLACKLIST_INFO
 } WWAN_NETWORK_BLACKLIST_INFO, *PWWAN_NETWORK_BLACKLIST_INFO;
 
 #endif // ( _WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD || NTDDI_VERSION >= NTDDI_WIN10_RS2 || NDIS_SUPPORT_NDIS670 )
+
+#if ( _WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD || NTDDI_VERSION >= NTDDI_WIN10_RS3 || NDIS_SUPPORT_NDIS680 )
+
+typedef enum _WWAN_MODEM_CONFIG_MODE
+{
+    WwanModemConfigModeUnknown = 0,
+    WwanModemConfigModeModemCentric,
+    WwanModemConfigModeHostCentric,
+    WwanModemConfigModeMax
+} WWAN_MODEM_CONFIG_MODE, *PWWAN_MODEM_CONFIG_MODE;
+
+typedef enum _WWAN_MODEM_CONFIG_REASON
+{
+    WwanModemConfigReasonNone = 0,
+    WwanModemConfigReasonSIMDetected,
+    WwanModemConfigReasonSIMRemoved,
+    WwanModemConfigReasonNOSIM,
+    WwanModemConfigReasonIMSIReset,
+    WwanModemConfigReasonActivationFailure,
+    WwanModemConfigReasonConfigFileUpdate,
+    WwanModemConfigReasonModemReset,
+    WwanModemConfigReasonModemRecovery,
+    WwanModemConfigReasonMax
+} WWAN_MODEM_CONFIG_REASON, *PWWAN_MODEM_CONFIG_REASON;
+
+// WWAN_MODEM_CONFIG_STATE definitions are used by modem to inform its modem condifuration state.
+
+typedef enum _WWAN_MODEM_CONFIG_STATE {
+    WwanModemConfigStateUnknown = 0,
+//  If OID query ask the state and modem is in middle of selection/activation process, it will return ConfigStatePending state
+//  The modem is not allowed to send this as part of unsolicted indication
+    WwanModemConfigStatePending,
+//  If modem selection process is not able to identify MO specific config file, the default config file is used.
+//  Once activation is completed, the modem will inform OS with unsolicted indication where config state default is set
+    WwanModemConfigStateActivated,
+    WwanModemConfigStateMax
+} WWAN_MODEM_CONFIG_STATE, *PWWAN_MODEM_CONFIG_STATE;
+
+typedef struct _WWAN_MODEM_CONFIG_STATUS {
+    WWAN_MODEM_CONFIG_STATE     ConfigState;
+    WWAN_MODEM_CONFIG_REASON    ConfigReason;
+    ULONG                       PreviousConfigID;
+    ULONG                       CurrentConfigID;
+    DWORD                       DefaultOrNot;
+} WWAN_MODEM_CONFIG_STATUS, *PWWAN_MODEM_CONFIG_STATUS;
+
+typedef struct _WWAN_MODEM_CONFIG_INFO
+{
+    WWAN_MODEM_CONFIG_STATUS    ConfigStatus;
+    WWAN_MODEM_CONFIG_MODE      ConfigMode;
+} WWAN_MODEM_CONFIG_INFO, *PWWAN_MODEM_CONFIG_INFO;
+
+// According to 3GPP TS24.008 spec, the maximum length of PCO structure is 253 octets
+// Make the buffer size for PCO data 256 bytes
+#define WWAN_PCO_OCT_BUF_LEN    256
+
+typedef enum _WWAN_PCO_TYPE {
+    WwanPcoTypeComplete = 0,  // Specifies that the complete PCO structure will be passed up
+    WwanPcoTypePartial,       // Specifies that the modem will only be passing up a subset of PCO structures which is received from the network
+    WwanPcoTypeMax
+}  WWAN_PCO_TYPE, *PWWAN_PCO_TYPE;
+
+typedef struct _WWAN_PCO_VALUE {
+    ULONG           Size;  // PCO data size
+    WWAN_PCO_TYPE   Type;
+    BYTE            PcoData[WWAN_PCO_OCT_BUF_LEN];
+}  WWAN_PCO_VALUE, *PWWAN_PCO_VALUE;
+
+typedef enum _WWAN_UICC_PASSTHROUGH_ACTION {
+    WwanUiccPassThroughDisable = 0,
+    WwanUiccPassThroughEnable = 1,
+    WwanUiccPassThroughActionMaximum
+} WWAN_UICC_PASSTHROUGH_ACTION, *PWWAN_UICC_PASSTHROUGH_ACTION;
+
+typedef enum _WWAN_UICC_PASSTHROUGH_STATUS {
+    WwanUiccPassThroughDisabled = 0,
+    WwanUiccPassThroughEnabled = 1,
+    WwanUiccPassThroughStatusMaximum
+} WWAN_UICC_PASSTHROUGH_STATUS, *PWWAN_UICC_PASSTHROUGH_STATUS;
+
+typedef struct _WWAN_SET_UICC_RESET {
+    WWAN_UICC_PASSTHROUGH_ACTION    PassThroughAction;
+} WWAN_SET_UICC_RESET, *PWWAN_SET_UICC_RESET;
+
+typedef struct _WWAN_UICC_RESET_INFO {
+    WWAN_UICC_PASSTHROUGH_STATUS    PassThroughStatus;
+} WWAN_UICC_RESET_INFO, *PWWAN_UICC_RESET_INFO;
+
+typedef struct _WWAN_BASE_STATIONS_INFO_REQ {
+    ULONG       MaxGSMCount;
+    ULONG       MaxUMTSCount;
+    ULONG       MaxTDSCDMACount;
+    ULONG       MaxLTECount;
+    ULONG       MaxCDMACount;
+} WWAN_BASE_STATIONS_INFO_REQ, *PWWAN_BASE_STATIONS_INFO_REQ;
+
+typedef struct _WWAN_BASE_STATIONS_INFO {
+    ULONG       SystemType;             // Bitmask of WWAN_DATA_CLASS_*
+    ULONG       GSMServingCellOffset;
+    ULONG       GSMServingCellSize;
+    ULONG       UMTSServingCellOffset;
+    ULONG       UMTSServingCellSize;
+    ULONG       TDSCDMAServingCellOffset;
+    ULONG       TDSCDMAServingCellSize;
+    ULONG       LTEServingCellOffset;
+    ULONG       LTEServingCellSize;
+    ULONG       GSMNmrOffset;
+    ULONG       GSMNmrSize;
+    ULONG       UMTSMrlOffset;
+    ULONG       UMTSMrlSize;
+    ULONG       TDSCDMAMrlOffset;
+    ULONG       TDSCDMAMrlSize;
+    ULONG       LTEMrlOffset;
+    ULONG       LTEMrlSize;
+    ULONG       CDMAMrlOffset;
+    ULONG       CDMAMrlSize;
+    BYTE        BaseStationsData[ANYSIZE_ARRAY];
+} WWAN_BASE_STATIONS_INFO, *PWWAN_BASE_STATIONS_INFO;
+
+typedef struct _WWAN_GSM_SERVING_CELL_INFO {
+    ULONG       ProviderIdOffset;
+    ULONG       ProviderIdSize;
+    ULONG       LocationAreaCode;
+    ULONG       CellId;
+    ULONG       TimingAdvance;
+    ULONG       ARFCN;
+    ULONG       BaseStationId;
+    ULONG       RxLevel;
+    BYTE        Data[ANYSIZE_ARRAY];
+} WWAN_GSM_SERVING_CELL_INFO, *PWWAN_GSM_SERVING_CELL_INFO;
+
+typedef struct _WWAN_GSM_NMR_INFO {
+    ULONG       ProviderIdOffset;
+    ULONG       ProviderIdSize;
+    ULONG       LocationAreaCode;
+    ULONG       CellId;
+    ULONG       ARFCN;
+    ULONG       BaseStationId;
+    ULONG       RxLevel;
+    BYTE        Data[ANYSIZE_ARRAY];
+} WWAN_GSM_NMR_INFO, *PWWAN_GSM_NMR_INFO;
+
+typedef struct _WWAN_GSM_NMR {
+    ULONG       ElementCount;
+    BYTE        GSMNmr[ANYSIZE_ARRAY];
+} WWAN_GSM_NMR, *PWWAN_GSM_NMR;
+
+typedef struct _WWAN_UMTS_SERVING_CELL_INFO {
+    ULONG       ProviderIdOffset;
+    ULONG       ProviderIdSize;
+    ULONG       LocationAreaCode;
+    ULONG       CellId;
+    ULONG       FrequencyInfoUL;
+    ULONG       FrequencyInfoDL;
+    ULONG       FrequencyInfoNT;
+    ULONG       UARFCN;
+    ULONG       PrimaryScramblingCode;
+    ULONG       RSCP;
+    ULONG       ECNO;
+    ULONG       PathLoss;
+    BYTE        Data[ANYSIZE_ARRAY];
+} WWAN_UMTS_SERVING_CELL_INFO, *PWWAN_UMTS_SERVING_CELL_INFO;
+
+typedef struct _WWAN_UMTS_MRL_INFO {
+    ULONG       ProviderIdOffset;
+    ULONG       ProviderIdSize;
+    ULONG       LocationAreaCode;
+    ULONG       CellId;
+    ULONG       UARFCN;
+    ULONG       PrimaryScramblingCode;
+    ULONG       RSCP;
+    ULONG       ECNO;
+    ULONG       PathLoss;
+    BYTE        Data[ANYSIZE_ARRAY];
+} WWAN_UMTS_MRL_INFO, *PWWAN_UMTS_MRL_INFO;
+
+typedef struct _WWAN_UMTS_MRL {
+    ULONG       ElementCount;
+    BYTE        UMTSMrl[ANYSIZE_ARRAY];
+} WWAN_UMTS_MRL, *PWWAN_UMTS_MRL;
+
+typedef struct _WWAN_TDSCDMA_SERVING_CELL_INFO {
+    ULONG       ProviderIdOffset;
+    ULONG       ProviderIdSize;
+    ULONG       LocationAreaCode;
+    ULONG       CellId;
+    ULONG       UARFCN;
+    ULONG       CellParameterId;
+    ULONG       TimingAdvance;
+    ULONG       RSCP;
+    ULONG       PathLoss;
+    BYTE        Data[ANYSIZE_ARRAY];
+} WWAN_TDSCDMA_SERVING_CELL_INFO, *PWWAN_TDSCDMA_SERVING_CELL_INFO;
+
+typedef struct _WWAN_TDSCDMA_MRL_INFO {
+    ULONG       ProviderIdOffset;
+    ULONG       ProviderIdSize;
+    ULONG       LocationAreaCode;
+    ULONG       CellId;
+    ULONG       UARFCN;
+    ULONG       CellParameterId;
+    ULONG       TimingAdvance;
+    ULONG       RSCP;
+    ULONG       PathLoss;
+    BYTE        Data[ANYSIZE_ARRAY];
+} WWAN_TDSCDMA_MRL_INFO, *PWWAN_TDSCDMA_MRL_INFO;
+
+typedef struct _WWAN_TDSCDMA_MRL {
+    ULONG       ElementCount;
+    BYTE        TDSCDMAMrl[ANYSIZE_ARRAY];
+} WWAN_TDSCDMA_MRL, *PWWAN_TDSCDMA_MRL;
+
+typedef struct _WWAN_LTE_SERVING_CELL_INFO {
+    ULONG       ProviderIdOffset;
+    ULONG       ProviderIdSize;
+    ULONG       CellId;
+    ULONG       EARFCN;
+    ULONG       PhysicalCellId;
+    ULONG       TAC;
+    ULONG       RSRP;
+    ULONG       RSRQ;
+    ULONG       TimingAdvance;
+    BYTE        Data[ANYSIZE_ARRAY];
+} WWAN_LTE_SERVING_CELL_INFO, *PWWAN_LTE_SERVING_CELL_INFO;
+
+typedef struct _WWAN_LTE_MRL_INFO {
+    ULONG       ProviderIdOffset;
+    ULONG       ProviderIdSize;
+    ULONG       CellId;
+    ULONG       EARFCN;
+    ULONG       PhysicalCellId;
+    ULONG       TAC;
+    ULONG       RSRP;
+    ULONG       RSRQ;
+    BYTE        Data[ANYSIZE_ARRAY];
+} WWAN_LTE_MRL_INFO, *PWWAN_LTE_MRL_INFO;
+
+typedef struct _WWAN_LTE_MRL {
+    ULONG       ElementCount;
+    BYTE        LTEMrl[ANYSIZE_ARRAY];
+} WWAN_LTE_MRL, *PWWAN_LTE_MRL;
+
+typedef struct _WWAN_CDMA_MRL_INFO {
+    ULONG       ServingCellFlag;
+    ULONG       NID;
+    ULONG       SID;
+    ULONG       BaseStationId;
+    ULONG       BaseLatitude;
+    ULONG       BaseLongitude;
+    ULONG       RefPn;
+    ULONG       GPSSeconds;
+    ULONG       PilotStrength;
+} WWAN_CDMA_MRL_INFO, *PWWAN_CDMA_MRL_INFO;
+
+typedef struct _WWAN_CDMA_MRL {
+    ULONG       ElementCount;
+    BYTE        CDMAMrl[ANYSIZE_ARRAY];
+} WWAN_CDMA_MRL, *PWWAN_CDMA_MRL;
+
+#endif // ( _WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD || NTDDI_VERSION >= NTDDI_WIN10_RS3 || NDIS_SUPPORT_NDIS680 )
 
 #if _MSC_VER >= 1200  
 #pragma warning(pop)  

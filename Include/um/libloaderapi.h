@@ -25,6 +25,8 @@
 /* APISET_NAME: api-ms-win-core-libraryloader-l1 */
 /* APISET_TAG: public */
 
+
+
 #if !defined(RC_INVOKED)
 
 #ifndef _APISET_LIBLOADER_VER
@@ -35,9 +37,9 @@
 #define _APISET_LIBLOADER_VER 0x0201
 #elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WINBLUE
 #define _APISET_LIBLOADER_VER 0x0200
-#elif _APISET_TARGET_VERSION == _APISET_TARGET_VERSION_WIN8
+#elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN8
 #define _APISET_LIBLOADER_VER 0x0101
-#elif _APISET_TARGET_VERSION == _APISET_TARGET_VERSION_WIN7
+#elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN7
 #define _APISET_LIBLOADER_VER 0x0100
 #endif
 #endif
@@ -571,7 +573,7 @@ SetDefaultDllDirectories(
 // begin_1_1
 
 
-#if !defined(_CONTRACT_GEN) || (_APISET_LIBLOADER_VER >= 0x0100)
+#if !defined(_CONTRACT_GEN) || (_APISET_LIBLOADER_VER >= 0x0101)
 
 #pragma region Desktop Family or OneCore Family
 
@@ -675,7 +677,7 @@ EnumResourceTypesExW(
 #endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 #pragma endregion
 
-#endif // !defined(_CONTRACT_GEN) || (_APISET_LIBLOADER_VER >= 0x0100)
+#endif // !defined(_CONTRACT_GEN) || (_APISET_LIBLOADER_VER >= 0x0101)
 
 // end_1_1
 

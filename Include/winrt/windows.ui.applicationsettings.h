@@ -1,12 +1,9 @@
+/* Header file automatically generated from windows.ui.applicationsettings.idl */
+/*
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ */
 
-
-/* this ALWAYS GENERATED file contains the definitions for the interfaces */
-
-
- /* File created by MIDL compiler version 8.01.0622 */
-/* @@MIDL_FILE_HEADING(  ) */
-
-
+#pragma warning( disable: 4049 )  /* more than 64k source lines */
 
 /* verify that the <rpcndr.h> version is high enough to compile this file*/
 #ifndef __REQUIRED_RPCNDR_H_VERSION__
@@ -18,1950 +15,2910 @@
 #define __REQUIRED_RPCSAL_H_VERSION__ 100
 #endif
 
-#include "rpc.h"
-#include "rpcndr.h"
+#include <rpc.h>
+#include <rpcndr.h>
 
 #ifndef __RPCNDR_H_VERSION__
 #error this stub requires an updated version of <rpcndr.h>
 #endif /* __RPCNDR_H_VERSION__ */
 
 #ifndef COM_NO_WINDOWS_H
-#include "windows.h"
-#include "ole2.h"
+#include <windows.h>
+#include <ole2.h>
 #endif /*COM_NO_WINDOWS_H*/
-
 #ifndef __windows2Eui2Eapplicationsettings_h__
 #define __windows2Eui2Eapplicationsettings_h__
+#ifndef __windows2Eui2Eapplicationsettings_p_h__
+#define __windows2Eui2Eapplicationsettings_p_h__
 
-#if defined(_MSC_VER) && (_MSC_VER >= 1020)
+
 #pragma once
+
+//
+// Deprecated attribute support
+//
+
+#pragma push_macro("DEPRECATED")
+#undef DEPRECATED
+
+#if !defined(DISABLE_WINRT_DEPRECATION)
+#if defined(__cplusplus)
+#if __cplusplus >= 201402
+#define DEPRECATED(x) [[deprecated(x)]]
+#elif defined(_MSC_VER)
+#if _MSC_VER >= 1900
+#define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
+#else
+#define DEPRECATED(x) __declspec(deprecated(x))
+#define DEPRECATEDENUMERATOR(x)
+#endif // _MSC_VER >= 1900
+#else // Not Standard C++ or MSVC, ignore the construct.
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif  // C++ deprecation
+#else // C - disable deprecation
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif
+#else // Deprecation is disabled
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif  /* DEPRECATED */
+
+// Disable Deprecation for this header, MIDL verifies that cross-type access is acceptable
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#else
+#pragma warning(push)
+#pragma warning(disable: 4996)
 #endif
 
-/* Forward Declarations */ 
-
-#ifndef ____FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand_FWD_DEFINED__
-#define ____FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand_FWD_DEFINED__
-typedef interface __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand;
-
-#endif 	/* ____FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand_FWD_DEFINED__ */
-
-
-#ifndef ____FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand_FWD_DEFINED__
-#define ____FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand_FWD_DEFINED__
-typedef interface __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand;
-
-#endif 	/* ____FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand_FWD_DEFINED__ */
+#pragma push_macro("MIDL_CONST_ID")
+#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
+#define MIDL_CONST_ID constexpr const
+#else
+#define MIDL_CONST_ID const __declspec(selectany)
+#endif
 
 
-#ifndef ____FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand_FWD_DEFINED__
-#define ____FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand_FWD_DEFINED__
-typedef interface __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand;
+//  API Contract Inclusion Definitions
+#if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
+#if !defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATEDEVENTSCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATEDEVENTSCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATEDEVENTSCONTRACT_VERSION)
 
-#endif 	/* ____FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand_FWD_DEFINED__ */
+#if !defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATIONCAMERASETTINGSCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATIONCAMERASETTINGSCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATIONCAMERASETTINGSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_CONTACTACTIVATEDEVENTSCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_ACTIVATION_CONTACTACTIVATEDEVENTSCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_CONTACTACTIVATEDEVENTSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_WEBUISEARCHACTIVATEDEVENTSCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_ACTIVATION_WEBUISEARCHACTIVATEDEVENTSCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_WEBUISEARCHACTIVATEDEVENTSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_BACKGROUND_BACKGROUNDALARMAPPLICATIONCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_BACKGROUND_BACKGROUNDALARMAPPLICATIONCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_BACKGROUND_BACKGROUNDALARMAPPLICATIONCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
+
+#if !defined(WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION)
+#define WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
+
+#if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
+
+#if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
+#define WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
+#define WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
+
+#if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
+#define WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
+
+#if !defined(WINDOWS_GLOBALIZATION_GLOBALIZATIONJAPANESEPHONETICANALYZERCONTRACT_VERSION)
+#define WINDOWS_GLOBALIZATION_GLOBALIZATIONJAPANESEPHONETICANALYZERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_GLOBALIZATION_GLOBALIZATIONJAPANESEPHONETICANALYZERCONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_CAPTURE_APPBROADCASTCONTRACT_VERSION)
+#define WINDOWS_MEDIA_CAPTURE_APPBROADCASTCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_MEDIA_CAPTURE_APPBROADCASTCONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_CAPTURE_APPCAPTURECONTRACT_VERSION)
+#define WINDOWS_MEDIA_CAPTURE_APPCAPTURECONTRACT_VERSION 0x40000
+#endif // defined(WINDOWS_MEDIA_CAPTURE_APPCAPTURECONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_CAPTURE_APPCAPTUREMETADATACONTRACT_VERSION)
+#define WINDOWS_MEDIA_CAPTURE_APPCAPTUREMETADATACONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_CAPTURE_APPCAPTUREMETADATACONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_CAPTURE_CAMERACAPTUREUICONTRACT_VERSION)
+#define WINDOWS_MEDIA_CAPTURE_CAMERACAPTUREUICONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_CAPTURE_CAMERACAPTUREUICONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_CAPTURE_GAMEBARCONTRACT_VERSION)
+#define WINDOWS_MEDIA_CAPTURE_GAMEBARCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_CAPTURE_GAMEBARCONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_DEVICES_CALLCONTROLCONTRACT_VERSION)
+#define WINDOWS_MEDIA_DEVICES_CALLCONTROLCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_DEVICES_CALLCONTROLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_MEDIACONTROLCONTRACT_VERSION)
+#define WINDOWS_MEDIA_MEDIACONTROLCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_MEDIACONTROLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
+#define WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+
+#if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
+#define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
+
+#if !defined(WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION)
+#define WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION)
+
+#if !defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
+#define WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION 0x50000
+#endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
+
+#if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
+
+#if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
+
+#if !defined(WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION)
+#define WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
+#define WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_UI_VIEWMANAGEMENT_VIEWMANAGEMENTVIEWSCALINGCONTRACT_VERSION)
+#define WINDOWS_UI_VIEWMANAGEMENT_VIEWMANAGEMENTVIEWSCALINGCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_UI_VIEWMANAGEMENT_VIEWMANAGEMENTVIEWSCALINGCONTRACT_VERSION)
+
+#if !defined(WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION)
+#define WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION)
+
+#endif // defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 
 
-#ifndef ____FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand_FWD_DEFINED__
-#define ____FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand_FWD_DEFINED__
-typedef interface __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand;
+// Header files for imported files
+#include "inspectable.h"
+#include "AsyncInfo.h"
+#include "EventToken.h"
+#include "windowscontracts.h"
+#include "Windows.Foundation.h"
+#include "Windows.Security.Credentials.h"
+#include "Windows.UI.Popups.h"
+// Importing Collections header
+#include <windows.foundation.collections.h>
 
-#endif 	/* ____FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand_FWD_DEFINED__ */
-
-
-#ifndef ____FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_FWD_DEFINED__
-#define ____FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_FWD_DEFINED__
-typedef interface __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand;
-
-#endif 	/* ____FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_FWD_DEFINED__ */
-
-
-#ifndef ____FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_FWD_DEFINED__
-#define ____FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_FWD_DEFINED__
-typedef interface __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand;
-
-#endif 	/* ____FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_FWD_DEFINED__ */
-
-
-#ifndef ____FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_FWD_DEFINED__
-#define ____FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_FWD_DEFINED__
-typedef interface __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand;
-
-#endif 	/* ____FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_FWD_DEFINED__ */
-
-
-#ifndef ____FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_FWD_DEFINED__
-#define ____FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_FWD_DEFINED__
-typedef interface __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand;
-
-#endif 	/* ____FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_FWD_DEFINED__ */
-
-
-#ifndef ____FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand_FWD_DEFINED__
-#define ____FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand_FWD_DEFINED__
-typedef interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand;
-
-#endif 	/* ____FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand_FWD_DEFINED__ */
-
-
-#ifndef ____FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand_FWD_DEFINED__
-#define ____FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand_FWD_DEFINED__
-typedef interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand;
-
-#endif 	/* ____FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand_FWD_DEFINED__ */
-
-
-#ifndef ____FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_FWD_DEFINED__
-#define ____FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_FWD_DEFINED__
-typedef interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand;
-
-#endif 	/* ____FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_FWD_DEFINED__ */
-
-
-#ifndef ____FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_FWD_DEFINED__
-#define ____FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_FWD_DEFINED__
-typedef interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand;
-
-#endif 	/* ____FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_FWD_DEFINED__ */
-
-
-#ifndef ____FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand_FWD_DEFINED__
-#define ____FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand_FWD_DEFINED__
-typedef interface __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand;
-
-#endif 	/* ____FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand_FWD_DEFINED__ */
-
-
-#ifndef ____FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand_FWD_DEFINED__
-#define ____FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand_FWD_DEFINED__
-typedef interface __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand;
-
-#endif 	/* ____FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand_FWD_DEFINED__ */
-
-
-#ifndef ____FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_FWD_DEFINED__
-#define ____FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_FWD_DEFINED__
-typedef interface __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand;
-
-#endif 	/* ____FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_FWD_DEFINED__ */
-
-
-#ifndef ____FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_FWD_DEFINED__
-#define ____FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_FWD_DEFINED__
-typedef interface __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand;
-
-#endif 	/* ____FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_FWD_DEFINED__ */
-
-
-#ifndef ____FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__
-#define ____FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__
-typedef interface __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs;
-
-#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__ */
-
-
-#ifndef ____FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__
-#define ____FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__
-typedef interface __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs;
-
-#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__ */
-
-
+#if defined(__cplusplus) && !defined(CINTERFACE)
+/* Forward Declarations */
 #ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 interface ICredentialCommandCredentialDeletedHandler;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler ABI::Windows::UI::ApplicationSettings::ICredentialCommandCredentialDeletedHandler
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 interface IWebAccountCommandInvokedHandler;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler ABI::Windows::UI::ApplicationSettings::IWebAccountCommandInvokedHandler
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 interface IWebAccountProviderCommandInvokedHandler;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommandInvokedHandler
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 interface IAccountsSettingsPane;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPane
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 interface IAccountsSettingsPaneCommandsRequestedEventArgs;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommandsRequestedEventArgs
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 interface IAccountsSettingsPaneEventDeferral;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPaneEventDeferral
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 interface IAccountsSettingsPaneStatics;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2 __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 interface IAccountsSettingsPaneStatics2;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2 ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics2
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 interface ICredentialCommand;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand ABI::Windows::UI::ApplicationSettings::ICredentialCommand
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 interface ICredentialCommandFactory;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory ABI::Windows::UI::ApplicationSettings::ICredentialCommandFactory
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 interface ISettingsCommandFactory;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory ABI::Windows::UI::ApplicationSettings::ISettingsCommandFactory
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 interface ISettingsCommandStatics;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics ABI::Windows::UI::ApplicationSettings::ISettingsCommandStatics
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 interface ISettingsPane;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane ABI::Windows::UI::ApplicationSettings::ISettingsPane
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 interface ISettingsPaneCommandsRequest;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest ABI::Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequest
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 interface ISettingsPaneCommandsRequestedEventArgs;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs ABI::Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequestedEventArgs
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 interface ISettingsPaneStatics;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics ABI::Windows::UI::ApplicationSettings::ISettingsPaneStatics
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 interface IWebAccountCommand;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand ABI::Windows::UI::ApplicationSettings::IWebAccountCommand
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 interface IWebAccountCommandFactory;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory ABI::Windows::UI::ApplicationSettings::IWebAccountCommandFactory
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 interface IWebAccountInvokedArgs;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs ABI::Windows::UI::ApplicationSettings::IWebAccountInvokedArgs
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 interface IWebAccountProviderCommand;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 interface IWebAccountProviderCommandFactory;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommandFactory
 
-#endif /* __cplusplus */
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_FWD_DEFINED__
 
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_FWD_DEFINED__ */
+// Parameterized interface forward declarations (C++)
 
-
-/* header files for imported files */
-#include "inspectable.h"
-#include "AsyncInfo.h"
-#include "EventToken.h"
-#include "Windows.Foundation.h"
-#include "Windows.Security.Credentials.h"
-
-#ifdef __cplusplus
-extern "C"{
-#endif 
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0000 */
-/* [local] */ 
-
-#ifdef __cplusplus
-} /*extern "C"*/ 
-#endif
-#include <windows.foundation.collections.h>
-#ifdef __cplusplus
-extern "C" {
-#endif
-#ifdef __cplusplus
+// Collection interface definitions
 namespace ABI {
-namespace Windows {
-namespace UI {
-namespace ApplicationSettings {
-class CredentialCommand;
-} /*ApplicationSettings*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
-
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace UI {
-namespace ApplicationSettings {
-interface ICredentialCommand;
-} /*ApplicationSettings*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                class CredentialCommand;
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
 
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0000 */
-/* [local] */ 
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0000_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4660 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4660 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4660_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4660_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0001 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand_USE
 #define DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("9f1177f1-85bb-5cd0-9b08-a0b47a764c75"))
-IIterator<ABI::Windows::UI::ApplicationSettings::CredentialCommand*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::CredentialCommand*, ABI::Windows::UI::ApplicationSettings::ICredentialCommand*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterator`1<Windows.UI.ApplicationSettings.CredentialCommand>"; }
+IIterator<ABI::Windows::UI::ApplicationSettings::CredentialCommand*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::CredentialCommand*, ABI::Windows::UI::ApplicationSettings::ICredentialCommand*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.UI.ApplicationSettings.CredentialCommand>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterator<ABI::Windows::UI::ApplicationSettings::CredentialCommand*> __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand_t;
-#define ____FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand_FWD_DEFINED__
 #define __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::ApplicationSettings::ICredentialCommand*>
+//#define __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::ApplicationSettings::ICredentialCommand*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0001 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0001_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4661 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4661 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4661_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4661_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0002 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand_USE
 #define DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("883ed18d-4dbb-58f2-8fd2-e4b018509553"))
-IIterable<ABI::Windows::UI::ApplicationSettings::CredentialCommand*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::CredentialCommand*, ABI::Windows::UI::ApplicationSettings::ICredentialCommand*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterable`1<Windows.UI.ApplicationSettings.CredentialCommand>"; }
+IIterable<ABI::Windows::UI::ApplicationSettings::CredentialCommand*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::CredentialCommand*, ABI::Windows::UI::ApplicationSettings::ICredentialCommand*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.UI.ApplicationSettings.CredentialCommand>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterable<ABI::Windows::UI::ApplicationSettings::CredentialCommand*> __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand_t;
-#define ____FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand_FWD_DEFINED__
 #define __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::ApplicationSettings::ICredentialCommand*>
+//#define __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::ApplicationSettings::ICredentialCommand*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand_USE */
-#ifdef __cplusplus
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
 namespace ABI {
-namespace Windows {
-namespace UI {
-namespace ApplicationSettings {
-class SettingsCommand;
-} /*ApplicationSettings*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                class SettingsCommand;
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
 
-#ifdef __cplusplus
+#ifndef ____x_ABI_CWindows_CUI_CPopups_CIUICommand_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CPopups_CIUICommand_FWD_DEFINED__
 namespace ABI {
-namespace Windows {
-namespace UI {
-namespace Popups {
-interface IUICommand;
-} /*Popups*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace UI {
+            namespace Popups {
+                interface IUICommand;
+            } /* Windows */
+        } /* UI */
+    } /* Popups */} /* ABI */
+#define __x_ABI_CWindows_CUI_CPopups_CIUICommand ABI::Windows::UI::Popups::IUICommand
+
+#endif // ____x_ABI_CWindows_CUI_CPopups_CIUICommand_FWD_DEFINED__
 
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0002 */
-/* [local] */ 
-
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0002_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4662 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4662 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4662_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4662_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0003 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand_USE
 #define DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("2f071c24-4a58-5a00-a294-c7162e98c2a0"))
-IIterator<ABI::Windows::UI::ApplicationSettings::SettingsCommand*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::SettingsCommand*, ABI::Windows::UI::Popups::IUICommand*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterator`1<Windows.UI.ApplicationSettings.SettingsCommand>"; }
+IIterator<ABI::Windows::UI::ApplicationSettings::SettingsCommand*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::SettingsCommand*, ABI::Windows::UI::Popups::IUICommand*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.UI.ApplicationSettings.SettingsCommand>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterator<ABI::Windows::UI::ApplicationSettings::SettingsCommand*> __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand_t;
-#define ____FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand_FWD_DEFINED__
 #define __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Popups::IUICommand*>
+//#define __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Popups::IUICommand*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0003 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0003_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4663 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4663 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4663_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4663_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0004 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand_USE
 #define DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("6308e7e8-cb85-5339-a3e9-9a7500d19c68"))
-IIterable<ABI::Windows::UI::ApplicationSettings::SettingsCommand*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::SettingsCommand*, ABI::Windows::UI::Popups::IUICommand*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterable`1<Windows.UI.ApplicationSettings.SettingsCommand>"; }
+IIterable<ABI::Windows::UI::ApplicationSettings::SettingsCommand*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::SettingsCommand*, ABI::Windows::UI::Popups::IUICommand*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.UI.ApplicationSettings.SettingsCommand>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterable<ABI::Windows::UI::ApplicationSettings::SettingsCommand*> __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand_t;
-#define ____FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand_FWD_DEFINED__
 #define __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Popups::IUICommand*>
+//#define __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Popups::IUICommand*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand_USE */
-#ifdef __cplusplus
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
 namespace ABI {
-namespace Windows {
-namespace UI {
-namespace ApplicationSettings {
-class WebAccountCommand;
-} /*ApplicationSettings*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
-
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace UI {
-namespace ApplicationSettings {
-interface IWebAccountCommand;
-} /*ApplicationSettings*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                class WebAccountCommand;
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
 
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0004 */
-/* [local] */ 
-
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0004_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4664 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4664 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4664_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4664_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0005 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_USE
 #define DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("8cbb62b6-bd9c-5486-9d14-9cc4627b32d4"))
-IIterator<ABI::Windows::UI::ApplicationSettings::WebAccountCommand*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::WebAccountCommand*, ABI::Windows::UI::ApplicationSettings::IWebAccountCommand*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterator`1<Windows.UI.ApplicationSettings.WebAccountCommand>"; }
+IIterator<ABI::Windows::UI::ApplicationSettings::WebAccountCommand*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::WebAccountCommand*, ABI::Windows::UI::ApplicationSettings::IWebAccountCommand*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.UI.ApplicationSettings.WebAccountCommand>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterator<ABI::Windows::UI::ApplicationSettings::WebAccountCommand*> __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_t;
-#define ____FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_FWD_DEFINED__
 #define __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::ApplicationSettings::IWebAccountCommand*>
+//#define __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::ApplicationSettings::IWebAccountCommand*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0005 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0005_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4665 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4665 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4665_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4665_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0006 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_USE
 #define DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("bd0d999c-b2ba-51b2-bcc0-d4a5cd821555"))
-IIterable<ABI::Windows::UI::ApplicationSettings::WebAccountCommand*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::WebAccountCommand*, ABI::Windows::UI::ApplicationSettings::IWebAccountCommand*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterable`1<Windows.UI.ApplicationSettings.WebAccountCommand>"; }
+IIterable<ABI::Windows::UI::ApplicationSettings::WebAccountCommand*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::WebAccountCommand*, ABI::Windows::UI::ApplicationSettings::IWebAccountCommand*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.UI.ApplicationSettings.WebAccountCommand>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterable<ABI::Windows::UI::ApplicationSettings::WebAccountCommand*> __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_t;
-#define ____FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_FWD_DEFINED__
 #define __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::ApplicationSettings::IWebAccountCommand*>
+//#define __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::ApplicationSettings::IWebAccountCommand*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_USE */
-#ifdef __cplusplus
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
 namespace ABI {
-namespace Windows {
-namespace UI {
-namespace ApplicationSettings {
-class WebAccountProviderCommand;
-} /*ApplicationSettings*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
-
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace UI {
-namespace ApplicationSettings {
-interface IWebAccountProviderCommand;
-} /*ApplicationSettings*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                class WebAccountProviderCommand;
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
 
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0006 */
-/* [local] */ 
-
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0006_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4666 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4666 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4666_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4666_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0007 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_USE
 #define DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("82d7cd74-8e33-5f06-92fc-915138aacbde"))
-IIterator<ABI::Windows::UI::ApplicationSettings::WebAccountProviderCommand*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::WebAccountProviderCommand*, ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterator`1<Windows.UI.ApplicationSettings.WebAccountProviderCommand>"; }
+IIterator<ABI::Windows::UI::ApplicationSettings::WebAccountProviderCommand*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::WebAccountProviderCommand*, ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.UI.ApplicationSettings.WebAccountProviderCommand>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterator<ABI::Windows::UI::ApplicationSettings::WebAccountProviderCommand*> __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_t;
-#define ____FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_FWD_DEFINED__
 #define __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand*>
+//#define __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0007 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0007_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4667 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4667 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4667_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4667_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0008 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_USE
 #define DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("15165367-2e93-59a6-b5c7-16d3b58fd2e7"))
-IIterable<ABI::Windows::UI::ApplicationSettings::WebAccountProviderCommand*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::WebAccountProviderCommand*, ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterable`1<Windows.UI.ApplicationSettings.WebAccountProviderCommand>"; }
+IIterable<ABI::Windows::UI::ApplicationSettings::WebAccountProviderCommand*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::WebAccountProviderCommand*, ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.UI.ApplicationSettings.WebAccountProviderCommand>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterable<ABI::Windows::UI::ApplicationSettings::WebAccountProviderCommand*> __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_t;
-#define ____FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_FWD_DEFINED__
 #define __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand*>
+//#define __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0008 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0008_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4668 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4668 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4668_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4668_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0009 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand_USE
 #define DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("95cc1bba-c279-5ee5-a524-78012b7fe17e"))
-IVectorView<ABI::Windows::UI::ApplicationSettings::CredentialCommand*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::CredentialCommand*, ABI::Windows::UI::ApplicationSettings::ICredentialCommand*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVectorView`1<Windows.UI.ApplicationSettings.CredentialCommand>"; }
+IVectorView<ABI::Windows::UI::ApplicationSettings::CredentialCommand*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::CredentialCommand*, ABI::Windows::UI::ApplicationSettings::ICredentialCommand*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Windows.UI.ApplicationSettings.CredentialCommand>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IVectorView<ABI::Windows::UI::ApplicationSettings::CredentialCommand*> __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand_t;
-#define ____FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand_FWD_DEFINED__
 #define __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::ApplicationSettings::ICredentialCommand*>
+//#define __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::ApplicationSettings::ICredentialCommand*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0009 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0009_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4669 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4669 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4669_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4669_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0010 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand_USE
 #define DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("67b64d17-4245-5d7c-bfb4-6b68dd525877"))
-IVectorView<ABI::Windows::UI::ApplicationSettings::SettingsCommand*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::SettingsCommand*, ABI::Windows::UI::Popups::IUICommand*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVectorView`1<Windows.UI.ApplicationSettings.SettingsCommand>"; }
+IVectorView<ABI::Windows::UI::ApplicationSettings::SettingsCommand*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::SettingsCommand*, ABI::Windows::UI::Popups::IUICommand*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Windows.UI.ApplicationSettings.SettingsCommand>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IVectorView<ABI::Windows::UI::ApplicationSettings::SettingsCommand*> __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand_t;
-#define ____FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand_FWD_DEFINED__
 #define __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Popups::IUICommand*>
+//#define __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Popups::IUICommand*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0010 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0010_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4670 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4670 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4670_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4670_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0011 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_USE
 #define DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("207eaa3e-5ec9-5bd4-a1d2-73179a8128a8"))
-IVectorView<ABI::Windows::UI::ApplicationSettings::WebAccountCommand*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::WebAccountCommand*, ABI::Windows::UI::ApplicationSettings::IWebAccountCommand*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVectorView`1<Windows.UI.ApplicationSettings.WebAccountCommand>"; }
+IVectorView<ABI::Windows::UI::ApplicationSettings::WebAccountCommand*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::WebAccountCommand*, ABI::Windows::UI::ApplicationSettings::IWebAccountCommand*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Windows.UI.ApplicationSettings.WebAccountCommand>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IVectorView<ABI::Windows::UI::ApplicationSettings::WebAccountCommand*> __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_t;
-#define ____FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_FWD_DEFINED__
 #define __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::ApplicationSettings::IWebAccountCommand*>
+//#define __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::ApplicationSettings::IWebAccountCommand*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0011 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0011_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4671 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4671 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4671_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4671_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0012 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_USE
 #define DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("b2d19260-1827-5d88-b948-9688cfcd63ae"))
-IVectorView<ABI::Windows::UI::ApplicationSettings::WebAccountProviderCommand*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::WebAccountProviderCommand*, ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVectorView`1<Windows.UI.ApplicationSettings.WebAccountProviderCommand>"; }
+IVectorView<ABI::Windows::UI::ApplicationSettings::WebAccountProviderCommand*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::WebAccountProviderCommand*, ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Windows.UI.ApplicationSettings.WebAccountProviderCommand>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IVectorView<ABI::Windows::UI::ApplicationSettings::WebAccountProviderCommand*> __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_t;
-#define ____FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_FWD_DEFINED__
 #define __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand*>
+//#define __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0012 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0012_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4672 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4672 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4672_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4672_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0013 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand_USE
 #define DEF___FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("b6af1cb5-f60e-5b08-b312-2eb51135cfc6"))
-IVector<ABI::Windows::UI::ApplicationSettings::CredentialCommand*> : IVector_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::CredentialCommand*, ABI::Windows::UI::ApplicationSettings::ICredentialCommand*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVector`1<Windows.UI.ApplicationSettings.CredentialCommand>"; }
+IVector<ABI::Windows::UI::ApplicationSettings::CredentialCommand*> : IVector_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::CredentialCommand*, ABI::Windows::UI::ApplicationSettings::ICredentialCommand*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVector`1<Windows.UI.ApplicationSettings.CredentialCommand>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IVector<ABI::Windows::UI::ApplicationSettings::CredentialCommand*> __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand_t;
-#define ____FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand_FWD_DEFINED__
 #define __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand ABI::Windows::Foundation::Collections::IVector<ABI::Windows::UI::ApplicationSettings::ICredentialCommand*>
+//#define __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand_t ABI::Windows::Foundation::Collections::IVector<ABI::Windows::UI::ApplicationSettings::ICredentialCommand*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0013 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0013_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0013_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4673 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4673 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4673_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4673_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0014 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand_USE
 #define DEF___FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("10bd9cdd-3767-5e96-9022-f00f9cbd6241"))
-IVector<ABI::Windows::UI::ApplicationSettings::SettingsCommand*> : IVector_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::SettingsCommand*, ABI::Windows::UI::Popups::IUICommand*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVector`1<Windows.UI.ApplicationSettings.SettingsCommand>"; }
+IVector<ABI::Windows::UI::ApplicationSettings::SettingsCommand*> : IVector_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::SettingsCommand*, ABI::Windows::UI::Popups::IUICommand*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVector`1<Windows.UI.ApplicationSettings.SettingsCommand>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IVector<ABI::Windows::UI::ApplicationSettings::SettingsCommand*> __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand_t;
-#define ____FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand_FWD_DEFINED__
 #define __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand ABI::Windows::Foundation::Collections::IVector<ABI::Windows::UI::Popups::IUICommand*>
+//#define __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand_t ABI::Windows::Foundation::Collections::IVector<ABI::Windows::UI::Popups::IUICommand*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0014 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0014_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0014_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4674 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4674 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4674_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4674_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0015 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_USE
 #define DEF___FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("64e864c8-7fef-5df5-a624-50b577f48554"))
-IVector<ABI::Windows::UI::ApplicationSettings::WebAccountCommand*> : IVector_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::WebAccountCommand*, ABI::Windows::UI::ApplicationSettings::IWebAccountCommand*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVector`1<Windows.UI.ApplicationSettings.WebAccountCommand>"; }
+IVector<ABI::Windows::UI::ApplicationSettings::WebAccountCommand*> : IVector_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::WebAccountCommand*, ABI::Windows::UI::ApplicationSettings::IWebAccountCommand*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVector`1<Windows.UI.ApplicationSettings.WebAccountCommand>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IVector<ABI::Windows::UI::ApplicationSettings::WebAccountCommand*> __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_t;
-#define ____FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_FWD_DEFINED__
 #define __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand ABI::Windows::Foundation::Collections::IVector<ABI::Windows::UI::ApplicationSettings::IWebAccountCommand*>
+//#define __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_t ABI::Windows::Foundation::Collections::IVector<ABI::Windows::UI::ApplicationSettings::IWebAccountCommand*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0015 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0015_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0015_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4675 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4675 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4675_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4675_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0016 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_USE
 #define DEF___FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("d376abf3-f0c1-5233-9f42-de531884963e"))
-IVector<ABI::Windows::UI::ApplicationSettings::WebAccountProviderCommand*> : IVector_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::WebAccountProviderCommand*, ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVector`1<Windows.UI.ApplicationSettings.WebAccountProviderCommand>"; }
+IVector<ABI::Windows::UI::ApplicationSettings::WebAccountProviderCommand*> : IVector_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::WebAccountProviderCommand*, ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVector`1<Windows.UI.ApplicationSettings.WebAccountProviderCommand>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IVector<ABI::Windows::UI::ApplicationSettings::WebAccountProviderCommand*> __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_t;
-#define ____FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_FWD_DEFINED__
 #define __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand ABI::Windows::Foundation::Collections::IVector<ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand*>
+//#define __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_t ABI::Windows::Foundation::Collections::IVector<ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_USE */
-#ifdef __cplusplus
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
 namespace ABI {
-namespace Windows {
-namespace UI {
-namespace ApplicationSettings {
-class AccountsSettingsPane;
-} /*ApplicationSettings*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                class AccountsSettingsPane;
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
 
-#ifdef __cplusplus
+
 namespace ABI {
-namespace Windows {
-namespace UI {
-namespace ApplicationSettings {
-interface IAccountsSettingsPane;
-} /*ApplicationSettings*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace UI {
-namespace ApplicationSettings {
-class AccountsSettingsPaneCommandsRequestedEventArgs;
-} /*ApplicationSettings*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
-
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace UI {
-namespace ApplicationSettings {
-interface IAccountsSettingsPaneCommandsRequestedEventArgs;
-} /*ApplicationSettings*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                class AccountsSettingsPaneCommandsRequestedEventArgs;
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
 
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0016 */
-/* [local] */ 
-
-
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0016_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0016_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4676 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4676 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4676_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4676_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0017 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
 struct __declspec(uuid("69b8847e-7d72-5a15-bc1c-4ca39c93b162"))
-ITypedEventHandler<ABI::Windows::UI::ApplicationSettings::AccountsSettingsPane*,ABI::Windows::UI::ApplicationSettings::AccountsSettingsPaneCommandsRequestedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::AccountsSettingsPane*, ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPane*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::AccountsSettingsPaneCommandsRequestedEventArgs*, ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommandsRequestedEventArgs*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.ApplicationSettings.AccountsSettingsPane, Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs>"; }
+ITypedEventHandler<ABI::Windows::UI::ApplicationSettings::AccountsSettingsPane*,ABI::Windows::UI::ApplicationSettings::AccountsSettingsPaneCommandsRequestedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::AccountsSettingsPane*, ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPane*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::AccountsSettingsPaneCommandsRequestedEventArgs*, ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommandsRequestedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.ApplicationSettings.AccountsSettingsPane, Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef ITypedEventHandler<ABI::Windows::UI::ApplicationSettings::AccountsSettingsPane*,ABI::Windows::UI::ApplicationSettings::AccountsSettingsPaneCommandsRequestedEventArgs*> __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs_t;
-#define ____FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__
 #define __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPane*,ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommandsRequestedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPane*,ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommandsRequestedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs_USE */
-#ifdef __cplusplus
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
 namespace ABI {
-namespace Windows {
-namespace UI {
-namespace ApplicationSettings {
-class SettingsPane;
-} /*ApplicationSettings*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                class SettingsPane;
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
 
-#ifdef __cplusplus
+
 namespace ABI {
-namespace Windows {
-namespace UI {
-namespace ApplicationSettings {
-interface ISettingsPane;
-} /*ApplicationSettings*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace UI {
-namespace ApplicationSettings {
-class SettingsPaneCommandsRequestedEventArgs;
-} /*ApplicationSettings*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
-
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace UI {
-namespace ApplicationSettings {
-interface ISettingsPaneCommandsRequestedEventArgs;
-} /*ApplicationSettings*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                class SettingsPaneCommandsRequestedEventArgs;
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
 
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0017 */
-/* [local] */ 
-
-
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0017_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4677 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4677 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4677_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4677_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0018 */
-/* [local] */ 
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
 struct __declspec(uuid("f39a56a2-7db1-5c48-9e13-7dc485a4a99e"))
-ITypedEventHandler<ABI::Windows::UI::ApplicationSettings::SettingsPane*,ABI::Windows::UI::ApplicationSettings::SettingsPaneCommandsRequestedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::SettingsPane*, ABI::Windows::UI::ApplicationSettings::ISettingsPane*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::SettingsPaneCommandsRequestedEventArgs*, ABI::Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequestedEventArgs*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.ApplicationSettings.SettingsPane, Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs>"; }
+ITypedEventHandler<ABI::Windows::UI::ApplicationSettings::SettingsPane*,ABI::Windows::UI::ApplicationSettings::SettingsPaneCommandsRequestedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::SettingsPane*, ABI::Windows::UI::ApplicationSettings::ISettingsPane*>,ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::ApplicationSettings::SettingsPaneCommandsRequestedEventArgs*, ABI::Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequestedEventArgs*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.TypedEventHandler`2<Windows.UI.ApplicationSettings.SettingsPane, Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef ITypedEventHandler<ABI::Windows::UI::ApplicationSettings::SettingsPane*,ABI::Windows::UI::ApplicationSettings::SettingsPaneCommandsRequestedEventArgs*> __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs_t;
-#define ____FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__
 #define __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::ApplicationSettings::ISettingsPane*,ABI::Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequestedEventArgs*>
+//#define __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs_t ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::ApplicationSettings::ISettingsPane*,ABI::Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequestedEventArgs*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs_USE */
-#if defined(__cplusplus)
-}
-#endif // defined(__cplusplus)
-#include <Windows.Foundation.h>
-#if !defined(__windows2Esecurity2Ecredentials_h__)
-#include <Windows.Security.Credentials.h>
-#endif // !defined(__windows2Esecurity2Ecredentials_h__)
-#if !defined(__windows2Eui2Epopups_h__)
-#include <Windows.UI.Popups.h>
-#endif // !defined(__windows2Eui2Epopups_h__)
-#if defined(__cplusplus)
-extern "C" {
-#endif // defined(__cplusplus)
 
-#ifdef __cplusplus
+
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+
+
+
+#ifndef ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
 namespace ABI {
-namespace Windows {
-namespace Security {
-namespace Credentials {
-class PasswordCredential;
-} /*Credentials*/
-} /*Security*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace Foundation {
+            interface IAsyncAction;
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+#define __x_ABI_CWindows_CFoundation_CIAsyncAction ABI::Windows::Foundation::IAsyncAction
 
-#ifdef __cplusplus
+#endif // ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
+
+
+
+
+
 namespace ABI {
-namespace Windows {
-namespace Security {
-namespace Credentials {
-class WebAccount;
-} /*Credentials*/
-} /*Security*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace Security {
+            namespace Credentials {
+                class PasswordCredential;
+            } /* Windows */
+        } /* Security */
+    } /* Credentials */} /* ABI */
 
-#ifdef __cplusplus
+#ifndef ____x_ABI_CWindows_CSecurity_CCredentials_CIPasswordCredential_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CCredentials_CIPasswordCredential_FWD_DEFINED__
 namespace ABI {
-namespace Windows {
-namespace Security {
-namespace Credentials {
-class WebAccountProvider;
-} /*Credentials*/
-} /*Security*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace Security {
+            namespace Credentials {
+                interface IPasswordCredential;
+            } /* Windows */
+        } /* Security */
+    } /* Credentials */} /* ABI */
+#define __x_ABI_CWindows_CSecurity_CCredentials_CIPasswordCredential ABI::Windows::Security::Credentials::IPasswordCredential
+
+#endif // ____x_ABI_CWindows_CSecurity_CCredentials_CIPasswordCredential_FWD_DEFINED__
 
 
-#if !defined(__cplusplus)
-#if !defined(__cplusplus)
-
-typedef enum __x_ABI_CWindows_CUI_CApplicationSettings_CSettingsEdgeLocation __x_ABI_CWindows_CUI_CApplicationSettings_CSettingsEdgeLocation;
-
-
-#endif /* end if !defined(__cplusplus) */
-
-
-#endif
-#if !defined(__cplusplus)
-#if !defined(__cplusplus)
-
-typedef enum __x_ABI_CWindows_CUI_CApplicationSettings_CSupportedWebAccountActions __x_ABI_CWindows_CUI_CApplicationSettings_CSupportedWebAccountActions;
-
-
-#endif /* end if !defined(__cplusplus) */
-
-
-#endif
-#if !defined(__cplusplus)
-#if !defined(__cplusplus)
-
-typedef enum __x_ABI_CWindows_CUI_CApplicationSettings_CWebAccountAction __x_ABI_CWindows_CUI_CApplicationSettings_CWebAccountAction;
-
-
-#endif /* end if !defined(__cplusplus) */
-
-
-#endif
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#ifdef __cplusplus
 namespace ABI {
-namespace Windows {
-namespace UI {
-namespace ApplicationSettings {
-class AccountsSettingsPaneEventDeferral;
-} /*ApplicationSettings*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
-#ifdef __cplusplus
+    namespace Windows {
+        namespace Security {
+            namespace Credentials {
+                class WebAccount;
+            } /* Windows */
+        } /* Security */
+    } /* Credentials */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccount_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccount_FWD_DEFINED__
 namespace ABI {
-namespace Windows {
-namespace UI {
-namespace ApplicationSettings {
-class SettingsPaneCommandsRequest;
-} /*ApplicationSettings*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
-#ifdef __cplusplus
+    namespace Windows {
+        namespace Security {
+            namespace Credentials {
+                interface IWebAccount;
+            } /* Windows */
+        } /* Security */
+    } /* Credentials */} /* ABI */
+#define __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccount ABI::Windows::Security::Credentials::IWebAccount
+
+#endif // ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccount_FWD_DEFINED__
+
+
 namespace ABI {
-namespace Windows {
-namespace UI {
-namespace ApplicationSettings {
-class WebAccountInvokedArgs;
-} /*ApplicationSettings*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace Security {
+            namespace Credentials {
+                class WebAccountProvider;
+            } /* Windows */
+        } /* Security */
+    } /* Credentials */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Security {
+            namespace Credentials {
+                interface IWebAccountProvider;
+            } /* Windows */
+        } /* Security */
+    } /* Credentials */} /* ABI */
+#define __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider ABI::Windows::Security::Credentials::IWebAccountProvider
+
+#endif // ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider_FWD_DEFINED__
 
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0018 */
-/* [local] */ 
+
+
+
+
+#ifndef ____x_ABI_CWindows_CUI_CPopups_CIUICommandInvokedHandler_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CPopups_CIUICommandInvokedHandler_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Popups {
+                interface IUICommandInvokedHandler;
+            } /* Windows */
+        } /* UI */
+    } /* Popups */} /* ABI */
+#define __x_ABI_CWindows_CUI_CPopups_CIUICommandInvokedHandler ABI::Windows::UI::Popups::IUICommandInvokedHandler
+
+#endif // ____x_ABI_CWindows_CUI_CPopups_CIUICommandInvokedHandler_FWD_DEFINED__
 
 
 
 
 
 
-
-#ifdef __cplusplus
-
-} /* end extern "C" */
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 
-                typedef enum SettingsEdgeLocation SettingsEdgeLocation;
+                typedef enum SettingsEdgeLocation : int SettingsEdgeLocation;
                 
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
 
-extern "C" { 
-#endif
-
-#ifdef __cplusplus
-
-} /* end extern "C" */
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 
-                typedef enum SupportedWebAccountActions SupportedWebAccountActions;
+                typedef enum SupportedWebAccountActions : unsigned int SupportedWebAccountActions;
                 
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
 
-extern "C" { 
-#endif
-
-#ifdef __cplusplus
-
-} /* end extern "C" */
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace ApplicationSettings {
                 
-                typedef enum WebAccountAction WebAccountAction;
+                typedef enum WebAccountAction : int WebAccountAction;
                 
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
 
-extern "C" { 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                class AccountsSettingsPaneEventDeferral;
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                class SettingsPaneCommandsRequest;
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                class WebAccountInvokedArgs;
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ *
+ * Struct Windows.UI.ApplicationSettings.SettingsEdgeLocation
+ *
+ * Introduced to Windows.UI.ApplicationSettings.ApplicationsSettingsContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [v1_enum, deprecated, contract] */
+                enum 
+                #if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                DEPRECATED("SettingsEdgeLocation is deprecated and might not work on all platforms. For more info, see MSDN.")
+                #endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                SettingsEdgeLocation : int
+                {
+                    SettingsEdgeLocation_Right = 0,
+                    SettingsEdgeLocation_Left = 1,
+                };
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.UI.ApplicationSettings.SupportedWebAccountActions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [v1_enum, flags, contract] */
+                enum SupportedWebAccountActions : unsigned int
+                {
+                    SupportedWebAccountActions_None = 0,
+                    SupportedWebAccountActions_Reconnect = 0x1,
+                    SupportedWebAccountActions_Remove = 0x2,
+                    SupportedWebAccountActions_ViewDetails = 0x4,
+                    SupportedWebAccountActions_Manage = 0x8,
+                    SupportedWebAccountActions_More = 0x10,
+                };
+                
+                DEFINE_ENUM_FLAG_OPERATORS(SupportedWebAccountActions)
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.UI.ApplicationSettings.WebAccountAction
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [v1_enum, contract] */
+                enum WebAccountAction : int
+                {
+                    WebAccountAction_Reconnect = 0,
+                    WebAccountAction_Remove = 1,
+                    WebAccountAction_ViewDetails = 2,
+                    WebAccountAction_Manage = 3,
+                    WebAccountAction_More = 4,
+                };
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Delegate Windows.UI.ApplicationSettings.CredentialCommandCredentialDeletedHandler
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_INTERFACE_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [object, uuid("61C0E185-0977-4678-B4E2-98727AFBEED9"), contract] */
+                MIDL_INTERFACE("61C0E185-0977-4678-B4E2-98727AFBEED9")
+                ICredentialCommandCredentialDeletedHandler : IUnknown
+                {
+                    virtual HRESULT STDMETHODCALLTYPE Invoke(
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::ApplicationSettings::ICredentialCommand * command
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICredentialCommandCredentialDeletedHandler=_uuidof(ICredentialCommandCredentialDeletedHandler);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Delegate Windows.UI.ApplicationSettings.WebAccountCommandInvokedHandler
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_INTERFACE_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [object, uuid("1EE6E459-1705-4A9A-B599-A0C3D6921973"), contract] */
+                MIDL_INTERFACE("1EE6E459-1705-4A9A-B599-A0C3D6921973")
+                IWebAccountCommandInvokedHandler : IUnknown
+                {
+                    virtual HRESULT STDMETHODCALLTYPE Invoke(
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::ApplicationSettings::IWebAccountCommand * command,
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::ApplicationSettings::IWebAccountInvokedArgs * args
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IWebAccountCommandInvokedHandler=_uuidof(IWebAccountCommandInvokedHandler);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Delegate Windows.UI.ApplicationSettings.WebAccountProviderCommandInvokedHandler
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_INTERFACE_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [object, uuid("B7DE5527-4C8F-42DD-84DA-5EC493ABDB9A"), contract] */
+                MIDL_INTERFACE("B7DE5527-4C8F-42DD-84DA-5EC493ABDB9A")
+                IWebAccountProviderCommandInvokedHandler : IUnknown
+                {
+                    virtual HRESULT STDMETHODCALLTYPE Invoke(
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand * command
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IWebAccountProviderCommandInvokedHandler=_uuidof(IWebAccountProviderCommandInvokedHandler);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.IAccountsSettingsPane
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.AccountsSettingsPane
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IAccountsSettingsPane[] = L"Windows.UI.ApplicationSettings.IAccountsSettingsPane";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [object, uuid("81EA942C-4F09-4406-A538-838D9B14B7E6"), exclusiveto, contract] */
+                MIDL_INTERFACE("81EA942C-4F09-4406-A538-838D9B14B7E6")
+                IAccountsSettingsPane : IInspectable
+                {
+                    /* [eventadd] */virtual HRESULT STDMETHODCALLTYPE add_AccountCommandsRequested(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * cookie
+                        ) = 0;
+                    /* [eventremove] */virtual HRESULT STDMETHODCALLTYPE remove_AccountCommandsRequested(
+                        /* [in] */EventRegistrationToken cookie
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IAccountsSettingsPane=_uuidof(IAccountsSettingsPane);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IAccountsSettingsPaneCommandsRequestedEventArgs[] = L"Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [object, uuid("3B68C099-DB19-45D0-9ABF-95D3773C9330"), exclusiveto, contract] */
+                MIDL_INTERFACE("3B68C099-DB19-45D0-9ABF-95D3773C9330")
+                IAccountsSettingsPaneCommandsRequestedEventArgs : IInspectable
+                {
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WebAccountProviderCommands(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WebAccountCommands(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CredentialCommands(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Commands(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_HeaderText(
+                        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+                        ) = 0;
+                    /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_HeaderText(
+                        /* [in] */__RPC__in HSTRING value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE GetDeferral(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPaneEventDeferral * * deferral
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IAccountsSettingsPaneCommandsRequestedEventArgs=_uuidof(IAccountsSettingsPaneCommandsRequestedEventArgs);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.IAccountsSettingsPaneEventDeferral
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.AccountsSettingsPaneEventDeferral
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IAccountsSettingsPaneEventDeferral[] = L"Windows.UI.ApplicationSettings.IAccountsSettingsPaneEventDeferral";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [object, uuid("CBF25D3F-E5BA-40EF-93DA-65E096E5FB04"), exclusiveto, contract] */
+                MIDL_INTERFACE("CBF25D3F-E5BA-40EF-93DA-65E096E5FB04")
+                IAccountsSettingsPaneEventDeferral : IInspectable
+                {
+                    virtual HRESULT STDMETHODCALLTYPE Complete(void) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IAccountsSettingsPaneEventDeferral=_uuidof(IAccountsSettingsPaneEventDeferral);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.AccountsSettingsPane
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IAccountsSettingsPaneStatics[] = L"Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [object, uuid("561F8B60-B0EC-4150-A8DC-208EE44B068A"), exclusiveto, contract] */
+                MIDL_INTERFACE("561F8B60-B0EC-4150-A8DC-208EE44B068A")
+                IAccountsSettingsPaneStatics : IInspectable
+                {
+                    virtual HRESULT STDMETHODCALLTYPE GetForCurrentView(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPane * * current
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE Show(void) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IAccountsSettingsPaneStatics=_uuidof(IAccountsSettingsPaneStatics);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.AccountsSettingsPane
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IAccountsSettingsPaneStatics2[] = L"Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics2";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [object, uuid("D21DF7C2-CE0D-484F-B8E8-E823C215765E"), exclusiveto, contract] */
+                MIDL_INTERFACE("D21DF7C2-CE0D-484F-B8E8-E823C215765E")
+                IAccountsSettingsPaneStatics2 : IInspectable
+                {
+                    virtual HRESULT STDMETHODCALLTYPE ShowManageAccountsAsync(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * asyncInfo
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE ShowAddAccountAsync(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction * * asyncInfo
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IAccountsSettingsPaneStatics2=_uuidof(IAccountsSettingsPaneStatics2);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+
+
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.ICredentialCommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.CredentialCommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ICredentialCommand[] = L"Windows.UI.ApplicationSettings.ICredentialCommand";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [object, uuid("A5F665E6-6143-4A7A-A971-B017BA978CE2"), exclusiveto, contract] */
+                MIDL_INTERFACE("A5F665E6-6143-4A7A-A971-B017BA978CE2")
+                ICredentialCommand : IInspectable
+                {
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_PasswordCredential(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Credentials::IPasswordCredential * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_CredentialDeleted(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::ICredentialCommandCredentialDeletedHandler  * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICredentialCommand=_uuidof(ICredentialCommand);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.ICredentialCommandFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.CredentialCommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ICredentialCommandFactory[] = L"Windows.UI.ApplicationSettings.ICredentialCommandFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [object, uuid("27E88C17-BC3E-4B80-9495-4ED720E48A91"), exclusiveto, contract] */
+                MIDL_INTERFACE("27E88C17-BC3E-4B80-9495-4ED720E48A91")
+                ICredentialCommandFactory : IInspectable
+                {
+                    virtual HRESULT STDMETHODCALLTYPE CreateCredentialCommand(
+                        /* [in] */__RPC__in_opt ABI::Windows::Security::Credentials::IPasswordCredential * passwordCredential,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::ICredentialCommand * * instance
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE CreateCredentialCommandWithHandler(
+                        /* [in] */__RPC__in_opt ABI::Windows::Security::Credentials::IPasswordCredential * passwordCredential,
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::ApplicationSettings::ICredentialCommandCredentialDeletedHandler  * deleted,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::ICredentialCommand * * instance
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ICredentialCommandFactory=_uuidof(ICredentialCommandFactory);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.ISettingsCommandFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.SettingsCommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ISettingsCommandFactory[] = L"Windows.UI.ApplicationSettings.ISettingsCommandFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [object, uuid("68E15B33-1C83-433A-AA5A-CEEEA5BD4764"), exclusiveto, contract] */
+                MIDL_INTERFACE("68E15B33-1C83-433A-AA5A-CEEEA5BD4764")
+                ISettingsCommandFactory : IInspectable
+                {
+                    virtual HRESULT STDMETHODCALLTYPE CreateSettingsCommand(
+                        /* [in] */__RPC__in_opt IInspectable * settingsCommandId,
+                        /* [in] */__RPC__in HSTRING label,
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::Popups::IUICommandInvokedHandler  * handler,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Popups::IUICommand * * instance
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ISettingsCommandFactory=_uuidof(ISettingsCommandFactory);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.ISettingsCommandStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.SettingsCommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ISettingsCommandStatics[] = L"Windows.UI.ApplicationSettings.ISettingsCommandStatics";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [object, uuid("749AE954-2F69-4B17-8ABA-D05CE5778E46"), exclusiveto, contract] */
+                MIDL_INTERFACE("749AE954-2F69-4B17-8ABA-D05CE5778E46")
+                ISettingsCommandStatics : IInspectable
+                {
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_AccountsCommand(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Popups::IUICommand * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ISettingsCommandStatics=_uuidof(ISettingsCommandStatics);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.ISettingsPane
+ *
+ * Introduced to Windows.UI.ApplicationSettings.ApplicationsSettingsContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.SettingsPane
+ *
+ *
+ */
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ISettingsPane[] = L"Windows.UI.ApplicationSettings.ISettingsPane";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [object, uuid("B1CD0932-4570-4C69-8D38-89446561ACE0"), exclusiveto, deprecated, contract] */
+                MIDL_INTERFACE("B1CD0932-4570-4C69-8D38-89446561ACE0")
+                
+                #if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                DEPRECATED("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+                #endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                ISettingsPane : IInspectable
+                {
+                    
+                    #if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                    DEPRECATED("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+                    #endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                    /* [eventadd, deprecated] */virtual HRESULT STDMETHODCALLTYPE add_CommandsRequested(
+                        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs * handler,
+                        /* [retval, out] */__RPC__out EventRegistrationToken * cookie
+                        ) = 0;
+                    
+                    #if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                    DEPRECATED("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+                    #endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                    /* [eventremove, deprecated] */virtual HRESULT STDMETHODCALLTYPE remove_CommandsRequested(
+                        /* [in] */EventRegistrationToken cookie
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ISettingsPane=_uuidof(ISettingsPane);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequest
+ *
+ * Introduced to Windows.UI.ApplicationSettings.ApplicationsSettingsContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.SettingsPaneCommandsRequest
+ *
+ *
+ */
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ISettingsPaneCommandsRequest[] = L"Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequest";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [object, uuid("44DF23AE-5D6E-4068-A168-F47643182114"), exclusiveto, deprecated, contract] */
+                MIDL_INTERFACE("44DF23AE-5D6E-4068-A168-F47643182114")
+                
+                #if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                DEPRECATED("SettingsPaneCommandsRequest is deprecated and might not work on all platforms. For more info, see MSDN.")
+                #endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                ISettingsPaneCommandsRequest : IInspectable
+                {
+                    
+                    #if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                    DEPRECATED("SettingsPaneCommandsRequest is deprecated and might not work on all platforms. For more info, see MSDN.")
+                    #endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                    /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_ApplicationCommands(
+                        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ISettingsPaneCommandsRequest=_uuidof(ISettingsPaneCommandsRequest);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequestedEventArgs
+ *
+ * Introduced to Windows.UI.ApplicationSettings.ApplicationsSettingsContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs
+ *
+ *
+ */
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ISettingsPaneCommandsRequestedEventArgs[] = L"Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequestedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [object, uuid("205F5D24-1B48-4629-A6CA-2FDFEDAFB75D"), exclusiveto, deprecated, contract] */
+                MIDL_INTERFACE("205F5D24-1B48-4629-A6CA-2FDFEDAFB75D")
+                
+                #if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                DEPRECATED("SettingsPaneCommandsRequestedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
+                #endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                ISettingsPaneCommandsRequestedEventArgs : IInspectable
+                {
+                    
+                    #if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                    DEPRECATED("SettingsPaneCommandsRequestedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
+                    #endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                    /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_Request(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequest * * request
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ISettingsPaneCommandsRequestedEventArgs=_uuidof(ISettingsPaneCommandsRequestedEventArgs);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.ISettingsPaneStatics
+ *
+ * Introduced to Windows.UI.ApplicationSettings.ApplicationsSettingsContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.SettingsPane
+ *
+ *
+ */
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ISettingsPaneStatics[] = L"Windows.UI.ApplicationSettings.ISettingsPaneStatics";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [object, uuid("1C6A52C5-FF19-471B-BA6B-F8F35694AD9A"), exclusiveto, deprecated, contract] */
+                MIDL_INTERFACE("1C6A52C5-FF19-471B-BA6B-F8F35694AD9A")
+                
+                #if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                DEPRECATED("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+                #endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                ISettingsPaneStatics : IInspectable
+                {
+                    
+                    #if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                    DEPRECATED("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+                    #endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                    /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE GetForCurrentView(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::ISettingsPane * * current
+                        ) = 0;
+                    
+                    #if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                    DEPRECATED("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+                    #endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                    /* [deprecated] */virtual HRESULT STDMETHODCALLTYPE Show(void) = 0;
+                    
+                    #if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                    DEPRECATED("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+                    #endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+                    /* [propget, deprecated] */virtual HRESULT STDMETHODCALLTYPE get_Edge(
+                        /* [retval, out] */__RPC__out ABI::Windows::UI::ApplicationSettings::SettingsEdgeLocation * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_ISettingsPaneStatics=_uuidof(ISettingsPaneStatics);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.IWebAccountCommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.WebAccountCommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IWebAccountCommand[] = L"Windows.UI.ApplicationSettings.IWebAccountCommand";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [object, uuid("CAA39398-9CFA-4246-B0C4-A913A3896541"), exclusiveto, contract] */
+                MIDL_INTERFACE("CAA39398-9CFA-4246-B0C4-A913A3896541")
+                IWebAccountCommand : IInspectable
+                {
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WebAccount(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Credentials::IWebAccount * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Invoked(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::IWebAccountCommandInvokedHandler  * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Actions(
+                        /* [retval, out] */__RPC__out ABI::Windows::UI::ApplicationSettings::SupportedWebAccountActions * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IWebAccountCommand=_uuidof(IWebAccountCommand);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.IWebAccountCommandFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.WebAccountCommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IWebAccountCommandFactory[] = L"Windows.UI.ApplicationSettings.IWebAccountCommandFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [object, uuid("BFA6CDFF-2F2D-42F5-81DE-1D56BAFC496D"), exclusiveto, contract] */
+                MIDL_INTERFACE("BFA6CDFF-2F2D-42F5-81DE-1D56BAFC496D")
+                IWebAccountCommandFactory : IInspectable
+                {
+                    virtual HRESULT STDMETHODCALLTYPE CreateWebAccountCommand(
+                        /* [in] */__RPC__in_opt ABI::Windows::Security::Credentials::IWebAccount * webAccount,
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::ApplicationSettings::IWebAccountCommandInvokedHandler  * invoked,
+                        /* [in] */ABI::Windows::UI::ApplicationSettings::SupportedWebAccountActions actions,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::IWebAccountCommand * * instance
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IWebAccountCommandFactory=_uuidof(IWebAccountCommandFactory);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.IWebAccountInvokedArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.WebAccountInvokedArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IWebAccountInvokedArgs[] = L"Windows.UI.ApplicationSettings.IWebAccountInvokedArgs";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [object, uuid("E7ABCC40-A1D8-4C5D-9A7F-1D34B2F90AD2"), exclusiveto, contract] */
+                MIDL_INTERFACE("E7ABCC40-A1D8-4C5D-9A7F-1D34B2F90AD2")
+                IWebAccountInvokedArgs : IInspectable
+                {
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Action(
+                        /* [retval, out] */__RPC__out ABI::Windows::UI::ApplicationSettings::WebAccountAction * action
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IWebAccountInvokedArgs=_uuidof(IWebAccountInvokedArgs);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.IWebAccountProviderCommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.WebAccountProviderCommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IWebAccountProviderCommand[] = L"Windows.UI.ApplicationSettings.IWebAccountProviderCommand";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [object, uuid("D69BDD9A-A0A6-4E9B-88DC-C71E757A3501"), exclusiveto, contract] */
+                MIDL_INTERFACE("D69BDD9A-A0A6-4E9B-88DC-C71E757A3501")
+                IWebAccountProviderCommand : IInspectable
+                {
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_WebAccountProvider(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Security::Credentials::IWebAccountProvider * * value
+                        ) = 0;
+                    /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Invoked(
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommandInvokedHandler  * * value
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IWebAccountProviderCommand=_uuidof(IWebAccountProviderCommand);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.IWebAccountProviderCommandFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.WebAccountProviderCommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IWebAccountProviderCommandFactory[] = L"Windows.UI.ApplicationSettings.IWebAccountProviderCommandFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace ApplicationSettings {
+                /* [object, uuid("D5658A1B-B176-4776-8469-A9D3FF0B3F59"), exclusiveto, contract] */
+                MIDL_INTERFACE("D5658A1B-B176-4776-8469-A9D3FF0B3F59")
+                IWebAccountProviderCommandFactory : IInspectable
+                {
+                    virtual HRESULT STDMETHODCALLTYPE CreateWebAccountProviderCommand(
+                        /* [in] */__RPC__in_opt ABI::Windows::Security::Credentials::IWebAccountProvider * webAccountProvider,
+                        /* [in] */__RPC__in_opt ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommandInvokedHandler  * invoked,
+                        /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand * * instance
+                        ) = 0;
+                    
+                };
+
+                extern MIDL_CONST_ID IID & IID_IWebAccountProviderCommandFactory=_uuidof(IWebAccountProviderCommandFactory);
+                
+            } /* Windows */
+        } /* UI */
+    } /* ApplicationSettings */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.AccountsSettingsPane
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics2 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ApplicationSettings.IAccountsSettingsPane ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_AccountsSettingsPane_DEFINED
+#define RUNTIMECLASS_Windows_UI_ApplicationSettings_AccountsSettingsPane_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_AccountsSettingsPane[] = L"Windows.UI.ApplicationSettings.AccountsSettingsPane";
 #endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_AccountsSettingsPaneCommandsRequestedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_ApplicationSettings_AccountsSettingsPaneCommandsRequestedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_AccountsSettingsPaneCommandsRequestedEventArgs[] = L"Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.AccountsSettingsPaneEventDeferral
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ApplicationSettings.IAccountsSettingsPaneEventDeferral ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_AccountsSettingsPaneEventDeferral_DEFINED
+#define RUNTIMECLASS_Windows_UI_ApplicationSettings_AccountsSettingsPaneEventDeferral_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_AccountsSettingsPaneEventDeferral[] = L"Windows.UI.ApplicationSettings.AccountsSettingsPaneEventDeferral";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.CredentialCommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.UI.ApplicationSettings.ICredentialCommandFactory interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ApplicationSettings.ICredentialCommand ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_CredentialCommand_DEFINED
+#define RUNTIMECLASS_Windows_UI_ApplicationSettings_CredentialCommand_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_CredentialCommand[] = L"Windows.UI.ApplicationSettings.CredentialCommand";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.SettingsCommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.UI.ApplicationSettings.ISettingsCommandFactory interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.ApplicationSettings.ISettingsCommandStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Popups.IUICommand ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_SettingsCommand_DEFINED
+#define RUNTIMECLASS_Windows_UI_ApplicationSettings_SettingsCommand_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_SettingsCommand[] = L"Windows.UI.ApplicationSettings.SettingsCommand";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.SettingsPane
+ *
+ * Introduced to Windows.UI.ApplicationSettings.ApplicationsSettingsContract in version 1.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.ApplicationSettings.ISettingsPaneStatics interface starting with version 1.0 of the Windows.UI.ApplicationSettings.ApplicationsSettingsContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ApplicationSettings.ISettingsPane ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_SettingsPane_DEFINED
+#define RUNTIMECLASS_Windows_UI_ApplicationSettings_SettingsPane_DEFINED
+
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+DEPRECATED("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_SettingsPane[] = L"Windows.UI.ApplicationSettings.SettingsPane";
+#endif
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.SettingsPaneCommandsRequest
+ *
+ * Introduced to Windows.UI.ApplicationSettings.ApplicationsSettingsContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequest ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_SettingsPaneCommandsRequest_DEFINED
+#define RUNTIMECLASS_Windows_UI_ApplicationSettings_SettingsPaneCommandsRequest_DEFINED
+
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+DEPRECATED("SettingsPaneCommandsRequest is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_SettingsPaneCommandsRequest[] = L"Windows.UI.ApplicationSettings.SettingsPaneCommandsRequest";
+#endif
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs
+ *
+ * Introduced to Windows.UI.ApplicationSettings.ApplicationsSettingsContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequestedEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_SettingsPaneCommandsRequestedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_ApplicationSettings_SettingsPaneCommandsRequestedEventArgs_DEFINED
+
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+DEPRECATED("SettingsPaneCommandsRequestedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_SettingsPaneCommandsRequestedEventArgs[] = L"Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs";
+#endif
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.WebAccountCommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.UI.ApplicationSettings.IWebAccountCommandFactory interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ApplicationSettings.IWebAccountCommand ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_WebAccountCommand_DEFINED
+#define RUNTIMECLASS_Windows_UI_ApplicationSettings_WebAccountCommand_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_WebAccountCommand[] = L"Windows.UI.ApplicationSettings.WebAccountCommand";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.WebAccountInvokedArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ApplicationSettings.IWebAccountInvokedArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_WebAccountInvokedArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_ApplicationSettings_WebAccountInvokedArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_WebAccountInvokedArgs[] = L"Windows.UI.ApplicationSettings.WebAccountInvokedArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.WebAccountProviderCommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.UI.ApplicationSettings.IWebAccountProviderCommandFactory interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ApplicationSettings.IWebAccountProviderCommand ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_WebAccountProviderCommand_DEFINED
+#define RUNTIMECLASS_Windows_UI_ApplicationSettings_WebAccountProviderCommand_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_WebAccountProviderCommand[] = L"Windows.UI.ApplicationSettings.WebAccountProviderCommand";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
 
+#else // !defined(__cplusplus)
+/* Forward Declarations */
+#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler;
 
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler;
 
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler;
 
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane;
 
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs;
 
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral;
 
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics;
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0018_v0_0_s_ifspec;
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_FWD_DEFINED__
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4678 */
+#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2 __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2;
 
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand;
 
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_FWD_DEFINED__
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4678 */
+#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory;
 
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory;
 
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_FWD_DEFINED__
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4678_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4678_v0_0_s_ifspec;
+#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics;
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0019 */
-/* [local] */ 
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_FWD_DEFINED__
 
-#ifndef DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand
-#define DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane;
 
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_FWD_DEFINED__
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0019 */
-/* [local] */ 
+#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest;
 
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs;
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0019_v0_0_s_ifspec;
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_FWD_DEFINED__
 
-#ifndef ____FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand_INTERFACE_DEFINED__
+#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics;
+
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand;
+
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs;
+
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand;
+
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory;
+
+#endif // ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_FWD_DEFINED__
+
+// Parameterized interface forward declarations (C)
+
+// Collection interface definitions
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand_INTERFACE_DEFINED__)
 #define ____FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand_INTERFACE_DEFINED__
 
-/* interface __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand */
-/* [unique][uuid][object] */ 
+typedef interface __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand;
 
-
-
-/* interface __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("9f1177f1-85bb-5cd0-9b08-a0b47a764c75")
-    __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand : public IInspectable
-    {
-    public:
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::ICredentialCommand **current) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
-            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
-            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::UI::ApplicationSettings::ICredentialCommand **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand **current);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [retval][out] */ __RPC__out boolean *hasCurrent);
-        
-        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [retval][out] */ __RPC__out boolean *hasCurrent);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual);
-        
-        END_INTERFACE
-    } __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl;
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
 
-    interface __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand
-    {
-        CONST_VTBL struct __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl *lpVtbl;
-    };
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
 
-    
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl;
+
+interface __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand
+{
+    CONST_VTBL struct __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl *lpVtbl;
+};
+
+
 
 #ifdef COBJMACROS
 
@@ -2001,131 +2958,53 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CApplicationSettings__CCrede
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0020 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0020 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0020_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4679 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4679 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4679_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4679_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0021 */
-/* [local] */ 
-
-#ifndef DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand
-#define DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0021 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0021_v0_0_s_ifspec;
-
-#ifndef ____FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand_INTERFACE_DEFINED__)
 #define ____FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand_INTERFACE_DEFINED__
 
-/* interface __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand */
-/* [unique][uuid][object] */ 
+typedef interface __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand;
 
-
-
-/* interface __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("883ed18d-4dbb-58f2-8fd2-e4b018509553")
-    __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE First( 
-            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand **first) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef  struct __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *First )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand **first);
-        
-        END_INTERFACE
-    } __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl;
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
 
-    interface __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand
-    {
-        CONST_VTBL struct __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl *lpVtbl;
-    };
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This);
 
-    
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CUI__CApplicationSettings__CCredentialCommand **first);
+
+    END_INTERFACE
+} __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl;
+
+interface __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand
+{
+    CONST_VTBL struct __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
-
 
 #define __FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
@@ -2153,153 +3032,61 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CApplicationSettings__CCrede
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef ____x_ABI_CWindows_CUI_CPopups_CIUICommand_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CPopups_CIUICommand_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CPopups_CIUICommand __x_ABI_CWindows_CUI_CPopups_CIUICommand;
+
+#endif // ____x_ABI_CWindows_CUI_CPopups_CIUICommand_FWD_DEFINED__
 
 
-
-
-#endif 	/* ____FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0022 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CCredentialCommand */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0022 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0022_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4680 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4680 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4680_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4680_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0023 */
-/* [local] */ 
-
-#ifndef DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand
-#define DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0023 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0023_v0_0_s_ifspec;
-
-#ifndef ____FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand_INTERFACE_DEFINED__)
 #define ____FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand_INTERFACE_DEFINED__
 
-/* interface __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand */
-/* [unique][uuid][object] */ 
+typedef interface __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand;
 
-
-
-/* interface __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("2f071c24-4a58-5a00-a294-c7162e98c2a0")
-    __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand : public IInspectable
-    {
-    public:
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::UI::Popups::IUICommand **current) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
-            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
-            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::UI::Popups::IUICommand **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CPopups_CIUICommand **current);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [retval][out] */ __RPC__out boolean *hasCurrent);
-        
-        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [retval][out] */ __RPC__out boolean *hasCurrent);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CPopups_CIUICommand **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual);
-        
-        END_INTERFACE
-    } __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl;
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
 
-    interface __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand
-    {
-        CONST_VTBL struct __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl *lpVtbl;
-    };
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
 
-    
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CUI_CPopups_CIUICommand * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CPopups_CIUICommand * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl;
+
+interface __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand
+{
+    CONST_VTBL struct __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl *lpVtbl;
+};
+
+
 
 #ifdef COBJMACROS
 
@@ -2339,131 +3126,53 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CApplicationSettings__CSetti
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0024 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0024 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0024_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4681 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4681 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4681_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4681_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0025 */
-/* [local] */ 
-
-#ifndef DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand
-#define DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0025 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0025_v0_0_s_ifspec;
-
-#ifndef ____FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand_INTERFACE_DEFINED__)
 #define ____FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand_INTERFACE_DEFINED__
 
-/* interface __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand */
-/* [unique][uuid][object] */ 
+typedef interface __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand;
 
-
-
-/* interface __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("6308e7e8-cb85-5339-a3e9-9a7500d19c68")
-    __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE First( 
-            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand **first) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef  struct __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *First )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand **first);
-        
-        END_INTERFACE
-    } __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl;
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
 
-    interface __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand
-    {
-        CONST_VTBL struct __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl *lpVtbl;
-    };
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This);
 
-    
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CUI__CApplicationSettings__CSettingsCommand **first);
+
+    END_INTERFACE
+} __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl;
+
+interface __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand
+{
+    CONST_VTBL struct __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
-
 
 #define __FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
@@ -2491,153 +3200,55 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CApplicationSettings__CSetti
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0026 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CSettingsCommand */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0026 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0026_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0026_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4682 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4682 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4682_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4682_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0027 */
-/* [local] */ 
-
-#ifndef DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand
-#define DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0027 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0027_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0027_v0_0_s_ifspec;
-
-#ifndef ____FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_INTERFACE_DEFINED__)
 #define ____FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_INTERFACE_DEFINED__
 
-/* interface __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand */
-/* [unique][uuid][object] */ 
+typedef interface __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand;
 
-
-
-/* interface __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("8cbb62b6-bd9c-5486-9d14-9cc4627b32d4")
-    __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand : public IInspectable
-    {
-    public:
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::IWebAccountCommand **current) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
-            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
-            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::UI::ApplicationSettings::IWebAccountCommand **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand **current);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [retval][out] */ __RPC__out boolean *hasCurrent);
-        
-        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [retval][out] */ __RPC__out boolean *hasCurrent);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual);
-        
-        END_INTERFACE
-    } __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl;
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
 
-    interface __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand
-    {
-        CONST_VTBL struct __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl *lpVtbl;
-    };
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
 
-    
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl;
+
+interface __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand
+{
+    CONST_VTBL struct __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl *lpVtbl;
+};
+
+
 
 #ifdef COBJMACROS
 
@@ -2677,131 +3288,53 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CApplicationSettings__CWebAc
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0028 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0028 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0028_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0028_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4683 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4683 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4683_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4683_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0029 */
-/* [local] */ 
-
-#ifndef DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand
-#define DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0029 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0029_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0029_v0_0_s_ifspec;
-
-#ifndef ____FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_INTERFACE_DEFINED__)
 #define ____FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_INTERFACE_DEFINED__
 
-/* interface __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand */
-/* [unique][uuid][object] */ 
+typedef interface __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand;
 
-
-
-/* interface __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("bd0d999c-b2ba-51b2-bcc0-d4a5cd821555")
-    __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE First( 
-            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand **first) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef  struct __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *First )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand **first);
-        
-        END_INTERFACE
-    } __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl;
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
 
-    interface __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand
-    {
-        CONST_VTBL struct __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl *lpVtbl;
-    };
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This);
 
-    
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountCommand **first);
+
+    END_INTERFACE
+} __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl;
+
+interface __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand
+{
+    CONST_VTBL struct __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
-
 
 #define __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
@@ -2829,153 +3362,55 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CApplicationSettings__CWebAc
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0030 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountCommand */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0030 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0030_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0030_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4684 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4684 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4684_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4684_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0031 */
-/* [local] */ 
-
-#ifndef DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand
-#define DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0031 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0031_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0031_v0_0_s_ifspec;
-
-#ifndef ____FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_INTERFACE_DEFINED__)
 #define ____FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_INTERFACE_DEFINED__
 
-/* interface __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand */
-/* [unique][uuid][object] */ 
+typedef interface __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand;
 
-
-
-/* interface __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("82d7cd74-8e33-5f06-92fc-915138aacbde")
-    __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand : public IInspectable
-    {
-    public:
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand **current) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
-            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
-            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand **current);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [retval][out] */ __RPC__out boolean *hasCurrent);
-        
-        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [retval][out] */ __RPC__out boolean *hasCurrent);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual);
-        
-        END_INTERFACE
-    } __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl;
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
 
-    interface __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand
-    {
-        CONST_VTBL struct __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl *lpVtbl;
-    };
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
 
-    
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl;
+
+interface __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand
+{
+    CONST_VTBL struct __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl *lpVtbl;
+};
+
+
 
 #ifdef COBJMACROS
 
@@ -3015,131 +3450,53 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CApplicationSettings__CWebAc
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0032 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0032 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0032_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0032_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4685 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4685 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4685_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4685_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0033 */
-/* [local] */ 
-
-#ifndef DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand
-#define DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0033 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0033_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0033_v0_0_s_ifspec;
-
-#ifndef ____FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_INTERFACE_DEFINED__)
 #define ____FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_INTERFACE_DEFINED__
 
-/* interface __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand */
-/* [unique][uuid][object] */ 
+typedef interface __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand;
 
-
-
-/* interface __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("15165367-2e93-59a6-b5c7-16d3b58fd2e7")
-    __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE First( 
-            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand **first) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef  struct __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *First )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand **first);
-        
-        END_INTERFACE
-    } __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl;
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
 
-    interface __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand
-    {
-        CONST_VTBL struct __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl *lpVtbl;
-    };
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This);
 
-    
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand **first);
+
+    END_INTERFACE
+} __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl;
+
+interface __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand
+{
+    CONST_VTBL struct __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
-
 
 #define __FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
@@ -3167,161 +3524,77 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CApplicationSettings__CWebAc
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0034 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIIterable_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0034 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0034_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0034_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4686 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4686 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4686_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4686_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0035 */
-/* [local] */ 
-
-#ifndef DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand
-#define DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0035 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0035_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0035_v0_0_s_ifspec;
-
-#ifndef ____FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand_INTERFACE_DEFINED__)
 #define ____FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand_INTERFACE_DEFINED__
 
-/* interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand */
-/* [unique][uuid][object] */ 
+typedef interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand;
 
-
-
-/* interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("95cc1bba-c279-5ee5-a524-78012b7fe17e")
-    __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE GetAt( 
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::ICredentialCommand **item) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
-            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::ICredentialCommand *item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::UI::ApplicationSettings::ICredentialCommand **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
             /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
             /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand **item);
-        
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * *item);
+
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
             __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
             /* [retval][out] */ __RPC__out unsigned int *size);
-        
+
         HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand *item,
+                                               __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
+            /* [in] */ __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * item,
             /* [out] */ __RPC__out unsigned int *index,
             /* [retval][out] */ __RPC__out boolean *found);
-        
+
         HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
+                                               __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
             /* [in] */ unsigned int startIndex,
             /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand **items,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * *items,
             /* [retval][out] */ __RPC__out unsigned int *actual);
-        
+
         END_INTERFACE
-    } __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl;
+} __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl;
 
-    interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand
-    {
-        CONST_VTBL struct __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl *lpVtbl;
-    };
+interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand
+{
+    CONST_VTBL struct __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl *lpVtbl;
+};
 
-    
+
 
 #ifdef COBJMACROS
 
@@ -3361,161 +3634,78 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CApplicationSettings__CCre
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+
+#endif // ____FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0036 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0036 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0036_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0036_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4687 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4687 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4687_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4687_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0037 */
-/* [local] */ 
-
-#ifndef DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand
-#define DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0037 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0037_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0037_v0_0_s_ifspec;
-
-#ifndef ____FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand_INTERFACE_DEFINED__)
 #define ____FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand_INTERFACE_DEFINED__
 
-/* interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand */
-/* [unique][uuid][object] */ 
+typedef interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand;
 
-
-
-/* interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("67b64d17-4245-5d7c-bfb4-6b68dd525877")
-    __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE GetAt( 
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::UI::Popups::IUICommand **item) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
-            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::Popups::IUICommand *item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::UI::Popups::IUICommand **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
             /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
             /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CPopups_CIUICommand **item);
-        
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CUI_CPopups_CIUICommand * *item);
+
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
             __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
             /* [retval][out] */ __RPC__out unsigned int *size);
-        
+
         HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CPopups_CIUICommand *item,
+                                               __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
+            /* [in] */ __x_ABI_CWindows_CUI_CPopups_CIUICommand * item,
             /* [out] */ __RPC__out unsigned int *index,
             /* [retval][out] */ __RPC__out boolean *found);
-        
+
         HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
+                                               __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
             /* [in] */ unsigned int startIndex,
             /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CPopups_CIUICommand **items,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CPopups_CIUICommand * *items,
             /* [retval][out] */ __RPC__out unsigned int *actual);
-        
+
         END_INTERFACE
-    } __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl;
+} __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl;
 
-    interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand
-    {
-        CONST_VTBL struct __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl *lpVtbl;
-    };
+interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand
+{
+    CONST_VTBL struct __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl *lpVtbl;
+};
 
-    
+
 
 #ifdef COBJMACROS
 
@@ -3555,161 +3745,78 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CApplicationSettings__CSet
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+
+#endif // ____FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0038 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0038 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0038_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0038_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4688 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4688 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4688_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4688_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0039 */
-/* [local] */ 
-
-#ifndef DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand
-#define DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0039 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0039_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0039_v0_0_s_ifspec;
-
-#ifndef ____FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_INTERFACE_DEFINED__)
 #define ____FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_INTERFACE_DEFINED__
 
-/* interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand */
-/* [unique][uuid][object] */ 
+typedef interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand;
 
-
-
-/* interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("207eaa3e-5ec9-5bd4-a1d2-73179a8128a8")
-    __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE GetAt( 
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::IWebAccountCommand **item) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
-            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::IWebAccountCommand *item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::UI::ApplicationSettings::IWebAccountCommand **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
             /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
             /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand **item);
-        
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * *item);
+
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
             __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
             /* [retval][out] */ __RPC__out unsigned int *size);
-        
+
         HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand *item,
+                                               __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
+            /* [in] */ __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * item,
             /* [out] */ __RPC__out unsigned int *index,
             /* [retval][out] */ __RPC__out boolean *found);
-        
+
         HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
+                                               __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
             /* [in] */ unsigned int startIndex,
             /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand **items,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * *items,
             /* [retval][out] */ __RPC__out unsigned int *actual);
-        
+
         END_INTERFACE
-    } __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl;
+} __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl;
 
-    interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand
-    {
-        CONST_VTBL struct __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl *lpVtbl;
-    };
+interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand
+{
+    CONST_VTBL struct __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl *lpVtbl;
+};
 
-    
+
 
 #ifdef COBJMACROS
 
@@ -3749,161 +3856,78 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CApplicationSettings__CWeb
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+
+#endif // ____FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0040 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0040 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0040_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0040_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4689 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4689 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4689_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4689_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0041 */
-/* [local] */ 
-
-#ifndef DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand
-#define DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0041 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0041_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0041_v0_0_s_ifspec;
-
-#ifndef ____FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_INTERFACE_DEFINED__)
 #define ____FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_INTERFACE_DEFINED__
 
-/* interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand */
-/* [unique][uuid][object] */ 
+typedef interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand;
 
-
-
-/* interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("b2d19260-1827-5d88-b948-9688cfcd63ae")
-    __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE GetAt( 
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand **item) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
-            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand *item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
             /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
             /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand **item);
-        
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * *item);
+
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
             __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
             /* [retval][out] */ __RPC__out unsigned int *size);
-        
+
         HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand *item,
+                                               __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
+            /* [in] */ __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * item,
             /* [out] */ __RPC__out unsigned int *index,
             /* [retval][out] */ __RPC__out boolean *found);
-        
+
         HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
+                                               __RPC__in __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
             /* [in] */ unsigned int startIndex,
             /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand **items,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * *items,
             /* [retval][out] */ __RPC__out unsigned int *actual);
-        
+
         END_INTERFACE
-    } __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl;
+} __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl;
 
-    interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand
-    {
-        CONST_VTBL struct __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl *lpVtbl;
-    };
+interface __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand
+{
+    CONST_VTBL struct __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl *lpVtbl;
+};
 
-    
+
 
 #ifdef COBJMACROS
 
@@ -3943,219 +3967,86 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CApplicationSettings__CWeb
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+
+#endif // ____FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0042 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0042 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0042_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0042_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4690 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4690 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4690_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4690_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0043 */
-/* [local] */ 
-
-#ifndef DEF___FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand
-#define DEF___FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0043 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0043_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0043_v0_0_s_ifspec;
-
-#ifndef ____FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand_INTERFACE_DEFINED__)
 #define ____FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand_INTERFACE_DEFINED__
 
-/* interface __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand */
-/* [unique][uuid][object] */ 
+typedef interface __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand;
 
-
-
-/* interface __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("b6af1cb5-f60e-5b08-b312-2eb51135cfc6")
-    __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE GetAt( 
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::ICredentialCommand **item) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
-            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetView( 
-            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand **view) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::ICredentialCommand *item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SetAt( 
-            /* [in] */ unsigned int index,
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::ICredentialCommand *item) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE InsertAt( 
-            /* [in] */ unsigned int index,
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::ICredentialCommand *item) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE RemoveAt( 
-            /* [in] */ unsigned int index) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Append( 
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::ICredentialCommand *item) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE RemoveAtEnd( void) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Clear( void) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::UI::ApplicationSettings::ICredentialCommand **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE ReplaceAll( 
-            /* [in] */ unsigned int count,
-            /* [size_is][in] */ __RPC__in_ecount_full(count) ABI::Windows::UI::ApplicationSettings::ICredentialCommand **value) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
             /* [in] */ __RPC__in REFIID riid,
             /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand **item);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [retval][out] */ __RPC__out unsigned int *size);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetView )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand **view);
-        
-        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand *item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetAt )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [in] */ unsigned int index,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand *item);
-        
-        HRESULT ( STDMETHODCALLTYPE *InsertAt )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [in] */ unsigned int index,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand *item);
-        
-        HRESULT ( STDMETHODCALLTYPE *RemoveAt )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [in] */ unsigned int index);
-        
-        HRESULT ( STDMETHODCALLTYPE *Append )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand *item);
-        
-        HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Clear )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual);
-        
-        HRESULT ( STDMETHODCALLTYPE *ReplaceAll )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
-            /* [in] */ unsigned int count,
-            /* [size_is][in] */ __RPC__in_ecount_full(count) __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand **value);
-        
-        END_INTERFACE
-    } __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl;
+        _COM_Outptr_  void **ppvObject);
 
-    interface __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand
-    {
-        CONST_VTBL struct __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl *lpVtbl;
-    };
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
 
-    
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This, /* [out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
+        /* [in] */ unsigned int index,
+        /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * *item);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+        __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
+        /* [retval][out] */ __RPC__out unsigned int *size);
+
+    HRESULT ( STDMETHODCALLTYPE *GetView )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This, /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CApplicationSettings__CCredentialCommand **view);
+
+    HRESULT ( STDMETHODCALLTYPE *IndexOf )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * item,
+        /* [out] */ __RPC__out unsigned int *index,
+        /* [retval][out] */ __RPC__out boolean *found);
+
+    HRESULT ( STDMETHODCALLTYPE *SetAt )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * item);
+
+    HRESULT ( STDMETHODCALLTYPE *InsertAt )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * item);
+
+    HRESULT ( STDMETHODCALLTYPE *RemoveAt )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This, /* [in] */ unsigned int index);
+    HRESULT ( STDMETHODCALLTYPE *Append )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This, /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * item);
+    HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This);
+    HRESULT ( STDMETHODCALLTYPE *Clear )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
+        /* [in] */ unsigned int startIndex,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    HRESULT ( STDMETHODCALLTYPE *ReplaceAll )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * This,
+        /* [in] */ unsigned int count,
+        /* [size_is][in] */ __RPC__in_ecount_full(count) __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * *value);
+
+    END_INTERFACE
+} __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl;
+
+interface __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand
+{
+    CONST_VTBL struct __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommandVtbl *lpVtbl;
+};
+
+
 
 #ifdef COBJMACROS
 
@@ -4219,219 +4110,86 @@ EXTERN_C const IID IID___FIVector_1_Windows__CUI__CApplicationSettings__CCredent
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+
+#endif // ____FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0044 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0044 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0044_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0044_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4691 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4691 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4691_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4691_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0045 */
-/* [local] */ 
-
-#ifndef DEF___FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand
-#define DEF___FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0045 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0045_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0045_v0_0_s_ifspec;
-
-#ifndef ____FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand_INTERFACE_DEFINED__)
 #define ____FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand_INTERFACE_DEFINED__
 
-/* interface __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand */
-/* [unique][uuid][object] */ 
+typedef interface __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand;
 
-
-
-/* interface __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("10bd9cdd-3767-5e96-9022-f00f9cbd6241")
-    __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE GetAt( 
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::UI::Popups::IUICommand **item) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
-            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetView( 
-            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand **view) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::Popups::IUICommand *item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SetAt( 
-            /* [in] */ unsigned int index,
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::Popups::IUICommand *item) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE InsertAt( 
-            /* [in] */ unsigned int index,
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::Popups::IUICommand *item) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE RemoveAt( 
-            /* [in] */ unsigned int index) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Append( 
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::Popups::IUICommand *item) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE RemoveAtEnd( void) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Clear( void) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::UI::Popups::IUICommand **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE ReplaceAll( 
-            /* [in] */ unsigned int count,
-            /* [size_is][in] */ __RPC__in_ecount_full(count) ABI::Windows::UI::Popups::IUICommand **value) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
             /* [in] */ __RPC__in REFIID riid,
             /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CPopups_CIUICommand **item);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [retval][out] */ __RPC__out unsigned int *size);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetView )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand **view);
-        
-        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CPopups_CIUICommand *item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetAt )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [in] */ unsigned int index,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CPopups_CIUICommand *item);
-        
-        HRESULT ( STDMETHODCALLTYPE *InsertAt )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [in] */ unsigned int index,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CPopups_CIUICommand *item);
-        
-        HRESULT ( STDMETHODCALLTYPE *RemoveAt )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [in] */ unsigned int index);
-        
-        HRESULT ( STDMETHODCALLTYPE *Append )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CPopups_CIUICommand *item);
-        
-        HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Clear )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CPopups_CIUICommand **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual);
-        
-        HRESULT ( STDMETHODCALLTYPE *ReplaceAll )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
-            /* [in] */ unsigned int count,
-            /* [size_is][in] */ __RPC__in_ecount_full(count) __x_ABI_CWindows_CUI_CPopups_CIUICommand **value);
-        
-        END_INTERFACE
-    } __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl;
+        _COM_Outptr_  void **ppvObject);
 
-    interface __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand
-    {
-        CONST_VTBL struct __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl *lpVtbl;
-    };
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
 
-    
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This, /* [out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CPopups_CIUICommand * *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
+        /* [in] */ unsigned int index,
+        /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CPopups_CIUICommand * *item);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+        __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
+        /* [retval][out] */ __RPC__out unsigned int *size);
+
+    HRESULT ( STDMETHODCALLTYPE *GetView )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This, /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CApplicationSettings__CSettingsCommand **view);
+
+    HRESULT ( STDMETHODCALLTYPE *IndexOf )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CPopups_CIUICommand * item,
+        /* [out] */ __RPC__out unsigned int *index,
+        /* [retval][out] */ __RPC__out boolean *found);
+
+    HRESULT ( STDMETHODCALLTYPE *SetAt )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CPopups_CIUICommand * item);
+
+    HRESULT ( STDMETHODCALLTYPE *InsertAt )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CPopups_CIUICommand * item);
+
+    HRESULT ( STDMETHODCALLTYPE *RemoveAt )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This, /* [in] */ unsigned int index);
+    HRESULT ( STDMETHODCALLTYPE *Append )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This, /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CPopups_CIUICommand * item);
+    HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This);
+    HRESULT ( STDMETHODCALLTYPE *Clear )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
+        /* [in] */ unsigned int startIndex,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CPopups_CIUICommand * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    HRESULT ( STDMETHODCALLTYPE *ReplaceAll )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * This,
+        /* [in] */ unsigned int count,
+        /* [size_is][in] */ __RPC__in_ecount_full(count) __x_ABI_CWindows_CUI_CPopups_CIUICommand * *value);
+
+    END_INTERFACE
+} __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl;
+
+interface __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand
+{
+    CONST_VTBL struct __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommandVtbl *lpVtbl;
+};
+
+
 
 #ifdef COBJMACROS
 
@@ -4495,219 +4253,86 @@ EXTERN_C const IID IID___FIVector_1_Windows__CUI__CApplicationSettings__CSetting
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+
+#endif // ____FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0046 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0046 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0046_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0046_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4692 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4692 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4692_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4692_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0047 */
-/* [local] */ 
-
-#ifndef DEF___FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand
-#define DEF___FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0047 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0047_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0047_v0_0_s_ifspec;
-
-#ifndef ____FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_INTERFACE_DEFINED__)
 #define ____FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_INTERFACE_DEFINED__
 
-/* interface __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand */
-/* [unique][uuid][object] */ 
+typedef interface __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand;
 
-
-
-/* interface __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("64e864c8-7fef-5df5-a624-50b577f48554")
-    __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE GetAt( 
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::IWebAccountCommand **item) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
-            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetView( 
-            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand **view) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::IWebAccountCommand *item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SetAt( 
-            /* [in] */ unsigned int index,
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::IWebAccountCommand *item) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE InsertAt( 
-            /* [in] */ unsigned int index,
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::IWebAccountCommand *item) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE RemoveAt( 
-            /* [in] */ unsigned int index) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Append( 
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::IWebAccountCommand *item) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE RemoveAtEnd( void) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Clear( void) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::UI::ApplicationSettings::IWebAccountCommand **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE ReplaceAll( 
-            /* [in] */ unsigned int count,
-            /* [size_is][in] */ __RPC__in_ecount_full(count) ABI::Windows::UI::ApplicationSettings::IWebAccountCommand **value) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
             /* [in] */ __RPC__in REFIID riid,
             /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand **item);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [retval][out] */ __RPC__out unsigned int *size);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetView )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand **view);
-        
-        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand *item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetAt )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [in] */ unsigned int index,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand *item);
-        
-        HRESULT ( STDMETHODCALLTYPE *InsertAt )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [in] */ unsigned int index,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand *item);
-        
-        HRESULT ( STDMETHODCALLTYPE *RemoveAt )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [in] */ unsigned int index);
-        
-        HRESULT ( STDMETHODCALLTYPE *Append )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand *item);
-        
-        HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Clear )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual);
-        
-        HRESULT ( STDMETHODCALLTYPE *ReplaceAll )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
-            /* [in] */ unsigned int count,
-            /* [size_is][in] */ __RPC__in_ecount_full(count) __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand **value);
-        
-        END_INTERFACE
-    } __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl;
+        _COM_Outptr_  void **ppvObject);
 
-    interface __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand
-    {
-        CONST_VTBL struct __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl *lpVtbl;
-    };
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
 
-    
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This, /* [out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
+        /* [in] */ unsigned int index,
+        /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * *item);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+        __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
+        /* [retval][out] */ __RPC__out unsigned int *size);
+
+    HRESULT ( STDMETHODCALLTYPE *GetView )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This, /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountCommand **view);
+
+    HRESULT ( STDMETHODCALLTYPE *IndexOf )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * item,
+        /* [out] */ __RPC__out unsigned int *index,
+        /* [retval][out] */ __RPC__out boolean *found);
+
+    HRESULT ( STDMETHODCALLTYPE *SetAt )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * item);
+
+    HRESULT ( STDMETHODCALLTYPE *InsertAt )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * item);
+
+    HRESULT ( STDMETHODCALLTYPE *RemoveAt )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This, /* [in] */ unsigned int index);
+    HRESULT ( STDMETHODCALLTYPE *Append )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This, /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * item);
+    HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This);
+    HRESULT ( STDMETHODCALLTYPE *Clear )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
+        /* [in] */ unsigned int startIndex,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    HRESULT ( STDMETHODCALLTYPE *ReplaceAll )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * This,
+        /* [in] */ unsigned int count,
+        /* [size_is][in] */ __RPC__in_ecount_full(count) __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * *value);
+
+    END_INTERFACE
+} __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl;
+
+interface __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand
+{
+    CONST_VTBL struct __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommandVtbl *lpVtbl;
+};
+
+
 
 #ifdef COBJMACROS
 
@@ -4771,219 +4396,86 @@ EXTERN_C const IID IID___FIVector_1_Windows__CUI__CApplicationSettings__CWebAcco
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+
+#endif // ____FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0048 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0048 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0048_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0048_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4693 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4693 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4693_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4693_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0049 */
-/* [local] */ 
-
-#ifndef DEF___FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand
-#define DEF___FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0049 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0049_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0049_v0_0_s_ifspec;
-
-#ifndef ____FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_INTERFACE_DEFINED__)
 #define ____FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_INTERFACE_DEFINED__
 
-/* interface __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand */
-/* [unique][uuid][object] */ 
+typedef interface __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand;
 
-
-
-/* interface __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("d376abf3-f0c1-5233-9f42-de531884963e")
-    __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE GetAt( 
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand **item) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
-            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetView( 
-            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand **view) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand *item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SetAt( 
-            /* [in] */ unsigned int index,
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand *item) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE InsertAt( 
-            /* [in] */ unsigned int index,
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand *item) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE RemoveAt( 
-            /* [in] */ unsigned int index) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Append( 
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand *item) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE RemoveAtEnd( void) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Clear( void) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE ReplaceAll( 
-            /* [in] */ unsigned int count,
-            /* [size_is][in] */ __RPC__in_ecount_full(count) ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand **value) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
             /* [in] */ __RPC__in REFIID riid,
             /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand **item);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [retval][out] */ __RPC__out unsigned int *size);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetView )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand **view);
-        
-        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand *item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetAt )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [in] */ unsigned int index,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand *item);
-        
-        HRESULT ( STDMETHODCALLTYPE *InsertAt )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [in] */ unsigned int index,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand *item);
-        
-        HRESULT ( STDMETHODCALLTYPE *RemoveAt )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [in] */ unsigned int index);
-        
-        HRESULT ( STDMETHODCALLTYPE *Append )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand *item);
-        
-        HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Clear )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual);
-        
-        HRESULT ( STDMETHODCALLTYPE *ReplaceAll )( 
-            __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
-            /* [in] */ unsigned int count,
-            /* [size_is][in] */ __RPC__in_ecount_full(count) __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand **value);
-        
-        END_INTERFACE
-    } __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl;
+        _COM_Outptr_  void **ppvObject);
 
-    interface __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand
-    {
-        CONST_VTBL struct __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl *lpVtbl;
-    };
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
 
-    
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This, /* [out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
+        /* [in] */ unsigned int index,
+        /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * *item);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+        __RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
+        /* [retval][out] */ __RPC__out unsigned int *size);
+
+    HRESULT ( STDMETHODCALLTYPE *GetView )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This, /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand **view);
+
+    HRESULT ( STDMETHODCALLTYPE *IndexOf )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * item,
+        /* [out] */ __RPC__out unsigned int *index,
+        /* [retval][out] */ __RPC__out boolean *found);
+
+    HRESULT ( STDMETHODCALLTYPE *SetAt )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * item);
+
+    HRESULT ( STDMETHODCALLTYPE *InsertAt )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * item);
+
+    HRESULT ( STDMETHODCALLTYPE *RemoveAt )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This, /* [in] */ unsigned int index);
+    HRESULT ( STDMETHODCALLTYPE *Append )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This, /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * item);
+    HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This);
+    HRESULT ( STDMETHODCALLTYPE *Clear )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
+        /* [in] */ unsigned int startIndex,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    HRESULT ( STDMETHODCALLTYPE *ReplaceAll )(__RPC__in __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * This,
+        /* [in] */ unsigned int count,
+        /* [size_is][in] */ __RPC__in_ecount_full(count) __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * *value);
+
+    END_INTERFACE
+} __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl;
+
+interface __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand
+{
+    CONST_VTBL struct __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommandVtbl *lpVtbl;
+};
+
+
 
 #ifdef COBJMACROS
 
@@ -5047,121 +4539,42 @@ EXTERN_C const IID IID___FIVector_1_Windows__CUI__CApplicationSettings__CWebAcco
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+
+#endif // ____FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
-
-#endif 	/* ____FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0050 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0050 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0050_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0050_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4694 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4694 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4694_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4694_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0051 */
-/* [local] */ 
-
-#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs
-#define DEF___FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0051 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0051_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0051_v0_0_s_ifspec;
-
-#ifndef ____FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__
 
-/* interface __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs */
-/* [unique][uuid][object] */ 
+typedef interface __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs;
 
-
-
-/* interface __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("69b8847e-7d72-5a15-bc1c-4ca39c93b162")
-    __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs : public IUnknown
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE Invoke( 
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPane *sender,
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommandsRequestedEventArgs *e) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs * This);
 
-    typedef struct __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane *sender,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs *e);
-        
-        END_INTERFACE
-    } __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgsVtbl;
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgsVtbl;
 
-    interface __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs
-    {
-        CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgsVtbl *lpVtbl;
-    };
-
-    
+interface __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgsVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
-
-
 #define __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
@@ -5174,125 +4587,45 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CApplicationSetting
 
 #define __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs_Invoke(This,sender,e)	\
     ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
-
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+
+#endif // ____FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
-
-#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0052 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0052 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0052_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0052_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4695 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4695 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4695_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings2Eidl_0000_4695_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0053 */
-/* [local] */ 
-
-#ifndef DEF___FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs
-#define DEF___FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0053 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0053_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0053_v0_0_s_ifspec;
-
-#ifndef ____FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+#if !defined(____FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__
 
-/* interface __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs */
-/* [unique][uuid][object] */ 
+typedef interface __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs;
 
-
-
-/* interface __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("f39a56a2-7db1-5c48-9e13-7dc485a4a99e")
-    __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs : public IUnknown
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE Invoke( 
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::ISettingsPane *sender,
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequestedEventArgs *e) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs * This);
 
-    typedef struct __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            __RPC__in __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane *sender,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs *e);
-        
-        END_INTERFACE
-    } __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgsVtbl;
+    HRESULT ( STDMETHODCALLTYPE *Invoke )(__RPC__in __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs * This,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane * sender,/* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs * *e);
+    END_INTERFACE
+} __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgsVtbl;
 
-    interface __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs
-    {
-        CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgsVtbl *lpVtbl;
-    };
-
-    
+interface __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs
+{
+    CONST_VTBL struct __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgsVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
-
-
 #define __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
@@ -5305,3184 +4638,2530 @@ EXTERN_C const IID IID___FITypedEventHandler_2_Windows__CUI__CApplicationSetting
 
 #define __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs_Invoke(This,sender,e)	\
     ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
-
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+
+#endif // ____FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__
+
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+
+
+#ifndef ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CFoundation_CIAsyncAction __x_ABI_CWindows_CFoundation_CIAsyncAction;
+
+#endif // ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
 
 
 
 
-#endif 	/* ____FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__ */
+
+#ifndef ____x_ABI_CWindows_CSecurity_CCredentials_CIPasswordCredential_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CCredentials_CIPasswordCredential_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSecurity_CCredentials_CIPasswordCredential __x_ABI_CWindows_CSecurity_CCredentials_CIPasswordCredential;
+
+#endif // ____x_ABI_CWindows_CSecurity_CCredentials_CIPasswordCredential_FWD_DEFINED__
 
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0054 */
-/* [local] */ 
+#ifndef ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccount_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccount_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccount __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccount;
 
-#endif /* pinterface */
-#endif /* DEF___FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs */
-#if !defined(__cplusplus)
+#endif // ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccount_FWD_DEFINED__
 
-#if !defined(__cplusplus)
-/* [v1_enum] */ 
-enum __x_ABI_CWindows_CUI_CApplicationSettings_CSettingsEdgeLocation
-    {
-        SettingsEdgeLocation_Right	= 0,
-        SettingsEdgeLocation_Left	= 1
-    } ;
-#endif /* end if !defined(__cplusplus) */
 
-#endif
-#if !defined(__cplusplus)
+#ifndef ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider;
 
-#if !defined(__cplusplus)
-/* [v1_enum] */ 
+#endif // ____x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider_FWD_DEFINED__
+
+
+
+
+
+
+#ifndef ____x_ABI_CWindows_CUI_CPopups_CIUICommandInvokedHandler_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CPopups_CIUICommandInvokedHandler_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CPopups_CIUICommandInvokedHandler __x_ABI_CWindows_CUI_CPopups_CIUICommandInvokedHandler;
+
+#endif // ____x_ABI_CWindows_CUI_CPopups_CIUICommandInvokedHandler_FWD_DEFINED__
+
+
+
+
+
+
+
+typedef enum __x_ABI_CWindows_CUI_CApplicationSettings_CSettingsEdgeLocation __x_ABI_CWindows_CUI_CApplicationSettings_CSettingsEdgeLocation;
+
+
+typedef enum __x_ABI_CWindows_CUI_CApplicationSettings_CSupportedWebAccountActions __x_ABI_CWindows_CUI_CApplicationSettings_CSupportedWebAccountActions;
+
+
+typedef enum __x_ABI_CWindows_CUI_CApplicationSettings_CWebAccountAction __x_ABI_CWindows_CUI_CApplicationSettings_CWebAccountAction;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ *
+ * Struct Windows.UI.ApplicationSettings.SettingsEdgeLocation
+ *
+ * Introduced to Windows.UI.ApplicationSettings.ApplicationsSettingsContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+/* [v1_enum, deprecated, contract] */
+enum 
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+DEPRECATED("SettingsEdgeLocation is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+__x_ABI_CWindows_CUI_CApplicationSettings_CSettingsEdgeLocation
+{
+    SettingsEdgeLocation_Right = 0,
+    SettingsEdgeLocation_Left = 1,
+};
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.UI.ApplicationSettings.SupportedWebAccountActions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+/* [v1_enum, flags, contract] */
 enum __x_ABI_CWindows_CUI_CApplicationSettings_CSupportedWebAccountActions
-    {
-        SupportedWebAccountActions_None	= 0,
-        SupportedWebAccountActions_Reconnect	= 0x1,
-        SupportedWebAccountActions_Remove	= 0x2,
-        SupportedWebAccountActions_ViewDetails	= 0x4,
-        SupportedWebAccountActions_Manage	= 0x8,
-        SupportedWebAccountActions_More	= 0x10
-    } ;
-#endif /* end if !defined(__cplusplus) */
+{
+    SupportedWebAccountActions_None = 0,
+    SupportedWebAccountActions_Reconnect = 0x1,
+    SupportedWebAccountActions_Remove = 0x2,
+    SupportedWebAccountActions_ViewDetails = 0x4,
+    SupportedWebAccountActions_Manage = 0x8,
+    SupportedWebAccountActions_More = 0x10,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#else
-namespace ABI {
-namespace Windows {
-namespace UI {
-namespace ApplicationSettings {
-enum SupportedWebAccountActions;
-DEFINE_ENUM_FLAG_OPERATORS(SupportedWebAccountActions)
-} /*ApplicationSettings*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
-#if !defined(__cplusplus)
 
-#if !defined(__cplusplus)
-/* [v1_enum] */ 
+/*
+ *
+ * Struct Windows.UI.ApplicationSettings.WebAccountAction
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+/* [v1_enum, contract] */
 enum __x_ABI_CWindows_CUI_CApplicationSettings_CWebAccountAction
-    {
-        WebAccountAction_Reconnect	= 0,
-        WebAccountAction_Remove	= 1,
-        WebAccountAction_ViewDetails	= 2,
-        WebAccountAction_Manage	= 3,
-        WebAccountAction_More	= 4
-    } ;
-#endif /* end if !defined(__cplusplus) */
-
-#endif
+{
+    WebAccountAction_Reconnect = 0,
+    WebAccountAction_Remove = 1,
+    WebAccountAction_ViewDetails = 2,
+    WebAccountAction_Manage = 3,
+    WebAccountAction_More = 4,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0054 */
-/* [local] */ 
-
-#ifdef __cplusplus
-} /* end extern "C" */
-namespace ABI {
-    namespace Windows {
-        namespace UI {
-            namespace ApplicationSettings {
-                
-                /* [v1_enum] */ 
-                enum SettingsEdgeLocation
-                    {
-                        SettingsEdgeLocation_Right	= 0,
-                        SettingsEdgeLocation_Left	= 1
-                    } ;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-extern "C" { 
-#endif
-
-#ifdef __cplusplus
-} /* end extern "C" */
-namespace ABI {
-    namespace Windows {
-        namespace UI {
-            namespace ApplicationSettings {
-                
-                /* [v1_enum] */ 
-                enum SupportedWebAccountActions
-                    {
-                        SupportedWebAccountActions_None	= 0,
-                        SupportedWebAccountActions_Reconnect	= 0x1,
-                        SupportedWebAccountActions_Remove	= 0x2,
-                        SupportedWebAccountActions_ViewDetails	= 0x4,
-                        SupportedWebAccountActions_Manage	= 0x8,
-                        SupportedWebAccountActions_More	= 0x10
-                    } ;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-extern "C" { 
-#endif
-
-#ifdef __cplusplus
-} /* end extern "C" */
-namespace ABI {
-    namespace Windows {
-        namespace UI {
-            namespace ApplicationSettings {
-                
-                /* [v1_enum] */ 
-                enum WebAccountAction
-                    {
-                        WebAccountAction_Reconnect	= 0,
-                        WebAccountAction_Remove	= 1,
-                        WebAccountAction_ViewDetails	= 2,
-                        WebAccountAction_Manage	= 3,
-                        WebAccountAction_More	= 4
-                    } ;
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-extern "C" { 
-#endif
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0054_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0054_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_INTERFACE_DEFINED__
+/*
+ *
+ * Delegate Windows.UI.ApplicationSettings.CredentialCommandCredentialDeletedHandler
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_INTERFACE_DEFINED__
+/* [object, uuid("61C0E185-0977-4678-B4E2-98727AFBEED9"), contract] */
+typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandlerVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject);
 
-/* interface __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler */
-/* [uuid][object] */ 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler * This);
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler * This);
+HRESULT ( STDMETHODCALLTYPE *Invoke )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * command
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandlerVtbl;
+
+interface __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandlerVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_Invoke(This,command) \
+    ( (This)->lpVtbl->Invoke(This,command) )
 
 
-
-/* interface ABI::Windows::UI::ApplicationSettings::ICredentialCommandCredentialDeletedHandler */
-/* [uuid][object] */ 
+#endif /* COBJMACROS */
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace ApplicationSettings {
-                    
-                    MIDL_INTERFACE("61C0E185-0977-4678-B4E2-98727AFBEED9")
-                    ICredentialCommandCredentialDeletedHandler : public IUnknown
-                    {
-                    public:
-                        virtual HRESULT STDMETHODCALLTYPE Invoke( 
-                            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::ICredentialCommand *command) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_ICredentialCommandCredentialDeletedHandler = __uuidof(ICredentialCommandCredentialDeletedHandler);
+/*
+ *
+ * Delegate Windows.UI.ApplicationSettings.WebAccountCommandInvokedHandler
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_INTERFACE_DEFINED__
+/* [object, uuid("1EE6E459-1705-4A9A-B599-A0C3D6921973"), contract] */
+typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandlerVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject);
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler * This);
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler * This);
+HRESULT ( STDMETHODCALLTYPE *Invoke )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * command,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs * args
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandlerVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandlerVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand *command);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandlerVtbl;
-
-    interface __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandlerVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandlerVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_Invoke(This,command,args) \
+    ( (This)->lpVtbl->Invoke(This,command,args) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_Invoke(This,command)	\
-    ( (This)->lpVtbl -> Invoke(This,command) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler_INTERFACE_DEFINED__ */
-
-
-#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::ApplicationSettings::IWebAccountCommandInvokedHandler */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace ApplicationSettings {
-                    
-                    MIDL_INTERFACE("1EE6E459-1705-4A9A-B599-A0C3D6921973")
-                    IWebAccountCommandInvokedHandler : public IUnknown
-                    {
-                    public:
-                        virtual HRESULT STDMETHODCALLTYPE Invoke( 
-                            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::IWebAccountCommand *command,
-                            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::IWebAccountInvokedArgs *args) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_IWebAccountCommandInvokedHandler = __uuidof(IWebAccountCommandInvokedHandler);
+/*
+ *
+ * Delegate Windows.UI.ApplicationSettings.WebAccountProviderCommandInvokedHandler
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_INTERFACE_DEFINED__
+/* [object, uuid("B7DE5527-4C8F-42DD-84DA-5EC493ABDB9A"), contract] */
+typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandlerVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject);
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler * This);
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler * This);
+HRESULT ( STDMETHODCALLTYPE *Invoke )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * command
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandlerVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandlerVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand *command,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs *args);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandlerVtbl;
-
-    interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandlerVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandlerVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_Invoke(This,command) \
+    ( (This)->lpVtbl->Invoke(This,command) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_Invoke(This,command,args)	\
-    ( (This)->lpVtbl -> Invoke(This,command,args) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler_INTERFACE_DEFINED__ */
-
-
-#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommandInvokedHandler */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace ApplicationSettings {
-                    
-                    MIDL_INTERFACE("B7DE5527-4C8F-42DD-84DA-5EC493ABDB9A")
-                    IWebAccountProviderCommandInvokedHandler : public IUnknown
-                    {
-                    public:
-                        virtual HRESULT STDMETHODCALLTYPE Invoke( 
-                            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand *command) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_IWebAccountProviderCommandInvokedHandler = __uuidof(IWebAccountProviderCommandInvokedHandler);
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.IAccountsSettingsPane
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.AccountsSettingsPane
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IAccountsSettingsPane[] = L"Windows.UI.ApplicationSettings.IAccountsSettingsPane";
+/* [object, uuid("81EA942C-4F09-4406-A538-838D9B14B7E6"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [eventadd] */HRESULT ( STDMETHODCALLTYPE *add_AccountCommandsRequested )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * cookie
+        );
+    /* [eventremove] */HRESULT ( STDMETHODCALLTYPE *remove_AccountCommandsRequested )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane * This,
+        /* [in] */EventRegistrationToken cookie
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandlerVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand *command);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandlerVtbl;
-
-    interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandlerVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_Invoke(This,command)	\
-    ( (This)->lpVtbl -> Invoke(This,command) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_add_AccountCommandsRequested(This,handler,cookie) \
+    ( (This)->lpVtbl->add_AccountCommandsRequested(This,handler,cookie) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_remove_AccountCommandsRequested(This,cookie) \
+    ( (This)->lpVtbl->remove_AccountCommandsRequested(This,cookie) )
+
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0057 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IAccountsSettingsPane[] = L"Windows.UI.ApplicationSettings.IAccountsSettingsPane";
-#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0057 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0057_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0057_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPane */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace ApplicationSettings {
-                    
-                    MIDL_INTERFACE("81EA942C-4F09-4406-A538-838D9B14B7E6")
-                    IAccountsSettingsPane : public IInspectable
-                    {
-                    public:
-                        virtual HRESULT STDMETHODCALLTYPE add_AccountCommandsRequested( 
-                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs *handler,
-                            /* [out][retval] */ __RPC__out EventRegistrationToken *cookie) = 0;
-                        
-                        virtual HRESULT STDMETHODCALLTYPE remove_AccountCommandsRequested( 
-                            /* [in] */ EventRegistrationToken cookie) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_IAccountsSettingsPane = __uuidof(IAccountsSettingsPane);
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IAccountsSettingsPaneCommandsRequestedEventArgs[] = L"Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs";
+/* [object, uuid("3B68C099-DB19-45D0-9ABF-95D3773C9330"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_WebAccountProviderCommands )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_WebAccountCommands )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CredentialCommands )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Commands )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_HeaderText )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt HSTRING * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_HeaderText )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
+        /* [in] */__RPC__in HSTRING value
+        );
+    HRESULT ( STDMETHODCALLTYPE *GetDeferral )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral * * deferral
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgsVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *add_AccountCommandsRequested )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane * This,
-            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CAccountsSettingsPane_Windows__CUI__CApplicationSettings__CAccountsSettingsPaneCommandsRequestedEventArgs *handler,
-            /* [out][retval] */ __RPC__out EventRegistrationToken *cookie);
-        
-        HRESULT ( STDMETHODCALLTYPE *remove_AccountCommandsRequested )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane * This,
-            /* [in] */ EventRegistrationToken cookie);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneVtbl;
-
-    interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgsVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_get_WebAccountProviderCommands(This,value) \
+    ( (This)->lpVtbl->get_WebAccountProviderCommands(This,value) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_get_WebAccountCommands(This,value) \
+    ( (This)->lpVtbl->get_WebAccountCommands(This,value) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_get_CredentialCommands(This,value) \
+    ( (This)->lpVtbl->get_CredentialCommands(This,value) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_get_Commands(This,value) \
+    ( (This)->lpVtbl->get_Commands(This,value) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_add_AccountCommandsRequested(This,handler,cookie)	\
-    ( (This)->lpVtbl -> add_AccountCommandsRequested(This,handler,cookie) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_get_HeaderText(This,value) \
+    ( (This)->lpVtbl->get_HeaderText(This,value) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_remove_AccountCommandsRequested(This,cookie)	\
-    ( (This)->lpVtbl -> remove_AccountCommandsRequested(This,cookie) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_put_HeaderText(This,value) \
+    ( (This)->lpVtbl->put_HeaderText(This,value) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_GetDeferral(This,deferral) \
+    ( (This)->lpVtbl->GetDeferral(This,deferral) )
+
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0058 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IAccountsSettingsPaneCommandsRequestedEventArgs[] = L"Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs";
-#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0058 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0058_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0058_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommandsRequestedEventArgs */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace ApplicationSettings {
-                    
-                    MIDL_INTERFACE("3B68C099-DB19-45D0-9ABF-95D3773C9330")
-                    IAccountsSettingsPaneCommandsRequestedEventArgs : public IInspectable
-                    {
-                    public:
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_WebAccountProviderCommands( 
-                            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand **value) = 0;
-                        
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_WebAccountCommands( 
-                            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand **value) = 0;
-                        
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CredentialCommands( 
-                            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand **value) = 0;
-                        
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Commands( 
-                            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand **value) = 0;
-                        
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HeaderText( 
-                            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value) = 0;
-                        
-                        virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_HeaderText( 
-                            /* [in] */ __RPC__in HSTRING value) = 0;
-                        
-                        virtual HRESULT STDMETHODCALLTYPE GetDeferral( 
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPaneEventDeferral **deferral) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_IAccountsSettingsPaneCommandsRequestedEventArgs = __uuidof(IAccountsSettingsPaneCommandsRequestedEventArgs);
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.IAccountsSettingsPaneEventDeferral
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.AccountsSettingsPaneEventDeferral
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IAccountsSettingsPaneEventDeferral[] = L"Windows.UI.ApplicationSettings.IAccountsSettingsPaneEventDeferral";
+/* [object, uuid("CBF25D3F-E5BA-40EF-93DA-65E096E5FB04"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferralVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *Complete )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral * This
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferralVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_WebAccountProviderCommands )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
-            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountProviderCommand **value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_WebAccountCommands )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
-            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_Windows__CUI__CApplicationSettings__CWebAccountCommand **value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CredentialCommands )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
-            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_Windows__CUI__CApplicationSettings__CCredentialCommand **value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Commands )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
-            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand **value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HeaderText )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
-            /* [out][retval] */ __RPC__deref_out_opt HSTRING *value);
-        
-        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_HeaderText )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
-            /* [in] */ __RPC__in HSTRING value);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetDeferral )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs * This,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral **deferral);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgsVtbl;
-
-    interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgsVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferralVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_Complete(This) \
+    ( (This)->lpVtbl->Complete(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_get_WebAccountProviderCommands(This,value)	\
-    ( (This)->lpVtbl -> get_WebAccountProviderCommands(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_get_WebAccountCommands(This,value)	\
-    ( (This)->lpVtbl -> get_WebAccountCommands(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_get_CredentialCommands(This,value)	\
-    ( (This)->lpVtbl -> get_CredentialCommands(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_get_Commands(This,value)	\
-    ( (This)->lpVtbl -> get_Commands(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_get_HeaderText(This,value)	\
-    ( (This)->lpVtbl -> get_HeaderText(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_put_HeaderText(This,value)	\
-    ( (This)->lpVtbl -> put_HeaderText(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_GetDeferral(This,deferral)	\
-    ( (This)->lpVtbl -> GetDeferral(This,deferral) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0059 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IAccountsSettingsPaneEventDeferral[] = L"Windows.UI.ApplicationSettings.IAccountsSettingsPaneEventDeferral";
-#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0059 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0059_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0059_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPaneEventDeferral */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace ApplicationSettings {
-                    
-                    MIDL_INTERFACE("CBF25D3F-E5BA-40EF-93DA-65E096E5FB04")
-                    IAccountsSettingsPaneEventDeferral : public IInspectable
-                    {
-                    public:
-                        virtual HRESULT STDMETHODCALLTYPE Complete( void) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_IAccountsSettingsPaneEventDeferral = __uuidof(IAccountsSettingsPaneEventDeferral);
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.AccountsSettingsPane
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IAccountsSettingsPaneStatics[] = L"Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics";
+/* [object, uuid("561F8B60-B0EC-4150-A8DC-208EE44B068A"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *GetForCurrentView )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane * * current
+        );
+    HRESULT ( STDMETHODCALLTYPE *Show )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics * This
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStaticsVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferralVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *Complete )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral * This);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferralVtbl;
-
-    interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferralVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStaticsVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_GetForCurrentView(This,current) \
+    ( (This)->lpVtbl->GetForCurrentView(This,current) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_Show(This) \
+    ( (This)->lpVtbl->Show(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_Complete(This)	\
-    ( (This)->lpVtbl -> Complete(This) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneEventDeferral_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0060 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IAccountsSettingsPaneStatics[] = L"Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics";
-#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0060 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0060_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0060_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace ApplicationSettings {
-                    
-                    MIDL_INTERFACE("561F8B60-B0EC-4150-A8DC-208EE44B068A")
-                    IAccountsSettingsPaneStatics : public IInspectable
-                    {
-                    public:
-                        virtual HRESULT STDMETHODCALLTYPE GetForCurrentView( 
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPane **current) = 0;
-                        
-                        virtual HRESULT STDMETHODCALLTYPE Show( void) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_IAccountsSettingsPaneStatics = __uuidof(IAccountsSettingsPaneStatics);
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 3.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.AccountsSettingsPane
+ *
+ *
+ * Any object which implements this interface must also implement the following interfaces:
+ *     Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IAccountsSettingsPaneStatics2[] = L"Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics2";
+/* [object, uuid("D21DF7C2-CE0D-484F-B8E8-E823C215765E"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *ShowManageAccountsAsync )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * asyncInfo
+        );
+    HRESULT ( STDMETHODCALLTYPE *ShowAddAccountAsync )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction * * asyncInfo
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2Vtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStaticsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetForCurrentView )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics * This,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPane **current);
-        
-        HRESULT ( STDMETHODCALLTYPE *Show )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics * This);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStaticsVtbl;
-
-    interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStaticsVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2Vtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_ShowManageAccountsAsync(This,asyncInfo) \
+    ( (This)->lpVtbl->ShowManageAccountsAsync(This,asyncInfo) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_ShowAddAccountAsync(This,asyncInfo) \
+    ( (This)->lpVtbl->ShowAddAccountAsync(This,asyncInfo) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_GetForCurrentView(This,current)	\
-    ( (This)->lpVtbl -> GetForCurrentView(This,current) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_Show(This)	\
-    ( (This)->lpVtbl -> Show(This) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0061 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IAccountsSettingsPaneStatics2[] = L"Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics2";
-#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0061 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0061_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0061_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2 */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics2 */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x30000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace ApplicationSettings {
-                    
-                    MIDL_INTERFACE("D21DF7C2-CE0D-484F-B8E8-E823C215765E")
-                    IAccountsSettingsPaneStatics2 : public IInspectable
-                    {
-                    public:
-                        virtual HRESULT STDMETHODCALLTYPE ShowManageAccountsAsync( 
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction **asyncInfo) = 0;
-                        
-                        virtual HRESULT STDMETHODCALLTYPE ShowAddAccountAsync( 
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IAsyncAction **asyncInfo) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_IAccountsSettingsPaneStatics2 = __uuidof(IAccountsSettingsPaneStatics2);
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.ICredentialCommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.CredentialCommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ICredentialCommand[] = L"Windows.UI.ApplicationSettings.ICredentialCommand";
+/* [object, uuid("A5F665E6-6143-4A7A-A971-B017BA978CE2"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_PasswordCredential )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CSecurity_CCredentials_CIPasswordCredential * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_CredentialDeleted )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler  * * value
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2Vtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2 * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2 * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2 * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2 * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2 * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2 * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *ShowManageAccountsAsync )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2 * This,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction **asyncInfo);
-        
-        HRESULT ( STDMETHODCALLTYPE *ShowAddAccountAsync )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2 * This,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIAsyncAction **asyncInfo);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2Vtbl;
-
-    interface __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2Vtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_get_PasswordCredential(This,value) \
+    ( (This)->lpVtbl->get_PasswordCredential(This,value) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_get_CredentialDeleted(This,value) \
+    ( (This)->lpVtbl->get_CredentialDeleted(This,value) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_ShowManageAccountsAsync(This,asyncInfo)	\
-    ( (This)->lpVtbl -> ShowManageAccountsAsync(This,asyncInfo) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_ShowAddAccountAsync(This,asyncInfo)	\
-    ( (This)->lpVtbl -> ShowAddAccountAsync(This,asyncInfo) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIAccountsSettingsPaneStatics2_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0062 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ICredentialCommand[] = L"Windows.UI.ApplicationSettings.ICredentialCommand";
-#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0062 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0062_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0062_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::ApplicationSettings::ICredentialCommand */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace ApplicationSettings {
-                    
-                    MIDL_INTERFACE("A5F665E6-6143-4A7A-A971-B017BA978CE2")
-                    ICredentialCommand : public IInspectable
-                    {
-                    public:
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_PasswordCredential( 
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Security::Credentials::IPasswordCredential **value) = 0;
-                        
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_CredentialDeleted( 
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::ICredentialCommandCredentialDeletedHandler **value) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_ICredentialCommand = __uuidof(ICredentialCommand);
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.ICredentialCommandFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.CredentialCommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ICredentialCommandFactory[] = L"Windows.UI.ApplicationSettings.ICredentialCommandFactory";
+/* [object, uuid("27E88C17-BC3E-4B80-9495-4ED720E48A91"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateCredentialCommand )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CSecurity_CCredentials_CIPasswordCredential * passwordCredential,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * * instance
+        );
+    HRESULT ( STDMETHODCALLTYPE *CreateCredentialCommandWithHandler )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CSecurity_CCredentials_CIPasswordCredential * passwordCredential,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler  * deleted,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * * instance
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactoryVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_PasswordCredential )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * This,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSecurity_CCredentials_CIPasswordCredential **value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_CredentialDeleted )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand * This,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler **value);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandVtbl;
-
-    interface __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactoryVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_CreateCredentialCommand(This,passwordCredential,instance) \
+    ( (This)->lpVtbl->CreateCredentialCommand(This,passwordCredential,instance) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_CreateCredentialCommandWithHandler(This,passwordCredential,deleted,instance) \
+    ( (This)->lpVtbl->CreateCredentialCommandWithHandler(This,passwordCredential,deleted,instance) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_get_PasswordCredential(This,value)	\
-    ( (This)->lpVtbl -> get_PasswordCredential(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_get_CredentialDeleted(This,value)	\
-    ( (This)->lpVtbl -> get_CredentialDeleted(This,value) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0063 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ICredentialCommandFactory[] = L"Windows.UI.ApplicationSettings.ICredentialCommandFactory";
-#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0063 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0063_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0063_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::ApplicationSettings::ICredentialCommandFactory */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace ApplicationSettings {
-                    
-                    MIDL_INTERFACE("27E88C17-BC3E-4B80-9495-4ED720E48A91")
-                    ICredentialCommandFactory : public IInspectable
-                    {
-                    public:
-                        virtual HRESULT STDMETHODCALLTYPE CreateCredentialCommand( 
-                            /* [in] */ __RPC__in_opt ABI::Windows::Security::Credentials::IPasswordCredential *passwordCredential,
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::ICredentialCommand **instance) = 0;
-                        
-                        virtual HRESULT STDMETHODCALLTYPE CreateCredentialCommandWithHandler( 
-                            /* [in] */ __RPC__in_opt ABI::Windows::Security::Credentials::IPasswordCredential *passwordCredential,
-                            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::ICredentialCommandCredentialDeletedHandler *deleted,
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::ICredentialCommand **instance) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_ICredentialCommandFactory = __uuidof(ICredentialCommandFactory);
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.ISettingsCommandFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.SettingsCommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ISettingsCommandFactory[] = L"Windows.UI.ApplicationSettings.ISettingsCommandFactory";
+/* [object, uuid("68E15B33-1C83-433A-AA5A-CEEEA5BD4764"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateSettingsCommand )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory * This,
+        /* [in] */__RPC__in_opt IInspectable * settingsCommandId,
+        /* [in] */__RPC__in HSTRING label,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CPopups_CIUICommandInvokedHandler  * handler,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CPopups_CIUICommand * * instance
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactoryVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactoryVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *CreateCredentialCommand )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSecurity_CCredentials_CIPasswordCredential *passwordCredential,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand **instance);
-        
-        HRESULT ( STDMETHODCALLTYPE *CreateCredentialCommandWithHandler )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSecurity_CCredentials_CIPasswordCredential *passwordCredential,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandCredentialDeletedHandler *deleted,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommand **instance);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactoryVtbl;
-
-    interface __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactoryVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactoryVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_CreateSettingsCommand(This,settingsCommandId,label,handler,instance) \
+    ( (This)->lpVtbl->CreateSettingsCommand(This,settingsCommandId,label,handler,instance) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_CreateCredentialCommand(This,passwordCredential,instance)	\
-    ( (This)->lpVtbl -> CreateCredentialCommand(This,passwordCredential,instance) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_CreateCredentialCommandWithHandler(This,passwordCredential,deleted,instance)	\
-    ( (This)->lpVtbl -> CreateCredentialCommandWithHandler(This,passwordCredential,deleted,instance) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CICredentialCommandFactory_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0064 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ISettingsCommandFactory[] = L"Windows.UI.ApplicationSettings.ISettingsCommandFactory";
-#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0064 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0064_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0064_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::ApplicationSettings::ISettingsCommandFactory */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace ApplicationSettings {
-                    
-                    MIDL_INTERFACE("68E15B33-1C83-433A-AA5A-CEEEA5BD4764")
-                    ISettingsCommandFactory : public IInspectable
-                    {
-                    public:
-                        virtual HRESULT STDMETHODCALLTYPE CreateSettingsCommand( 
-                            /* [in] */ __RPC__in_opt IInspectable *settingsCommandId,
-                            /* [in] */ __RPC__in HSTRING label,
-                            /* [in] */ __RPC__in_opt ABI::Windows::UI::Popups::IUICommandInvokedHandler *handler,
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Popups::IUICommand **instance) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_ISettingsCommandFactory = __uuidof(ISettingsCommandFactory);
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.ISettingsCommandStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.SettingsCommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ISettingsCommandStatics[] = L"Windows.UI.ApplicationSettings.ISettingsCommandStatics";
+/* [object, uuid("749AE954-2F69-4B17-8ABA-D05CE5778E46"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_AccountsCommand )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CPopups_CIUICommand * * value
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStaticsVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactoryVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *CreateSettingsCommand )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory * This,
-            /* [in] */ __RPC__in_opt IInspectable *settingsCommandId,
-            /* [in] */ __RPC__in HSTRING label,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CPopups_CIUICommandInvokedHandler *handler,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CPopups_CIUICommand **instance);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactoryVtbl;
-
-    interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactoryVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStaticsVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_get_AccountsCommand(This,value) \
+    ( (This)->lpVtbl->get_AccountsCommand(This,value) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_CreateSettingsCommand(This,settingsCommandId,label,handler,instance)	\
-    ( (This)->lpVtbl -> CreateSettingsCommand(This,settingsCommandId,label,handler,instance) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandFactory_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0065 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ISettingsCommandStatics[] = L"Windows.UI.ApplicationSettings.ISettingsCommandStatics";
-#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0065 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0065_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0065_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::ApplicationSettings::ISettingsCommandStatics */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace ApplicationSettings {
-                    
-                    MIDL_INTERFACE("749AE954-2F69-4B17-8ABA-D05CE5778E46")
-                    ISettingsCommandStatics : public IInspectable
-                    {
-                    public:
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_AccountsCommand( 
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Popups::IUICommand **value) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_ISettingsCommandStatics = __uuidof(ISettingsCommandStatics);
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.ISettingsPane
+ *
+ * Introduced to Windows.UI.ApplicationSettings.ApplicationsSettingsContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.SettingsPane
+ *
+ *
+ */
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ISettingsPane[] = L"Windows.UI.ApplicationSettings.ISettingsPane";
+/* [object, uuid("B1CD0932-4570-4C69-8D38-89446561ACE0"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+DEPRECATED("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+__x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+
+    #if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+    DEPRECATED("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+    #endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+    /* [eventadd, deprecated] */HRESULT ( STDMETHODCALLTYPE *add_CommandsRequested )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane * This,
+        /* [in] */__RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs * handler,
+        /* [retval, out] */__RPC__out EventRegistrationToken * cookie
+        );
     
-#else 	/* C style interface */
-
-    typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStaticsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_AccountsCommand )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics * This,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CPopups_CIUICommand **value);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStaticsVtbl;
-
-    interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStaticsVtbl *lpVtbl;
-    };
-
+    #if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+    DEPRECATED("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+    #endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+    /* [eventremove, deprecated] */HRESULT ( STDMETHODCALLTYPE *remove_CommandsRequested )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane * This,
+        /* [in] */EventRegistrationToken cookie
+        );
+    END_INTERFACE
     
+} __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneVtbl;
+
+interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+DEPRECATED("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_add_CommandsRequested(This,handler,cookie) \
+    ( (This)->lpVtbl->add_CommandsRequested(This,handler,cookie) )
 
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+DEPRECATED("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_remove_CommandsRequested(This,cookie) \
+    ( (This)->lpVtbl->remove_CommandsRequested(This,cookie) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_get_AccountsCommand(This,value)	\
-    ( (This)->lpVtbl -> get_AccountsCommand(This,value) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsCommandStatics_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0066 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ISettingsPane[] = L"Windows.UI.ApplicationSettings.ISettingsPane";
-#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0066 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0066_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0066_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::ApplicationSettings::ISettingsPane */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace ApplicationSettings {
-                    
-                    MIDL_INTERFACE("B1CD0932-4570-4C69-8D38-89446561ACE0")
-                    ISettingsPane : public IInspectable
-                    {
-                    public:
-                        virtual HRESULT STDMETHODCALLTYPE add_CommandsRequested( 
-                            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs *handler,
-                            /* [out][retval] */ __RPC__out EventRegistrationToken *cookie) = 0;
-                        
-                        virtual HRESULT STDMETHODCALLTYPE remove_CommandsRequested( 
-                            /* [in] */ EventRegistrationToken cookie) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_ISettingsPane = __uuidof(ISettingsPane);
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequest
+ *
+ * Introduced to Windows.UI.ApplicationSettings.ApplicationsSettingsContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.SettingsPaneCommandsRequest
+ *
+ *
+ */
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ISettingsPaneCommandsRequest[] = L"Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequest";
+/* [object, uuid("44DF23AE-5D6E-4068-A168-F47643182114"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+DEPRECATED("SettingsPaneCommandsRequest is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+__x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+
+    #if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+    DEPRECATED("SettingsPaneCommandsRequest is deprecated and might not work on all platforms. For more info, see MSDN.")
+    #endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_ApplicationCommands )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest * This,
+        /* [retval, out] */__RPC__deref_out_opt __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand * * value
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *add_CommandsRequested )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane * This,
-            /* [in] */ __RPC__in_opt __FITypedEventHandler_2_Windows__CUI__CApplicationSettings__CSettingsPane_Windows__CUI__CApplicationSettings__CSettingsPaneCommandsRequestedEventArgs *handler,
-            /* [out][retval] */ __RPC__out EventRegistrationToken *cookie);
-        
-        HRESULT ( STDMETHODCALLTYPE *remove_CommandsRequested )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane * This,
-            /* [in] */ EventRegistrationToken cookie);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneVtbl;
-
-    interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+DEPRECATED("SettingsPaneCommandsRequest is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_get_ApplicationCommands(This,value) \
+    ( (This)->lpVtbl->get_ApplicationCommands(This,value) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_add_CommandsRequested(This,handler,cookie)	\
-    ( (This)->lpVtbl -> add_CommandsRequested(This,handler,cookie) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_remove_CommandsRequested(This,cookie)	\
-    ( (This)->lpVtbl -> remove_CommandsRequested(This,cookie) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0067 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ISettingsPaneCommandsRequest[] = L"Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequest";
-#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0067 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0067_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0067_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequest */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace ApplicationSettings {
-                    
-                    MIDL_INTERFACE("44DF23AE-5D6E-4068-A168-F47643182114")
-                    ISettingsPaneCommandsRequest : public IInspectable
-                    {
-                    public:
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_ApplicationCommands( 
-                            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand **value) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_ISettingsPaneCommandsRequest = __uuidof(ISettingsPaneCommandsRequest);
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequestedEventArgs
+ *
+ * Introduced to Windows.UI.ApplicationSettings.ApplicationsSettingsContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs
+ *
+ *
+ */
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ISettingsPaneCommandsRequestedEventArgs[] = L"Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequestedEventArgs";
+/* [object, uuid("205F5D24-1B48-4629-A6CA-2FDFEDAFB75D"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+DEPRECATED("SettingsPaneCommandsRequestedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+__x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+
+    #if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+    DEPRECATED("SettingsPaneCommandsRequestedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
+    #endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_Request )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest * * request
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgsVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_ApplicationCommands )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest * This,
-            /* [out][retval] */ __RPC__deref_out_opt __FIVector_1_Windows__CUI__CApplicationSettings__CSettingsCommand **value);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestVtbl;
-
-    interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgsVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+DEPRECATED("SettingsPaneCommandsRequestedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_get_Request(This,request) \
+    ( (This)->lpVtbl->get_Request(This,request) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_get_ApplicationCommands(This,value)	\
-    ( (This)->lpVtbl -> get_ApplicationCommands(This,value) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0068 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ISettingsPaneCommandsRequestedEventArgs[] = L"Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequestedEventArgs";
-#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0068 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0068_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0068_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequestedEventArgs */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace ApplicationSettings {
-                    
-                    MIDL_INTERFACE("205F5D24-1B48-4629-A6CA-2FDFEDAFB75D")
-                    ISettingsPaneCommandsRequestedEventArgs : public IInspectable
-                    {
-                    public:
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Request( 
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::ISettingsPaneCommandsRequest **request) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_ISettingsPaneCommandsRequestedEventArgs = __uuidof(ISettingsPaneCommandsRequestedEventArgs);
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.ISettingsPaneStatics
+ *
+ * Introduced to Windows.UI.ApplicationSettings.ApplicationsSettingsContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.SettingsPane
+ *
+ *
+ */
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ISettingsPaneStatics[] = L"Windows.UI.ApplicationSettings.ISettingsPaneStatics";
+/* [object, uuid("1C6A52C5-FF19-471B-BA6B-F8F35694AD9A"), exclusiveto, deprecated, contract] */
+typedef struct 
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+DEPRECATED("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+__x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+
+    #if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+    DEPRECATED("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+    #endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *GetForCurrentView )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane * * current
+        );
     
-#else 	/* C style interface */
-
-    typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Request )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs * This,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequest **request);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgsVtbl;
-
-    interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgsVtbl *lpVtbl;
-    };
-
+    #if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+    DEPRECATED("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+    #endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+    /* [deprecated] */HRESULT ( STDMETHODCALLTYPE *Show )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics * This
+        );
     
+    #if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+    DEPRECATED("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+    #endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+    /* [propget, deprecated] */HRESULT ( STDMETHODCALLTYPE *get_Edge )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CApplicationSettings_CSettingsEdgeLocation * value
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStaticsVtbl;
+
+interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStaticsVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
+
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+DEPRECATED("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_GetForCurrentView(This,current) \
+    ( (This)->lpVtbl->GetForCurrentView(This,current) )
 
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+DEPRECATED("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_Show(This) \
+    ( (This)->lpVtbl->Show(This) )
 
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_get_Request(This,request)	\
-    ( (This)->lpVtbl -> get_Request(This,request) ) 
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+DEPRECATED("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_get_Edge(This,value) \
+    ( (This)->lpVtbl->get_Edge(This,value) )
+
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneCommandsRequestedEventArgs_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0069 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_ISettingsPaneStatics[] = L"Windows.UI.ApplicationSettings.ISettingsPaneStatics";
-#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0069 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0069_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0069_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::ApplicationSettings::ISettingsPaneStatics */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace ApplicationSettings {
-                    
-                    MIDL_INTERFACE("1C6A52C5-FF19-471B-BA6B-F8F35694AD9A")
-                    ISettingsPaneStatics : public IInspectable
-                    {
-                    public:
-                        virtual HRESULT STDMETHODCALLTYPE GetForCurrentView( 
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::ISettingsPane **current) = 0;
-                        
-                        virtual HRESULT STDMETHODCALLTYPE Show( void) = 0;
-                        
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Edge( 
-                            /* [out][retval] */ __RPC__out ABI::Windows::UI::ApplicationSettings::SettingsEdgeLocation *value) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_ISettingsPaneStatics = __uuidof(ISettingsPaneStatics);
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.IWebAccountCommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.WebAccountCommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IWebAccountCommand[] = L"Windows.UI.ApplicationSettings.IWebAccountCommand";
+/* [object, uuid("CAA39398-9CFA-4246-B0C4-A913A3896541"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_WebAccount )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccount * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Invoked )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler  * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Actions )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CApplicationSettings_CSupportedWebAccountActions * value
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStaticsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetForCurrentView )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics * This,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPane **current);
-        
-        HRESULT ( STDMETHODCALLTYPE *Show )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics * This);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Edge )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics * This,
-            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CApplicationSettings_CSettingsEdgeLocation *value);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStaticsVtbl;
-
-    interface __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStaticsVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_get_WebAccount(This,value) \
+    ( (This)->lpVtbl->get_WebAccount(This,value) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_get_Invoked(This,value) \
+    ( (This)->lpVtbl->get_Invoked(This,value) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_get_Actions(This,value) \
+    ( (This)->lpVtbl->get_Actions(This,value) )
 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_GetForCurrentView(This,current)	\
-    ( (This)->lpVtbl -> GetForCurrentView(This,current) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_Show(This)	\
-    ( (This)->lpVtbl -> Show(This) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_get_Edge(This,value)	\
-    ( (This)->lpVtbl -> get_Edge(This,value) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CISettingsPaneStatics_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0070 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IWebAccountCommand[] = L"Windows.UI.ApplicationSettings.IWebAccountCommand";
-#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0070 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0070_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0070_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::ApplicationSettings::IWebAccountCommand */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace ApplicationSettings {
-                    
-                    MIDL_INTERFACE("CAA39398-9CFA-4246-B0C4-A913A3896541")
-                    IWebAccountCommand : public IInspectable
-                    {
-                    public:
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_WebAccount( 
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Security::Credentials::IWebAccount **value) = 0;
-                        
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Invoked( 
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::IWebAccountCommandInvokedHandler **value) = 0;
-                        
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Actions( 
-                            /* [out][retval] */ __RPC__out ABI::Windows::UI::ApplicationSettings::SupportedWebAccountActions *value) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_IWebAccountCommand = __uuidof(IWebAccountCommand);
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.IWebAccountCommandFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.WebAccountCommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IWebAccountCommandFactory[] = L"Windows.UI.ApplicationSettings.IWebAccountCommandFactory";
+/* [object, uuid("BFA6CDFF-2F2D-42F5-81DE-1D56BAFC496D"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateWebAccountCommand )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccount * webAccount,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler  * invoked,
+        /* [in] */__x_ABI_CWindows_CUI_CApplicationSettings_CSupportedWebAccountActions actions,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * * instance
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactoryVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_WebAccount )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * This,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccount **value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Invoked )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * This,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler **value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Actions )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand * This,
-            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CApplicationSettings_CSupportedWebAccountActions *value);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandVtbl;
-
-    interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactoryVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_CreateWebAccountCommand(This,webAccount,invoked,actions,instance) \
+    ( (This)->lpVtbl->CreateWebAccountCommand(This,webAccount,invoked,actions,instance) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_get_WebAccount(This,value)	\
-    ( (This)->lpVtbl -> get_WebAccount(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_get_Invoked(This,value)	\
-    ( (This)->lpVtbl -> get_Invoked(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_get_Actions(This,value)	\
-    ( (This)->lpVtbl -> get_Actions(This,value) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0071 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IWebAccountCommandFactory[] = L"Windows.UI.ApplicationSettings.IWebAccountCommandFactory";
-#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0071 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0071_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0071_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::ApplicationSettings::IWebAccountCommandFactory */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace ApplicationSettings {
-                    
-                    MIDL_INTERFACE("BFA6CDFF-2F2D-42F5-81DE-1D56BAFC496D")
-                    IWebAccountCommandFactory : public IInspectable
-                    {
-                    public:
-                        virtual HRESULT STDMETHODCALLTYPE CreateWebAccountCommand( 
-                            /* [in] */ __RPC__in_opt ABI::Windows::Security::Credentials::IWebAccount *webAccount,
-                            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::IWebAccountCommandInvokedHandler *invoked,
-                            /* [in] */ ABI::Windows::UI::ApplicationSettings::SupportedWebAccountActions actions,
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::IWebAccountCommand **instance) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_IWebAccountCommandFactory = __uuidof(IWebAccountCommandFactory);
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.IWebAccountInvokedArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.WebAccountInvokedArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IWebAccountInvokedArgs[] = L"Windows.UI.ApplicationSettings.IWebAccountInvokedArgs";
+/* [object, uuid("E7ABCC40-A1D8-4C5D-9A7F-1D34B2F90AD2"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Action )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CApplicationSettings_CWebAccountAction * action
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgsVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactoryVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *CreateWebAccountCommand )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccount *webAccount,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandInvokedHandler *invoked,
-            /* [in] */ __x_ABI_CWindows_CUI_CApplicationSettings_CSupportedWebAccountActions actions,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommand **instance);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactoryVtbl;
-
-    interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactoryVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgsVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_get_Action(This,action) \
+    ( (This)->lpVtbl->get_Action(This,action) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_CreateWebAccountCommand(This,webAccount,invoked,actions,instance)	\
-    ( (This)->lpVtbl -> CreateWebAccountCommand(This,webAccount,invoked,actions,instance) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountCommandFactory_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0072 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IWebAccountInvokedArgs[] = L"Windows.UI.ApplicationSettings.IWebAccountInvokedArgs";
-#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0072 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0072_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0072_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::ApplicationSettings::IWebAccountInvokedArgs */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace ApplicationSettings {
-                    
-                    MIDL_INTERFACE("E7ABCC40-A1D8-4C5D-9A7F-1D34B2F90AD2")
-                    IWebAccountInvokedArgs : public IInspectable
-                    {
-                    public:
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Action( 
-                            /* [out][retval] */ __RPC__out ABI::Windows::UI::ApplicationSettings::WebAccountAction *action) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_IWebAccountInvokedArgs = __uuidof(IWebAccountInvokedArgs);
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.IWebAccountProviderCommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.WebAccountProviderCommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IWebAccountProviderCommand[] = L"Windows.UI.ApplicationSettings.IWebAccountProviderCommand";
+/* [object, uuid("D69BDD9A-A0A6-4E9B-88DC-C71E757A3501"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_WebAccountProvider )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Invoked )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler  * * value
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Action )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs * This,
-            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CApplicationSettings_CWebAccountAction *action);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgsVtbl;
-
-    interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgsVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_get_WebAccountProvider(This,value) \
+    ( (This)->lpVtbl->get_WebAccountProvider(This,value) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_get_Invoked(This,value) \
+    ( (This)->lpVtbl->get_Invoked(This,value) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_get_Action(This,action)	\
-    ( (This)->lpVtbl -> get_Action(This,action) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountInvokedArgs_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0073 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IWebAccountProviderCommand[] = L"Windows.UI.ApplicationSettings.IWebAccountProviderCommand";
-#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0073 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0073_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0073_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand;
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace ApplicationSettings {
-                    
-                    MIDL_INTERFACE("D69BDD9A-A0A6-4E9B-88DC-C71E757A3501")
-                    IWebAccountProviderCommand : public IInspectable
-                    {
-                    public:
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_WebAccountProvider( 
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Security::Credentials::IWebAccountProvider **value) = 0;
-                        
-                        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Invoked( 
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommandInvokedHandler **value) = 0;
-                        
-                    };
 
-                    extern const __declspec(selectany) IID & IID_IWebAccountProviderCommand = __uuidof(IWebAccountProviderCommand);
+/*
+ *
+ * Interface Windows.UI.ApplicationSettings.IWebAccountProviderCommandFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.ApplicationSettings.WebAccountProviderCommand
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IWebAccountProviderCommandFactory[] = L"Windows.UI.ApplicationSettings.IWebAccountProviderCommandFactory";
+/* [object, uuid("D5658A1B-B176-4776-8469-A9D3FF0B3F59"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateWebAccountProviderCommand )(
+        __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider * webAccountProvider,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler  * invoked,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * * instance
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactoryVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_WebAccountProvider )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * This,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider **value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Invoked )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand * This,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler **value);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandVtbl;
-
-    interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactoryVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_CreateWebAccountProviderCommand(This,webAccountProvider,invoked,instance) \
+    ( (This)->lpVtbl->CreateWebAccountProviderCommand(This,webAccountProvider,invoked,instance) )
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_get_WebAccountProvider(This,value)	\
-    ( (This)->lpVtbl -> get_WebAccountProvider(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_get_Invoked(This,value)	\
-    ( (This)->lpVtbl -> get_Invoked(This,value) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0074 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_ApplicationSettings_IWebAccountProviderCommandFactory[] = L"Windows.UI.ApplicationSettings.IWebAccountProviderCommandFactory";
-#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0074 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0074_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0074_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommandFactory */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace ApplicationSettings {
-                    
-                    MIDL_INTERFACE("D5658A1B-B176-4776-8469-A9D3FF0B3F59")
-                    IWebAccountProviderCommandFactory : public IInspectable
-                    {
-                    public:
-                        virtual HRESULT STDMETHODCALLTYPE CreateWebAccountProviderCommand( 
-                            /* [in] */ __RPC__in_opt ABI::Windows::Security::Credentials::IWebAccountProvider *webAccountProvider,
-                            /* [in] */ __RPC__in_opt ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommandInvokedHandler *invoked,
-                            /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::ApplicationSettings::IWebAccountProviderCommand **instance) = 0;
-                        
-                    };
-
-                    extern const __declspec(selectany) IID & IID_IWebAccountProviderCommandFactory = __uuidof(IWebAccountProviderCommandFactory);
-
-                    
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
-    
-#else 	/* C style interface */
-
-    typedef struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactoryVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *CreateWebAccountProviderCommand )( 
-            __RPC__in __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CSecurity_CCredentials_CIWebAccountProvider *webAccountProvider,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandInvokedHandler *invoked,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommand **instance);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactoryVtbl;
-
-    interface __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactoryVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
+#endif /* !defined(____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_CreateWebAccountProviderCommand(This,webAccountProvider,invoked,instance)	\
-    ( (This)->lpVtbl -> CreateWebAccountProviderCommand(This,webAccountProvider,invoked,instance) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CApplicationSettings_CIWebAccountProviderCommandFactory_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0075 */
-/* [local] */ 
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.AccountsSettingsPane
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics2 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ApplicationSettings.IAccountsSettingsPane ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_AccountsSettingsPane_DEFINED
 #define RUNTIMECLASS_Windows_UI_ApplicationSettings_AccountsSettingsPane_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_AccountsSettingsPane[] = L"Windows.UI.ApplicationSettings.AccountsSettingsPane";
 #endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
 #ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_AccountsSettingsPaneCommandsRequestedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_UI_ApplicationSettings_AccountsSettingsPaneCommandsRequestedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_AccountsSettingsPaneCommandsRequestedEventArgs[] = L"Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs";
 #endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.AccountsSettingsPaneEventDeferral
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ApplicationSettings.IAccountsSettingsPaneEventDeferral ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
 #ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_AccountsSettingsPaneEventDeferral_DEFINED
 #define RUNTIMECLASS_Windows_UI_ApplicationSettings_AccountsSettingsPaneEventDeferral_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_AccountsSettingsPaneEventDeferral[] = L"Windows.UI.ApplicationSettings.AccountsSettingsPaneEventDeferral";
 #endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.CredentialCommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.UI.ApplicationSettings.ICredentialCommandFactory interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ApplicationSettings.ICredentialCommand ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
 #ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_CredentialCommand_DEFINED
 #define RUNTIMECLASS_Windows_UI_ApplicationSettings_CredentialCommand_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_CredentialCommand[] = L"Windows.UI.ApplicationSettings.CredentialCommand";
 #endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.SettingsCommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.UI.ApplicationSettings.ISettingsCommandFactory interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.ApplicationSettings.ISettingsCommandStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Popups.IUICommand ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
 #ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_SettingsCommand_DEFINED
 #define RUNTIMECLASS_Windows_UI_ApplicationSettings_SettingsCommand_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_SettingsCommand[] = L"Windows.UI.ApplicationSettings.SettingsCommand";
 #endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.SettingsPane
+ *
+ * Introduced to Windows.UI.ApplicationSettings.ApplicationsSettingsContract in version 1.0
+ *
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.ApplicationSettings.ISettingsPaneStatics interface starting with version 1.0 of the Windows.UI.ApplicationSettings.ApplicationsSettingsContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ApplicationSettings.ISettingsPane ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+
 #ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_SettingsPane_DEFINED
 #define RUNTIMECLASS_Windows_UI_ApplicationSettings_SettingsPane_DEFINED
+
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+DEPRECATED("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_SettingsPane[] = L"Windows.UI.ApplicationSettings.SettingsPane";
 #endif
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.SettingsPaneCommandsRequest
+ *
+ * Introduced to Windows.UI.ApplicationSettings.ApplicationsSettingsContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequest ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+
 #ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_SettingsPaneCommandsRequest_DEFINED
 #define RUNTIMECLASS_Windows_UI_ApplicationSettings_SettingsPaneCommandsRequest_DEFINED
+
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+DEPRECATED("SettingsPaneCommandsRequest is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_SettingsPaneCommandsRequest[] = L"Windows.UI.ApplicationSettings.SettingsPaneCommandsRequest";
 #endif
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs
+ *
+ * Introduced to Windows.UI.ApplicationSettings.ApplicationsSettingsContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequestedEventArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+
 #ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_SettingsPaneCommandsRequestedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_UI_ApplicationSettings_SettingsPaneCommandsRequestedEventArgs_DEFINED
+
+#if WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+DEPRECATED("SettingsPaneCommandsRequestedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_SettingsPaneCommandsRequestedEventArgs[] = L"Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs";
 #endif
+#endif // WINDOWS_UI_APPLICATIONSETTINGS_APPLICATIONSSETTINGSCONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.WebAccountCommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.UI.ApplicationSettings.IWebAccountCommandFactory interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ApplicationSettings.IWebAccountCommand ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
 #ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_WebAccountCommand_DEFINED
 #define RUNTIMECLASS_Windows_UI_ApplicationSettings_WebAccountCommand_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_WebAccountCommand[] = L"Windows.UI.ApplicationSettings.WebAccountCommand";
 #endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.WebAccountInvokedArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ApplicationSettings.IWebAccountInvokedArgs ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
 #ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_WebAccountInvokedArgs_DEFINED
 #define RUNTIMECLASS_Windows_UI_ApplicationSettings_WebAccountInvokedArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_WebAccountInvokedArgs[] = L"Windows.UI.ApplicationSettings.WebAccountInvokedArgs";
 #endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.ApplicationSettings.WebAccountProviderCommand
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.UI.ApplicationSettings.IWebAccountProviderCommandFactory interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.ApplicationSettings.IWebAccountProviderCommand ** Default Interface **
+ *
+ * Class Marshaling Behavior:  None - Class cannot be marshaled
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
 #ifndef RUNTIMECLASS_Windows_UI_ApplicationSettings_WebAccountProviderCommand_DEFINED
 #define RUNTIMECLASS_Windows_UI_ApplicationSettings_WebAccountProviderCommand_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_ApplicationSettings_WebAccountProviderCommand[] = L"Windows.UI.ApplicationSettings.WebAccountProviderCommand";
 #endif
-
-
-/* interface __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0075 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0075_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Eapplicationsettings_0000_0075_v0_0_s_ifspec;
 
-/* Additional Prototypes for ALL interfaces */
+#endif // defined(__cplusplus)
+#pragma pop_macro("MIDL_CONST_ID")
+// Restore the original value of the 'DEPRECATED' macro
+#pragma pop_macro("DEPRECATED")
 
-unsigned long             __RPC_USER  HSTRING_UserSize(     __RPC__in unsigned long *, unsigned long            , __RPC__in HSTRING * ); 
-unsigned char * __RPC_USER  HSTRING_UserMarshal(  __RPC__in unsigned long *, __RPC__inout_xcount(0) unsigned char *, __RPC__in HSTRING * ); 
-unsigned char * __RPC_USER  HSTRING_UserUnmarshal(__RPC__in unsigned long *, __RPC__in_xcount(0) unsigned char *, __RPC__out HSTRING * ); 
-void                      __RPC_USER  HSTRING_UserFree(     __RPC__in unsigned long *, __RPC__in HSTRING * ); 
-
-unsigned long             __RPC_USER  HSTRING_UserSize64(     __RPC__in unsigned long *, unsigned long            , __RPC__in HSTRING * ); 
-unsigned char * __RPC_USER  HSTRING_UserMarshal64(  __RPC__in unsigned long *, __RPC__inout_xcount(0) unsigned char *, __RPC__in HSTRING * ); 
-unsigned char * __RPC_USER  HSTRING_UserUnmarshal64(__RPC__in unsigned long *, __RPC__in_xcount(0) unsigned char *, __RPC__out HSTRING * ); 
-void                      __RPC_USER  HSTRING_UserFree64(     __RPC__in unsigned long *, __RPC__in HSTRING * ); 
-
-/* end of Additional Prototypes */
-
-#ifdef __cplusplus
-}
+#ifdef __clang__
+#pragma clang diagnostic pop // deprecated-declarations
+#else
+#pragma warning(pop)
 #endif
+#endif // __windows2Eui2Eapplicationsettings_p_h__
 
-#endif
-
-
+#endif // __windows2Eui2Eapplicationsettings_h__

@@ -146,7 +146,7 @@ extern "C" {
     // default to kernel mode driver.
     //
     // ';' inside the parens to keep MIDL happy
-    __ANNOTATION(SAL_internal_kernel_driver();)
+    __ANNOTATION(SAL_internal_kernel_driver(void);)
 
     #define __internal_kernel_driver                                          \
 		_Analysis_mode_(_Analysis_internal_kernel_driver_)					  \
@@ -166,10 +166,10 @@ extern "C" {
     //
     // Indicate that the code is kernel, but not driver, code.
 
-    __ANNOTATION(SAL_kernel();)
-    __ANNOTATION(SAL_nokernel();)
-    __ANNOTATION(SAL_driver();)
-    __ANNOTATION(SAL_nodriver();)
+    __ANNOTATION(SAL_kernel(void);)
+    __ANNOTATION(SAL_nokernel(void);)
+    __ANNOTATION(SAL_driver(void);)
+    __ANNOTATION(SAL_nodriver(void);)
 
     #define __kernel_code                                                     \
 		_Analysis_mode_(_Analysis_code_type_kernel_code_)					  \

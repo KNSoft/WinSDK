@@ -339,6 +339,9 @@ class MSFT_Disk : MSFT_StorageObject {
         [In]
         Boolean ZeroOutEntireDisk,
 
+        [In]
+        Boolean Sanitize,
+
         [Out]
         MSFT_StorageJob REF CreatedStorageJob,
 

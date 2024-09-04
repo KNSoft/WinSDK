@@ -1481,6 +1481,8 @@ EXTERN_C const IID IID_ICertRequest3;
 
 #define	CR_IN_RPC	( 0x20000 )
 
+#define	CR_IN_HTTP	( 0x30000 )
+
 #define	CR_IN_FULLRESPONSE	( 0x40000 )
 
 #define	CR_IN_CRLS	( 0x80000 )

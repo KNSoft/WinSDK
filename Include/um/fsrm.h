@@ -2847,7 +2847,7 @@ EXTERN_C const IID IID_IFsrmExportImport;
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE ExportFileGroups( 
             /* [in] */ __RPC__in BSTR filePath,
             /* [defaultvalue][in] */ __RPC__in VARIANT *fileGroupNamesSafeArray = 0,
-            /* [defaultvalue][in] */ __RPC__in BSTR remoteHost = L"") = 0;
+            /* [defaultvalue][in] */ __RPC__in BSTR remoteHost = (BSTR)L"") = 0;
         
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE ImportFileGroups( 
             /* [in] */ __RPC__in BSTR filePath,
@@ -2858,7 +2858,7 @@ EXTERN_C const IID IID_IFsrmExportImport;
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE ExportFileScreenTemplates( 
             /* [in] */ __RPC__in BSTR filePath,
             /* [defaultvalue][in] */ __RPC__in VARIANT *templateNamesSafeArray = 0,
-            /* [defaultvalue][in] */ __RPC__in BSTR remoteHost = L"") = 0;
+            /* [defaultvalue][in] */ __RPC__in BSTR remoteHost = (BSTR)L"") = 0;
         
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE ImportFileScreenTemplates( 
             /* [in] */ __RPC__in BSTR filePath,
@@ -2869,7 +2869,7 @@ EXTERN_C const IID IID_IFsrmExportImport;
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE ExportQuotaTemplates( 
             /* [in] */ __RPC__in BSTR filePath,
             /* [defaultvalue][in] */ __RPC__in VARIANT *templateNamesSafeArray = 0,
-            /* [defaultvalue][in] */ __RPC__in BSTR remoteHost = L"") = 0;
+            /* [defaultvalue][in] */ __RPC__in BSTR remoteHost = (BSTR)L"") = 0;
         
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE ImportQuotaTemplates( 
             /* [in] */ __RPC__in BSTR filePath,

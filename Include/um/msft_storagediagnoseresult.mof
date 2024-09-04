@@ -59,4 +59,7 @@ class MSFT_StorageDiagnoseResult
             "Fatal/NonRecoverable"
             }]
     UInt16 PerceivedSeverity;
+    
+    [Read]
+    Datetime FaultTime;
 };

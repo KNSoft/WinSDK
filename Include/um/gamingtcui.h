@@ -39,11 +39,15 @@
 /* APISET_NAME: api-ms-win-gaming-tcui-l1 */
 /* APISET_TAG: public */
 
+// #if _APISET_TARGET_VERSION
+// #ifdef _APISET_TARGET_VERSION
 #if !defined(RC_INVOKED)
 
 #ifndef _APISET_GAMING_TCUI_VER
 #ifdef _APISET_TARGET_VERSION
-#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS2
+#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS3
+#define _APISET_GAMING_TCUI_VER 0x0104
+#elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS2
 #define _APISET_GAMING_TCUI_VER 0x0103
 #elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS1
 #define _APISET_GAMING_TCUI_VER 0x0102
@@ -51,8 +55,8 @@
 #define _APISET_GAMING_TCUI_VER 0x0101
 #elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WINTHRESHOLD
 #define _APISET_GAMING_TCUI_VER 0x0100
-#endif // #if _APISET_TARGET_VERSION
-#endif // #ifdef _APISET_TARGET_VERSION
+#endif
+#endif
 #endif
 
 #endif // !defined(RC_INVOKED)
@@ -315,6 +319,80 @@ ShowGameInviteUIWithContextForUser(
 
 
 #endif //#if _APISET_GAMING_TCUI_VER >= 0x0103)
+
+
+#if !defined(_CONTRACT_GEN) || (_APISET_GAMING_TCUI_VER >= 0x0104)
+HRESULT
+WINAPI
+ShowGameInfoUI(
+    _In_ UINT32 titleId,
+    _In_ GameUICompletionRoutine completionRoutine,
+    _In_opt_ void * context
+    );
+
+
+HRESULT
+WINAPI
+ShowGameInfoUIForUser(
+    _In_ IInspectable * user,
+    _In_ UINT32 titleId,
+    _In_ GameUICompletionRoutine completionRoutine,
+    _In_opt_ void * context
+    );
+
+
+HRESULT
+WINAPI
+ShowFindFriendsUI(
+    _In_ GameUICompletionRoutine completionRoutine,
+    _In_opt_ void * context
+    );
+
+
+HRESULT
+WINAPI
+ShowFindFriendsUIForUser(
+    _In_ IInspectable * user,
+    _In_ GameUICompletionRoutine completionRoutine,
+    _In_opt_ void * context
+    );
+
+
+HRESULT
+WINAPI
+ShowCustomizeUserProfileUI(
+    _In_ GameUICompletionRoutine completionRoutine,
+    _In_opt_ void * context
+    );
+
+
+HRESULT
+WINAPI
+ShowCustomizeUserProfileUIForUser(
+    _In_ IInspectable * user,
+    _In_ GameUICompletionRoutine completionRoutine,
+    _In_opt_ void * context
+    );
+
+
+HRESULT
+WINAPI
+ShowUserSettingsUI(
+    _In_ GameUICompletionRoutine completionRoutine,
+    _In_opt_ void * context
+    );
+
+
+HRESULT
+WINAPI
+ShowUserSettingsUIForUser(
+    _In_ IInspectable * user,
+    _In_ GameUICompletionRoutine completionRoutine,
+    _In_opt_ void * context
+    );
+
+
+#endif //#if _APISET_GAMING_TCUI_VER >= 0x0104)
 
 
 #if defined(__cplusplus)

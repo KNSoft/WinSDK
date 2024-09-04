@@ -40,6 +40,7 @@
 #define DXGKDDI_INTERFACE_VERSION_WDDM2_0    0x5023
 #define DXGKDDI_INTERFACE_VERSION_WDDM2_1    0x6003
 #define DXGKDDI_INTERFACE_VERSION_WDDM2_2    0x700A
+#define DXGKDDI_INTERFACE_VERSION_WDDM2_3    0x8001
 
 
 #define IS_OFFICIAL_DDI_INTERFACE_VERSION(version)                 \
@@ -51,11 +52,12 @@
              ((version) == DXGKDDI_INTERFACE_VERSION_WDDM1_3_PATH_INDEPENDENT_ROTATION) || \
              ((version) == DXGKDDI_INTERFACE_VERSION_WDDM2_0) ||   \
              ((version) == DXGKDDI_INTERFACE_VERSION_WDDM2_1) ||   \
-             ((version) == DXGKDDI_INTERFACE_VERSION_WDDM2_2)      \
+             ((version) == DXGKDDI_INTERFACE_VERSION_WDDM2_2) ||   \
+             ((version) == DXGKDDI_INTERFACE_VERSION_WDDM2_3)      \
             )
 
 #if !defined(DXGKDDI_INTERFACE_VERSION)
-#define DXGKDDI_INTERFACE_VERSION           DXGKDDI_INTERFACE_VERSION_WDDM2_2
+#define DXGKDDI_INTERFACE_VERSION           DXGKDDI_INTERFACE_VERSION_WDDM2_3
 #endif // !defined(DXGKDDI_INTERFACE_VERSION)
 
 #define D3D_UMD_INTERFACE_VERSION_VISTA      0x000C
@@ -81,8 +83,12 @@
 #define D3D_UMD_INTERFACE_VERSION_WDDM2_2_2     0x7001
 #define D3D_UMD_INTERFACE_VERSION_WDDM2_2       D3D_UMD_INTERFACE_VERSION_WDDM2_2_2
 
+#define D3D_UMD_INTERFACE_VERSION_WDDM2_3_1     0x8000
+#define D3D_UMD_INTERFACE_VERSION_WDDM2_3_2     0x8001
+#define D3D_UMD_INTERFACE_VERSION_WDDM2_3       D3D_UMD_INTERFACE_VERSION_WDDM2_3_2
+
 #if !defined(D3D_UMD_INTERFACE_VERSION)
-#define D3D_UMD_INTERFACE_VERSION           D3D_UMD_INTERFACE_VERSION_WDDM2_2
+#define D3D_UMD_INTERFACE_VERSION           D3D_UMD_INTERFACE_VERSION_WDDM2_3
 #endif // !defined(D3D_UMD_INTERFACE_VERSION)
 
 //
@@ -110,8 +116,12 @@ typedef struct _GPUP_DRIVER_ESCAPE_INPUT
 
 typedef enum _DXGKVGPU_ESCAPE_TYPE
 {
-    DXGKVGPU_ESCAPE_TYPE_READ_PCI_CONFIG    = 0,
-    DXGKVGPU_ESCAPE_TYPE_GET_VGPU_TYPE      = 4,
+    DXGKVGPU_ESCAPE_TYPE_READ_PCI_CONFIG            = 0,
+    DXGKVGPU_ESCAPE_TYPE_WRITE_PCI_CONFIG           = 1,
+    DXGKVGPU_ESCAPE_TYPE_INITIALIZE                 = 2,
+    DXGKVGPU_ESCAPE_TYPE_RELEASE                    = 3,
+    DXGKVGPU_ESCAPE_TYPE_GET_VGPU_TYPE              = 4,
+    DXGKVGPU_ESCAPE_TYPE_POWERTRANSITIONCOMPLETE    = 5,
 } DXGKVGPU_ESCAPE_TYPE;
 
 typedef struct _DXGKVGPU_ESCAPE_HEAD
@@ -128,10 +138,35 @@ typedef struct _DXGKVGPU_ESCAPE_READ_PCI_CONFIG
     UINT  Size;             // Size in bytes to read
 } DXGKVGPU_ESCAPE_READ_PCI_CONFIG;
 
+typedef struct _DXGKVGPU_ESCAPE_WRITE_PCI_CONFIG
+{
+    DXGKVGPU_ESCAPE_HEAD Header;
+
+    UINT  Offset;           // Offset in bytes in the PCI config space
+    UINT  Size;             // Size in bytes to write
+    // "Size" number of bytes follow
+} DXGKVGPU_ESCAPE_WRITE_PCI_CONFIG;
+
 typedef struct _DXGKVGPU_ESCAPE_READ_VGPU_TYPE
 {
     DXGKVGPU_ESCAPE_HEAD Header;
 } DXGKVGPU_ESCAPE_READ_VGPU_TYPE;
+
+typedef struct _DXGKVGPU_ESCAPE_POWERTRANSITIONCOMPLETE
+{
+    DXGKVGPU_ESCAPE_HEAD Header;
+    UINT PowerState;
+} DXGKVGPU_ESCAPE_POWERTRANSITIONCOMPLETE;
+
+typedef struct _DXGKVGPU_ESCAPE_INITIALIZE
+{
+    DXGKVGPU_ESCAPE_HEAD Header;
+} DXGKVGPU_ESCAPE_INITIALIZE;
+
+typedef struct _DXGKVGPU_ESCAPE_RELEASE
+{
+    DXGKVGPU_ESCAPE_HEAD Header;
+} DXGKVGPU_ESCAPE_RELEASE;
 
 
 typedef enum _DXGK_PTE_PAGE_SIZE
@@ -249,7 +284,11 @@ typedef struct _D3DDDI_ALLOCATIONINFO
 typedef struct _D3DDDI_ALLOCATIONINFO2
 {
     D3DKMT_HANDLE                   hAllocation;           // out: Private driver data for allocation
-    CONST VOID*                     pSystemMem;            // in: Pointer to pre-allocated sysmem
+    union 
+    {
+        HANDLE                      hSection;              // in: Handle to valid section object
+        CONST VOID*                 pSystemMem;            // in: Pointer to pre-allocated sysmem
+    };
     VOID*                           pPrivateDriverData;    // in(out optional): Private data for each allocation
     UINT                            PrivateDriverDataSize; // in: Size of the private data
     D3DDDI_VIDEO_PRESENT_SOURCE_ID  VidPnSourceId;         // in: VidPN source ID if this is a primary
@@ -264,7 +303,7 @@ typedef struct _D3DDDI_ALLOCATIONINFO2
 #if ((DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2) || \
      (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_2))
             UINT    OverridePriority : 1;    // 0x00000004
-            UINT    Reserved         : 29;    // 0xFFFFFFF8
+            UINT    Reserved         : 29;   // 0xFFFFFFF8
 #else
             UINT    Reserved         : 30;    // 0xFFFFFFFC
 #endif
@@ -458,7 +497,14 @@ typedef struct _D3DDDI_CREATECONTEXTFLAGS
      (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_0))
             UINT    DisableGpuTimeout   : 1;      // 0x00000004
             UINT    SynchronizationOnly : 1;      // 0x00000008
+#if ((DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3) || \
+     (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_3_1))
+            UINT    HwQueueSupported    : 1;      // 0x00000010
+            UINT    Reserved            :27;      // 0xFFFFFFE0
+#else
             UINT    Reserved            :28;      // 0xFFFFFFF0
+#endif // DXGKDDI_INTERFACE_VERSION
+
 #else
             UINT    Reserved            :30;      // 0xFFFFFFFC
 #endif // DXGKDDI_INTERFACE_VERSION
@@ -719,8 +765,38 @@ typedef enum D3DDDI_COLOR_SPACE_TYPE
     D3DDDI_COLOR_SPACE_RGB_FULL_G22_NONE_P2020            = 17,
     D3DDDI_COLOR_SPACE_YCBCR_STUDIO_GHLG_TOPLEFT_P2020    = 18,
     D3DDDI_COLOR_SPACE_YCBCR_FULL_GHLG_TOPLEFT_P2020      = 19,
+    D3DDDI_COLOR_SPACE_RGB_STUDIO_G24_NONE_P709           = 20,
+    D3DDDI_COLOR_SPACE_RGB_STUDIO_G24_NONE_P2020          = 21,
+    D3DDDI_COLOR_SPACE_YCBCR_STUDIO_G24_LEFT_P709         = 22,
+    D3DDDI_COLOR_SPACE_YCBCR_STUDIO_G24_LEFT_P2020        = 23,
+    D3DDDI_COLOR_SPACE_YCBCR_STUDIO_G24_TOPLEFT_P2020     = 24,
     D3DDDI_COLOR_SPACE_CUSTOM                             = 0xFFFFFFFF
 } D3DDDI_COLOR_SPACE_TYPE;
+
+//
+// Note: This enum is intended to specify the final wire signaling
+// colorspace values. Do not mix it with enum values defined in
+// D3DDDI_COLOR_SPACE_TYPE which are used to specify
+// input colorspace for MPOs and other surfaces.
+//
+typedef enum _D3DDDI_OUTPUT_WIRE_COLOR_SPACE_TYPE
+{
+    // We are using the same values for these first two enums for
+    // backward compatibility to WDDM2.2 drivers which used
+    // to get these 2 values from D3DDDI_COLOR_SPACE_TYPE
+    D3DDDI_OUTPUT_WIRE_COLOR_SPACE_G22_P709               = 0,
+    D3DDDI_OUTPUT_WIRE_COLOR_SPACE_RESERVED               = 4,
+    D3DDDI_OUTPUT_WIRE_COLOR_SPACE_G2084_P2020            = 12,
+
+    // We are starting the new enum value at 30 just to make sure it
+    // is not confused with the existing D3DDDI_COLOR_SPACE_TYPE
+    // in the short term
+    D3DDDI_OUTPUT_WIRE_COLOR_SPACE_G22_P709_WCG           = 30,
+
+    // OS only intend to use the _G22_P2020 value in future,
+    // for now graphics drivers should not expect it.
+    D3DDDI_OUTPUT_WIRE_COLOR_SPACE_G22_P2020              = 31,
+} D3DDDI_OUTPUT_WIRE_COLOR_SPACE_TYPE;
 
 typedef struct _D3DDDIRECT
 {
@@ -745,6 +821,9 @@ typedef enum _D3DDDI_GAMMARAMP_TYPE
     D3DDDI_GAMMARAMP_DEFAULT       = 1,
     D3DDDI_GAMMARAMP_RGB256x3x16   = 2,
     D3DDDI_GAMMARAMP_DXGI_1        = 3,
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
+    D3DDDI_GAMMARAMP_MATRIX_3x4    = 4,
+#endif (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_3)
 } D3DDDI_GAMMARAMP_TYPE;
 
 typedef struct _D3DDDI_GAMMA_RAMP_RGB256x3x16
@@ -767,6 +846,13 @@ typedef struct _D3DDDI_GAMMA_RAMP_DXGI_1
     D3DDDI_DXGI_RGB    Offset;
     D3DDDI_DXGI_RGB    GammaCurve[1025];
 } D3DDDI_GAMMA_RAMP_DXGI_1;
+
+typedef struct _D3DKMDT_3X4_COLORSPACE_TRANSFORM
+{
+    float               ColorMatrix3x4[3][4];
+    float               ScalarMultiplier;
+    D3DDDI_DXGI_RGB     LookupTable1D[4096];
+} D3DKMDT_3x4_COLORSPACE_TRANSFORM, *PD3DDDI_3x4_COLORSPACE_TRANSFORM;
 
 typedef enum _D3DDDI_HDR_METADATA_TYPE
 {

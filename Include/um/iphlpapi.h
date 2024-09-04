@@ -501,6 +501,22 @@ GetUdpStatisticsEx(
     );
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+ULONG
+WINAPI
+GetTcpStatisticsEx2(
+    _Out_ PMIB_TCPSTATS2 Statistics,
+    _In_  ULONG Family
+    );
+
+ULONG
+WINAPI
+GetUdpStatisticsEx2(
+    _Out_ PMIB_UDPSTATS2 Statistics,
+    _In_  ULONG Family
+    );
+#endif
+
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 

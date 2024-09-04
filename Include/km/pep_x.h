@@ -406,7 +406,7 @@ typedef enum _PEP_DEVICE_ACCEPTANCE_TYPE {
 #endif
 
 // END_PEPFX
-#if (NTDDI_VERSION <= NTDDI_WIN10_RS2) //ABRACADABRA_NTDDI_WIN10_RS2
+#if (NTDDI_VERSION <= NTDDI_WIN10_RS3) //ABRACADABRA_NTDDI_WIN10_RS3
 
 #define PepDeviceAcceptedMini PepDeviceAccepted
 
@@ -701,6 +701,11 @@ typedef PEPCALLBACKPOWERONCRASHDUMPDEVICE *PPEPCALLBACKPOWERONCRASHDUMPDEVICE;
 #define PEP_NOTIFY_PPM_LPI_COORDINATED_STATES           0x24 // PEPFX
 #define PEP_NOTIFY_PPM_LPI_PRE_EXECUTE                  0x25 // PEPFX
 #define PEP_NOTIFY_PPM_LPI_COMPLETE                     0x26 // PEPFX
+#define PEP_NOTIFY_PPM_ENTER_SYSTEM_STATE               0x27 // PEPFX 
+#define PEP_NOTIFY_PPM_RESUME_FROM_SYSTEM_STATE         0x28 // PEPFX 
+#define PEP_NOTIFY_PPM_QUERY_DISCRETE_PERF_STATES       0x29 // PEPFX
+#define PEP_NOTIFY_PPM_QUERY_DOMAIN_INFO                0x2a // PEPFX
+#define PEP_NOTIFY_PPM_PERF_SET_STATE                   0x2b // PEPFX
 
 // BEGIN_PEPFX
 typedef struct _PEP_PREPARE_DEVICE {
@@ -1085,6 +1090,7 @@ typedef struct _PEP_PPM_QUERY_CAPABILITIES {
     ULONG IdleStateCount;
     BOOLEAN PerformanceStatesSupported;
     BOOLEAN ParkingSupported;
+    UCHAR DiscretePerformanceStateCount;
 } PEP_PPM_QUERY_CAPABILITIES, *PPEP_PPM_QUERY_CAPABILITIES;
 
 // END_PEPFX
@@ -1204,7 +1210,8 @@ typedef struct _PEP_PROCESSOR_FEEDBACK_COUNTER {
         ULONG Affinitized       :1;
         ULONG Type              :2;
         ULONG Counter           :4;
-        ULONG Reserved          :25;
+        ULONG DiscountIdle      :1;
+        ULONG Reserved          :24;
     };
     ULONG NominalRate;
 } PEP_PROCESSOR_FEEDBACK_COUNTER, *PPEP_PROCESSOR_FEEDBACK_COUNTER;
@@ -1492,6 +1499,44 @@ typedef struct _PEP_PPM_LPI_COMPLETE {
     ULONG CoordinatedStateCount;
     _Field_size_(CoordinatedStateCount) PULONG CoordinatedStates;
 } PEP_PPM_LPI_COMPLETE, *PPEP_PPM_LPI_COMPLETE;
+
+typedef struct _PEP_PPM_ENTER_SYSTEM_STATE {
+    SYSTEM_POWER_STATE TargetState;
+} PEP_PPM_ENTER_SYSTEM_STATE, *PPEP_PPM_ENTER_SYSTEM_STATE;
+
+typedef struct _PEP_PPM_RESUME_FROM_SYSTEM_STATE {
+    SYSTEM_POWER_STATE TargetState;
+} PEP_PPM_RESUME_FROM_SYSTEM_STATE, *PPEP_PPM_RESUME_FROM_SYSTEM_STATE;
+
+typedef struct _PEP_PROCESSOR_PERF_STATE {
+    ULONG Performance;
+    ULONG Frequency;
+    ULONG Reserved[4];
+} PEP_PROCESSOR_PERF_STATE, *PPEP_PROCESSOR_PERF_STATE;
+
+typedef struct _PEP_PPM_QUERY_DISCRETE_PERF_STATES {
+    ULONG Count;
+    _Field_size_full_(Count) PPEP_PROCESSOR_PERF_STATE States;
+} PEP_PPM_QUERY_DISCRETE_PERF_STATES, *PPEP_PPM_QUERY_DISCRETE_PERF_STATES;
+
+#define PROCESSOR_DOMAIN_COORDIANTION_SW_ALL     0x00
+#define PROCESSOR_DOMAIN_COORDIANTION_SW_ANY     0x01
+#define PROCESSOR_DOMAIN_COORDIANTION_HW_ALL     0x02
+
+typedef struct _PEP_PPM_QUERY_DOMAIN_INFO {
+    ULONG DomainId;
+    UCHAR CoordinationType;
+    BOOLEAN IdleProcessorsDiscounted;
+    BOOLEAN SchedulerDirectedTransitionsSupported;
+    ULONG WorstCaseTransitionLatency;
+    ULONG WorstCaseTransitionOverhead;
+} PEP_PPM_QUERY_DOMAIN_INFO, *PPEP_PPM_QUERY_DOMAIN_INFO;
+
+typedef struct _PEP_PPM_PERF_SET_STATE {
+    UCHAR MinimumPerformanceState;
+    UCHAR MaximumPerformanceState;
+    UCHAR DesiredPerformanceState;
+} PEP_PPM_PERF_SET_STATE, *PPEP_PPM_PERF_SET_STATE;
 
 // END_PEPFX
 

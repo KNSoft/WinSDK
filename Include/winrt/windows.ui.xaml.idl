@@ -29,71 +29,6 @@ import "Windows.UI.Xaml.Media.idl";
 import "Windows.UI.Xaml.Media.Animation.idl";
 import "Windows.UI.Xaml.Media.Imaging.idl";
 import "Windows.UI.Xaml.Media.Media3D.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eapplicationmodel_h__)")
-cpp_quote("#include <Windows.ApplicationModel.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel_h__)")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Eactivation_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Activation.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Eactivation_h__)")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Ecore_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Core.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Ecore_h__)")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Edatatransfer_h__)")
-cpp_quote("#include <Windows.ApplicationModel.DataTransfer.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Edatatransfer_h__)")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Edatatransfer2Edragdrop_h__)")
-cpp_quote("#include <Windows.ApplicationModel.DataTransfer.DragDrop.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Edatatransfer2Edragdrop_h__)")
-cpp_quote("#if !defined(__windows2Egraphics2Eimaging_h__)")
-cpp_quote("#include <Windows.Graphics.Imaging.h>")
-cpp_quote("#endif // !defined(__windows2Egraphics2Eimaging_h__)")
-cpp_quote("#if !defined(__windows2Eui2Ecomposition_h__)")
-cpp_quote("#include <Windows.UI.Composition.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Ecomposition_h__)")
-cpp_quote("#if !defined(__windows2Eui2Ecore_h__)")
-cpp_quote("#include <Windows.UI.Core.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Ecore_h__)")
-cpp_quote("#if !defined(__windows2Eui2Einput_h__)")
-cpp_quote("#include <Windows.UI.Input.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Einput_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Eautomation2Epeers_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Automation.Peers.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Eautomation2Epeers_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Econtrols_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Controls.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Econtrols_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Econtrols2Eprimitives_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Controls.Primitives.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Econtrols2Eprimitives_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Edata_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Data.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Edata_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Einput_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Input.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Einput_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Einterop_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Interop.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Einterop_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Emedia_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Media.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Emedia_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Emedia2Eanimation_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Media.Animation.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Emedia2Eanimation_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Emedia2Eimaging_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Media.Imaging.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Emedia2Eimaging_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Emedia2Emedia3d_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Media.Media3D.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Emedia2Emedia3d_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -330,6 +265,8 @@ namespace Windows
 
                 runtimeclass AccessKeyInvokedEventArgs;
 
+                runtimeclass CharacterReceivedRoutedEventArgs;
+
                 runtimeclass ContextRequestedEventArgs;
 
                 delegate DoubleTappedEventHandler;
@@ -341,6 +278,8 @@ namespace Windows
                 delegate KeyEventHandler;
 
                 typedef enum KeyTipPlacementMode KeyTipPlacementMode;
+
+                runtimeclass KeyboardAccelerator;
 
                 typedef enum KeyboardNavigationMode KeyboardNavigationMode;
 
@@ -363,6 +302,8 @@ namespace Windows
                 runtimeclass Pointer;
 
                 delegate PointerEventHandler;
+
+                runtimeclass ProcessKeyboardAcceleratorEventArgs;
 
                 delegate RightTappedEventHandler;
 
@@ -700,6 +641,8 @@ namespace Windows
 
             interface IFrameworkElement4;
 
+            interface IFrameworkElement6;
+
             interface IFrameworkElementFactory;
 
             interface IFrameworkElementOverrides;
@@ -713,6 +656,8 @@ namespace Windows
             interface IFrameworkElementStatics4;
 
             interface IFrameworkElementStatics5;
+
+            interface IFrameworkElementStatics6;
 
             interface IFrameworkTemplate;
 
@@ -814,9 +759,13 @@ namespace Windows
 
             interface IUIElement5;
 
+            interface IUIElement7;
+
             interface IUIElementFactory;
 
             interface IUIElementOverrides;
+
+            interface IUIElementOverrides7;
 
             interface IUIElementStatics;
 
@@ -829,6 +778,8 @@ namespace Windows
             interface IUIElementStatics5;
 
             interface IUIElementStatics6;
+
+            interface IUIElementStatics7;
 
             interface IUnhandledExceptionEventArgs;
 
@@ -1358,7 +1309,11 @@ namespace Windows
             {
                 Center            = 0,
                 Left              = 1,
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                Start             = 1,
                 Right             = 2,
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                End               = 2,
                 Justify           = 3,
                 DetectFromContent = 4
             };
@@ -2149,6 +2104,16 @@ namespace Windows
                 [propput] HRESULT AllowFocusWhenDisabled([in] boolean value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Xaml.FrameworkElement)]
+            [uuid(792A5D91-62A1-40BF-A0CE-F9C131FCB7A7)]
+            interface IFrameworkElement6 : IInspectable
+            {
+                [propget] HRESULT ActualTheme([out] [retval] Windows.UI.Xaml.ElementTheme* value);
+                [eventadd] HRESULT ActualThemeChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.FrameworkElement*, IInspectable*>* value, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT ActualThemeChanged([in] EventRegistrationToken token);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.UI.Xaml.FrameworkElement)]
             [uuid(DEAEE126-03CA-4966-B576-604CCE93B5E8)]
@@ -2227,6 +2192,14 @@ namespace Windows
             interface IFrameworkElementStatics5 : IInspectable
             {
                 HRESULT DeferTree([in] Windows.UI.Xaml.DependencyObject* element);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Xaml.FrameworkElement)]
+            [uuid(FCC1529A-69DB-4582-A7BE-CF6A1CFDACD0)]
+            interface IFrameworkElementStatics6 : IInspectable
+            {
+                [propget] HRESULT ActualThemeProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2815,6 +2788,23 @@ namespace Windows
                 [overload("StartBringIntoView")] HRESULT StartBringIntoViewWithOptions([in] Windows.UI.Xaml.BringIntoViewOptions* options);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Xaml.UIElement)]
+            [uuid(CAFC4968-6369-4249-80F9-3D656319E811)]
+            interface IUIElement7 : IInspectable
+            {
+                [propget] HRESULT KeyboardAccelerators([out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Input.KeyboardAccelerator*>** value);
+                [eventadd] HRESULT CharacterReceived([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.UIElement*, Windows.UI.Xaml.Input.CharacterReceivedRoutedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT CharacterReceived([in] EventRegistrationToken token);
+                [eventadd] HRESULT ProcessKeyboardAccelerators([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.UIElement*, Windows.UI.Xaml.Input.ProcessKeyboardAcceleratorEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT ProcessKeyboardAccelerators([in] EventRegistrationToken token);
+                [eventadd] HRESULT PreviewKeyDown([in] Windows.UI.Xaml.Input.KeyEventHandler* value, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT PreviewKeyDown([in] EventRegistrationToken token);
+                [eventadd] HRESULT PreviewKeyUp([in] Windows.UI.Xaml.Input.KeyEventHandler* value, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT PreviewKeyUp([in] EventRegistrationToken token);
+                HRESULT TryInvokeKeyboardAccelerator([in] Windows.UI.Xaml.Input.ProcessKeyboardAcceleratorEventArgs* args);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.UI.Xaml.UIElement)]
             [uuid(B9EE93FE-A338-419F-AC32-91DCAADF5D08)]
@@ -2830,6 +2820,15 @@ namespace Windows
                 HRESULT OnCreateAutomationPeer([out] [retval] Windows.UI.Xaml.Automation.Peers.AutomationPeer** returnValue);
                 HRESULT OnDisconnectVisualChildren();
                 HRESULT FindSubElementsForTouchTargeting([in] Windows.Foundation.Point point, [in] Windows.Foundation.Rect boundingRect, [out] [retval] Windows.Foundation.Collections.IIterable<Windows.Foundation.Collections.IIterable<Windows.Foundation.Point>*>** returnValue);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Xaml.UIElement)]
+            [uuid(B97F7F68-C29B-4C99-A1C3-952619D6E720)]
+            interface IUIElementOverrides7 : IInspectable
+            {
+                HRESULT GetChildrenInTabFocusOrder([out] [retval] Windows.Foundation.Collections.IIterable<Windows.UI.Xaml.DependencyObject*>** returnValue);
+                HRESULT OnProcessKeyboardAccelerators([in] Windows.UI.Xaml.Input.ProcessKeyboardAcceleratorEventArgs* args);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2935,6 +2934,16 @@ namespace Windows
                 [propget] HRESULT GettingFocusEvent([out] [retval] Windows.UI.Xaml.RoutedEvent** value);
                 [propget] HRESULT LosingFocusEvent([out] [retval] Windows.UI.Xaml.RoutedEvent** value);
                 [propget] HRESULT NoFocusCandidateFoundEvent([out] [retval] Windows.UI.Xaml.RoutedEvent** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.Xaml.UIElement)]
+            [uuid(DA9B4493-A695-4145-AE93-888024396A0F)]
+            interface IUIElementStatics7 : IInspectable
+            {
+                [propget] HRESULT PreviewKeyDownEvent([out] [retval] Windows.UI.Xaml.RoutedEvent** value);
+                [propget] HRESULT CharacterReceivedEvent([out] [retval] Windows.UI.Xaml.RoutedEvent** value);
+                [propget] HRESULT PreviewKeyUpEvent([out] [retval] Windows.UI.Xaml.RoutedEvent** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -3355,6 +3364,7 @@ namespace Windows
             [static(Windows.UI.Xaml.IFrameworkElementStatics2, Windows.Foundation.UniversalApiContract, 1.0)]
             [static(Windows.UI.Xaml.IFrameworkElementStatics4, Windows.Foundation.UniversalApiContract, 3.0)]
             [static(Windows.UI.Xaml.IFrameworkElementStatics5, Windows.Foundation.UniversalApiContract, 4.0)]
+            [static(Windows.UI.Xaml.IFrameworkElementStatics6, Windows.Foundation.UniversalApiContract, 5.0)]
             [threading(both)]
             runtimeclass FrameworkElement : Windows.UI.Xaml.UIElement
             {
@@ -3364,6 +3374,7 @@ namespace Windows
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] [overridable] interface Windows.UI.Xaml.IFrameworkElementOverrides2;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.UI.Xaml.IFrameworkElement3;
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.UI.Xaml.IFrameworkElement4;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Xaml.IFrameworkElement6;
             }
 
             [composable(Windows.UI.Xaml.IFrameworkTemplateFactory, protected, Windows.Foundation.UniversalApiContract, 1.0)]
@@ -3620,6 +3631,7 @@ namespace Windows
             [static(Windows.UI.Xaml.IUIElementStatics4, Windows.Foundation.UniversalApiContract, 3.0)]
             [static(Windows.UI.Xaml.IUIElementStatics5, Windows.Foundation.UniversalApiContract, 4.0)]
             [static(Windows.UI.Xaml.IUIElementStatics6, Windows.Foundation.UniversalApiContract, 4.0)]
+            [static(Windows.UI.Xaml.IUIElementStatics7, Windows.Foundation.UniversalApiContract, 5.0)]
             [threading(both)]
             runtimeclass UIElement : Windows.UI.Xaml.DependencyObject
             {
@@ -3629,6 +3641,8 @@ namespace Windows
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.UI.Xaml.IUIElement3;
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.UI.Xaml.IUIElement4;
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.UI.Xaml.IUIElement5;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Xaml.IUIElement7;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] [overridable] interface Windows.UI.Xaml.IUIElementOverrides7;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

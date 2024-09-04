@@ -31,7 +31,9 @@ Abstract:
 
 #ifndef _APISET_REGISTRY_VER
 #ifdef _APISET_TARGET_VERSION
-#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WINTHRESHOLD
+#if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN10_RS3
+#define _APISET_REGISTRY_VER 0x0102
+#elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WINTHRESHOLD
 #define _APISET_REGISTRY_VER 0x0101
 #elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN8
 #define _APISET_REGISTRY_VER 0x0100
@@ -837,33 +839,40 @@ RegQueryValueW (
 #endif // !UNICODE
 
 
+
 #if (WINVER >= 0x0400)
+
+#if !defined(_CONTRACT_GEN) || (_APISET_REGISTRY_VER >= 0x0102)
 
 WINADVAPI
 LSTATUS
 APIENTRY
-RegQueryMultipleValuesA (
+RegQueryMultipleValuesA(
     _In_ HKEY hKey,
     _Out_writes_(num_vals) PVALENTA val_list,
     _In_ DWORD num_vals,
     _Out_writes_bytes_to_opt_(*ldwTotsize, *ldwTotsize) __out_data_source(REGISTRY) LPSTR lpValueBuf,
     _Inout_opt_ LPDWORD ldwTotsize
     );
+
 WINADVAPI
 LSTATUS
 APIENTRY
-RegQueryMultipleValuesW (
+RegQueryMultipleValuesW(
     _In_ HKEY hKey,
     _Out_writes_(num_vals) PVALENTW val_list,
     _In_ DWORD num_vals,
     _Out_writes_bytes_to_opt_(*ldwTotsize, *ldwTotsize) __out_data_source(REGISTRY) LPWSTR lpValueBuf,
     _Inout_opt_ LPDWORD ldwTotsize
     );
+
 #ifdef UNICODE
 #define RegQueryMultipleValues  RegQueryMultipleValuesW
 #else
 #define RegQueryMultipleValues  RegQueryMultipleValuesA
 #endif // !UNICODE
+
+#endif
 #endif /* WINVER >= 0x0400 */
 
 WINADVAPI

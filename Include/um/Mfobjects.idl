@@ -3833,9 +3833,9 @@ interface IMFByteStream : IUnknown
     [call_as(EndRead)]
     HRESULT RemoteEndRead(
         [in] IUnknown *punkResult,
-        [out, size_is(cb)] BYTE *pb,
+        [in, out, size_is(cb), length_is(*pcbRead)] BYTE *pb,
         [in] ULONG cb,
-        [out] ULONG *pcbRead
+        [in, out] ULONG *pcbRead
         );
 
     /// <summary>

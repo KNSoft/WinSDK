@@ -449,13 +449,13 @@ typedef struct _SHELLEXECUTEINFOA
     LPCSTR   lpClass;           // in, valid when SEE_MASK_CLASSNAME is specified
     HKEY hkeyClass;             // in, valid when SEE_MASK_CLASSKEY is specified
     DWORD dwHotKey;             // in, valid when SEE_MASK_HOTKEY is specified
-    union                       
-    {                           
+    union
+    {
         HANDLE hIcon;           // not used
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
         HANDLE hMonitor;        // in, valid when SEE_MASK_HMONITOR specified
 #endif // (NTDDI_VERSION >= NTDDI_WIN2K)
-    } DUMMYUNIONNAME;           
+    } DUMMYUNIONNAME;
     HANDLE hProcess;            // out, valid when SEE_MASK_NOCLOSEPROCESS specified
 } SHELLEXECUTEINFOA, *LPSHELLEXECUTEINFOA;
 typedef struct _SHELLEXECUTEINFOW
@@ -473,13 +473,13 @@ typedef struct _SHELLEXECUTEINFOW
     LPCWSTR  lpClass;           // in, valid when SEE_MASK_CLASSNAME is specified
     HKEY hkeyClass;             // in, valid when SEE_MASK_CLASSKEY is specified
     DWORD dwHotKey;             // in, valid when SEE_MASK_HOTKEY is specified
-    union                       
-    {                           
+    union
+    {
         HANDLE hIcon;           // not used
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
         HANDLE hMonitor;        // in, valid when SEE_MASK_HMONITOR specified
 #endif // (NTDDI_VERSION >= NTDDI_WIN2K)
-    } DUMMYUNIONNAME;           
+    } DUMMYUNIONNAME;
     HANDLE hProcess;            // out, valid when SEE_MASK_NOCLOSEPROCESS specified
 } SHELLEXECUTEINFOW, *LPSHELLEXECUTEINFOW;
 #ifdef UNICODE
@@ -994,9 +994,9 @@ SHSTDAPI SHQueryUserNotificationState(_Out_ QUERY_USER_NOTIFICATION_STATE *pquns
 #endif // (NTDDI_VERSION >= NTDDI_VISTA)
 
 #if (NTDDI_VERSION >= NTDDI_WIN7)
-// This api retrieves an IPropertyStore that stores the window's properties.  
+// This api retrieves an IPropertyStore that stores the window's properties.
 SHSTDAPI SHGetPropertyStoreForWindow(_In_ HWND hwnd, _In_ REFIID riid, _Outptr_ void** ppv);
-#endif 
+#endif
 
 
 typedef struct _NOTIFYICONDATAA {
@@ -1434,7 +1434,7 @@ SHSTDAPI_(BOOL) SHGetNewLinkInfoW(_In_ LPCWSTR pszLinkTo, _In_ LPCWSTR pszDir, _
 #define SHGNLI_USEURLEXT        0x000000020     // use ".url" extension instead of ".lnk"
 #endif
 #endif // (NTDDI_VERSION >= NTDDI_WIN2K)
- 
+
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
 #define PRINTACTION_OPEN           0        // pszBuf1:<PrinterName>
@@ -1636,17 +1636,21 @@ STDAPI_(BOOL)   SHTestTokenMembership(_In_opt_ HANDLE hToken, ULONG ulRID);
 SHSTDAPI SHGetImageList(_In_ int iImageList, _In_ REFIID riid, _Outptr_ void **ppvObj);
 #endif // (NTDDI_VERSION >= NTDDI_WINXP)
 
+
 #if (NTDDI_VERSION >= NTDDI_WINXP)
 #define SHIL_LARGE          0   // normally 32x32
 #define SHIL_SMALL          1   // normally 16x16
 #define SHIL_EXTRALARGE     2
 #define SHIL_SYSSMALL       3   // like SHIL_SMALL, but tracks system small icon metric correctly
+
 #if (NTDDI_VERSION >= NTDDI_VISTA)
 #define SHIL_JUMBO          4   // normally 256x256
 #define SHIL_LAST           SHIL_JUMBO
 #else
 #define SHIL_LAST           SHIL_SYSSMALL
 #endif // (NTDDI_VERSION >= NTDDI_VISTA)
+
+
 #endif // (NTDDI_VERSION >= NTDDI_WINXP)
 
 

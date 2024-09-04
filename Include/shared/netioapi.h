@@ -1548,6 +1548,12 @@ Notes:
 
 --*/
 
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+
 _IRQL_requires_max_(PASSIVE_LEVEL)
 _NETIOAPI_SUCCESS_
 NETIOAPI_API
@@ -1585,6 +1591,12 @@ Notes:
     The API allocates the buffer for Table.  Use FreeMibTable to free it.
 
 --*/
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VOID

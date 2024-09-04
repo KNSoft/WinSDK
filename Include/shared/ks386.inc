@@ -84,6 +84,8 @@ RECURSIVE_NMI equ 00111H
 KERNEL_SECURITY_CHECK_FAILURE equ 00139H
 UNSUPPORTED_INSTRUCTION_MODE equ 00151H
 BUGCHECK_CONTEXT_MODIFIER equ 080000000H
+INVALID_CALLBACK_STACK_ADDRESS equ 001CDH
+INVALID_KERNEL_STACK_ADDRESS equ 001CEH
 
 ;
 ;  Breakpoint type definitions
@@ -98,28 +100,6 @@ STATUS_ASSERTION_FAILURE equ 0C0000420H
 
 CidUniqueProcess equ 00000H
 CidUniqueThread equ 00004H
-
-;
-;  Critical Section Structure Offset Definitions
-;
-
-CsDebugInfo equ 00000H
-CsLockCount equ 00004H
-CsRecursionCount equ 00008H
-CsOwningThread equ 0000CH
-CsLockSemaphore equ 00010H
-CsSpinCount equ 00014H
-
-;
-;  Critical Section Debug Information Structure Offset Definitions
-;
-
-CsType equ 00000H
-CsCreatorBackTraceIndex equ 00002H
-CsCriticalSection equ 00004H
-CsProcessLocksList equ 00008H
-CsEntryCount equ 00010H
-CsContentionCount equ 00014H
 
 ;
 ;  Exception Record Offset, Flag, and Enumerated Type Definitions
@@ -206,6 +186,7 @@ StrBuffer equ 00004H
 ;
 
 IbCfgBitMap equ 000B0H
+IbWow64CfgBitMap equ 000C0H
 IbMitigationOptionsMap equ 000A0H
 PS_MITIGATION_OPTION_BITS_PER_OPTION equ 00004H
 PS_MITIGATION_OPTION_ALWAYS_ON equ 00001H
@@ -343,6 +324,7 @@ FAST_FAIL_INVALID_BUFFER_ACCESS equ 0001CH
 FAST_FAIL_INVALID_NEXT_THREAD equ 0001EH
 FAST_FAIL_INVALID_CONTROL_STACK equ 0002FH
 FAST_FAIL_SET_CONTEXT_DENIED equ 00030H
+FAST_FAIL_ENCLAVE_CALL_FAILURE equ 00035H
 
 ;
 ;  Bounds Callback Status Code Definitions
@@ -478,7 +460,7 @@ PrKernelTime equ 0009CH
 PrUserTime equ 000A0H
 PrInstrumentationCallback equ 00324H
 KernelProcessObjectLength equ 000B0H
-ExecutiveProcessObjectLength equ 003E0H
+ExecutiveProcessObjectLength equ 003E8H
 Win32BatchFlushCallout equ 00007H
 
 ;
@@ -557,11 +539,12 @@ ThTeb equ 000A8H
 ThTimer equ 000B8H
 thProcess equ 00150H
 
-KTHREAD_AUTO_ALIGNMENT_BIT equ 00000H
-KTHREAD_GUI_THREAD_MASK equ 00040H
-KTHREAD_RESTRICTED_GUI_THREAD_MASK equ 0100000H
+KTHREAD_AUTO_ALIGNMENT_BIT equ 00002H
+KTHREAD_GUI_THREAD_MASK equ 00080H
+KTHREAD_RESTRICTED_GUI_THREAD_MASK equ 0200000H
 KTHREAD_SYSTEM_THREAD_BIT equ 0000AH
-KTHREAD_QUEUE_DEFER_PREEMPTION_BIT equ 0000AH
+KTHREAD_QUEUE_DEFER_PREEMPTION_BIT equ 0000BH
+KTHREAD_BAM_QOS_LEVEL_MASK equ 00003H
 
 ThMiscFlags equ 00058H
 ThThreadFlags equ 0005CH
@@ -629,7 +612,7 @@ FbTebFlags equ 002F0H
 PeBeingDebugged equ 00002H
 PeProcessParameters equ 00010H
 PeKernelCallbackTable equ 0002CH
-ProcessEnvironmentBlockLength equ 00460H
+ProcessEnvironmentBlockLength equ 00468H
 
 ;
 ;  Process Parameters Block Structure Offset Definitions
@@ -806,8 +789,8 @@ CxxXStateLength equ 00014H
 
 AfCount equ 00000H
 AfBitmap equ 00008H
-PbEntropyCount equ 040F4H
-PbEntropyBuffer equ 040F8H
+PbEntropyCount equ 04134H
+PbEntropyBuffer equ 04138H
 KENTROPY_TIMING_INTERRUPTS_PER_BUFFER equ 00400H
 KENTROPY_TIMING_BUFFER_MASK equ 007FFH
 KENTROPY_TIMING_ANALYSIS equ 00000H
@@ -877,7 +860,7 @@ PcCycleTime equ 03C48H
 PcHighCycleTime equ 03C70H
 PcDpcRequestSummary equ 0235CH
 PcParentNode equ 00458H
-ProcessorControlRegisterLength equ 04A20H
+ProcessorControlRegisterLength equ 04A60H
 TebPeb equ TePeb
 PebBeingDebugged equ PeBeingDebugged
 PebKernelCallbackTable equ PeKernelCallbackTable
@@ -965,7 +948,7 @@ PbCpuID equ 00015H
 PbCpuType equ 00014H
 PbCpuStep equ 00016H
 PbProcessorState equ 00018H
-PbContext equ 040E8H
+PbContext equ 04128H
 PbDebuggerSavedIRQL equ 004C0H
 PbHalReserved equ 00378H
 PbCFlushSize equ 003B8H
@@ -1020,12 +1003,12 @@ PbCycleTime equ 03B28H
 PbHighCycleTime equ 03B50H
 PbCpuVendor equ 003BEH
 PbChainedInterruptList equ 03CA0H
-PbIsrStack equ 0421CH
-PbVectorToInterruptObject equ 04220H
-PbSpinLockAcquireCount equ 04020H
-PbSpinLockContentionCount equ 04024H
-PbSpinLockSpinCount equ 04028H
-ProcessorBlockLength equ 04900H
+PbIsrStack equ 0425CH
+PbVectorToInterruptObject equ 04260H
+PbSpinLockAcquireCount equ 04060H
+PbSpinLockContentionCount equ 04064H
+PbSpinLockSpinCount equ 04068H
+ProcessorBlockLength equ 04940H
 CPU_AMD equ 00002H
 CPU_INTEL equ 00001H
 DEBUG_ACTIVE_MASK equ 000DFH

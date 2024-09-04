@@ -62,7 +62,7 @@ Revision History:
 
 // begin_ntminitape
 
-// begin_storport
+// begin_storport begin_storportp
 
 //
 // Calculate the byte offset of a field in a structure of type type.
@@ -1214,6 +1214,30 @@ typedef union _CDB {
         UCHAR Control;
     } PERSISTENT_RESERVE_OUT;
 
+    struct _REPORT_TIMESTAMP {
+
+        UCHAR OperationCode;       // Byte  0          : SCSIOP_MAINTENANCE_IN
+        UCHAR ServiceAction : 5;   // Byte  1, bit 0-4 : SERVICE_ACTION_REPORT_TIMESTAMP
+        UCHAR Reserved1 : 3;       // Byte  1, bit 5-7
+        UCHAR Reserved2[4];        // Byte  2-5
+        UCHAR AllocationLength[4]; // Byte  6-9
+        UCHAR Reserved3;           // Byte 10
+        UCHAR Control;             // Byte 11
+
+    } REPORT_TIMESTAMP;
+
+    struct _SET_TIMESTAMP {
+
+        UCHAR OperationCode;          // Byte  0          : SCSIOP_MAINTENANCE_OUT
+        UCHAR ServiceAction : 5;      // Byte  1, bit 0-4 : SERVICE_ACTION_SET_TIMESTAMP
+        UCHAR Reserved1 : 3;          // Byte  1, bit 5-7
+        UCHAR Reserved2[4];           // Byte  2-5
+        UCHAR ParameterListLength[4]; // Byte  6-9
+        UCHAR Reserved3;              // Byte 10
+        UCHAR Control;                // Byte 11
+
+    } SET_TIMESTAMP;
+
     //
     // MMC / SFF-8090 commands
     //
@@ -1429,6 +1453,85 @@ typedef union _CDB {
         UCHAR ParameterListLength[3];
         UCHAR Control;
     } WRITE_BUFFER;
+
+    struct _CLOSE_ZONE {
+        UCHAR OperationCode;            // 0x94 - SCSIOP_ZBC_OUT
+        UCHAR ServiceAction     : 5;        // 0x01 - SERVICE_ACTION_CLOSE_ZONE
+        UCHAR Reserved1         : 3;
+        UCHAR ZoneId[8];
+        UCHAR Reserved2[4];
+        UCHAR All               : 1;
+        UCHAR Reserved3         : 7;
+        UCHAR Control;
+    } CLOSE_ZONE;
+
+    struct _FINISH_ZONE {
+        UCHAR OperationCode;            // 0x94 - SCSIOP_ZBC_OUT
+        UCHAR ServiceAction     : 5;        // 0x02 - SERVICE_ACTION_FINISH_ZONE
+        UCHAR Reserved1         : 3;
+        UCHAR ZoneId[8];
+        UCHAR Reserved2[4];
+        UCHAR All               : 1;
+        UCHAR Reserved3         : 7;
+        UCHAR Control;
+    } FINISH_ZONE;
+
+    struct _OPEN_ZONE {
+        UCHAR OperationCode;            // 0x94 - SCSIOP_ZBC_OUT
+        UCHAR ServiceAction     : 5;        // 0x03 - SERVICE_ACTION_OPEN_ZONE
+        UCHAR Reserved1         : 3;
+        UCHAR ZoneId[8];
+        UCHAR Reserved2[4];
+        UCHAR All               : 1;
+        UCHAR Reserved3         : 7;
+        UCHAR Control;
+    } OPEN_ZONE;
+
+    struct _RESET_WRITE_POINTER {
+        UCHAR OperationCode;            // 0x94 - SCSIOP_ZBC_OUT
+        UCHAR ServiceAction     : 5;        // 0x04 - SERVICE_ACTION_RESET_WRITE_POINTER
+        UCHAR Reserved1         : 3;
+        UCHAR ZoneId[8];
+        UCHAR Reserved2[4];
+        UCHAR All               : 1;
+        UCHAR Reserved3         : 7;
+        UCHAR Control;
+    } RESET_WRITE_POINTER;
+
+    struct _REPORT_ZONES {
+        UCHAR OperationCode;            // 0x95 - SCSIOP_ZBC_IN
+        UCHAR ServiceAction     : 5;        // 0x00 - SERVICE_ACTION_REPORT_ZONES
+        UCHAR Reserved1         : 3;
+        UCHAR ZoneStartLBA[8];
+        UCHAR AllocationLength[4];
+        UCHAR ReportingOptions  : 6;
+        UCHAR Reserved3         : 1;
+        UCHAR Partial           : 1;
+        UCHAR Control;
+    } REPORT_ZONES;
+
+    struct _GET_PHYSICAL_ELEMENT_STATUS {
+        UCHAR OperationCode;            // 0x9E - SCSIOP_GET_PHYSICAL_ELEMENT_STATUS
+        UCHAR ServiceAction     : 5;        // 0x17 - SERVICE_ACTION_GET_PHYSICAL_ELEMENT_STATUS
+        UCHAR Reserved1         : 3;
+        UCHAR Reserved2[4];
+        UCHAR StartingElement[4];
+        UCHAR AllocationLength[4];
+        UCHAR ReportType        : 4;
+        UCHAR Reserved3         : 2;
+        UCHAR Filter            : 2;
+        UCHAR Control;
+    } GET_PHYSICAL_ELEMENT_STATUS;
+
+    struct _REMOVE_ELEMENT_AND_TRUNCATE {
+        UCHAR OperationCode;            // 0x9E - SCSIOP_REMOVE_ELEMENT_AND_TRUNCATE
+        UCHAR ServiceAction     : 5;        // 0x18 - SERVICE_ACTION_REMOVE_ELEMENT_AND_TRUNCATE
+        UCHAR Reserved1         : 3;
+        UCHAR RequestedCapacity[8];
+        UCHAR ElementIdentifier[4];
+        UCHAR Reserved2;
+        UCHAR Control;
+    } REMOVE_ELEMENT_AND_TRUNCATE;
 
     ULONG AsUlong[4];
     UCHAR AsByte[16];
@@ -2338,39 +2441,103 @@ typedef struct _PERFORMANCE_DESCRIPTOR {
 #define SCSIOP_LOCATE16                 0x92 // tape
 #define SCSIOP_WRITE_SAME16             0x93
 #define SCSIOP_ERASE16                  0x93 // tape
+#define SCSIOP_ZBC_OUT                  0x94 // Close Zone, Finish Zone, Open Zone, Reset Write Pointer, etc.
+#define SCSIOP_ZBC_IN                   0x95 // Report Zones, etc.
 #define SCSIOP_READ_CAPACITY16          0x9E
 #define SCSIOP_GET_LBA_STATUS           0x9E
+#define SCSIOP_GET_PHYSICAL_ELEMENT_STATUS 0x9E
+#define SCSIOP_REMOVE_ELEMENT_AND_TRUNCATE 0x9E
 #define SCSIOP_SERVICE_ACTION_IN16      0x9E
 #define SCSIOP_SERVICE_ACTION_OUT16     0x9F
 
 // 32-byte commands
 #define SCSIOP_OPERATION32              0x7F
 
-// Service Action for 32 bit write commands
-#define SERVICE_ACTION_XDWRITE          0x0004
-#define SERVICE_ACTION_XPWRITE          0x0006
-#define SERVICE_ACTION_XDWRITEREAD      0x0007
-#define SERVICE_ACTION_WRITE            0x000B
-#define SERVICE_ACTION_WRITE_VERIFY     0x000C
-#define SERVICE_ACTION_WRITE_SAME       0x000D
-#define SERVICE_ACTION_ORWRITE          0x000E
 
-// Service actions for 0x48
-#define SERVICE_ACTION_OVERWRITE        0x01
-#define SERVICE_ACTION_BLOCK_ERASE      0x02
-#define SERVICE_ACTION_CRYPTO_ERASE     0x03
-#define SERVICE_ACTION_EXIT_FAILURE     0x1f
+//
+// SCSIOP_SANITIZE - 0x48
+//
 
-// Service actions for 0x83
-#define SERVICE_ACTION_POPULATE_TOKEN   0x10
-#define SERVICE_ACTION_WRITE_USING_TOKEN 0x11
+#define SERVICE_ACTION_OVERWRITE                                                0x01
+#define SERVICE_ACTION_BLOCK_ERASE                                              0x02
+#define SERVICE_ACTION_CRYPTO_ERASE                                             0x03
+#define SERVICE_ACTION_EXIT_FAILURE                                             0x1f
 
-// Service actions for 0x84
-#define SERVICE_ACTION_RECEIVE_TOKEN_INFORMATION 0x07
 
-// Service actions for 0x9E
-#define SERVICE_ACTION_READ_CAPACITY16  0x10
-#define SERVICE_ACTION_GET_LBA_STATUS   0x12
+//
+// SCSIOP_OPERATION32 - 0x7F
+//
+
+#define SERVICE_ACTION_XDWRITE                                                  0x0004
+#define SERVICE_ACTION_XPWRITE                                                  0x0006
+#define SERVICE_ACTION_XDWRITEREAD                                              0x0007
+#define SERVICE_ACTION_WRITE                                                    0x000B
+#define SERVICE_ACTION_WRITE_VERIFY                                             0x000C
+#define SERVICE_ACTION_WRITE_SAME                                               0x000D
+#define SERVICE_ACTION_ORWRITE                                                  0x000E
+
+//
+// SCSIOP_POPULATE_TOKEN, SCSIOP_WRITE_USING_TOKEN - 0x83
+//
+
+#define SERVICE_ACTION_POPULATE_TOKEN                                           0x10
+#define SERVICE_ACTION_WRITE_USING_TOKEN                                        0x11
+
+//
+// SCSIOP_RECEIVE_ROD_TOKEN_INFORMATION - 0x84
+//
+
+#define SERVICE_ACTION_RECEIVE_TOKEN_INFORMATION                                0x07
+
+//
+// SCSIOP_ZBC_OUT - 0x94
+//
+
+#define SERVICE_ACTION_CLOSE_ZONE                                               0x01
+#define SERVICE_ACTION_FINISH_ZONE                                              0x02
+#define SERVICE_ACTION_OPEN_ZONE                                                0x03
+#define SERVICE_ACTION_RESET_WRITE_POINTER                                      0x04
+
+//
+// SCSIOP_ZBC_IN - 0x95
+//
+
+#define SERVICE_ACTION_REPORT_ZONES                                             0x00
+
+#define REPORT_ZONES_OPTION_LIST_ALL_ZONES                                      0x00
+#define REPORT_ZONES_OPTION_LIST_EMPTY_ZONES                                    0x01
+#define REPORT_ZONES_OPTION_LIST_IMPLICITLY_OPENED_ZONES                        0x02
+#define REPORT_ZONES_OPTION_LIST_EXPLICITLY_OPENED_ZONES                        0x03
+#define REPORT_ZONES_OPTION_LIST_CLOSED_ZONES                                   0x04
+#define REPORT_ZONES_OPTION_LIST_FULL_ZONES                                     0x05
+#define REPORT_ZONES_OPTION_LIST_READ_ONLY_ZONES                                0x06
+#define REPORT_ZONES_OPTION_LIST_OFFLINE_ZONES                                  0x07
+
+#define REPORT_ZONES_OPTION_LIST_RWP_ZONES                                      0x10
+#define REPORT_ZONES_OPTION_LIST_NON_SEQUENTIAL_WRITE_RESOURCES_ACTIVE_ZONES    0x11
+
+#define REPORT_ZONES_OPTION_LIST_NOT_WRITE_POINTER_ZONES                        0x3F
+
+//
+// SCSIOP_SERVICE_ACTION_IN16 - 0x9E
+//
+
+#define SERVICE_ACTION_READ_CAPACITY16                                          0x10
+#define SERVICE_ACTION_GET_LBA_STATUS                                           0x12
+#define SERVICE_ACTION_GET_PHYSICAL_ELEMENT_STATUS                              0x17
+#define SERVICE_ACTION_REMOVE_ELEMENT_AND_TRUNCATE                              0x18
+
+//
+// SCSIOP_MAINTENANCE_IN - 0xA3
+//
+
+#define SERVICE_ACTION_REPORT_TIMESTAMP                                         0x0F
+
+//
+// SCSIOP_MAINTENANCE_OUT - 0xA4
+//
+
+#define SERVICE_ACTION_SET_TIMESTAMP                                            0x0F
 
 //
 // If the IMMED bit is 1, status is returned as soon
@@ -2637,9 +2804,9 @@ typedef struct _INQUIRYDATA {
 #define OPTICAL_CARD_READER_WRITER_DEVICE 0x0F
 #define BRIDGE_CONTROLLER_DEVICE        0x10
 #define OBJECT_BASED_STORAGE_DEVICE     0x11    // OSD
+#define HOST_MANAGED_ZONED_BLOCK_DEVICE 0x14    // Host managed zoned block device
 #define UNKNOWN_OR_NO_DEVICE            0x1F    // Unknown or no device type
 #define LOGICAL_UNIT_NOT_PRESENT_DEVICE 0x7F
-
 #define DEVICE_QUALIFIER_ACTIVE         0x00
 #define DEVICE_QUALIFIER_NOT_ACTIVE     0x01
 #define DEVICE_QUALIFIER_NOT_SUPPORTED  0x03
@@ -2841,6 +3008,10 @@ typedef struct _VPD_BLOCK_LIMITS_PAGE {
 //
 // VPD Page 0xB1, Block Device Characteristics
 //
+#define ZONED_CAPABILITIES_NOT_REPORTED       0x0
+#define ZONED_CAPABILITIES_HOST_AWARE         0x1
+#define ZONED_CAPABILITIES_DEVICE_MANAGED     0x2
+
 typedef struct _VPD_BLOCK_DEVICE_CHARACTERISTICS_PAGE {
     UCHAR DeviceType : 5;
     UCHAR DeviceTypeQualifier : 3;
@@ -2851,9 +3022,21 @@ typedef struct _VPD_BLOCK_DEVICE_CHARACTERISTICS_PAGE {
     UCHAR MediumRotationRateMsb;
     UCHAR MediumRotationRateLsb;
     UCHAR MediumProductType;
+
     UCHAR NominalFormFactor : 4;
-    UCHAR Reserved2         : 4;
-    UCHAR Reserved3[56];
+    UCHAR WACEREQ           : 2;
+    UCHAR WABEREQ           : 2;
+
+    UCHAR VBULS             : 1;
+    UCHAR FUAB              : 1;
+    UCHAR BOCS              : 1;
+    UCHAR Reserved1         : 1;
+    UCHAR ZONED             : 2;
+    UCHAR Reserved2         : 2;
+
+    UCHAR Reserved3[3];
+    UCHAR DepopulationTime[4];
+    UCHAR Reserved4[48];
 } VPD_BLOCK_DEVICE_CHARACTERISTICS_PAGE, *PVPD_BLOCK_DEVICE_CHARACTERISTICS_PAGE;
 
 //
@@ -2888,6 +3071,28 @@ typedef struct _VPD_LOGICAL_BLOCK_PROVISIONING_PAGE {
     UCHAR ProvisioningGroupDescr[0];
 #endif
 } VPD_LOGICAL_BLOCK_PROVISIONING_PAGE, *PVPD_LOGICAL_BLOCK_PROVISIONING_PAGE;
+
+//
+// VPD Page 0xB6, Zoned Block Device Characteristics
+//
+
+typedef struct _VPD_ZONED_BLOCK_DEVICE_CHARACTERISTICS_PAGE {
+    UCHAR DeviceType : 5;
+    UCHAR DeviceTypeQualifier : 3;
+    UCHAR PageCode;                 // 0xB6
+    UCHAR PageLength[2];            // 0x3C
+
+    UCHAR URSWRZ        : 1;    // Unrestricted Read in Sequential Write Required Zone
+    UCHAR Reserved1     : 7;
+    UCHAR Reserved2[3];
+
+    UCHAR OptimalNumberOfOpenSequentialWritePreferredZone[4];
+    UCHAR OptimalNumberOfNonSequentiallyWrittenSequentialWritePreferredZone[4];
+    UCHAR MaxNumberOfOpenSequentialWriteRequiredZone[4];
+
+    UCHAR Reserved3[44];
+} VPD_ZONED_BLOCK_DEVICE_CHARACTERISTICS_PAGE, *PVPD_ZONED_BLOCK_DEVICE_CHARACTERISTICS_PAGE;
+
 
 //
 // Supported Vital Product Data Pages Page (page code 0x00)
@@ -2926,6 +3131,7 @@ typedef struct _VPD_SUPPORTED_PAGES_PAGE {
 #define VPD_BLOCK_LIMITS                   0xB0
 #define VPD_BLOCK_DEVICE_CHARACTERISTICS   0xB1
 #define VPD_LOGICAL_BLOCK_PROVISIONING     0xB2
+#define VPD_ZONED_BLOCK_DEVICE_CHARACTERISTICS  0xB6
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -3201,6 +3407,36 @@ typedef struct {
 } PRO_PARAMETER_LIST, *PPRO_PARAMETER_LIST;
 #pragma pack(pop, reserve_out_stuff)
 
+//
+// Structure for report timestamp command.
+//
+
+#pragma pack(push, report_timestamp_stuff, 1)
+typedef struct {
+
+    UCHAR ParameterDataLength[2]; // Byte  0-1
+    UCHAR Origin : 3;             // Byte  2, bit 0-2
+    UCHAR Reserved1 : 5;          // Byte  2, bit 3-7
+    UCHAR Reserved2;              // Byte  3
+    UCHAR Timestamp[6];           // Byte  4-9
+    UCHAR Reserved3[2];           // Byte 10-11
+
+} RT_PARAMETER_DATA, *PRT_PARAMETER_DATA;
+#pragma pack(pop, report_timestamp_stuff)
+
+//
+// Structure for set timestamp command.
+//
+
+#pragma pack(push, set_timestamp_stuff, 1)
+typedef struct {
+
+    UCHAR Reserved1[4]; // Byte  0-3
+    UCHAR Timestamp[6]; // Byte  4-9
+    UCHAR Reserved2[2]; // Byte 10-11
+
+} ST_PARAMETER_DATA, *PST_PARAMETER_DATA;
+#pragma pack(pop, set_timestamp_stuff)
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 
@@ -3918,15 +4154,19 @@ typedef struct _READ_CAPACITY_DATA_EX {
 #pragma pack(pop, read_capacity_ex)
 
 
+#define RC_BASIS_LAST_LBA_NOT_SEQUENTIAL_WRITE_REQUIRED_ZONES       0x0
+#define RC_BASIS_LAST_LBA_ON_LOGICAL_UNIT                           0x1
+
 #pragma pack(push, read_capacity16, 1)
 typedef struct _READ_CAPACITY16_DATA {
     LARGE_INTEGER LogicalBlockAddress;
     ULONG BytesPerBlock;
     UCHAR ProtectionEnable : 1;
     UCHAR ProtectionType : 3;
-    UCHAR Reserved : 4;
+    UCHAR RcBasis  : 2;
+    UCHAR Reserved : 2;
     UCHAR LogicalPerPhysicalExponent : 4;
-    UCHAR Reserved1 : 4;
+    UCHAR ProtectionInfoExponent : 4;
     UCHAR LowestAlignedBlock_MSB : 6;
     UCHAR LBPRZ : 1;
     UCHAR LBPME : 1;
@@ -3985,6 +4225,63 @@ typedef struct _READ_BUFFER_CAPACITY_DATA {
     UCHAR AvailableBufferSize[4];
 } READ_BUFFER_CAPACITY_DATA, *PREAD_BUFFER_CAPACITY_DATA;
 #pragma pack(pop, read_buffer_capacity)
+
+//
+// Report Zones data structures.
+// Returned data contains REPORT_ZONES_DATA as header,
+// and ZONE_DESCRIPTIOR(s)
+//
+
+#define ZONE_TYPE_CONVENTIONAL                          0x1
+#define ZONE_TYPE_SEQUENTIAL_WRITE_REQUIRED             0x2
+#define ZONE_TYPE_SEQUENTIAL_WRITE_PREFERRED            0x3
+
+#define ZONE_CONDITION_NOT_WRITE_POINTER                0x0
+#define ZONE_CONDITION_EMPTY                            0x1
+#define ZONE_CONDITION_IMPLICITLY_OPENED                0x2
+#define ZONE_CONDITION_EXPLICITLY_OPENED                0x3
+#define ZONE_CONDITION_CLOSED                           0x4
+#define ZONE_CONDITION_READ_ONLY                        0xD
+#define ZONE_CONDITION_FULL                             0xE
+#define ZONE_CONDITION_OFFLINE                          0xF
+
+
+#pragma pack(push, zone_descriptors, 1)
+typedef struct _ZONE_DESCRIPTIOR {
+    UCHAR ZoneType  : 4;
+    UCHAR Reserved1 : 4;
+    UCHAR Reset         : 1;
+    UCHAR Non_Seq       : 1;
+    UCHAR Reserved2     : 2;
+    UCHAR ZoneCondition : 4;
+    UCHAR Reserved3[6];
+    UCHAR ZoneLength[8];
+    UCHAR ZoneStartLBA[8];
+    UCHAR WritePointerLBA[8];
+    UCHAR Reserved4[32];
+} ZONE_DESCRIPTIOR, *PZONE_DESCRIPTIOR;
+#pragma pack(pop, zone_descriptors)
+
+#define ZONES_TYPE_AND_LENGTH_MAY_DIFFERENT             0x0
+#define ZONES_TYPE_SAME_LENGTH_SAME                     0x1
+#define ZONES_TYPE_SAME_LAST_ZONE_LENGTH_DIFFERENT      0x2
+#define ZONES_TYPE_MAY_DIFFERENT_LENGTH_SAME            0x3
+
+#pragma pack(push, report_zones, 1)
+typedef struct _REPORT_ZONES_DATA {
+    UCHAR ZoneListLength[4];
+    UCHAR Same      : 4;
+    UCHAR Reserved1 : 4;
+    UCHAR Reserved2[3];
+    UCHAR MaxLBA[8];
+    UCHAR Reserved3[48];
+#if !defined(__midl)
+    ZONE_DESCRIPTIOR ZoneDescriptors[ANYSIZE_ARRAY];
+#endif
+} REPORT_ZONES_DATA, *PREPORT_ZONES_DATA;
+#pragma pack(pop, report_zones)
+
+
 
 
 //
@@ -4866,7 +5163,8 @@ typedef union _TWO_BYTE {
 // between big- and little-endian formats
 //
 
-#define REVERSE_BYTES_QUAD(Destination, Source) {           \
+#define REVERSE_BYTES_QUAD REVERSE_BYTES_8
+#define REVERSE_BYTES_8(Destination, Source) {              \
     PEIGHT_BYTE d = (PEIGHT_BYTE)(Destination);             \
     PEIGHT_BYTE s = (PEIGHT_BYTE)(Source);                  \
     d->Byte7 = s->Byte0;                                    \
@@ -4879,7 +5177,19 @@ typedef union _TWO_BYTE {
     d->Byte0 = s->Byte7;                                    \
 }
 
-#define REVERSE_BYTES(Destination, Source) {                \
+#define REVERSE_BYTES_6(Destination, Source) {              \
+    PEIGHT_BYTE d = (PEIGHT_BYTE)(Destination);             \
+    PEIGHT_BYTE s = (PEIGHT_BYTE)(Source);                  \
+    d->Byte5 = s->Byte0;                                    \
+    d->Byte4 = s->Byte1;                                    \
+    d->Byte3 = s->Byte2;                                    \
+    d->Byte2 = s->Byte3;                                    \
+    d->Byte1 = s->Byte4;                                    \
+    d->Byte0 = s->Byte5;                                    \
+}
+
+#define REVERSE_BYTES REVERSE_BYTES_4
+#define REVERSE_BYTES_4(Destination, Source) {              \
     PFOUR_BYTE d = (PFOUR_BYTE)(Destination);               \
     PFOUR_BYTE s = (PFOUR_BYTE)(Source);                    \
     d->Byte3 = s->Byte0;                                    \
@@ -4888,7 +5198,8 @@ typedef union _TWO_BYTE {
     d->Byte0 = s->Byte3;                                    \
 }
 
-#define REVERSE_BYTES_SHORT(Destination, Source) {          \
+#define REVERSE_BYTES_SHORT REVERSE_BYTES_2
+#define REVERSE_BYTES_2(Destination, Source) {              \
     PTWO_BYTE d = (PTWO_BYTE)(Destination);                 \
     PTWO_BYTE s = (PTWO_BYTE)(Source);                      \
     d->Byte1 = s->Byte0;                                    \
@@ -4909,7 +5220,7 @@ typedef union _TWO_BYTE {
     }
 
 //
-// Byte reversing macro for convering
+// Byte reversing macro for converting
 // ULONGS between big & little endian in place
 //
 
@@ -4922,6 +5233,28 @@ typedef union _TWO_BYTE {
     tmp = l->Byte2;                     \
     l->Byte2 = l->Byte1;                \
     l->Byte1 = tmp;                     \
+    }
+
+//
+// Byte reversing macro for converting
+// ULONGLONGS between big & little endian in place
+//
+
+#define REVERSE_LONGLONG(Longlong) {            \
+    UCHAR tmp;                                  \
+    PEIGHT_BYTE q = (PEIGHT_BYTE)(Longlong);    \
+    tmp = q->Byte7;                             \
+    q->Byte7 = q->Byte0;                        \
+    q->Byte0 = tmp;                             \
+    tmp = q->Byte6;                             \
+    q->Byte6 = q->Byte1;                        \
+    q->Byte1 = tmp;                             \
+    tmp = q->Byte5;                             \
+    q->Byte5 = q->Byte2;                        \
+    q->Byte2 = tmp;                             \
+    tmp = q->Byte4;                             \
+    q->Byte4 = q->Byte3;                        \
+    q->Byte3 = tmp;                             \
     }
 
 //
@@ -4983,14 +5316,14 @@ typedef struct STOR_ADDRESS_ALIGN _STOR_ADDR_BTL8 {
 // Ses definitions
 //
 
-#define SES_DIAGNOSTIC_PAGE_CONFIGURATION             0x01
-#define SES_DIAGNOSTIC_PAGE_CONTROL                   0x02
-#define SES_DIAGNOSTIC_PAGE_STATUS                    0x02
-#define SES_DIAGNOSTIC_PAGE_STRING_IN                 0x04
+#define SES_DIAGNOSTIC_PAGE_CONFIGURATION                            0x01
+#define SES_DIAGNOSTIC_PAGE_CONTROL                                  0x02
+#define SES_DIAGNOSTIC_PAGE_STATUS                                   0x02
+#define SES_DIAGNOSTIC_PAGE_STRING_IN                                0x04
+#define SES_DIAGNOSTIC_PAGE_ADDITIONAL_ELEMENT_STATUS                0x0A
+#define SES_DIAGNOSTIC_PAGE_DOWNLOAD_MICROCODE                       0x0E
 
-#define SES_DIAGNOSTIC_PAGE_ADDITIONAL_ELEMENT_STATUS 0x0A
-
-#define SES_SAS_PROTOCOL_IDENTIFIER                   6
+#define SES_SAS_PROTOCOL_IDENTIFIER                                  6
 
 typedef enum _SES_ELEMENT_TYPE {
 
@@ -5038,6 +5371,16 @@ typedef enum _SES_ELEMENT_STATE {
     SesElementStateMax
 
 } SES_ELEMENT_STATE, *PSES_ELEMENT_STATE;
+
+typedef enum _SES_DOWNLOAD_MICROCODE_STATE {
+
+    SesDownloadMcStateNoneInProgress             = 0x00,
+    SesDownloadMcStateInProgress                 = 0x01,
+    SesDownloadMcStateCompletedPendingReset      = 0x11,
+    SesDownloadMcStateCompletedPendingPowerOn    = 0x12,
+    SesDownloadMcStateCompletedPendingActivation = 0x13
+
+} SES_DOWNLOAD_MICROCODE_STATE, *PSES_DOWNLOAD_MICROCODE_STATE;
 
 #pragma pack(push, ses, 1)
 
@@ -5476,10 +5819,112 @@ typedef struct _SES_ADDITIONAL_ELEMENT_STATUS_DIAGNOSTIC_PAGE {
 
 } SES_ADDITIONAL_ELEMENT_STATUS_DIAGNOSTIC_PAGE, *PSES_ADDITIONAL_ELEMENT_STATUS_DIAGNOSTIC_PAGE;
 
+typedef struct _SES_DOWNLOAD_MICROCODE_STATUS_DESCRIPTOR {
+
+    UCHAR Reserved1;                            // Byte  0
+    UCHAR SubEnclosureId;                       // Byte  1
+    UCHAR Status;                               // Byte  2
+    UCHAR AdditionalStatus;                     // Byte  3
+    UCHAR MaximumImageSize[4];                  // Bytes 4-7
+    UCHAR Reserved2[3];                         // Bytes 8-10
+    UCHAR ExpectedBufferId;                     // Byte  11
+    UCHAR ExpectedBufferOffset;                 // Bytes 12-15
+
+} SES_DOWNLOAD_MICROCODE_STATUS_DESCRIPTOR, *PSES_DOWNLOAD_MICROCODE_STATUS_DESCRIPTOR;
+
+typedef struct _SES_DOWNLOAD_MICROCODE_STATUS_DIAGNOSTIC_PAGE {
+
+    UCHAR PageCode;                             // Byte  0
+    UCHAR NumberOfSecondarySubEnclosures;       // Byte  1
+    UCHAR PageLength[2];                        // Bytes 2-3
+    UCHAR GenerationCode[4];                    // Bytes 4-7
+    SES_DOWNLOAD_MICROCODE_STATUS_DESCRIPTOR Descriptors[ANYSIZE_ARRAY];
+
+} SES_DOWNLOAD_MICROCODE_STATUS_DIAGNOSTIC_PAGE, *PSES_DOWNLOAD_MICROCODE_STATUS_DIAGNOSTIC_PAGE;
+
+typedef struct _SES_DOWNLOAD_MICROCODE_CONTROL_DIAGNOSTIC_PAGE {
+
+    UCHAR PageCode;                             // Byte  0
+    UCHAR SubEnclosureId;                       // Byte  1
+    UCHAR PageLength[2];                        // Bytes 2-3
+    UCHAR ExpectedGenerationCode[4];            // Bytes 4-7
+    UCHAR Mode;                                 // Byte  8
+    UCHAR Reserved[2];                          // Bytes 9-10
+    UCHAR BufferID;                             // Byte  11
+    UCHAR BufferOffset[4];                      // Bytes 12-15
+    UCHAR ImageLength[4];                       // Bytes 16-19
+    UCHAR DataLength[4];                        // Bytes 20-23
+    UCHAR Data[ANYSIZE_ARRAY];
+
+} SES_DOWNLOAD_MICROCODE_CONTROL_DIAGNOSTIC_PAGE, *PSES_DOWNLOAD_MICROCODE_CONTROL_DIAGNOSTIC_PAGE;
+
 #pragma pack(pop, ses)
 
 
 #endif
+
+//
+// Definitions related to 0x9E - SCSIOP_GET_PHYSICAL_ELEMENT_STATUS
+//
+
+//
+// Input: Report type
+//
+#define GET_PHYSICAL_ELEMENT_STATUS_REPORT_TYPE_PHYSICAL_ELEMENT    0x0
+#define GET_PHYSICAL_ELEMENT_STATUS_REPORT_TYPE_STORAGE_ELEMENT     0x1
+
+//
+// Input: Filter
+//
+#define GET_PHYSICAL_ELEMENT_STATUS_ALL                             0x0
+#define GET_PHYSICAL_ELEMENT_STATUS_FILTER_NEED_ATTENTION           0x1
+
+//
+// Output: Physical element type
+//
+#define PHYSICAL_ELEMENT_TYPE_STORAGE_ELEMENT                       0x01
+
+//
+// Output: Physical element health
+//
+#define PHYSICAL_ELEMENT_HEALTH_NOT_REPORTED                        0x00
+#define PHYSICAL_ELEMENT_HEALTH_MANUFACTURER_SPECIFICATION_LIMIT    0x64
+#define PHYSICAL_ELEMENT_HEALTH_RESERVED_LOWER_BOUNDARY             0xD0
+#define PHYSICAL_ELEMENT_HEALTH_RESERVED_UPPER_BOUNDARY             0xFC
+#define PHYSICAL_ELEMENT_HEALTH_DEPOPULATION_COMPLETED_WITH_ERROR   0xFD
+#define PHYSICAL_ELEMENT_HEALTH_DEPOPULATION_IN_PROGRESS            0xFE
+#define PHYSICAL_ELEMENT_HEALTH_DEPOPULATION_COMPLETED_SUCCESS      0xFF
+
+#pragma pack(push, physical_element_status, 1)
+
+typedef struct _PHYSICAL_ELEMENT_STATUS_DATA_DESCRIPTOR {
+
+    UCHAR Reserved1[4];
+    UCHAR ElementIdentifier[4];
+
+    UCHAR Reserved2[6];
+    UCHAR PhysicalElementType;
+    UCHAR PhysicalElementHealth;
+
+    UCHAR AssociatedCapacity[8];
+
+    UCHAR Reserved3[8];
+
+} PHYSICAL_ELEMENT_STATUS_DATA_DESCRIPTOR, *PPHYSICAL_ELEMENT_STATUS_DATA_DESCRIPTOR;
+
+typedef struct _PHYSICAL_ELEMENT_STATUS_PARAMETER_DATA {
+
+    UCHAR DescriptorCount[4];
+    UCHAR ReturnedDescriptorCount[4];
+
+    UCHAR ElementIdentifierBeingDepoped[4];
+    UCHAR Reserved[20];
+
+    PHYSICAL_ELEMENT_STATUS_DATA_DESCRIPTOR Descriptors[ANYSIZE_ARRAY];
+
+} PHYSICAL_ELEMENT_STATUS_PARAMETER_DATA, *PPHYSICAL_ELEMENT_STATUS_PARAMETER_DATA;
+
+#pragma pack(pop, physical_element_status)
 
 //
 // Collections of SCSI utility functions
@@ -6252,7 +6697,7 @@ Returns:
 // [END] Collections of SCSI utiltiy functions
 //
 
-// end_storport
+// end_storport end_storportp
 
 // end_ntminitape
 

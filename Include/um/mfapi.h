@@ -918,6 +918,38 @@ DEFINE_GUID(MFSampleExtension_MaxDecodeFrameSize,
 DEFINE_GUID(MFSampleExtension_AccumulatedNonRefPicPercent,
     0x79ea74df, 0xa740, 0x445b, 0xbc, 0x98, 0xc9, 0xed, 0x1f, 0x26, 0xe, 0xee);
 
+////////////////////////////////////////////////////////////////////////////////
+// Sample extensions for SAMPLE-AES encryption
+
+// MFSampleExtension_Encryption_ProtectionScheme {D054D096-28BB-45DA-87EC-74F351871406}
+// Type: UINT32
+// Specifies the cipher and mode used to encrypt the content
+DEFINE_GUID(MFSampleExtension_Encryption_ProtectionScheme,
+    0xd054d096, 0x28bb, 0x45da, 0x87, 0xec, 0x74, 0xf3, 0x51, 0x87, 0x14, 0x6);
+
+
+typedef enum _MFSampleEncryptionProtectionScheme
+{
+    MF_SAMPLE_ENCRYPTION_PROTECTION_SCHEME_NONE = 0,
+    MF_SAMPLE_ENCRYPTION_PROTECTION_SCHEME_AES_CTR = 1,
+    MF_SAMPLE_ENCRYPTION_PROTECTION_SCHEME_AES_CBC = 2,
+} MFSampleEncryptionProtectionScheme;
+
+
+
+// MFSampleExtension_Encryption_CryptByteBlock {9D84289B-0C7F-4713-AB95-108AB42AD801}
+// Type: UINT32
+// Represents the number of encrypted blocks in the protection pattern, where each block is 16 bytes.
+DEFINE_GUID(MFSampleExtension_Encryption_CryptByteBlock,
+    0x9d84289b, 0xc7f, 0x4713, 0xab, 0x95, 0x10, 0x8a, 0xb4, 0x2a, 0xd8, 0x1);
+
+// MFSampleExtension_Encryption_SkipByteBlock {0D550548-8317-4AB1-845F-D06306E293E3}
+// Type: UINT32
+// Represents the number of unencrypted blocks in the protection pattern, where each block is 16 bytes.
+DEFINE_GUID(MFSampleExtension_Encryption_SkipByteBlock,
+    0xd550548, 0x8317, 0x4ab1, 0x84, 0x5f, 0xd0, 0x63, 0x6, 0xe2, 0x93, 0xe3);
+
+////////////////////////////////////////////////////////////////////////////////
 
 // Attributes for HW-DRM support
 
@@ -1504,6 +1536,40 @@ DEFINE_GUID(MFSampleExtension_Depth_MinReliableDepth,
 DEFINE_GUID(MFSampleExtension_Depth_MaxReliableDepth,
 0xe45545d1, 0x1f0f, 0x4a32, 0xa8, 0xa7, 0x61, 0x1, 0xa2, 0x4e, 0xa8, 0xbe);
 
+// MF_CAPTURE_METADATA_FIRST_SCANLINE_START_TIME_QPC {F9F88A87-E1DD-441E-95CB-42E21A64F1D9}
+// Value type: UINT64
+// Stores value of the start of scan in QPC time
+DEFINE_GUID(MF_CAPTURE_METADATA_FIRST_SCANLINE_START_TIME_QPC,
+    0x6a2c49f1, 0xe052, 0x46b6, 0xb2, 0xd9, 0x73, 0xc1, 0x55, 0x87, 0x09, 0xaf);
+
+// MF_CAPTURE_METADATA_LAST_SCANLINE_END_TIME_QPC {F9F88A87-E1DD-441E-95CB-42E21A64F1D9}
+// Value type: UINT64
+// Stores value of the end of scan in QPC time
+DEFINE_GUID(MF_CAPTURE_METADATA_LAST_SCANLINE_END_TIME_QPC,
+    0xdccadecb, 0xc4d4, 0x400d, 0xb4, 0x18, 0x10, 0xe8, 0x85, 0x25, 0xe1, 0xf6);
+
+// MF_CAPTURE_METADATA_SCANLINE_TIME_QPC_ACCURACY {F9F88A87-E1DD-441E-95CB-42E21A64F1D9}
+// Value type: UINT64
+// Stores value of timestamp accuracy in QPC time absolute value
+DEFINE_GUID(MF_CAPTURE_METADATA_SCANLINE_TIME_QPC_ACCURACY,
+    0x4cd79c51, 0xf765, 0x4b09, 0xb1, 0xe1, 0x27, 0xd1, 0xf7, 0xeb, 0xea, 0x09);
+
+// MF_CAPTURE_METADATA_SCAN_DIRECTION {F9F88A87-E1DD-441E-95CB-42E21A64F1D9}
+// Value type: UINT32
+// Bitfield of the way the scan is read. If value is 0x00, scan is Left to Right, Top to Bottom
+// 0x0 - Left -> Right
+// 0x1 - Right -> Left
+// 0x2  Bottom -> Top
+// 0x0 - Horizontal Scanline
+// 0x4 - Vertical Scanline
+DEFINE_GUID(MF_CAPTURE_METADATA_SCANLINE_DIRECTION,
+    0x6496a3ba, 0x1907, 0x49e6, 0xb0, 0xc3, 0x12, 0x37, 0x95, 0xf3, 0x80, 0xa9);
+
+#define MFCAPTURE_METADATA_SCAN_RIGHT_LEFT         0x00000001
+#define MFCAPTURE_METADATA_SCAN_BOTTOM_TOP         0x00000002
+#define MFCAPTURE_METADATA_SCANLINE_VERTICAL       0x00000004
+
+
 typedef struct tagFaceRectInfoBlobHeader
 {
     ULONG Size;     // Size of this header + all FaceRectInfo following
@@ -1688,6 +1754,13 @@ DEFINE_GUID(MFT_CATEGORY_ENCRYPTOR,
 0xb0c687be, 0x01cd, 0x44b5, 0xb8, 0xb2, 0x7c, 0x1d, 0x7e, 0x05, 0x8b, 0x1f);
 #endif
 
+// TODO: switch to NTDDI_WIN10_RS3 when _NT_TARGET_VERSION is updated to support RS3
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+// {145CD8B4-92F4-4b23-8AE7-E0DF06C2DA95}   MFT_CATEGORY_VIDEO_RENDERER_EFFECT 
+DEFINE_GUID(MFT_CATEGORY_VIDEO_RENDERER_EFFECT,
+0x145cd8b4, 0x92f4, 0x4b23, 0x8a, 0xe7, 0xe0, 0xdf, 0x6, 0xc2, 0xda, 0x95);
+#endif
+
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
 
@@ -1809,6 +1882,20 @@ MFTEnumEx(
     _Out_                               UINT32*                         pnumMFTActivate
 );
 #endif // (WINVER >= _WIN32_WINNT_WIN7)
+
+// TODO: switch to NTDDI_WIN10_RS3 when _NT_TARGET_VERSION is updated to support RS3
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+// MFT_ENUM_VIDEO_RENDERER_EXTENSION_PROFILE {62C56928-9A4E-443b-B9DC-CAC830C24100} 
+// Type: VT_VECTOR | VT_LPWSTR 
+// MFTEnumEx stores this on the attribute store of the IMFActivate object that  
+// MFTEnumEx creates for MFTs that have an associated UWP Manifest containing the tag 
+// VideoRendererExtensionProfiles.  This contains a list of all VideoRendererExtensionProfile 
+// entries in the VideoRendererExtensionProfiles tag. 
+DEFINE_GUID(MFT_ENUM_VIDEO_RENDERER_EXTENSION_PROFILE,
+0x62c56928, 0x9a4e, 0x443b, 0xb9, 0xdc, 0xca, 0xc8, 0x30, 0xc2, 0x41, 0x0);
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
 #pragma endregion
@@ -2069,11 +2156,17 @@ DEFINE_MEDIATYPE_GUID( MFVideoFormat_ORAW,      FCC('ORAW') );
 DEFINE_MEDIATYPE_GUID( MFVideoFormat_H263,      FCC('H263') );
 #endif // (WINVER >= _WIN32_WINNT_WIN8)
 
-// TODO: switch to RS define once it exists (see: 5312604)
-#if (WINVER >= _WIN32_WINNT_WIN10)
+#if (WDK_NTDDI_VERSION >= NTDDI_WIN10)
 DEFINE_MEDIATYPE_GUID(MFVideoFormat_A2R10G10B10, D3DFMT_A2B10G10R10);
 DEFINE_MEDIATYPE_GUID(MFVideoFormat_A16B16G16R16F, D3DFMT_A16B16G16R16F);
+#endif
 
+#if (WDK_NTDDI_VERSION >= NTDDI_WIN10_RS3)
+DEFINE_MEDIATYPE_GUID(MFVideoFormat_VP10,       FCC('VP10'));
+DEFINE_MEDIATYPE_GUID(MFVideoFormat_AV1,        FCC('AV01'));
+#endif
+
+#if (WDK_NTDDI_VERSION >= NTDDI_WIN10)
 //
 // MFSample Perception Date Type-specific attribute GUIDs should be in sync with KSCameraProfileSensorType
 //
@@ -2136,7 +2229,9 @@ DEFINE_MEDIATYPE_GUID( MFAudioFormat_Float,             WAVE_FORMAT_IEEE_FLOAT )
 
 // MFAudioFormat_DTS is for S/PDIF-encapsulated DTS core streams. It is the same as KSDATAFORMAT_SUBTYPE_IEC61937_DTS in ksmedia.h.
 // Use MEDIASUBTYPE_DTS2 (defined in wmcodecdsp.h) for raw DTS core streams.
-// If DTS extension substreams may be present, use MEDIASUBTYPE_DTS_HD instead (KSDATAFORMAT_SUBTYPE_IEC61937_DTS_HD for S/PDIF)
+// If DTS extension substreams may be present, use MEDIASUBTYPE_DTS_HD instead for Master Audio, and MEDIASUBTYPE_DTS_HD_HRA for
+// High Resolution Audio and other extension substream variants.
+// (KSDATAFORMAT_SUBTYPE_IEC61937_DTS_HD is the S/PDIF media subtype for MEDIASUBTYPE_DTS_HD and MEDIASUBTYPE_DTS_HD_HRA.)
 DEFINE_MEDIATYPE_GUID( MFAudioFormat_DTS,               WAVE_FORMAT_DTS );
 
 // MFAudioFormat_Dolby_AC3_SPDIF is for S/PDIF-encapsulated AC-3. It is the same as KSDATAFORMAT_SUBTYPE_IEC61937_DOLBY_DIGITAL in ksmedia.h.
@@ -2477,6 +2572,67 @@ DEFINE_GUID(MF_MT_VIDEO_H264_NO_FMOASO,
 
 
 #endif // (WINVER >= _WIN32_WINNT_WIN8)
+
+// TODO: switch to NTDDI_WIN10_RS3 when _NT_TARGET_VERSION is updated to support RS3
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2) 
+
+// 
+// Renderer Extensions
+//
+
+// MFSampleExtension_ForwardedDecodeUnits {424C754C-97C8-48d6-8777-FC41F7B60879} 
+// Type: IUnknown  
+// This is an object of type IMFCollection containing IMFSample objects  
+//  which contain NALU/SEI forwarded by a decoder.  
+//  Contains all custom NALU/SEI since previous frame with emulation prevention bytes removed.  
+// see: MF_MT_FORWARD_CUSTOM_NALU, MF_MT_FORWARD_CUSTOM_SEI 
+DEFINE_GUID(MFSampleExtension_ForwardedDecodeUnits,
+0x424c754c, 0x97c8, 0x48d6, 0x87, 0x77, 0xfc, 0x41, 0xf7, 0xb6, 0x8, 0x79);
+
+// MFSampleExtension_TargetGlobalLuminance {3F60EF36-31EF-4daf-8360-940397E41EF3} 
+// Type: UINT32 
+// Value in Nits that specifies the targeted global backlight luminance for 
+//  the associated video frame. 
+DEFINE_GUID(MFSampleExtension_TargetGlobalLuminance,
+0x3f60ef36, 0x31ef, 0x4daf, 0x83, 0x60, 0x94, 0x3, 0x97, 0xe4, 0x1e, 0xf3);
+
+typedef enum _MF_CUSTOM_DECODE_UNIT_TYPE
+{
+    MF_DECODE_UNIT_NAL = 0,
+    MF_DECODE_UNIT_SEI = 1
+} MF_CUSTOM_DECODE_UNIT_TYPE;
+
+// MFSampleExtension_ForwardedDecodeUnitType {089E57C7-47D3-4a26-BF9C-4B64FAFB5D1E} 
+// Type: UINT32 (oneof MF_CUSTOM_DECODE_UNIT_TYPE) 
+// Attached to IMFSample objects in MFSampleExtension_ForwardedDecodeUnits, specifies 
+//  what type of unit is attached: SEI or NAL 
+DEFINE_GUID(MFSampleExtension_ForwardedDecodeUnitType,
+0x89e57c7, 0x47d3, 0x4a26, 0xbf, 0x9c, 0x4b, 0x64, 0xfa, 0xfb, 0x5d, 0x1e);
+
+// MF_MT_FORWARD_CUSTOM_NALU {ED336EFD-244F-428d-9153-28F399458890} 
+// Type: UINT32  
+// Specifies the NAL unit type to forward on output samples of the decoder. 
+// If the decoder parses the specified NALU then it will not forwarded. 
+// See: MFSampleExtension_ForwardedDecodeUnits 
+DEFINE_GUID(MF_MT_FORWARD_CUSTOM_NALU,
+0xed336efd, 0x244f, 0x428d, 0x91, 0x53, 0x28, 0xf3, 0x99, 0x45, 0x88, 0x90);
+
+// MF_MT_FORWARD_CUSTOM_SEI {E27362F1-B136-41d1-9594-3A7E4FEBF2D1} 
+// Type: UINT32  
+// Specifies the SEI type to forward on output samples of the decoder 
+// If the decoder parses the specified SEI then it will not be forwarded. 
+// See: MFSampleExtension_ForwardedDecodeUnits 
+DEFINE_GUID(MF_MT_FORWARD_CUSTOM_SEI,
+0xe27362f1, 0xb136, 0x41d1, 0x95, 0x94, 0x3a, 0x7e, 0x4f, 0xeb, 0xf2, 0xd1);
+
+// MF_MT_VIDEO_RENDERER_EXTENSION_PROFILE {8437D4B9-D448-4fcd-9B6B-839BF96C7798} 
+// Type: LPCWSTR  
+// Contains a string that matches an entry in a MediaRendererEffect Manifest's  
+//  VideoRendererExtensionProfiles list to select which effect to load 
+DEFINE_GUID(MF_MT_VIDEO_RENDERER_EXTENSION_PROFILE,
+0x8437d4b9, 0xd448, 0x4fcd, 0x9b, 0x6b, 0x83, 0x9b, 0xf9, 0x6c, 0x77, 0x98);
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2) 
 
 //
 // AUDIO data

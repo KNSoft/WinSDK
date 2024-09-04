@@ -11,29 +11,10 @@ import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
 import "Windows.ApplicationModel.Core.idl";
+import "Windows.Perception.Spatial.idl";
 import "Windows.System.idl";
 import "Windows.UI.idl";
 import "Windows.UI.Popups.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Ecore_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Core.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Ecore_h__)")
-cpp_quote("#if !defined(__windows2Esystem_h__)")
-cpp_quote("#include <Windows.System.h>")
-cpp_quote("#endif // !defined(__windows2Esystem_h__)")
-cpp_quote("#if !defined(__windows2Eui_h__)")
-cpp_quote("#include <Windows.UI.h>")
-cpp_quote("#endif // !defined(__windows2Eui_h__)")
-cpp_quote("#if !defined(__windows2Eui2Epopups_h__)")
-cpp_quote("#include <Windows.UI.Popups.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Epopups_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -61,6 +42,16 @@ namespace Windows
         apicontract UniversalApiContract;
 
         runtimeclass Uri;
+    }
+}
+namespace Windows
+{
+    namespace Perception
+    {
+        namespace Spatial
+        {
+            typedef struct SpatialBoundingBox SpatialBoundingBox;
+        }
     }
 }
 namespace Windows
@@ -127,9 +118,13 @@ namespace Windows
 
             interface ISecondaryTileVisualElements3;
 
+            interface ISecondaryTileVisualElements4;
+
             interface IStartScreenManager;
 
             interface IStartScreenManagerStatics;
+
+            interface ITileMixedRealityModel;
 
             interface IVisualElementsRequest;
 
@@ -146,6 +141,8 @@ namespace Windows
             runtimeclass SecondaryTileVisualElements;
 
             runtimeclass StartScreenManager;
+
+            runtimeclass TileMixedRealityModel;
 
             runtimeclass VisualElementsRequest;
 
@@ -434,6 +431,14 @@ namespace Windows
                 [propget] HRESULT Square44x44Logo([out] [retval] Windows.Foundation.Uri** value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.StartScreen.SecondaryTileVisualElements)]
+            [uuid(66566117-B544-40D2-8D12-74D4EC24D04C)]
+            interface ISecondaryTileVisualElements4 : IInspectable
+            {
+                [propget] HRESULT MixedRealityModel([out] [retval] Windows.UI.StartScreen.TileMixedRealityModel** value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [exclusiveto(Windows.UI.StartScreen.StartScreenManager)]
             [uuid(4A1DCBCB-26E9-4EB4-8933-859EB6ECDB29)]
@@ -452,6 +457,17 @@ namespace Windows
             {
                 HRESULT GetDefault([out] [retval] Windows.UI.StartScreen.StartScreenManager** value);
                 HRESULT GetForUser([in] Windows.System.User* user, [out] [retval] Windows.UI.StartScreen.StartScreenManager** result);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.UI.StartScreen.TileMixedRealityModel)]
+            [uuid(B0764E5B-887D-4242-9A19-3D0A4EA78031)]
+            interface ITileMixedRealityModel : IInspectable
+            {
+                [propput] HRESULT Uri([in] Windows.Foundation.Uri* value);
+                [propget] HRESULT Uri([out] [retval] Windows.Foundation.Uri** value);
+                [propput] HRESULT BoundingBox([in] Windows.Foundation.IReference<Windows.Perception.Spatial.SpatialBoundingBox>* value);
+                [propget] HRESULT BoundingBox([out] [retval] Windows.Foundation.IReference<Windows.Perception.Spatial.SpatialBoundingBox>** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -515,6 +531,7 @@ namespace Windows
                 [default] interface Windows.UI.StartScreen.ISecondaryTileVisualElements;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.UI.StartScreen.ISecondaryTileVisualElements2;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.UI.StartScreen.ISecondaryTileVisualElements3;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.StartScreen.ISecondaryTileVisualElements4;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -522,6 +539,13 @@ namespace Windows
             runtimeclass StartScreenManager
             {
                 [default] interface Windows.UI.StartScreen.IStartScreenManager;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(standard)]
+            runtimeclass TileMixedRealityModel
+            {
+                [default] interface Windows.UI.StartScreen.ITileMixedRealityModel;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

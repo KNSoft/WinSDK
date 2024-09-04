@@ -442,6 +442,40 @@ typedef struct _LineDisplayWindowScrollTextData
     UINT32 units;
 } LineDisplayWindowScrollTextData;
 
+typedef struct _LineDisplayWindowDisplayBitmapData
+{
+    PosStringType fileName;
+    UINT32 width;
+    UINT32 alignmentX;
+    UINT32 alignmentY;
+} LineDisplayWindowDisplayBitmapData;
+
+typedef struct _LineDisplaySetBitmapData
+{
+    UINT32 bitmapNumber;
+    PosStringType fileName;
+    UINT32 width;
+    UINT32 alignmentX;
+    UINT32 alignmentY;
+} LineDisplaySetBitmapData;
+
+typedef struct _LineDisplaySetDescriptorData
+{
+    UINT32 descriptor;
+    UINT32 attribute;
+} LineDisplaySetDescriptorData;
+
+typedef struct _LineDisplayGlyphDefinitionData
+{
+    UINT32 glyphCode;
+    UINT32 dataLength;
+} LineDisplayGlyphDefinitionData;
+
+typedef struct _LineDisplayCharacterData
+{
+    UINT32 character;
+} LineDisplayCharacterData;
+
 //----------------------------------------------------------------------------------------------
 //                                  Device Controls
 //----------------------------------------------------------------------------------------------
@@ -731,6 +765,36 @@ typedef enum _PosDeviceControlType
     //  Output: None
     LineDisplayWindowClearText = 56,
 
+    //LineDisplayWindowDisplayBitmap
+    //  Input:  LineDisplayWindowDisplayBitmapData
+    //  Output: None
+    LineDisplayWindowDisplayBitmap = 57,
+
+    //LineDisplayWindowSetBitmap
+    //  Input:  LineDisplaySetBitmapData
+    //  Output: None
+    LineDisplaySetBitmap = 58,
+
+    //LineDisplaySetDescriptor
+    //  Input:  LineDisplaySetDescriptorData
+    //  Output: None
+    LineDisplaySetDescriptor = 59,
+
+    //LineDisplayWindowClearDescriptors
+    //  Input:  None
+    //  Output: None
+    LineDisplayClearDescriptors = 60,
+
+    //LineDisplayDefineGlyph
+    //  Input:  LineDisplayGlyphDefinitionData
+    //  Output: None
+    LineDisplayDefineGlyph = 61,
+
+    //LineDisplayReadCharacterAtCursor
+    //  Input:  None
+    //  Output: UINT32 (cursorData)
+    LineDisplayReadCharacterAtCursor = 62,
+
     //------------------------------------
     // Scanner controls
     //------------------------------------
@@ -818,6 +882,15 @@ typedef enum _PosPropertyId
     //   Output args   : None
     //
     IsDisabledOnDataReceived = 4,
+
+    // PowerState: UINT32 (readonly)
+    // Reports the current power state of the device.
+    //
+    // GetProperty I/O
+    //   Input args    : PosPropertyId : PowerState
+    //   Output args   : UINT32: Current UINT32 value of PowerState
+    //
+    PowerState = 352,
 
     //------------------------------------
     // BarcodeScanner properties
@@ -1212,6 +1285,60 @@ typedef enum _PosPropertyId
 
     //LineDisplayDeviceServiceVersion: PosStringType (ServiceVersion) (readonly)
     LineDisplayDeviceServiceVersion = 334,
+
+    //LineDisplayCursorType: UINT32 (CursorType) (read/write)
+    LineDisplayCursorTypeProperty = 335,
+
+    //LineDisplayAutoUpdateEnabled: BOOL (CursorUpdate) (read/write)
+    LineDisplayCursorAutoUpdateEnabled = 336,	
+
+    //LineDisplayCursorPosition: LineDisplayCursorCoordinates (read/write)
+    LineDisplayCursorPosition = 337,
+
+    //LineDisplayScreenModeList: PosStringType (readonly)
+    LineDisplayScreenModeList = 338,
+
+    //LineDisplayScreenMode: UINT32 (read/write)
+    LineDisplayScreenMode = 339,
+
+    //LineDisplayMaxBitmapSize: UINT32 (readonly)
+    LineDisplayMaxBitmapSizeInPixels = 340,
+
+    //LineDisplayCharacterSetList: PosStringType (readonly)
+    LineDisplayCharacterSetList = 341,
+
+    //LineDisplayDeviceBrightness: UINT32 (read/write)
+    LineDisplayDeviceBrightness = 342,
+
+    //LineDisplayBlinkRate: UINT32 (read/write)
+    LineDisplayBlinkRate = 343,
+
+    //LineDisplayCharacterSet: UINT32 (read/write)
+    LineDisplayCharacterSet = 344,
+
+    //LineDisplayMapCharacterSet: BOOL (read/write)
+    LineDisplayMapCharacterSet = 345,
+
+    //LineDisplayGlyphSize: LineDisplayGlyphSizeType
+    LineDisplayGlyphSizeInPixels = 346,
+
+    //LineDisplayCustomGlyphList: PosStringType (readonly)
+    LineDisplayCustomGlyphList = 347,
+
+    //LineDisplayMarqueeFormat: UINT32 (read/write)
+    LineDisplayMarqueeFormat = 348,
+
+    //LineDisplayMarqueeRepeatWait: UINT32 (read/write)
+    LineDisplayMarqueeRepeatWait = 349,
+
+    //LineDisplayMarqueeUnitWait: UINT32 (read/write)
+    LineDisplayMarqueeUnitWait = 350,
+
+    //LineDisplayMarqueeType: UINT32 (read/write)
+    LineDisplayMarqueeType = 351
+
+    // 352 is reserved for PowerState
+
 } PosPropertyId;
 
 typedef struct _PosBarcodeScannerCapabilitiesType
@@ -1415,6 +1542,24 @@ typedef struct _PosMagneticStripeReaderCapabilitiesType
 #define IOCTL_LINE_DISPLAY_WINDOW_CLEAR_TEXT\
     POS_IOCTL(LineDisplayWindowClearText)
 
+#define IOCTL_LINE_DISPLAY_WINDOW_DISPLAY_BITMAP\
+    POS_IOCTL(LineDisplayWindowDisplayBitmap)
+
+#define IOCTL_LINE_DISPLAY_SET_BITMAP\
+    POS_IOCTL(LineDisplaySetBitmap)
+
+#define IOCTL_LINE_DISPLAY_SET_DESCRIPTOR\
+    POS_IOCTL(LineDisplaySetDescriptor)
+
+#define IOCTL_LINE_DISPLAY_CLEAR_DESCRIPTORS\
+    POS_IOCTL(LineDisplayClearDescriptors)
+
+#define IOCTL_LINE_DISPLAY_DEFINE_GLYPH\
+    POS_IOCTL(LineDisplayDefineGlyph)
+
+#define IOCTL_LINE_DISPLAY_READ_CHARACTER_AT_CURSOR\
+    READABLE_POS_IOCTL(LineDisplayReadCharacterAtCursor)
+
 #define IOCTL_POINT_OF_SERVICE_BARCODE_SCANNER_GET_SYMBOLOGY_ATTRIBUTES \
     READABLE_POS_IOCTL(BarcodeScannerGetSymbologyAttributes)
 
@@ -1467,6 +1612,7 @@ DEFINE_GUID(GUID_DEVINTERFACE_POS_LINEDISPLAY,
 #define MSR_ERROR_MAX_MESSAGE_LENGTH                128
 #define MSR_CAP_CARD_AUTHENTICATION_MAX_LENGTH      128
 #define MSR_CARD_TYPE_MAX_COUNT                     10
+#define MSR_READER_SERIAL_NUMBER_SIZE               10
 
 typedef enum _MsrCardType
 {

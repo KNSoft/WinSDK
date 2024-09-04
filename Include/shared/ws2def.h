@@ -858,6 +858,7 @@ typedef WSACMSGHDR CMSGHDR, *PCMSGHDR;
 #define MSG_CTRUNC      0x0200
 #define MSG_BCAST       0x0400
 #define MSG_MCAST       0x0800
+#define MSG_ERRQUEUE    0x1000
 
 //
 //  Flags used in "hints" argument to getaddrinfo()

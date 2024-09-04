@@ -12,24 +12,8 @@ import "windowscontracts.idl";
 import "Windows.Foundation.idl";
 import "Windows.ApplicationModel.idl";
 import "Windows.ApplicationModel.Activation.idl";
+import "Windows.System.idl";
 import "Windows.UI.Core.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eapplicationmodel_h__)")
-cpp_quote("#include <Windows.ApplicationModel.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel_h__)")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Eactivation_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Activation.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Eactivation_h__)")
-cpp_quote("#if !defined(__windows2Eui2Ecore_h__)")
-cpp_quote("#include <Windows.UI.Core.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Ecore_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -80,6 +64,15 @@ namespace Windows
 }
 namespace Windows
 {
+    namespace System
+    {
+        runtimeclass DispatcherQueue;
+
+        runtimeclass User;
+    }
+}
+namespace Windows
+{
     namespace UI
     {
         namespace Core
@@ -96,11 +89,17 @@ namespace Windows
     {
         namespace Core
         {
+            typedef enum AppRestartFailureReason AppRestartFailureReason;
+
             interface IAppListEntry;
+
+            interface IAppListEntry2;
 
             interface ICoreApplication;
 
             interface ICoreApplication2;
+
+            interface ICoreApplication3;
 
             interface ICoreApplicationExit;
 
@@ -115,6 +114,8 @@ namespace Windows
             interface ICoreApplicationView3;
 
             interface ICoreApplicationView5;
+
+            interface ICoreApplicationView6;
 
             interface ICoreApplicationViewTitleBar;
 
@@ -174,6 +175,8 @@ namespace Windows
 
                 interface Windows.Foundation.EventHandler<Windows.ApplicationModel.Core.UnhandledErrorDetectedEventArgs*>;
 
+                interface Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.Core.AppRestartFailureReason>;
+
                 interface Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IVectorView<Windows.ApplicationModel.Core.AppListEntry*>*>;
 
                 interface Windows.Foundation.TypedEventHandler<Windows.ApplicationModel.Core.CoreApplicationView*, Windows.ApplicationModel.Core.HostedViewClosingEventArgs*>;
@@ -191,6 +194,15 @@ namespace Windows
     {
         namespace Core
         {
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            enum AppRestartFailureReason
+            {
+                RestartPending  = 0,
+                NotInForeground = 1,
+                InvalidUser     = 2,
+                Other           = 3
+            };
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.ApplicationModel.Core.AppListEntry)]
             [uuid(EF00F07F-2108-490A-877A-8A9F17C25FAD)]
@@ -198,6 +210,14 @@ namespace Windows
             {
                 [propget] HRESULT DisplayInfo([out] [retval] Windows.ApplicationModel.AppDisplayInfo** value);
                 HRESULT LaunchAsync([out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.ApplicationModel.Core.AppListEntry)]
+            [uuid(D0A618AD-BF35-42AC-AC06-86EEEB41D04B)]
+            interface IAppListEntry2 : IInspectable
+            {
+                [propget] HRESULT AppUserModelId([out] [retval] HSTRING* value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -228,6 +248,15 @@ namespace Windows
                 [eventadd] HRESULT EnteredBackground([in] Windows.Foundation.EventHandler<Windows.ApplicationModel.EnteredBackgroundEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                 [eventremove] HRESULT EnteredBackground([in] EventRegistrationToken token);
                 HRESULT EnablePrelaunch([in] boolean value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.ApplicationModel.Core.CoreApplication)]
+            [uuid(FEEC0D39-598B-4507-8A67-772632580A57)]
+            interface ICoreApplication3 : IInspectable
+            {
+                HRESULT RequestRestartAsync([in] HSTRING launchArguments, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.Core.AppRestartFailureReason>** operation);
+                HRESULT RequestRestartForUserAsync([in] Windows.System.User* user, [in] HSTRING launchArguments, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.Core.AppRestartFailureReason>** operation);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -294,6 +323,14 @@ namespace Windows
             interface ICoreApplicationView5 : IInspectable
             {
                 [propget] HRESULT Properties([out] [retval] Windows.Foundation.Collections.IPropertySet** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.ApplicationModel.Core.CoreApplicationView)]
+            [uuid(C119D49A-0679-49BA-803F-B79C5CF34CCA)]
+            interface ICoreApplicationView6 : IInspectable
+            {
+                [propget] HRESULT DispatcherQueue([out] [retval] Windows.System.DispatcherQueue** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -388,12 +425,14 @@ namespace Windows
             runtimeclass AppListEntry
             {
                 [default] interface Windows.ApplicationModel.Core.IAppListEntry;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.ApplicationModel.Core.IAppListEntry2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
             [static(Windows.ApplicationModel.Core.ICoreApplication, Windows.Foundation.UniversalApiContract, 1.0)]
             [static(Windows.ApplicationModel.Core.ICoreApplication2, Windows.Foundation.UniversalApiContract, 3.0)]
+            [static(Windows.ApplicationModel.Core.ICoreApplication3, Windows.Foundation.UniversalApiContract, 5.0)]
             [static(Windows.ApplicationModel.Core.ICoreApplicationExit, Windows.Foundation.UniversalApiContract, 1.0)]
             [static(Windows.ApplicationModel.Core.ICoreApplicationUnhandledError, Windows.Foundation.UniversalApiContract, 1.0)]
             [static(Windows.ApplicationModel.Core.ICoreApplicationUseCount, Windows.Foundation.UniversalApiContract, 1.0)]
@@ -412,6 +451,7 @@ namespace Windows
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.ApplicationModel.Core.ICoreApplicationView2;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.ApplicationModel.Core.ICoreApplicationView3;
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.ApplicationModel.Core.ICoreApplicationView5;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.ApplicationModel.Core.ICoreApplicationView6;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

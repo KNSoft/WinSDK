@@ -21,6 +21,7 @@
 #include <mmsyscom.h> // mm common definitions
 
 /* APISET_NAME: api-ms-win-mm-mme-l1 */
+/* APISET_TAG: public */
 
 #if !defined(RC_INVOKED)
 

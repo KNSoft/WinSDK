@@ -13,23 +13,6 @@ import "Windows.Foundation.idl";
 import "Windows.Media.Core.idl";
 import "Windows.Storage.Streams.idl";
 import "Windows.Web.Http.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Emedia2Ecore_h__)")
-cpp_quote("#include <Windows.Media.Core.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Ecore_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Eweb2Ehttp_h__)")
-cpp_quote("#include <Windows.Web.Http.h>")
-cpp_quote("#endif // !defined(__windows2Eweb2Ehttp_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -112,6 +95,8 @@ namespace Windows
                 interface IAdaptiveMediaSourceCreationResult2;
 
                 interface IAdaptiveMediaSourceDiagnosticAvailableEventArgs;
+
+                interface IAdaptiveMediaSourceDiagnosticAvailableEventArgs2;
 
                 interface IAdaptiveMediaSourceDiagnostics;
 
@@ -238,7 +223,9 @@ namespace Windows
                     ResourceNotFound                         = 4,
                     ResourceTimedOut                         = 5,
                     ResourceParsingError                     = 6,
-                    BitrateDisabled                          = 7
+                    BitrateDisabled                          = 7,
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    FatalMediaSourceError                    = 8
                 };
 
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -374,6 +361,14 @@ namespace Windows
                     [propget] HRESULT ResourceByteRangeOffset([out] [retval] Windows.Foundation.IReference<UINT64>** value);
                     [propget] HRESULT ResourceByteRangeLength([out] [retval] Windows.Foundation.IReference<UINT64>** value);
                     [propget] HRESULT Bitrate([out] [retval] Windows.Foundation.IReference<UINT32>** value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnosticAvailableEventArgs)]
+                [uuid(8C6DD857-16A5-4D9F-810E-00BD901B3EF9)]
+                interface IAdaptiveMediaSourceDiagnosticAvailableEventArgs2 : IInspectable
+                {
+                    [propget] HRESULT ExtendedError([out] [retval] HRESULT* value);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -582,6 +577,7 @@ namespace Windows
                 runtimeclass AdaptiveMediaSourceDiagnosticAvailableEventArgs
                 {
                     [default] interface Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnosticAvailableEventArgs;
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnosticAvailableEventArgs2;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)]

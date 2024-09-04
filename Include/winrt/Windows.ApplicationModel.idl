@@ -14,26 +14,6 @@ import "Windows.ApplicationModel.Core.idl";
 import "Windows.Storage.idl";
 import "Windows.Storage.Streams.idl";
 import "Windows.System.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Ecore_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Core.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Ecore_h__)")
-cpp_quote("#if !defined(__windows2Estorage_h__)")
-cpp_quote("#include <Windows.Storage.h>")
-cpp_quote("#endif // !defined(__windows2Estorage_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Esystem_h__)")
-cpp_quote("#include <Windows.System.h>")
-cpp_quote("#endif // !defined(__windows2Esystem_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -109,6 +89,8 @@ namespace Windows
 
         interface IDesignModeStatics;
 
+        interface IDesignModeStatics2;
+
         interface IEnteredBackgroundEventArgs;
 
         interface IFullTrustProcessLauncherStatics;
@@ -129,7 +111,11 @@ namespace Windows
 
         interface IPackageCatalog2;
 
+        interface IPackageCatalog3;
+
         interface IPackageCatalogAddOptionalPackageResult;
+
+        interface IPackageCatalogRemoveOptionalPackagesResult;
 
         interface IPackageCatalogStatics;
 
@@ -188,6 +174,8 @@ namespace Windows
         runtimeclass PackageCatalog;
 
         runtimeclass PackageCatalogAddOptionalPackageResult;
+
+        runtimeclass PackageCatalogRemoveOptionalPackagesResult;
 
         runtimeclass PackageContentGroup;
 
@@ -260,6 +248,8 @@ namespace Windows
 
             interface Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.PackageCatalogAddOptionalPackageResult*>;
 
+            interface Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.PackageCatalogRemoveOptionalPackagesResult*>;
+
             interface Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.PackageContentGroup*>;
 
             interface Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.StartupTask*>;
@@ -297,7 +287,7 @@ namespace Windows
         {
         }
 
-        [contractversion(1.0)]
+        [contractversion(2.0)]
         apicontract StartupTaskContract
         {
         }
@@ -324,9 +314,11 @@ namespace Windows
         [contract(Windows.ApplicationModel.StartupTaskContract, 1.0)]
         enum StartupTaskState
         {
-            Disabled       = 0,
-            DisabledByUser = 1,
-            Enabled        = 2
+            Disabled         = 0,
+            DisabledByUser   = 1,
+            Enabled          = 2,
+            [contract(Windows.ApplicationModel.StartupTaskContract, 2.0)]
+            DisabledByPolicy = 3
         };
 
         [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -365,6 +357,14 @@ namespace Windows
         interface IDesignModeStatics : IInspectable
         {
             [propget] HRESULT DesignModeEnabled([out] [retval] boolean* value);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.ApplicationModel.DesignMode)]
+        [uuid(80CF8137-B064-4858-BEC8-3EBA22357535)]
+        interface IDesignModeStatics2 : IInspectable
+        {
+            [propget] HRESULT DesignMode2Enabled([out] [retval] boolean* value);
         }
 
         [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -476,12 +476,29 @@ namespace Windows
             HRESULT AddOptionalPackageAsync([in] HSTRING optionalPackageFamilyName, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.PackageCatalogAddOptionalPackageResult*>** operation);
         }
 
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.ApplicationModel.PackageCatalog)]
+        [uuid(96DD5C88-8837-43F9-9015-033434BA14F3)]
+        interface IPackageCatalog3 : IInspectable
+        {
+            HRESULT RemoveOptionalPackagesAsync([in] Windows.Foundation.Collections.IIterable<HSTRING>* optionalPackageFamilyNames, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.ApplicationModel.PackageCatalogRemoveOptionalPackagesResult*>** operation);
+        }
+
         [contract(Windows.Foundation.UniversalApiContract, 4.0)]
         [exclusiveto(Windows.ApplicationModel.PackageCatalogAddOptionalPackageResult)]
         [uuid(3BF10CD4-B4DF-47B3-A963-E2FA832F7DD3)]
         interface IPackageCatalogAddOptionalPackageResult : IInspectable
         {
             [propget] HRESULT Package([out] [retval] Windows.ApplicationModel.Package** value);
+            [propget] HRESULT ExtendedError([out] [retval] HRESULT* value);
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        [exclusiveto(Windows.ApplicationModel.PackageCatalogRemoveOptionalPackagesResult)]
+        [uuid(29D2F97B-D974-4E64-9359-22CADFD79828)]
+        interface IPackageCatalogRemoveOptionalPackagesResult : IInspectable
+        {
+            [propget] HRESULT PackagesRemoved([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.ApplicationModel.Package*>** value);
             [propget] HRESULT ExtendedError([out] [retval] HRESULT* value);
         }
 
@@ -714,6 +731,7 @@ namespace Windows
         [contract(Windows.Foundation.UniversalApiContract, 1.0)]
         [marshaling_behavior(agile)]
         [static(Windows.ApplicationModel.IDesignModeStatics, Windows.Foundation.UniversalApiContract, 1.0)]
+        [static(Windows.ApplicationModel.IDesignModeStatics2, Windows.Foundation.UniversalApiContract, 5.0)]
         [threading(both)]
         runtimeclass DesignMode
         {
@@ -761,12 +779,19 @@ namespace Windows
         {
             [default] interface Windows.ApplicationModel.IPackageCatalog;
             [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.ApplicationModel.IPackageCatalog2;
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.ApplicationModel.IPackageCatalog3;
         }
 
         [contract(Windows.Foundation.UniversalApiContract, 4.0)]
         runtimeclass PackageCatalogAddOptionalPackageResult
         {
             [default] interface Windows.ApplicationModel.IPackageCatalogAddOptionalPackageResult;
+        }
+
+        [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+        runtimeclass PackageCatalogRemoveOptionalPackagesResult
+        {
+            [default] interface Windows.ApplicationModel.IPackageCatalogRemoveOptionalPackagesResult;
         }
 
         [contract(Windows.Foundation.UniversalApiContract, 4.0)]

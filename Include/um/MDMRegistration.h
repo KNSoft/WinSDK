@@ -193,6 +193,12 @@ extern "C" {
 // Server responded with HTTP 200, but the message was empty
 #define MENROLL_E_EMPTY_MESSAGE                         MAKE_HRESULT(SEVERITY_ERROR, DEVICE_ENROLLER_FACILITY_CODE, 41)
 
+// The user canceled the operation
+#define MENROLL_E_USER_CANCELED                         MAKE_HRESULT(SEVERITY_ERROR, DEVICE_ENROLLER_FACILITY_CODE, 42)
+
+// The user canceled the operation
+#define MENROLL_E_MDM_NOT_CONFIGURED                    MAKE_HRESULT(SEVERITY_ERROR, DEVICE_ENROLLER_FACILITY_CODE, 43)
+
 // Struct returned by the discovery service containing
 // the endpoints and information about the management service.
 typedef struct _MANAGEMENT_SERVICE_INFO
@@ -201,6 +207,47 @@ typedef struct _MANAGEMENT_SERVICE_INFO
     LPWSTR  pszAuthenticationUri;
 }MANAGEMENT_SERVICE_INFO,*PMANAGEMENT_SERVICE_INFO;
 
+#define DEVICEREGISTRATIONTYPE_MDM_ONLY 0
+#define DEVICEREGISTRATIONTYPE_MAM 5
+#define DEVICEREGISTRATIONTYPE_MDM_DEVICEWIDE_WITH_AAD 6
+#define DEVICEREGISTRATIONTYPE_MDM_USERSPECIFIC_WITH_AAD 13
+
+// Struct returned by the discovery service containing
+// the endpoints and information about the management service.
+typedef struct _MANAGEMENT_REGISTRATION_INFO
+{
+    BOOL fDeviceRegisteredWithManagement;
+    DWORD dwDeviceRegistionKind;
+    LPWSTR  pszUPN;
+    LPWSTR  pszMDMServiceUri;
+}MANAGEMENT_REGISTRATION_INFO, *PMANAGEMENT_REGISTRATION_INFO;
+
+typedef enum _REGISTRATION_INFORMATION_CLASS {
+    DeviceRegistrationBasicInfo = 1,
+
+    MaxDeviceInfoClass  // MaxDeviceInfoClass should always be the last enum
+} REGISTRATION_INFORMATION_CLASS, *PREGISTRATION_INFORMATION_CLASS;
+
+/*++
+
+Routine Description:
+
+This function is used to check if this device is registered with an MDM service.
+
+Arguments:
+
+ppDeviceRegistion - details of the registration, free with HeapFree
+
+Return Value:
+
+HRESULT indicating success or failure.
+
+--*/
+HRESULT WINAPI
+GetDeviceRegistrationInfo(
+    _In_  REGISTRATION_INFORMATION_CLASS DeviceInformationClass,
+    _Out_ PVOID* ppDeviceRegistrationInfo
+);
 
 /*++
 
@@ -288,6 +335,26 @@ DiscoverManagementService(
     _In_z_              LPCWSTR                         pszUPN, 
     _Out_               PMANAGEMENT_SERVICE_INFO*       ppMgmtInfo 
     );
+
+
+/*++
+
+Routine Description:
+
+This function is used to register a device with the MDM service synchronously.
+It will get the MDM information, including authentication token from AAD
+
+Arguments:
+
+UserToken - The User to impersonate when attempting to get AAD token
+
+Return Value:
+
+HRESULT indicating success or failure.
+
+--*/
+HRESULT WINAPI
+RegisterDeviceWithManagementUsingAADCredentials(HANDLE UserToken);
 
 
 /*++

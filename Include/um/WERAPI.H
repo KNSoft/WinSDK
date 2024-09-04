@@ -565,6 +565,12 @@ WerReportCloseHandle(
 //
 #define WER_MAX_PARAM_COUNT 10
 
+//
+// Max length for a UWP local dump subpath
+// including null terminator
+//
+#define WER_MAX_LOCAL_DUMP_SUBPATH_LENGTH 64
+
 HRESULT
 WINAPI
 WerRegisterFile(
@@ -624,6 +630,14 @@ STDAPI
 WerUnregisterAdditionalProcess(
     _In_ DWORD processId
     );
+    
+STDAPI
+WerRegisterAppLocalDump(
+    _In_ PCWSTR localAppDataRelativePath
+    );
+
+STDAPI
+WerUnregisterAppLocalDump();
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
@@ -946,9 +960,6 @@ WerStoreQueryReportMetadataV1(
     _In_ PCWSTR pszReportKey,
     _Out_ PWER_REPORT_METADATA_V1 pReportMetadata
     );
-
-#define WER_UPLOAD_USE_ANY_AVAILABLE_NETWORK  1
-#define WER_UPLOAD_USE_ANY_POWER              2
 
 __control_entrypoint(DllExport)
 HRESULT

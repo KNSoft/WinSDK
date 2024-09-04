@@ -4645,9 +4645,9 @@ void __RPC_STUB IMFByteStream_RemoteBeginRead_Stub(
 /* [call_as] */ HRESULT STDMETHODCALLTYPE IMFByteStream_RemoteEndRead_Proxy( 
     __RPC__in IMFByteStream * This,
     /* [in] */ __RPC__in_opt IUnknown *punkResult,
-    /* [size_is][out] */ __RPC__out_ecount_full(cb) BYTE *pb,
+    /* [length_is][size_is][out][in] */ __RPC__inout_ecount_part(cb, *pcbRead) BYTE *pb,
     /* [in] */ ULONG cb,
-    /* [out] */ __RPC__out ULONG *pcbRead);
+    /* [out][in] */ __RPC__inout ULONG *pcbRead);
 
 
 void __RPC_STUB IMFByteStream_RemoteEndRead_Stub(
@@ -6585,9 +6585,9 @@ void                      __RPC_USER  LPSAFEARRAY_UserFree64(     __RPC__in unsi
 /* [call_as] */ HRESULT STDMETHODCALLTYPE IMFByteStream_EndRead_Stub( 
     __RPC__in IMFByteStream * This,
     /* [in] */ __RPC__in_opt IUnknown *punkResult,
-    /* [size_is][out] */ __RPC__out_ecount_full(cb) BYTE *pb,
+    /* [length_is][size_is][out][in] */ __RPC__inout_ecount_part(cb, *pcbRead) BYTE *pb,
     /* [in] */ ULONG cb,
-    /* [out] */ __RPC__out ULONG *pcbRead);
+    /* [out][in] */ __RPC__inout ULONG *pcbRead);
 
 /* [local] */ HRESULT STDMETHODCALLTYPE IMFByteStream_BeginWrite_Proxy( 
     IMFByteStream * This,

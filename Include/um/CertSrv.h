@@ -917,14 +917,24 @@ typedef struct _CAINFO
 
 // Keys Under "...\Cryptography\AutoEnrollment"
 #define wszREGKEYDISALLOWEDSCEPALGS	wszREGKEYENROLLMENT L"\\DisallowedSCEPAlgorithms"
+#define wszREGKEYTEMPLATEPOLICY		wszREGKEYENROLLMENT L"\\TemplatePolicy"
 
 // Values Under "...\Cryptography\AutoEnrollment\DisallowedSCEPAlgorithms"
 #define wszREGALLPROVIDERS		L"All"
 // Or KSP name(s)
 
+// Values Under "...\Cryptography\AutoEnrollment\TemplatePolicy"
+// Set low bit to 1 to force machine GP lookup for user enrollment
+// Set low bit to 0 (or if reg value is missing) to use default behavior: user context GP lookup
+// Only applies to InitializeFromTemplateName methods using default policy & only from user context.
+// REG_DWORD <Internal template Name>
+#define TP_MACHINEPOLICY	0x00000001
+
 // Set low bit to 0 to disable machine key repair (missing reg value enables)
 // Set second bit to 0 to disable user key repair (missing reg value enables)
 #define wszREGKEYREPAIR			TEXT("KeyRepair")
+#define KR_ENABLE_MACHINE	0x00000001
+#define KR_ENABLE_USER		0x00000002
 
 
 //+--------------------------------------------------------------------------

@@ -230,8 +230,8 @@ typedef enum _CREATE_VIRTUAL_DISK_VERSION
     CREATE_VIRTUAL_DISK_VERSION_1           = 1,
     CREATE_VIRTUAL_DISK_VERSION_2           = 2,
     CREATE_VIRTUAL_DISK_VERSION_3           = 3,
+    CREATE_VIRTUAL_DISK_VERSION_4           = 4,
 } CREATE_VIRTUAL_DISK_VERSION;
-
 
 // Versioned CreateVirtualDisk parameter structure
 typedef struct _CREATE_VIRTUAL_DISK_PARAMETERS
@@ -281,6 +281,25 @@ typedef struct _CREATE_VIRTUAL_DISK_PARAMETERS
             PCWSTR                 SourceLimitPath;
             VIRTUAL_STORAGE_TYPE   BackingStorageType;
         } Version3;
+
+        struct
+        {
+            GUID                   UniqueId;
+            ULONGLONG              MaximumSize;
+            ULONG                  BlockSizeInBytes;
+            ULONG                  SectorSizeInBytes;
+            ULONG                  PhysicalSectorSizeInBytes;
+            PCWSTR                 ParentPath;
+            PCWSTR                 SourcePath;
+            OPEN_VIRTUAL_DISK_FLAG OpenFlags;
+            VIRTUAL_STORAGE_TYPE   ParentVirtualStorageType;
+            VIRTUAL_STORAGE_TYPE   SourceVirtualStorageType;
+            GUID                   ResiliencyGuid;
+            PCWSTR                 SourceLimitPath;
+            VIRTUAL_STORAGE_TYPE   BackingStorageType;
+            GUID                   PmemAddressAbstractionType;
+            ULONGLONG              DataAlignment;
+        } Version4;
     };
 } CREATE_VIRTUAL_DISK_PARAMETERS, *PCREATE_VIRTUAL_DISK_PARAMETERS;
 
@@ -339,6 +358,11 @@ typedef enum _CREATE_VIRTUAL_DISK_FLAG
     // Only supported on file systems that support sparse VDLs.
     //
     CREATE_VIRTUAL_DISK_FLAG_SPARSE_FILE = 0x80,
+
+    //
+    // Creates a VHD suitable as the backing store for a virtual persistent memory device.
+    //
+    CREATE_VIRTUAL_DISK_FLAG_PMEM_COMPATIBLE = 0x100,
 
 } CREATE_VIRTUAL_DISK_FLAG;
 
@@ -1115,8 +1139,9 @@ typedef struct _MIRROR_VIRTUAL_DISK_PARAMETERS
 // Flags for MirrorVirtualDisk
 typedef enum _MIRROR_VIRTUAL_DISK_FLAG
 {
-    MIRROR_VIRTUAL_DISK_FLAG_NONE                 = 0x00000000,
-    MIRROR_VIRTUAL_DISK_FLAG_EXISTING_FILE        = 0x00000001,
+    MIRROR_VIRTUAL_DISK_FLAG_NONE                   = 0x00000000,
+    MIRROR_VIRTUAL_DISK_FLAG_EXISTING_FILE          = 0x00000001,
+    MIRROR_VIRTUAL_DISK_FLAG_SKIP_MIRROR_ACTIVATION = 0x00000002
 
 } MIRROR_VIRTUAL_DISK_FLAG;
 

@@ -74,6 +74,7 @@ typedef struct FWPS_ACTION0_
 #define FWPS_FILTER_FLAG_OR_CONDITIONS   (0x0004)
 #define FWPS_FILTER_FLAG_HAS_SECURITY_REALM_PROVIDER_CONTEXT (0x0008)
 #define FWPS_FILTER_FLAG_SILENT_MODE     (0x0010)
+#define FWPS_FILTER_FLAG_IPSEC_NO_ACQUIRE_INITIATE (0x0020)
 typedef struct FWPM_PROVIDER_CONTEXT0_ FWPM_PROVIDER_CONTEXT0;
 
 typedef struct FWPS_FILTER0_
@@ -123,6 +124,23 @@ typedef struct FWPS_FILTER2_
     } 	FWPS_FILTER2;
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN8)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+typedef struct FWPM_PROVIDER_CONTEXT3_ FWPM_PROVIDER_CONTEXT3;
+
+typedef struct FWPS_FILTER3_
+    {
+    UINT64 filterId;
+    FWP_VALUE0 weight;
+    UINT16 subLayerWeight;
+    UINT16 flags;
+    UINT32 numFilterConditions;
+    /* [unique][size_is] */ FWPS_FILTER_CONDITION0 *filterCondition;
+    FWPS_ACTION0 action;
+    UINT64 context;
+    /* [unique] */ FWPM_PROVIDER_CONTEXT3 *providerContext;
+    } 	FWPS_FILTER3;
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS3)
 typedef struct FWPS_INCOMING_VALUE0_
     {
     FWP_VALUE0 value;

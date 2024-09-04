@@ -134,6 +134,7 @@ enum _FH_TARGET_DRIVE_TYPES
         FH_DRIVE_REMOTE	= 4
     } 	FH_TARGET_DRIVE_TYPES;
 
+#pragma deprecated(IFhTarget)
 
 
 extern RPC_IF_HANDLE __MIDL_itf_dpcfg_0000_0000_v0_0_c_ifspec;
@@ -232,6 +233,15 @@ EXTERN_C const IID IID_IFhTarget;
 
 #endif 	/* __IFhTarget_INTERFACE_DEFINED__ */
 
+
+/* interface __MIDL_itf_dpcfg_0000_0001 */
+/* [local] */ 
+
+#pragma deprecated(IFhScopeIterator)
+
+
+extern RPC_IF_HANDLE __MIDL_itf_dpcfg_0000_0001_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_dpcfg_0000_0001_v0_0_s_ifspec;
 
 #ifndef __IFhScopeIterator_INTERFACE_DEFINED__
 #define __IFhScopeIterator_INTERFACE_DEFINED__
@@ -379,6 +389,7 @@ enum _FH_DEVICE_VALIDATION_RESULT
 
 typedef enum _FH_DEVICE_VALIDATION_RESULT *PFH_DEVICE_VALIDATION_RESULT;
 
+#pragma deprecated(IFhConfigMgr)
 
 
 extern RPC_IF_HANDLE __MIDL_itf_dpcfg_0000_0002_v0_0_c_ifspec;
@@ -607,6 +618,15 @@ EXTERN_C const IID IID_IFhConfigMgr;
 
 #endif 	/* __IFhConfigMgr_INTERFACE_DEFINED__ */
 
+
+/* interface __MIDL_itf_dpcfg_0000_0003 */
+/* [local] */ 
+
+#pragma deprecated(IFhReassociation)
+
+
+extern RPC_IF_HANDLE __MIDL_itf_dpcfg_0000_0003_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_dpcfg_0000_0003_v0_0_s_ifspec;
 
 #ifndef __IFhReassociation_INTERFACE_DEFINED__
 #define __IFhReassociation_INTERFACE_DEFINED__

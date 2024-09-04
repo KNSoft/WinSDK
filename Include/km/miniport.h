@@ -213,10 +213,12 @@ Revision History:
 
 // begin_winnt
 
+#ifndef DECLSPEC_IMPORT
 #if (defined(_M_IX86) || defined(_M_IA64) || defined(_M_AMD64) || defined(_M_ARM) || defined(_M_ARM64)) && !defined(MIDL_PASS)
 #define DECLSPEC_IMPORT __declspec(dllimport)
 #else
 #define DECLSPEC_IMPORT
+#endif
 #endif
 
 #ifndef DECLSPEC_NORETURN
@@ -340,9 +342,17 @@ Revision History:
 
 #ifndef DECLSPEC_CHPE_GUEST
 #if _M_HYBRID
-#define DECLSPEC_CHPE_GUEST __declspec(hybrid_guest)
+#define DECLSPEC_CHPE_GUEST  __declspec(hybrid_guest)
 #else
 #define DECLSPEC_CHPE_GUEST
+#endif
+#endif
+
+#ifndef DECLSPEC_CHPE_PATCHABLE
+#if _M_HYBRID
+#define DECLSPEC_CHPE_PATCHABLE  __declspec(hybrid_patchable)
+#else
+#define DECLSPEC_CHPE_PATCHABLE
 #endif
 #endif
 
@@ -1228,9 +1238,9 @@ typedef KIRQL *PKIRQL;
 #ifdef _PREFAST_
 
 void _Prefast_unreferenced_parameter_impl_(const char*, ...);
-#define UNREFERENCED_PARAMETER(P)          _Prefast_unreferenced_parameter_impl_("PREfast", (P))
-#define DBG_UNREFERENCED_PARAMETER(P)      _Prefast_unreferenced_parameter_impl_("PREfast", (P))
-#define DBG_UNREFERENCED_LOCAL_VARIABLE(V) _Prefast_unreferenced_parameter_impl_("PREfast", (V))
+#define UNREFERENCED_PARAMETER(P)          _Prefast_unreferenced_parameter_impl_("PREfast", ((void) (P), 0))
+#define DBG_UNREFERENCED_PARAMETER(P)      _Prefast_unreferenced_parameter_impl_("PREfast", ((void) (P), 0))
+#define DBG_UNREFERENCED_LOCAL_VARIABLE(V) _Prefast_unreferenced_parameter_impl_("PREfast", ((void) (V), 0))
 
 #else // _PREFAST_
 
@@ -1901,9 +1911,9 @@ InterlockedExchange16 (
 #define InterlockedOr16 _InterlockedOr16
 #define InterlockedXor16 _InterlockedXor16
 
-char 
+char
 InterlockedExchangeAdd8 (
-    _Inout_ _Interlocked_operand_ char volatile * _Addend, 
+    _Inout_ _Interlocked_operand_ char volatile * _Addend,
     _In_ char _Value
     );
 
@@ -2510,9 +2520,11 @@ __addgsqword (
 
 // end_ntoshvp
 // begin_ntoshvp
+// begin_sdfwdm
 
 #endif // _AMD64_
 
+// end_sdfwdm
 // end_ntoshvp
 
 #ifdef _ARM_
@@ -3868,9 +3880,21 @@ WriteNoFence64 (
 #define PF_TEMPORAL_LEVEL_3         2
 #define PF_NON_TEMPORAL_LEVEL_ALL   3
 
+#if defined(_M_HYBRID_X86_ARM64)
+
+extern ULONG64 (*_os_wowa64_rdtsc) (VOID);
+
+#endif
+
 //
 // Define function to read the value of the time stamp counter.
 //
+
+#if defined(_M_HYBRID_X86_ARM64)
+
+DECLSPEC_GUARDNOCF 
+
+#endif
 
 FORCEINLINE
 ULONG64
@@ -3882,11 +3906,11 @@ ReadTimeStampCounter(
 #if defined(_M_HYBRID_X86_ARM64)
 
     //
-    // For guest code, the rdtsc instruction is implemented in terms of CNTVCT.
-    // Use the same implementation for consistency.
+    // Call into the emulator to return the same value as the x86 RDTSC
+    // instruction.
     //
 
-    return (ULONG64)_ReadStatusReg(ARM64_CNTVCT);
+    return (*_os_wowa64_rdtsc)();
 
 #else
 
@@ -4603,7 +4627,8 @@ _InlineInterlockedIncrement64 (
 
 #define InterlockedIncrement64 _InlineInterlockedIncrement64
 #define InterlockedIncrementAcquire64 InterlockedIncrement64
-
+#define InterlockedIncrementRelease64 InterlockedIncrement64
+#define InterlockedIncrementNoFence64 InterlockedIncrement64
 
 FORCEINLINE
 LONGLONG
@@ -4623,6 +4648,9 @@ _InlineInterlockedDecrement64 (
 }
 
 #define InterlockedDecrement64 _InlineInterlockedDecrement64
+#define InterlockedDecrementAcquire64 InterlockedDecrement64
+#define InterlockedDecrementRelease64 InterlockedDecrement64
+#define InterlockedDecrementNoFence64 InterlockedDecrement64
 
 FORCEINLINE
 LONGLONG
@@ -5930,6 +5958,7 @@ typedef enum _BUS_DATA_TYPE {
 
 #include <guiddef.h>
 
+// begin_wudfwdm
 
 #ifdef __cplusplus
 extern "C" {
@@ -6107,7 +6136,7 @@ __emit(
 
 // NT_ASSERT_ACTION is the actual assertion action, i.e. raising runtime
 // assertion failure. It should be used only by the macro of NT_ASSERT
-// and NT_FRE_ASSERT below. 
+// and NT_FRE_ASSERT below.
 #define NT_ASSERT_ACTION(_exp) \
     ((!(_exp)) ? \
         (__annotation(L"Debug", L"AssertFail", L#_exp), \
@@ -6184,6 +6213,7 @@ __emit(
 
 #endif // _MSC_VER >= 1300
 
+// end_wudfwdm
 
 #if defined(_M_AMD64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
@@ -6503,7 +6533,7 @@ WRITE_REGISTER_BUFFER_ULONG64 (
     return;
 }
 
-// end_wudfpwdm
+// end_wudfwdm
 // end_sdfwdm
 
 __forceinline
@@ -6685,7 +6715,7 @@ WRITE_PORT_BUFFER_ULONG (
 }
 
 // begin_sdfwdm
-// begin_wudfpwdm
+// begin_wudfwdm
 
 #ifdef __cplusplus
 }
@@ -9126,6 +9156,7 @@ typedef struct _INTERFACE {
 
 // end_wudfpwdm
 // begin_wudfwdm
+// begin_sdfwdm
 
 #if defined(_X86_)
 
@@ -9201,6 +9232,7 @@ typedef struct _INTERFACE {
 
 #endif
 
+// end_sdfwdm
 // end_wudfwdm
 
 //

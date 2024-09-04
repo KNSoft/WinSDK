@@ -137,6 +137,9 @@ class MSFT_PhysicalDisk : MSFT_StorageFaultDomain {
         )]
     UInt16 SlotNumber;
 
+    [Read]
+    String StoragePoolUniqueId;
+
     [Read, Required, Description(
         "Indicates whether this physical disk can be added to a concrete pool or not"
         )]

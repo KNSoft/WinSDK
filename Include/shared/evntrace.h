@@ -306,6 +306,7 @@ typedef ULONG64 TRACEHANDLE, *PTRACEHANDLE;
 #define EVENT_TRACE_TYPE_CONFIG_MOBILEPLATFORM  0x20     // Mobile Platform Configuration
 #define EVENT_TRACE_TYPE_CONFIG_DEVICEFAMILY    0x21     // Device Family Information
 #define EVENT_TRACE_TYPE_CONFIG_FLIGHTID        0x22     // Flights on the machine
+#define EVENT_TRACE_TYPE_CONFIG_PROCESSOR       0x23     // CentralProcessor records
 
 //
 // Event types for Optical IO subsystem
@@ -1592,13 +1593,15 @@ typedef enum _TRACE_QUERY_INFO_CLASS {
     TraceCompressionInfo,
     TracePeriodicCaptureStateListInfo,
     TracePeriodicCaptureStateInfo,
+    TraceProviderBinaryTracking,
+    TraceMaxLoggersQuery,
     MaxTraceSetInfoClass
 } TRACE_QUERY_INFO_CLASS, TRACE_INFO_CLASS;
 
 #ifndef _APISET_EVENTING
 
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #if (WINVER >= _WIN32_WINNT_VISTA)
 EXTERN_C
@@ -1614,7 +1617,7 @@ EnumerateTraceGuidsEx (
     );
 #endif
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #endif // _APISET_EVENTING
@@ -1862,6 +1865,35 @@ ULONG
 WMIAPI
 CloseTrace (
     _In_ TRACEHANDLE TraceHandle
+    );
+
+//
+// Structures and enums for QueryTraceProcessingHandle
+//
+
+typedef enum _ETW_PROCESS_HANDLE_INFO_TYPE {
+    EtwQueryPartitionInformation = 1,
+    EtwQueryProcessHandleInfoMax
+} ETW_PROCESS_HANDLE_INFO_TYPE;
+
+typedef struct _ETW_TRACE_PARTITION_INFORMATION {
+    GUID PartitionId;
+    GUID ParentId;
+    ULONG64 Reserved;
+    ULONG PartitionType;
+} ETW_TRACE_PARTITION_INFORMATION, *PETW_TRACE_PARTITION_INFORMATION;
+
+EXTERN_C
+ULONG
+WMIAPI
+QueryTraceProcessingHandle (
+    _In_ TRACEHANDLE ProcessingHandle,
+    _In_ ETW_PROCESS_HANDLE_INFO_TYPE InformationClass,
+    _In_opt_ PVOID InBuffer,
+    _In_ ULONG InBufferSize,
+    _Out_opt_ PVOID OutBuffer,
+    _In_ ULONG OutBufferSize,
+    _Inout_ PULONG ReturnLength
     );
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */

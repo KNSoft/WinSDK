@@ -10,7 +10,6 @@ Abstract:
 
     ETW Event payload parsing API && ETW trace providers browsing API.
 
-
 --*/
 
 #ifndef __TDH_H__
@@ -86,14 +85,15 @@ provides the default OutType, TDH_OUTTYPE_INT, indicating that the field's data
 should be interpreted as a Win32 INT value.
 
 Note that there are multiple ways for the size of a field to be determined.
+
 - Some InTypes have a fixed size. For example, InType UINT16 is always 2 bytes.
-  For these fields, the Flags and length properties of the EVENT_MAP_INFO
-  structure can be ignored.
+  For these fields, the length property of the EVENT_PROPERTY_INFO structure
+  can be ignored by decoders.
 - Some InTypes support deriving the size from the data content. For example,
   the size of a COUNTEDSTRING field is determined by reading the first 2 bytes
   of the data, which contain the size of the remaining string. For these
-  fields, the Flags and length properties of the EVENT_MAP_INFO structure
-  must be ignored.
+  fields, the length property of the EVENT_PROPERTY_INFO structure must be
+  ignored.
 - Some InTypes use the Flags and length properties of the EVENT_PROPERTY_INFO
   structure associated with the field. Details on how to do this are provided
   for each type.
@@ -389,6 +389,10 @@ enum _TDH_OUT_TYPE {
         0x82 0x22 (TlgInANSISTRING + TlgInChain = 0x82, TlgOutJSON = 0x22)
         might be appended to indicate that the inner content is to be
         interpreted as InType = ANSISTRING, OutType = JSON. */
+    TDH_OUTTYPE_CODE_POINTER, /*
+        Specifies that the field should be treated as an address that can
+        potentially be decoded into a symbol name. Applicable to InTypes
+        UInt32, UInt64, HexInt32, HexInt64, and Pointer. */
 
     // End of winmeta outtypes.
     // Start of TDH outtypes for WBEM.
@@ -408,7 +412,7 @@ typedef enum _PROPERTY_FLAGS
 {
    PropertyStruct        = 0x1,      // Type is struct.
    PropertyParamLength   = 0x2,      // Length field is index of param with length.
-   PropertyParamCount    = 0x4,      // Count file is index of param with count.
+   PropertyParamCount    = 0x4,      // Count field is index of param with count.
    PropertyWBEMXmlFragment = 0x8,    // WBEM extension flag for property.
    PropertyParamFixedLength = 0x10,  // Length of the parameter is fixed.
    PropertyParamFixedCount = 0x20,   // Count of the parameter is fixed.
@@ -461,30 +465,115 @@ typedef enum _DECODING_SOURCE {
     DecodingSourceMax
 } DECODING_SOURCE;
 
-// Copy from Binres.h
+/*
+Values used in the TRACE_EVENT_INFO Flags field.
+*/
 typedef enum _TEMPLATE_FLAGS
 {
     TEMPLATE_EVENT_DATA = 1, // Used when custom xml is not specified.
-    TEMPLATE_USER_DATA = 2   // Used when custom xml is specified.
+    TEMPLATE_USER_DATA = 2,  // Used when custom xml is specified.
+    TEMPLATE_CONTROL_GUID = 4 // EventGuid contains the manifest control GUID.
 } TEMPLATE_FLAGS;
 
 typedef struct _TRACE_EVENT_INFO {
-    GUID ProviderGuid;
-    GUID EventGuid;
+
+    GUID ProviderGuid; /* The meaning of this field depends on DecodingSource.
+        - XMLFile: ProviderGuid contains the decode GUID (the provider GUID of
+          the manifest).
+        - Wbem: If EventGuid is GUID_NULL, ProviderGuid contains the decode
+          GUID. Otherwise, ProviderGuid contains the control GUID.
+        - WPP: ProviderGuid is not used (always GUID_NULL).
+        - Tlg: ProviderGuid contains the control GUID. */
+
+    GUID EventGuid; /* The meaning of this field depends on DecodingSource.
+        - XMLFile: If the provider specifies a controlGuid, EventGuid contains
+          the controlGuid and Flags contains TEMPLATE_CONTROL_GUID. Otherwise,
+          if the event's Task specifies an eventGUID, EventGuid contains the
+          eventGUID. Otherwise, EventGuid is GUID_NULL.
+        - Wbem: If EventGuid is not GUID_NULL, it is the decode GUID.
+        - WPP: EventGuid contains the decode GUID.
+        - Tlg: EventGuid is not used (always GUID_NULL). */
+
     EVENT_DESCRIPTOR EventDescriptor;
     DECODING_SOURCE DecodingSource;
     ULONG ProviderNameOffset;
     ULONG LevelNameOffset;
     ULONG ChannelNameOffset;
     ULONG KeywordsNameOffset;
-    ULONG TaskNameOffset;
+
+    ULONG TaskNameOffset; /* Meaning of this field depends on DecodingSource.
+        - XMLFile: The offset to the name of the associated task.
+        - Wbem: The offset to the name of the event.
+        - WPP: Not used.
+        - Tlg: The offset to the name of the event. */
+
     ULONG OpcodeNameOffset;
     ULONG EventMessageOffset;
     ULONG ProviderMessageOffset;
     ULONG BinaryXMLOffset;
     ULONG BinaryXMLSize;
-    ULONG ActivityIDNameOffset;
-    ULONG RelatedActivityIDNameOffset;
+
+    union {
+        ULONG EventNameOffset; /* Event name for manifest-based events.
+            This field is valid only if DecodingSource is set to
+            DecodingSourceXMLFile or DecodingSourceTlg.
+
+            EventNameOffset contains the offset from the beginning of this
+            structure to a nul-terminated Unicode string that contains the
+            event's name.
+
+            This field will be 0 if the event does not have an assigned name or
+            if this event is decoded on a system that does not support decoding
+            manifest event names. Event name decoding is supported on Windows
+            10 Fall Creators Update (2017) and later. */
+
+        ULONG ActivityIDNameOffset; /* Activity ID name for WBEM events.
+            This field is valid only if DecodingSource is set to
+            DecodingSourceWbem.
+
+            ActivityIDNameOffset contains the offset from the beginning of this
+            structure to a nul-terminated Unicode string that contains the
+            property name of the activity identifier in the MOF class. */
+    };
+
+    union {
+        ULONG EventAttributesOffset; /* Attributes for manifest-based events.
+            This field is valid only if DecodingSource is set to
+            DecodingSourceXMLFile.
+
+            EventAttributesOffset contains the offset from the beginning of
+            this structure to a nul-terminated Unicode string that contains a
+            semicolon-separated list of name=value attributes associated with
+            the event.
+
+            This field will be 0 if the event does not have attributes or if
+            this event is decoded on a system that does not support decoding
+            manifest event attributes. Attribute decoding is supported on
+            Windows 10 Fall Creators Update (2017) and later.
+
+            Defined attributes include:
+            FILE=Filename of source code associated with event;
+            LINE=Line number of source code associated with event;
+            COL=Column of source code associated with event;
+            FUNC=Function name associated with event;
+            MJ=Major component associated with event;
+            MN=Minor component associated with event.
+
+            Values containing semicolons or double-quotes should be quoted
+            using double-quotes. Double-quotes within the value should be
+            doubled. Example string:
+            FILE=source.cpp;LINE=123;MJ="Value; ""Quoted""" */
+
+        ULONG RelatedActivityIDNameOffset; /* Related activity ID name (WBEM).
+            This field is valid only if DecodingSource is set to
+            DecodingSourceWbem.
+
+            RelatedActivityIDNameOffset contains the offset from the beginning
+            of this structure to a nul-terminated Unicode string that contains
+            the property name of the related activity identifier in the MOF
+            class. */
+    };
+
     ULONG PropertyCount;
     _Field_range_(0, PropertyCount) ULONG TopLevelPropertyCount;
     union {
@@ -573,7 +662,7 @@ typedef struct _PAYLOAD_FILTER_PREDICATE {
 
 TDHAPI
 TdhCreatePayloadFilter(
-     _In_ LPCGUID ProviderGuid,        
+     _In_ LPCGUID ProviderGuid,
      _In_ PCEVENT_DESCRIPTOR EventDescriptor,
      _In_ BOOLEAN EventMatchANY,
      _In_ ULONG PayloadPredicateCount,
@@ -871,16 +960,16 @@ TdhLoadManifestFromBinary(
 #if (WINVER >= _WIN32_WINNT_WINBLUE)
 TDHAPI
 TdhEnumerateManifestProviderEvents (
-    _In_ LPGUID ProviderGuid,        
+    _In_ LPGUID ProviderGuid,
     _Out_writes_bytes_opt_(*BufferSize) PPROVIDER_EVENT_INFO Buffer,
-    _Inout_ ULONG *BufferSize  
+    _Inout_ ULONG *BufferSize
     );
 #endif
 
 #if (WINVER >= _WIN32_WINNT_WINBLUE)
 TDHAPI
 TdhGetManifestEventInformation (
-    _In_ LPGUID ProviderGuid,        
+    _In_ LPGUID ProviderGuid,
     _In_ PEVENT_DESCRIPTOR EventDescriptor,
     _Out_writes_bytes_opt_(*BufferSize) PTRACE_EVENT_INFO Buffer,
     _Inout_  ULONG *BufferSize

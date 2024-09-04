@@ -175,10 +175,13 @@ public:
     ModuleBase() throw()
     {
 #ifdef _DEBUG
-        // This indicates that there were two instances of the module created or race condition during module creation
-        // If you are creating object with new/delete please make sure that you haven't created more than one module 
-        // and you disabled static initialization with __WRL_DISABLE_STATIC_INITIALIZE__
-        // otherwise please initialize/create module in main()
+        // WRLs support for activatable classes requires there is only one instance of Module<>, this assert
+        // ensures there is only one. Since Module<> is templatized, using different template parameters will
+        // result in multiple instances, avoid this by making sure all code in a component uses the same parameters.
+        // Note that the C++ CX runtime creates an instance; Module<InProc, Platform::Details::InProcModule>,
+        // so mixing it with non CX code can result in this assert.
+        // WRL supports static and dynamically allocated Module<>, choose dynamic by defining __WRL_DISABLE_STATIC_INITIALIZE__
+        // and allocate that instance with new but only once, for example in the main() entry point of an application.
         __WRL_ASSERT__(::InterlockedCompareExchangePointer(reinterpret_cast<void* volatile*>(&module_), this, nullptr) == nullptr &&
             "The module was already instantiated");
 
@@ -287,6 +290,7 @@ protected:
 #pragma warning(disable: 6326)
 // Conditional check using template parameter is constant and can be used to optimize the code
         bool isRefDelegated = false;
+        // Prefer InlineIsEqualGUID over other forms since it's better perf on 4-byte aligned data, which is almost always the case.
         if (InlineIsEqualGUID(riid, __uuidof(IUnknown)) || ((RuntimeClassTypeT & WinRt) != 0 && InlineIsEqualGUID(riid, __uuidof(IInspectable))))
 #pragma warning(pop)
         {
@@ -479,6 +483,7 @@ struct __declspec(novtable) InterfaceTraits
     _Success_(return == true)
     static bool CanCastTo(_In_ T* ptr, REFIID riid, _Outptr_ void **ppv) throw()
     {
+        // Prefer InlineIsEqualGUID over other forms since it's better perf on 4-byte aligned data, which is almost always the case.
         if (InlineIsEqualGUID(riid, __uuidof(Base)))
         {
             *ppv = static_cast<Base*>(ptr);
@@ -524,6 +529,7 @@ struct __declspec(novtable) InterfaceTraits<CloakedIid<CloakedType>>
     _Success_(return == true)
     static bool CanCastTo(_In_ T* ptr, REFIID riid, _Outptr_ void **ppv) throw()
     {
+        // Prefer InlineIsEqualGUID over other forms since it's better perf on 4-byte aligned data, which is almost always the case.
         if (InlineIsEqualGUID(riid, __uuidof(Base)))
         {
             *ppv = static_cast<Base*>(ptr);
@@ -569,7 +575,7 @@ struct VerifyInheritanceHelper
 {
     static void Verify() throw()
     {
-        static_assert(Details::IsBaseOfStrict<InterfaceTraits<Base>::Base, InterfaceTraits<I>::Base>::value, "'I' needs to inherit from 'Base'.");
+        static_assert(Details::IsBaseOfStrict<typename InterfaceTraits<Base>::Base, typename InterfaceTraits<I>::Base>::value, "'I' needs to inherit from 'Base'.");
     }
 };
 
@@ -582,32 +588,6 @@ struct VerifyInheritanceHelper<I, Nil>
 };
 
 #pragma endregion //  helper types
-
-#pragma region Interface List and helpers
-
-// Recursive list of interfaces
-template <typename T, typename U>
-struct InterfaceList
-{
-    typedef T FirstT;
-    typedef U RestT;
-};
-
-// Build a InterfaceList for a set of template arguments
-template <typename T0, typename T1 = Nil, typename T2 = Nil, typename T3 = Nil, typename T4 = Nil, 
-          typename T5 = Nil, typename T6 = Nil, typename T7 = Nil, typename T8 = Nil, typename T9 = Nil>
-struct InterfaceListHelper
-{
-    typedef InterfaceList<T0, typename InterfaceListHelper<T1, T2, T3, T4, T5, T6, T7, T8, T9, Nil>::TypeT> TypeT;
-};
-
-template <typename T0>
-struct InterfaceListHelper<T0, Nil, Nil, Nil, Nil, Nil, Nil, Nil, Nil>
-{
-    typedef InterfaceList<T0, Nil> TypeT;
-};
-
-#pragma endregion // Interface List and helpers
 
 } // namespace Details
 
@@ -626,16 +606,16 @@ protected:
     template<unsigned int ClassType>
     static void Verify() throw()
     {
-        Details::InterfaceTraits<I0>::Verify<ClassType>();
-        Details::InterfaceTraits<I1>::Verify<ClassType>();
-        Details::InterfaceTraits<I2>::Verify<ClassType>();
-        Details::InterfaceTraits<I3>::Verify<ClassType>();
-        Details::InterfaceTraits<I4>::Verify<ClassType>();
-        Details::InterfaceTraits<I5>::Verify<ClassType>();
-        Details::InterfaceTraits<I6>::Verify<ClassType>();
-        Details::InterfaceTraits<I7>::Verify<ClassType>();
-        Details::InterfaceTraits<I8>::Verify<ClassType>();
-        Details::InterfaceTraits<I9>::Verify<ClassType>();
+        Details::InterfaceTraits<I0>::template Verify<ClassType>();
+        Details::InterfaceTraits<I1>::template Verify<ClassType>();
+        Details::InterfaceTraits<I2>::template Verify<ClassType>();
+        Details::InterfaceTraits<I3>::template Verify<ClassType>();
+        Details::InterfaceTraits<I4>::template Verify<ClassType>();
+        Details::InterfaceTraits<I5>::template Verify<ClassType>();
+        Details::InterfaceTraits<I6>::template Verify<ClassType>();
+        Details::InterfaceTraits<I7>::template Verify<ClassType>();
+        Details::InterfaceTraits<I8>::template Verify<ClassType>();
+        Details::InterfaceTraits<I9>::template Verify<ClassType>();
 
         Details::VerifyInheritanceHelper<I0, I1>::Verify();
         Details::VerifyInheritanceHelper<I0, I2>::Verify();
@@ -650,7 +630,7 @@ protected:
 
     HRESULT CanCastTo(REFIID riid, _Outptr_ void **ppv) throw()
     {
-        Details::InterfaceTraits<I0>::Base* ptr = Details::InterfaceTraits<I0>::CastToBase(this);
+        typename Details::InterfaceTraits<I0>::Base* ptr = Details::InterfaceTraits<I0>::CastToBase(this);
 
         return (Details::InterfaceTraits<I0>::CanCastTo(this, riid, ppv) ||
             Details::InterfaceTraits<I1>::CanCastTo(ptr, riid, ppv) ||
@@ -707,16 +687,16 @@ protected:
     template<unsigned int ClassType>
     static void Verify() throw()
     {
-        Details::InterfaceTraits<BaseType>::Verify<ClassType>();
-        Details::InterfaceTraits<I1>::Verify<ClassType>();
-        Details::InterfaceTraits<I2>::Verify<ClassType>();
-        Details::InterfaceTraits<I3>::Verify<ClassType>();
-        Details::InterfaceTraits<I4>::Verify<ClassType>();
-        Details::InterfaceTraits<I5>::Verify<ClassType>();
-        Details::InterfaceTraits<I6>::Verify<ClassType>();
-        Details::InterfaceTraits<I7>::Verify<ClassType>();
-        Details::InterfaceTraits<I8>::Verify<ClassType>();
-        Details::InterfaceTraits<I9>::Verify<ClassType>();
+        Details::InterfaceTraits<BaseType>::template Verify<ClassType>();
+        Details::InterfaceTraits<I1>::template Verify<ClassType>();
+        Details::InterfaceTraits<I2>::template Verify<ClassType>();
+        Details::InterfaceTraits<I3>::template Verify<ClassType>();
+        Details::InterfaceTraits<I4>::template Verify<ClassType>();
+        Details::InterfaceTraits<I5>::template Verify<ClassType>();
+        Details::InterfaceTraits<I6>::template Verify<ClassType>();
+        Details::InterfaceTraits<I7>::template Verify<ClassType>();
+        Details::InterfaceTraits<I8>::template Verify<ClassType>();
+        Details::InterfaceTraits<I9>::template Verify<ClassType>();
 
         Details::VerifyInheritanceHelper<BaseType, I1>::Verify();
         Details::VerifyInheritanceHelper<BaseType, I2>::Verify();
@@ -786,178 +766,218 @@ namespace Details
 #pragma region Implements helper templates
 
 // Helper template used by Implements. This template traverses a list of interfaces and adds them as base class and information
-// to enable QI
-template <typename RuntimeClassFlagsT, typename ILst, bool doStrictCheck = true, bool IsDelegateToClass = __is_base_of(ImplementsBase, typename ILst::FirstT) /*chain class?*/> 
+// to enable QI. doStrictCheck is typically false only for the first interface, allowing IInspectable to be explicitly specified 
+// only as the first interface.
+template <typename RuntimeClassFlagsT, bool doStrictCheck, typename ...TInterfaces>
 struct __declspec(novtable) ImplementsHelper;
 
-// Specialization handles regular interfaces
-template <typename RuntimeClassFlagsT, typename I0, typename I1, bool doStrictCheck, bool IsDelegateToClass>
-struct __declspec(novtable) ImplementsHelper<RuntimeClassFlagsT, InterfaceList<I0, I1>, doStrictCheck, IsDelegateToClass> : 
+// Specialization handles regular interfaces and types that derive from ImplementsHelper (e.g. nested Implements).
+template <typename RuntimeClassFlagsT, bool doStrictCheck, typename I0, typename ...TInterfaces>
+struct __declspec(novtable) ImplementsHelper<RuntimeClassFlagsT, doStrictCheck, I0, TInterfaces...> :
     I0, 
-    ImplementsHelper<RuntimeClassFlagsT, I1>
+    ImplementsHelper<RuntimeClassFlagsT, true, TInterfaces...>
 {
 protected:
     template <unsigned int RuntimeClassTypeT> friend class Details::RuntimeClassBaseT;
 
+    // CanCastTo
+    template <bool IsDelegateToClass>
+    HRESULT CanCastToHelper(REFIID riid, _Outptr_ void **ppv, bool *pRefDelegated = nullptr) throw();
+
+    template <>
+    HRESULT inline CanCastToHelper<true>(REFIID riid, _Outptr_ void **ppv, bool *pRefDelegated) throw()
+    {
+        if (SUCCEEDED(static_cast<I0*>(this)->CanCastTo(riid, ppv)))
+        {
+            return S_OK;
+        }
+        return ImplementsHelper<RuntimeClassFlagsT, true, TInterfaces...>::CanCastTo(riid, ppv, pRefDelegated);
+    }
+
+    template <>
+    HRESULT inline CanCastToHelper<false>(REFIID riid, _Outptr_ void **ppv, bool *pRefDelegated) throw()
+    {
+        // Prefer InlineIsEqualGUID over other forms since it's better perf on 4-byte aligned data, which is almost always the case.
+        if (InlineIsEqualGUID(riid, __uuidof(I0)))
+        {
+            *ppv = static_cast<I0*>(this);
+            return S_OK;
+        }
+        return ImplementsHelper<RuntimeClassFlagsT, true, TInterfaces...>::CanCastTo(riid, ppv, pRefDelegated);
+    }
+
     HRESULT CanCastTo(REFIID riid, _Outptr_ void **ppv, bool *pRefDelegated = nullptr) throw()
     {
         VerifyInterfaceHelper<RuntimeClassFlagsT::value & WinRtClassicComMix, I0, doStrictCheck>::Verify();
-
-        if (InlineIsEqualGUID(riid, __uuidof(I0)))
-        {
-            *ppv = static_cast<I0*>(this);
-            return S_OK;
-        }
-
-        return ImplementsHelper<RuntimeClassFlagsT, I1>::CanCastTo(riid, ppv, pRefDelegated);
+        return CanCastToHelper<__is_base_of(ImplementsBase, I0)>(riid, ppv, pRefDelegated);
     }
 
-    IUnknown* CastToUnknown() throw()
+    // CastToUnknown
+    template <bool IsDelegateToClass> IUnknown* CastToUnknownHelper() throw();
+
+    template <> inline IUnknown* CastToUnknownHelper<true>() throw()
+    {
+        return I0::CastToUnknown();
+    }
+
+    template <> inline IUnknown* CastToUnknownHelper<false>() throw()
     {
         return static_cast<IUnknown*>(static_cast<I0*>(this));
     }
 
-    unsigned long GetIidCount() throw()
-    {
-        return 1 + ImplementsHelper<RuntimeClassFlagsT, I1>::GetIidCount();
-    }
-
-    void FillArrayWithIid(_Inout_ unsigned long *index, _Inout_ IID* iids) throw()
-    {        
-        *(iids + *index) = __uuidof(I0);
-        (*index)++;
-
-        ImplementsHelper<RuntimeClassFlagsT, I1>::FillArrayWithIid(index, iids);
-    }
-};
-
-template <typename RuntimeClassFlagsT, typename I0, bool doStrictCheck, bool IsDelegateToClass>
-struct __declspec(novtable) ImplementsHelper<RuntimeClassFlagsT, InterfaceList<I0, Details::Nil>, doStrictCheck, IsDelegateToClass> : 
-    I0
-{
-protected:
-    template <unsigned int RuntimeClassTypeT> friend class Details::RuntimeClassBaseT;    
-
-    HRESULT CanCastTo(_In_ REFIID riid, _Outptr_ void **ppv, bool * /*pRefDelegated*/ = nullptr) throw()
-    {
-        VerifyInterfaceHelper<RuntimeClassFlagsT::value & WinRtClassicComMix, I0, doStrictCheck>::Verify();
-
-        if (InlineIsEqualGUID(riid, __uuidof(I0)))
-        {
-            *ppv = static_cast<I0*>(this);
-            return S_OK;
-        }
-
-        return E_NOINTERFACE;
-    }
-
     IUnknown* CastToUnknown() throw()
     {
-        return static_cast<IUnknown*>(static_cast<I0*>(this));
+        return CastToUnknownHelper<__is_base_of(ImplementsBase, I0)>();
     }
 
-    unsigned long GetIidCount() throw()
+    // GetIidCount
+    template <bool IsDelegateToClass> long GetIidCountHelper() throw();
+
+    template <> inline long GetIidCountHelper<true>() throw()
+    {
+        return I0::GetIidCount();
+    }
+
+    
+    template <> inline long GetIidCountHelper<false>() throw()
     {
         return 1;
     }
 
-    void FillArrayWithIid(_Inout_ unsigned long *index, _Inout_ IID* iids) throw()
+    unsigned long GetIidCount() throw()
+    {
+        return GetIidCountHelper<__is_base_of(ImplementsBase, I0)>() + ImplementsHelper<RuntimeClassFlagsT, true, TInterfaces...>::GetIidCount();
+    }
+
+    // FillArrayWithIid
+    template <bool IsDelegateToClass> void FillArrayWithIidHelper(_Inout_ unsigned long *index, _Inout_ IID* iids) throw();
+
+    template <> inline void FillArrayWithIidHelper<true>(_Inout_ unsigned long *index, _Inout_ IID* iids) throw()
+    {
+        I0::FillArrayWithIid(index, iids);
+    }
+
+    template <> inline void FillArrayWithIidHelper<false>(_Inout_ unsigned long *index, _Inout_ IID* iids) throw()
     {
         *(iids + *index) = __uuidof(I0);
         (*index)++;
     }
+
+    void FillArrayWithIid(_Inout_ unsigned long *index, _Inout_ IID* iids) throw()
+    {        
+        FillArrayWithIidHelper<__is_base_of(ImplementsBase, I0)>(index, iids);
+        ImplementsHelper<RuntimeClassFlagsT, true, TInterfaces...>::FillArrayWithIid(index, iids);
+    }
 };
 
-// Specialization handles Cloak interfaces
-template <typename RuntimeClassFlagsT, typename I0, typename I1, bool doStrictCheck>
-struct __declspec(novtable) ImplementsHelper<RuntimeClassFlagsT, InterfaceList<CloakedIid<I0>, I1>, doStrictCheck, false> : 
-    I0, 
-    ImplementsHelper<RuntimeClassFlagsT, I1>
+// no-op instance. Since the first "real" interface should be checked against doStrictCheck, pass this through unchanged.
+template <typename RuntimeClassFlagsT, bool doStrictCheck, typename ...TInterfaces>
+struct __declspec(novtable) ImplementsHelper<RuntimeClassFlagsT, doStrictCheck, Details::Nil, TInterfaces...> :
+    ImplementsHelper<RuntimeClassFlagsT, doStrictCheck, TInterfaces...>
 {
 protected:
-    template <unsigned int RuntimeClassTypeT> friend class Details::RuntimeClassBaseT;    
+    template <unsigned int RuntimeClassTypeT> friend class Details::RuntimeClassBaseT;
 
-    HRESULT CanCastTo(REFIID riid, _Outptr_ void **ppv, bool *pRefDelegated = nullptr) throw()
+    HRESULT CanCastTo(_In_ REFIID riid, _Outptr_ void **ppv, bool * pRefDelegated = nullptr) throw()
     {
-        VerifyInterfaceHelper<RuntimeClassFlagsT::value & WinRtClassicComMix, I0>::Verify();
-
-        if (InlineIsEqualGUID(riid, __uuidof(I0)))
-        {
-            *ppv = static_cast<I0*>(this);
-            return S_OK;
-        }
-
-        return ImplementsHelper<RuntimeClassFlagsT, I1>::CanCastTo(riid, ppv, pRefDelegated);
+        return ImplementsHelper<RuntimeClassFlagsT, doStrictCheck, TInterfaces...>::CanCastTo(riid, ppv, pRefDelegated);
     }
 
-    IUnknown* CastToUnknown() throw()
-    {
-        return static_cast<IUnknown*>(static_cast<I0*>(this));
-    }
+    // IUnknown* CastToUnknown() throw(); // not defined for no-op case.
 
+    // TODO: Make constexpr.
     unsigned long GetIidCount() throw()
     {
-        return ImplementsHelper<RuntimeClassFlagsT, I1>::GetIidCount();
+        return ImplementsHelper<RuntimeClassFlagsT, doStrictCheck, TInterfaces...>::GetIidCount();
     }
 
     void FillArrayWithIid(_Inout_ unsigned long *index, _Inout_ IID* iids) throw()
     {
-        ImplementsHelper<RuntimeClassFlagsT, I1>::FillArrayWithIid(index, iids);
+        ImplementsHelper<RuntimeClassFlagsT, doStrictCheck, TInterfaces...>::FillArrayWithIid(index, iids);
     }
 };
 
-template <typename RuntimeClassFlagsT, typename I0, bool doStrictCheck>
-struct __declspec(novtable) ImplementsHelper<RuntimeClassFlagsT, InterfaceList<CloakedIid<I0>, Details::Nil>, doStrictCheck, false> : 
-    I0
+// terminal case specialization.
+template <typename RuntimeClassFlagsT, bool doStrictCheck>
+struct __declspec(novtable) ImplementsHelper<RuntimeClassFlagsT, doStrictCheck>
 {
 protected:
     template <unsigned int RuntimeClassTypeT> friend class Details::RuntimeClassBaseT;    
 
-    HRESULT CanCastTo(_In_ REFIID riid, _Outptr_ void **ppv, bool * /*pRefDelegated*/ = nullptr) throw()
+    HRESULT CanCastTo(_In_ REFIID /*riid*/, _Outptr_ void ** /*ppv*/, bool * /*pRefDelegated*/ = nullptr) throw()
     {
-        VerifyInterfaceHelper<RuntimeClassFlagsT::value & WinRtClassicComMix, I0>::Verify();
-
-        if (InlineIsEqualGUID(riid, __uuidof(I0)))
-        {
-            *ppv = static_cast<I0*>(this);
-            return S_OK;
-        }
-
         return E_NOINTERFACE;
     }
 
-    IUnknown* CastToUnknown() throw()
-    {
-        return static_cast<IUnknown*>(static_cast<I0*>(this));
-    }
+    // IUnknown* CastToUnknown() throw(); // not defined for terminal case.
 
     unsigned long GetIidCount() throw()
     {
         return 0;
     }
 
-    void FillArrayWithIid(_Inout_ unsigned long *, _Inout_ IID*) throw()
+    void FillArrayWithIid(_Inout_ unsigned long * /*index*/, _Inout_ IID* /*iids*/) throw()
     {
     }
 };
 
-// Specialization handles chaining interfaces
-template <typename RuntimeClassFlagsT, typename C0, typename C1, typename C2, typename C3, typename C4, typename C5, typename C6, typename C7, typename C8, typename C9, typename I1, bool doStrictCheck>
-struct __declspec(novtable) ImplementsHelper<RuntimeClassFlagsT, InterfaceList<ChainInterfaces<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>, I1>, doStrictCheck, false> : 
-    ChainInterfaces<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>, 
-    ImplementsHelper<RuntimeClassFlagsT, I1>
+// Specialization handles Cloak interfaces. Delegate to the base form of ImplementsHelper for 
+// the current interface, since it could be either an Implements base or an interface.
+template <typename RuntimeClassFlagsT, bool doStrictCheck, typename I0, typename ...TInterfaces>
+struct __declspec(novtable) ImplementsHelper<RuntimeClassFlagsT, doStrictCheck, CloakedIid<I0>, TInterfaces...> :
+    ImplementsHelper<RuntimeClassFlagsT, doStrictCheck, I0>,
+    ImplementsHelper<RuntimeClassFlagsT, true, TInterfaces...>
 {
 protected:
     template <unsigned int RuntimeClassTypeT> friend class Details::RuntimeClassBaseT;    
 
     HRESULT CanCastTo(REFIID riid, _Outptr_ void **ppv, bool *pRefDelegated = nullptr) throw()
     {
-        ChainInterfaces<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>::Verify<RuntimeClassFlagsT::value>();
+        VerifyInterfaceHelper<RuntimeClassFlagsT::value & WinRtClassicComMix, I0, doStrictCheck>::Verify();
+
+        HRESULT hr = ImplementsHelper<RuntimeClassFlagsT, doStrictCheck, I0>::CanCastTo(riid, ppv, pRefDelegated);
+        if (SUCCEEDED(hr))
+        {
+            return S_OK;
+        }
+
+        return ImplementsHelper<RuntimeClassFlagsT, true, TInterfaces...>::CanCastTo(riid, ppv, pRefDelegated);
+    }
+
+    IUnknown* CastToUnknown() throw()
+    {
+        return ImplementsHelper<RuntimeClassFlagsT, doStrictCheck, I0>::CastToUnknown();
+    }
+
+    // Don't expose the cloaked IID(s), but continue processing the rest of the interfaces
+    unsigned long GetIidCount() throw()
+    {
+        return ImplementsHelper<RuntimeClassFlagsT, true, TInterfaces...>::GetIidCount();
+    }
+
+    void FillArrayWithIid(_Inout_ unsigned long *index, _Inout_ IID* iids) throw()
+    {
+        ImplementsHelper<RuntimeClassFlagsT, true, TInterfaces...>::FillArrayWithIid(index, iids);
+    }
+};
+
+// Specialization handles chaining interfaces
+template <typename RuntimeClassFlagsT, bool doStrictCheck, typename C0, typename C1, typename C2, typename C3, typename C4, typename C5, typename C6, typename C7, typename C8, typename C9, typename ...TInterfaces>
+struct __declspec(novtable) ImplementsHelper<RuntimeClassFlagsT, doStrictCheck, ChainInterfaces<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>, TInterfaces...> :
+    ChainInterfaces<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>,
+    ImplementsHelper<RuntimeClassFlagsT, true, TInterfaces...>
+{
+protected:
+    template <unsigned int RuntimeClassTypeT> friend class Details::RuntimeClassBaseT;    
+
+    HRESULT CanCastTo(REFIID riid, _Outptr_ void **ppv, bool *pRefDelegated = nullptr) throw()
+    {
+        ChainInterfaces<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>::template Verify<RuntimeClassFlagsT::value>();
         
         HRESULT hr = ChainInterfaces<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>::CanCastTo(riid, ppv);
         if (FAILED(hr))
         {
-            hr = ImplementsHelper<RuntimeClassFlagsT, I1>::CanCastTo(riid, ppv, pRefDelegated);
+            hr = ImplementsHelper<RuntimeClassFlagsT, true, TInterfaces...>::CanCastTo(riid, ppv, pRefDelegated);
         }
 
         return hr;
@@ -971,122 +991,21 @@ protected:
     unsigned long GetIidCount() throw()
     {
         return ChainInterfaces<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>::IidCount +
-            ImplementsHelper<RuntimeClassFlagsT, I1>::GetIidCount();
+            ImplementsHelper<RuntimeClassFlagsT, true, TInterfaces...>::GetIidCount();
     }
 
     void FillArrayWithIid(_Inout_ unsigned long *index, _Inout_ IID* iids) throw()
     {
         ChainInterfaces<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>::FillArrayWithIid(index, iids);
-        ImplementsHelper<RuntimeClassFlagsT, I1>::FillArrayWithIid(index, iids);
+        ImplementsHelper<RuntimeClassFlagsT, true, TInterfaces...>::FillArrayWithIid(index, iids);
     }
 };
 
-template <typename RuntimeClassFlagsT, typename C0, typename C1, typename C2, typename C3, typename C4, typename C5, typename C6, typename C7, typename C8, typename C9, bool doStrictCheck>
-struct __declspec(novtable) ImplementsHelper<RuntimeClassFlagsT, InterfaceList<ChainInterfaces<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>, Details::Nil>, doStrictCheck, false> : 
-    ChainInterfaces<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>
-{
-protected:
-    template <unsigned int RuntimeClassTypeT> friend class Details::RuntimeClassBaseT;    
-
-    HRESULT CanCastTo(_In_ const IID &iid, _Outptr_ void **ppv, bool * /*pRefDelegated*/ = nullptr) throw()
-    {
-        ChainInterfaces<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>::Verify<RuntimeClassFlagsT::value>();
-        
-        return ChainInterfaces<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>::CanCastTo(iid, ppv);
-    }
-
-    IUnknown* CastToUnknown() throw()
-    {
-        return ChainInterfaces<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>::CastToUnknown();
-    }
-
-    static const unsigned long IidCount = 
-        ChainInterfaces<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>::IidCount;
-
-    unsigned long GetIidCount() throw()
-    {
-        return ChainInterfaces<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>::IidCount;
-    }
-
-    void FillArrayWithIid(_Inout_ unsigned long *index, _Inout_ IID* iids) throw()
-    {
-        ChainInterfaces<C0, C1, C2, C3, C4, C5, C6, C7, C8, C9>::FillArrayWithIid(index, iids);
-    }
-};
-
-// Specialization handles chaining classes
-template <typename RuntimeClassFlagsT, typename I0, typename I1, bool doStrictCheck>
-struct __declspec(novtable) ImplementsHelper<RuntimeClassFlagsT, InterfaceList<I0, I1>, doStrictCheck, true> : 
-    I0, 
-    ImplementsHelper<RuntimeClassFlagsT, I1>
-{
-protected:
-    template <unsigned int RuntimeClassTypeT> friend class Details::RuntimeClassBaseT;    
-
-    HRESULT CanCastTo(REFIID riid, _Outptr_ void **ppv, bool *pRefDelegated = nullptr) throw()
-    {
-        VerifyInterfaceHelper<RuntimeClassFlagsT::value & WinRtClassicComMix, I0, doStrictCheck>::Verify();
-
-        HRESULT hr = static_cast<I0*>(this)->CanCastTo(riid, ppv);
-        if (FAILED(hr))
-        {
-            hr = ImplementsHelper<RuntimeClassFlagsT, I1>::CanCastTo(riid, ppv, pRefDelegated);
-        }
-
-        return hr;
-    }
-
-    IUnknown* CastToUnknown() throw()
-    {
-        return I0::CastToUnknown();
-    }
-
-    unsigned long GetIidCount() throw()
-    {
-        return I0::GetIidCount() +
-            ImplementsHelper<RuntimeClassFlagsT, I1>::GetIidCount();
-    }
-
-    void FillArrayWithIid(_Inout_ unsigned long *index, _Inout_ IID* iids) throw()
-    {
-        I0::FillArrayWithIid(index, iids);
-        ImplementsHelper<RuntimeClassFlagsT, I1>::FillArrayWithIid(index, iids);
-    }
-};
-
-template <typename RuntimeClassFlagsT, typename I0, bool doStrictCheck>
-struct __declspec(novtable) ImplementsHelper<RuntimeClassFlagsT, InterfaceList<I0, Details::Nil>, doStrictCheck, true> : 
-    I0
-{
-protected:
-    template <unsigned int RuntimeClassTypeT> friend class Details::RuntimeClassBaseT;
-
-    HRESULT CanCastTo(REFIID riid, _Outptr_ void **ppv, bool * /*pRefDelegated*/ = nullptr) throw()
-    {
-        VerifyInterfaceHelper<RuntimeClassFlagsT::value & WinRtClassicComMix, I0, doStrictCheck>::Verify();
-        return static_cast<I0*>(this)->CanCastTo(riid, ppv);
-    }
-
-    IUnknown* CastToUnknown() throw()
-    {
-        return I0::CastToUnknown();
-    }
-
-    unsigned long GetIidCount() throw()
-    {
-        return I0::GetIidCount();
-    }
-
-    void FillArrayWithIid(_Inout_ unsigned long *index, _Inout_ IID* iids) throw()
-    {
-        I0::FillArrayWithIid(index, iids);        
-    }
-};
 
 // Mixin specialization
-template <typename RuntimeClassFlagsT, typename DerivedType, typename BaseType, bool hasImplements, typename I1, bool doStrictCheck>
-struct __declspec(novtable) ImplementsHelper<RuntimeClassFlagsT, InterfaceList<MixIn<DerivedType, BaseType, hasImplements>, I1>, doStrictCheck, false> : 
-    ImplementsHelper<RuntimeClassFlagsT, I1>
+template <typename RuntimeClassFlagsT, typename DerivedType, typename BaseType, bool hasImplements, typename ...TInterfaces, bool doStrictCheck>
+struct __declspec(novtable) ImplementsHelper<RuntimeClassFlagsT, doStrictCheck, MixIn<DerivedType, BaseType, hasImplements>, TInterfaces...> :
+    ImplementsHelper<RuntimeClassFlagsT, true, TInterfaces...>
 {
     static_assert(hasImplements, "Cannot use MixIn to with a class not deriving from \"Implements\"");
 
@@ -1095,12 +1014,12 @@ protected:
 
     HRESULT CanCastTo(REFIID riid, _Outptr_ void **ppv, bool *pRefDelegated = nullptr) throw()
     {
-        VerifyInterfaceHelper<RuntimeClassFlagsT::value & WinRtClassicComMix, BaseType>::Verify();
+        VerifyInterfaceHelper<RuntimeClassFlagsT::value & WinRtClassicComMix, BaseType, doStrictCheck>::Verify();
         
         HRESULT hr = static_cast<BaseType*>(static_cast<DerivedType*>(this))->CanCastTo(riid, ppv);
         if (FAILED(hr))
         {
-            hr = ImplementsHelper<RuntimeClassFlagsT, I1>::CanCastTo(riid, ppv, pRefDelegated);
+            hr = ImplementsHelper<RuntimeClassFlagsT, true, TInterfaces...>::CanCastTo(riid, ppv, pRefDelegated);
         }
 
         return hr;            
@@ -1114,79 +1033,72 @@ protected:
     unsigned long GetIidCount() throw()
     {
         return static_cast<BaseType*>(static_cast<DerivedType*>(this))->GetIidCount() +
-            ImplementsHelper<RuntimeClassFlagsT, I1>::GetIidCount();
+            ImplementsHelper<RuntimeClassFlagsT, true, TInterfaces...>::GetIidCount();
     }
 
     void FillArrayWithIid(_Inout_ unsigned long *index, _Inout_ IID* iids) throw()
     {
         static_cast<BaseType*>(static_cast<DerivedType*>(this))->FillArrayWithIid(index, iids);
-        ImplementsHelper<RuntimeClassFlagsT, I1>::FillArrayWithIid(index, iids);
+        ImplementsHelper<RuntimeClassFlagsT, true, TInterfaces...>::FillArrayWithIid(index, iids);
     }
 };
 
-template <typename RuntimeClassFlagsT, typename DerivedType, typename BaseType, bool hasImplements, bool doStrictCheck>
-struct __declspec(novtable) ImplementsHelper<RuntimeClassFlagsT, InterfaceList<MixIn<DerivedType, BaseType, hasImplements>, Details::Nil >, doStrictCheck, false>
+// Specialization handles inheriting COM objects. ComposableBase must be the last non-nil interface in the list.
+// Trailing nil's are allowed for compatibility with some tools that pad out the list.
+template <typename I0, typename ...>
+struct AreAllNil
 {
-    static_assert(hasImplements, "Cannot use MixIn to with a class not deriving from \"Implements\"");
-
-protected:
-    template <unsigned int RuntimeClassTypeT> friend class Details::RuntimeClassBaseT;    
-
-    HRESULT CanCastTo(REFIID riid, _Outptr_ void **ppv, bool * /*pRefDelegated*/ = nullptr) throw()
-    {
-        VerifyInterfaceHelper<RuntimeClassFlagsT::value & WinRtClassicComMix, BaseType>::Verify();
-        return static_cast<BaseType*>(static_cast<DerivedType*>(this))->CanCastTo(riid, ppv);
-    }
-
-    IUnknown* CastToUnknown() throw()
-    {
-        return static_cast<BaseType*>(static_cast<DerivedType*>(this))->CastToUnknown();
-    }
-
-    unsigned long GetIidCount() throw()
-    {
-        return static_cast<BaseType*>(static_cast<DerivedType*>(this))->GetIidCount();
-    }
-
-    void FillArrayWithIid(_Inout_ unsigned long *index, _Inout_ IID* iids) throw()
-    {
-        static_cast<BaseType*>(static_cast<DerivedType*>(this))->FillArrayWithIid(index, iids);
-    }
+    static const bool value = false;
 };
-// Specialization handles inheriting COM objects
-template <typename RuntimeClassFlagsT, typename FactoryInterface, typename I1, bool doStrictCheck>
-struct __declspec(novtable) ImplementsHelper<RuntimeClassFlagsT, InterfaceList<ComposableBase<FactoryInterface>, I1>, doStrictCheck, false> : 
-    public I1
+
+template <typename ...TInterfaces>
+struct AreAllNil<Microsoft::WRL::Details::Nil, TInterfaces...>
+{
+    static const bool value = AreAllNil<TInterfaces...>::value;
+};
+
+template <>
+struct AreAllNil<Microsoft::WRL::Details::Nil>
+{
+    static const bool value = true;
+};
+
+template <typename RuntimeClassFlagsT, typename FactoryInterface, bool doStrictCheck, typename ...TInterfaces>
+struct __declspec(novtable) ImplementsHelper<RuntimeClassFlagsT, doStrictCheck, ComposableBase<FactoryInterface>, TInterfaces...> :
+    ImplementsHelper<RuntimeClassFlagsT, true, ComposableBase<FactoryInterface>>
 {
 protected:
     template <unsigned int RuntimeClassTypeT> friend class Details::RuntimeClassBaseT;
 
+    typedef ImplementsHelper<RuntimeClassFlagsT, true, ComposableBase<FactoryInterface>> Base;
+
     HRESULT CanCastTo(REFIID riid, _Outptr_ void **ppv, bool *pRefDelegated = nullptr) throw()
     {
-        static_assert(false, "ComposableBase should be the last template parameter to RuntimeClass");
-        return E_UNEXPECTED;
+        static_assert(AreAllNil<TInterfaces...>::value, "ComposableBase should be the last template parameter to RuntimeClass");
+        return Base::CanCastTo(riid, ppv, pRefDelegated);
     }
 
     IUnknown* CastToUnknown() throw()
     {
-        static_assert(false, "ComposableBase should be the last template parameter to RuntimeClass");
-        return nullptr;
+        static_assert(AreAllNil<TInterfaces...>::value, "ComposableBase should be the last template parameter to RuntimeClass");
+        return Base::CastToUnknown();
     }
 
     unsigned long GetIidCount() throw()
     {
-        static_assert(false, "ComposableBase should be the last template parameter to RuntimeClass");
-        return 0;
+        static_assert(AreAllNil<TInterfaces...>::value, "ComposableBase should be the last template parameter to RuntimeClass");
+        return Base::GetIidCount();
     }
 
     void FillArrayWithIid(_Inout_ unsigned long *index, _Inout_ IID* iids) throw()
     {
-        static_assert(false, "ComposableBase should be the last template parameter to RuntimeClass");
+        static_assert(AreAllNil<TInterfaces...>::value, "ComposableBase should be the last template parameter to RuntimeClass");
+        Base::FillArrayWithIid(index, iids);
     }
 };
 
 template <typename RuntimeClassFlagsT, typename FactoryInterface, bool doStrictCheck>
-struct __declspec(novtable) ImplementsHelper<RuntimeClassFlagsT, InterfaceList<ComposableBase<FactoryInterface>, Details::Nil>, doStrictCheck, false>
+struct __declspec(novtable) ImplementsHelper<RuntimeClassFlagsT, doStrictCheck, ComposableBase<FactoryInterface>>
 {
 protected:
     template <unsigned int RuntimeClassTypeT> friend class Details::RuntimeClassBaseT;
@@ -1273,74 +1185,70 @@ private:
 // * COM Interface
 // * A class that implements one or more COM interfaces
 // * ChainInterfaces template
-template <typename I0, typename I1 = Details::Nil, typename I2 = Details::Nil,
-        typename I3 =  Details::Nil, typename I4 =  Details::Nil, typename I5 =  Details::Nil,
-        typename I6 =  Details::Nil, typename I7 =  Details::Nil, typename I8 =  Details::Nil,
-        typename I9 =  Details::Nil>
+template <typename I0, typename ...TInterfaces>
 struct __declspec(novtable) Implements :
-    Details::ImplementsHelper<RuntimeClassFlags<WinRt>, typename Details::InterfaceListHelper<I0, I1, I2, I3, I4, I5, I6, I7, I8, I9>::TypeT>,
+    Details::ImplementsHelper<RuntimeClassFlags<WinRt>, true, I0, TInterfaces...>,
     Details::ImplementsBase
 {
 public:
     typedef RuntimeClassFlags<WinRt> ClassFlags;
     typedef I0 FirstInterface;
 protected:
-    template <typename RuntimeClassFlagsT, typename ILst, bool doStrictCheck, bool IsDelegateToClass> friend struct Details::ImplementsHelper;    
+    template <typename RuntimeClassFlagsT, bool doStrictCheck, typename ...TInterfaces> friend struct Details::ImplementsHelper;
     template <unsigned int RuntimeClassTypeT> friend class Details::RuntimeClassBaseT;
 
     HRESULT CanCastTo(REFIID riid, _Outptr_ void **ppv) throw()
     {
-        return Details::ImplementsHelper<RuntimeClassFlags<WinRt>, typename Details::InterfaceListHelper<I0, I1, I2, I3, I4, I5, I6, I7, I8, I9>::TypeT>::CanCastTo(riid, ppv);
+        return Details::ImplementsHelper<RuntimeClassFlags<WinRt>, true, I0, TInterfaces...>::CanCastTo(riid, ppv);
     }
 
     IUnknown* CastToUnknown() throw()
     {
-        return Details::ImplementsHelper<RuntimeClassFlags<WinRt>, typename Details::InterfaceListHelper<I0, I1, I2, I3, I4, I5, I6, I7, I8, I9>::TypeT>::CastToUnknown();
+        return Details::ImplementsHelper<RuntimeClassFlags<WinRt>, true, I0, TInterfaces...>::CastToUnknown();
     }
 
     unsigned long GetIidCount() throw()
     {
-        return Details::ImplementsHelper<RuntimeClassFlags<WinRt>, typename Details::InterfaceListHelper<I0, I1, I2, I3, I4, I5, I6, I7, I8, I9>::TypeT>::GetIidCount();
+        return Details::ImplementsHelper<RuntimeClassFlags<WinRt>, true, I0, TInterfaces...>::GetIidCount();
     }
 
     void FillArrayWithIid(_Inout_ unsigned long *index, _Inout_ IID* iids) throw()
     {
-        Details::ImplementsHelper<RuntimeClassFlags<WinRt>, typename Details::InterfaceListHelper<I0, I1, I2, I3, I4, I5, I6, I7, I8, I9>::TypeT>::FillArrayWithIid(index, iids);
+        Details::ImplementsHelper<RuntimeClassFlags<WinRt>, true, I0, TInterfaces...>::FillArrayWithIid(index, iids);
     }
 };
 
-template <int flags, typename I0, typename I1, typename I2,
-        typename I3, typename I4, typename I5,
-        typename I6, typename I7, typename I8>
-struct __declspec(novtable) Implements<RuntimeClassFlags<flags>, I0, I1, I2, I3, I4, I5, I6, I7, I8> :
-    Details::ImplementsHelper<RuntimeClassFlags<flags>, typename Details::InterfaceListHelper<I0, I1, I2, I3, I4, I5, I6, I7, I8>::TypeT>,
+template <int flags, typename I0, typename ...TInterfaces>
+struct __declspec(novtable) Implements<RuntimeClassFlags<flags>, I0, TInterfaces...> :
+    Details::ImplementsHelper<RuntimeClassFlags<flags>, true, I0, TInterfaces...>,
     Details::ImplementsBase
 {
 public:
     typedef RuntimeClassFlags<flags> ClassFlags;
     typedef I0 FirstInterface;
 protected:
-    template <typename RuntimeClassFlagsT, typename ILst, bool doStrictCheck, bool IsDelegateToClass> friend struct Details::ImplementsHelper;
+
+    template <typename RuntimeClassFlagsT, bool doStrictCheck, typename ...TInterfaces> friend struct Details::ImplementsHelper;
     template <unsigned int RuntimeClassTypeT> friend class Details::RuntimeClassBaseT;    
 
     HRESULT CanCastTo(REFIID riid, _Outptr_ void **ppv) throw()
     {
-        return Details::ImplementsHelper<RuntimeClassFlags<flags>, typename Details::InterfaceListHelper<I0, I1, I2, I3, I4, I5, I6, I7, I8>::TypeT>::CanCastTo(riid, ppv);
+        return Details::ImplementsHelper<RuntimeClassFlags<flags>, true, I0, TInterfaces...>::CanCastTo(riid, ppv);
     }
 
     IUnknown* CastToUnknown() throw()
     {
-        return Details::ImplementsHelper<RuntimeClassFlags<flags>, typename Details::InterfaceListHelper<I0, I1, I2, I3, I4, I5, I6, I7, I8>::TypeT>::CastToUnknown();
+        return Details::ImplementsHelper<RuntimeClassFlags<flags>, true, I0, TInterfaces...>::CastToUnknown();
     }
 
     unsigned long GetIidCount() throw()
     {
-        return Details::ImplementsHelper<RuntimeClassFlags<flags>, typename Details::InterfaceListHelper<I0, I1, I2, I3, I4, I5, I6, I7, I8>::TypeT>::GetIidCount();
+        return Details::ImplementsHelper<RuntimeClassFlags<flags>, true, I0, TInterfaces...>::GetIidCount();
     }
 
     void FillArrayWithIid(_Inout_ unsigned long *index, _Inout_ IID* iids) throw()
     {
-        Details::ImplementsHelper<RuntimeClassFlags<flags>, typename Details::InterfaceListHelper<I0, I1, I2, I3, I4, I5, I6, I7, I8>::TypeT>::FillArrayWithIid(index, iids);
+        Details::ImplementsHelper<RuntimeClassFlags<flags>, true, I0, TInterfaces...>::FillArrayWithIid(index, iids);
     }
 };
 
@@ -1356,13 +1264,15 @@ class FtmBase :
       ::Microsoft::WRL::RuntimeClassFlags<WinRtClassicComMix>, 
       ::Microsoft::WRL::CloakedIid< ::IMarshal> >;
 protected:
-    template <typename RuntimeClassFlagsT, typename ILst, bool doStrictCheck, bool IsDelegateToClass> friend struct Details::ImplementsHelper;
+    template <typename RuntimeClassFlagsT, bool doStrictCheck, typename ...TInterfaces> friend struct Details::ImplementsHelper;
 
     HRESULT CanCastTo(REFIID riid, _Outptr_ void **ppv) throw()
     {
+        // Prefer InlineIsEqualGUID over other forms since it's better perf on 4-byte aligned data, which is almost always the case.
         if (InlineIsEqualGUID(riid, __uuidof(::IAgileObject)))
         {
-            *ppv = CastToUnknown();
+            
+            *ppv = Super::CastToUnknown();
             return S_OK;
         }
 
@@ -1549,19 +1459,23 @@ private:
 
 #endif
 
-template <typename ILst, class RuntimeClassFlagsT, 
-    bool implementsWeakReferenceSource = (RuntimeClassFlagsT::value & InhibitWeakReference) == 0, 
-    bool implementsInspectable = (RuntimeClassFlagsT::value & WinRt) == WinRt,
-    bool implementsFtmBase = __WRL_IMPLEMENTS_FTM_BASE__(RuntimeClassFlagsT::value) >
-class __declspec(novtable) RuntimeClass;
+// Since variadic templates can't have a parameter pack after default arguments, provide a convenient helper for defaults.
+#define DETAILS_RTCLASS_FLAGS_ARGUMENTS(RuntimeClassFlagsT) \
+    RuntimeClassFlagsT, \
+    (RuntimeClassFlagsT::value & InhibitWeakReference) == 0, \
+    (RuntimeClassFlagsT::value & WinRt) == WinRt, \
+    __WRL_IMPLEMENTS_FTM_BASE__(RuntimeClassFlagsT::value) \
+
+template <class RuntimeClassFlagsT, bool implementsWeakReferenceSource, bool implementsInspectable, bool implementsFtmBase, typename ...TInterfaces>
+class __declspec(novtable) RuntimeClassImpl;
 
 #pragma warning(push)
 // PREFast cannot see through template instantiation for AsIID() 
 #pragma warning(disable: 6388)
 
-template <typename ILst, class RuntimeClassFlagsT, bool implementsWeakReferenceSource, bool implementsFtmBase>
-class __declspec(novtable) RuntimeClass<ILst, RuntimeClassFlagsT, implementsWeakReferenceSource, false, implementsFtmBase> : 
-    public Details::ImplementsHelper<RuntimeClassFlagsT, ILst, false>,
+template <class RuntimeClassFlagsT, bool implementsWeakReferenceSource, bool implementsFtmBase, typename ...TInterfaces>
+class __declspec(novtable) RuntimeClassImpl<RuntimeClassFlagsT, implementsWeakReferenceSource, false, implementsFtmBase, TInterfaces...> :
+    public Details::ImplementsHelper<RuntimeClassFlagsT, false, TInterfaces...>,
     public RuntimeClassBaseT<RuntimeClassFlagsT::value>,
     protected RuntimeClassFlags<InhibitWeakReference>,
     public DontUseNewUseMake
@@ -1605,11 +1519,11 @@ public:
 protected:
     using Super = RuntimeClassBaseT<RuntimeClassFlagsT::value>;
 
-    RuntimeClass() throw() : refcount_(1)
+    RuntimeClassImpl() throw() : refcount_(1)
     {
     }    
 
-    virtual ~RuntimeClass() throw()
+    virtual ~RuntimeClassImpl() throw()
     {
         // Set refcount_ to -(LONG_MAX/2) to protect destruction and
         // also catch mismatched Release in debug builds
@@ -1668,28 +1582,28 @@ struct HasIInspectable<I, true>
 };
 
 #ifdef __WRL_STRICT__
-template<typename ILst, bool isIInspectable = true>
+template<typename I0, bool isIInspectable = true>
 #else
-template<typename ILst, bool isIInspectable = HasIInspectable<typename ILst::FirstT>::isIInspectable>
+template<typename I0, bool isIInspectable = HasIInspectable<I0>::isIInspectable>
 #endif
 struct IInspectableInjector;
 
-template<typename ILst>
-struct IInspectableInjector<ILst, true>
+template<typename I0>
+struct IInspectableInjector<I0, true>
 {
-    typedef ILst InterfaceList;
+    typedef Details::Nil InspectableIfNeeded;
 };
 
-template<typename ILst>
-struct IInspectableInjector<ILst, false>
+template<typename I0>
+struct IInspectableInjector<I0, false>
 {
-    typedef InterfaceList<IInspectable, ILst> InterfaceList;
+    typedef IInspectable InspectableIfNeeded;
 };
 
 // Implements IInspectable in ILst
-template <typename ILst, class RuntimeClassFlagsT>
-class __declspec(novtable) RuntimeClass<ILst, RuntimeClassFlagsT, false, true, false> : 
-    public Details::ImplementsHelper<RuntimeClassFlagsT, typename IInspectableInjector<ILst>::InterfaceList, false>,
+template <class RuntimeClassFlagsT, typename I0, typename ...TInterfaces>
+class __declspec(novtable) RuntimeClassImpl<RuntimeClassFlagsT, false, true, false, I0, TInterfaces...> :
+    public Details::ImplementsHelper<RuntimeClassFlagsT, false, typename IInspectableInjector<I0>::InspectableIfNeeded, I0, TInterfaces...>,
     public RuntimeClassBaseT<RuntimeClassFlagsT::value>,
     protected RuntimeClassFlags<InhibitWeakReference>,
     public DontUseNewUseMake
@@ -1767,11 +1681,11 @@ public:
 protected:
     using Super = RuntimeClassBaseT<RuntimeClassFlagsT::value>;
 
-    RuntimeClass() throw() : refcount_(1)
+    RuntimeClassImpl() throw() : refcount_(1)
     {
     }
 
-    virtual ~RuntimeClass() throw()
+    virtual ~RuntimeClassImpl() throw()
     {
         // Set refcount_ to -(LONG_MAX/2) to protect destruction and
         // also catch mismatched Release in debug builds
@@ -1887,16 +1801,11 @@ inline bool IsValueAPointerToWeakReference(INT_PTR value)
 {
     return value < 0;
 }
-            
-inline INT_PTR EncodeWeakReferencePointer(WeakReferenceImpl* value)
-{
-    return ((reinterpret_cast<INT_PTR>(value) >> 1) | EncodeWeakReferencePointerFlag);
-}
-            
-inline WeakReferenceImpl* DecodeWeakReferencePointer(INT_PTR value)
-{
-    return reinterpret_cast<WeakReferenceImpl*>(value << 1);
-}
+
+// Forward declaration
+class WeakReferenceImpl;
+inline INT_PTR EncodeWeakReferencePointer(Microsoft::WRL::Details::WeakReferenceImpl* value);
+inline Microsoft::WRL::Details::WeakReferenceImpl* DecodeWeakReferencePointer(INT_PTR value);
 
 // Helper functions, originally from winnt.h, needed to get the semantics right when fetching values
 // in multi-threaded scenarios. This is in order to guarantee the compiler emits exactly one read
@@ -1975,16 +1884,13 @@ inline T ReadValueFromPointerNoFence(_In_ const volatile T* value)
     return *currentPointerToValue;
 }
 
-// Forward declaration
-class WeakReferenceImpl;
-
 inline WeakReferenceImpl* CreateWeakReference(_In_ IUnknown*);
 
 // Implementation of activatable class that implements IWeakReferenceSource
 // and delegates reference counting to WeakReferenceImpl object
-template <typename ILst, class RuntimeClassFlagsT>
-class __declspec(novtable) RuntimeClass<ILst, RuntimeClassFlagsT, true, true, false> : 
-    public Details::ImplementsHelper<RuntimeClassFlagsT, typename IInspectableInjector<InterfaceList<typename ILst::FirstT, InterfaceList<IWeakReferenceSource, typename ILst::RestT> > >::InterfaceList, false>,
+template <class RuntimeClassFlagsT, typename I0, typename ...TInterfaces>
+class __declspec(novtable) RuntimeClassImpl<RuntimeClassFlagsT, true, true, false, I0, TInterfaces...> :
+    public Details::ImplementsHelper<RuntimeClassFlagsT, false, typename IInspectableInjector<I0>::InspectableIfNeeded, I0, IWeakReferenceSource, TInterfaces...>,
     public RuntimeClassBaseT<RuntimeClassFlagsT::value>,
     public DontUseNewUseMake
 #ifdef _PERF_COUNTERS
@@ -1994,7 +1900,7 @@ class __declspec(novtable) RuntimeClass<ILst, RuntimeClassFlagsT, true, true, fa
 public:
     typedef RuntimeClassFlagsT ClassFlags;
 
-    RuntimeClass() throw()
+    RuntimeClassImpl() throw()
     {
         refCount_.rawValue = 1;
     }
@@ -2123,7 +2029,7 @@ public:
         }
     }
 
-    virtual ~RuntimeClass() throw()
+    virtual ~RuntimeClassImpl() throw()
     {
         if (IsValueAPointerToWeakReference(refCount_.rawValue))
         {
@@ -2135,7 +2041,7 @@ public:
 
 protected:
     template <unsigned int RuntimeClassTypeT> friend class Details::RuntimeClassBaseT;
-    using ImplementsHelper = Details::ImplementsHelper<RuntimeClassFlagsT, typename IInspectableInjector<InterfaceList<typename ILst::FirstT, InterfaceList<IWeakReferenceSource, typename ILst::RestT> > >::InterfaceList, false>;
+    using ImplementsHelper = Details::ImplementsHelper<RuntimeClassFlagsT, false, typename IInspectableInjector<I0>::InspectableIfNeeded, I0, IWeakReferenceSource, TInterfaces...>;
     using Super = RuntimeClassBaseT<RuntimeClassFlagsT::value>;
 
     unsigned long InternalAddRef() throw()
@@ -2231,17 +2137,56 @@ private:
     ReferenceCountOrWeakReferencePointer refCount_;
 };
 
+inline INT_PTR EncodeWeakReferencePointer(Microsoft::WRL::Details::WeakReferenceImpl* value)
+{
+    return ((reinterpret_cast<INT_PTR>(value) >> 1) | EncodeWeakReferencePointerFlag);
+}
+
+inline Microsoft::WRL::Details::WeakReferenceImpl* DecodeWeakReferencePointer(INT_PTR value)
+{
+    return reinterpret_cast<Microsoft::WRL::Details::WeakReferenceImpl*>(value << 1);
+}
+
 #pragma warning(pop) // C6388
 
-template <typename ILst, class RuntimeClassFlagsT>
-class __declspec(novtable) RuntimeClass<ILst, RuntimeClassFlagsT, false, true, true> : 
-    public RuntimeClass< InterfaceList<typename ILst::FirstT, InterfaceList<FtmBase, typename ILst::RestT> >, RuntimeClassFlagsT, false, true, false> 
+template <class RuntimeClassFlagsT, typename I0, typename ...TInterfaces>
+class __declspec(novtable) RuntimeClassImpl<RuntimeClassFlagsT, false, true, true, I0, TInterfaces...> :
+    public RuntimeClassImpl<RuntimeClassFlagsT, false, true, false, I0, TInterfaces...>
 {
 };
 
-template <typename ILst, class RuntimeClassFlagsT>
-class __declspec(novtable) RuntimeClass<ILst, RuntimeClassFlagsT, true, true, true> : 
-    public RuntimeClass< InterfaceList<typename ILst::FirstT, InterfaceList<FtmBase, typename ILst::RestT> >, RuntimeClassFlagsT, true, true, false>
+template <class RuntimeClassFlagsT, typename I0, typename ...TInterfaces>
+class __declspec(novtable) RuntimeClassImpl<RuntimeClassFlagsT, true, true, true, I0, TInterfaces...> :
+    public RuntimeClassImpl<RuntimeClassFlagsT, true, true, false, I0, FtmBase, TInterfaces...>
+{
+};
+
+// To minimize breaks with code written against WRL before variadic support was added, this form is maintained.
+template <typename ...TInterfaces>
+struct InterfaceListHelper
+{
+    typedef InterfaceListHelper<TInterfaces...> TypeT;
+};
+
+template <
+    typename ILst,
+    class RuntimeClassFlagsT,
+    bool implementsWeakReferenceSource = (RuntimeClassFlagsT::value & InhibitWeakReference) == 0,
+    bool implementsInspectable = (RuntimeClassFlagsT::value & WinRt) == WinRt,
+    bool implementsFtmBase = __WRL_IMPLEMENTS_FTM_BASE__(RuntimeClassFlagsT::value)
+>
+class RuntimeClass;
+
+    
+template <
+    typename RuntimeClassFlagsT, 
+    bool implementsWeakReferenceSource,
+    bool implementsInspectable,
+    bool implementsFtmBase,
+    typename ...TInterfaces
+>
+class RuntimeClass<InterfaceListHelper<TInterfaces...>, RuntimeClassFlagsT, implementsWeakReferenceSource, implementsInspectable, implementsFtmBase> :
+    public RuntimeClassImpl<RuntimeClassFlagsT, implementsWeakReferenceSource, implementsInspectable, implementsFtmBase, TInterfaces...>
 {
 };
 
@@ -2250,12 +2195,9 @@ class __declspec(novtable) RuntimeClass<ILst, RuntimeClassFlagsT, true, true, tr
 // The RuntimeClass IUnknown methods
 // It inherits from Details::RuntimeClass that provides helper methods for reference counting and
 // collecting IIDs
-template <typename I0,
-        typename I1 = Details::Nil, typename I2 = Details::Nil, typename I3 = Details::Nil,
-        typename I4 = Details::Nil, typename I5 = Details::Nil, typename I6 = Details::Nil,
-        typename I7 = Details::Nil, typename I8 = Details::Nil, typename I9 = Details::Nil>
+template <typename ...TInterfaces>
 class RuntimeClass : 
-    public Details::RuntimeClass<typename Details::InterfaceListHelper<I0, I1, I2, I3, I4, I5, I6, I7, I8, I9>::TypeT, RuntimeClassFlags<WinRt>>
+    public Details::RuntimeClassImpl<DETAILS_RTCLASS_FLAGS_ARGUMENTS(RuntimeClassFlags<WinRt>), TInterfaces...>
 {
     RuntimeClass(const RuntimeClass&);    
     RuntimeClass& operator=(const RuntimeClass&);    
@@ -2271,12 +2213,9 @@ public:
     typedef RuntimeClass RuntimeClassT;
 };
 
-template <unsigned int classFlags, typename I0,
-        typename I1, typename I2, typename I3,
-        typename I4, typename I5, typename I6,
-        typename I7, typename I8>
-class RuntimeClass<RuntimeClassFlags<classFlags>, I0, I1, I2, I3, I4, I5, I6, I7, I8> : 
-    public Details::RuntimeClass<typename Details::InterfaceListHelper<I0, I1, I2, I3, I4, I5, I6, I7, I8>::TypeT, RuntimeClassFlags<classFlags>>
+template <unsigned int classFlags, typename ...TInterfaces>
+class RuntimeClass<RuntimeClassFlags<classFlags>, TInterfaces...> :
+    public Details::RuntimeClassImpl<DETAILS_RTCLASS_FLAGS_ARGUMENTS(RuntimeClassFlags<classFlags>), TInterfaces...>
 {
     RuntimeClass(const RuntimeClass&);    
     RuntimeClass& operator=(const RuntimeClass&);    
@@ -2295,8 +2234,7 @@ public:
 namespace Details
 {
 //Weak reference implementation
-    class WeakReferenceImpl 
-        sealed:
+    class WeakReferenceImpl sealed:
         public ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<ClassicCom>, IWeakReference>,
         public StrongReference
     {
@@ -2390,298 +2328,51 @@ private:
 
 namespace Details {
 
-#pragma push_macro("MakeHelper")
-#pragma push_macro("MakeAndInitializeHelper")
-#undef MakeHelper
-#undef MakeAndInitializeHelper
-
-// Make and MakeAndInitialize functions must not be marked as throw()
-// This enables compiler to generate exception handling code that will
-// execute the allocator object destructor which will prevent 
-// from memory leaks in case of exception
-template <typename T>
-ComPtr<T> Make()
+// Make and MakeAndInitialize functions must not be marked as throw() as the constructor is allowed to throw exceptions.
+template <typename T, typename ...TArgs>
+ComPtr<T> Make(TArgs&&... args)
 {
     static_assert(__is_base_of(Details::RuntimeClassBase, T), "Make can only instantiate types that derive from RuntimeClass");
-
     ComPtr<T> object;
-    // Using MakeAllocator helper to prevent memory leaks if object throws during construction
     Details::MakeAllocator<T> allocator;
-
     void *buffer = allocator.Allocate();
     if (buffer != nullptr)
     {
-        auto ptr = new (buffer)T; // Calls placement new form of T. Should be public even for DontUseNewUseMake
+        auto ptr = new (buffer)T(Details::Forward<TArgs>(args)...);
         object.Attach(ptr);
-        // Object instantiation succeeded thus we detach memory from allocator
-        // in case of failure allocator object would destroy memory in its destructor
         allocator.Detach();
     }
-    
     return object;
-}
-
-#define MakeHelper(...) \
-    static_assert(__is_base_of(Details::RuntimeClassBase, T), "Make can only instantiate types that derive from RuntimeClass"); \
-    ComPtr<T> object; \
-    Details::MakeAllocator<T> allocator; \
-    void *buffer = allocator.Allocate(); \
-    if (buffer != nullptr) \
-    { \
-        auto ptr = new (buffer)T(__VA_ARGS__); \
-        object.Attach(ptr); \
-        allocator.Detach(); \
-    } \
-    return object;
-
-template <typename T, typename TArg1>
-ComPtr<T> Make(TArg1 &&arg1)
-{
-    MakeHelper(Details::Forward<TArg1>(arg1))
-}
-
-template <typename T, typename TArg1, typename TArg2>
-ComPtr<T> Make(TArg1 &&arg1, TArg2 &&arg2)
-{
-    MakeHelper(Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2))
-}
-
-template <typename T, typename TArg1, typename TArg2, typename TArg3>
-ComPtr<T> Make(TArg1 &&arg1, TArg2 &&arg2, TArg3 &&arg3)
-{
-    MakeHelper(Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2), Details::Forward<TArg3>(arg3))
-}
-
-template <typename T, typename TArg1, typename TArg2, typename TArg3, typename TArg4>
-ComPtr<T> Make(TArg1 &&arg1, TArg2 &&arg2, TArg3 &&arg3, TArg4 &&arg4)
-{
-    MakeHelper(Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2), Details::Forward<TArg3>(arg3), Details::Forward<TArg4>(arg4))
-}
-
-template <typename T, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5>
-ComPtr<T> Make(TArg1 &&arg1, TArg2 &&arg2, TArg3 &&arg3, TArg4 &&arg4, TArg5 &&arg5)
-{
-    MakeHelper(Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2), Details::Forward<TArg3>(arg3), Details::Forward<TArg4>(arg4), Details::Forward<TArg5>(arg5))
-}
-
-template <typename T, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5, typename TArg6>
-ComPtr<T> Make(TArg1 &&arg1, TArg2 &&arg2, TArg3 &&arg3, TArg4 &&arg4, TArg5 &&arg5, TArg6 &&arg6)
-{
-    MakeHelper(Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2), Details::Forward<TArg3>(arg3), Details::Forward<TArg4>(arg4), 
-        Details::Forward<TArg5>(arg5), Details::Forward<TArg6>(arg6))
-}
-
-template <typename T, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5, typename TArg6, typename TArg7>
-ComPtr<T> Make(TArg1 &&arg1, TArg2 &&arg2, TArg3 &&arg3, TArg4 &&arg4, TArg5 &&arg5, TArg6 &&arg6, TArg7 &&arg7)
-{
-    MakeHelper(Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2), Details::Forward<TArg3>(arg3), Details::Forward<TArg4>(arg4), 
-        Details::Forward<TArg5>(arg5), Details::Forward<TArg6>(arg6), Details::Forward<TArg7>(arg7))
-}
-
-template <typename T, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5, typename TArg6, typename TArg7, typename TArg8>
-ComPtr<T> Make(TArg1 &&arg1, TArg2 &&arg2, TArg3 &&arg3, TArg4 &&arg4, TArg5 &&arg5, TArg6 &&arg6, TArg7 &&arg7, TArg8 &&arg8)
-{
-    MakeHelper(Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2), Details::Forward<TArg3>(arg3), Details::Forward<TArg4>(arg4), 
-        Details::Forward<TArg5>(arg5), Details::Forward<TArg6>(arg6), Details::Forward<TArg7>(arg7), Details::Forward<TArg8>(arg8))
-}
-
-template <typename T, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5, typename TArg6, typename TArg7, typename TArg8, typename TArg9>
-ComPtr<T> Make(TArg1 &&arg1, TArg2 &&arg2, TArg3 &&arg3, TArg4 &&arg4, TArg5 &&arg5, TArg6 &&arg6, TArg7 &&arg7, TArg8 &&arg8, TArg9 &&arg9)
-{
-    MakeHelper(Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2), Details::Forward<TArg3>(arg3), Details::Forward<TArg4>(arg4), 
-        Details::Forward<TArg5>(arg5), Details::Forward<TArg6>(arg6), Details::Forward<TArg7>(arg7), Details::Forward<TArg8>(arg8), Details::Forward<TArg9>(arg9))
 }
 
 #pragma warning(push)
 #pragma warning(disable:6387 6388 28196) // PREFast does not understand call to ComPtr<T>::CopyTo() is safe here
 
-// MakeAndInitialize that do 2-phase construction and QI if required
-template <typename T, typename I>
-HRESULT MakeAndInitialize(_Outptr_result_nullonfailure_ I** ppvObject)
+template <typename T, typename I, typename ...TArgs>
+HRESULT MakeAndInitialize(_Outptr_result_nullonfailure_ I** result, TArgs&&... args)
 {
     static_assert(__is_base_of(Details::RuntimeClassBase, T), "Make can only instantiate types that derive from RuntimeClass");
     static_assert(__is_base_of(I, T), "The 'T' runtime class doesn't implement 'I' interface");
-    *ppvObject = nullptr;
-
-    ComPtr<T> object;
-    // Using MakeAllocator helper to prevent memory leaks if object throws during construction
+    *result = nullptr;
     Details::MakeAllocator<T> allocator;
-
     void *buffer = allocator.Allocate();
-    if (buffer == nullptr)
-    {
-        return E_OUTOFMEMORY;
-    }
-
-    auto ptr = new (buffer)T; // Calls placement new form of T. Should be public even for DontUseNewUseMake
+    if (buffer == nullptr) { return E_OUTOFMEMORY; }
+    auto ptr = new (buffer)T;
+    ComPtr<T> object;
     object.Attach(ptr);
-    // Object instantiation succeeded thus we detach memory from allocator
-    // in case of failure allocator object would destroy memory in its destructor
     allocator.Detach();
-
-    HRESULT hr = object->RuntimeClassInitialize();
-    if (FAILED(hr))
-    {
-        return hr;
-    }
-
-    return object.CopyTo(ppvObject);
-}
-
-#define MakeAndInitializeHelper(...) \
-    static_assert(__is_base_of(Details::RuntimeClassBase, T), "Make can only instantiate types that derive from RuntimeClass"); \
-    static_assert(__is_base_of(I, T), "The 'T' runtime class doesn't implement 'I' interface"); \
-    *ppvObject = nullptr; \
-    ComPtr<T> object; \
-    Details::MakeAllocator<T> allocator; \
-    void *buffer = allocator.Allocate(); \
-    if (buffer == nullptr) \
-    { \
-        return E_OUTOFMEMORY; \
-    } \
-    auto ptr = new (buffer)T; \
-    object.Attach(ptr); \
-    allocator.Detach(); \
-    HRESULT hr = object->RuntimeClassInitialize(__VA_ARGS__); \
-    if (FAILED(hr)) \
-    { \
-        return hr; \
-    } \
-    return object.CopyTo(ppvObject);
-
-template <typename T, typename I, typename TArg1>
-HRESULT MakeAndInitialize(_Outptr_result_nullonfailure_ I** ppvObject, TArg1 &&arg1)
-{
-    MakeAndInitializeHelper(Details::Forward<TArg1>(arg1))
-}
-
-template <typename T, typename I, typename TArg1, typename TArg2>
-HRESULT MakeAndInitialize(_Outptr_result_nullonfailure_ I** ppvObject, TArg1 &&arg1, TArg2 &&arg2)
-{
-    MakeAndInitializeHelper(Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2))
-}
-
-template <typename T, typename I, typename TArg1, typename TArg2, typename TArg3>
-HRESULT MakeAndInitialize(_Outptr_result_nullonfailure_ I** ppvObject, TArg1 &&arg1, TArg2 &&arg2, TArg3 &&arg3)
-{
-    MakeAndInitializeHelper(Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2), Details::Forward<TArg3>(arg3))
-}
-
-template <typename T, typename I, typename TArg1, typename TArg2, typename TArg3, typename TArg4>
-HRESULT MakeAndInitialize(_Outptr_result_nullonfailure_ I** ppvObject, TArg1 &&arg1, TArg2 &&arg2, TArg3 &&arg3, TArg4 &&arg4)
-{
-    MakeAndInitializeHelper(Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2), Details::Forward<TArg3>(arg3), Details::Forward<TArg4>(arg4))
-}
-
-template <typename T, typename I, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5>
-HRESULT MakeAndInitialize(_Outptr_result_nullonfailure_ I** ppvObject, TArg1 &&arg1, TArg2 &&arg2, TArg3 &&arg3, TArg4 &&arg4, TArg5 &&arg5)
-{
-    MakeAndInitializeHelper(Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2), Details::Forward<TArg3>(arg3), Details::Forward<TArg4>(arg4), Details::Forward<TArg5>(arg5))
-}
-
-template <typename T, typename I, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5, typename TArg6>
-HRESULT MakeAndInitialize(_Outptr_result_nullonfailure_ I** ppvObject, TArg1 &&arg1, TArg2 &&arg2, TArg3 &&arg3, TArg4 &&arg4, TArg5 &&arg5, TArg6 &&arg6)
-{
-    MakeAndInitializeHelper(Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2), Details::Forward<TArg3>(arg3), Details::Forward<TArg4>(arg4), 
-        Details::Forward<TArg5>(arg5), Details::Forward<TArg6>(arg6))
-}
-
-template <typename T, typename I, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5, typename TArg6, typename TArg7>
-HRESULT MakeAndInitialize(_Outptr_result_nullonfailure_ I** ppvObject, TArg1 &&arg1, TArg2 &&arg2, TArg3 &&arg3, TArg4 &&arg4, TArg5 &&arg5, TArg6 &&arg6, TArg7 &&arg7)
-{
-    MakeAndInitializeHelper(Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2), Details::Forward<TArg3>(arg3), Details::Forward<TArg4>(arg4), 
-        Details::Forward<TArg5>(arg5), Details::Forward<TArg6>(arg6), Details::Forward<TArg7>(arg7))
-}
-
-template <typename T, typename I, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5, typename TArg6, typename TArg7, typename TArg8>
-HRESULT MakeAndInitialize(_Outptr_result_nullonfailure_ I** ppvObject, TArg1 &&arg1, TArg2 &&arg2, TArg3 &&arg3, TArg4 &&arg4, TArg5 &&arg5, TArg6 &&arg6, TArg7 &&arg7, TArg8 &&arg8)
-{
-    MakeAndInitializeHelper(Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2), Details::Forward<TArg3>(arg3), Details::Forward<TArg4>(arg4), 
-        Details::Forward<TArg5>(arg5), Details::Forward<TArg6>(arg6), Details::Forward<TArg7>(arg7), Details::Forward<TArg8>(arg8))
-}
-
-template <typename T, typename I, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5, typename TArg6, typename TArg7, typename TArg8, typename TArg9>
-HRESULT MakeAndInitialize(_Outptr_result_nullonfailure_ I** ppvObject, TArg1 &&arg1, TArg2 &&arg2, TArg3 &&arg3, TArg4 &&arg4, TArg5 &&arg5, TArg6 &&arg6, TArg7 &&arg7, TArg8 &&arg8, TArg9 &&arg9)
-{
-    MakeAndInitializeHelper(Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2), Details::Forward<TArg3>(arg3), Details::Forward<TArg4>(arg4), 
-        Details::Forward<TArg5>(arg5), Details::Forward<TArg6>(arg6), Details::Forward<TArg7>(arg7), Details::Forward<TArg8>(arg8), Details::Forward<TArg9>(arg9))
+    HRESULT hr = object->RuntimeClassInitialize(Details::Forward<TArgs>(args)...);
+    if (FAILED(hr)) { return hr; }
+    return object.CopyTo(result);
 }
 
 #pragma warning(pop) // C6387 C6388 C28196
 
-// MakeAndIntialize specialization for ComPtr
-template <typename T, typename I>
-HRESULT MakeAndInitialize(_Inout_ ComPtrRef<ComPtr<I>> ppvObject)
-{
-    return MakeAndInitialize<T>(ppvObject.ReleaseAndGetAddressOf());
-}
-
-template <typename T, typename I, typename TArg1>
-HRESULT MakeAndInitialize(_Inout_ ComPtrRef<ComPtr<I>> ppvObject, TArg1 &&arg1)
+template <typename T, typename I, typename ...TArgs>
+HRESULT MakeAndInitialize(_Inout_ ComPtrRef<ComPtr<I>> ppvObject, TArgs&&... args)
 {    
-    return MakeAndInitialize<T>(ppvObject.ReleaseAndGetAddressOf(), Details::Forward<TArg1>(arg1));
+    return MakeAndInitialize<T>(ppvObject.ReleaseAndGetAddressOf(), Details::Forward<TArgs>(args)...);
 }
-
-template <typename T, typename I, typename TArg1, typename TArg2>
-HRESULT MakeAndInitialize(_Inout_ ComPtrRef<ComPtr<I>> ppvObject, TArg1 &&arg1, TArg2 &&arg2)
-{
-    return MakeAndInitialize<T>(ppvObject.ReleaseAndGetAddressOf(), Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2));
-}
-
-template <typename T, typename I, typename TArg1, typename TArg2, typename TArg3>
-HRESULT MakeAndInitialize(_Inout_ ComPtrRef<ComPtr<I>> ppvObject, TArg1 &&arg1, TArg2 &&arg2, TArg3 &&arg3)
-{
-    return MakeAndInitialize<T>(ppvObject.ReleaseAndGetAddressOf(), Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2),
-        Details::Forward<TArg3>(arg3));
-}
-
-template <typename T, typename I, typename TArg1, typename TArg2, typename TArg3, typename TArg4>
-HRESULT MakeAndInitialize(_Inout_ ComPtrRef<ComPtr<I>> ppvObject, TArg1 &&arg1, TArg2 &&arg2, TArg3 &&arg3, TArg4 &&arg4)
-{
-    return MakeAndInitialize<T>(ppvObject.ReleaseAndGetAddressOf(), Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2),
-        Details::Forward<TArg3>(arg3), Details::Forward<TArg4>(arg4));
-}
-
-template <typename T, typename I, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5>
-HRESULT MakeAndInitialize(_Inout_ ComPtrRef<ComPtr<I>> ppvObject, TArg1 &&arg1, TArg2 &&arg2, TArg3 &&arg3, TArg4 &&arg4, TArg5 &&arg5)
-{
-    return MakeAndInitialize<T>(ppvObject.ReleaseAndGetAddressOf(), Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2),
-        Details::Forward<TArg3>(arg3), Details::Forward<TArg4>(arg4), Details::Forward<TArg5>(arg5));
-}
-
-template <typename T, typename I, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5, typename TArg6>
-HRESULT MakeAndInitialize(_Inout_ ComPtrRef<ComPtr<I>> ppvObject, TArg1 &&arg1, TArg2 &&arg2, TArg3 &&arg3, TArg4 &&arg4, TArg5 &&arg5, TArg6 &&arg6)
-{
-    return MakeAndInitialize<T>(ppvObject.ReleaseAndGetAddressOf(), Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2),
-        Details::Forward<TArg3>(arg3), Details::Forward<TArg4>(arg4), Details::Forward<TArg5>(arg5), Details::Forward<TArg6>(arg6));
-}
-
-template <typename T, typename I, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5, typename TArg6, typename TArg7>
-HRESULT MakeAndInitialize(_Inout_ ComPtrRef<ComPtr<I>> ppvObject, TArg1 &&arg1, TArg2 &&arg2, TArg3 &&arg3, TArg4 &&arg4, TArg5 &&arg5, TArg6 &&arg6, TArg7 &&arg7)
-{
-    return MakeAndInitialize<T>(ppvObject.ReleaseAndGetAddressOf(), Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2),
-        Details::Forward<TArg3>(arg3), Details::Forward<TArg4>(arg4), Details::Forward<TArg5>(arg5), Details::Forward<TArg6>(arg6),
-            Details::Forward<TArg7>(arg7));
-}
-
-template <typename T, typename I, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5, typename TArg6, typename TArg7, typename TArg8>
-HRESULT MakeAndInitialize(_Inout_ ComPtrRef<ComPtr<I>> ppvObject, TArg1 &&arg1, TArg2 &&arg2, TArg3 &&arg3, TArg4 &&arg4, TArg5 &&arg5, TArg6 &&arg6, TArg7 &&arg7, TArg8 &&arg8)
-{
-    return MakeAndInitialize<T>(ppvObject.ReleaseAndGetAddressOf(), Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2),
-        Details::Forward<TArg3>(arg3), Details::Forward<TArg4>(arg4), Details::Forward<TArg5>(arg5), Details::Forward<TArg6>(arg6),
-            Details::Forward<TArg7>(arg7), Details::Forward<TArg8>(arg8));
-}
-
-template <typename T, typename I, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5, typename TArg6, typename TArg7, typename TArg8, typename TArg9>
-HRESULT MakeAndInitialize(_Inout_ ComPtrRef<ComPtr<I>> ppvObject, TArg1 &&arg1, TArg2 &&arg2, TArg3 &&arg3, TArg4 &&arg4, TArg5 &&arg5, TArg6 &&arg6, TArg7 &&arg7, TArg8 &&arg8, TArg9 &&arg9)
-{
-    return MakeAndInitialize<T>(ppvObject.ReleaseAndGetAddressOf(), Details::Forward<TArg1>(arg1), Details::Forward<TArg2>(arg2),
-        Details::Forward<TArg3>(arg3), Details::Forward<TArg4>(arg4), Details::Forward<TArg5>(arg5), Details::Forward<TArg6>(arg6),
-            Details::Forward<TArg7>(arg7), Details::Forward<TArg8>(arg8), Details::Forward<TArg9>(arg9));
-}
-
-#pragma pop_macro("MakeHelper")
-#pragma pop_macro("MakeAndInitializeHelper")
 
 } //end of Details
 
@@ -2702,8 +2393,8 @@ namespace Details
     public: \
         static const wchar_t* STDMETHODCALLTYPE InternalGetRuntimeClassName() throw() \
         { \
-            static_assert((RuntimeClassT::ClassFlags::value & ::Microsoft::WRL::WinRtClassicComMix) == ::Microsoft::WRL::WinRt || \
-                (RuntimeClassT::ClassFlags::value & ::Microsoft::WRL::WinRtClassicComMix) == ::Microsoft::WRL::WinRtClassicComMix, \
+            static_assert((typename RuntimeClassT::ClassFlags::value & ::Microsoft::WRL::WinRtClassicComMix) == ::Microsoft::WRL::WinRt || \
+                (typename RuntimeClassT::ClassFlags::value & ::Microsoft::WRL::WinRtClassicComMix) == ::Microsoft::WRL::WinRtClassicComMix, \
                     "'InspectableClass' macro must not be used with ClassicCom clasess."); \
             static_assert(__is_base_of(::Microsoft::WRL::Details::RuntimeClassBase, RuntimeClassT), "'InspectableClass' macro can only be used with ::Windows::WRL::RuntimeClass types"); \
             static_assert(!__is_base_of(IActivationFactory, RuntimeClassT), "Incorrect usage of IActivationFactory interface. Make sure that your RuntimeClass doesn't implement IActivationFactory interface use ::Windows::WRL::ActivationFactory instead or 'InspectableClass' macro is not used on ::Windows::WRL::ActivationFactory"); \
@@ -2734,19 +2425,19 @@ namespace Details
             _When_(*iidCount > 0, _At_(*iids, _Post_notnull_)) \
             _Result_nullonfailure_ IID **iids) \
         { \
-            return RuntimeClassT::GetIids(iidCount, iids); \
+            return typename RuntimeClassT::GetIids(iidCount, iids); \
         } \
         STDMETHOD(QueryInterface)(REFIID riid, _Outptr_result_nullonfailure_ void **ppvObject) \
         { \
-            return RuntimeClassT::QueryInterface(riid, ppvObject); \
+            return typename RuntimeClassT::QueryInterface(riid, ppvObject); \
         } \
         STDMETHOD_(ULONG, Release)() \
         { \
-            return RuntimeClassT::Release(); \
+            return typename RuntimeClassT::Release(); \
         } \
         STDMETHOD_(ULONG, AddRef)() \
         { \
-            return RuntimeClassT::AddRef(); \
+            return typename RuntimeClassT::AddRef(); \
         } \
     private:
 
@@ -2754,18 +2445,18 @@ namespace Details
     public: \
         STDMETHOD(QueryInterface)(REFIID riid, _Outptr_result_nullonfailure_ void **ppvObject) \
         { \
-            static_assert((RuntimeClassT::ClassFlags::value & ::Microsoft::WRL::WinRt) == 0, "'MixInClass' macro must not be used with WinRt clasess."); \
+            static_assert((typename RuntimeClassT::ClassFlags::value & ::Microsoft::WRL::WinRt) == 0, "'MixInClass' macro must not be used with WinRt clasess."); \
             static_assert(__is_base_of(::Microsoft::WRL::Details::RuntimeClassBase, RuntimeClassT), "'MixInHelper' macro can only be used with ::Windows::WRL::RuntimeClass types"); \
             static_assert(!__is_base_of(IClassFactory, RuntimeClassT), "Incorrect usage of IClassFactory interface. Make sure that your RuntimeClass doesn't implement IClassFactory interface use ::Windows::WRL::ClassFactory instead or 'MixInHelper' macro is not used on ::Windows::WRL::ClassFactory"); \
             return RuntimeClassT::QueryInterface(riid, ppvObject); \
         } \
         STDMETHOD_(ULONG, Release)() \
         { \
-            return RuntimeClassT::Release(); \
+            return typename RuntimeClassT::Release(); \
         } \
         STDMETHOD_(ULONG, AddRef)() \
         { \
-            return RuntimeClassT::AddRef(); \
+            return typename RuntimeClassT::AddRef(); \
         } \
     private:
 

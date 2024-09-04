@@ -16,32 +16,6 @@ import "Windows.UI.Core.idl";
 import "Windows.UI.Input.idl";
 import "Windows.UI.Xaml.idl";
 import "Windows.UI.Xaml.Documents.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Edevices2Einput_h__)")
-cpp_quote("#include <Windows.Devices.Input.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Einput_h__)")
-cpp_quote("#if !defined(__windows2Esystem_h__)")
-cpp_quote("#include <Windows.System.h>")
-cpp_quote("#endif // !defined(__windows2Esystem_h__)")
-cpp_quote("#if !defined(__windows2Eui2Ecore_h__)")
-cpp_quote("#include <Windows.UI.Core.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Ecore_h__)")
-cpp_quote("#if !defined(__windows2Eui2Einput_h__)")
-cpp_quote("#include <Windows.UI.Input.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Einput_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#include <Windows.UI.Xaml.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Edocuments_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Documents.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Edocuments_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -107,6 +81,8 @@ namespace Windows
         namespace Xaml
         {
             runtimeclass DependencyObject;
+
+            runtimeclass DependencyProperty;
         }
     }
 }
@@ -195,6 +171,8 @@ namespace Windows
 
                 interface IAccessKeyManagerStatics2;
 
+                interface ICharacterReceivedRoutedEventArgs;
+
                 interface ICommand;
 
                 interface IContextRequestedEventArgs;
@@ -235,6 +213,14 @@ namespace Windows
 
                 interface IKeyRoutedEventArgs3;
 
+                interface IKeyboardAccelerator;
+
+                interface IKeyboardAcceleratorFactory;
+
+                interface IKeyboardAcceleratorInvokedEventArgs;
+
+                interface IKeyboardAcceleratorStatics;
+
                 interface ILosingFocusEventArgs;
 
                 interface IManipulationCompletedRoutedEventArgs;
@@ -259,6 +245,10 @@ namespace Windows
 
                 interface IPointerRoutedEventArgs;
 
+                interface IPointerRoutedEventArgs2;
+
+                interface IProcessKeyboardAcceleratorEventArgs;
+
                 interface IRightTappedRoutedEventArgs;
 
                 interface ITappedRoutedEventArgs;
@@ -270,6 +260,8 @@ namespace Windows
                 runtimeclass AccessKeyInvokedEventArgs;
 
                 runtimeclass AccessKeyManager;
+
+                runtimeclass CharacterReceivedRoutedEventArgs;
 
                 runtimeclass ContextRequestedEventArgs;
 
@@ -295,6 +287,10 @@ namespace Windows
 
                 runtimeclass KeyRoutedEventArgs;
 
+                runtimeclass KeyboardAccelerator;
+
+                runtimeclass KeyboardAcceleratorInvokedEventArgs;
+
                 runtimeclass LosingFocusEventArgs;
 
                 runtimeclass ManipulationCompletedRoutedEventArgs;
@@ -314,6 +310,8 @@ namespace Windows
                 runtimeclass Pointer;
 
                 runtimeclass PointerRoutedEventArgs;
+
+                runtimeclass ProcessKeyboardAcceleratorEventArgs;
 
                 runtimeclass RightTappedRoutedEventArgs;
 
@@ -336,17 +334,25 @@ namespace Windows
                 {
                     interface Windows.Foundation.Collections.IIterable<Windows.UI.Xaml.Input.InputScopeName*>;
 
+                    interface Windows.Foundation.Collections.IIterable<Windows.UI.Xaml.Input.KeyboardAccelerator*>;
+
                     interface Windows.Foundation.Collections.IIterable<Windows.UI.Xaml.Input.Pointer*>;
 
                     interface Windows.Foundation.Collections.IIterator<Windows.UI.Xaml.Input.InputScopeName*>;
+
+                    interface Windows.Foundation.Collections.IIterator<Windows.UI.Xaml.Input.KeyboardAccelerator*>;
 
                     interface Windows.Foundation.Collections.IIterator<Windows.UI.Xaml.Input.Pointer*>;
 
                     interface Windows.Foundation.Collections.IVectorView<Windows.UI.Xaml.Input.InputScopeName*>;
 
+                    interface Windows.Foundation.Collections.IVectorView<Windows.UI.Xaml.Input.KeyboardAccelerator*>;
+
                     interface Windows.Foundation.Collections.IVectorView<Windows.UI.Xaml.Input.Pointer*>;
 
                     interface Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Input.InputScopeName*>;
+
+                    interface Windows.Foundation.Collections.IVector<Windows.UI.Xaml.Input.KeyboardAccelerator*>;
 
                     interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Documents.TextElement*, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs*>;
 
@@ -354,11 +360,15 @@ namespace Windows
 
                     interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Documents.TextElement*, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs*>;
 
+                    interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Input.KeyboardAccelerator*, Windows.UI.Xaml.Input.KeyboardAcceleratorInvokedEventArgs*>;
+
                     interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.UIElement*, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs*>;
 
                     interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.UIElement*, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs*>;
 
                     interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.UIElement*, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs*>;
+
+                    interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.UIElement*, Windows.UI.Xaml.Input.CharacterReceivedRoutedEventArgs*>;
 
                     interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.UIElement*, Windows.UI.Xaml.Input.ContextRequestedEventArgs*>;
 
@@ -367,6 +377,8 @@ namespace Windows
                     interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.UIElement*, Windows.UI.Xaml.Input.LosingFocusEventArgs*>;
 
                     interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.UIElement*, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs*>;
+
+                    interface Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.UIElement*, Windows.UI.Xaml.Input.ProcessKeyboardAcceleratorEventArgs*>;
                 }
             }
         }
@@ -654,6 +666,17 @@ namespace Windows
                     [propput] HRESULT AreKeyTipsEnabled([in] boolean value);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Input.CharacterReceivedRoutedEventArgs)]
+                [uuid(7849FD82-48E4-444D-9419-93AB8892C107)]
+                interface ICharacterReceivedRoutedEventArgs : IInspectable
+                {
+                    [propget] HRESULT Character([out] [retval] WCHAR* value);
+                    [propget] HRESULT KeyStatus([out] [retval] Windows.UI.Core.CorePhysicalKeyStatus* value);
+                    [propget] HRESULT Handled([out] [retval] boolean* value);
+                    [propput] HRESULT Handled([in] boolean value);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [uuid(E5AF3542-CA67-4081-995B-709DD13792DF)]
                 interface ICommand : IInspectable
@@ -858,6 +881,52 @@ namespace Windows
                     [propget] HRESULT DeviceId([out] [retval] HSTRING* value);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Input.KeyboardAccelerator)]
+                [uuid(92E6181E-19AE-465A-9B3C-A71EE9EA7420)]
+                interface IKeyboardAccelerator : IInspectable
+                {
+                    [propget] HRESULT Key([out] [retval] Windows.System.VirtualKey* value);
+                    [propput] HRESULT Key([in] Windows.System.VirtualKey value);
+                    [propget] HRESULT Modifiers([out] [retval] Windows.System.VirtualKeyModifiers* value);
+                    [propput] HRESULT Modifiers([in] Windows.System.VirtualKeyModifiers value);
+                    [propget] HRESULT IsEnabled([out] [retval] boolean* value);
+                    [propput] HRESULT IsEnabled([in] boolean value);
+                    [propget] HRESULT ScopeOwner([out] [retval] Windows.UI.Xaml.DependencyObject** value);
+                    [propput] HRESULT ScopeOwner([in] Windows.UI.Xaml.DependencyObject* value);
+                    [eventadd] HRESULT Invoked([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Input.KeyboardAccelerator*, Windows.UI.Xaml.Input.KeyboardAcceleratorInvokedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                    [eventremove] HRESULT Invoked([in] EventRegistrationToken token);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Input.KeyboardAccelerator)]
+                [uuid(44D88A99-4BFD-4A47-A893-515F388623F6)]
+                interface IKeyboardAcceleratorFactory : IInspectable
+                {
+                    HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Input.KeyboardAccelerator** instance);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Input.KeyboardAcceleratorInvokedEventArgs)]
+                [uuid(C00B03F2-04E7-4415-B17D-D76B9490DE2B)]
+                interface IKeyboardAcceleratorInvokedEventArgs : IInspectable
+                {
+                    [propget] HRESULT Handled([out] [retval] boolean* value);
+                    [propput] HRESULT Handled([in] boolean value);
+                    [propget] HRESULT Element([out] [retval] Windows.UI.Xaml.DependencyObject** value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Input.KeyboardAccelerator)]
+                [uuid(3BD43D51-9BB3-456D-BF15-804ADFB86261)]
+                interface IKeyboardAcceleratorStatics : IInspectable
+                {
+                    [propget] HRESULT KeyProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    [propget] HRESULT ModifiersProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    [propget] HRESULT IsEnabledProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    [propget] HRESULT ScopeOwnerProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)]
                 [exclusiveto(Windows.UI.Xaml.Input.LosingFocusEventArgs)]
                 [uuid(F9F683C7-D789-472B-AA93-6D4105E6DABE)]
@@ -1018,6 +1087,25 @@ namespace Windows
                     HRESULT GetIntermediatePoints([in] Windows.UI.Xaml.UIElement* relativeTo, [out] [retval] Windows.Foundation.Collections.IVector<Windows.UI.Input.PointerPoint*>** returnValue);
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Input.PointerRoutedEventArgs)]
+                [uuid(0821F294-1DE6-4711-BA7C-8D4B8B0911D0)]
+                interface IPointerRoutedEventArgs2 : IInspectable
+                {
+                    [propget] HRESULT IsGenerated([out] [retval] boolean* value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.UI.Xaml.Input.ProcessKeyboardAcceleratorEventArgs)]
+                [uuid(FB79C216-972B-440C-9B83-2B4198DCF09D)]
+                interface IProcessKeyboardAcceleratorEventArgs : IInspectable
+                {
+                    [propget] HRESULT Key([out] [retval] Windows.System.VirtualKey* value);
+                    [propget] HRESULT Modifiers([out] [retval] Windows.System.VirtualKeyModifiers* value);
+                    [propget] HRESULT Handled([out] [retval] boolean* value);
+                    [propput] HRESULT Handled([in] boolean value);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 [exclusiveto(Windows.UI.Xaml.Input.RightTappedRoutedEventArgs)]
                 [uuid(6834869D-7BD5-4033-B237-172F79ABE393)]
@@ -1075,6 +1163,14 @@ namespace Windows
                 runtimeclass AccessKeyManager
                 {
                     [default] interface Windows.UI.Xaml.Input.IAccessKeyManager;
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [marshaling_behavior(agile)]
+                [threading(both)]
+                runtimeclass CharacterReceivedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs
+                {
+                    [default] interface Windows.UI.Xaml.Input.ICharacterReceivedRoutedEventArgs;
                 }
 
                 [activatable(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -1186,6 +1282,24 @@ namespace Windows
                     [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.UI.Xaml.Input.IKeyRoutedEventArgs3;
                 }
 
+                [composable(Windows.UI.Xaml.Input.IKeyboardAcceleratorFactory, public, Windows.Foundation.UniversalApiContract, 5.0)]
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [marshaling_behavior(agile)]
+                [static(Windows.UI.Xaml.Input.IKeyboardAcceleratorStatics, Windows.Foundation.UniversalApiContract, 5.0)]
+                [threading(both)]
+                runtimeclass KeyboardAccelerator : Windows.UI.Xaml.DependencyObject
+                {
+                    [default] interface Windows.UI.Xaml.Input.IKeyboardAccelerator;
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [marshaling_behavior(agile)]
+                [threading(both)]
+                runtimeclass KeyboardAcceleratorInvokedEventArgs
+                {
+                    [default] interface Windows.UI.Xaml.Input.IKeyboardAcceleratorInvokedEventArgs;
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)]
                 [marshaling_behavior(agile)]
                 [threading(both)]
@@ -1271,6 +1385,15 @@ namespace Windows
                 runtimeclass PointerRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs
                 {
                     [default] interface Windows.UI.Xaml.Input.IPointerRoutedEventArgs;
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Xaml.Input.IPointerRoutedEventArgs2;
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [marshaling_behavior(agile)]
+                [threading(both)]
+                runtimeclass ProcessKeyboardAcceleratorEventArgs
+                {
+                    [default] interface Windows.UI.Xaml.Input.IProcessKeyboardAcceleratorEventArgs;
                 }
 
                 [activatable(Windows.Foundation.UniversalApiContract, 1.0)]

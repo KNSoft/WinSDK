@@ -14,26 +14,6 @@ import "Windows.Devices.Enumeration.idl";
 import "Windows.UI.idl";
 import "Windows.UI.Core.idl";
 import "Windows.UI.Popups.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Edevices2Eenumeration_h__)")
-cpp_quote("#include <Windows.Devices.Enumeration.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Eenumeration_h__)")
-cpp_quote("#if !defined(__windows2Eui_h__)")
-cpp_quote("#include <Windows.UI.h>")
-cpp_quote("#endif // !defined(__windows2Eui_h__)")
-cpp_quote("#if !defined(__windows2Eui2Ecore_h__)")
-cpp_quote("#include <Windows.UI.Core.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Ecore_h__)")
-cpp_quote("#if !defined(__windows2Eui2Epopups_h__)")
-cpp_quote("#include <Windows.UI.Popups.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Epopups_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -338,19 +318,45 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             enum UIElementType
             {
-                ActiveCaption       = 0,
-                Background          = 1,
-                ButtonFace          = 2,
-                ButtonText          = 3,
-                CaptionText         = 4,
-                GrayText            = 5,
-                Highlight           = 6,
-                HighlightText       = 7,
-                Hotlight            = 8,
-                InactiveCaption     = 9,
-                InactiveCaptionText = 10,
-                Window              = 11,
-                WindowText          = 12
+                ActiveCaption        = 0,
+                Background           = 1,
+                ButtonFace           = 2,
+                ButtonText           = 3,
+                CaptionText          = 4,
+                GrayText             = 5,
+                Highlight            = 6,
+                HighlightText        = 7,
+                Hotlight             = 8,
+                InactiveCaption      = 9,
+                InactiveCaptionText  = 10,
+                Window               = 11,
+                WindowText           = 12,
+                [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+                AccentColor          = 1000,
+                [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+                TextHigh             = 1001,
+                [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+                TextMedium           = 1002,
+                [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+                TextLow              = 1003,
+                [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+                TextContrastWithHigh = 1004,
+                [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+                NonTextHigh          = 1005,
+                [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+                NonTextMediumHigh    = 1006,
+                [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+                NonTextMedium        = 1007,
+                [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+                NonTextMediumLow     = 1008,
+                [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+                NonTextLow           = 1009,
+                [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+                PageBackground       = 1010,
+                [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+                PopupBackground      = 1011,
+                [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+                OverlayOutsidePopup  = 1012
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

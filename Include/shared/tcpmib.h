@@ -264,12 +264,8 @@ typedef struct _MIB_TCP6TABLE_OWNER_MODULE
 // The algorithm used to determine the timeout value used for retransmitting
 // unacknowledged octets.
 //
-// REVIEW: This enum adds another version of the defines that already
-// exist in iprtrmib.h (MIB_TCP_RTO_*).  Shouldn't we just use the
-// public names that already exist?
-//
 typedef enum {
-    TcpRtoAlgorithmOther,
+    TcpRtoAlgorithmOther  = 1,
     TcpRtoAlgorithmConstant,
     TcpRtoAlgorithmRsre,
     TcpRtoAlgorithmVanj,
@@ -328,7 +324,25 @@ typedef MIB_TCPSTATS_W2K MIB_TCPSTATS;
 typedef MIB_TCPSTATS_W2K *PMIB_TCPSTATS;
 #endif
 
-
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+typedef struct _MIB_TCPSTATS2 {
+    TCP_RTO_ALGORITHM RtoAlgorithm;
+    DWORD dwRtoMin;
+    DWORD dwRtoMax;
+    DWORD dwMaxConn;
+    DWORD dwActiveOpens;
+    DWORD dwPassiveOpens;
+    DWORD dwAttemptFails;
+    DWORD dwEstabResets;
+    DWORD dwCurrEstab;
+    DWORD64 dw64InSegs;
+    DWORD64 dw64OutSegs;
+    DWORD dwRetransSegs;
+    DWORD dwInErrs;
+    DWORD dwOutRsts;
+    DWORD dwNumConns;
+} MIB_TCPSTATS2, *PMIB_TCPSTATS2;
+#endif
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion

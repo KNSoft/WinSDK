@@ -23,7 +23,8 @@
 // Set packing
 #include <pshpack8.h>
 
-#ifdef ____x_Windows_CFoundation_CIDeferral_FWD_DEFINED__
+#ifdef __windows2Efoundation_h__
+#if !defined(MIDL_NS_PREFIX) && !defined(____x_ABI_CWindows_CFoundation_CIDeferral_FWD_DEFINED__)
 namespace ABI {
 namespace Windows {
 namespace Foundation {
@@ -34,6 +35,7 @@ typedef ::Windows::Foundation::IDeferralCompletedHandler IDeferralCompletedHandl
 }
 }
 #endif
+#endif // __windows2Efoundation_h__
 
 namespace Microsoft { 
 namespace WRL {
@@ -100,20 +102,20 @@ struct ArgTraits
 };
 
 template<typename TDelegateInterface>
-struct ArgTraits<HRESULT (STDMETHODCALLTYPE TDelegateInterface::*)(void)>
+struct ArgTraits<HRESULT(STDMETHODCALLTYPE TDelegateInterface::*)(void)>
 {
     static const int args = 0;
 };
 
 template<typename TDelegateInterface, typename TArg1>
-struct ArgTraits<HRESULT (STDMETHODCALLTYPE TDelegateInterface::*)(TArg1)>
+struct ArgTraits<HRESULT(STDMETHODCALLTYPE TDelegateInterface::*)(TArg1)>
 {
     static const int args = 1;
-    typedef TArg1 Arg1Type;    
+    typedef TArg1 Arg1Type;
 };
 
 template<typename TDelegateInterface, typename TArg1, typename TArg2>
-struct ArgTraits<HRESULT (STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2)>
+struct ArgTraits<HRESULT(STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2)>
 {
     static const int args = 2;
     typedef TArg1 Arg1Type;
@@ -121,7 +123,7 @@ struct ArgTraits<HRESULT (STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2)
 };
 
 template<typename TDelegateInterface, typename TArg1, typename TArg2, typename TArg3>
-struct ArgTraits<HRESULT (STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2, TArg3)>
+struct ArgTraits<HRESULT(STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2, TArg3)>
 {
     static const int args = 3;
     typedef TArg1 Arg1Type;
@@ -130,7 +132,7 @@ struct ArgTraits<HRESULT (STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2,
 };
 
 template<typename TDelegateInterface, typename TArg1, typename TArg2, typename TArg3, typename TArg4>
-struct ArgTraits<HRESULT (STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2, TArg3, TArg4)>
+struct ArgTraits<HRESULT(STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2, TArg3, TArg4)>
 {
     static const int args = 4;
     typedef TArg1 Arg1Type;
@@ -140,7 +142,7 @@ struct ArgTraits<HRESULT (STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2,
 };
 
 template<typename TDelegateInterface, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5>
-struct ArgTraits<HRESULT (STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2, TArg3, TArg4, TArg5)>
+struct ArgTraits<HRESULT(STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2, TArg3, TArg4, TArg5)>
 {
     static const int args = 5;
     typedef TArg1 Arg1Type;
@@ -151,7 +153,7 @@ struct ArgTraits<HRESULT (STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2,
 };
 
 template<typename TDelegateInterface, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5, typename TArg6>
-struct ArgTraits<HRESULT (STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2, TArg3, TArg4, TArg5, TArg6)>
+struct ArgTraits<HRESULT(STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2, TArg3, TArg4, TArg5, TArg6)>
 {
     static const int args = 6;
     typedef TArg1 Arg1Type;
@@ -163,7 +165,7 @@ struct ArgTraits<HRESULT (STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2,
 };
 
 template<typename TDelegateInterface, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5, typename TArg6, typename TArg7>
-struct ArgTraits<HRESULT (STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7)>
+struct ArgTraits<HRESULT(STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7)>
 {
     static const int args = 7;
     typedef TArg1 Arg1Type;
@@ -176,7 +178,7 @@ struct ArgTraits<HRESULT (STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2,
 };
 
 template<typename TDelegateInterface, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5, typename TArg6, typename TArg7, typename TArg8>
-struct ArgTraits<HRESULT (STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8)>
+struct ArgTraits<HRESULT(STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8)>
 {
     static const int args = 8;
     typedef TArg1 Arg1Type;
@@ -190,7 +192,7 @@ struct ArgTraits<HRESULT (STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2,
 };
 
 template<typename TDelegateInterface, typename TArg1, typename TArg2, typename TArg3, typename TArg4, typename TArg5, typename TArg6, typename TArg7, typename TArg8, typename TArg9>
-struct ArgTraits<HRESULT (STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9)>
+struct ArgTraits<HRESULT(STDMETHODCALLTYPE TDelegateInterface::*)(TArg1, TArg2, TArg3, TArg4, TArg5, TArg6, TArg7, TArg8, TArg9)>
 {
     static const int args = 9;
     typedef TArg1 Arg1Type;
@@ -227,360 +229,207 @@ struct ArgTraitsHelper<TDelegateInterface, true> : ArgTraitsHelper<typename TDel
 {
 };
 
-// Invoke helper provide implementation of invoke method
-// depending on amount and type of arguments from ArgTraitsHelper
-template<typename TDelegateInterface, typename TCallback, unsigned int argCount, DelegateCheckMode checkMode = DefaultDelegateCheckMode>
-struct InvokeHelper;
+// Used to produce a delegate with the Invoke() method signature that matches that of TDelegateInterface.
+template<typename TDelegateInterface> class DelegateArgTraits; // to be specialized
 
-template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode>
-struct InvokeHelper<TDelegateInterface, TCallback, 0, checkMode> WrlSealed : public ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
+template<typename TDelegateInterface, typename ...TArgs>
+class DelegateArgTraits<HRESULT (STDMETHODCALLTYPE TDelegateInterface::*)(TArgs...)>
 {
-    // Using a forwarding reference here creates a breaking change for functions that forward
-    // to InvokeHelper without using perfect forwarding.
-    InvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
-
-    HRESULT STDMETHODCALLTYPE Invoke() throw() override
+    template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode, typename... TArgs>
+    struct DelegateInvokeHelper WrlSealed : public ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
     {
-        return DelegateTraits<checkMode>::CheckReturn((*this)());
+        DelegateInvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
+
+        HRESULT STDMETHODCALLTYPE Invoke(TArgs... args) throw() override
+        {
+            return DelegateTraits<checkMode>::CheckReturn((*this)(Forward<TArgs>(args)...));
+        }
+    };
+
+public:
+    template<typename TDelegateInterface, typename TImplements, DelegateCheckMode checkMode = DefaultDelegateCheckMode, typename TLambda>
+    static ComPtr<TImplements> Callback(TLambda&& callback) throw()
+    {
+        static_assert(__is_base_of(IUnknown, TDelegateInterface) && !__is_base_of(IInspectable, TDelegateInterface), "Delegates objects must be 'IUnknown' base and not 'IInspectable'");
+        return Make<DelegateInvokeHelper<TDelegateInterface, TLambda, checkMode, TArgs...>>(Details::Forward<TLambda>(callback));
     }
 };
 
-template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode>
-struct InvokeHelper<TDelegateInterface, TCallback, 1, checkMode> WrlSealed : public ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
+// Traits factory extract appropriate ArgTraits type 
+// for delegate interface
+template<typename TDelegateInterface, bool isImplements = __is_base_of(ImplementsBase, TDelegateInterface)>
+struct DelegateArgTraitsHelper;
+
+// Specialization for the none Implements based interface
+template<typename TDelegateInterface>
+struct DelegateArgTraitsHelper<TDelegateInterface, false>
 {
-    typedef typename ArgTraitsHelper<TDelegateInterface>::Traits Traits;
-
-    InvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
-
-    HRESULT STDMETHODCALLTYPE Invoke(typename Traits::Arg1Type arg1) throw() override
-    {
-        return DelegateTraits<checkMode>::CheckReturn((*this)(arg1));
-    }
+    typedef TDelegateInterface Interface;
+    typedef DelegateArgTraits<decltype(&TDelegateInterface::Invoke)> Traits;
 };
 
-template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode>
-struct InvokeHelper<TDelegateInterface, TCallback, 2, checkMode> WrlSealed : public ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
+// Specialization for ImplementsBase interface, selects the first interface
+template<typename TDelegateInterface>
+struct DelegateArgTraitsHelper<TDelegateInterface, true> : DelegateArgTraitsHelper<typename TDelegateInterface::FirstInterface>
 {
-    typedef typename ArgTraitsHelper<TDelegateInterface>::Traits Traits;
-
-    InvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
-
-    HRESULT STDMETHODCALLTYPE Invoke(
-            typename Traits::Arg1Type arg1,
-            typename Traits::Arg2Type arg2) throw() override
-    {
-        return DelegateTraits<checkMode>::CheckReturn((*this)(arg1, arg2));
-    }
-};
-
-template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode>
-struct InvokeHelper<TDelegateInterface, TCallback, 3, checkMode> WrlSealed : public ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
-{
-    typedef typename ArgTraitsHelper<TDelegateInterface>::Traits Traits;
-
-    InvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
-
-    HRESULT STDMETHODCALLTYPE Invoke(
-            typename Traits::Arg1Type arg1,
-            typename Traits::Arg2Type arg2,
-            typename Traits::Arg3Type arg3) throw() override
-    {
-        return DelegateTraits<checkMode>::CheckReturn((*this)(arg1, arg2, arg3));
-    }
-};
-
-template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode>
-struct InvokeHelper<TDelegateInterface, TCallback, 4, checkMode> WrlSealed : ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
-{
-    typedef typename ArgTraitsHelper<TDelegateInterface>::Traits Traits;
-
-    InvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
-
-    HRESULT STDMETHODCALLTYPE Invoke(
-            typename Traits::Arg1Type arg1,
-            typename Traits::Arg2Type arg2,
-            typename Traits::Arg3Type arg3,
-            typename Traits::Arg4Type arg4) throw() override
-    {
-        return DelegateTraits<checkMode>::CheckReturn((*this)(arg1, arg2, arg3, arg4));
-    }
-};
-
-template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode>
-struct InvokeHelper<TDelegateInterface, TCallback, 5, checkMode> WrlSealed : ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
-{
-    typedef typename ArgTraitsHelper<TDelegateInterface>::Traits Traits;
-
-    InvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
-
-    HRESULT STDMETHODCALLTYPE Invoke(
-            typename Traits::Arg1Type arg1,
-            typename Traits::Arg2Type arg2,
-            typename Traits::Arg3Type arg3,
-            typename Traits::Arg4Type arg4,
-            typename Traits::Arg5Type arg5) throw() override
-    {
-        return DelegateTraits<checkMode>::CheckReturn((*this)(arg1, arg2, arg3, arg4, arg5));
-    }
-};
-
-template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode>
-struct InvokeHelper<TDelegateInterface, TCallback, 6, checkMode> WrlSealed : ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
-{
-    typedef typename ArgTraitsHelper<TDelegateInterface>::Traits Traits;
-
-    InvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
-
-    HRESULT STDMETHODCALLTYPE Invoke(
-            typename Traits::Arg1Type arg1,
-            typename Traits::Arg2Type arg2,
-            typename Traits::Arg3Type arg3,
-            typename Traits::Arg4Type arg4,
-            typename Traits::Arg5Type arg5,
-            typename Traits::Arg6Type arg6) throw() override
-    {
-        return DelegateTraits<checkMode>::CheckReturn((*this)(arg1, arg2, arg3, arg4, arg5, arg6));
-    }
-};
-
-template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode>
-struct InvokeHelper<TDelegateInterface, TCallback, 7, checkMode> WrlSealed : ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
-{
-    typedef typename ArgTraitsHelper<TDelegateInterface>::Traits Traits;
-
-    InvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
-
-    HRESULT STDMETHODCALLTYPE Invoke(
-            typename Traits::Arg1Type arg1,
-            typename Traits::Arg2Type arg2,
-            typename Traits::Arg3Type arg3,
-            typename Traits::Arg4Type arg4,
-            typename Traits::Arg5Type arg5,
-            typename Traits::Arg6Type arg6,
-            typename Traits::Arg7Type arg7) throw() override
-    {
-        return DelegateTraits<checkMode>::CheckReturn((*this)(arg1, arg2, arg3, arg4, arg5, arg6, arg7));
-    }
-};
-
-template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode>
-struct InvokeHelper<TDelegateInterface, TCallback, 8, checkMode> WrlSealed : ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
-{
-    typedef typename ArgTraitsHelper<TDelegateInterface>::Traits Traits;
-
-    InvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
-
-    HRESULT STDMETHODCALLTYPE Invoke(
-            typename Traits::Arg1Type arg1,
-            typename Traits::Arg2Type arg2,
-            typename Traits::Arg3Type arg3,
-            typename Traits::Arg4Type arg4,
-            typename Traits::Arg5Type arg5,
-            typename Traits::Arg6Type arg6,
-            typename Traits::Arg7Type arg7,
-            typename Traits::Arg8Type arg8) throw() override
-    {
-        return DelegateTraits<checkMode>::CheckReturn((*this)(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8));
-    }
-};
-
-template<typename TDelegateInterface, typename TCallback, DelegateCheckMode checkMode>
-struct InvokeHelper<TDelegateInterface, TCallback, 9, checkMode> WrlSealed : ::Microsoft::WRL::RuntimeClass<RuntimeClassFlags<Delegate>, TDelegateInterface>, RemoveReference<TCallback>::Type
-{
-    typedef typename ArgTraitsHelper<TDelegateInterface>::Traits Traits;
-
-    InvokeHelper(TCallback&& callback) throw() : RemoveReference<TCallback>::Type(Forward<TCallback>(callback)) {}
-
-    HRESULT STDMETHODCALLTYPE Invoke(
-            typename Traits::Arg1Type arg1,
-            typename Traits::Arg2Type arg2,
-            typename Traits::Arg3Type arg3,
-            typename Traits::Arg4Type arg4,
-            typename Traits::Arg5Type arg5,
-            typename Traits::Arg6Type arg6,
-            typename Traits::Arg7Type arg7,
-            typename Traits::Arg8Type arg8,
-            typename Traits::Arg9Type arg9) throw() override
-    {
-        return DelegateTraits<checkMode>::CheckReturn((*this)(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9));
-    }
 };
 
 #if (NTDDI_VERSION >= NTDDI_WINBLUE)
-template<typename TDelegateInterface, unsigned int argCount>
-struct AgileInvokeHelper;
-
+// If the input delegate is already agile this could return it directly instead of creating a wrapper.
 template<typename TDelegateInterface>
-struct AgileInvokeHelper<TDelegateInterface, 0> : public Microsoft::WRL::RuntimeClass<
-    Microsoft::WRL::RuntimeClassFlags<Microsoft::WRL::ClassicCom>, TDelegateInterface, Microsoft::WRL::FtmBase>
-{
-    typedef typename Microsoft::WRL::Details::ArgTraitsHelper<TDelegateInterface>::Traits Traits;
-
-public:
-    HRESULT Initialize(_In_ TDelegateInterface *delegateInterface)
-    {
-        return Microsoft::WRL::AsAgile(delegateInterface, &_agileptr);
-    }
-
-    virtual HRESULT STDMETHODCALLTYPE Invoke()
-    {
-        ComPtr<TDelegateInterface> localDelegate;
-
-        HRESULT hr = _agileptr.CopyTo(localDelegate.GetAddressOf());
-        if (SUCCEEDED(hr))
-        {
-            hr = localDelegate->Invoke();
-        }
-        return hr;
-    }
-
-private:
-    AgileRef _agileptr;
-};
-
-template<typename TDelegateInterface>
-struct AgileInvokeHelper<TDelegateInterface, 1> : public Microsoft::WRL::RuntimeClass<
-    Microsoft::WRL::RuntimeClassFlags<Microsoft::WRL::ClassicCom>, TDelegateInterface, Microsoft::WRL::FtmBase>
-{
-    typedef typename Microsoft::WRL::Details::ArgTraitsHelper<TDelegateInterface>::Traits Traits;
-
-public:
-    HRESULT Initialize(_In_ TDelegateInterface *delegateInterface)
-    {
-        return Microsoft::WRL::AsAgile(delegateInterface, &_agileptr);
-    }
-
-    virtual HRESULT STDMETHODCALLTYPE Invoke(
-        typename Traits::Arg1Type arg1)
-    {
-        ComPtr<TDelegateInterface> localDelegate;
-
-        HRESULT hr = _agileptr.CopyTo(localDelegate.GetAddressOf());
-        if (SUCCEEDED(hr))
-        {
-            hr = localDelegate->Invoke(arg1);
-        }
-        return hr;
-    }
-
-private:
-    AgileRef _agileptr;
-};
-
-template<typename TDelegateInterface>
-struct AgileInvokeHelper<TDelegateInterface, 2> : public Microsoft::WRL::RuntimeClass<
-    Microsoft::WRL::RuntimeClassFlags<Microsoft::WRL::ClassicCom>, TDelegateInterface, Microsoft::WRL::FtmBase>
-{
-    typedef typename Microsoft::WRL::Details::ArgTraitsHelper<TDelegateInterface>::Traits Traits;
-
-public:
-    HRESULT Initialize(_In_ TDelegateInterface *delegateInterface)
-    {
-        return Microsoft::WRL::AsAgile(delegateInterface, &_agileptr);
-    }
-
-    virtual HRESULT STDMETHODCALLTYPE Invoke(
-        typename Traits::Arg1Type arg1,
-        typename Traits::Arg2Type arg2)
-    {
-        ComPtr<TDelegateInterface> localDelegate;
-
-        HRESULT hr = _agileptr.CopyTo(localDelegate.GetAddressOf());
-        if (SUCCEEDED(hr))
-        {
-            hr = localDelegate->Invoke(arg1, arg2);
-        }
-        return hr;
-    }
-
-private:
-    AgileRef _agileptr;
-};
-
-template<typename TDelegateInterface>
-struct AgileInvokeHelper<TDelegateInterface, 3> : public Microsoft::WRL::RuntimeClass<
-    Microsoft::WRL::RuntimeClassFlags<Microsoft::WRL::ClassicCom>, TDelegateInterface, Microsoft::WRL::FtmBase>
-{
-    typedef typename Microsoft::WRL::Details::ArgTraitsHelper<TDelegateInterface>::Traits Traits;
-
-public:
-    HRESULT Initialize(_In_ TDelegateInterface *delegateInterface)
-    {
-        return Microsoft::WRL::AsAgile(delegateInterface, &_agileptr);
-    }
-
-    virtual HRESULT STDMETHODCALLTYPE Invoke(
-        typename Traits::Arg1Type arg1,
-        typename Traits::Arg2Type arg2,
-        typename Traits::Arg3Type arg3)
-    {
-        ComPtr<TDelegateInterface> localDelegate;
-
-        HRESULT hr = _agileptr.CopyTo(localDelegate.GetAddressOf());
-        if (SUCCEEDED(hr))
-        {
-            hr = localDelegate->Invoke(arg1, arg2, arg3);
-        }
-        return hr;
-    }
-
-private:
-    AgileRef _agileptr;
-};
-
-template<typename TDelegateInterface>
-HRESULT CreateAgileHelper(_In_ TDelegateInterface *delegateInterface, _COM_Outptr_ TDelegateInterface** wrapper)
+HRESULT CreateAgileHelper(_In_ TDelegateInterface* delegateInterface, _COM_Outptr_ TDelegateInterface** wrapper)
 {
     *wrapper = nullptr;
-    ComPtr<AgileInvokeHelper<TDelegateInterface, Microsoft::WRL::Details::ArgTraitsHelper<TDelegateInterface>::args>> invokeHelper;
-
     static_assert(__is_base_of(IUnknown, TDelegateInterface) && !__is_base_of(IInspectable, TDelegateInterface), "Delegates objects must be 'IUnknown' base and not 'IInspectable'");
 
-    invokeHelper = Make<AgileInvokeHelper<TDelegateInterface, Microsoft::WRL::Details::ArgTraitsHelper<TDelegateInterface>::args>>();
-    HRESULT hr = invokeHelper ? S_OK : E_OUTOFMEMORY;
-    if (SUCCEEDED(hr))
-    {
-        hr = invokeHelper->Initialize(delegateInterface);
-        if (SUCCEEDED(hr))
-        {
-            hr = invokeHelper.CopyTo(wrapper);
-        }
-    }
-    return hr;
+    AgileRef delegateAsAgile;
+    HRESULT hr = Microsoft::WRL::AsAgile(delegateInterface, &delegateAsAgile);
+    if (FAILED(hr)) return hr;
+
+    using DelegateHelper = DelegateArgTraitsHelper<TDelegateInterface>;
+
+    auto callback = typename DelegateHelper::Traits::template Callback<Implements<RuntimeClassFlags<ClassicCom>, TDelegateInterface, FtmBase>, typename DelegateHelper::Interface>(
+        [delegateAsAgile = Move(delegateAsAgile)](auto&&... args)
+    { 
+        ComPtr<TDelegateInterface> localDelegate;
+        HRESULT hr = delegateAsAgile.CopyTo(localDelegate.GetAddressOf());
+        if (FAILED(hr)) return hr;
+        return localDelegate->Invoke(Forward<decltype(args)>(args)...);
+    });
+
+    if (!callback) return E_OUTOFMEMORY;
+    *wrapper = callback.Detach();
+    return S_OK;
 }
 
 #endif //(NTDDI_VERSION >= NTDDI_WINBLUE)
 
 } // namespace Details
 
+
 // Construct a COM/WinRT delegate (an object with an Invoke() method) from a lambda.
 // Check the return from this function for null to detect out of memory (E_OUTOFMEMORY) failure case.
 template<typename TDelegateInterface, typename TLambda>
-ComPtr<typename Details::ArgTraitsHelper<TDelegateInterface>::Interface> Callback(TLambda&& callback) throw()
+ComPtr<typename Details::DelegateArgTraitsHelper<TDelegateInterface>::Interface> Callback(TLambda&& callback) throw()
 {
-    static_assert(__is_base_of(IUnknown, TDelegateInterface) && !__is_base_of(IInspectable, TDelegateInterface), "Delegates objects must be 'IUnknown' base and not 'IInspectable'");
-    return Make<Details::InvokeHelper<TDelegateInterface, TLambda, Details::ArgTraitsHelper<TDelegateInterface>::args>>(Details::Forward<TLambda>(callback));
+    using DelegateHelper = Details::DelegateArgTraitsHelper<TDelegateInterface>;
+    return DelegateHelper::Traits::Callback<TDelegateInterface, DelegateHelper::Interface>(Details::Forward<TLambda>(callback));
 }
 
 // Construct a COM/WinRT delegate, an object with an Invoke() method, from a raw function.
 template<typename TDelegateInterface, typename TFunc>
-ComPtr<typename Details::ArgTraitsHelper<TDelegateInterface>::Interface> Callback(TFunc* callback) throw()
+ComPtr<typename Details::DelegateArgTraitsHelper<TDelegateInterface>::Interface> Callback(_In_ TFunc* callback) throw()
 {
-    // delegate to the lambda case
-    return Callback<TDelegateInterface>([=](auto&& ...args) { return callback(args...); });
+    using DelegateHelper = Details::DelegateArgTraitsHelper<TDelegateInterface>;
+    return DelegateHelper::Traits::Callback<TDelegateInterface, DelegateHelper::Interface>(
+        [=](auto&& ...args)
+    {
+        return callback(Details::Forward<decltype(args)>(args)...);
+    });
 }
 
 // Construct a COM/WinRT delegate, an object with an Invoke() method, from an object and member function.
 template<typename TDelegateInterface, typename TCallbackObject, typename... TArgs>
-ComPtr<typename Details::ArgTraitsHelper<TDelegateInterface>::Interface> Callback(_In_ TCallbackObject *object, _In_ HRESULT(TCallbackObject::* method)(TArgs...)) throw()
+ComPtr<typename Details::DelegateArgTraitsHelper<TDelegateInterface>::Interface> Callback(_In_ TCallbackObject *object, _In_ HRESULT(TCallbackObject::* method)(TArgs...)) throw()
 {
-#ifdef IS_9225090_FIXED // see http://osgvsowi/9225090
     return Callback<TDelegateInterface>([=](auto&& ...args) { return ((*object).*(method))(args ...); });
-#else
-    auto callback = [=](auto&& ...args) { return ((*object).*(method))(args ...); };
-    return Make<Details::InvokeHelper<TDelegateInterface, decltype(callback),
-        Details::ArgTraitsHelper<TDelegateInterface>::args, DelegateCheckMode::NoCheck>>(Details::Move(callback));
-#endif
+}
+
+// Provide a callback that holds a weak reference to an innner callback to invoke. This is useful when breaking cycles.
+template<typename TDelegateInterface>
+HRESULT WeakReferenceCallback(_In_ IWeakReferenceSource* innerCallback, _Outptr_result_nullonfailure_ TDelegateInterface** callback) 
+{
+    *callback = nullptr;
+    WeakRef innerWeakRef;
+    HRESULT hr = innerCallback->GetWeakReference(&innerWeakRef);
+    if (SUCCEEDED(hr))
+    {
+        *callback = Callback<TDelegateInterface>([innerWeakRef = Details::Move(innerWeakRef)](auto&&... args) -> HRESULT
+        {
+            ComPtr<TDelegateInterface> strongHandler;
+            // Attempt to resolve directly to the delegate. Note that the delegate likely doesn't derive from IInspectable. Nonetheless, 
+            // this shortcut is generally considered safe. By default, WeakRef::As() blocks this since this is an unusual case.
+            HRESULT hr = innerWeakRef.Get()->Resolve(__uuidof(TDelegateInterface), reinterpret_cast<IInspectable**>(strongHandler.GetAddressOf()));
+            if (SUCCEEDED(hr))
+            {
+                if (strongHandler)
+                {
+                    return strongHandler->Invoke(args ...);
+                }
+                else
+                {
+                    // This will signal to an event or async completion that the server isn't available. It'll be ignored as a failure, 
+                    // but in events, will cause the event source to drop the callback, shorting out the need to resolve the weak reference again later.
+                    return RPC_E_DISCONNECTED;
+                }
+            }
+            return hr;
+        }).Detach();
+        hr = (*callback != nullptr) ? S_OK : E_OUTOFMEMORY;
+    }
+    return hr;
+}
+
+template<typename TDelegateInterface>
+HRESULT WeakReferenceCallback(_In_ TDelegateInterface* innerCallback, _Outptr_result_nullonfailure_ TDelegateInterface** callback)
+{
+    *callback = nullptr;
+    ComPtr<IWeakReferenceSource> weakRefSource;
+    HRESULT hr = innerCallback->QueryInterface(IID_PPV_ARGS(&weakRefSource));
+    if (SUCCEEDED(hr))
+    {
+        hr = WeakReferenceCallback(weakRefSource.Get(), callback);
+    }
+    return hr;
+}
+
+// Make a callback to a specific method on a class through a weak pointer. The class must implement IWeakReferenceSource and the method signature must 
+// match the delegate Invoke signature, but the class does not need to implement the specific delegate interface, and the member method does not need to be called "Invoke".
+template<typename T, typename TDelegateInterface, typename ...TArgs>
+HRESULT WeakReferenceCallback(_In_ T* targetObject, HRESULT (T::*targetMethod)(TArgs... args), _Outptr_result_nullonfailure_ TDelegateInterface** callback)
+{
+    static_assert(__is_base_of(IWeakReferenceSource, T), "The object being called must be able to supply a weak reference to be called back through.");
+
+    *callback = nullptr;
+    WeakRef innerWeakRef;
+    HRESULT hr = targetObject->GetWeakReference(&innerWeakRef);
+    if (SUCCEEDED(hr))
+    {
+        *callback = Callback<TDelegateInterface>([innerWeakRef=Details::Move(innerWeakRef), targetObject, targetMethod](TArgs&&... innerArgs)
+        {
+            // Attempt to resolve directly to the delegate. Note that the delegate likely doesn't derive from IInspectable. Nonetheless, 
+            // this shortcut is generally considered safe. By default, WeakRef::As() blocks this since this is an unusual case.
+            ComPtr<IInspectable> strongHandler;
+            HRESULT hr = innerWeakRef.Get()->Resolve(__uuidof(IInspectable), reinterpret_cast<IInspectable**>(strongHandler.GetAddressOf()));
+            if (SUCCEEDED(hr))
+            {
+                // Assumption is that targetObject is still valid if the inner weak reference resolved. There are some corner cases
+                // that can break this (e.g. tear-offs) but this safe in normal cases. WeakRef resolves to IInspectable, which T may multiply-inherit 
+                // from, so it's frequently not possible to static-cast from that pointer to T.
+                if (strongHandler)
+                {
+                    return (targetObject->*targetMethod)(Details::Forward<TArgs>(innerArgs) ...);
+                }
+                else
+                {
+                    // This will signal to an event or async completion that the server isn't available. It'll be ignored as a failure, 
+                    // but in events, will cause the event source to drop the callback, shorting out the need to resolve the weak reference again later.
+                    return RPC_E_DISCONNECTED;
+                }
+            }
+            return hr;
+        }).Detach();
+
+        hr = (*callback != nullptr) ? S_OK : E_OUTOFMEMORY;
+    }
+    return hr;
+}
+
+// The explicit overload is required here to support template argument deduction of the callback interface type.
+template<typename T, typename TDelegateInterface, typename ...TArgs>
+HRESULT WeakReferenceCallback(_In_ T* targetObject, HRESULT(T::*targetMethod)(TArgs... args), _Outptr_result_nullonfailure_ ::Microsoft::WRL::Details::ComPtrRef< ::Microsoft::WRL::ComPtr<TDelegateInterface>> callback)
+{
+    return WeakReferenceCallback(targetObject, targetMethod, static_cast<TDelegateInterface**>(callback));
 }
 
 namespace Details
@@ -737,6 +586,8 @@ template<typename TDelegateInterface, typename TEventSourceOptions = InvokeModeO
 #else
 template<typename TDelegateInterface, typename TEventSourceOptions = InvokeModeOptions<FireAll>>
 #endif // (defined(BUILD_WINDOWS) && (NTDDI_VERSION >= NTDDI_WINBLUE))
+
+// Source events for non-agile single threaded components. Agile components should use AgileEventSource
 class EventSource
 {
 public:
@@ -963,94 +814,26 @@ private:
 
 public:
 
-    _Check_return_ HRESULT InvokeAll() throw()
+    template<typename ...TArgs>
+    _Check_return_ HRESULT InvokeAll(TArgs... args) throw()
     {
-        return DoInvoke([](ComPtr<IUnknown>& p) -> HRESULT { return static_cast<TDelegateInterface*>(p.Get())->Invoke(); });
-    }
-
-    template < typename T0 > _Check_return_ HRESULT InvokeAll(T0 arg0) throw()
-    {
-        return DoInvoke([arg0]( ComPtr<IUnknown>& p) -> HRESULT {
-            return static_cast<TDelegateInterface*>(p.Get())->Invoke(arg0); 
-        });
-    }
-
-    template < typename T0, typename T1 > _Check_return_ HRESULT InvokeAll(T0 arg0, T1 arg1) throw()
-    {
-        return DoInvoke([arg0, arg1]( ComPtr<IUnknown>& p) -> HRESULT {
-            return static_cast<TDelegateInterface*>(p.Get())->Invoke(arg0, arg1);
-        });
-    }
-
-    template < typename T0, typename T1, typename T2 > _Check_return_ HRESULT InvokeAll(T0 arg0, T1 arg1, T2 arg2) throw()
-    {
-        return DoInvoke([arg0, arg1, arg2]( ComPtr<IUnknown>& p) -> HRESULT { 
-            return static_cast<TDelegateInterface*>(p.Get())->Invoke(arg0, arg1, arg2);
-        });
-    }
-
-    template < typename T0, typename T1, typename T2, typename T3> _Check_return_ HRESULT InvokeAll(T0 arg0, T1 arg1, T2 arg2, T3 arg3) throw()
-    {
-        return DoInvoke([arg0, arg1, arg2, arg3]( ComPtr<IUnknown>& p) -> HRESULT {
-            return static_cast<TDelegateInterface*>(p.Get())->Invoke(arg0, arg1, arg2, arg3);
-        });
-    }
-
-    template < typename T0, typename T1, typename T2, typename T3, typename T4> 
-        _Check_return_ HRESULT InvokeAll(T0 arg0, T1 arg1, T2 arg2, T3 arg3, T4 arg4) throw()
-    {
-        return DoInvoke([arg0, arg1, arg2, arg3, arg4]( ComPtr<IUnknown>& p) -> HRESULT {
-            return static_cast<TDelegateInterface*>(p.Get())->Invoke(arg0, arg1, arg2, arg3, arg4);
-        });
-    }
-
-    template < typename T0, typename T1, typename T2, typename T3, typename T4, typename T5> 
-        _Check_return_ HRESULT InvokeAll(T0 arg0, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5) throw()
-    {
-        return DoInvoke([arg0, arg1, arg2, arg3, arg4, arg5]( ComPtr<IUnknown>& p) -> HRESULT {
-            return static_cast<TDelegateInterface*>(p.Get())->Invoke(arg0, arg1, arg2, arg3, arg4, arg5);
-        });
-    }
-
-    template < typename T0, typename T1, typename T2, typename T3, typename T4, typename T5, typename T6> 
-        _Check_return_ HRESULT InvokeAll(T0 arg0, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6) throw()
-    {
-        return DoInvoke([arg0, arg1, arg2, arg3, arg4, arg5, arg6]( ComPtr<IUnknown>& p) -> HRESULT {
-            return static_cast<TDelegateInterface*>(p.Get())->Invoke(arg0, arg1, arg2, arg3, arg4, arg5, arg6); 
-        });
-    }
-
-    template < typename T0, typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7> 
-        _Check_return_ HRESULT InvokeAll(T0 arg0, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7) throw()
-    {
-        return DoInvoke([arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7]( ComPtr<IUnknown>& p) -> HRESULT {
-            return static_cast<TDelegateInterface*>(p.Get())->Invoke(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-        });
-    }
-
-    template < typename T0, typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8> 
-        _Check_return_ HRESULT InvokeAll(T0 arg0, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8) throw()
-    {
-        return DoInvoke([arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8]( ComPtr<IUnknown>& p) -> HRESULT {
-            return static_cast<TDelegateInterface*>(p.Get())->Invoke(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-        });
-    }
-
-    template < typename T0, typename T1, typename T2, typename T3, typename T4, typename T5, typename T6, typename T7, typename T8, typename T9 > 
-        _Check_return_ HRESULT InvokeAll(T0 arg0, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, T7 arg7, T8 arg8, T9 arg9) throw()
-    {
-        return DoInvoke([arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9]( ComPtr<IUnknown>& p) -> HRESULT {            
-            return static_cast<TDelegateInterface*>(p.Get())->Invoke(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9); 
-        });
+        return DoInvoke([&](ComPtr<IUnknown>& p) -> HRESULT { return static_cast<TDelegateInterface*>(p.Get())->Invoke(Details::Forward<TArgs>(args)...); });
     }
 
     size_t GetSize() const throw()
     {
+        if (targets_ == nullptr)
+        {
+            return 0;
+        }
+
+        Wrappers::SRWLock::SyncLockExclusive targetsPointerLock = targetsPointerLock_.LockExclusive();
         return targets_ == nullptr ? 0 : targets_->Length();
     }
+
 protected:
     ComPtr<Details::EventTargetArray> targets_;
-    Wrappers::SRWLock targetsPointerLock_;
+    mutable Wrappers::SRWLock targetsPointerLock_;
     Wrappers::SRWLock addRemoveLock_;
 };
 
@@ -1161,6 +944,8 @@ template<typename TDelegateInterface, typename TEventSourceOptions = Microsoft::
 #else
 template<typename TDelegateInterface, typename TEventSourceOptions = Microsoft::WRL::InvokeModeOptions<FireAll>>
 #endif  // defined(BUILD_WINDOWS)
+
+// WinRT event source implementation for agile/multi-threaded components.
 class AgileEventSource : public Microsoft::WRL::EventSource<TDelegateInterface, TEventSourceOptions>
 {
     // defining type 'Super' for other compilers since '__super' is a VC++-specific language extension

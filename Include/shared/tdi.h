@@ -934,10 +934,14 @@ typedef struct _TDI_PROVIDER_STATISTICS {
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
 _Success_(return==STATUS_SUCCESS)
+_At_(Buffer,
+    _Out_writes_bytes_(
+        sizeof(FILE_FULL_EA_INFORMATION) + TDI_TRANSPORT_ADDRESS_LENGTH +
+            sizeof(TA_NETBIOS_ADDRESS)))
 NTSTATUS
 TdiOpenNetbiosAddress (
     _Out_ PHANDLE FileHandle,
-    _Inout_ PUCHAR Buffer,
+    PUCHAR Buffer,
     _In_ PVOID DeviceName,
     _In_opt_ PVOID Name
     );

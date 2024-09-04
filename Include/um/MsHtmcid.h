@@ -512,6 +512,8 @@
 #define IDM_ENABLE_OBJECT_RESIZING        3906
 #define IDM_INSERTTEXT                    3907
 #define IDM_LAUNCHURICALLBACK             3908
+#define IDM_FOLLOWLINKN_INPRIVATE         3909
+#define IDM_FOLLOWLINKT_INPRIVATE         3910
 
 // Commands mapped from the standard set.  We should
 // consider deleting them from public header files.
@@ -543,6 +545,15 @@
 #define IDM_TOGGLEREADINGBAR        15209
 #define IDM_ADDPDFHIGHLIGHT         15210
 #define IDM_DELETEPDFHIGHLIGHT      15211
+#define IDM_ADDPDFNOTE              15212
+#define IDM_OPENPDFNOTE             15213
+#define IDM_EDITPDFHIGHLIGHT        15214
+#define IDM_PINKHIGHLIGHT           15215
+#define IDM_BLUEHIGHLIGHT           15216
+#define IDM_GREENHIGHLIGHT          15217
+#define IDM_YELLOWHIGHLIGHT         15218
+#define IDM_NONEHIGHLIGHT           15219
+#define IDM_PDFREADALOUD            15220
 
 // Defines for IDM_ZOOMPERCENT
 #define CMD_ZOOM_PAGEWIDTH -1

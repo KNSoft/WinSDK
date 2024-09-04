@@ -25,10 +25,11 @@ Notes:
 
         Version     First available in
         ------------------------------------------------------------------
-        670         Windows 10 RS2
-        660         Windows Server 2016
-        651         Windows 10
-        650         Windows 10
+        680         Windows 10  RS3 Release
+        670         Windows 10, version 1703
+        660         Windows 10, version 1607 / Windows Server 2016
+        651         Windows 10, version 1511
+        650         Windows 10, version 1507
         640         Windows 8.1 / Windows Server 2012 R2
         630         Windows 8 / Windows Server 2012
         620         Windows 7 / Windows Server 2008 R2
@@ -83,12 +84,25 @@ extern "C" {
 #endif // (NTDDI_VERSION >= NTDDI_VISTA)
 
 //
+// Something to identify new (RS3 and up) applications.
+// User-mode only. For drivers, NDIS_SUPPORT_NDIS680 is already
+// defined in ndismain.w.
+//
+#if !defined(NDIS_SUPPORT_NDIS680)
+#if  (defined (UM_NDIS680))
+#define NDIS_SUPPORT_NDIS680      1
+#else
+#define NDIS_SUPPORT_NDIS680      0
+#endif
+#endif // !defined(NDIS_SUPPORT_NDIS680)
+
+//
 // Something to identify new (RS2 and up) applications.
 // User-mode only. For drivers, NDIS_SUPPORT_NDIS670 is already
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS670)
-#if  (defined (UM_NDIS670))
+#if  (defined (UM_NDIS670) || defined(UM_NDIS680))
 #define NDIS_SUPPORT_NDIS670      1
 #else
 #define NDIS_SUPPORT_NDIS670      0
@@ -101,7 +115,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS660)
-#if  (defined (UM_NDIS660))
+#if  (defined (UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680))
 #define NDIS_SUPPORT_NDIS660      1
 #else
 #define NDIS_SUPPORT_NDIS660      0
@@ -114,7 +128,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS651)
-#if  (defined (UM_NDIS651) || defined(UM_NDIS660))
+#if  (defined (UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680))
 #define NDIS_SUPPORT_NDIS651      1
 #else
 #define NDIS_SUPPORT_NDIS651      0
@@ -127,7 +141,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS650)
-#if  (defined (UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670))
+#if  (defined (UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680))
 #define NDIS_SUPPORT_NDIS650      1
 #else
 #define NDIS_SUPPORT_NDIS650      0
@@ -140,7 +154,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS640)
-#if  (defined (UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670))
+#if  (defined (UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680))
 #define NDIS_SUPPORT_NDIS640      1
 #else
 #define NDIS_SUPPORT_NDIS640      0
@@ -153,7 +167,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS630)
-#if  (defined (UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670))
+#if  (defined (UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680))
 #define NDIS_SUPPORT_NDIS630      1
 #else
 #define NDIS_SUPPORT_NDIS630      0
@@ -166,7 +180,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS620)
-#if  (defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670))
+#if  (defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680))
 #define NDIS_SUPPORT_NDIS620      1
 #else
 #define NDIS_SUPPORT_NDIS620      0
@@ -179,7 +193,7 @@ extern "C" {
 // defined in ndismain.w.
 //
 #if !defined(NDIS_SUPPORT_NDIS61)
-#if  (defined (UM_NDIS61) || defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670))
+#if  (defined (UM_NDIS61) || defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680))
 #define NDIS_SUPPORT_NDIS61      1
 #else
 #define NDIS_SUPPORT_NDIS61      0
@@ -188,7 +202,7 @@ extern "C" {
 
 
 #if !defined(NDIS_SUPPORT_NDIS6)
-#if  (defined(UM_NDIS60) || defined (UM_NDIS61) || defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670))
+#if  (defined(UM_NDIS60) || defined (UM_NDIS61) || defined (UM_NDIS620) || defined(UM_NDIS630) || defined(UM_NDIS640) || defined(UM_NDIS650) || defined(UM_NDIS651) || defined(UM_NDIS660) || defined(UM_NDIS670) || defined(UM_NDIS680))
 #define NDIS_SUPPORT_NDIS6       1
 #else
 #define NDIS_SUPPORT_NDIS6       0
@@ -687,6 +701,11 @@ typedef struct _NDIS_PCI_DEVICE_CUSTOM_PROPERTIES
 
 #endif // (NTDDI_VERSION >= NTDDI_VISTA)
 
+#if ((NTDDI_VERSION >= NTDDI_WIN10_RS3) || NDIS_SUPPORT_NDIS680)
+// RSSv2 standard OID: control scaling parameters
+#define OID_GEN_RECEIVE_SCALE_PARAMETERS_V2     0x00010214  // query and set
+#endif  // ((NTDDI_VERSION >= NTDDI_WIN10_RS3) || NDIS_SUPPORT_NDIS680)
+
 #define OID_GEN_MACHINE_NAME                    0x0001021A  // set only
 #define OID_GEN_RNDIS_CONFIG_PARAMETER          0x0001021B  // Set only
 #define OID_GEN_VLAN_ID                         0x0001021C
@@ -818,6 +837,17 @@ typedef struct _NDIS_PCI_DEVICE_CUSTOM_PROPERTIES
 #define OID_WWAN_LTE_ATTACH_CONFIG                  0x0e010142
 #define OID_WWAN_LTE_ATTACH_STATUS                  0x0e010143
 #endif // ((NTDDI_VERSION >= NTDDI_WIN10_RS2) || NDIS_SUPPORT_NDIS670)
+
+#if ((NTDDI_VERSION >= NTDDI_WIN10_RS3) || NDIS_SUPPORT_NDIS680)
+//
+// Even more WWAN specific oids
+//
+#define OID_WWAN_MODEM_CONFIG_INFO                  0x0e010144
+#define OID_WWAN_PCO                                0x0e010145
+#define OID_WWAN_UICC_RESET                         0x0e010146
+#define OID_WWAN_DEVICE_RESET                       0x0e010147
+#define OID_WWAN_BASE_STATIONS_INFO                 0x0e010148
+#endif // ((NTDDI_VERSION >= NTDDI_WIN10_RS3) || NDIS_SUPPORT_NDIS680)
 
 //
 //  Required statistics
@@ -1985,6 +2015,20 @@ NDIS_802_11_RADIO_STATUS, *PNDIS_802_11_RADIO_STATUS;
 #define OID_SWITCH_NIC_SUSPEND                        0x00010297   // set only
 #define OID_SWITCH_NIC_RESUME                         0x00010298   // set only
 #endif //(NDIS_SUPPORT_NDIS650)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3) || (NDIS_SUPPORT_NDIS680)
+
+//
+// OIDs issued at source node when a suspended LM for a NIC is starting and 
+// when it it is finished.
+//
+#define OID_SWITCH_NIC_SUSPENDED_LM_SOURCE_STARTED    0x00010299   // set only
+#define OID_SWITCH_NIC_SUSPENDED_LM_SOURCE_FINISHED   0x0001029A   // set only
+
+// RSSv2 direct OID: move an array of indirection table entries
+#define OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES     0x000102C0    // method only
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS3) || (NDIS_SUPPORT_NDIS680)
 
 #if (NTDDI_VERSION >= NTDDI_WINBLUE) ||(NDIS_SUPPORT_NDIS640)
 
@@ -3488,7 +3532,7 @@ typedef enum _NDIS_RFC6877_464XLAT_OFFLOAD_OPTIONS
 typedef struct _NDIS_RFC6877_464XLAT_OFFLOAD
 {
     NDIS_RFC6877_464XLAT_OFFLOAD_OPTIONS   XlatOffload;
-    ULONG Flags;                                       // Reserved, always 0 
+    ULONG Flags;                                       // Reserved, always 0
 } NDIS_RFC6877_464XLAT_OFFLOAD, *PNDIS_RFC6877_464XLAT_OFFLOAD;
 
 #endif // (NDIS_SUPPORT_NDIS670)
@@ -4782,6 +4826,10 @@ typedef struct _NDIS_WMI_PM_ACTIVE_CAPABILITIES
 #define NDIS_RECEIVE_FILTER_ANY_VLAN_SUPPORTED                          0x00000020  // deprecated
 #endif // (NDIS_SUPPORT_NDIS630)
 
+#if (NDIS_SUPPORT_NDIS680)
+#define NDIS_RECEIVE_FILTER_DYNAMIC_PROCESSOR_AFFINITY_CHANGE_FOR_DEFAULT_QUEUE_SUPPORTED 0x00000040
+#endif // (NDIS_SUPPORT_NDIS680)
+
 
 //
 // The following bits are used in EnabledFilterTypes field of
@@ -5120,6 +5168,7 @@ typedef struct _NDIS_RECEIVE_FILTER_FIELD_PARAMETERS
     RTL_SIZEOF_THROUGH_FIELD(NDIS_RECEIVE_FILTER_FIELD_PARAMETERS, ResultValue)
 #endif // (NDIS_SUPPORT_NDIS630)
 
+typedef ULONG NDIS_NIC_SWITCH_ID, *PNDIS_NIC_SWITCH_ID;
 #if (NDIS_SUPPORT_NDIS630)
 typedef ULONG NDIS_NIC_SWITCH_VPORT_ID, *PNDIS_NIC_SWITCH_VPORT_ID;
 #endif // (NDIS_SUPPORT_NDIS630)
@@ -5505,45 +5554,59 @@ typedef
 #define NDIS_RECEIVE_SCALE_CAPABILITIES_REVISION_3     3
 #endif // (NDIS_SUPPORT_NDIS660)
 
+
+//
+// What kind of hash field type the miniport can support.
+// Important, the defined values for NDIS_RSS_CAPS_HASH_TYPE must allow for
+// matching the NDIS_HASH_TYPE_MASK.  Referrence the NDIS_HASH_TYPE_MASK
+// for more info.
+//
+#define NDIS_RSS_CAPS_HASH_TYPE_TCP_IPV4                    0x00000100
+#define NDIS_RSS_CAPS_HASH_TYPE_TCP_IPV6                    0x00000200
+#define NDIS_RSS_CAPS_HASH_TYPE_TCP_IPV6_EX                 0x00000400
+#if (NDIS_SUPPORT_NDIS680)
+    #define NDIS_RSS_CAPS_HASH_TYPE_UDP_IPV4                0x00000800
+    #define NDIS_RSS_CAPS_HASH_TYPE_UDP_IPV6                0x00001000
+    #define NDIS_RSS_CAPS_HASH_TYPE_UDP_IPV6_EX             0x00002000
+#endif // (NDIS_SUPPORT_NDIS680)
+
 //
 // What kind the receive scale capabilities the miniport can support, miniport drivers return
 // some of these flags as CapabilitiesFlags in a structure _NDIS_RECEIVE_SCALE_CAPABILITIES
 // when they get a query about theire receive side scale capabilities.
 //
-#define NDIS_RSS_CAPS_MESSAGE_SIGNALED_INTERRUPTS                    0x01000000
-#define NDIS_RSS_CAPS_CLASSIFICATION_AT_ISR                          0x02000000
-#define NDIS_RSS_CAPS_CLASSIFICATION_AT_DPC                          0x04000000
-
+#define NDIS_RSS_CAPS_MESSAGE_SIGNALED_INTERRUPTS           0x01000000
+#define NDIS_RSS_CAPS_CLASSIFICATION_AT_ISR                 0x02000000
+#define NDIS_RSS_CAPS_CLASSIFICATION_AT_DPC                 0x04000000
 #if NDIS_SUPPORT_NDIS620
-#define NDIS_RSS_CAPS_USING_MSI_X                                    0x08000000
+    #define NDIS_RSS_CAPS_USING_MSI_X                       0x08000000
 #endif
-
 #if (NDIS_SUPPORT_NDIS630)
-#define NDIS_RSS_CAPS_RSS_AVAILABLE_ON_PORTS                         0x10000000
-#define NDIS_RSS_CAPS_SUPPORTS_MSI_X                                 0x20000000
+    #define NDIS_RSS_CAPS_RSS_AVAILABLE_ON_PORTS            0x10000000
+    #define NDIS_RSS_CAPS_SUPPORTS_MSI_X                    0x20000000
 #endif // (NDIS_SUPPORT_NDIS630)
-
+#if (NDIS_SUPPORT_NDIS680)
+    #define NDIS_RSS_CAPS_SUPPORTS_INDEPENDENT_ENTRY_MOVE   0x40000000
+#endif // (NDIS_SUPPORT_NDIS680)
 //
-// What kind of hash field type the miniport can support
+// Typedef to use as flags holder to correlate to the NDIS_RSS_CAPS_ prefixed flags above.
 //
-#define NDIS_RSS_CAPS_HASH_TYPE_TCP_IPV4      0x00000100
-#define NDIS_RSS_CAPS_HASH_TYPE_TCP_IPV6      0x00000200
-#define NDIS_RSS_CAPS_HASH_TYPE_TCP_IPV6_EX   0x00000400
-
+typedef ULONG NDIS_RSS_CAPS_FLAGS;
 
 //
 // the following structure defines the Receive scale capabilities of the miniport
 //
 typedef struct _NDIS_RECEIVE_SCALE_CAPABILITIES
 {
-    NDIS_OBJECT_HEADER  Header;
-    ULONG   CapabilitiesFlags;
-    ULONG   NumberOfInterruptMessages;
-    ULONG   NumberOfReceiveQueues;
-#if (NDIS_SUPPORT_NDIS630)
-    USHORT  NumberOfIndirectionTableEntries;
-#endif // (NDIS_SUPPORT_NDIS630)
+    NDIS_OBJECT_HEADER    Header;
+    NDIS_RSS_CAPS_FLAGS   CapabilitiesFlags;
+    ULONG                 NumberOfInterruptMessages;
+    ULONG                 NumberOfReceiveQueues;
+    #if (NDIS_SUPPORT_NDIS630)
+    USHORT                NumberOfIndirectionTableEntries;
+    #endif // (NDIS_SUPPORT_NDIS630)
 } NDIS_RECEIVE_SCALE_CAPABILITIES, *PNDIS_RECEIVE_SCALE_CAPABILITIES;
+
 
 #define NDIS_SIZEOF_RECEIVE_SCALE_CAPABILITIES_REVISION_1   \
         RTL_SIZEOF_THROUGH_FIELD(NDIS_RECEIVE_SCALE_CAPABILITIES, NumberOfReceiveQueues)
@@ -5552,6 +5615,11 @@ typedef struct _NDIS_RECEIVE_SCALE_CAPABILITIES
 #define NDIS_SIZEOF_RECEIVE_SCALE_CAPABILITIES_REVISION_2   \
         RTL_SIZEOF_THROUGH_FIELD(NDIS_RECEIVE_SCALE_CAPABILITIES, NumberOfIndirectionTableEntries)
 #endif // (NDIS_SUPPORT_NDIS630)
+
+#if (NDIS_SUPPORT_NDIS660)
+#define NDIS_SIZEOF_RECEIVE_SCALE_CAPABILITIES_REVISION_3   \
+        RTL_SIZEOF_THROUGH_FIELD(NDIS_RECEIVE_SCALE_CAPABILITIES, NumberOfIndirectionTableEntries)
+#endif // (NDIS_SUPPORT_NDIS660)
 
 //
 // What hash functions does NDIS support
@@ -5576,12 +5644,24 @@ typedef struct _NDIS_RECEIVE_SCALE_CAPABILITIES
 //
 // What kind of hash field type the protocol asks the miniport to do
 //
-#define NDIS_HASH_IPV4           0x00000100
-#define NDIS_HASH_TCP_IPV4       0x00000200
-#define NDIS_HASH_IPV6           0x00000400
-#define NDIS_HASH_IPV6_EX        0x00000800
-#define NDIS_HASH_TCP_IPV6       0x00001000
-#define NDIS_HASH_TCP_IPV6_EX    0x00002000
+#define NDIS_HASH_IPV4              0x00000100
+#define NDIS_HASH_TCP_IPV4          0x00000200
+#define NDIS_HASH_IPV6              0x00000400
+#define NDIS_HASH_IPV6_EX           0x00000800
+#define NDIS_HASH_TCP_IPV6          0x00001000
+#define NDIS_HASH_TCP_IPV6_EX       0x00002000
+#if (NDIS_SUPPORT_NDIS680)
+    #define NDIS_HASH_UDP_IPV4      0x00004000
+    #define NDIS_HASH_UDP_IPV6      0x00008000
+    #define NDIS_HASH_UDP_IPV6_EX   0x00010000
+#endif // (NDIS_SUPPORT_NDIS680)
+
+
+//
+// Typedef to use as flags holder to correlate to the NDIS_HAS_ prefixed flags above.
+//
+typedef ULONG NDIS_HASH_FLAGS;
+
 
 //
 // Flags to denote the parameters that are kept unmodified.
@@ -5687,6 +5767,132 @@ typedef struct _NDIS_RECEIVE_SCALE_PARAMETERS
 #define NDIS_RSS_HASH_SECRET_KEY_MAX_SIZE_REVISION_3        40
 
 #endif
+
+
+#if NDIS_SUPPORT_NDIS680
+
+//
+// Parameter structure used with OID_GEN_RECEIVE_SCALE_PARAMETERS_V2
+//
+#define NDIS_RECEIVE_SCALE_PARAMETERS_V2_REVISION_1         1
+
+#define NDIS_RECEIVE_SCALE_PARAM_ENABLE_RSS                 0x00000001
+#define NDIS_RECEIVE_SCALE_PARAM_HASH_INFO_CHANGED          0x00000002
+#define NDIS_RECEIVE_SCALE_PARAM_HASH_KEY_CHANGED           0x00000004
+#define NDIS_RECEIVE_SCALE_PARAM_NUMBER_OF_QUEUES_CHANGED   0x00000008
+#define NDIS_RECEIVE_SCALE_PARAM_NUMBER_OF_ENTRIES_CHANGED  0x00000010
+
+typedef struct _NDIS_RECEIVE_SCALE_PARAMETERS_V2
+{
+    //
+    // Header.Type = NDIS_OBJECT_TYPE_DEFAULT;
+    // Header.Revision = NDIS_RECEIVE_SCALE_PARAMETERS_V2_REVISION_1;
+    // Header.Size = sizeof(NDIS_RECEIVE_SCALE_PARAMETERS_V2);
+    //
+    NDIS_OBJECT_HEADER      Header;
+
+    // Qualifies the rest of the information.
+    ULONG                   Flags;
+
+    // This describes the hash function and type being enabled.
+    ULONG                   HashInformation;
+
+    // The size of the secret key.
+    ULONG                   HashSecretKeySize;
+    // The offset of the secret key from the beginning of this structure.
+    ULONG                   HashSecretKeyOffset;
+
+    // Number of queues
+    ULONG                   NumberOfQueues;
+
+    // Number of entries in indirection table. Must be power of two.
+    ULONG                   NumberOfIndirectionTableEntries;
+
+} NDIS_RECEIVE_SCALE_PARAMETERS_V2, *PNDIS_RECEIVE_SCALE_PARAMETERS_V2;
+
+#define NDIS_SIZEOF_RECEIVE_SCALE_PARAMETERS_V2_REVISION_1 \
+        RTL_SIZEOF_THROUGH_FIELD(NDIS_RECEIVE_SCALE_PARAMETERS_V2, \
+                                 NumberOfIndirectionTableEntries)
+
+//
+// Flag which tells that NDIS_RSS_SET_INDIRECTION_ENTRY is referring to 
+// "Primary Processor" of the scaling entity (e.g. VPort). 
+// IndirectionTableIndex is not used.
+//
+#define NDIS_RSS_SET_INDIRECTION_ENTRY_FLAG_PRIMARY_PROCESSOR   0x00000001
+
+//
+// Flag which tells that NDIS_RSS_SET_INDIRECTION_ENTRY is referring to 
+// "Default Processor" of the scaling entity (e.g. VPort). 
+// IndirectionTableIndex is not used.
+//
+#define NDIS_RSS_SET_INDIRECTION_ENTRY_FLAG_DEFAULT_PROCESSOR   0x00000002
+
+//
+// Command to set a single indirection table entry.
+//
+typedef struct _NDIS_RSS_SET_INDIRECTION_ENTRY
+{
+    // Nic Switch where VPort is residing
+    NDIS_NIC_SWITCH_ID          SwitchId;
+
+    // VPort idintifier
+    NDIS_NIC_SWITCH_VPORT_ID    VPortId;
+
+    // Qualifies the information in this structure. 
+    ULONG                       Flags;
+
+    // Indirection table entry which is being moved.
+    USHORT                      IndirectionTableIndex;
+
+    // Target processor number
+    PROCESSOR_NUMBER            TargetProcessorNumber;
+    
+    // Result of the set operation described by this entry.
+    NDIS_STATUS                 EntryStatus;
+
+} NDIS_RSS_SET_INDIRECTION_ENTRY, *PNDIS_RSS_SET_INDIRECTION_ENTRY;
+
+#define NDIS_SIZEOF_RSS_SET_INDIRECTION_ENTRY_REVISION_1 \
+        RTL_SIZEOF_THROUGH_FIELD(NDIS_RSS_SET_INDIRECTION_ENTRY, EntryStatus)
+
+//
+// This structure is a parameter for synchronous direct
+// OID_GEN_RSS_SET_INDIRECTION_TABLE_ENTRIES.
+//
+#define NDIS_RSS_SET_INDIRECTION_ENTRIES_REVISION_1     1
+
+typedef struct _NDIS_RSS_SET_INDIRECTION_ENTRIES
+{
+    //
+    // Header.Type = NDIS_OBJECT_TYPE_DEFAULT;
+    // Header.Revision = NDIS_RSS_SET_INDIRECTION_ENTRIES_REVISION_1;
+    // Header.Size = sizeof(NDIS_RSS_SET_INDIRECTION_ENTRIES);
+    //
+    NDIS_OBJECT_HEADER      Header;
+
+    // Qualifies the rest of the information, as well as array processing policy
+    ULONG                   Flags;
+
+    // RssEntrySize is an opaque number that needs to be added to the pointer
+    // during array traversal.
+    ULONG                   RssEntrySize;
+
+    // Offset of NDIS_RSS_SET_INDIRECTION_ENTRY array from the beginning of 
+    // this structure.
+    ULONG                   RssEntryTableOffset;
+
+    // The number of NDIS_RSS_SET_INDIRECTION_ENTRY elements in the array.
+    ULONG                   NumberOfRssEntries;
+
+} NDIS_RSS_SET_INDIRECTION_ENTRIES, *PNDIS_RSS_SET_INDIRECTION_ENTRIES;
+
+#define NDIS_SIZEOF_RSS_SET_INDIRECTION_ENTRIES_REVISION_1 \
+        RTL_SIZEOF_THROUGH_FIELD(NDIS_RSS_SET_INDIRECTION_ENTRIES, \
+                                 NumberOfRssEntries)
+
+#endif // NDIS_SUPPORT_NDIS680
+
 
 //
 // Used in OID_GEN_RECEIVE_HASH
@@ -6382,7 +6588,6 @@ typedef _Struct_size_bytes_(Header.Size) struct _NDIS_QOS_PARAMETERS
 
 typedef NDIS_IF_COUNTED_STRING NDIS_NIC_SWITCH_FRIENDLYNAME, *PNDIS_NIC_SWITCH_FRIENDLYNAME;
 typedef NDIS_IF_COUNTED_STRING NDIS_VPORT_NAME, *PNDIS_VPORT_NAME;
-typedef ULONG NDIS_NIC_SWITCH_ID, *PNDIS_NIC_SWITCH_ID;
 typedef USHORT NDIS_SRIOV_FUNCTION_ID, *PNDIS_SRIOV_FUNCTION_ID;
 typedef ULONG NDIS_VF_RID, *PNDIS_VF_RID;
 
@@ -8020,6 +8225,13 @@ typedef struct _NDIS_SWITCH_PORT_ARRAY
 #define NDIS_SWITCH_NIC_FLAGS_MAPPED_NIC_UPDATED    0x00000004
 #endif
 
+#if defined(NDIS_SUPPORT_NDIS680)
+//
+// Preferred mapped NIC for a vNIC has changed.
+//
+#define NDIS_SWITCH_NIC_FLAGS_NIC_SUSPENDED_LM      0x00000010
+#endif
+
 //
 // These structures are used in OID_SWITCH_NIC_ARRAY
 //
@@ -9365,7 +9577,7 @@ typedef enum _NDIS_GFT_COUNTER_VALUE_QUERY_METHOD
 
 //
 // NDIS_GFT_COUNTER_VALUE_ARRAY is used in OID_GFT_COUNTER_VALUES
-// 
+//
 #define NDIS_GFT_COUNTER_VALUE_ARRAY_REVISION_1       1
 
 typedef struct _NDIS_GFT_COUNTER_VALUE_ARRAY
@@ -9910,20 +10122,20 @@ typedef struct _NDIS_GFT_WILDCARD_MATCH_FLOW_ENTRY
     //
     // allocation or activation status for this flow entry
     //
-	_Out_ NDIS_STATUS                       MatchRequestStatus;
-	_Out_ NDIS_STATUS                       ActionRequestStatus;
+    _Out_ NDIS_STATUS                       MatchRequestStatus;
+    _Out_ NDIS_STATUS                       ActionRequestStatus;
 
 
-	_In_ ULONG                              CounterFlags;
-	_In_ NDIS_GFT_COUNTER_UPDATE_FREQUENCY  CounterUpdateFrequency;
-	_In_ NDIS_GFT_COUNTER_TYPE              CounterType;
-	_In_ ULONG                              UpdatePeriod; // in milliseconds
-	union
-	{
-		_Inout_ PNDIS_GFT_PACKET_COUNTER_VALUE              PacketCounterAddress;
-		_Inout_ PNDIS_GFT_BYTE_COUNTER_VALUE                ByteCounterAddress;
-		_Inout_ PNDIS_GFT_PACKET_AND_BYTE_COUNTER_VALUE     PacketAndByteCounterAddress;
-	} CounterValueBuffer;
+    _In_ ULONG                              CounterFlags;
+    _In_ NDIS_GFT_COUNTER_UPDATE_FREQUENCY  CounterUpdateFrequency;
+    _In_ NDIS_GFT_COUNTER_TYPE              CounterType;
+    _In_ ULONG                              UpdatePeriod; // in milliseconds
+    union
+    {
+        _Inout_ PNDIS_GFT_PACKET_COUNTER_VALUE              PacketCounterAddress;
+        _Inout_ PNDIS_GFT_BYTE_COUNTER_VALUE                ByteCounterAddress;
+        _Inout_ PNDIS_GFT_PACKET_AND_BYTE_COUNTER_VALUE     PacketAndByteCounterAddress;
+    } CounterValueBuffer;
 
     _In_ ULONG                              Priority;
     _In_ NDIS_GFT_WILDCARD_ACTION           Action;
@@ -10341,16 +10553,29 @@ typedef struct _NDIS_GFT_OFFLOAD_CAPABILITIES
 // flags used in Flags field of NDIS_GFT_VPORT_PARAMETERS
 //
 #define NDIS_GFT_VPORT_ENABLE                               0x00000001
+#define NDIS_GFT_VPORT_PARSE_VXLAN                          0x00000002
+#define NDIS_GFT_VPORT_PARSE_VXLAN_NOT_IN_SRC_PORT_RANGE    0x00000004
 
 #define NDIS_GFT_VPORT_ENABLE_STATE_CHANGED                 0x00100000
 #define NDIS_GFT_VPORT_EXCEPTION_VPORT_CHANGED              0x00200000
 #define NDIS_GFT_VPORT_SAMPLING_RATE_CHANGED                0x00400000
 #define NDIS_GFT_VPORT_DSCP_MASK_CHANGED                    0x00800000
 #define NDIS_GFT_VPORT_PRIORITY_MASK_CHANGED                0x01000000
+#define NDIS_GFT_VPORT_VXLAN_SETTINGS_CHANGED               0x02000000
+#define NDIS_GFT_VPORT_DSCP_FLAGS_CHANGED                   0x04000000
 #define NDIS_GFT_VPORT_PARAMS_CHANGE_MASK                   0xFFF00000
 
 #define NDIS_GFT_VPORT_MAX_DSCP_MASK_COUNTER_OBJECTS        64
 #define NDIS_GFT_VPORT_MAX_PRIORITY_MASK_COUNTER_OBJECTS    8
+
+
+//
+// Dscp flags used in DscpFlags field of NDIS_GFT_VPORT_PARAMETERS
+//
+#define NDIS_GFT_VPORT_DSCP_GUARD_ENABLE_RX                 0x00000001
+#define NDIS_GFT_VPORT_DSCP_GUARD_ENABLE_TX                 0x00000002
+#define NDIS_GFT_VPORT_DSCP_MASK_ENABLE_RX                  0x00000004
+#define NDIS_GFT_VPORT_DSCP_MASK_ENABLE_TX                  0x00000008
 
 //
 // NDIS_GFT_VPORT_PARAMETERS is used in OID_GFT_VPORT_PARAMETERS
@@ -10383,10 +10608,13 @@ typedef struct _NDIS_GFT_VPORT_PARAMETERS
     _In_ ULONG64							PriorityMask;
     _In_ ULONG                              NumPriorityMaskCounterObjects;
     _In_ NDIS_GFT_COUNTER_ID                PriorityMaskCounterIdArray[NDIS_GFT_VPORT_MAX_PRIORITY_MASK_COUNTER_OBJECTS];
+    _In_ USHORT                             VxLanSrcPortBase;
+    _In_ USHORT                             VxLanSrcPortRange;
+    _In_ ULONG                              DscpFlags;
 } NDIS_GFT_VPORT_PARAMETERS, *PNDIS_GFT_VPORT_PARAMETERS;
 
 #define NDIS_SIZEOF_GFT_VPORT_PARAMETERS_REVISION_1     \
-    RTL_SIZEOF_THROUGH_FIELD(NDIS_GFT_VPORT_PARAMETERS, PriorityMaskCounterIdArray)
+    RTL_SIZEOF_THROUGH_FIELD(NDIS_GFT_VPORT_PARAMETERS, DscpFlags)
 
 //
 // QOS Offload Scheduler Queue data structures

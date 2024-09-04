@@ -225,6 +225,46 @@ typedef struct IPSEC_SA_IDLE_TIMEOUT0_
    UINT32 idleTimeoutSecondsFailOver;
 } IPSEC_SA_IDLE_TIMEOUT0;
 
+typedef struct IPSEC_TRAFFIC_SELECTOR0_
+{
+    UINT8 protocolId;
+    UINT16 portStart;
+    UINT16 portEnd;
+
+    // IP version 
+    FWP_IP_VERSION ipVersion;
+    // Tagged union containing the starting address of the IPsec traffic selector
+    [switch_type(FWP_IP_VERSION), switch_is(ipVersion)] union
+    {
+        [case(FWP_IP_VERSION_V4)]
+        UINT32 startV4Address;
+        [case(FWP_IP_VERSION_V6)]
+        UINT8 startV6Address[16];
+    };
+    // Tagged union containing the ending address of the IPsec traffic selector
+    [switch_type(FWP_IP_VERSION), switch_is(ipVersion)] union
+    {
+        [case(FWP_IP_VERSION_V4)]
+        UINT32 endV4Address;
+        [case(FWP_IP_VERSION_V6)]
+        UINT8 endV6Address[16];
+    };
+}IPSEC_TRAFFIC_SELECTOR0;
+
+typedef struct IPSEC_TRAFFIC_SELECTOR_POLICY0_
+{
+   // Flags
+   UINT32 flags;
+   // Number of local traffic selectors
+   UINT32 numLocalTrafficSelectors;
+   // Array of traffic selectors
+   [size_is(numLocalTrafficSelectors), unique] IPSEC_TRAFFIC_SELECTOR0 * localTrafficSelectors;
+   // Number of remote traffic selectors
+   UINT32 numRemoteTrafficSelectors;
+   // Array of traffic selectors
+   [size_is(numRemoteTrafficSelectors), unique] IPSEC_TRAFFIC_SELECTOR0 * remoteTrafficSelectors;
+} IPSEC_TRAFFIC_SELECTOR_POLICY0;
+
 //////////
 // Flags specifying policy characteristics.
 //////////
@@ -288,6 +328,11 @@ cpp_quote("#define IPSEC_POLICY_FLAG_KEY_MANAGER_ALLOW_DICTATE_KEY (0x00002000)"
 cpp_quote("#define IPSEC_POLICY_FLAG_KEY_MANAGER_ALLOW_NOTIFY_KEY (0x00004000)")
 cpp_quote("#define IPSEC_POLICY_FLAG_RESERVED1 (0x00008000)")
 cpp_quote("#endif // (NTDDI_VERSION >= NTDDI_WIN8)")
+
+cpp_quote("#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)")
+// site to site tunnel mode IPsec policy
+cpp_quote("#define IPSEC_POLICY_FLAG_SITE_TO_SITE_TUNNEL (0x00010000)")
+cpp_quote("#endif // (NTDDI_VERSION > NTDDI_WIN10_RS3)")
 
 
 // Type used to store transport mode quick mode negotiation policy
@@ -506,6 +551,33 @@ typedef struct IPSEC_TUNNEL_POLICY2_
    UINT32 fwdPathSaLifetime;
 } IPSEC_TUNNEL_POLICY2;
 cpp_quote("#endif // (NTDDI_VERSION >= NTDDI_WIN8)")
+
+cpp_quote("#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)")
+// Version-3 of type used to store compartment Id for the tunnel policy
+typedef struct IPSEC_TUNNEL_POLICY3_
+{
+   // Flags
+   UINT32 flags;
+   // Number of quick mode proposals in the policy
+   UINT32 numIpsecProposals;
+   // Array of quick mode proposals.
+   [size_is(numIpsecProposals), ref] IPSEC_PROPOSAL0* ipsecProposals;
+   // Tunnel end points of the IPsec SA generated from this policy.
+   IPSEC_TUNNEL_ENDPOINTS2 tunnelEndpoints;
+   // The SA idle timeout
+   IPSEC_SA_IDLE_TIMEOUT0 saIdleTimeout;
+   // The Authip extended mode authentication policy
+   [unique] IKEEXT_EM_POLICY2* emPolicy;
+   // If non-0, specifies the lifetime in seconds for SA initiated by traffic on the forward path
+   UINT32 fwdPathSaLifetime;
+   // If non-0, specifies the Compartment Id for the Tunnel Policy
+   UINT32 compartmentId;
+   // Number of traffic selector policies
+   UINT32 numTrafficSelectorPolicy;
+   // Array of traffic selectors
+   [size_is(numTrafficSelectorPolicy), unique] IPSEC_TRAFFIC_SELECTOR_POLICY0 * trafficSelectorPolicies;
+} IPSEC_TUNNEL_POLICY3;
+cpp_quote("#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS3)")
 
 // Defines an unordered set of keying modules that will be tried for IPsec.
 typedef struct IPSEC_KEYING_POLICY0_

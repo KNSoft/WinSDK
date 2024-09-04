@@ -598,6 +598,11 @@ typedef struct _DEBUG_CACHED_SYMBOL_INFO
 // return - S_OK.
 #define DEBUG_REQUEST_GET_INSTRUMENTATION_VERSION 37
 
+// InBuffer - ULONG for module index
+// OutBuffer - ULONG for architecture
+// return - S_OK
+#define DEBUG_REQUEST_GET_MODULE_ARCHITECTURE 38
+
 //
 // GetSourceFileInformation requests.
 //
@@ -2410,7 +2415,8 @@ DECLARE_INTERFACE_(IDebugClient, IUnknown)
 #define DEBUG_FORMAT_USER_SMALL_FULL_AUXILIARY_STATE      0x00004000
 #define DEBUG_FORMAT_USER_SMALL_MODULE_HEADERS            0x00008000
 #define DEBUG_FORMAT_USER_SMALL_FILTER_TRIAGE             0x00010000
-#define	DEBUG_FORMAT_USER_SMALL_ADD_AVX_XSTATE_CONTEXT    0x00020000
+#define DEBUG_FORMAT_USER_SMALL_ADD_AVX_XSTATE_CONTEXT    0x00020000
+#define DEBUG_FORMAT_USER_SMALL_IPT_TRACE                 0x00040000
 #define DEBUG_FORMAT_USER_SMALL_IGNORE_INACCESSIBLE_MEM   0x08000000
 
 
@@ -6683,6 +6689,8 @@ typedef struct _STACK_SYM_FRAME_INFO
 #define DEBUG_STACK_FRAME_OFFSETS           0x00001000
 // The stack trace information is from a stack provider
 #define DEBUG_STACK_PROVIDER                0x00002000
+// The architecture of the frame (for mixed architecture stacks)
+#define DEBUG_STACK_FRAME_ARCH              0x00004000
 
 // Classes of debuggee.  Each class
 // has different qualifiers for specific
@@ -6702,6 +6710,7 @@ typedef struct _STACK_SYM_FRAME_INFO
 #define DEBUG_DUMP_IMAGE_FILE 1027
 #define DEBUG_DUMP_TRACE_LOG  1028
 #define DEBUG_DUMP_WINDOWS_CE 1029
+#define DEBUG_DUMP_ACTIVE     1030
 
 // Specific types of kernel debuggees.
 #define DEBUG_KERNEL_CONNECTION     0
@@ -6712,6 +6721,7 @@ typedef struct _STACK_SYM_FRAME_INFO
 
 #define DEBUG_KERNEL_SMALL_DUMP  DEBUG_DUMP_SMALL
 #define DEBUG_KERNEL_DUMP        DEBUG_DUMP_DEFAULT
+#define DEBUG_KERNEL_ACTIVE_DUMP DEBUG_DUMP_ACTIVE
 #define DEBUG_KERNEL_FULL_DUMP   DEBUG_DUMP_FULL
 
 #define DEBUG_KERNEL_TRACE_LOG   DEBUG_DUMP_TRACE_LOG

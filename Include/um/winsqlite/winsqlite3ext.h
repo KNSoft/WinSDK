@@ -294,6 +294,10 @@ struct sqlite3_api_routines {
   int (SQLITE_APICALL *trace_v2)(sqlite3*,unsigned,int(SQLITE_CALLBACK *)(unsigned,void*,void*,void*),void*);
   char *(SQLITE_APICALL *expanded_sql)(sqlite3_stmt*);
 #endif /* NTDDI_VERSION >= NTDDI_WIN10_RS2 */
+// NOTE: This will be updated to RS3 prior to RS3's release.
+#if NTDDI_VERSION >= NTDDI_WIN10_RS2
+  void (SQLITE_APICALL *set_last_insert_rowid)(sqlite3*,sqlite3_int64);
+#endif /* NTDDI_VERSION >= NTDDI_WIN10_RS2 */
 };
 
 #if NTDDI_VERSION >= NTDDI_WIN10_RS2
@@ -559,6 +563,10 @@ typedef int (SQLITE_APICALL *sqlite3_loadext_entry)(
 /* Version 3.14.0 and later */
 #define sqlite3_trace_v2               sqlite3_api->trace_v2
 #define sqlite3_expanded_sql           sqlite3_api->expanded_sql
+#endif /* NTDDI_VERSION >= NTDDI_WIN10_RS2 */
+// NOTE: This will be updated to RS3 prior to RS3's release.
+#if NTDDI_VERSION >= NTDDI_WIN10_RS2
+#define sqlite3_set_last_insert_rowid  sqlite3_api->set_last_insert_rowid
 #endif /* NTDDI_VERSION >= NTDDI_WIN10_RS2 */
 #endif /* !defined(SQLITE_CORE) && !defined(SQLITE_OMIT_LOAD_EXTENSION) */
 

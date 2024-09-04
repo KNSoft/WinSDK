@@ -99,4 +99,17 @@ class MSFT_StorageHealth : MSFT_StorageObject
         [Out, EmbeddedInstance("MSFT_StorageExtendedStatus")]
         String ExtendedStatus
         );
+
+    //
+    // Method: RemoveIntent
+    //
+
+    UInt32 RemoveIntent(
+
+        [In, Required, EmbeddedInstance("MSFT_StorageObject")]
+        String TargetObject,
+
+        [Out, EmbeddedInstance("MSFT_StorageExtendedStatus")]
+        String ExtendedStatus
+        );
 };

@@ -977,7 +977,7 @@ typedef struct _CSV_CACHE_CALLBACK_V2_OUTPUT
     CSV_FILECACHE_COMPLETE_CACHE_MISS  CompleteCacheMiss;
     CSV_FILECACHE_PURGE_RDCACHE PurgeFileCache;
 } CSV_CACHE_CALLBACK_V2_OUTPUT, *PCSV_CACHE_CALLBACK_V2_OUTPUT,
-  CSV_CACHE_CALLBACK, *PCSV_CACHE_CALLBACK;
+CSV_CACHE_CALLBACK, *PCSV_CACHE_CALLBACK;
 
 #pragma warning( pop )
 
@@ -985,8 +985,108 @@ typedef struct _CSV_CACHE_CALLBACK_V2_INPUT {
     CSV_FILECACHE_HANDLE_CACHE_MISS HandleCacheMiss;
     CSV_FILECACHE_COMPLETE_CACHE_IO  CompleteCacheIo;
 } CSV_CACHE_CALLBACK_V2_INPUT, *PCSV_CACHE_CALLBACK_V2_INPUT,
-  CSV_CACHE_CALLBACK_INPUT, *PCSV_CACHE_CALLBACK_INPUT;
+CSV_CACHE_CALLBACK_INPUT, *PCSV_CACHE_CALLBACK_INPUT;
 
+// Define V3 Contexts here for now.
+typedef enum _CSV_FILECACHE_IO_TYPE
+{
+    CSV_FILECACHE_IO_TYPE_READWRITE = 0,
+    CSV_FILECACHE_IO_TYPE_PURGE = 1,
+} CSV_FILECACHE_IO_TYPE;
+
+typedef struct _CSV_FILECACHE_IO_CONTEXT
+{
+    CSV_FILECACHE_IO_TYPE Type;
+
+    union
+    {
+        struct
+        {
+            IRP                 *m_pIrp;
+            IO_STACK_LOCATION   *m_pStackLocation;
+        } ReadWrite;
+
+        struct
+        {
+            LARGE_INTEGER       StartOffset;
+            LARGE_INTEGER       EndOffset;
+            BOOLEAN             fHard;
+        } Purge;
+
+    } Parameters;
+
+    VOID *m_pFileContext;
+
+    ULONGLONG   m_ExtraContext[1];
+} CSV_FILECACHE_IO_CONTEXT, *PCSV_FILECACHE_IO_CONTEXT;
+
+
+typedef struct _CSV_FILECACHE_IO_RANGE
+{
+    ULONGLONG   Offset;
+    ULONG       Length;
+} CSV_FILECACHE_IO_RANGE;
+
+// Callback Provided by Csvfs
+
+typedef
+_Function_class_(CSV_FILECACHE_HANDLE_CACHE_MISS_V2)
+_IRQL_requires_max_(PASSIVE_LEVEL)
+void(*CSV_FILECACHE_HANDLE_CACHE_MISS_V2) (_Inout_ PCSV_FILECACHE_IO_CONTEXT pContext, ULONG cRanges, CSV_FILECACHE_IO_RANGE const * pNotRequiredRanges);
+
+typedef
+_Function_class_(CSV_FILECACHE_COMPLETE_CACHE_IO_V2)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+void(*CSV_FILECACHE_COMPLETE_CACHE_IO_V2) (_Inout_ PCSV_FILECACHE_IO_CONTEXT pContext);
+
+typedef struct _CSV_CACHE_CALLBACK_V3_INPUT {
+    CSV_FILECACHE_HANDLE_CACHE_MISS_V2  HandleCacheMiss;
+    CSV_FILECACHE_COMPLETE_CACHE_IO_V2  CompleteCacheIo;
+} CSV_CACHE_CALLBACK_V3_INPUT, *PCSV_CACHE_CALLBACK_V3_INPUT;
+//CSV_CACHE_CALLBACK_INPUT, *PCSV_CACHE_CALLBACK_INPUT;
+
+typedef struct _CSV_FILECACHE_FILE_CONTEXT_EXTENSION 
+    CSV_FILECACHE_FILE_CONTEXT_EXTENSION, *PCSV_FILECACHE_FILE_CONTEXT_EXTENSION;
+
+typedef GUID   FILE_SIG_T;
+typedef GUID        VOLUME_SIG_T;
+
+typedef NTSTATUS(*CSV_FILECACHE_FILE_CREATE) (PVOID pRegContext, VOLUME_SIG_T const * volSig, FILE_SIG_T const * fileSig, PVOID * ppContext);
+typedef void(*CSV_FILECACHE_FILE_CLOSE) (PVOID pRegContext, PVOID pContext);
+typedef void(*CSV_FILECACHE_HANDLE_CACHE_IO_V2) (PVOID pRegContext, PCSV_FILECACHE_IO_CONTEXT pContext);
+typedef void(*CSV_FILECACHE_COMPLETE_CACHE_MISS_V2) (PVOID pRegContext, PCSV_FILECACHE_IO_CONTEXT pContext);
+
+typedef PCSV_FILECACHE_FILE_CONTEXT_EXTENSION (*CSV_FILECACHE_FILE_SET_EXTENSION) (PVOID pRegContext, PCSV_FILECACHE_IO_CONTEXT pContext, PCSV_FILECACHE_FILE_CONTEXT_EXTENSION pExtension);
+typedef PCSV_FILECACHE_FILE_CONTEXT_EXTENSION (*CSV_FILECACHE_FILE_GET_EXTENSION) (PVOID pRegContext, PCSV_FILECACHE_IO_CONTEXT pContext);
+
+typedef
+_Function_class_(CSV_FILECACHE_CLEANUP_CACHE)
+_IRQL_requires_max_(PASSIVE_LEVEL)
+void (*CSV_FILECACHE_CLEANUP_CACHE) (_Inout_ PVOID pRegContext);
+
+#pragma warning( push )
+#pragma warning( disable : 4201 ) // error C4201: nonstandard extension used : nameless struct/union
+
+#ifdef __cplusplus
+typedef struct _CSV_CACHE_CALLBACK_V3_OUTPUT : public CSV_BLOCKCACHE_CALLBACK {
+#else
+typedef struct _CSV_CACHE_CALLBACK_V3_OUTPUT
+{
+    CSV_BLOCKCACHE_CALLBACK;
+#endif
+    PVOID            FileCacheCallbackContext;
+    ULONG            IoContextBytesRequired;
+    CSV_FILECACHE_CLEANUP_CACHE    CacheCleanup;
+    CSV_FILECACHE_FILE_CREATE      FileCreate;
+    CSV_FILECACHE_FILE_CLOSE       FileClose;
+    CSV_FILECACHE_HANDLE_CACHE_IO_V2  HandleCacheIo;
+    CSV_FILECACHE_COMPLETE_CACHE_MISS_V2  CompleteCacheMiss;
+    CSV_FILECACHE_FILE_SET_EXTENSION FileSetExtension;
+    CSV_FILECACHE_FILE_GET_EXTENSION FileGetExtension;
+} CSV_CACHE_CALLBACK_V3_OUTPUT, *PCSV_CACHE_CALLBACK_V3_OUTPUT;
+//CSV_CACHE_CALLBACK, *PCSV_CACHE_CALLBACK;
+
+#pragma warning( push )
 #endif // KERNEL_MODE
 
 #endif // NTDDI_VERSION >= NTDDI_WIN8

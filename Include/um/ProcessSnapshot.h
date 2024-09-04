@@ -63,6 +63,7 @@ typedef enum
     PSS_CAPTURE_RESERVED_00000400                   = 0x00000400,
     PSS_CAPTURE_VA_SPACE                            = 0x00000800,
     PSS_CAPTURE_VA_SPACE_SECTION_INFORMATION        = 0x00001000,
+    PSS_CAPTURE_IPT_TRACE                           = 0x00002000,
 
     PSS_CREATE_BREAKAWAY_OPTIONAL                   = 0x04000000,
     PSS_CREATE_BREAKAWAY                            = 0x08000000,

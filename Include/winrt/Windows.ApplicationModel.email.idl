@@ -14,26 +14,6 @@ import "Windows.ApplicationModel.Appointments.idl";
 import "Windows.Security.Cryptography.Certificates.idl";
 import "Windows.Storage.Streams.idl";
 import "Windows.System.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Eappointments_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Appointments.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Eappointments_h__)")
-cpp_quote("#if !defined(__windows2Esecurity2Ecryptography2Ecertificates_h__)")
-cpp_quote("#include <Windows.Security.Cryptography.Certificates.h>")
-cpp_quote("#endif // !defined(__windows2Esecurity2Ecryptography2Ecertificates_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Esystem_h__)")
-cpp_quote("#include <Windows.System.h>")
-cpp_quote("#endif // !defined(__windows2Esystem_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -188,6 +168,8 @@ namespace Windows
             interface IEmailMailbox3;
 
             interface IEmailMailbox4;
+
+            interface IEmailMailbox5;
 
             interface IEmailMailboxAction;
 
@@ -1038,6 +1020,14 @@ namespace Windows
                 HRESULT RegisterSyncManagerAsync([out] [retval] Windows.Foundation.IAsyncAction** result);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.ApplicationModel.Email.EmailMailbox)]
+            [uuid(39967087-0092-49BE-BD0E-5D4DC9D96D90)]
+            interface IEmailMailbox5 : IInspectable
+            {
+                HRESULT GetChangeTracker([in] HSTRING identity, [out] [retval] Windows.ApplicationModel.Email.EmailMailboxChangeTracker** result);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.ApplicationModel.Email.EmailMailboxAction)]
             [uuid(AC9889FA-21FA-4927-9210-D410582FDF3E)]
@@ -1599,6 +1589,7 @@ namespace Windows
                 interface Windows.ApplicationModel.Email.IEmailMailbox2;
                 [contract(Windows.Foundation.UniversalApiContract, 2.0)] interface Windows.ApplicationModel.Email.IEmailMailbox3;
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.ApplicationModel.Email.IEmailMailbox4;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.ApplicationModel.Email.IEmailMailbox5;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

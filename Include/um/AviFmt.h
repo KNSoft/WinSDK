@@ -95,8 +95,8 @@ extern "C" {            /* Assume C declarations for C++ */
 
 #ifndef mmioFOURCC
 #define mmioFOURCC( ch0, ch1, ch2, ch3 )				\
-		( (DWORD)(BYTE)(ch0) | ( (DWORD)(BYTE)(ch1) << 8 ) |	\
-		( (DWORD)(BYTE)(ch2) << 16 ) | ( (DWORD)(BYTE)(ch3) << 24 ) )
+        ( (DWORD)(BYTE)(ch0) | ( (DWORD)(BYTE)(ch1) << 8 ) |	\
+        ( (DWORD)(BYTE)(ch2) << 16 ) | ( (DWORD)(BYTE)(ch3) << 24 ) )
 #endif
 
 /* Macro to make a TWOCC out of two characters */
@@ -134,6 +134,7 @@ typedef WORD TWOCC;
 #define cktypeDIBcompressed     aviTWOCC('d', 'c')
 #define cktypePALchange         aviTWOCC('p', 'c')
 #define cktypeWAVEbytes         aviTWOCC('w', 'b')
+#define cktypeDVFrame           aviTWOCC('_', '_')
 
 /* Chunk id to use for extra chunks for padding. */
 #define ckidAVIPADDING          mmioFOURCC('J', 'U', 'N', 'K')
@@ -159,12 +160,12 @@ typedef WORD TWOCC;
 #define ToHex(n)	((BYTE) (((n) > 9) ? ((n) - 10 + 'A') : ((n) + '0')))
 #define MAKEAVICKID(tcc, stream) \
         MAKELONG((ToHex((stream) & 0x0f) << 8) | \
-			    (ToHex(((stream) & 0xf0) >> 4)), tcc)
+                (ToHex(((stream) & 0xf0) >> 4)), tcc)
 
 /*
 ** Main AVI File Header
 */	
-		
+        
 /* flags for use in <dwFlags> in AVIFileHdr */
 #define AVIF_HASINDEX		0x00000010	// Index at end of file
 #define AVIF_MUSTUSEINDEX	0x00000020

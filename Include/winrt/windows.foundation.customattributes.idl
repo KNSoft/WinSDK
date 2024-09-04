@@ -33,4 +33,13 @@ namespace Windows.Foundation.Metadata
     attribute HasVariantAttribute
     {
     }
+
+    [attributeusage(target_runtimeclass, target_struct)]
+    [attributename("createfromstring")]
+    [version(0x0A000002)]
+    [webhosthidden]
+    attribute CreateFromStringAttribute
+    {
+        HSTRING MethodName;
+    }
 }

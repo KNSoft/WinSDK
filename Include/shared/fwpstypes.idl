@@ -61,6 +61,9 @@ cpp_quote("#define FWPS_FILTER_FLAG_OR_CONDITIONS   (0x0004)")
 cpp_quote("#define FWPS_FILTER_FLAG_HAS_SECURITY_REALM_PROVIDER_CONTEXT (0x0008)")
 // The filter is in silent mode
 cpp_quote("#define FWPS_FILTER_FLAG_SILENT_MODE     (0x0010)")
+// (used for s2s IPsec tunnel policies) 
+// Do not initiate IPsec acquire, if packet matches a IPsec policy from a filter with this flag
+cpp_quote("#define FWPS_FILTER_FLAG_IPSEC_NO_ACQUIRE_INITIATE (0x0020)")
 
 
 typedef struct FWPM_PROVIDER_CONTEXT0_ FWPM_PROVIDER_CONTEXT0;
@@ -160,6 +163,39 @@ typedef struct FWPS_FILTER2_
    [unique] FWPM_PROVIDER_CONTEXT2* providerContext;
 } FWPS_FILTER2;
 cpp_quote("#endif // (NTDDI_VERSION >= NTDDI_WIN8)")
+
+cpp_quote("#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)")
+typedef struct FWPM_PROVIDER_CONTEXT3_ FWPM_PROVIDER_CONTEXT3;
+// Version-3 of system filter used for run-time classification.
+typedef struct FWPS_FILTER3_
+{
+   // LUID uniquely identifying the filter in the filter engine.
+   UINT64 filterId;
+
+   // Weight of the filter -- higher filters are invoked first.
+   FWP_VALUE0 weight;
+   // Weight of the filter's sub-layer -- higher weights are invoked first.
+   UINT16 subLayerWeight;
+   UINT16 flags;
+   // Array of filter conditions. All must be true for the action to be
+   // performed. In other words, the conditions are AND'ed together. If no
+   // conditions are specified, the action is always performed.
+   UINT32 numFilterConditions;
+   [size_is(numFilterConditions), unique]
+      FWPS_FILTER_CONDITION0* filterCondition;
+   // Action performed if the conditions are true.
+   FWPS_ACTION0 action;
+   // Opaque context that may be interpreted by callouts. The context of the
+   // terminating filter is also returned from classify. In many cases, this
+   // context will be the LUID of a provider context, but it need not be.
+   UINT64 context;
+   // If this is a callout filter and the callout has the
+   // FWPM_CALLOUT_FLAG_USES_PROVIDER_CONTEXT flag set, this contains the
+   // provider context from the corresponding FWPM_FILTER1 struct. Otherwise,
+   // it is null.
+   [unique] FWPM_PROVIDER_CONTEXT3* providerContext;
+} FWPS_FILTER3;
+cpp_quote("#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS3)")
 
 
 ///////////////////////////////////////////////////////////////////////////////

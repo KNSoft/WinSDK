@@ -149,10 +149,10 @@ STDAPI DCompositionAttachMouseWheelToHwnd(
 //      DCompositionAttachMouseDragToHwnd
 //
 //  Synopsis:
-//      Creates an Interaction/InputSink to route mouse button down and any 
-//      subsequent move and up events to the given HWND. There is no move 
-//      thresholding; when enabled, all events including and following the down 
-//      are unconditionally redirected to the specified window. After calling this 
+//      Creates an Interaction/InputSink to route mouse button down and any
+//      subsequent move and up events to the given HWND. There is no move
+//      thresholding; when enabled, all events including and following the down
+//      are unconditionally redirected to the specified window. After calling this
 //      API, the device owning the visual must be committed.
 //
 //------------------------------------------------------------------------------

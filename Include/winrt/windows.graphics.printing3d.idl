@@ -13,23 +13,6 @@ import "Windows.Foundation.idl";
 import "Windows.Foundation.Numerics.idl";
 import "Windows.Storage.Streams.idl";
 import "Windows.UI.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Efoundation2Enumerics_h__)")
-cpp_quote("#include <Windows.Foundation.Numerics.h>")
-cpp_quote("#endif // !defined(__windows2Efoundation2Enumerics_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Eui_h__)")
-cpp_quote("#include <Windows.UI.h>")
-cpp_quote("#endif // !defined(__windows2Eui_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -107,6 +90,8 @@ namespace Windows
 
             typedef enum Printing3DObjectType Printing3DObjectType;
 
+            typedef enum Printing3DPackageCompression Printing3DPackageCompression;
+
             typedef enum Printing3DTextureEdgeBehavior Printing3DTextureEdgeBehavior;
 
             typedef struct Printing3DBufferDescription Printing3DBufferDescription;
@@ -130,6 +115,8 @@ namespace Windows
             interface IPrint3DTaskSourceRequestedArgs;
 
             interface IPrinting3D3MFPackage;
+
+            interface IPrinting3D3MFPackage2;
 
             interface IPrinting3D3MFPackageStatics;
 
@@ -402,7 +389,7 @@ namespace Windows
     {
         namespace Printing3D
         {
-            [contractversion(3.0)]
+            [contractversion(4.0)]
             apicontract Printing3DContract
             {
             }
@@ -467,6 +454,14 @@ namespace Windows
                 Model   = 0,
                 Support = 1,
                 Others  = 2
+            };
+
+            [contract(Windows.Graphics.Printing3D.Printing3DContract, 4.0)]
+            enum Printing3DPackageCompression
+            {
+                Low    = 0,
+                Medium = 1,
+                High   = 2
             };
 
             [contract(Windows.Graphics.Printing3D.Printing3DContract, 1.0)]
@@ -578,6 +573,15 @@ namespace Windows
                 [propget] HRESULT Textures([out] [retval] Windows.Foundation.Collections.IVector<Windows.Graphics.Printing3D.Printing3DTextureResource*>** value);
                 HRESULT LoadModelFromPackageAsync([in] Windows.Storage.Streams.IRandomAccessStream* value, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Graphics.Printing3D.Printing3DModel*>** operation);
                 HRESULT SaveModelToPackageAsync([in] Windows.Graphics.Printing3D.Printing3DModel* value, [out] [retval] Windows.Foundation.IAsyncAction** operation);
+            }
+
+            [contract(Windows.Graphics.Printing3D.Printing3DContract, 4.0)]
+            [exclusiveto(Windows.Graphics.Printing3D.Printing3D3MFPackage)]
+            [uuid(965C7AC4-93CB-4430-92B8-789CD454F883)]
+            interface IPrinting3D3MFPackage2 : IInspectable
+            {
+                [propget] HRESULT Compression([out] [retval] Windows.Graphics.Printing3D.Printing3DPackageCompression* value);
+                [propput] HRESULT Compression([in] Windows.Graphics.Printing3D.Printing3DPackageCompression value);
             }
 
             [contract(Windows.Graphics.Printing3D.Printing3DContract, 1.0)]
@@ -977,6 +981,7 @@ namespace Windows
             runtimeclass Printing3D3MFPackage
             {
                 [default] interface Windows.Graphics.Printing3D.IPrinting3D3MFPackage;
+                [contract(Windows.Graphics.Printing3D.Printing3DContract, 4.0)] interface Windows.Graphics.Printing3D.IPrinting3D3MFPackage2;
             }
 
             [activatable(Windows.Graphics.Printing3D.Printing3DContract, 1.0)]

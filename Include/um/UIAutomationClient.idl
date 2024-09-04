@@ -126,6 +126,7 @@ library UIAutomationClient
         const long UIA_DropTargetPatternId         = 10031;
         const long UIA_TextEditPatternId           = 10032;
         const long UIA_CustomNavigationPatternId   = 10033;
+        const long UIA_SelectionPattern2Id         = 10034;
     };
 
     [dllname("<no entry points>")]
@@ -166,7 +167,8 @@ library UIAutomationClient
         const long UIA_TextEdit_TextChangedEventId                       = 20032;
         const long UIA_TextEdit_ConversionTargetChangedEventId           = 20033;
         const long UIA_ChangesEventId                                    = 20034;
-};
+        const long UIA_NotificationEventId                               = 20035;
+    };
 
     [dllname("<no entry points>")]
     module UIA_PropertyIds
@@ -339,6 +341,11 @@ library UIAutomationClient
         const long UIA_CenterPointPropertyId                          = 30165;
         const long UIA_RotationPropertyId                             = 30166;
         const long UIA_SizePropertyId                                 = 30167;
+        const long UIA_IsSelectionPattern2AvailablePropertyId         = 30168;
+        const long UIA_Selection2FirstSelectedItemPropertyId          = 30169;
+        const long UIA_Selection2LastSelectedItemPropertyId           = 30170;
+        const long UIA_Selection2CurrentSelectedItemPropertyId        = 30171;
+        const long UIA_Selection2ItemCountPropertyId                  = 30172;
     }
 
     [dllname("<no entry points>")]
@@ -657,7 +664,7 @@ library UIAutomationClient
             [out, retval] IUIAutomationElement ** normalized );
 
 
-        // Separate * CacheRequest names exist, because there’s no name overloading in COM
+        // Separate * CacheRequest names exist, because there's no name overloading in COM
         HRESULT GetParentElementBuildCache (
             [in] IUIAutomationElement * element,
             [in] IUIAutomationCacheRequest * cacheRequest,
@@ -761,6 +768,20 @@ library UIAutomationClient
             [in] IUIAutomationElement *sender,
             [in, size_is(changesCount)] struct UiaChangeInfo *uiaChanges,
             [in] int changesCount);
+    }
+
+    //
+    //  IUIAutomationNotificationEventHandler
+    //
+    [object, uuid(C7CB2637-E6C2-4D0C-85DE-4948C02175C7), pointer_default(unique), oleautomation]
+    interface IUIAutomationNotificationEventHandler : IUnknown
+    {
+        HRESULT HandleNotificationEvent(
+            [in] IUIAutomationElement* sender,
+            enum NotificationKind notificationKind,
+            enum NotificationProcessing notificationProcessing,
+            [in] BSTR displayString,
+            [in] BSTR activityId);
     }
 
     //
@@ -1032,6 +1053,37 @@ library UIAutomationClient
 
         [propget] HRESULT CachedIsSelectionRequired (
             [out, retval] BOOL * retVal );
+    }
+
+    //
+    //  IUIAutomationSelectionPattern2
+    //
+    [object, uuid(0532bfae-c011-4e32-a343-6d642d798555), pointer_default(unique)]
+    interface IUIAutomationSelectionPattern2 : IUIAutomationSelectionPattern
+    {
+        [propget] HRESULT CurrentFirstSelectedItem(
+            [out, retval] IUIAutomationElement ** retVal);
+
+        [propget] HRESULT CurrentLastSelectedItem(
+            [out, retval] IUIAutomationElement ** retVal);
+
+        [propget] HRESULT CurrentCurrentSelectedItem(
+            [out, retval] IUIAutomationElement ** retVal);
+
+        [propget] HRESULT CurrentItemCount(
+            [out, retval] int * retVal);
+
+        [propget] HRESULT CachedFirstSelectedItem(
+            [out, retval] IUIAutomationElement ** retVal);
+
+        [propget] HRESULT CachedLastSelectedItem(
+            [out, retval] IUIAutomationElement ** retVal);
+
+        [propget] HRESULT CachedCurrentSelectedItem(
+            [out, retval] IUIAutomationElement ** retVal);
+
+        [propget] HRESULT CachedItemCount(
+            [out, retval] int * retVal);
     }
 
     //
@@ -2661,6 +2713,24 @@ library UIAutomationClient
             [in] IUIAutomationElement *element,
             [in] IUIAutomationChangesEventHandler *handler);
     }
+
+    //
+    //  IUIAutomation5
+    //
+    [object, uuid(25F700C8-D816-4057-A9DC-3CBDEE77E256), pointer_default(unique)]
+    interface IUIAutomation5 : IUIAutomation4
+    {
+        HRESULT AddNotificationEventHandler(
+            [in] IUIAutomationElement* element,
+            [in] enum TreeScope scope,
+            [in] IUIAutomationCacheRequest* cacheRequest,
+            [in] IUIAutomationNotificationEventHandler* handler);
+
+        HRESULT RemoveNotificationEventHandler(
+            [in] IUIAutomationElement* element,
+            [in] IUIAutomationNotificationEventHandler* handler);
+    }
+
     //
     //  CUIAutomation
     //
@@ -2693,6 +2763,7 @@ library UIAutomationClient
         [default] interface IUIAutomation2;
         interface IUIAutomation3;
         interface IUIAutomation4;
+        interface IUIAutomation5;
     }
 }
 

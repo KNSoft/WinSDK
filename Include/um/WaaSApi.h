@@ -166,6 +166,15 @@ EXTERN_C const IID IID_IWaaSAssessor;
 #endif 	/* __IWaaSAssessor_INTERFACE_DEFINED__ */
 
 
+/* interface __MIDL_itf_waasapi_0000_0001 */
+/* [local] */ 
+
+#ifndef WAASASSESSOR_INTERNAL
+
+
+extern RPC_IF_HANDLE __MIDL_itf_waasapi_0000_0001_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_waasapi_0000_0001_v0_0_s_ifspec;
+
 
 #ifndef __WaaSAssessorLib_LIBRARY_DEFINED__
 #define __WaaSAssessorLib_LIBRARY_DEFINED__
@@ -188,6 +197,7 @@ WaaSAssessor;
 /* interface __MIDL_itf_waasapi_0000_0002 */
 /* [local] */ 
 
+#endif /* WAASASSESSOR_INTERNAL */
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 

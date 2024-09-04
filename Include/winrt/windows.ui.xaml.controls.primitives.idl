@@ -10,47 +10,42 @@ import "AsyncInfo.idl";
 import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
+import "Windows.Foundation.Numerics.idl";
+import "Windows.UI.idl";
 import "Windows.UI.Xaml.idl";
 import "Windows.UI.Xaml.Controls.idl";
 import "Windows.UI.Xaml.Data.idl";
 import "Windows.UI.Xaml.Input.idl";
 import "Windows.UI.Xaml.Media.idl";
 import "Windows.UI.Xaml.Media.Animation.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#include <Windows.UI.Xaml.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Econtrols_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Controls.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Econtrols_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Edata_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Data.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Edata_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Einput_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Input.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Einput_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Emedia_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Media.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Emedia_h__)")
-cpp_quote("#if !defined(__windows2Eui2Examl2Emedia2Eanimation_h__)")
-cpp_quote("#include <Windows.UI.Xaml.Media.Animation.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Examl2Emedia2Eanimation_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
 {
     namespace Foundation
     {
+        namespace Numerics
+        {
+            typedef struct Vector4 Vector4;
+        }
+    }
+}
+namespace Windows
+{
+    namespace Foundation
+    {
         typedef struct Rect Rect;
 
+        typedef struct Size Size;
+
         apicontract UniversalApiContract;
+    }
+}
+namespace Windows
+{
+    namespace UI
+    {
+        typedef struct Color Color;
     }
 }
 namespace Windows
@@ -62,6 +57,14 @@ namespace Windows
             namespace Controls
             {
                 typedef enum ClickMode ClickMode;
+
+                runtimeclass ColorChangedEventArgs;
+
+                typedef enum ColorPickerHsvChannel ColorPickerHsvChannel;
+
+                typedef enum ColorSpectrumComponents ColorSpectrumComponents;
+
+                typedef enum ColorSpectrumShape ColorSpectrumShape;
 
                 runtimeclass Control;
 
@@ -120,6 +123,8 @@ namespace Windows
             namespace Input
             {
                 interface ICommand;
+
+                runtimeclass ProcessKeyboardAcceleratorEventArgs;
             }
         }
     }
@@ -239,6 +244,18 @@ namespace Windows
 
                     interface ICarouselPanelFactory;
 
+                    interface IColorPickerSlider;
+
+                    interface IColorPickerSliderFactory;
+
+                    interface IColorPickerSliderStatics;
+
+                    interface IColorSpectrum;
+
+                    interface IColorSpectrumFactory;
+
+                    interface IColorSpectrumStatics;
+
                     interface IComboBoxTemplateSettings;
 
                     interface IComboBoxTemplateSettings2;
@@ -267,11 +284,15 @@ namespace Windows
 
                     interface IFlyoutBase3;
 
+                    interface IFlyoutBase4;
+
                     interface IFlyoutBaseClosingEventArgs;
 
                     interface IFlyoutBaseFactory;
 
                     interface IFlyoutBaseOverrides;
+
+                    interface IFlyoutBaseOverrides4;
 
                     interface IFlyoutBaseStatics;
 
@@ -305,15 +326,21 @@ namespace Windows
 
                     interface ILayoutInformationStatics;
 
+                    interface ILayoutInformationStatics2;
+
                     interface IListViewItemPresenter;
 
                     interface IListViewItemPresenter2;
+
+                    interface IListViewItemPresenter3;
 
                     interface IListViewItemPresenterFactory;
 
                     interface IListViewItemPresenterStatics;
 
                     interface IListViewItemPresenterStatics2;
+
+                    interface IListViewItemPresenterStatics3;
 
                     interface IListViewItemTemplateSettings;
 
@@ -426,6 +453,10 @@ namespace Windows
                     runtimeclass CalendarViewTemplateSettings;
 
                     runtimeclass CarouselPanel;
+
+                    runtimeclass ColorPickerSlider;
+
+                    runtimeclass ColorSpectrum;
 
                     runtimeclass ComboBoxTemplateSettings;
 
@@ -826,6 +857,85 @@ namespace Windows
                         HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Primitives.CarouselPanel** instance);
                     }
 
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Primitives.ColorPickerSlider)]
+                    [uuid(94394D83-E0DF-4C5F-BBCD-8155F4020440)]
+                    interface IColorPickerSlider : IInspectable
+                    {
+                        [propget] HRESULT ColorChannel([out] [retval] Windows.UI.Xaml.Controls.ColorPickerHsvChannel* result);
+                        [propput] HRESULT ColorChannel([in] Windows.UI.Xaml.Controls.ColorPickerHsvChannel value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Primitives.ColorPickerSlider)]
+                    [uuid(06D879A2-8C07-4B1E-A940-9FBCE8F49639)]
+                    interface IColorPickerSliderFactory : IInspectable
+                    {
+                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Primitives.ColorPickerSlider** instance);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Primitives.ColorPickerSlider)]
+                    [uuid(22EAFC6A-9FE3-4EEE-8734-A1398EC4413A)]
+                    interface IColorPickerSliderStatics : IInspectable
+                    {
+                        [propget] HRESULT ColorChannelProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Primitives.ColorSpectrum)]
+                    [uuid(CE46F271-F509-4F98-8288-E4942FB385DF)]
+                    interface IColorSpectrum : IInspectable
+                    {
+                        [propget] HRESULT Color([out] [retval] Windows.UI.Color* result);
+                        [propput] HRESULT Color([in] Windows.UI.Color value);
+                        [propget] HRESULT HsvColor([out] [retval] Windows.Foundation.Numerics.Vector4* result);
+                        [propput] HRESULT HsvColor([in] Windows.Foundation.Numerics.Vector4 value);
+                        [propget] HRESULT MinHue([out] [retval] INT32* result);
+                        [propput] HRESULT MinHue([in] INT32 value);
+                        [propget] HRESULT MaxHue([out] [retval] INT32* result);
+                        [propput] HRESULT MaxHue([in] INT32 value);
+                        [propget] HRESULT MinSaturation([out] [retval] INT32* result);
+                        [propput] HRESULT MinSaturation([in] INT32 value);
+                        [propget] HRESULT MaxSaturation([out] [retval] INT32* result);
+                        [propput] HRESULT MaxSaturation([in] INT32 value);
+                        [propget] HRESULT MinValue([out] [retval] INT32* result);
+                        [propput] HRESULT MinValue([in] INT32 value);
+                        [propget] HRESULT MaxValue([out] [retval] INT32* result);
+                        [propput] HRESULT MaxValue([in] INT32 value);
+                        [propget] HRESULT Shape([out] [retval] Windows.UI.Xaml.Controls.ColorSpectrumShape* result);
+                        [propput] HRESULT Shape([in] Windows.UI.Xaml.Controls.ColorSpectrumShape value);
+                        [propget] HRESULT Components([out] [retval] Windows.UI.Xaml.Controls.ColorSpectrumComponents* result);
+                        [propput] HRESULT Components([in] Windows.UI.Xaml.Controls.ColorSpectrumComponents value);
+                        [eventadd] HRESULT ColorChanged([in] Windows.Foundation.TypedEventHandler<Windows.UI.Xaml.Controls.Primitives.ColorSpectrum*, Windows.UI.Xaml.Controls.ColorChangedEventArgs*>* value, [out] [retval] EventRegistrationToken* token);
+                        [eventremove] HRESULT ColorChanged([in] EventRegistrationToken token);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Primitives.ColorSpectrum)]
+                    [uuid(90C7E61E-904D-42AB-B44F-E68DBF0CDEE9)]
+                    interface IColorSpectrumFactory : IInspectable
+                    {
+                        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out] [retval] Windows.UI.Xaml.Controls.Primitives.ColorSpectrum** instance);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Primitives.ColorSpectrum)]
+                    [uuid(906BEE7C-2CEE-4E90-968B-F0A5BD691B4A)]
+                    interface IColorSpectrumStatics : IInspectable
+                    {
+                        [propget] HRESULT ColorProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT HsvColorProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT MinHueProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT MaxHueProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT MinSaturationProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT MaxSaturationProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT MinValueProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT MaxValueProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT ShapeProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT ComponentsProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    }
+
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     [exclusiveto(Windows.UI.Xaml.Controls.Primitives.ComboBoxTemplateSettings)]
                     [uuid(83285C4E-17F6-4AA3-B61B-E87C718604EA)]
@@ -971,6 +1081,14 @@ namespace Windows
                         [propput] HRESULT OverlayInputPassThroughElement([in] Windows.UI.Xaml.DependencyObject* value);
                     }
 
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Primitives.FlyoutBase)]
+                    [uuid(E3897D69-A37F-4828-9B70-0EF67C03B5F8)]
+                    interface IFlyoutBase4 : IInspectable
+                    {
+                        HRESULT TryInvokeKeyboardAccelerator([in] Windows.UI.Xaml.Input.ProcessKeyboardAcceleratorEventArgs* args);
+                    }
+
                     [contract(Windows.Foundation.UniversalApiContract, 3.0)]
                     [exclusiveto(Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs)]
                     [uuid(D075852D-B09A-4FD1-B005-DB2BA01206FB)]
@@ -994,6 +1112,14 @@ namespace Windows
                     interface IFlyoutBaseOverrides : IInspectable
                     {
                         HRESULT CreatePresenter([out] [retval] Windows.UI.Xaml.Controls.Control** returnValue);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Primitives.FlyoutBase)]
+                    [uuid(A6BFD04D-5FF3-4418-ADD8-4042A88D2DA5)]
+                    interface IFlyoutBaseOverrides4 : IInspectable
+                    {
+                        HRESULT OnProcessKeyboardAccelerators([in] Windows.UI.Xaml.Input.ProcessKeyboardAcceleratorEventArgs* args);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1206,6 +1332,14 @@ namespace Windows
                         HRESULT GetLayoutSlot([in] Windows.UI.Xaml.FrameworkElement* element, [out] [retval] Windows.Foundation.Rect* slot);
                     }
 
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Primitives.LayoutInformation)]
+                    [uuid(760315B5-6D4E-4939-AC61-639863CEA36B)]
+                    interface ILayoutInformationStatics2 : IInspectable
+                    {
+                        HRESULT GetAvailableSize([in] Windows.UI.Xaml.UIElement* element, [out] [retval] Windows.Foundation.Size* availableSize);
+                    }
+
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     [exclusiveto(Windows.UI.Xaml.Controls.Primitives.ListViewItemPresenter)]
                     [uuid(FC8946BD-A3A2-4969-8174-25B5D3C28033)]
@@ -1276,6 +1410,21 @@ namespace Windows
                         [propput] HRESULT PointerOverForeground([in] Windows.UI.Xaml.Media.Brush* value);
                     }
 
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Primitives.ListViewItemPresenter)]
+                    [uuid(36620013-0390-4E30-AD97-8744404F7010)]
+                    interface IListViewItemPresenter3 : IInspectable
+                    {
+                        [propget] HRESULT RevealBackground([out] [retval] Windows.UI.Xaml.Media.Brush** value);
+                        [propput] HRESULT RevealBackground([in] Windows.UI.Xaml.Media.Brush* value);
+                        [propget] HRESULT RevealBorderBrush([out] [retval] Windows.UI.Xaml.Media.Brush** value);
+                        [propput] HRESULT RevealBorderBrush([in] Windows.UI.Xaml.Media.Brush* value);
+                        [propget] HRESULT RevealBorderThickness([out] [retval] Windows.UI.Xaml.Thickness* value);
+                        [propput] HRESULT RevealBorderThickness([in] Windows.UI.Xaml.Thickness value);
+                        [propget] HRESULT RevealBackgroundShowsAboveContent([out] [retval] boolean* value);
+                        [propput] HRESULT RevealBackgroundShowsAboveContent([in] boolean value);
+                    }
+
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     [exclusiveto(Windows.UI.Xaml.Controls.Primitives.ListViewItemPresenter)]
                     [uuid(E0777CFD-F7E4-4A67-9AC0-A994FCACD020)]
@@ -1324,6 +1473,17 @@ namespace Windows
                         [propget] HRESULT FocusSecondaryBorderBrushProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                         [propget] HRESULT CheckModeProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                         [propget] HRESULT PointerOverForegroundProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                    }
+
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [exclusiveto(Windows.UI.Xaml.Controls.Primitives.ListViewItemPresenter)]
+                    [uuid(C3D3D11E-FA26-4CE7-A4ED-FF948F01B7C0)]
+                    interface IListViewItemPresenterStatics3 : IInspectable
+                    {
+                        [propget] HRESULT RevealBackgroundProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT RevealBorderBrushProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT RevealBorderThicknessProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
+                        [propget] HRESULT RevealBackgroundShowsAboveContentProperty([out] [retval] Windows.UI.Xaml.DependencyProperty** value);
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1941,6 +2101,26 @@ namespace Windows
                         [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo;
                     }
 
+                    [composable(Windows.UI.Xaml.Controls.Primitives.IColorPickerSliderFactory, public, Windows.Foundation.UniversalApiContract, 5.0)]
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [marshaling_behavior(agile)]
+                    [static(Windows.UI.Xaml.Controls.Primitives.IColorPickerSliderStatics, Windows.Foundation.UniversalApiContract, 5.0)]
+                    [threading(both)]
+                    runtimeclass ColorPickerSlider : Windows.UI.Xaml.Controls.Slider
+                    {
+                        [default] interface Windows.UI.Xaml.Controls.Primitives.IColorPickerSlider;
+                    }
+
+                    [composable(Windows.UI.Xaml.Controls.Primitives.IColorSpectrumFactory, public, Windows.Foundation.UniversalApiContract, 5.0)]
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                    [marshaling_behavior(agile)]
+                    [static(Windows.UI.Xaml.Controls.Primitives.IColorSpectrumStatics, Windows.Foundation.UniversalApiContract, 5.0)]
+                    [threading(both)]
+                    runtimeclass ColorSpectrum : Windows.UI.Xaml.Controls.Control
+                    {
+                        [default] interface Windows.UI.Xaml.Controls.Primitives.IColorSpectrum;
+                    }
+
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     [marshaling_behavior(agile)]
                     [threading(both)]
@@ -2000,6 +2180,8 @@ namespace Windows
                         [contract(Windows.Foundation.UniversalApiContract, 1.0)] [overridable] interface Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseOverrides;
                         [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.UI.Xaml.Controls.Primitives.IFlyoutBase2;
                         [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.UI.Xaml.Controls.Primitives.IFlyoutBase3;
+                        [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Xaml.Controls.Primitives.IFlyoutBase4;
+                        [contract(Windows.Foundation.UniversalApiContract, 5.0)] [overridable] interface Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseOverrides4;
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -2070,6 +2252,7 @@ namespace Windows
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                     [marshaling_behavior(agile)]
                     [static(Windows.UI.Xaml.Controls.Primitives.ILayoutInformationStatics, Windows.Foundation.UniversalApiContract, 1.0)]
+                    [static(Windows.UI.Xaml.Controls.Primitives.ILayoutInformationStatics2, Windows.Foundation.UniversalApiContract, 5.0)]
                     [threading(both)]
                     runtimeclass LayoutInformation
                     {
@@ -2081,11 +2264,13 @@ namespace Windows
                     [marshaling_behavior(agile)]
                     [static(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics, Windows.Foundation.UniversalApiContract, 1.0)]
                     [static(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics2, Windows.Foundation.UniversalApiContract, 1.0)]
+                    [static(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics3, Windows.Foundation.UniversalApiContract, 5.0)]
                     [threading(both)]
                     runtimeclass ListViewItemPresenter : Windows.UI.Xaml.Controls.ContentPresenter
                     {
                         [default] interface Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter;
                         [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter2;
+                        [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter3;
                     }
 
                     [contract(Windows.Foundation.UniversalApiContract, 1.0)]

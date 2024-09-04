@@ -471,6 +471,16 @@ typedef enum {
     NVME_STATUS_INVALID_USE_OF_CONTROLLER_MEMORY_BUFFER         = 0x12,
     NVME_STATUS_PRP_OFFSET_INVALID                              = 0x13,
     NVME_STATUS_ATOMIC_WRITE_UNIT_EXCEEDED                      = 0x14,
+    NVME_STATUS_OPERATION_DENIED                                = 0x15,
+    NVME_STATUS_SGL_OFFSET_INVALID                              = 0x16,
+    NVME_STATUS_RESERVED                                        = 0x17,
+    NVME_STATUS_HOST_IDENTIFIER_INCONSISTENT_FORMAT             = 0x18,
+    NVME_STATUS_KEEP_ALIVE_TIMEOUT_EXPIRED                      = 0x19,
+    NVME_STATUS_KEEP_ALIVE_TIMEOUT_INVALID                      = 0x1A,
+    NVME_STATUS_COMMAND_ABORTED_DUE_TO_PREEMPT_ABORT            = 0x1B,
+    NVME_STATUS_SANITIZE_FAILED                                 = 0x1C,
+    NVME_STATUS_SANITIZE_IN_PROGRESS                            = 0x1D,
+    NVME_STATUS_SGL_DATA_BLOCK_GRANULARITY_INVALID              = 0x1E,
 
     NVME_STATUS_DIRECTIVE_TYPE_INVALID                          = 0x70,
     NVME_STATUS_DIRECTIVE_ID_INVALID                            = 0x71,
@@ -493,21 +503,21 @@ typedef enum {
     NVME_STATUS_MAX_QUEUE_SIZE_EXCEEDED                             = 0x02,         // Create I/O Submission Queue, Create I/O Completion Queue 
     NVME_STATUS_ABORT_COMMAND_LIMIT_EXCEEDED                        = 0x03,         // Abort  
     NVME_STATUS_ASYNC_EVENT_REQUEST_LIMIT_EXCEEDED                  = 0x05,         // Asynchronous Event Request 
-    NVME_STATUS_INVALID_FIRMWARE_SLOT                               = 0x06,         // Firmware Activate 
-    NVME_STATUS_INVALID_FIRMWARE_IMAGE                              = 0x07,         // Firmware Activate 
+    NVME_STATUS_INVALID_FIRMWARE_SLOT                               = 0x06,         // Firmware Commit 
+    NVME_STATUS_INVALID_FIRMWARE_IMAGE                              = 0x07,         // Firmware Commit 
     NVME_STATUS_INVALID_INTERRUPT_VECTOR                            = 0x08,         // Create I/O Completion Queue 
     NVME_STATUS_INVALID_LOG_PAGE                                    = 0x09,         // Get Log Page 
     NVME_STATUS_INVALID_FORMAT                                      = 0x0A,         // Format NVM 
-    NVME_STATUS_FIRMWARE_ACTIVATION_REQUIRES_CONVENTIONAL_RESET     = 0x0B,         // Firmware Activate 
+    NVME_STATUS_FIRMWARE_ACTIVATION_REQUIRES_CONVENTIONAL_RESET     = 0x0B,         // Firmware Commit 
     NVME_STATUS_INVALID_QUEUE_DELETION                              = 0x0C,         // Delete I/O Completion Queue
     NVME_STATUS_FEATURE_ID_NOT_SAVEABLE                             = 0x0D,         // Set Features
     NVME_STATUS_FEATURE_NOT_CHANGEABLE                              = 0x0E,         // Set Features
     NVME_STATUS_FEATURE_NOT_NAMESPACE_SPECIFIC                      = 0x0F,         // Set Features
-    NVME_STATUS_FIRMWARE_ACTIVATION_REQUIRES_NVM_SUBSYSTEM_RESET    = 0x10,         // Firmware Activate
-    NVME_STATUS_FIRMWARE_ACTIVATION_REQUIRES_RESET                  = 0x11,         // Firmware Activate
-    NVME_STATUS_FIRMWARE_ACTIVATION_REQUIRES_MAX_TIME_VIOLATION     = 0x12,         // Firmware Activate
-    NVME_STATUS_FIRMWARE_ACTIVATION_PROHIBITED                      = 0x13,         // Firmware Activate
-    NVME_STATUS_OVERLAPPING_RANGE                                   = 0x14,         // Firmware Activate, Firmware Image Download, Set Features
+    NVME_STATUS_FIRMWARE_ACTIVATION_REQUIRES_NVM_SUBSYSTEM_RESET    = 0x10,         // Firmware Commit
+    NVME_STATUS_FIRMWARE_ACTIVATION_REQUIRES_RESET                  = 0x11,         // Firmware Commit
+    NVME_STATUS_FIRMWARE_ACTIVATION_REQUIRES_MAX_TIME_VIOLATION     = 0x12,         // Firmware Commit
+    NVME_STATUS_FIRMWARE_ACTIVATION_PROHIBITED                      = 0x13,         // Firmware Commit
+    NVME_STATUS_OVERLAPPING_RANGE                                   = 0x14,         // Firmware Commit, Firmware Image Download, Set Features
 
     NVME_STATUS_NAMESPACE_INSUFFICIENT_CAPACITY                     = 0x15,         // Namespace Management
     NVME_STATUS_NAMESPACE_IDENTIFIER_UNAVAILABLE                    = 0x16,         // Namespace Management
@@ -516,6 +526,15 @@ typedef enum {
     NVME_STATUS_NAMESPACE_NOT_ATTACHED                              = 0x1A,         // Namespace Attachment
     NVME_STATUS_NAMESPACE_THIN_PROVISIONING_NOT_SUPPORTED           = 0x1B,         // Namespace Management
     NVME_STATUS_CONTROLLER_LIST_INVALID                             = 0x1C,         // Namespace Attachment
+
+    NVME_STATUS_DEVICE_SELF_TEST_IN_PROGRESS                        = 0x1D,         // Device Self-test
+
+    NVME_STATUS_BOOT_PARTITION_WRITE_PROHIBITED                     = 0x1E,         // Firmware Commit
+
+    NVME_STATUS_INVALID_CONTROLLER_IDENTIFIER                       = 0x1F,         // Virtualization Management
+    NVME_STATUS_INVALID_SECONDARY_CONTROLLER_STATE                  = 0x20,         // Virtualization Management
+    NVME_STATUS_INVALID_NUMBER_OF_CONTROLLER_RESOURCES              = 0x21,         // Virtualization Management
+    NVME_STATUS_INVALID_RESOURCE_IDENTIFIER                         = 0x22,         // Virtualization Management
 
     NVME_STATUS_STREAM_RESOURCE_ALLOCATION_FAILED                   = 0x7F,         // Streams Directive
 
@@ -561,10 +580,16 @@ typedef enum {
     NVME_ADMIN_COMMAND_FIRMWARE_ACTIVATE        = 0x10,
     NVME_ADMIN_COMMAND_FIRMWARE_COMMIT          = 0x10,         // "Firmware Activate" command has been renamed to "Firmware Commit" command in spec v1.2
     NVME_ADMIN_COMMAND_FIRMWARE_IMAGE_DOWNLOAD  = 0x11,
+    NVME_ADMIN_COMMAND_DEVICE_SELF_TEST         = 0x14,
     NVME_ADMIN_COMMAND_NAMESPACE_ATTACHMENT     = 0x15,
 
     NVME_ADMIN_COMMAND_DIRECTIVE_SEND           = 0x19,
     NVME_ADMIN_COMMAND_DIRECTIVE_RECEIVE        = 0x1A,
+    NVME_ADMIN_COMMAND_VIRTUALIZATION_MANAGEMENT= 0x1C,
+    NVME_ADMIN_COMMAND_NVME_MI_SEND             = 0x1D,
+    NVME_ADMIN_COMMAND_NVME_MI_RECEIVE          = 0x1E,
+
+    NVME_ADMIN_COMMAND_DOORBELL_BUFFER_CONFIG   = 0x7C,
 
     NVME_ADMIN_COMMAND_FORMAT_NVM               = 0x80,
     NVME_ADMIN_COMMAND_SECURITY_SEND            = 0x81,
@@ -590,6 +615,10 @@ typedef enum {
     NVME_FEATURE_ASYNC_EVENT_CONFIG                     = 0x0B,
     NVME_FEATURE_AUTONOMOUS_POWER_STATE_TRANSITION      = 0x0C,
     NVME_FEATURE_HOST_MEMORY_BUFFER                     = 0x0D,
+    NVME_FEATURE_TIMESTAMP                              = 0x0E,
+    NVME_FEATURE_KEEP_ALIVE                             = 0x0F,
+    NVME_FEATURE_HOST_CONTROLLED_THERMAL_MANAGEMENT     = 0x10,
+    NVME_FEATURE_NONOPERATIONAL_POWER_STATE             = 0x11,
 
     NVME_FEATURE_NVM_SOFTWARE_PROGRESS_MARKER           = 0x80,
     NVME_FEATURE_NVM_HOST_IDENTIFIER                    = 0x81,
@@ -769,7 +798,27 @@ typedef struct {
         ULONG   AccessSize              : 8;    // Access Size: in 512B units.
     } RPMBS;                    // byte 312:315. O - Replay Protected Memory Block Support (RPMBS)
 
-    UCHAR   Reserved1[196];     // byte 316:511.
+    USHORT  EDSTT;              // byte 316:317. O - Extended Device Self-test Time (EDSTT)
+    UCHAR   DSTO;               // byte 318.     O - Device Self-test Options (DSTO)
+    UCHAR   FWUG;               // byte 319.     M - Firmware Update Granularity (FWUG)
+    USHORT  KAS;                // byte 320:321  M - Keep Alive Support (KAS)
+
+    struct {
+        USHORT  Supported       : 1;
+        USHORT  Reserved        : 15;
+    } HCTMA;                    // byte 322:323  O - Host Controlled Thermal Management Attributes (HCTMA)
+
+    USHORT  MNTMT;              // byte 324:325  O - Minimum Thermal Management Temperature (MNTMT)
+    USHORT  MXTMT;              // byte 326:327  O - Maximum Thermal Management Temperature (MXTMT)
+
+    struct {
+        ULONG   CryptoErase             : 1;     // Controller supports Crypto Erase Sanitize
+        ULONG   BlockErase              : 1;     // Controller supports Block Erase Sanitize
+        ULONG   Overwrite               : 1;     // Controller supports Overwrite Santize 
+        ULONG   Reserved                : 29;
+    } SANICAP;                  // byte 328:331  O - Sanitize Capabilities (SANICAP)
+
+    UCHAR   Reserved1[180];     // byte 332:511.
 
     //
     // byte 512 : 703, NVM Command Set Attributes
@@ -795,8 +844,9 @@ typedef struct {
         USHORT  WriteZeroes         : 1;
         USHORT  FeatureField        : 1;
         USHORT  Reservations        : 1;
+        USHORT  Timestamp           : 1;
 
-        USHORT  Reserved            : 10;
+        USHORT  Reserved            : 9;
     } ONCS;                     // byte 520:521. M - Optional NVM Command Support (ONCS)
 
     struct {
@@ -927,7 +977,7 @@ typedef struct {
 
     struct {
         UCHAR   MetadataInExtendedDataLBA   : 1;
-        UCHAR   MetadataInSeperateBuffer    : 1;
+        UCHAR   MetadataInSeparateBuffer    : 1;
         UCHAR   Reserved                    : 6;
     } MC;                               // byte 27      M - Metadata Capabilities (MC)
 
@@ -975,7 +1025,7 @@ typedef struct {
     USHORT          NABSN;              // byte 40:41 O - Namespace Atomic Boundary Size Normal (NABSN)
     USHORT          NABO;               // byte 42:43 O - Namespace Atomic Boundary Offset (NABO)
     USHORT          NABSPF;             // byte 44:45 O - Namespace Atomic Boundary Size Power Fail (NABSPF)
-    USHORT          Reserved1;          // byte 46:47
+    USHORT          NOIOB;              // byte 46:47 O - Namespace Optimal IO Boundary (NOIOB)
 
     UCHAR           NVMCAP[16];         // byte 48:63 O - NVM Capacity (NVMCAP)
 
@@ -1188,7 +1238,7 @@ typedef union {
 
     struct {
         ULONG   SAVE         : 1;        // Save supported
-        ULONG   NSS   	     : 1;        // Namespace specific
+        ULONG   NSS          : 1;        // Namespace specific
         ULONG   MOD          : 1;        // Changeable
         ULONG   Reserved0    : 29;
     } DUMMYSTRUCTNAME;
@@ -1407,8 +1457,12 @@ typedef enum {
     NVME_LOG_PAGE_FIRMWARE_SLOT_INFO            = 0x03,
     NVME_LOG_PAGE_CHANGED_NAMESPACE_LIST        = 0x04,
     NVME_LOG_PAGE_COMMAND_EFFECTS               = 0x05,
+    NVME_LOG_PAGE_DEVICE_SELF_TEST              = 0x06,
+    NVME_LOG_PAGE_TELEMETRY_HOST_INITIATED      = 0x07,
+    NVME_LOG_PAGE_TELEMETRY_CTLR_INITIATED      = 0x08,
 
     NVME_LOG_PAGE_RESERVATION_NOTIFICATION      = 0x80,
+    NVME_LOG_PAGE_SANITIZE_STATUS               = 0x81,
 
 } NVME_LOG_PAGES;
 
@@ -1564,6 +1618,59 @@ typedef struct {
 
 } NVME_COMMAND_EFFECTS_LOG, *PNVME_COMMAND_EFFECTS_LOG;
 
+typedef struct {
+
+    struct {
+        UCHAR   Result              : 4;        // Result of Device Self-Test operation of this particular result data
+        UCHAR   CodeValue           : 4;        // Self-Test code value that was specified in command
+    } Status;
+
+    UCHAR       SegmentNumber;                  // Indicates the first segment that failure occured
+
+    struct {
+        UCHAR   NSIDValid           : 1;        // If set to 1, the contents of Namespace Identifier field is valid
+        UCHAR   FLBAValid           : 1;        // If set to 1, the contents of Failing LBA field is valid
+        UCHAR   SCTValid            : 1;        // If set to 1, the contents of Status Code Type field is valid
+        UCHAR   SCValid             : 1;        // If set to 1, the contents of Status Code field is valid
+        UCHAR   Reserved            : 4;
+    } ValidDiagnostics;
+
+    UCHAR       Reserved;
+
+    ULONGLONG   POH;                            // Power On Hours, when test operation was completed/aborted
+    ULONG       NSID;                           // Namespace Identifier. Only valid if NSIDValid is set
+    ULONGLONG   FailingLBA;                     // Failed LBA which caused test to fail. Only valid if FLBAValid is set
+
+    struct {
+        UCHAR   AdditionalInfo      : 3;        // Additional information related to errors/conditions. Only valid if SCTValid is set
+        UCHAR   Reserved            : 5;
+    } StatusCodeType;
+
+    UCHAR       StatusCode;                     // Additional information related to errors/conditons. Only valid if SCValid is set
+    USHORT      VendorSpecific;
+
+} NVME_DEVICE_SELF_TEST_RESULT_DATA, *PNVME_DEVICE_SELF_TEST_RESULT_DATA; 
+
+//
+// Information of log: NVME_LOG_PAGE_DEVICE_SELF_TEST. Size: 564 bytes
+//
+typedef struct {
+
+     struct {
+        UCHAR   Status              : 4;        // Status of current Device Self-Test operation
+        UCHAR   Reserved            : 4;
+     } CurrentOperation;
+
+     struct {
+        UCHAR   CompletePercent     : 7;        // Percentage of completion of Device Self-Test operation. Valid if Status field is non-zero.
+        UCHAR   Reserved            : 1;
+     } CurrentCompletion;
+
+     UCHAR      Reserved[2];
+
+     NVME_DEVICE_SELF_TEST_RESULT_DATA       ResultData[20];    // Last 20 Self-Test Result Data, latest to oldest available in sorted order
+
+} NVME_DEVICE_SELF_TEST_LOG, *PNVME_DEVICE_SELF_TEST_LOG;
 
 //
 // Information of log: NVME_LOG_PAGE_RESERVATION_NOTIFICATION. Size: 64 bytes

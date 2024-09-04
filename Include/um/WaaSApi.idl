@@ -30,6 +30,8 @@ interface IWaaSAssessor : IUnknown
     HRESULT GetOSUpdateAssessment([out, retval] OSUpdateAssessment * result);
 };
 
+cpp_quote("#ifndef WAASASSESSOR_INTERNAL")
+
 [
     uuid(1a13e365-705f-499b-91a3-1d95e49a6a1a),
     version(1.0),
@@ -44,6 +46,8 @@ library WaaSAssessorLib
         [default]   interface IWaaSAssessor;
     };
 }
+
+cpp_quote("#endif /* WAASASSESSOR_INTERNAL */")
 
 cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
 #pragma endregion

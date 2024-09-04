@@ -23,6 +23,24 @@ Abstract:
 #ifndef _PCIVIRT_H_
 #define _PCIVIRT_H_
 
+typedef struct _VPCI_PNP_ID
+{
+    //
+    // These make up the PnP identifiers for a virtual PCI device.
+    //
+
+    USHORT  VendorID;
+    USHORT  DeviceID;
+    UCHAR   RevisionID;
+    UCHAR   ProgIf;
+    UCHAR   SubClass;
+    UCHAR   BaseClass;
+    USHORT  SubVendorID;
+    USHORT  SubSystemID;
+
+} VPCI_PNP_ID, *PVPCI_PNP_ID;
+
+
 // {A13A7A93-11F0-4bd2-A9F5-6B5C5B88527D}
 DEFINE_GUID(GUID_DEVINTERFACE_VIRTUALIZABLE_DEVICE,
 0xa13a7a93, 0x11f0, 0x4bd2, 0xa9, 0xf5, 0x6b, 0x5c, 0x5b, 0x88, 0x52, 0x7d);
@@ -46,7 +64,17 @@ typedef enum _SRIOV_PF_EVENT
 // Provider (VSP) in the partition with the SR-IOV Physical Function (PF).  It
 // is held in a queue by the PF driver until it is either cancelled by the VPCI
 // VSP or the SR-IOV device experiences one of the events listed in
-// SRIOV_PF_EVENT, at which time the PF driver completes this IOCTL.
+// SRIOV_PF_EVENT, at which time the PF driver completes this IOCTL. The return output
+// buffer for this IOCTL is simply a single SRIOV_PF_EVENT (effectively a single DWORD).
+//
+// If the device is currently processing a plug and play event for which it has not 
+// yet completed a notification the device should complete the IOCTL immediately with the 
+// event details.  Otherwise the device should queue the IRP until either it is cancelled
+//  or until a plug and play event that requires notification occurs.
+//
+// Note that the virtualization stack may send this IOCTL immediately after it completes, 
+// before sending IOCTL_SRIOV_EVENT_COMPLETE.   The driver must keep track of the fact 
+// that an event notification has been delivered and must not complete two IOCTLs for the same event twice.
 //
 
 #define IOCTL_SRIOV_NOTIFICATION SRIOV_IOCTL(1, METHOD_OUT_DIRECT)
@@ -73,6 +101,12 @@ typedef struct _SRIOV_PNP_EVENT_COMPLETE
 // on.  If the PF is stopped for a re-balance operation, it will delay
 // completion of the request until the rebalance is complete.
 //
+// If the device is currently stopped or stopping for resource rebalance the
+//  driver must delay completing the IOCTL until it is restarted.    A device is
+//  considered to be stopping once it received  IRP_MN_QUERY_STOP_DEVICE and is 
+// restarted when it receives  IRP_MN_CANCEL_STOP_DEVICE or when  IRP_MN_START_DEVICE 
+// is completed by the lower devices of the stack.
+
 #define IOCTL_SRIOV_ATTACH SRIOV_IOCTL(3, METHOD_IN_DIRECT)
 
 //
@@ -80,6 +114,10 @@ typedef struct _SRIOV_PNP_EVENT_COMPLETE
 // interested in plug & play notifications and should no longer expect
 // IOCTL_SRIOV_EVENT_COMPLETE and IOCTL_SRIOV_NOTIFICATION requests.
 //
+// A driver that receives this IOCTL should stop waiting for IOCTL_SRIOV_EVENT_COMPLETE.
+// If the driver is currently waiting it should stop waiting and continue 
+// processing plug and play IRPs in a normal way. 
+
 #define IOCTL_SRIOV_DETACH SRIOV_IOCTL(4, METHOD_IN_DIRECT)
 
 //
@@ -166,6 +204,20 @@ typedef struct _SRIOV_MITIGATED_RANGE_UPDATE_OUTPUT
 {
     USHORT VfIndex;
 } SRIOV_MITIGATED_RANGE_UPDATE_OUTPUT, *PSRIOV_MITIGATED_RANGE_UPDATE_OUTPUT;
+
+//
+// This IOCTL is used by the proxy driver in order to supply the local unique
+// ID of the Physical Device implementing the interface.  This IOCTL must
+// be the only IOCTL that is callable from User Mode.  This IOCTL is only
+// required for SR-IOV devices doing direct assignment, and not network devices
+// No input buffer is supplied.
+//
+#define IOCTL_SRIOV_PROXY_QUERY_LUID SRIOV_IOCTL(9, METHOD_BUFFERED)
+
+typedef struct _SRIOV_PROXY_QUERY_LUID_OUTPUT
+{
+    LUID DeviceLuid;
+} SRIOV_PROXY_QUERY_LUID_OUTPUT, *PSRIOV_PROXY_QUERY_LUID_OUTPUT;
 
 
 // {937EE9B6-0ED3-411c-982B-1F564AFBABD3}

@@ -479,93 +479,123 @@ DECLSPEC_CHPE_GUEST void ObjectStublessClient30(void);
 DECLSPEC_CHPE_GUEST void ObjectStublessClient31(void);
 DECLSPEC_CHPE_GUEST void ObjectStublessClient32(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction3(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction4(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction5(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction6(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction7(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction8(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction9(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction10(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction11(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction12(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction13(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction14(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction15(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction16(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction17(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction18(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction19(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction20(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction21(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction22(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction23(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction24(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction25(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction26(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction27(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction28(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction29(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction30(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction31(void);
 
+DECLSPEC_CHPE_GUEST
 void STDMETHODCALLTYPE
 NdrProxyForwardingFunction32(void);
 

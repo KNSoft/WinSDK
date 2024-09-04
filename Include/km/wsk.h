@@ -1268,11 +1268,16 @@ NTSTATUS
  *  FAILURES - request failed
  */
 
+
+//
+// Flag used to specifiy that the send request data should be sent as OOB data.
+//
+#define WSK_FLAG_OOB 0x00000001
+
 //
 // Flag used for denoting that the send request (along with any previously
 // queued send requests, if any) should be sent out without further delay.
 //
-
 #define WSK_FLAG_NODELAY 0x00000002
 
 typedef

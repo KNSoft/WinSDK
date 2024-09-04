@@ -411,5 +411,39 @@ class MSFT_StorageTier : MSFT_StorageObject {
             EmbeddedInstance("MSFT_StorageExtendedStatus")]
         String ExtendedStatus
     );
+
+
+    //
+    // Method: AddStorageFaultDomain
+    //
+
+    UInt32 AddStorageFaultDomain(
+
+        [In, Required]
+        MSFT_StorageFaultDomain REF StorageFaultDomains[],
+
+        [Out]
+        MSFT_StorageJob REF CreatedStorageJob,
+
+        [Out, EmbeddedInstance("MSFT_StorageExtendedStatus")]
+        String ExtendedStatus
+    );
+
+
+    //
+    // Method: RemoveStorageFaultDomain
+    //
+
+    UInt32 RemoveStorageFaultDomain(
+
+        [In, Required]
+        MSFT_StorageFaultDomain REF StorageFaultDomains[],
+
+        [Out]
+        MSFT_StorageJob REF CreatedStorageJob,
+
+        [Out, EmbeddedInstance("MSFT_StorageExtendedStatus")]
+        String ExtendedStatus
+    );
 };
 

@@ -2050,6 +2050,11 @@ extern CONST NPIID NPI_NETWORK_LAYER_ID;
 extern CONST NPI_MODULEID NPI_MS_IPV6_MODULEID;
 extern CONST NPI_MODULEID NPI_MS_IPV4_MODULEID;
 
+typedef enum {
+    FallbackIndexTcpFastopen,
+    FallbackIndexMax
+} FALLBACK_INDEX;
+
 
 
 #ifdef NETIODEF_DEFINED_ASSERT

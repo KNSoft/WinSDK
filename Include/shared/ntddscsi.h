@@ -100,6 +100,11 @@ extern "C" {
 #define IOCTL_MPIO_PASS_THROUGH_PATH_DIRECT_EX  CTL_CODE(IOCTL_SCSI_BASE, 0x0414, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
 
 //
+// Note: Function code values of less than 0x800 are reserved for Microsoft. Values of 0x800 and higher can be used by vendors.
+//       So do not use function code of 0x800 and higher to define new IOCTLs in this file.
+//
+
+//
 // Non Volatile Cache support
 //
 
@@ -115,6 +120,10 @@ extern "C" {
 //
 #define IOCTL_SCSI_MINIPORT_FIRMWARE          ((FILE_DEVICE_SCSI << 16) + 0x0780)
 
+//
+// Diagnostic support
+//
+#define IOCTL_SCSI_MINIPORT_DIAGNOSTIC        ((FILE_DEVICE_SCSI << 16) + 0x0900)
 
 //
 // Define the SCSI pass through structure.
@@ -736,6 +745,90 @@ typedef enum _NV_SEP_WRITE_CACHE_TYPE    {
 
 #pragma warning(pop)
 
+//
+// STORAGE_DIAGNOSTIC_STATUS definitions
+//
+#define STORAGE_DIAGNOSTIC_STATUS_SUCCESS                              0
+#define STORAGE_DIAGNOSTIC_STATUS_BUFFER_TOO_SMALL                     0x1
+#define STORAGE_DIAGNOSTIC_STATUS_UNSUPPORTED_VERSION                  0x2
+#define STORAGE_DIAGNOSTIC_STATUS_INVALID_PARAMETER                    0x3
+#define STORAGE_DIAGNOSTIC_STATUS_INVALID_SIGNATURE                    0x4
+#define STORAGE_DIAGNOSTIC_STATUS_INVALID_TARGET_TYPE                  0x5
+#define STORAGE_DIAGNOSTIC_STATUS_MORE_DATA                            0x6
+
+//
+// Diagnostic level allow caller to control what kinds of data the provider should return.
+//
+// Currently there is only default level defined, provider makes the call to return
+// anything it assumes helpful for diagnostic purpose.
+//
+typedef enum _MP_STORAGE_DIAGNOSTIC_LEVEL {
+    MpStorageDiagnosticLevelDefault = 0,
+    MpStorageDiagnosticLevelMax
+} MP_STORAGE_DIAGNOSTIC_LEVEL, *PMP_STORAGE_DIAGNOSTIC_LEVEL;
+
+typedef enum _MP_STORAGE_DIAGNOSTIC_TARGET_TYPE {
+
+    MpStorageDiagnosticTargetTypeUndefined = 0,
+    MpStorageDiagnosticTargetTypeMiniport = 2,
+    MpStorageDiagnosticTargetTypeHbaFirmware,
+    MpStorageDiagnosticTargetTypeMax
+
+} MP_STORAGE_DIAGNOSTIC_TARGET_TYPE, *PMP_STORAGE_DIAGNOSTIC_TARGET_TYPE;
+
+//
+// IOCTL_SCSI_MINIPORT_DIAGNOSTIC
+//
+// Diagnostic request to Miniport
+//
+
+//
+// Parameter for STORAGE_DIAGNOSTIC_MP_REQUEST
+// Input buffer should contain SRB_IO_CONTROL, STORAGE_DIAGNOSTIC_MP_REQUEST structures.
+// 
+// Fields in STORAGE_DIAGNOSTIC_MP_REQUEST
+// - Input: Version
+// - Input: TargetType
+// - Input: Level
+// - Output: ProviderId
+// - Input/Output: BufferSize
+//     As input:
+//       "BufferSize" should be set to number of bytes allocated for the DataBuffer.
+//     As output: 
+//       If the request is failed because of buffer too short, "BufferSize" should be set to the
+//       length required for DataBuffer by the diagnostic data provider;
+//       If the request is successful, it should be filled with returned data size of DataBuffer;
+//       For other cases, it should be cleared to 0.
+// - Output: DataBuffer
+//
+
+typedef struct _STORAGE_DIAGNOSTIC_MP_REQUEST {
+
+    // Size of this structure.
+    ULONG Version;
+
+    // Whole size of the structure and the associated data buffer.
+    ULONG Size;
+
+    // Request target type.
+    MP_STORAGE_DIAGNOSTIC_TARGET_TYPE TargetType;
+
+    // Diagnostic level.
+    MP_STORAGE_DIAGNOSTIC_LEVEL Level;
+
+    // GUID of diagnostic data provider.
+    GUID ProviderId;
+
+    // Data buffer size.
+    ULONG BufferSize;
+
+    // Reserved for future use.
+    ULONG Reserved;
+
+    // Diagnostic data buffer.
+    _Field_size_(BufferSize) UCHAR DataBuffer[ANYSIZE_ARRAY];
+
+} STORAGE_DIAGNOSTIC_MP_REQUEST, *PSTORAGE_DIAGNOSTIC_MP_REQUEST;
 
 //
 // MINIPORT_IOCTL block for data set management notifications
@@ -1027,6 +1120,11 @@ typedef struct _FIRMWARE_REQUEST_BLOCK {
 #define FIRMWARE_REQUEST_FLAG_LAST_SEGMENT                  0x00000002
 
 //
+// Indicate that current FW image segment is the first one.
+//
+#define FIRMWARE_REQUEST_FLAG_FIRST_SEGMENT                 0x00000004
+
+//
 // Indicate that the existing firmware in slot should be activated. 
 // This flag is only valid for fimrware_activate request. It's ignored for other requests.
 //
@@ -1158,7 +1256,8 @@ typedef struct _STORAGE_FIRMWARE_DOWNLOAD_V2 {
     ULONGLONG   BufferSize;         // should be multiple of value of "ImagePayloadAlignment" from STORAGE_FIRMWARE_INFO
 
     UCHAR       Slot;
-    UCHAR       Reserved[7];
+    UCHAR       Reserved[3];
+    ULONG       ImageSize;
 
     UCHAR       ImageBuffer[0];     // firmware image file. 
 
@@ -1409,7 +1508,6 @@ typedef struct _DUMP_DRIVER {
     WCHAR BaseName[DUMP_DRIVER_NAME_LENGTH];
 
 } DUMP_DRIVER, *PDUMP_DRIVER;
-
 
 
 //

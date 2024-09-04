@@ -373,7 +373,6 @@ C_ASSERT(sizeof(USB_BOS_DESCRIPTOR) == 5);
 #define USB_DEVICE_CAPABILITY_SUPERSPEEDPLUS_USB          0x0A
 #define USB_DEVICE_CAPABILITY_PRECISION_TIME_MEASUREMENT  0x0B
 #define USB_DEVICE_CAPABILITY_BILLBOARD                   0x0D
-#define USB_DEVICE_CAPABILITY_CONFIGURATION_SUMMARY       0x10
 
 //
 // USB 2.0 ECN: Link Power Management (LPM), 3. Framework: USB Device Capabilities - USB 2.0 Extension,
@@ -568,26 +567,6 @@ typedef struct _USB_DEVICE_CAPABILITY_CONTAINER_ID_DESCRIPTOR {
 } USB_DEVICE_CAPABILITY_CONTAINER_ID_DESCRIPTOR, *PUSB_DEVICE_CAPABILITY_CONTAINER_ID_DESCRIPTOR;
 
 C_ASSERT(sizeof(USB_DEVICE_CAPABILITY_CONTAINER_ID_DESCRIPTOR) == 20);
-
-//
-// USB 3.1: 9.6.2.6 Configuration Summary Descriptor, Table 9-20
-//
-typedef struct _USB_DEVICE_CAPABILITY_CONFIGURATION_SUMMARY_DESCRIPTOR {
-    UCHAR   bLength;
-    UCHAR   bDescriptorType;
-    UCHAR   bDevCapabilityType;
-    USHORT  bcdVersion;
-    UCHAR   bConfigurationValue;
-    UCHAR   bMaxPower;
-    UCHAR   bNumFunctions;
-    struct {
-        UCHAR bClass;
-        UCHAR bSubClass;
-        UCHAR bProtocol;
-    } Function[1];
-} USB_DEVICE_CAPABILITY_CONFIGURATION_SUMMARY_DESCRIPTOR, *PUSB_DEVICE_CAPABILITY_CONFIGURATION_SUMMARY_DESCRIPTOR;
-
-C_ASSERT(sizeof(USB_DEVICE_CAPABILITY_CONFIGURATION_SUMMARY_DESCRIPTOR) == 11);
 
 //
 // USB Device Capability Platform Descriptor

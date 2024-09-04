@@ -462,6 +462,30 @@ typedef struct _NDIS_WWAN_SET_LTE_ATTACH_CONTEXT {
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2 || NDIS_SUPPORT_NDIS670)
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3 || NDIS_SUPPORT_NDIS680)
+
+#define NDIS_WWAN_SET_UICC_RESET_REVISION_1 1
+
+typedef struct _NDIS_WWAN_SET_UICC_RESET {
+    NDIS_OBJECT_HEADER Header;
+    WWAN_SET_UICC_RESET SetUiccReset;
+} NDIS_WWAN_SET_UICC_RESET, *PNDIS_WWAN_SET_UICC_RESET;
+
+#define NDIS_WWAN_SET_DEVICE_RESET_REVISION_1 1
+
+typedef struct _NDIS_WWAN_SET_DEVICE_RESET {
+    NDIS_OBJECT_HEADER Header;
+} NDIS_WWAN_SET_DEVICE_RESET, *PNDIS_WWAN_SET_DEVICE_RESET;
+
+#define NDIS_WWAN_BASE_STATIONS_INFO_REQ_REVISION_1             1
+
+typedef struct _NDIS_WWAN_BASE_STATIONS_INFO_REQ {
+    NDIS_OBJECT_HEADER          Header;
+    WWAN_BASE_STATIONS_INFO_REQ BaseStationsInfoRequest;
+} NDIS_WWAN_BASE_STATIONS_INFO_REQ, *PNDIS_WWAN_BASE_STATIONS_INFO_REQ;
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS3 || NDIS_SUPPORT_NDIS680)
+
 ///////////////////////////////////////////////////////////////////////////
 //                    device indications and responses                   //
 ///////////////////////////////////////////////////////////////////////////
@@ -979,5 +1003,48 @@ typedef struct _NDIS_WWAN_LTE_ATTACH_STATUS {
 #define NDIS_WWAN_LTE_ATTACH_STATUS_REVISION_1        1
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2 || NDIS_SUPPORT_NDIS670)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3 || NDIS_SUPPORT_NDIS680)
+
+#define NDIS_WWAN_MODEM_CONFIG_INFO_REVISION_1                 1
+
+typedef struct _NDIS_WWAN_MODEM_CONFIG_INFO {
+    NDIS_OBJECT_HEADER          Header;
+    WWAN_STATUS                 uStatus;
+    WWAN_MODEM_CONFIG_INFO      ModemConfigInfo;
+}  NDIS_WWAN_MODEM_CONFIG_INFO, *PNDIS_WWAN_MODEM_CONFIG_INFO;
+
+#define NDIS_WWAN_PCO_STATUS_REVISION_1                        1
+
+typedef struct _NDIS_WWAN_PCO_STATUS {
+    NDIS_OBJECT_HEADER          Header;
+    WWAN_STATUS                 uStatus;
+    WWAN_PCO_VALUE              PcoValue;
+} NDIS_WWAN_PCO_STATUS, *PNDIS_WWAN_PCO_STATUS;
+
+#define NDIS_WWAN_UICC_RESET_INFO_REVISION_1 1
+
+typedef struct _NDIS_WWAN_UICC_RESET_INFO {
+    NDIS_OBJECT_HEADER Header;
+    WWAN_STATUS uStatus;
+    WWAN_UICC_RESET_INFO UiccResetInfo;
+} NDIS_WWAN_UICC_RESET_INFO, *PNDIS_WWAN_UICC_RESET_INFO;
+
+#define NDIS_WWAN_DEVICE_RESET_STATUS_REVISION_1 1
+
+typedef struct _NDIS_WWAN_DEVICE_RESET_STATUS {
+    NDIS_OBJECT_HEADER Header;
+    WWAN_STATUS uStatus;
+} NDIS_WWAN_DEVICE_RESET_STATUS, *PNDIS_WWAN_DEVICE_RESET_STATUS;
+
+#define NDIS_WWAN_BASE_STATIONS_INFO_REVISION_1                1
+
+typedef struct _NDIS_WWAN_BASE_STATIONS_INFO {
+    NDIS_OBJECT_HEADER          Header;
+    WWAN_STATUS                 uStatus;
+    WWAN_BASE_STATIONS_INFO     BaseStationsInfo;
+} NDIS_WWAN_BASE_STATIONS_INFO, *PNDIS_WWAN_BASE_STATIONS_INFO;
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS3 || NDIS_SUPPORT_NDIS680)
 
 #endif //__NDIS_WWAN_DECL__

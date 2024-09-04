@@ -14,26 +14,6 @@ import "Windows.Security.EnterpriseData.idl";
 import "Windows.Storage.idl";
 import "Windows.Storage.Streams.idl";
 import "Windows.UI.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Esecurity2Eenterprisedata_h__)")
-cpp_quote("#include <Windows.Security.EnterpriseData.h>")
-cpp_quote("#endif // !defined(__windows2Esecurity2Eenterprisedata_h__)")
-cpp_quote("#if !defined(__windows2Estorage_h__)")
-cpp_quote("#include <Windows.Storage.h>")
-cpp_quote("#endif // !defined(__windows2Estorage_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Eui_h__)")
-cpp_quote("#include <Windows.UI.h>")
-cpp_quote("#endif // !defined(__windows2Eui_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -43,6 +23,8 @@ namespace Windows
         typedef struct DateTime DateTime;
 
         runtimeclass Deferral;
+
+        typedef struct Rect Rect;
 
         apicontract UniversalApiContract;
 
@@ -97,6 +79,8 @@ namespace Windows
         {
             typedef enum DataPackageOperation DataPackageOperation;
 
+            typedef enum ShareUITheme ShareUITheme;
+
             delegate DataProviderHandler;
 
             delegate ShareProviderHandler;
@@ -147,6 +131,8 @@ namespace Windows
 
             interface IDataTransferManagerStatics2;
 
+            interface IDataTransferManagerStatics3;
+
             interface IHtmlFormatHelperStatics;
 
             interface IOperationCompletedEventArgs;
@@ -164,6 +150,8 @@ namespace Windows
             interface IShareProvidersRequestedEventArgs;
 
             interface IShareTargetInfo;
+
+            interface IShareUIOptions;
 
             interface ISharedStorageAccessManagerStatics;
 
@@ -208,6 +196,8 @@ namespace Windows
             runtimeclass ShareProvidersRequestedEventArgs;
 
             runtimeclass ShareTargetInfo;
+
+            runtimeclass ShareUIOptions;
 
             runtimeclass SharedStorageAccessManager;
 
@@ -270,6 +260,14 @@ namespace Windows
                 Copy = 0x1,
                 Move = 0x2,
                 Link = 0x4
+            };
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            enum ShareUITheme
+            {
+                Default = 0,
+                Light   = 1,
+                Dark    = 2
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -553,6 +551,14 @@ namespace Windows
                 HRESULT IsSupported([out] [retval] boolean* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.ApplicationModel.DataTransfer.DataTransferManager)]
+            [uuid(05845473-6C82-4F5C-AC23-62E458361FAC)]
+            interface IDataTransferManagerStatics3 : IInspectable
+            {
+                [overload("ShowShareUI")] HRESULT ShowShareUIWithOptions([in] Windows.ApplicationModel.DataTransfer.ShareUIOptions* options);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.ApplicationModel.DataTransfer.HtmlFormatHelper)]
             [uuid(E22E7749-DD70-446F-AEFC-61CEE59F655E)]
@@ -633,6 +639,17 @@ namespace Windows
             {
                 [propget] HRESULT AppUserModelId([out] [retval] HSTRING* value);
                 [propget] HRESULT ShareProvider([out] [retval] Windows.ApplicationModel.DataTransfer.ShareProvider** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.ApplicationModel.DataTransfer.ShareUIOptions)]
+            [uuid(72FA8A80-342F-4D90-9551-2AE04E37680C)]
+            interface IShareUIOptions : IInspectable
+            {
+                [propget] HRESULT Theme([out] [retval] Windows.ApplicationModel.DataTransfer.ShareUITheme* value);
+                [propput] HRESULT Theme([in] Windows.ApplicationModel.DataTransfer.ShareUITheme value);
+                [propget] HRESULT SelectionRect([out] [retval] Windows.Foundation.IReference<Windows.Foundation.Rect>** value);
+                [propput] HRESULT SelectionRect([in] Windows.Foundation.IReference<Windows.Foundation.Rect>* value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -763,6 +780,7 @@ namespace Windows
             [marshaling_behavior(standard)]
             [static(Windows.ApplicationModel.DataTransfer.IDataTransferManagerStatics, Windows.Foundation.UniversalApiContract, 1.0)]
             [static(Windows.ApplicationModel.DataTransfer.IDataTransferManagerStatics2, Windows.Foundation.UniversalApiContract, 3.0)]
+            [static(Windows.ApplicationModel.DataTransfer.IDataTransferManagerStatics3, Windows.Foundation.UniversalApiContract, 5.0)]
             runtimeclass DataTransferManager
             {
                 [default] interface Windows.ApplicationModel.DataTransfer.IDataTransferManager;
@@ -818,6 +836,15 @@ namespace Windows
             runtimeclass ShareTargetInfo
             {
                 [default] interface Windows.ApplicationModel.DataTransfer.IShareTargetInfo;
+            }
+
+            [activatable(Windows.Foundation.UniversalApiContract, 5.0)]
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass ShareUIOptions
+            {
+                [default] interface Windows.ApplicationModel.DataTransfer.IShareUIOptions;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

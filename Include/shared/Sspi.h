@@ -602,6 +602,7 @@ typedef struct _SEC_DTLS_MTU {
 #define SECPKG_CRED_ATTR_SSI_PROVIDER 2
 #define SECPKG_CRED_ATTR_KDC_PROXY_SETTINGS 3
 #define SECPKG_CRED_ATTR_CERT         4
+#define SECPKG_CRED_ATTR_PAC_BYPASS   5
 
 typedef struct _SecPkgCredentials_NamesW
 {

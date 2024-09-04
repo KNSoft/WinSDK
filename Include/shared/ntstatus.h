@@ -1936,10 +1936,15 @@ Notes:
 //
 // MessageText:
 //
-// The Cloud File property blob is possibly corrupt. The on-disk checksum does not match the computed checksum.
+// The cloud file property is possibly corrupt. The on-disk checksum does not match the computed checksum.
 //
 #define STATUS_CLOUD_FILE_PROPERTY_BLOB_CHECKSUM_MISMATCH ((NTSTATUS)0x8000CF00L)
 
+/*++
+
+ End of Cloud Files specific messages.
+
+--*/
 /////////////////////////////////////////////////////////////////////////
 //
 //  Standard Error values
@@ -6916,7 +6921,7 @@ Notes:
 //
 // MessageText:
 //
-// The NTFS file or directory is not a reparse point.
+// The file or directory is not a reparse point.
 //
 #define STATUS_NOT_A_REPARSE_POINT       ((NTSTATUS)0xC0000275L)
 
@@ -6925,7 +6930,7 @@ Notes:
 //
 // MessageText:
 //
-// The Windows I/O reparse tag passed for the NTFS reparse point is invalid.
+// The Windows I/O reparse tag passed for the reparse point is invalid.
 //
 #define STATUS_IO_REPARSE_TAG_INVALID    ((NTSTATUS)0xC0000276L)
 
@@ -6934,7 +6939,7 @@ Notes:
 //
 // MessageText:
 //
-// The Windows I/O reparse tag does not match the one present in the NTFS reparse point.
+// The Windows I/O reparse tag does not match the one present in the reparse point.
 //
 #define STATUS_IO_REPARSE_TAG_MISMATCH   ((NTSTATUS)0xC0000277L)
 
@@ -6943,7 +6948,7 @@ Notes:
 //
 // MessageText:
 //
-// The user data passed for the NTFS reparse point is invalid.
+// The user data passed for the reparse point is invalid.
 //
 #define STATUS_IO_REPARSE_DATA_INVALID   ((NTSTATUS)0xC0000278L)
 
@@ -6975,11 +6980,20 @@ Notes:
 #define STATUS_STOWED_EXCEPTION          ((NTSTATUS)0xC000027BL)
 
 //
+// MessageId: STATUS_CONTEXT_STOWED_EXCEPTION
+//
+// MessageText:
+//
+// An application-internal exception has occurred.
+//
+#define STATUS_CONTEXT_STOWED_EXCEPTION  ((NTSTATUS)0xC000027CL)
+
+//
 // MessageId: STATUS_REPARSE_POINT_NOT_RESOLVED
 //
 // MessageText:
 //
-// The NTFS symbolic link could not be resolved even though the initial file name is valid.
+// The symbolic link could not be resolved even though the initial file name is valid.
 //
 #define STATUS_REPARSE_POINT_NOT_RESOLVED ((NTSTATUS)0xC0000280L)
 
@@ -6988,7 +7002,7 @@ Notes:
 //
 // MessageText:
 //
-// The NTFS directory is a reparse point.
+// The directory is a reparse point.
 //
 #define STATUS_DIRECTORY_IS_A_REPARSE_POINT ((NTSTATUS)0xC0000281L)
 
@@ -9889,6 +9903,24 @@ Notes:
 //
 #define STATUS_VRF_CFG_ENABLED           ((NTSTATUS)0xC000049FL)
 
+//
+// MessageId: STATUS_PARTITION_TERMINATING
+//
+// MessageText:
+//
+// An attempt was made to access a partition that has begun termination.
+//
+#define STATUS_PARTITION_TERMINATING     ((NTSTATUS)0xC00004A0L)
+
+//
+// MessageId: STATUS_EXTERNAL_SYSKEY_NOT_SUPPORTED
+//
+// MessageText:
+//
+// An externally encrypted syskey has been configured, but the system no longer supports this feature.  Please see https://go.microsoft.com/fwlink/?linkid=851152 for more information.
+//
+#define STATUS_EXTERNAL_SYSKEY_NOT_SUPPORTED ((NTSTATUS)0xC00004A1L)
+
 
 //     **** New SYSTEM error codes can be inserted here ****
 
@@ -10045,6 +10077,43 @@ Notes:
 //
 #define STATUS_ALREADY_INITIALIZED       ((NTSTATUS)0xC0000510L)
 
+//
+// MessageId: STATUS_ENCLAVE_NOT_TERMINATED
+//
+// MessageText:
+//
+// The specified enclave has not yet been terminated.
+//
+#define STATUS_ENCLAVE_NOT_TERMINATED    ((NTSTATUS)0xC0000511L)
+
+//
+// MessageId: STATUS_ENCLAVE_IS_TERMINATING
+//
+// MessageText:
+//
+// An attempt was made to access an enclave that has begun termination.
+//
+#define STATUS_ENCLAVE_IS_TERMINATING    ((NTSTATUS)0xC0000512L)
+
+//
+// MessageId: STATUS_SMB1_NOT_AVAILABLE
+//
+// MessageText:
+//
+// You can't connect to the file share because it's not secure. This share requires the obsolete SMB1 protocol, which is unsafe and could expose your system to attack.
+// Your system requires SMB2 or higher. For more info on resolving this issue, see: https://go.microsoft.com/fwlink/?linkid=852747
+//
+#define STATUS_SMB1_NOT_AVAILABLE        ((NTSTATUS)0xC0000513L)
+
+//
+// MessageId: STATUS_SMR_GARBAGE_COLLECTION_REQUIRED
+//
+// MessageText:
+//
+// The volume must undergo garbage collection.
+//
+#define STATUS_SMR_GARBAGE_COLLECTION_REQUIRED ((NTSTATUS)0xC0000514L)
+
 
 //     **** New SYSTEM error codes can be inserted here ****
 
@@ -10095,33 +10164,6 @@ Notes:
 #define STATUS_STRICT_CFG_VIOLATION      ((NTSTATUS)0xC0000606L)
 
 //
-// MessageId: STATUS_STRICT_RFG_VIOLATION
-//
-// MessageText:
-//
-// The specified image file was blocked from loading because it does not enable a feature required by the process: Return Flow Guard.
-//
-#define STATUS_STRICT_RFG_VIOLATION      ((NTSTATUS)0xC0000607L)
-
-//
-// MessageId: STATUS_RFG_ACCESS_VIOLATION
-//
-// MessageText:
-//
-// An invalid memory access occurred to a Return Flow Guard restricted region.
-//
-#define STATUS_RFG_ACCESS_VIOLATION      ((NTSTATUS)0xC0000608L)
-
-//
-// MessageId: STATUS_RFG_ATTACHED_ACCESS_VIOLATION
-//
-// MessageText:
-//
-// An invalid memory access occurred to a Return Flow Guard restricted region from an attached process.
-//
-#define STATUS_RFG_ATTACHED_ACCESS_VIOLATION ((NTSTATUS)0xC0000609L)
-
-//
 // MessageId: STATUS_SET_CONTEXT_DENIED
 //
 // MessageText:
@@ -10138,15 +10180,6 @@ Notes:
 // An attempt to access another partition's private file/section was rejected.
 //
 #define STATUS_CROSS_PARTITION_VIOLATION ((NTSTATUS)0xC000060BL)
-
-//
-// MessageId: STATUS_RFG_ATTACHED_ACCESS_VIOLATION_TRIGGERED
-//
-// MessageText:
-//
-// This process triggered an invalid memory access to a Return Flow Guard restricted region while attached to another process.
-//
-#define STATUS_RFG_ATTACHED_ACCESS_VIOLATION_TRIGGERED ((NTSTATUS)0xC000060CL)
 
 //
 // MessageId: STATUS_PORT_CLOSED
@@ -10471,6 +10504,42 @@ Notes:
 // a single local procedure call.
 //
 #define STATUS_LPC_HANDLE_COUNT_EXCEEDED ((NTSTATUS)0xC0000722L)
+
+//
+// MessageId: STATUS_EXECUTABLE_MEMORY_WRITE
+//
+// MessageText:
+//
+// A write to executable memory occurred for a process that is managing such operations.
+//
+#define STATUS_EXECUTABLE_MEMORY_WRITE   ((NTSTATUS)0xC0000723L)
+
+//
+// MessageId: STATUS_KERNEL_EXECUTABLE_MEMORY_WRITE
+//
+// MessageText:
+//
+// A write to executable memory occurred from kernel mode for a process that is managing such operations.
+//
+#define STATUS_KERNEL_EXECUTABLE_MEMORY_WRITE ((NTSTATUS)0xC0000724L)
+
+//
+// MessageId: STATUS_ATTACHED_EXECUTABLE_MEMORY_WRITE
+//
+// MessageText:
+//
+// A write to executable memory occurred from kernel mode while attached to a process that is managing such operations.
+//
+#define STATUS_ATTACHED_EXECUTABLE_MEMORY_WRITE ((NTSTATUS)0xC0000725L)
+
+//
+// MessageId: STATUS_TRIGGERED_EXECUTABLE_MEMORY_WRITE
+//
+// MessageText:
+//
+// A write to executable memory was triggered cross-process to a process that is managing such operations.
+//
+#define STATUS_TRIGGERED_EXECUTABLE_MEMORY_WRITE ((NTSTATUS)0xC0000726L)
 
 //
 // MessageId: STATUS_DISK_REPAIR_DISABLED
@@ -11313,26 +11382,35 @@ Notes:
 //
 #define STATUS_FILE_SYSTEM_VIRTUALIZATION_PROVIDER_UNKNOWN ((NTSTATUS)0xC000CE04L)
 
+//
+// MessageId: STATUS_FILE_SYSTEM_VIRTUALIZATION_INVALID_OPERATION
+//
+// MessageText:
+//
+// The virtualization operation is not allowed on the file in its current state.
+//
+#define STATUS_FILE_SYSTEM_VIRTUALIZATION_INVALID_OPERATION ((NTSTATUS)0xC000CE05L)
+
 /*++
 
  MessageId's 0xcf00 - 0xcfff (inclusive) are for Cloud Files specific messages.
 
 --*/
 //
-// MessageId: STATUS_CLOUD_FILE_PROVIDER_UNKNOWN
+// MessageId: STATUS_CLOUD_FILE_SYNC_ROOT_METADATA_CORRUPT
 //
 // MessageText:
 //
-// The Cloud File provider is unknown.
+// The cloud sync root metadata is corrupted.
 //
-#define STATUS_CLOUD_FILE_PROVIDER_UNKNOWN ((NTSTATUS)0xC000CF00L)
+#define STATUS_CLOUD_FILE_SYNC_ROOT_METADATA_CORRUPT ((NTSTATUS)0xC000CF00L)
 
 //
 // MessageId: STATUS_CLOUD_FILE_PROVIDER_NOT_RUNNING
 //
 // MessageText:
 //
-// The Cloud File provider is not running.
+// The cloud file provider is not running.
 //
 #define STATUS_CLOUD_FILE_PROVIDER_NOT_RUNNING ((NTSTATUS)0xC000CF01L)
 
@@ -11341,7 +11419,7 @@ Notes:
 //
 // MessageText:
 //
-// The Cloud File metadata is corrupt and unreadable.
+// The cloud file metadata is corrupt and unreadable.
 //
 #define STATUS_CLOUD_FILE_METADATA_CORRUPT ((NTSTATUS)0xC000CF02L)
 
@@ -11350,7 +11428,7 @@ Notes:
 //
 // MessageText:
 //
-// The operation could not be completed because the Cloud File metadata is too large.
+// The cloud file metadata is too large.
 //
 #define STATUS_CLOUD_FILE_METADATA_TOO_LARGE ((NTSTATUS)0xC000CF03L)
 
@@ -11359,7 +11437,7 @@ Notes:
 //
 // MessageText:
 //
-// The operation could not be completed because the Cloud File property blob is too large.
+// The cloud file property is too large.
 //
 #define STATUS_CLOUD_FILE_PROPERTY_BLOB_TOO_LARGE ((NTSTATUS)0x8000CF04L)
 
@@ -11368,25 +11446,25 @@ Notes:
 //
 // MessageText:
 //
-// The operation could not be completed because the maximum number of Cloud File property blobs would be exceeded.
+// The maximum number of cloud file properties has been reached.
 //
 #define STATUS_CLOUD_FILE_TOO_MANY_PROPERTY_BLOBS ((NTSTATUS)0x8000CF05L)
 
 //
-// MessageId: STATUS_CLOUD_FILE_METADATA_VERSION_NOT_SUPPORTED
+// MessageId: STATUS_CLOUD_FILE_PROPERTY_VERSION_NOT_SUPPORTED
 //
 // MessageText:
 //
-// The operation could not be completed because the Cloud File metadata version is not supported.
+// The version of the cloud file property store is not supported.
 //
-#define STATUS_CLOUD_FILE_METADATA_VERSION_NOT_SUPPORTED ((NTSTATUS)0xC000CF06L)
+#define STATUS_CLOUD_FILE_PROPERTY_VERSION_NOT_SUPPORTED ((NTSTATUS)0xC000CF06L)
 
 //
 // MessageId: STATUS_NOT_A_CLOUD_FILE
 //
 // MessageText:
 //
-// The operation could not be completed because the file is not a Cloud File.
+// The file is not a cloud file.
 //
 #define STATUS_NOT_A_CLOUD_FILE          ((NTSTATUS)0xC000CF07L)
 
@@ -11395,9 +11473,188 @@ Notes:
 //
 // MessageText:
 //
-// The operation could not be completed because the Cloud File is not in sync.
+// The file is not in sync with the cloud.
 //
 #define STATUS_CLOUD_FILE_NOT_IN_SYNC    ((NTSTATUS)0xC000CF08L)
+
+//
+// MessageId: STATUS_CLOUD_FILE_ALREADY_CONNECTED
+//
+// MessageText:
+//
+// The cloud sync root is already connected with another cloud sync engine.
+//
+#define STATUS_CLOUD_FILE_ALREADY_CONNECTED ((NTSTATUS)0xC000CF09L)
+
+//
+// MessageId: STATUS_CLOUD_FILE_NOT_SUPPORTED
+//
+// MessageText:
+//
+// The operation is not supported by the cloud sync engine.
+//
+#define STATUS_CLOUD_FILE_NOT_SUPPORTED  ((NTSTATUS)0xC000CF0AL)
+
+//
+// MessageId: STATUS_CLOUD_FILE_INVALID_REQUEST
+//
+// MessageText:
+//
+// The cloud operation is invalid.
+//
+#define STATUS_CLOUD_FILE_INVALID_REQUEST ((NTSTATUS)0xC000CF0BL)
+
+//
+// MessageId: STATUS_CLOUD_FILE_READ_ONLY_VOLUME
+//
+// MessageText:
+//
+// The cloud operation is not supported on a read-only volume.
+//
+#define STATUS_CLOUD_FILE_READ_ONLY_VOLUME ((NTSTATUS)0xC000CF0CL)
+
+//
+// MessageId: STATUS_CLOUD_FILE_CONNECTED_PROVIDER_ONLY
+//
+// MessageText:
+//
+// The operation is reserved for a connected cloud sync engine.
+//
+#define STATUS_CLOUD_FILE_CONNECTED_PROVIDER_ONLY ((NTSTATUS)0xC000CF0DL)
+
+//
+// MessageId: STATUS_CLOUD_FILE_VALIDATION_FAILED
+//
+// MessageText:
+//
+// The cloud sync engine failed to validate the downloaded data.
+//
+#define STATUS_CLOUD_FILE_VALIDATION_FAILED ((NTSTATUS)0xC000CF0EL)
+
+//
+// MessageId: STATUS_CLOUD_FILE_AUTHENTICATION_FAILED
+//
+// MessageText:
+//
+// The cloud sync engine failed user authentication.
+//
+#define STATUS_CLOUD_FILE_AUTHENTICATION_FAILED ((NTSTATUS)0xC000CF0FL)
+
+//
+// MessageId: STATUS_CLOUD_FILE_INSUFFICIENT_RESOURCES
+//
+// MessageText:
+//
+// The cloud sync engine failed to perform the operation due to low system resources.
+//
+#define STATUS_CLOUD_FILE_INSUFFICIENT_RESOURCES ((NTSTATUS)0xC000CF10L)
+
+//
+// MessageId: STATUS_CLOUD_FILE_NETWORK_UNAVAILABLE
+//
+// MessageText:
+//
+// The cloud sync engine failed to perform the operation due to network being unavailable.
+//
+#define STATUS_CLOUD_FILE_NETWORK_UNAVAILABLE ((NTSTATUS)0xC000CF11L)
+
+//
+// MessageId: STATUS_CLOUD_FILE_UNSUCCESSFUL
+//
+// MessageText:
+//
+// The cloud operation was unsuccessful.
+//
+#define STATUS_CLOUD_FILE_UNSUCCESSFUL   ((NTSTATUS)0xC000CF12L)
+
+//
+// MessageId: STATUS_CLOUD_FILE_NOT_UNDER_SYNC_ROOT
+//
+// MessageText:
+//
+// The operation is only supported on files under a cloud sync root.
+//
+#define STATUS_CLOUD_FILE_NOT_UNDER_SYNC_ROOT ((NTSTATUS)0xC000CF13L)
+
+//
+// MessageId: STATUS_CLOUD_FILE_IN_USE
+//
+// MessageText:
+//
+// The operation cannot be performed on cloud files in use.
+//
+#define STATUS_CLOUD_FILE_IN_USE         ((NTSTATUS)0xC000CF14L)
+
+//
+// MessageId: STATUS_CLOUD_FILE_PINNED
+//
+// MessageText:
+//
+// The operation cannot be performed on pinned cloud files.
+//
+#define STATUS_CLOUD_FILE_PINNED         ((NTSTATUS)0xC000CF15L)
+
+//
+// MessageId: STATUS_CLOUD_FILE_REQUEST_ABORTED
+//
+// MessageText:
+//
+// The cloud operation was aborted.
+//
+#define STATUS_CLOUD_FILE_REQUEST_ABORTED ((NTSTATUS)0xC000CF16L)
+
+//
+// MessageId: STATUS_CLOUD_FILE_PROPERTY_CORRUPT
+//
+// MessageText:
+//
+// The cloud file's property store is corrupt.
+//
+#define STATUS_CLOUD_FILE_PROPERTY_CORRUPT ((NTSTATUS)0xC000CF17L)
+
+//
+// MessageId: STATUS_CLOUD_FILE_ACCESS_DENIED
+//
+// MessageText:
+//
+// Access to the cloud file is denied.
+//
+#define STATUS_CLOUD_FILE_ACCESS_DENIED  ((NTSTATUS)0xC000CF18L)
+
+//
+// MessageId: STATUS_CLOUD_FILE_INCOMPATIBLE_HARDLINKS
+//
+// MessageText:
+//
+// The cloud operation cannot be performed on a file with incompatible hardlinks.
+//
+#define STATUS_CLOUD_FILE_INCOMPATIBLE_HARDLINKS ((NTSTATUS)0xC000CF19L)
+
+//
+// MessageId: STATUS_CLOUD_FILE_PROPERTY_LOCK_CONFLICT
+//
+// MessageText:
+//
+// The operation failed due to a conflicting cloud file property lock.
+//
+#define STATUS_CLOUD_FILE_PROPERTY_LOCK_CONFLICT ((NTSTATUS)0xC000CF1AL)
+
+//
+// MessageId: STATUS_CLOUD_FILE_REQUEST_CANCELED
+//
+// MessageText:
+//
+// The cloud operation was canceled by user.
+//
+#define STATUS_CLOUD_FILE_REQUEST_CANCELED ((NTSTATUS)0xC000CF1BL)
+
+/*++
+
+ End of Cloud Files specific messages.
+
+--*/
+
+//     **** New SYSTEM error codes can be inserted here ****
 
 
 //
@@ -20178,6 +20435,15 @@ Notes:
 // The buffer lengths do not match.
 //
 #define STATUS_PCP_BUFFER_LENGTH_MISMATCH ((NTSTATUS)0xC029201EL)
+
+//
+// MessageId: STATUS_PCP_IFX_RSA_KEY_CREATION_BLOCKED
+//
+// MessageText:
+//
+// The RSA key creation is blocked on this TPM due to known security vulnerabilities.
+//
+#define STATUS_PCP_IFX_RSA_KEY_CREATION_BLOCKED ((NTSTATUS)0xC029201FL)
 
 
 //

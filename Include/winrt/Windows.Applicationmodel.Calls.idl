@@ -11,17 +11,6 @@ import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
 import "Windows.System.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Esystem_h__)")
-cpp_quote("#include <Windows.System.h>")
-cpp_quote("#endif // !defined(__windows2Esystem_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -110,9 +99,13 @@ namespace Windows
 
             interface IVoipCallCoordinator;
 
+            interface IVoipCallCoordinator2;
+
             interface IVoipCallCoordinatorStatics;
 
             interface IVoipPhoneCall;
+
+            interface IVoipPhoneCall2;
 
             runtimeclass CallAnswerEventArgs;
 
@@ -195,7 +188,7 @@ namespace Windows
     {
         namespace Calls
         {
-            [contractversion(1.0)]
+            [contractversion(2.0)]
             apicontract CallsVoipContract
             {
             }
@@ -494,6 +487,16 @@ namespace Windows
                 HRESULT CancelUpgrade([in] GUID callUpgradeGuid);
             }
 
+            [contract(Windows.ApplicationModel.Calls.CallsVoipContract, 2.0)]
+            [exclusiveto(Windows.ApplicationModel.Calls.VoipCallCoordinator)]
+            [uuid(BEB4A9F3-C704-4234-89CE-E88CC0D28FBE)]
+            interface IVoipCallCoordinator2 : IInspectable
+                requires
+                    Windows.ApplicationModel.Calls.IVoipCallCoordinator
+            {
+                HRESULT SetupNewAcceptedCall([in] HSTRING context, [in] HSTRING contactName, [in] HSTRING contactNumber, [in] HSTRING serviceName, [in] Windows.ApplicationModel.Calls.VoipPhoneCallMedia media, [out] [retval] Windows.ApplicationModel.Calls.VoipPhoneCall** call);
+            }
+
             [contract(Windows.ApplicationModel.Calls.CallsVoipContract, 1.0)]
             [exclusiveto(Windows.ApplicationModel.Calls.VoipCallCoordinator)]
             [uuid(7F5D1F2B-E04A-4D10-B31A-A55C922CC2FB)]
@@ -527,6 +530,16 @@ namespace Windows
                 [propget] HRESULT CallMedia([out] [retval] Windows.ApplicationModel.Calls.VoipPhoneCallMedia* value);
                 [propput] HRESULT CallMedia([in] Windows.ApplicationModel.Calls.VoipPhoneCallMedia value);
                 HRESULT NotifyCallReady();
+            }
+
+            [contract(Windows.ApplicationModel.Calls.CallsVoipContract, 2.0)]
+            [exclusiveto(Windows.ApplicationModel.Calls.VoipPhoneCall)]
+            [uuid(741B46E1-245F-41F3-9399-3141D25B52E3)]
+            interface IVoipPhoneCall2 : IInspectable
+                requires
+                    Windows.ApplicationModel.Calls.IVoipPhoneCall
+            {
+                HRESULT TryShowAppUI();
             }
 
             [contract(Windows.ApplicationModel.Calls.CallsVoipContract, 1.0)]
@@ -644,6 +657,7 @@ namespace Windows
             runtimeclass VoipCallCoordinator
             {
                 [default] interface Windows.ApplicationModel.Calls.IVoipCallCoordinator;
+                [contract(Windows.ApplicationModel.Calls.CallsVoipContract, 2.0)] interface Windows.ApplicationModel.Calls.IVoipCallCoordinator2;
             }
 
             [contract(Windows.ApplicationModel.Calls.CallsVoipContract, 1.0)]
@@ -651,6 +665,7 @@ namespace Windows
             runtimeclass VoipPhoneCall
             {
                 [default] interface Windows.ApplicationModel.Calls.IVoipPhoneCall;
+                [contract(Windows.ApplicationModel.Calls.CallsVoipContract, 2.0)] interface Windows.ApplicationModel.Calls.IVoipPhoneCall2;
             }
         }
     }

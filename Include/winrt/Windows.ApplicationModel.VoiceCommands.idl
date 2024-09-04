@@ -14,26 +14,6 @@ import "Windows.ApplicationModel.AppService.idl";
 import "Windows.Globalization.idl";
 import "Windows.Media.SpeechRecognition.idl";
 import "Windows.Storage.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Eappservice_h__)")
-cpp_quote("#include <Windows.ApplicationModel.AppService.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Eappservice_h__)")
-cpp_quote("#if !defined(__windows2Eglobalization_h__)")
-cpp_quote("#include <Windows.Globalization.h>")
-cpp_quote("#endif // !defined(__windows2Eglobalization_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Espeechrecognition_h__)")
-cpp_quote("#include <Windows.Media.SpeechRecognition.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Espeechrecognition_h__)")
-cpp_quote("#if !defined(__windows2Estorage_h__)")
-cpp_quote("#include <Windows.Storage.h>")
-cpp_quote("#endif // !defined(__windows2Estorage_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows

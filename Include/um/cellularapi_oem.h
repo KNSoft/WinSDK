@@ -651,8 +651,6 @@ enum MODEMPOWERSTATE
         MODEM_POWER_GOING_OFF	= 0x4,
         MODEM_POWER_SHUTING_DOWN	= 0x5
     } ;
-typedef enum RILSIDNIDPARAMMASK RILSIDNIDPARAMMASK;
-
 typedef struct RILSIDNID RILSIDNID;
 
 typedef struct RILSIDNID *LPRILSIDNID;
@@ -680,6 +678,8 @@ enum RILSIDNIDPARAMMASK
         RIL_PARAM_SIDNID_NID	= 0x2,
         RIL_PARAM_SIDNID_ALL	= 0x3
     } ;
+typedef enum RILSIDNIDPARAMMASK RILSIDNIDPARAMMASK;
+
 struct RILSIDNID
     {
     DWORD cbSize;
@@ -703,13 +703,13 @@ struct UICCDATASTOREENTRY
     DWORD lengthIccId;
     BYTE iccId[ 10 ];
     } ;
-typedef struct UICCDATASTOREINFO UICCDATASTOREINFO;
-
 struct UICCDATASTOREINFO
     {
     DWORD dwCount;
     struct UICCDATASTOREENTRY entries[ 10 ];
     } ;
+typedef struct UICCDATASTOREINFO UICCDATASTOREINFO;
+
 
 
 extern RPC_IF_HANDLE __MIDL_itf_cellularapi_oem_0000_0000_v0_0_c_ifspec;

@@ -318,7 +318,7 @@ typedef ULONG64 KSPIN_LOCK_QUEUE_NUMBER;
 #define LockQueueMasterLock 5
 #define LockQueueNonPagedPoolLock 6
 #define LockQueueIoCancelLock 7
-#define LockQueueWorkQueueLock 8
+#define LockQueueUnusedSpare8 8
 #define LockQueueIoVpbLock 9
 #define LockQueueIoDatabaseLock 10
 #define LockQueueIoCompletionLock 11
@@ -340,7 +340,7 @@ typedef enum _KSPIN_LOCK_QUEUE_NUMBER {
     LockQueueMasterLock,
     LockQueueNonPagedPoolLock,
     LockQueueIoCancelLock,
-    LockQueueWorkQueueLock,
+    LockQueueUnusedSpare8,
     LockQueueIoVpbLock,
     LockQueueIoDatabaseLock,
     LockQueueIoCompletionLock,
@@ -1147,7 +1147,8 @@ _InlineInterlockedIncrement64 (
 
 #define InterlockedIncrement64 _InlineInterlockedIncrement64
 #define InterlockedIncrementAcquire64 InterlockedIncrement64
-
+#define InterlockedIncrementRelease64 InterlockedIncrement64
+#define InterlockedIncrementNoFence64 InterlockedIncrement64
 
 FORCEINLINE
 LONGLONG
@@ -1167,6 +1168,9 @@ _InlineInterlockedDecrement64 (
 }
 
 #define InterlockedDecrement64 _InlineInterlockedDecrement64
+#define InterlockedDecrementAcquire64 InterlockedDecrement64
+#define InterlockedDecrementRelease64 InterlockedDecrement64
+#define InterlockedDecrementNoFence64 InterlockedDecrement64
 
 FORCEINLINE
 LONGLONG
@@ -1876,9 +1880,9 @@ InterlockedExchange16 (
 #define InterlockedOr16 _InterlockedOr16
 #define InterlockedXor16 _InterlockedXor16
 
-char 
+char
 InterlockedExchangeAdd8 (
-    _Inout_ _Interlocked_operand_ char volatile * _Addend, 
+    _Inout_ _Interlocked_operand_ char volatile * _Addend,
     _In_ char _Value
     );
 
@@ -3879,9 +3883,21 @@ WriteNoFence64 (
 #define PF_TEMPORAL_LEVEL_3         2
 #define PF_NON_TEMPORAL_LEVEL_ALL   3
 
+#if defined(_M_HYBRID_X86_ARM64)
+
+extern ULONG64 (*_os_wowa64_rdtsc) (VOID);
+
+#endif
+
 //
 // Define function to read the value of the time stamp counter.
 //
+
+#if defined(_M_HYBRID_X86_ARM64)
+
+DECLSPEC_GUARDNOCF 
+
+#endif
 
 FORCEINLINE
 ULONG64
@@ -3893,11 +3909,11 @@ ReadTimeStampCounter(
 #if defined(_M_HYBRID_X86_ARM64)
 
     //
-    // For guest code, the rdtsc instruction is implemented in terms of CNTVCT.
-    // Use the same implementation for consistency.
+    // Call into the emulator to return the same value as the x86 RDTSC
+    // instruction.
     //
 
-    return (ULONG64)_ReadStatusReg(ARM64_CNTVCT);
+    return (*_os_wowa64_rdtsc)();
 
 #else
 
@@ -4871,6 +4887,7 @@ WritePointerRaw (
 #endif // !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
 
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -5047,7 +5064,7 @@ __emit(
 
 // NT_ASSERT_ACTION is the actual assertion action, i.e. raising runtime
 // assertion failure. It should be used only by the macro of NT_ASSERT
-// and NT_FRE_ASSERT below. 
+// and NT_FRE_ASSERT below.
 #define NT_ASSERT_ACTION(_exp) \
     ((!(_exp)) ? \
         (__annotation(L"Debug", L"AssertFail", L#_exp), \
@@ -5123,6 +5140,7 @@ __emit(
 #endif // NT_ASSERT_ALWAYS_ASSUMES
 
 #endif // _MSC_VER >= 1300
+
 
 //
 //  Define an access token from a programmer's viewpoint.  The structure is
@@ -6104,6 +6122,7 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 #define FILE_DEVICE_PERSISTENT_MEMORY   0x00000059
 #define FILE_DEVICE_NVDIMM              0x0000005a
 #define FILE_DEVICE_HOLOGRAPHIC         0x0000005b
+#define FILE_DEVICE_SDFXHCI             0x0000005c
 
 //
 // Macro definition for defining IOCTL and FSCTL function control codes.  Note
@@ -6315,6 +6334,24 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 //
 #define FILE_ATTRIBUTE_RECALL_ON_DATA_ACCESS 0x00400000 
 
+//
+// Attributes for FILE_CREATE_TREE_CONNECT opens. These overlap with FILE_ATTRIBUTE_xyz values.
+//
+
+#define TREE_CONNECT_ATTRIBUTE_PRIVACY      0x00004000  
+#define TREE_CONNECT_ATTRIBUTE_INTEGRITY    0x00008000  
+#define TREE_CONNECT_ATTRIBUTE_GLOBAL       0x00000004  
+
+#endif
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS3)
+
+//
+//  The value of this flag is chosen to overlap with an internal bit used by NTFS.
+//
+
+#define FILE_ATTRIBUTE_STRICTLY_SEQUENTIAL  0x20000000  
+
 #endif
 
 #if (_WIN32_WINNT < _WIN32_WINNT_WIN8)
@@ -6327,10 +6364,27 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 #define FILE_ATTRIBUTE_VALID_FLAGS          0x0002ffb7
 #define FILE_ATTRIBUTE_VALID_SET_FLAGS      0x000231a7
 
+#elif (_WIN32_WINNT < _WIN32_WINNT_WIN10_RS3)
+
+#define FILE_ATTRIBUTE_VALID_FLAGS              0x005affb7
+#define FILE_ATTRIBUTE_VALID_SET_FLAGS          0x001a31a7
+
+//
+// This mask describes the set of attributes that kernel-mode callers may set.
+//
+
+#define FILE_ATTRIBUTE_VALID_KERNEL_SET_FLAGS   0x005a31a7
+
 #else
 
-#define FILE_ATTRIBUTE_VALID_FLAGS          0x005affb7
-#define FILE_ATTRIBUTE_VALID_SET_FLAGS      0x001a31a7
+#define FILE_ATTRIBUTE_VALID_FLAGS              0x005affb7
+#define FILE_ATTRIBUTE_VALID_SET_FLAGS          0x001a31a7
+
+//
+// This mask describes the set of attributes that kernel-mode callers may set.
+//
+
+#define FILE_ATTRIBUTE_VALID_KERNEL_SET_FLAGS   0x005a31a7
 
 #endif
 
@@ -6643,8 +6697,14 @@ typedef enum _FILE_INFORMATION_CLASS {
     FileRenameInformationExBypassAccessCheck, // 66
     FileDesiredStorageClassInformation,      // 67
     FileStatInformation,                     // 68
+    FileMemoryPartitionInformation,          // 69
     FileMaximumInformation
 } FILE_INFORMATION_CLASS, *PFILE_INFORMATION_CLASS;
+
+typedef enum _DIRECTORY_NOTIFY_INFORMATION_CLASS {
+    DirectoryNotifyInformation         = 1,
+    DirectoryNotifyExtendedInformation // 2
+} DIRECTORY_NOTIFY_INFORMATION_CLASS, *PDIRECTORY_NOTIFY_INFORMATION_CLASS;
 
 //
 // Define the various structures which are returned on query operations
@@ -6790,6 +6850,22 @@ typedef struct _FILE_IOSTATUSBLOCK_RANGE_INFORMATION {
     PUCHAR       IoStatusBlockRange;
     ULONG        Length;
 } FILE_IOSTATUSBLOCK_RANGE_INFORMATION, *PFILE_IOSTATUSBLOCK_RANGE_INFORMATION;
+
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS3)
+
+typedef struct _FILE_MEMORY_PARTITION_INFORMATION {
+    ULONG_PTR OwnerPartitionHandle;
+    union {
+        struct {
+            UCHAR NoCrossPartitionAccess;
+            UCHAR Spare[3];
+        } DUMMYSTRUCTNAME;
+
+        ULONG AllFlags;
+    } Flags;
+} FILE_MEMORY_PARTITION_INFORMATION, *PFILE_MEMORY_PARTITION_INFORMATION;
+
+#endif
 
 //
 // Define the file system information class values
@@ -7046,8 +7122,6 @@ typedef struct _IO_ERROR_LOG_MESSAGE {
 #else
 #define PORT_MAXIMUM_MESSAGE_LENGTH 256
 #endif
-
-
 
 
 
@@ -7346,6 +7420,7 @@ typedef struct _KEY_TRUST_INFORMATION {
 #define OBJ_NAME_PATH_SEPARATOR ((WCHAR)L'\\')
 
 
+
 //
 // Object Manager Object Type Specific Access Rights.
 //
@@ -7364,6 +7439,8 @@ typedef struct _KEY_TRUST_INFORMATION {
 #define DIRECTORY_CREATE_SUBDIRECTORY   (0x0008)
 
 #define DIRECTORY_ALL_ACCESS (STANDARD_RIGHTS_REQUIRED | 0xF)
+
+
 
 //begin_winnt
 // begin_access
@@ -7390,6 +7467,8 @@ typedef struct _OBJECT_NAME_INFORMATION {
 #define DUPLICATE_CLOSE_SOURCE      0x00000001  
 #define DUPLICATE_SAME_ACCESS       0x00000002  
 #define DUPLICATE_SAME_ATTRIBUTES   0x00000004
+
+
 
 //
 // Section Information Structures.
@@ -7430,18 +7509,6 @@ typedef enum _SECTION_INHERIT {
 #define SESSION_ALL_ACCESS (STANDARD_RIGHTS_REQUIRED |  \
                             SESSION_QUERY_ACCESS |             \
                             SESSION_MODIFY_ACCESS)
-
-//
-// Partition Specific Access Rights.
-//
-
-#define MEMORY_PARTITION_QUERY_ACCESS  0x0001
-#define MEMORY_PARTITION_MODIFY_ACCESS 0x0002
-
-#define MEMORY_PARTITION_ALL_ACCESS (STANDARD_RIGHTS_REQUIRED |         \
-                                     SYNCHRONIZE |                      \
-                                     MEMORY_PARTITION_QUERY_ACCESS |    \
-                                     MEMORY_PARTITION_MODIFY_ACCESS)
 
 // end_access
 
@@ -7996,6 +8063,13 @@ DEFINE_GUID( GUID_ALLOW_STANDBY_STATES, 0xabfc2519, 0x3608, 0x4c2a, 0x94, 0xea, 
 // {BD3B718A-0680-4D9D-8AB2-E1D2B4AC806D}
 //
 DEFINE_GUID( GUID_ALLOW_RTC_WAKE, 0xBD3B718A, 0x0680, 0x4D9D, 0x8A, 0xB2, 0xE1, 0xD2, 0xB4, 0xAC, 0x80, 0x6D );
+
+//
+// Defines a guid for enabling/disabling legacy RTC mitigations.
+//
+// {1A34BDC3-7E6B-442E-A9D0-64B6EF378E84}
+//
+DEFINE_GUID( GUID_LEGACY_RTC_MITIGATION, 0x1A34BDC3, 0x7E6B, 0x442E, 0xA9, 0xD0, 0x64, 0xB6, 0xEF, 0x37, 0x8E, 0x84 );
 
 //
 // Defines a guid for enabling/disabling the ability to create system required
@@ -8802,6 +8876,23 @@ DEFINE_GUID( GUID_PROCESSOR_CLASS0_FLOOR_PERF, 0xfddc842b, 0x8364, 0x4edc, 0x94,
 DEFINE_GUID( GUID_PROCESSOR_CLASS1_INITIAL_PERF, 0x1facfc65, 0xa930, 0x4bc5, 0x9f, 0x38, 0x50, 0x4e, 0xc0, 0x97, 0xbb, 0xc0);
 
 //
+// Specifies the scheduling policy for threads in a given QoS class.
+//
+// {93B8B6DC-0698-4d1c-9EE4-0644E900C85D}
+//
+DEFINE_GUID( GUID_PROCESSOR_THREAD_SCHEDULING_POLICY,
+0x93b8b6dc, 0x698, 0x4d1c, 0x9e, 0xe4, 0x6, 0x44, 0xe9, 0x0, 0xc8, 0x5d);
+
+//
+// Specifies the scheduling policy for short running threads in a given QoS
+// class.
+//
+// {BAE08B81-2D5E-4688-AD6A-13243356654B}
+//
+DEFINE_GUID( GUID_PROCESSOR_SHORT_THREAD_SCHEDULING_POLICY,
+0xbae08b81, 0x2d5e, 0x4688, 0xad, 0x6a, 0x13, 0x24, 0x33, 0x56, 0x65, 0x4b);
+
+//
 // Specifies active vs passive cooling.  Although not directly related to
 // processor settings, it is the processor that gets throttled if we're doing
 // passive cooling, so it is fairly strongly related.
@@ -8840,16 +8931,16 @@ DEFINE_GUID( GUID_CONNECTIVITY_IN_STANDBY, 0xF15576E8, 0x98B7, 0x4186, 0xB9, 0x4
 
 #define POWER_CONNECTIVITY_IN_STANDBY_DISABLED 0
 #define POWER_CONNECTIVITY_IN_STANDBY_ENABLED 1
-#define POWER_CONNECTIVITY_IN_STANDBY_DISABLED_LID_CLOSE 2
+#define POWER_CONNECTIVITY_IN_STANDBY_SYSTEM_MANAGED 2
 
 //
-// Specifies the mode for disconnected standby. 
-// 
+// Specifies the mode for disconnected standby.
+//
 // 68AFB2D9-EE95-47A8-8F50-4115088073B1
 DEFINE_GUID( GUID_DISCONNECTED_STANDBY_MODE, 0x68AFB2D9, 0xEE95, 0x47A8, 0x8F, 0x50, 0x41, 0x15, 0x08, 0x80, 0x73, 0xB1 );
 
 #define POWER_DISCONNECTED_STANDBY_MODE_NORMAL 0
-#define POWER_DISCONNECTED_STANDBY_MODE_AGGRESSIVE 1 
+#define POWER_DISCONNECTED_STANDBY_MODE_AGGRESSIVE 1
 
 // AC/DC power source
 // ------------------
@@ -9014,6 +9105,18 @@ DEFINE_GUID(GUID_INTSTEER_LOAD_PER_PROC_TRIGGER,
 DEFINE_GUID(GUID_INTSTEER_TIME_UNPARK_TRIGGER,
 0xd6ba4903, 0x386f, 0x4c2c, 0x8a, 0xdb, 0x5c, 0x21, 0xb3, 0x32, 0x8d, 0x25);
 
+// Other miscellaneous power notification GUIDs
+// ------------------------
+//
+
+// Specifies whether mixed reality mode is engaged.
+//
+// {1E626B4E-CF04-4f8d-9CC7-C97C5B0F2391}
+//
+
+DEFINE_GUID(GUID_MIXED_REALITY_MODE,
+0x1e626b4e, 0xcf04, 0x4f8d, 0x9c, 0xc7, 0xc9, 0x7c, 0x5b, 0xf, 0x23, 0x91);
+
 
 #ifndef _PO_DDK_
 #define _PO_DDK_
@@ -9092,7 +9195,8 @@ typedef struct _SYSTEM_POWER_STATE_CONTEXT {
             ULONG   CurrentSystemState    : 4;
             ULONG   IgnoreHibernationPath : 1;
             ULONG   PseudoTransition      : 1;
-            ULONG   Reserved2             : 10;
+            ULONG   KernelSoftReboot      : 1;
+            ULONG   Reserved2             : 9;
         } DUMMYSTRUCTNAME;
 
         ULONG ContextAsUlong;
@@ -9399,6 +9503,19 @@ typedef enum {
                                             // transition to S4/S5, please note this
                                             // reason is different than ReasonSxTransition.
     MonitorRequestReasonWinrt,
+    MonitorRequestReasonUserInputKeyboard,
+    MonitorRequestReasonUserInputMouse,
+    MonitorRequestReasonUserInputTouch,
+    MonitorRequestReasonUserInputPen,
+    MonitorRequestReasonUserInputAccelerometer,
+    MonitorRequestReasonUserInputHid,
+    MonitorRequestReasonUserInputPoUserPresent,
+    MonitorRequestReasonUserInputSessionSwitch,
+    MonitorRequestReasonUserInputInitialization,
+    MonitorRequestReasonPdcSignalWindowsMobilePwrNotif,         // PDC_SIGNAL_PROVIDER_PWRNOTIF_SVC
+    MonitorRequestReasonPdcSignalWindowsMobileShell,            // PDC_SIGNAL_PROVIDER_UM_CS_CONTROL
+    MonitorRequestReasonPdcSignalHeyCortana,                    // PDC_SIGNAL_PROVIDER_HEY_CORTANA
+    MonitorRequestReasonPdcSignalHolographicShell,              // PDC_SIGNAL_PROVIDER_HOLOSI_CRITICAL_BATTERY_WAKE
     MonitorRequestReasonMax
 } POWER_MONITOR_REQUEST_REASON;
 
@@ -10898,12 +11015,12 @@ RtlAssert(
 
 #define ASSERT( exp ) \
     ((!(exp)) ? \
-        (RtlAssert( #exp, __FILE__, __LINE__, NULL ),FALSE) : \
+        (RtlAssert( (PVOID)#exp, (PVOID)__FILE__, __LINE__, NULL ),FALSE) : \
         TRUE)
 
 #define ASSERTMSG( msg, exp ) \
     ((!(exp)) ? \
-        (RtlAssert( #exp, __FILE__, __LINE__, msg ),FALSE) : \
+        (RtlAssert( (PVOID)#exp, (PVOID)__FILE__, __LINE__, msg ),FALSE) : \
         TRUE)
 
 #define RTL_SOFT_ASSERT(_exp) \
@@ -11004,6 +11121,12 @@ RtlAssert(
 #define FAST_FAIL_GUARD_EXPORT_SUPPRESSION_FAILURE  46
 #define FAST_FAIL_INVALID_CONTROL_STACK             47
 #define FAST_FAIL_SET_CONTEXT_DENIED                48
+#define FAST_FAIL_INVALID_IAT                       49
+#define FAST_FAIL_HEAP_METADATA_CORRUPTION          50
+#define FAST_FAIL_PAYLOAD_RESTRICTION_VIOLATION     51
+#define FAST_FAIL_LOW_LABEL_ACCESS_DENIED           52         // Telemetry, nonfatal
+#define FAST_FAIL_ENCLAVE_CALL_FAILURE              53
+#define FAST_FAIL_UNHANDLED_LSS_EXCEPTON            54
 #define FAST_FAIL_INVALID_FAST_FAIL_CODE            0xFFFFFFFF
 
 #if _MSC_VER >= 1610
@@ -11523,6 +11646,8 @@ PushEntryList(
 #pragma warning(pop)
 
 #endif // !MIDL_PASS
+
+
 
 
 
@@ -13052,7 +13177,7 @@ RtlLargeIntegerArithmeticShift (
 
 #endif // !defined(MIDL_PASS)
 
- 
+
 //
 //  Time conversion routines
 //
@@ -14440,6 +14565,126 @@ RtlOsDeploymentState(
 
 #endif // NTDDI_VERSION >= NTDDI_WINTHRESHOLD
 
+
+//
+// Support for process policy settings embedded into executable image.
+//
+
+#define IMAGE_POLICY_METADATA_VERSION 1
+#define IMAGE_POLICY_SECTION_NAME ".tPolicy"
+#define IMAGE_POLICY_METADATA_NAME __ImagePolicyMetadata
+
+typedef enum _IMAGE_POLICY_ENTRY_TYPE {
+    ImagePolicyEntryTypeNone = 0,
+    ImagePolicyEntryTypeBool,
+    ImagePolicyEntryTypeInt8,
+    ImagePolicyEntryTypeUInt8,
+    ImagePolicyEntryTypeInt16,
+    ImagePolicyEntryTypeUInt16,
+    ImagePolicyEntryTypeInt32,
+    ImagePolicyEntryTypeUInt32,
+    ImagePolicyEntryTypeInt64,
+    ImagePolicyEntryTypeUInt64,
+    ImagePolicyEntryTypeAnsiString,
+    ImagePolicyEntryTypeUnicodeString,
+    ImagePolicyEntryTypeMaximum
+} IMAGE_POLICY_ENTRY_TYPE;
+
+typedef enum _IMAGE_POLICY_ID {
+    ImagePolicyIdNone = 0,
+    ImagePolicyIdEtw,
+    ImagePolicyIdDebug,
+    ImagePolicyIdCrashDump,
+    ImagePolicyIdCrashDumpKey,
+    ImagePolicyIdCrashDumpKeyGuid,
+    ImagePolicyIdParentSd,
+    ImagePolicyIdParentSdRev,
+    ImagePolicyIdSvn,
+    ImagePolicyIdDeviceId,
+    ImagePolicyIdCapability,
+    ImagePolicyIdScenarioId,
+    ImagePolicyIdMaximum
+} IMAGE_POLICY_ID;
+
+typedef struct _IMAGE_POLICY_ENTRY {
+    IMAGE_POLICY_ENTRY_TYPE Type;
+    IMAGE_POLICY_ID PolicyId;
+    union {
+        const VOID* None;
+        BOOLEAN BoolValue;
+        INT8 Int8Value;
+        UINT8 UInt8Value;
+        INT16 Int16Value;
+        UINT16 UInt16Value;
+        INT32 Int32Value;
+        UINT32 UInt32Value;
+        INT64 Int64Value;
+        UINT64 UInt64Value;
+        PCSTR AnsiStringValue;
+        PCWSTR UnicodeStringValue;
+    } u;
+} IMAGE_POLICY_ENTRY;
+typedef const IMAGE_POLICY_ENTRY* PCIMAGE_POLICY_ENTRY;
+
+#pragma warning(push)
+#pragma warning(disable:4200) // zero-sized array in struct/union
+typedef struct _IMAGE_POLICY_METADATA {
+    UCHAR Version;
+    UCHAR Reserved0[7];
+    ULONGLONG ApplicationId;
+    IMAGE_POLICY_ENTRY Policies[];
+} IMAGE_POLICY_METADATA;
+typedef const IMAGE_POLICY_METADATA* PCIMAGE_POLICY_METADATA;
+#pragma warning(pop)
+
+#define IMAGE_POLICY_START(_ApplicationId_)                                   \
+__pragma(const_seg(push, IMAGE_POLICY_SECTION_NAME));                         \
+EXTERN_C __declspec(dllexport) const                                          \
+IMAGE_POLICY_METADATA IMAGE_POLICY_METADATA_NAME = {                          \
+    IMAGE_POLICY_METADATA_VERSION,                                            \
+    {0},                                                                      \
+    _ApplicationId_,                                                          \
+    {
+
+#define IMAGE_POLICY_END()                                                    \
+        {ImagePolicyEntryTypeNone, ImagePolicyIdNone, NULL}                   \
+    }                                                                         \
+};                                                                            \
+__pragma(const_seg(pop))
+
+#define IMAGE_POLICY_BOOL(_PolicyId_, _Value_)             \
+    {ImagePolicyEntryTypeBool, _PolicyId_, (const VOID*)_Value_},
+
+#define IMAGE_POLICY_INT8(_PolicyId_, _Value_)             \
+    {ImagePolicyEntryTypeInt8, _PolicyId_, (const VOID*)_Value_},
+
+#define IMAGE_POLICY_UINT8(_PolicyId_, _Value_)            \
+    {ImagePolicyEntryTypeUInt8, _PolicyId_, (const VOID*)_Value_},
+
+#define IMAGE_POLICY_INT16(_PolicyId_, _Value_)            \
+    {ImagePolicyEntryTypeInt16, _PolicyId_, (const VOID*)_Value_},
+
+#define IMAGE_POLICY_UINT16(_PolicyId_, _Value_)           \
+    {ImagePolicyEntryTypeUInt16, _PolicyId_, (const VOID*)_Value_},
+
+#define IMAGE_POLICY_INT32(_PolicyId_, _Value_)            \
+    {ImagePolicyEntryTypeInt32, _PolicyId_, (const VOID*)_Value_},
+
+#define IMAGE_POLICY_UINT32(_PolicyId_, _Value_)           \
+    {ImagePolicyEntryTypeUInt32, _PolicyId_, (const VOID*)_Value_},
+
+#define IMAGE_POLICY_INT64(_PolicyId_, _Value_)            \
+    {ImagePolicyEntryTypeInt64, _PolicyId_, (const VOID*)_Value_},
+
+#define IMAGE_POLICY_UINT64(_PolicyId_, _Value_)           \
+    {ImagePolicyEntryTypeUInt64, _PolicyId_, (const VOID*)_Value_},
+
+#define IMAGE_POLICY_ANSI_STRING(_PolicyId_, _Value_)      \
+    {ImagePolicyEntryTypeAnsiString, _PolicyId_, _Value_},
+
+#define IMAGE_POLICY_UNICODE_STRING(_PolicyId_, _Value_)   \
+    {ImagePolicyEntryTypeUnicodeString, _PolicyId_, _Value_},
+
 #include <apiset.h>
 
 #pragma region Desktop Family or OneCore Family
@@ -15533,19 +15778,7 @@ NtPropagationFailed(
 
 #endif
 
-#if DEVL
-
-
 extern ULONG NtGlobalFlag;
-
-#define IF_NTOS_DEBUG(FlagName) \
-    if (NtGlobalFlag & (FLG_ ## FlagName))
-
-#else
-
-#define IF_NTOS_DEBUG(FlagName) if(FALSE)
-
-#endif
 
 
 
@@ -15553,7 +15786,10 @@ extern ULONG NtGlobalFlag;
 // Define General Lookaside and supporting types here
 //
 
+#pragma warning(push)
+#pragma warning(disable:4471)
 typedef _Enum_is_bitflag_ enum _POOL_TYPE POOL_TYPE;
+#pragma warning(pop)
 
 
 
@@ -15878,6 +16114,7 @@ typedef struct _KDPC {
 
 
 
+
 #if defined(_X86_)
 
 //
@@ -15951,6 +16188,7 @@ typedef struct _KDPC {
 #define PAGE_SHIFT 12L
 
 #endif
+
 
 
 
@@ -16057,7 +16295,9 @@ void __PREfastPagedCodeLocked(void);
 
 #endif
 
+
 #define NTKERNELAPI DECLSPEC_IMPORT     
+
 
 #if defined(_X86_) && !defined(_NTHAL_)
 
@@ -16309,6 +16549,7 @@ typedef struct _FAST_MUTEX {
 
 
 
+
 //
 // Types to use to contain PFNs and their counts.
 //
@@ -16373,6 +16614,7 @@ KeRaiseIrqlToDpcLevel (
     VOID
     );
 #endif
+
 
 
 //
@@ -16488,6 +16730,8 @@ WRITE_REGISTER_BUFFER_ULONG(
     _In_reads_(Count) PULONG  Buffer,
     _In_ ULONG   Count
     );
+
+
 
 NTHALAPI
 UCHAR
@@ -16941,6 +17185,8 @@ KeRestoreFloatingPointState (
 
 
 
+
+
 #if defined(_M_AMD64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
 //
@@ -17102,6 +17348,7 @@ __writecr8 (
 #ifdef __cplusplus
 }
 #endif
+
 
 
 
@@ -17515,6 +17762,7 @@ WRITE_PORT_BUFFER_ULONG (
 
 
 
+
 //
 // Get data cache fill size.
 //
@@ -17865,6 +18113,7 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
+
 
 
 #if defined(_ARM_)
@@ -18362,6 +18611,7 @@ WRITE_PORT_BUFFER_ULONG (
 #endif
 
 
+
 //
 // Get data cache fill size.
 //
@@ -18660,6 +18910,7 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
+
 
 
 #if defined(_ARM64_)
@@ -19276,6 +19527,7 @@ WRITE_PORT_BUFFER_ULONG (
 #endif
 
 
+
 //
 // Get data cache fill size.
 //
@@ -19510,6 +19762,14 @@ KfRaiseIrql (
     );
 
 #endif // defined(_ARM64_) && !defined(MIDL_PASS)
+
+
+typedef enum _FIRMWARE_TYPE {
+    FirmwareTypeUnknown,
+    FirmwareTypeBios,
+    FirmwareTypeUefi,
+    FirmwareTypeMax
+} FIRMWARE_TYPE, *PFIRMWARE_TYPE;
 
 
 // begin_access
@@ -19916,6 +20176,7 @@ typedef enum _KWAIT_REASON {
     WrRundown,
     WrAlertByThreadId,
     WrDeferredPreempt,
+    WrPhysicalFault,
     MaximumWaitReason
 } KWAIT_REASON;
 
@@ -21241,8 +21502,9 @@ typedef struct _KBUGCHECK_REMOVE_PAGES {
 #define EXCEPTION_STACK_FAULT           0x0C
 #define EXCEPTION_GP_FAULT              0x0D
 #define EXCEPTION_RESERVED_TRAP         0x0F
-#define EXCEPTION_NPX_ERROR             0x010
-#define EXCEPTION_ALIGNMENT_CHECK       0x011
+#define EXCEPTION_NPX_ERROR             0x10
+#define EXCEPTION_ALIGNMENT_CHECK       0x11
+#define EXCEPTION_VIRTUALIZATION_FAULT  0x20
 
 #if (NTDDI_VERSION >= NTDDI_WINXPSP1)
 _Must_inspect_result_
@@ -24610,6 +24872,24 @@ ExIsManufacturingModeEnabled (
     );
 #endif // #if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+_IRQL_requires_max_(APC_LEVEL)
+NTKERNELAPI
+BOOLEAN
+ExIsSoftBoot (
+    VOID
+    );
+#endif // #if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+_IRQL_requires_max_(APC_LEVEL)
+NTKERNELAPI
+FIRMWARE_TYPE
+ExGetFirmwareType (
+    VOID
+    );
+#endif // #if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS1)
 _IRQL_requires_max_(PASSIVE_LEVEL)
@@ -25247,6 +25527,9 @@ extern PVOID MmBadPointer;
 
 #define MM_MAXIMUM_DISK_IO_SIZE          (0x10000)
 
+
+
+
 //++
 //
 // ULONG_PTR
@@ -25374,6 +25657,9 @@ extern PVOID MmBadPointer;
 #define ADDRESS_AND_SIZE_TO_SPAN_PAGES(Va,Size) \
     ((BYTE_OFFSET (Va) + ((SIZE_T) (Size)) + (PAGE_SIZE - 1)) >> PAGE_SHIFT)
 
+
+
+
 #if PRAGMA_DEPRECATED_DDK
 #pragma deprecated(COMPUTE_PAGES_SPANNED)   // Use ADDRESS_AND_SIZE_TO_SPAN_PAGES
 #endif
@@ -25497,7 +25783,7 @@ extern PVOID MmBadPointer;
 //
 // Return Value:
 //
-//     Returns the returns the starting virtual address of the MDL.
+//     Returns the starting virtual address of the MDL.
 //
 //
 //--
@@ -25578,7 +25864,7 @@ MmProbeAndLockProcessPages (
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
 _IRQL_requires_max_(DISPATCH_LEVEL)
-_At_(MemoryDescriptorList->StartVa + MemoryDescriptorList->ByteOffset, 
+_At_(MemoryDescriptorList->StartVa + MemoryDescriptorList->ByteOffset,
     _Field_size_bytes_opt_(MemoryDescriptorList->ByteCount)) // Esp:823  Esp:829
 NTKERNELAPI
 VOID
@@ -25649,19 +25935,42 @@ MmSetPermanentCacheAttribute (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
-_Must_inspect_result_ 
+_Must_inspect_result_
 __drv_preferredFunction("MmMapLockedPagesSpecifyCache",
     "Obsolete except on Windows 98.  Use MmGetSystemAddressForMdlSafe if this "
-	"is a call to MmGetSystemAddressForMdl.") 
+	"is a call to MmGetSystemAddressForMdl.")
 _When_(AccessMode==0, _IRQL_requires_max_(DISPATCH_LEVEL))
-_When_(AccessMode==1, _Maybe_raises_SEH_exception_ _IRQL_requires_max_(APC_LEVEL)) 
+_When_(AccessMode==1, _Maybe_raises_SEH_exception_ _IRQL_requires_max_(APC_LEVEL))
 DECLSPEC_DEPRECATED_DDK
 NTKERNELAPI
 PVOID
 MmMapLockedPages (
     _Inout_ PMDL MemoryDescriptorList,
-    _In_ __drv_strictType(KPROCESSOR_MODE/enum _MODE,__drv_typeConst) 
+    _In_ __drv_strictType(KPROCESSOR_MODE/enum _MODE,__drv_typeConst)
     KPROCESSOR_MODE AccessMode
+    );
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+typedef
+VOID
+MM_MDL_ROUTINE (
+    _In_opt_ PVOID DriverContext,
+    _In_ PVOID MappedVa
+    );
+
+typedef MM_MDL_ROUTINE *PMM_MDL_ROUTINE;
+
+_Must_inspect_result_ 
+_Success_(return != NULL)
+_IRQL_requires_max_ (DISPATCH_LEVEL)
+NTKERNELAPI
+NTSTATUS
+MmMapMdl (
+    _Inout_ PMDL MemoryDescriptorList,
+    _In_ ULONG Protection,
+    _In_ PMM_MDL_ROUTINE DriverRoutine,
+    _In_opt_ PVOID DriverContext
     );
 #endif
 
@@ -25696,7 +26005,7 @@ MmAdvanceMdl (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_(DISPATCH_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -25747,15 +26056,15 @@ typedef enum _MM_PAGE_PRIORITY {
 _Post_writable_byte_size_(MemoryDescriptorList->ByteCount)
 _When_(AccessMode==KernelMode, _IRQL_requires_max_(DISPATCH_LEVEL))
 _When_(AccessMode==UserMode, _Maybe_raises_SEH_exception_ _IRQL_requires_max_(APC_LEVEL) _Post_notnull_)
-_At_(MemoryDescriptorList->MappedSystemVa, 
+_At_(MemoryDescriptorList->MappedSystemVa,
     _Post_writable_byte_size_(MemoryDescriptorList->ByteCount)) // Esp:829
-_Must_inspect_result_ 
+_Must_inspect_result_
 _Success_(return != NULL)
 NTKERNELAPI
 PVOID
 MmMapLockedPagesSpecifyCache (
     _Inout_ PMDL MemoryDescriptorList,
-    _In_ __drv_strictType(KPROCESSOR_MODE/enum _MODE,__drv_typeConst) 
+    _In_ __drv_strictType(KPROCESSOR_MODE/enum _MODE,__drv_typeConst)
             KPROCESSOR_MODE AccessMode,
     _In_ __drv_strictTypeMatch(__drv_typeCond) MEMORY_CACHING_TYPE CacheType,
     _In_opt_ PVOID RequestedAddress,
@@ -25778,14 +26087,14 @@ FORCEINLINE
 _Post_writable_byte_size_(MemoryDescriptorList->ByteCount)
 _When_(AccessMode==KernelMode, _IRQL_requires_max_(DISPATCH_LEVEL))
 _When_(AccessMode==UserMode, _Maybe_raises_SEH_exception_ _IRQL_requires_max_(APC_LEVEL) _Post_notnull_)
-_At_(MemoryDescriptorList->MappedSystemVa, 
+_At_(MemoryDescriptorList->MappedSystemVa,
     _Post_writable_byte_size_(MemoryDescriptorList->ByteCount)) // Esp:829
-_Must_inspect_result_ 
+_Must_inspect_result_
 _Success_(return != NULL)
 PVOID
 MmMapLockedPagesSpecifyCache_NXOptIn (
     _Inout_ PMDL MemoryDescriptorList,
-    _In_ __drv_strictType(KPROCESSOR_MODE/enum _MODE,__drv_typeConst) 
+    _In_ __drv_strictType(KPROCESSOR_MODE/enum _MODE,__drv_typeConst)
             KPROCESSOR_MODE AccessMode,
     _In_ __drv_strictTypeMatch(__drv_typeCond) MEMORY_CACHING_TYPE CacheType,
     _In_opt_ PVOID RequestedAddress,
@@ -25823,7 +26132,7 @@ MmUnmapLockedPages (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_(APC_LEVEL)
 NTKERNELAPI
 _When_ (return != NULL, _Out_writes_bytes_opt_ (NumberOfBytes)) PVOID
@@ -25849,7 +26158,7 @@ _IRQL_requires_max_(DISPATCH_LEVEL)
 _At_(
     MemoryDescriptorList->MappedSystemVa + MemoryDescriptorList->ByteOffset,  // Esp:823
     _Post_writable_byte_size_(MemoryDescriptorList->ByteCount))  // Esp:829
-_Must_inspect_result_ 
+_Must_inspect_result_
 _Success_(return != NULL)
 NTKERNELAPI
 PVOID
@@ -25883,7 +26192,7 @@ MmUnmapReservedMapping (
 #define MM_ALLOCATE_AND_HOT_REMOVE              0x00000100  
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_ (DISPATCH_LEVEL)
 NTKERNELAPI
 PMDL
@@ -25899,7 +26208,7 @@ MmAllocateNodePagesForMdlEx (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS1)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_ (DISPATCH_LEVEL)
 NTKERNELAPI
 PMDL
@@ -25916,7 +26225,7 @@ MmAllocatePartitionNodePagesForMdlEx (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WS03SP1)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_ (DISPATCH_LEVEL)
 NTKERNELAPI
 PMDL
@@ -25931,7 +26240,7 @@ MmAllocatePagesForMdlEx (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_(DISPATCH_LEVEL)
 NTKERNELAPI
 PMDL
@@ -25966,10 +26275,10 @@ MmFreePagesFromMdl (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_(DISPATCH_LEVEL)
 NTKERNELAPI
-_Out_writes_bytes_opt_ (NumberOfBytes) 
+_Out_writes_bytes_opt_ (NumberOfBytes)
 PVOID
 MmMapIoSpace (
     _In_ PHYSICAL_ADDRESS PhysicalAddress,
@@ -26003,7 +26312,7 @@ MmMapIoSpaceEx (
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_(DISPATCH_LEVEL)
 NTKERNELAPI
 _When_ (return != NULL, _Post_writable_byte_size_ (NumberOfBytes)) PVOID
@@ -26014,7 +26323,7 @@ MmAllocateContiguousMemory (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_(DISPATCH_LEVEL)
 NTKERNELAPI
 _When_ (return != NULL, _Post_writable_byte_size_ (NumberOfBytes)) PVOID
@@ -26040,7 +26349,7 @@ typedef ULONG NODE_REQUIREMENT;
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_VISTA)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_(DISPATCH_LEVEL)
 NTKERNELAPI
 _When_ (return != NULL, _Post_writable_byte_size_ (NumberOfBytes)) PVOID
@@ -26055,7 +26364,7 @@ MmAllocateContiguousMemorySpecifyCacheNode (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_(DISPATCH_LEVEL)
 NTKERNELAPI
 _When_ (return != NULL, _Post_writable_byte_size_ (NumberOfBytes)) PVOID
@@ -26130,7 +26439,7 @@ MmMdlPageContentsState (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
-_Must_inspect_result_ 
+_Must_inspect_result_
 _IRQL_requires_max_(APC_LEVEL)
 NTKERNELAPI
 PVOID
@@ -26208,9 +26517,9 @@ MmInitializeMdl (
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
 _IRQL_requires_max_(DISPATCH_LEVEL)
 _Post_writable_byte_size_(Mdl->ByteCount)
-_At_(Mdl->MappedSystemVa, 
+_At_(Mdl->MappedSystemVa,
     _Post_writable_byte_size_(Mdl->ByteCount)) // Esp:829
-_Check_return_ 
+_Check_return_
 _Success_(return != NULL)
 FORCEINLINE
 PVOID
@@ -26249,7 +26558,7 @@ MmGetSystemAddressForMdlSafe (
     if (Mdl->MdlFlags & (MDL_MAPPED_TO_SYSTEM_VA | MDL_SOURCE_IS_NONPAGED_POOL)) {
         return Mdl->MappedSystemVa;
     } else {
-        return MmMapLockedPagesSpecifyCache(Mdl, KernelMode, MmCached,   
+        return MmMapLockedPagesSpecifyCache(Mdl, KernelMode, MmCached,
                                             NULL, FALSE, Priority);
     }
 }
@@ -26617,6 +26926,7 @@ typedef enum _SE_IMAGE_TYPE
 {
   SeImageTypeElamDriver = 0,
   SeImageTypeDriver,
+  SeImageTypePlatformSecureFile,
   SeImageTypeMax
 } SE_IMAGE_TYPE, *PSE_IMAGE_TYPE;
 
@@ -28413,6 +28723,7 @@ typedef IO_COMPLETION_ROUTINE *PIO_COMPLETION_ROUTINE;
 #define SL_STOP_ON_SYMLINK              0x08
 
 
+#define SL_IGNORE_READONLY_ATTRIBUTE    0x40
 #define SL_CASE_SENSITIVE               0x80
 
 //
@@ -28490,11 +28801,15 @@ typedef IO_COMPLETION_ROUTINE *PIO_COMPLETION_ROUTINE;
 #define SL_INDEX_SPECIFIED              0x04
 #define SL_RETURN_ON_DISK_ENTRIES_ONLY  0x08
 
+#define SL_QUERY_DIRECTORY_MASK         0x0b
+
 //
 // SL_RETURN_ON_DISK_ENTRIES_ONLY - Instructs any filters that perform
 // directory virtualization or just-in-time expansion to simply pass the
 // request through to the file system and return entries that are currently
 // on disk.
+//
+// SL_QUERY_DIRECTORY_MASK - The set of SL_ flags that are valid for IRP_MJ_DIRECTORY_CONTROL.
 //
 
 //
@@ -28757,13 +29072,26 @@ typedef struct _IO_STACK_LOCATION {
         } QueryDirectory;
 
         //
-        // System service parameters for:  NtNotifyChangeDirectoryFile
+        // System service parameters for:  NtNotifyChangeDirectoryFile / NtNotifyChangeDirectoryFileEx
         //
 
         struct {
             ULONG Length;
             ULONG POINTER_ALIGNMENT CompletionFilter;
         } NotifyDirectory;
+
+        //
+        // System service parameters for:  NtNotifyChangeDirectoryFile / NtNotifyChangeDirectoryFileEx
+        //
+        // For minor code IRP_MN_NOTIFY_CHANGE_DIRECTORY_EX
+        // N.B. Keep Length and CompletionFilter aligned with NotifyDirectory.
+        //
+
+        struct {
+            ULONG Length;
+            ULONG POINTER_ALIGNMENT CompletionFilter;
+            DIRECTORY_NOTIFY_INFORMATION_CLASS POINTER_ALIGNMENT DirectoryNotifyInformationClass;
+        } NotifyDirectoryEx;
 
         //
         // System service parameters for:  NtQueryInformationFile
@@ -29171,6 +29499,21 @@ typedef struct _SHARE_ACCESS {
 } SHARE_ACCESS, *PSHARE_ACCESS;
 
 //
+// Define the share access structure used by file systems (only link files)
+// to determine whether or not another accessor may delete the link.
+// This LCB_SHARE_ACCESS structure is a short version of SHARE_ACCESS and it
+// only contains delete-related share access information.
+// The reason to use this instead of SHARE_ACCESS in LCB is to save space.
+//
+
+typedef struct _LINK_SHARE_ACCESS {
+
+    ULONG OpenCount;
+    ULONG Deleters;
+    ULONG SharedDelete;
+} LINK_SHARE_ACCESS, *PLINK_SHARE_ACCESS;
+
+//
 // Public I/O routine definitions
 //
 
@@ -29473,16 +29816,55 @@ IoCheckShareAccessEx(
     _Inout_ PFILE_OBJECT FileObject,
     _Inout_ PSHARE_ACCESS ShareAccess,
     _In_ BOOLEAN Update,
-    _In_ PBOOLEAN WritePermission
+    _In_opt_ PBOOLEAN WritePermission
     );
 #endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+NTKERNELAPI
+NTSTATUS
+IoCheckLinkShareAccess(
+    _In_ ACCESS_MASK DesiredAccess,
+    _In_ ULONG DesiredShareAccess,
+    _Inout_ PFILE_OBJECT FileObject,
+    _Inout_ PSHARE_ACCESS ShareAccess,
+    _Inout_opt_ PLINK_SHARE_ACCESS LinkShareAccess,
+    _In_ ULONG IoShareAccessFlags
+    );
+#endif
+
+//
+// Define flags taken by Io*ShareAccess routines.
+// Common flags are defined from MSb and function specific flags are
+// defined from LSb.
+//
+
+//
+// Common Flag
+//
+// Specifies the user has no write permission for the file; 
+// this is used to prevent opening a file for exclusive read access 
+// when the user does not have appropriate permission. Used when
+// calling IoSetShareAccess and IoCheckShareAccess routines.
+//
+
+#define IO_SHARE_ACCESS_NO_WRITE_PERMISSION        0x80000000  // has no write access to the file
+
+//
+// Function specific flag
+//
+// Indicates whether we're going to update the SHARE_ACCESS structure
+// or not when calling IoCheckLinkShareAccess.
+//
+
+#define IO_CHECK_SHARE_ACCESS_UPDATE_SHARE_ACCESS  0x00000001  // update SHARE_ACCESS structure
 
 //
 // This value should be returned from completion routines to continue
 // completing the IRP upwards. Otherwise, STATUS_MORE_PROCESSING_REQUIRED
 // should be returned.
 //
-#define STATUS_CONTINUE_COMPLETION      STATUS_SUCCESS  
+#define STATUS_CONTINUE_COMPLETION      STATUS_SUCCESS  // wudfpwdm
 
 //
 // Completion routines can also use this enumeration in place of status codes.
@@ -30751,6 +31133,16 @@ IoRemoveShareAccess(
     );
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+NTKERNELAPI
+VOID
+IoRemoveLinkShareAccess(
+    _In_ PFILE_OBJECT FileObject,
+    _Inout_ PSHARE_ACCESS ShareAccess,
+    _Inout_opt_ PLINK_SHARE_ACCESS LinkShareAccess
+    );
+#endif
+
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
@@ -31016,7 +31408,20 @@ IoSetShareAccessEx(
     _In_  ULONG DesiredShareAccess,
     _Inout_ PFILE_OBJECT FileObject,
     _Out_ PSHARE_ACCESS ShareAccess,
-    _In_ PBOOLEAN WritePermission
+    _In_opt_ PBOOLEAN WritePermission
+    );
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+NTKERNELAPI
+VOID
+IoSetLinkShareAccess(
+    _In_ ACCESS_MASK DesiredAccess,
+    _In_ ULONG DesiredShareAccess,
+    _Inout_ PFILE_OBJECT FileObject,
+    _Out_ PSHARE_ACCESS ShareAccess,
+    _Out_opt_ PLINK_SHARE_ACCESS LinkShareAccess,
+    _In_ ULONG IoShareAccessFlags
     );
 #endif
 
@@ -31336,6 +31741,16 @@ VOID
 IoUpdateShareAccess(
     _In_ PFILE_OBJECT FileObject,
     _Inout_ PSHARE_ACCESS ShareAccess
+    );
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+NTKERNELAPI
+VOID
+IoUpdateLinkShareAccess(
+    _In_ PFILE_OBJECT FileObject,
+    _Inout_ PSHARE_ACCESS ShareAccess,
+    _Inout_opt_ PLINK_SHARE_ACCESS LinkShareAccess
     );
 #endif
 
@@ -32357,16 +32772,6 @@ NTSTATUS
 EtwActivityIdControl (
     _In_ ULONG ControlCode,
     _Inout_updates_bytes_(sizeof(GUID)) LPGUID ActivityId
-    );
-#endif
-
-#if (NTDDI_VERSION >= NTDDI_WIN8)
-NTKERNELAPI
-_IRQL_requires_max_(DISPATCH_LEVEL)
-NTSTATUS
-EtwActivityIdControlKernel (
-    _In_ ULONG ControlCode,
-    _Inout_ LPCGUID *ActivityId
     );
 #endif
 
@@ -33898,6 +34303,27 @@ typedef struct _SECURE_DRIVER_INTERFACE {
 
 #endif
 
+
+
+#define SDEV_IDENTIFIER_INTERFACE_VERSION 1
+
+typedef
+_IRQL_requires_same_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+_Function_class_(GET_SDEV_IDENTIFIER)
+ULONGLONG
+GET_SDEV_IDENTIFIER (
+    _In_ PVOID InterfaceContext
+    );
+
+typedef GET_SDEV_IDENTIFIER *PGET_SDEV_IDENTIFIER;
+
+typedef struct _SDEV_IDENTIFIER_INTERFACE {
+    INTERFACE InterfaceHeader;
+    PGET_SDEV_IDENTIFIER GetIdentifier;
+} SDEV_IDENTIFIER_INTERFACE, *PSDEV_IDENTIFIER_INTERFACE;
+
+
 //
 // Define the device description structure.
 //
@@ -33926,7 +34352,6 @@ typedef struct _DEVICE_DESCRIPTION {
     PHYSICAL_ADDRESS DeviceAddress;
 #endif /* NTDDI_VERSION >= NTDDI_WIN8 */
 } DEVICE_DESCRIPTION, *PDEVICE_DESCRIPTION;
-
 
 //
 // Define the supported version numbers for the device description structure.
@@ -35396,6 +35821,15 @@ PoFxQueryCurrentComponentPerfState (
     _In_ ULONG SetIndex,
     _Out_ PULONGLONG CurrentPerf
     );
+
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+NTSTATUS 
+PoFxSetTargetDripsDevicePowerState(
+    _In_ POHANDLE Handle,
+    _In_ DEVICE_POWER_STATE TargetState
+    );
+
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
@@ -37806,6 +38240,8 @@ ZwDeleteValueKey(
 _IRQL_requires_max_(PASSIVE_LEVEL)
 _When_(Length == 0, _Post_satisfies_(return < 0))
 _When_(Length > 0, _Post_satisfies_(return <= 0))
+_Success_(return == STATUS_SUCCESS)
+_On_failure_(_When_(return == STATUS_BUFFER_OVERFLOW || return == STATUS_BUFFER_TOO_SMALL, _Post_satisfies_(*ResultLength > Length)))
 NTSYSAPI
 NTSTATUS
 NTAPI
@@ -37813,7 +38249,7 @@ ZwEnumerateKey(
     _In_ HANDLE KeyHandle,
     _In_ ULONG Index,
     _In_ KEY_INFORMATION_CLASS KeyInformationClass,
-    _Out_writes_bytes_opt_(Length) PVOID KeyInformation,
+    _Out_writes_bytes_to_opt_(Length, *ResultLength) PVOID KeyInformation,
     _In_ ULONG Length,
     _Out_ PULONG ResultLength
     );
@@ -37823,6 +38259,8 @@ ZwEnumerateKey(
 _IRQL_requires_max_(PASSIVE_LEVEL)
 _When_(Length == 0, _Post_satisfies_(return < 0))
 _When_(Length > 0, _Post_satisfies_(return <= 0))
+_Success_(return == STATUS_SUCCESS)
+_On_failure_(_When_(return == STATUS_BUFFER_OVERFLOW || return == STATUS_BUFFER_TOO_SMALL, _Post_satisfies_(*ResultLength > Length)))
 NTSYSAPI
 NTSTATUS
 NTAPI
@@ -37830,7 +38268,7 @@ ZwEnumerateValueKey(
     _In_ HANDLE KeyHandle,
     _In_ ULONG Index,
     _In_ KEY_VALUE_INFORMATION_CLASS KeyValueInformationClass,
-    _Out_writes_bytes_opt_(Length) PVOID KeyValueInformation,
+    _Out_writes_bytes_to_opt_(Length, *ResultLength) PVOID KeyValueInformation,
     _In_ ULONG Length,
     _Out_ PULONG ResultLength
     );
@@ -37850,13 +38288,15 @@ ZwFlushKey(
 _IRQL_requires_max_(PASSIVE_LEVEL)
 _When_(Length == 0, _Post_satisfies_(return < 0))
 _When_(Length > 0, _Post_satisfies_(return <= 0))
+_Success_(return == STATUS_SUCCESS)
+_On_failure_(_When_(return == STATUS_BUFFER_OVERFLOW || return == STATUS_BUFFER_TOO_SMALL, _Post_satisfies_(*ResultLength > Length)))
 NTSYSAPI
 NTSTATUS
 NTAPI
 ZwQueryKey(
     _In_ HANDLE KeyHandle,
     _In_ KEY_INFORMATION_CLASS KeyInformationClass,
-    _Out_writes_bytes_opt_(Length) PVOID KeyInformation,
+    _Out_writes_bytes_to_opt_(Length, *ResultLength) PVOID KeyInformation,
     _In_ ULONG Length,
     _Out_ PULONG ResultLength
     );
@@ -37866,8 +38306,8 @@ ZwQueryKey(
 _IRQL_requires_max_(PASSIVE_LEVEL)
 _When_(Length == 0, _Post_satisfies_(return < 0))
 _When_(Length > 0, _Post_satisfies_(return <= 0))
-_When_(return == STATUS_BUFFER_TOO_SMALL, _At_(ResultLength, _Post_valid_))
-_When_(return == STATUS_BUFFER_OVERFLOW, _At_(ResultLength, _Post_valid_))
+_Success_(return == STATUS_SUCCESS)
+_On_failure_(_When_(return == STATUS_BUFFER_OVERFLOW || return == STATUS_BUFFER_TOO_SMALL, _Post_satisfies_(*ResultLength > Length)))
 NTSYSAPI
 NTSTATUS
 NTAPI
@@ -37875,7 +38315,7 @@ ZwQueryValueKey(
     _In_ HANDLE KeyHandle,
     _In_ PUNICODE_STRING ValueName,
     _In_ KEY_VALUE_INFORMATION_CLASS KeyValueInformationClass,
-    _Out_writes_bytes_opt_(Length) PVOID KeyValueInformation,
+    _Out_writes_bytes_to_opt_(Length, *ResultLength) PVOID KeyValueInformation,
     _In_ ULONG Length,
     _Out_ PULONG ResultLength
     );
@@ -41233,6 +41673,29 @@ PcwAddInstance(
 #endif
 
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+#define SECURE_SECTION_ALLOW_PARTIAL_MDL    1
+
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSTATUS
+VslCreateSecureSection (
+    _Out_ PHANDLE Handle,
+    _In_ PEPROCESS TargetProcess,
+    _In_ PMDL Mdl,
+    _In_ ULONG DevicePageProtection,
+    _In_ ULONG Attributes
+    );
+
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSTATUS
+VslDeleteSecureSection (
+    _In_ HANDLE GlobalHandle
+    );
+
+#endif
+
+
 #ifndef _OB_REFERENCE_TAGS_
 #define _OB_REFERENCE_TAGS_
 
@@ -41253,6 +41716,7 @@ PcwAddInstance(
 #define REFTAG_NFSVOLUME 'VsfN'
 #define REFTAG_PGMFILE 'TmgP'
 #define REFTAG_PSLOOKUP 'ULsP'
+#define REFTAG_PSNOTIFICATION 'oNsP'
 #define REFTAG_PSWAKE 'kWsP'
 #define REFTAG_RAWENDPOINT 'EwaR'
 #define REFTAG_TCPENDPOINT 'EpcT'

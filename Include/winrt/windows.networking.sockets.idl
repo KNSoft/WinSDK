@@ -17,35 +17,6 @@ import "Windows.Security.Credentials.idl";
 import "Windows.Security.Cryptography.Certificates.idl";
 import "Windows.Storage.Streams.idl";
 import "Windows.Web.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Ebackground_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Background.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Ebackground_h__)")
-cpp_quote("#if !defined(__windows2Enetworking_h__)")
-cpp_quote("#include <Windows.Networking.h>")
-cpp_quote("#endif // !defined(__windows2Enetworking_h__)")
-cpp_quote("#if !defined(__windows2Enetworking2Econnectivity_h__)")
-cpp_quote("#include <Windows.Networking.Connectivity.h>")
-cpp_quote("#endif // !defined(__windows2Enetworking2Econnectivity_h__)")
-cpp_quote("#if !defined(__windows2Esecurity2Ecredentials_h__)")
-cpp_quote("#include <Windows.Security.Credentials.h>")
-cpp_quote("#endif // !defined(__windows2Esecurity2Ecredentials_h__)")
-cpp_quote("#if !defined(__windows2Esecurity2Ecryptography2Ecertificates_h__)")
-cpp_quote("#include <Windows.Security.Cryptography.Certificates.h>")
-cpp_quote("#endif // !defined(__windows2Esecurity2Ecryptography2Ecertificates_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Eweb_h__)")
-cpp_quote("#include <Windows.Web.h>")
-cpp_quote("#endif // !defined(__windows2Eweb_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -160,6 +131,8 @@ namespace Windows
 
             typedef enum ControlChannelTriggerStatus ControlChannelTriggerStatus;
 
+            typedef enum MessageWebSocketReceiveMode MessageWebSocketReceiveMode;
+
             typedef enum SocketActivityConnectedStandbyAction SocketActivityConnectedStandbyAction;
 
             typedef enum SocketActivityKind SocketActivityKind;
@@ -214,7 +187,11 @@ namespace Windows
 
             interface IMessageWebSocketControl;
 
+            interface IMessageWebSocketControl2;
+
             interface IMessageWebSocketMessageReceivedEventArgs;
+
+            interface IMessageWebSocketMessageReceivedEventArgs2;
 
             interface ISocketActivityContext;
 
@@ -239,6 +216,8 @@ namespace Windows
             interface IStreamSocketControl2;
 
             interface IStreamSocketControl3;
+
+            interface IStreamSocketControl4;
 
             interface IStreamSocketInformation;
 
@@ -265,6 +244,8 @@ namespace Windows
             interface IStreamWebSocket2;
 
             interface IStreamWebSocketControl;
+
+            interface IStreamWebSocketControl2;
 
             interface IWebSocket;
 
@@ -416,6 +397,13 @@ namespace Windows
                 ServiceUnavailable    = 6
             };
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            enum MessageWebSocketReceiveMode
+            {
+                FullMessage    = 0,
+                PartialMessage = 1
+            };
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             enum SocketActivityConnectedStandbyAction
             {
@@ -504,7 +492,9 @@ namespace Windows
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
                 Tls11                                      = 7,
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)]
-                Tls12                                      = 8
+                Tls12                                      = 8,
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                Unspecified                                = 9
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -742,6 +732,20 @@ namespace Windows
                 [propput] HRESULT MessageType([in] Windows.Networking.Sockets.SocketMessageType value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Networking.Sockets.MessageWebSocketControl)]
+            [uuid(E30FD791-080C-400A-A712-27DFA9E744D8)]
+            interface IMessageWebSocketControl2 : IInspectable
+            {
+                [propget] HRESULT DesiredUnsolicitedPongInterval([out] [retval] Windows.Foundation.TimeSpan* value);
+                [propput] HRESULT DesiredUnsolicitedPongInterval([in] Windows.Foundation.TimeSpan value);
+                [propget] HRESULT ActualUnsolicitedPongInterval([out] [retval] Windows.Foundation.TimeSpan* value);
+                [propget] HRESULT ReceiveMode([out] [retval] Windows.Networking.Sockets.MessageWebSocketReceiveMode* value);
+                [propput] HRESULT ReceiveMode([in] Windows.Networking.Sockets.MessageWebSocketReceiveMode value);
+                [propget] HRESULT ClientCertificate([out] [retval] Windows.Security.Cryptography.Certificates.Certificate** value);
+                [propput] HRESULT ClientCertificate([in] Windows.Security.Cryptography.Certificates.Certificate* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs)]
             [uuid(478C22AC-4C4B-42ED-9ED7-1EF9F94FA3D5)]
@@ -750,6 +754,16 @@ namespace Windows
                 [propget] HRESULT MessageType([out] [retval] Windows.Networking.Sockets.SocketMessageType* value);
                 HRESULT GetDataReader([out] [retval] Windows.Storage.Streams.DataReader** dataReader);
                 HRESULT GetDataStream([out] [retval] Windows.Storage.Streams.IInputStream** inputStream);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs)]
+            [uuid(89CE06FD-DD6F-4A07-87F9-F9EB4D89D83D)]
+            interface IMessageWebSocketMessageReceivedEventArgs2 : IInspectable
+                requires
+                    Windows.Networking.Sockets.IMessageWebSocketMessageReceivedEventArgs
+            {
+                [propget] HRESULT IsMessageComplete([out] [retval] boolean* value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -882,6 +896,15 @@ namespace Windows
                 [propput] HRESULT SerializeConnectionAttempts([in] boolean value);
                 [propget] HRESULT ClientCertificate([out] [retval] Windows.Security.Cryptography.Certificates.Certificate** value);
                 [propput] HRESULT ClientCertificate([in] Windows.Security.Cryptography.Certificates.Certificate* value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Networking.Sockets.StreamSocketControl)]
+            [uuid(964E2B3D-EC27-4888-B3CE-C74B418423AD)]
+            interface IStreamSocketControl4 : IInspectable
+            {
+                [propget] HRESULT MinProtectionLevel([out] [retval] Windows.Networking.Sockets.SocketProtectionLevel* value);
+                [propput] HRESULT MinProtectionLevel([in] Windows.Networking.Sockets.SocketProtectionLevel value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1034,6 +1057,18 @@ namespace Windows
             {
                 [propget] HRESULT NoDelay([out] [retval] boolean* value);
                 [propput] HRESULT NoDelay([in] boolean value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Networking.Sockets.StreamWebSocketControl)]
+            [uuid(215D9F7E-FA58-40DA-9F11-A48DAFE95037)]
+            interface IStreamWebSocketControl2 : IInspectable
+            {
+                [propget] HRESULT DesiredUnsolicitedPongInterval([out] [retval] Windows.Foundation.TimeSpan* value);
+                [propput] HRESULT DesiredUnsolicitedPongInterval([in] Windows.Foundation.TimeSpan value);
+                [propget] HRESULT ActualUnsolicitedPongInterval([out] [retval] Windows.Foundation.TimeSpan* value);
+                [propget] HRESULT ClientCertificate([out] [retval] Windows.Security.Cryptography.Certificates.Certificate** value);
+                [propput] HRESULT ClientCertificate([in] Windows.Security.Cryptography.Certificates.Certificate* value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1189,6 +1224,7 @@ namespace Windows
                 [default] interface Windows.Networking.Sockets.IMessageWebSocketControl;
                 interface Windows.Networking.Sockets.IWebSocketControl;
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.Networking.Sockets.IWebSocketControl2;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Networking.Sockets.IMessageWebSocketControl2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1204,6 +1240,7 @@ namespace Windows
             runtimeclass MessageWebSocketMessageReceivedEventArgs
             {
                 [default] interface Windows.Networking.Sockets.IMessageWebSocketMessageReceivedEventArgs;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Networking.Sockets.IMessageWebSocketMessageReceivedEventArgs2;
             }
 
             [activatable(Windows.Networking.Sockets.ISocketActivityContextFactory, Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1260,6 +1297,7 @@ namespace Windows
                 [default] interface Windows.Networking.Sockets.IStreamSocketControl;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Networking.Sockets.IStreamSocketControl2;
                 [contract(Windows.Foundation.UniversalApiContract, 1.0)] interface Windows.Networking.Sockets.IStreamSocketControl3;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Networking.Sockets.IStreamSocketControl4;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1323,6 +1361,7 @@ namespace Windows
                 [default] interface Windows.Networking.Sockets.IStreamWebSocketControl;
                 interface Windows.Networking.Sockets.IWebSocketControl;
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.Networking.Sockets.IWebSocketControl2;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Networking.Sockets.IStreamWebSocketControl2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

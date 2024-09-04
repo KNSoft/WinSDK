@@ -91,6 +91,12 @@ extern "C" {
 
 #define FLT_MGR_WIN10_RS2 (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
+//
+//  This defines items that only exist in Windows RedStone 3 or later
+// 
+
+#define FLT_MGR_WIN10_RS3 (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+
 ///////////////////////////////////////////////////////////////////////////////
 //
 //  Standard includes
@@ -461,6 +467,29 @@ typedef union _FLT_PARAMETERS {
             PVOID DirectoryBuffer;  //Not in IO_STACK_LOCATION parameters list
             PMDL MdlAddress;        //Mdl address for the buffer  (maybe NULL)
         } NotifyDirectory;
+
+        //
+        //  IRP_MN_NOTIFY_CHANGE_DIRECTORY_EX
+        //
+
+        struct {
+            ULONG Length;
+            ULONG POINTER_ALIGNMENT CompletionFilter;
+
+            DIRECTORY_NOTIFY_INFORMATION_CLASS POINTER_ALIGNMENT DirectoryNotifyInformationClass;
+
+            //
+            // These spares ensure that the offset of DirectoryBuffer is
+            // exactly the same as that for QueryDirectory minor code. This
+            // needs to be the same because filter manager code makes the assumption
+            // they are the same
+            //
+
+            ULONG POINTER_ALIGNMENT Spare2;
+
+            PVOID DirectoryBuffer;  //Not in IO_STACK_LOCATION parameters list
+            PMDL MdlAddress;        //Mdl address for the buffer  (maybe NULL)
+        } NotifyDirectoryEx;
 
     } DirectoryControl;
 
@@ -1766,7 +1795,8 @@ typedef FLT_PREOP_CALLBACK_STATUS
 typedef enum _FLT_POSTOP_CALLBACK_STATUS {
 
     FLT_POSTOP_FINISHED_PROCESSING,
-    FLT_POSTOP_MORE_PROCESSING_REQUIRED
+    FLT_POSTOP_MORE_PROCESSING_REQUIRED,
+    FLT_POSTOP_DISALLOW_FSFILTER_IO
 
 } FLT_POSTOP_CALLBACK_STATUS, *PFLT_POSTOP_CALLBACK_STATUS;
 
@@ -2863,7 +2893,7 @@ FltUnloadFilter (
     );
 
 _Must_inspect_result_
-_IRQL_requires_max_(APC_LEVEL)
+_IRQL_requires_max_(PASSIVE_LEVEL)
 NTSTATUS
 FLTAPI
 FltAttachVolume (
@@ -2874,7 +2904,7 @@ FltAttachVolume (
     );
 
 _Must_inspect_result_
-_IRQL_requires_max_(APC_LEVEL)
+_IRQL_requires_max_(PASSIVE_LEVEL)
 NTSTATUS
 FLTAPI
 FltAttachVolumeAtAltitude (
@@ -3363,6 +3393,25 @@ FltQueryDirectoryFile (
     _In_ BOOLEAN ReturnSingleEntry,
     _In_opt_ PUNICODE_STRING FileName,
     _In_ BOOLEAN RestartScan,
+    _Out_opt_ PULONG LengthReturned
+    );
+
+#endif
+
+#if FLT_MGR_WIN10_RS3
+
+_Must_inspect_result_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSTATUS
+FLTAPI
+FltQueryDirectoryFileEx (
+    _In_ PFLT_INSTANCE Instance,
+    _In_ PFILE_OBJECT FileObject,
+    _Out_writes_bytes_(Length) PVOID FileInformation,
+    _In_ ULONG Length,
+    _In_ FILE_INFORMATION_CLASS FileInformationClass,
+    _In_ ULONG QueryFlags,
+    _In_opt_ PUNICODE_STRING FileName,
     _Out_opt_ PULONG LengthReturned
     );
 
@@ -4746,8 +4795,10 @@ typedef VOID
     _Inout_ PFLT_CALLBACK_DATA Cbd
     );
 
-
+#pragma warning(push)
+#pragma warning(disable:4471)
 typedef enum _FLT_CALLBACK_DATA_QUEUE_FLAGS FLT_CALLBACK_DATA_QUEUE_FLAGS;
+#pragma warning(pop)
 //
 // Following structure is opaque to filters, but allocated by them.
 //

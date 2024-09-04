@@ -76,7 +76,7 @@ struct _DISPATCHER_CONTEXT;
 
 #ifndef _M_CEE_PURE
 
-_CRTIMP EXCEPTION_DISPOSITION __C_specific_handler (
+_CRTIMP EXCEPTION_DISPOSITION __cdecl __C_specific_handler (
     _In_ struct _EXCEPTION_RECORD * ExceptionRecord,
     _In_ void * EstablisherFrame,
     _Inout_ struct _CONTEXT * ContextRecord,

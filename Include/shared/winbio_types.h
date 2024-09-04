@@ -2145,6 +2145,23 @@ typedef struct _WINBIO_GESTURE_METADATA
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN10_RS2)
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+
+#ifdef MIDL_PASS
+
+//
+// Limit the size of vendor-specific type info about a sensor to 4K
+//
+const ULONG WINBIO_MAX_PRIVATE_SENSOR_TYPE_INFO_BUFFER_SIZE = 0x1000;
+
+#else // MIDL_PASS
+
+#define WINBIO_MAX_PRIVATE_SENSOR_TYPE_INFO_BUFFER_SIZE ((ULONG)0x1000)
+
+#endif // MIDL_PASS
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+
 #ifdef __cplusplus
 } // extern "C"
 #endif

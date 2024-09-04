@@ -22,50 +22,6 @@ import "Windows.Security.Authentication.Web.idl";
 import "Windows.Storage.idl";
 import "Windows.Storage.Streams.idl";
 import "Windows.System.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Egraphics2Eimaging_h__)")
-cpp_quote("#include <Windows.Graphics.Imaging.h>")
-cpp_quote("#endif // !defined(__windows2Egraphics2Eimaging_h__)")
-cpp_quote("#if !defined(__windows2Emedia_h__)")
-cpp_quote("#include <Windows.Media.h>")
-cpp_quote("#endif // !defined(__windows2Emedia_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Ecapture2Ecore_h__)")
-cpp_quote("#include <Windows.Media.Capture.Core.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Ecapture2Ecore_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Ecapture2Eframes_h__)")
-cpp_quote("#include <Windows.Media.Capture.Frames.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Ecapture2Eframes_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Ecore_h__)")
-cpp_quote("#include <Windows.Media.Core.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Ecore_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Edevices_h__)")
-cpp_quote("#include <Windows.Media.Devices.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Edevices_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Eeffects_h__)")
-cpp_quote("#include <Windows.Media.Effects.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Eeffects_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Emediaproperties_h__)")
-cpp_quote("#include <Windows.Media.MediaProperties.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Emediaproperties_h__)")
-cpp_quote("#if !defined(__windows2Esecurity2Eauthentication2Eweb_h__)")
-cpp_quote("#include <Windows.Security.Authentication.Web.h>")
-cpp_quote("#endif // !defined(__windows2Esecurity2Eauthentication2Eweb_h__)")
-cpp_quote("#if !defined(__windows2Estorage_h__)")
-cpp_quote("#include <Windows.Storage.h>")
-cpp_quote("#endif // !defined(__windows2Estorage_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Esystem_h__)")
-cpp_quote("#include <Windows.System.h>")
-cpp_quote("#endif // !defined(__windows2Esystem_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -299,6 +255,8 @@ namespace Windows
 
             apicontract AppCaptureContract;
 
+            apicontract AppCaptureMetadataContract;
+
             apicontract CameraCaptureUIContract;
 
             apicontract GameBarContract;
@@ -332,6 +290,8 @@ namespace Windows
             typedef enum AppBroadcastVideoEncodingResolutionMode AppBroadcastVideoEncodingResolutionMode;
 
             typedef enum AppCaptureHistoricalBufferLengthUnit AppCaptureHistoricalBufferLengthUnit;
+
+            typedef enum AppCaptureMetadataPriority AppCaptureMetadataPriority;
 
             typedef enum AppCaptureMicrophoneCaptureState AppCaptureMicrophoneCaptureState;
 
@@ -401,9 +361,15 @@ namespace Windows
 
             interface IAppBroadcastBackgroundService;
 
+            interface IAppBroadcastBackgroundService2;
+
             interface IAppBroadcastBackgroundServiceSignInInfo;
 
+            interface IAppBroadcastBackgroundServiceSignInInfo2;
+
             interface IAppBroadcastBackgroundServiceStreamInfo;
+
+            interface IAppBroadcastBackgroundServiceStreamInfo2;
 
             interface IAppBroadcastCameraCaptureStateChangedEventArgs;
 
@@ -471,6 +437,8 @@ namespace Windows
 
             interface IAppCaptureManagerStatics;
 
+            interface IAppCaptureMetadataWriter;
+
             interface IAppCaptureMicrophoneCaptureStateChangedEventArgs;
 
             interface IAppCaptureRecordOperation;
@@ -492,6 +460,8 @@ namespace Windows
             interface IAppCaptureState;
 
             interface IAppCaptureStatics;
+
+            interface IAppCaptureStatics2;
 
             interface ICameraCaptureUI;
 
@@ -657,6 +627,8 @@ namespace Windows
 
             runtimeclass AppCaptureManager;
 
+            runtimeclass AppCaptureMetadataWriter;
+
             runtimeclass AppCaptureMicrophoneCaptureStateChangedEventArgs;
 
             runtimeclass AppCaptureRecordOperation;
@@ -779,7 +751,11 @@ namespace Windows
 
                 interface Windows.Foundation.TypedEventHandler<Windows.Media.Capture.AdvancedPhotoCapture*, Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs*>;
 
+                interface Windows.Foundation.TypedEventHandler<Windows.Media.Capture.AppBroadcastBackgroundService*, IInspectable*>;
+
                 interface Windows.Foundation.TypedEventHandler<Windows.Media.Capture.AppBroadcastBackgroundService*, Windows.Media.Capture.AppBroadcastHeartbeatRequestedEventArgs*>;
+
+                interface Windows.Foundation.TypedEventHandler<Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo*, IInspectable*>;
 
                 interface Windows.Foundation.TypedEventHandler<Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo*, Windows.Media.Capture.AppBroadcastSignInStateChangedEventArgs*>;
 
@@ -806,6 +782,8 @@ namespace Windows
                 interface Windows.Foundation.TypedEventHandler<Windows.Media.Capture.AppBroadcastStreamReader*, IInspectable*>;
 
                 interface Windows.Foundation.TypedEventHandler<Windows.Media.Capture.AppCapture*, IInspectable*>;
+
+                interface Windows.Foundation.TypedEventHandler<Windows.Media.Capture.AppCaptureMetadataWriter*, IInspectable*>;
 
                 interface Windows.Foundation.TypedEventHandler<Windows.Media.Capture.AppCaptureRecordOperation*, Windows.Media.Capture.AppCaptureDurationGeneratedEventArgs*>;
 
@@ -842,13 +820,18 @@ namespace Windows
     {
         namespace Capture
         {
-            [contractversion(1.0)]
+            [contractversion(2.0)]
             apicontract AppBroadcastContract
             {
             }
 
             [contractversion(4.0)]
             apicontract AppCaptureContract
+            {
+            }
+
+            [contractversion(1.0)]
+            apicontract AppCaptureMetadataContract
             {
             }
 
@@ -1000,6 +983,13 @@ namespace Windows
             {
                 Megabytes = 0,
                 Seconds   = 1
+            };
+
+            [contract(Windows.Media.Capture.AppCaptureMetadataContract, 1.0)]
+            enum AppCaptureMetadataPriority
+            {
+                Informational = 0,
+                Important     = 1
             };
 
             [contract(Windows.Media.Capture.AppCaptureContract, 4.0)]
@@ -1311,6 +1301,24 @@ namespace Windows
                 [propget] HRESULT TitleId([out] [retval] HSTRING* value);
             }
 
+            [contract(Windows.Media.Capture.AppBroadcastContract, 2.0)]
+            [exclusiveto(Windows.Media.Capture.AppBroadcastBackgroundService)]
+            [uuid(FC8CCBBF-5549-4B87-959F-23CA401FD473)]
+            interface IAppBroadcastBackgroundService2 : IInspectable
+            {
+                [propput] HRESULT BroadcastTitle([in] HSTRING value);
+                [propget] HRESULT BroadcastLanguage([out] [retval] HSTRING* value);
+                [propput] HRESULT BroadcastLanguage([in] HSTRING value);
+                [propget] HRESULT BroadcastChannel([out] [retval] HSTRING* value);
+                [propput] HRESULT BroadcastChannel([in] HSTRING value);
+                [eventadd] HRESULT BroadcastTitleChanged([in] Windows.Foundation.TypedEventHandler<Windows.Media.Capture.AppBroadcastBackgroundService*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT BroadcastTitleChanged([in] EventRegistrationToken token);
+                [eventadd] HRESULT BroadcastLanguageChanged([in] Windows.Foundation.TypedEventHandler<Windows.Media.Capture.AppBroadcastBackgroundService*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT BroadcastLanguageChanged([in] EventRegistrationToken token);
+                [eventadd] HRESULT BroadcastChannelChanged([in] Windows.Foundation.TypedEventHandler<Windows.Media.Capture.AppBroadcastBackgroundService*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT BroadcastChannelChanged([in] EventRegistrationToken token);
+            }
+
             [contract(Windows.Media.Capture.AppBroadcastContract, 1.0)]
             [exclusiveto(Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo)]
             [uuid(5E735275-88C8-4ECA-89BA-4825985DB880)]
@@ -1326,6 +1334,15 @@ namespace Windows
                 [propget] HRESULT UserName([out] [retval] HSTRING* value);
                 [eventadd] HRESULT SignInStateChanged([in] Windows.Foundation.TypedEventHandler<Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo*, Windows.Media.Capture.AppBroadcastSignInStateChangedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
                 [eventremove] HRESULT SignInStateChanged([in] EventRegistrationToken token);
+            }
+
+            [contract(Windows.Media.Capture.AppBroadcastContract, 2.0)]
+            [exclusiveto(Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo)]
+            [uuid(9104285C-62CF-4A3C-A7EE-AEB507404645)]
+            interface IAppBroadcastBackgroundServiceSignInInfo2 : IInspectable
+            {
+                [eventadd] HRESULT UserNameChanged([in] Windows.Foundation.TypedEventHandler<Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT UserNameChanged([in] EventRegistrationToken token);
             }
 
             [contract(Windows.Media.Capture.AppBroadcastContract, 1.0)]
@@ -1347,6 +1364,14 @@ namespace Windows
                 [eventremove] HRESULT VideoEncodingResolutionChanged([in] EventRegistrationToken token);
                 [eventadd] HRESULT VideoEncodingBitrateChanged([in] Windows.Foundation.TypedEventHandler<Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
                 [eventremove] HRESULT VideoEncodingBitrateChanged([in] EventRegistrationToken token);
+            }
+
+            [contract(Windows.Media.Capture.AppBroadcastContract, 2.0)]
+            [exclusiveto(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo)]
+            [uuid(BD1E9F6D-94DC-4FCE-9541-A9F129596334)]
+            interface IAppBroadcastBackgroundServiceStreamInfo2 : IInspectable
+            {
+                HRESULT ReportProblemWithStream();
             }
 
             [contract(Windows.Media.Capture.AppBroadcastContract, 1.0)]
@@ -1784,6 +1809,24 @@ namespace Windows
                 HRESULT ApplySettings([in] Windows.Media.Capture.AppCaptureSettings* appCaptureSettings);
             }
 
+            [contract(Windows.Media.Capture.AppCaptureMetadataContract, 1.0)]
+            [exclusiveto(Windows.Media.Capture.AppCaptureMetadataWriter)]
+            [uuid(E0CE4877-9AAF-46B4-AD31-6A60B441C780)]
+            interface IAppCaptureMetadataWriter : IInspectable
+            {
+                HRESULT AddStringEvent([in] HSTRING name, [in] HSTRING value, [in] Windows.Media.Capture.AppCaptureMetadataPriority priority);
+                HRESULT AddInt32Event([in] HSTRING name, [in] INT32 value, [in] Windows.Media.Capture.AppCaptureMetadataPriority priority);
+                HRESULT AddDoubleEvent([in] HSTRING name, [in] DOUBLE value, [in] Windows.Media.Capture.AppCaptureMetadataPriority priority);
+                HRESULT StartStringState([in] HSTRING name, [in] HSTRING value, [in] Windows.Media.Capture.AppCaptureMetadataPriority priority);
+                HRESULT StartInt32State([in] HSTRING name, [in] INT32 value, [in] Windows.Media.Capture.AppCaptureMetadataPriority priority);
+                HRESULT StartDoubleState([in] HSTRING name, [in] DOUBLE value, [in] Windows.Media.Capture.AppCaptureMetadataPriority priority);
+                HRESULT StopState([in] HSTRING name);
+                HRESULT StopAllStates();
+                [propget] HRESULT RemainingStorageBytesAvailable([out] [retval] UINT64* value);
+                [eventadd] HRESULT MetadataPurged([in] Windows.Foundation.TypedEventHandler<Windows.Media.Capture.AppCaptureMetadataWriter*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT MetadataPurged([in] EventRegistrationToken token);
+            }
+
             [contract(Windows.Media.Capture.AppCaptureContract, 4.0)]
             [exclusiveto(Windows.Media.Capture.AppCaptureMicrophoneCaptureStateChangedEventArgs)]
             [uuid(324D249E-45BC-4C35-BC35-E469FC7A69E0)]
@@ -1943,6 +1986,14 @@ namespace Windows
             interface IAppCaptureStatics : IInspectable
             {
                 HRESULT GetForCurrentView([out] [retval] Windows.Media.Capture.AppCapture** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Media.Capture.AppCapture)]
+            [uuid(B2D881D4-836C-4DA4-AFD7-FACC041E1CF3)]
+            interface IAppCaptureStatics2 : IInspectable
+            {
+                HRESULT SetAllowedAsync([in] boolean allowed, [out] [retval] Windows.Foundation.IAsyncAction** operation);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2520,6 +2571,7 @@ namespace Windows
             runtimeclass AppBroadcastBackgroundService
             {
                 [default] interface Windows.Media.Capture.IAppBroadcastBackgroundService;
+                [contract(Windows.Media.Capture.AppBroadcastContract, 2.0)] interface Windows.Media.Capture.IAppBroadcastBackgroundService2;
             }
 
             [contract(Windows.Media.Capture.AppBroadcastContract, 1.0)]
@@ -2527,6 +2579,7 @@ namespace Windows
             runtimeclass AppBroadcastBackgroundServiceSignInInfo
             {
                 [default] interface Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo;
+                [contract(Windows.Media.Capture.AppBroadcastContract, 2.0)] interface Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo2;
             }
 
             [contract(Windows.Media.Capture.AppBroadcastContract, 1.0)]
@@ -2534,6 +2587,7 @@ namespace Windows
             runtimeclass AppBroadcastBackgroundServiceStreamInfo
             {
                 [default] interface Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo;
+                [contract(Windows.Media.Capture.AppBroadcastContract, 2.0)] interface Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo2;
             }
 
             [contract(Windows.Media.Capture.AppBroadcastContract, 1.0)]
@@ -2727,6 +2781,7 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 2.0)]
             [static(Windows.Media.Capture.IAppCaptureStatics, Windows.Foundation.UniversalApiContract, 2.0)]
+            [static(Windows.Media.Capture.IAppCaptureStatics2, Windows.Foundation.UniversalApiContract, 5.0)]
             runtimeclass AppCapture
             {
                 [default] interface Windows.Media.Capture.IAppCapture;
@@ -2762,6 +2817,16 @@ namespace Windows
             [threading(both)]
             runtimeclass AppCaptureManager
             {
+            }
+
+            [activatable(Windows.Media.Capture.AppCaptureMetadataContract, 1.0)]
+            [contract(Windows.Media.Capture.AppCaptureMetadataContract, 1.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass AppCaptureMetadataWriter
+            {
+                [default] interface Windows.Media.Capture.IAppCaptureMetadataWriter;
+                interface Windows.Foundation.IClosable;
             }
 
             [contract(Windows.Media.Capture.AppCaptureContract, 4.0)]

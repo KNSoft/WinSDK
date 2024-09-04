@@ -8,12 +8,14 @@
            xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
            xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
            xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
+           xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
            xmlns:wincap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/windowscapabilities"
            xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
            xmlns:phone="http://schemas.microsoft.com/appx/2014/phone/manifest"
            xmlns:serverpreview="http://schemas.microsoft.com/appx/manifest/serverpreview/windows10"
            xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
            xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10"
+           xmlns:com2="http://schemas.microsoft.com/appx/manifest/com/windows10/2"
            xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2"
            >
 
@@ -21,6 +23,7 @@
   <xs:import namespace="http://schemas.microsoft.com/appx/manifest/uap/windows10"/>
   <xs:import namespace="http://schemas.microsoft.com/appx/2014/phone/manifest"/>
   <xs:import namespace="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"/>
+  <xs:import namespace="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"/>
 
   <xs:element name="Package">
     <xs:complexType>
@@ -90,23 +93,23 @@
       <xs:field xpath="@Alias"/>
     </xs:unique>
     <xs:unique name="Class_Id">
-      <xs:selector xpath="f:Applications/f:Application/f:Extensions/com:Extension/com:ComServer/com:ExeServer/com:Class | f:Applications/f:Application/f:Extensions/com:Extension/com:ComServer/com:SurrogateServer/com:Class | f:Applications/f:Application/f:Extensions/com:Extension/com:ComServer/com:TreatAsClass | f:Applications/f:Application/f:Extensions/com:Extension/com:ComInterface/com:ProxyStub | f:Extensions/f:ComExtension/com:ComInterface/com:ProxyStub"/>
+      <xs:selector xpath="f:Applications/f:Application/f:Extensions/com:Extension/com:ComServer/com:ExeServer/com:Class | f:Applications/f:Application/f:Extensions/com:Extension/com:ComServer/com:SurrogateServer/com:Class | f:Applications/f:Application/f:Extensions/com:Extension/com:ComServer/com:TreatAsClass | f:Applications/f:Application/f:Extensions/com:Extension/com:ComInterface/com:ProxyStub | f:Extensions/com:Extension/com:ComInterface/com:ProxyStub | f:Applications/f:Application/f:Extensions/com2:Extension/com2:ComServer/com:ExeServer/com:Class | f:Applications/f:Application/f:Extensions/com2:Extension/com2:ComServer/com:SurrogateServer/com:Class | f:Applications/f:Application/f:Extensions/com2:Extension/com2:ComServer/com:TreatAsClass | f:Applications/f:Application/f:Extensions/com2:Extension/com2:ComInterface/com:ProxyStub | f:Extensions/com2:Extension/com2:ComInterface/com:ProxyStub"/>
       <xs:field xpath="@Id"/>
     </xs:unique>
     <xs:unique name="ProgId_Id">
-      <xs:selector xpath="f:Applications/f:Application/f:Extensions/com:Extension/com:ComServer/com:ProgId"/>
+      <xs:selector xpath="f:Applications/f:Application/f:Extensions/com:Extension/com:ComServer/com:ProgId | f:Applications/f:Application/f:Extensions/com2:Extension/com2:ComServer/com:ProgId"/>
       <xs:field xpath="@Id"/>
     </xs:unique>
     <xs:unique name="Interface_Id">
-      <xs:selector xpath="f:Applications/f:Application/f:Extensions/com:Extension/com:ComInterface/com:Interface | f:Extensions/f:ComExtension/com:ComInterfaces/com:Interface"/>
+      <xs:selector xpath="f:Applications/f:Application/f:Extensions/com:Extension/com:ComInterface/com:Interface | f:Extensions/com:Extension/com:ComInterface/com:Interface | f:Applications/f:Application/f:Extensions/com2:Extension/com2:ComInterface/com:Interface | f:Extensions/com2:Extension/com2:ComInterface/com:Interface"/>
       <xs:field xpath="@Id"/>
     </xs:unique>
     <xs:unique name="TypeLib_Id">
-      <xs:selector xpath="f:Applications/f:Application/f:Extensions/com:Extension/com:ComInterface/com:TypeLib | f:Extensions/f:ComExtension/com:ComInterfaces/com:TypeLib"/>
+      <xs:selector xpath="f:Applications/f:Application/f:Extensions/com:Extension/com:ComInterface/com:TypeLib | f:Extensions/com:Extension/com:ComInterface/com:TypeLib | f:Applications/f:Application/f:Extensions/com2:Extension/com2:ComInterface/com:TypeLib | f:Extensions/com2:Extension/com2:ComInterface/com:TypeLib"/>
       <xs:field xpath="@Id"/>
     </xs:unique>
     <xs:unique name="SurrogateServer_AppId">
-      <xs:selector xpath="f:Applications/f:Application/f:Extensions/com:Extension/com:ComServer/com:SurrogateServer"/>
+      <xs:selector xpath="f:Applications/f:Application/f:Extensions/com:Extension/com:ComServer/com:SurrogateServer | f:Applications/f:Application/f:Extensions/com2:Extension/com2:ComServer/com:SurrogateServer"/>
       <xs:field xpath="@AppId"/>
     </xs:unique>
   </xs:element>
@@ -115,7 +118,7 @@
 
   <xs:complexType name="CT_Identity">
     <xs:attribute name="Name" type="t:ST_PackageName" use="required"/>
-    <xs:attribute name="ProcessorArchitecture" type="t:ST_Architecture" use="optional"/>
+    <xs:attribute name="ProcessorArchitecture" type="t:ST_Architecture_v2" use="optional"/>
     <xs:attribute name="Publisher" type="t:ST_Publisher_2010_v2" use="required"/>
     <xs:attribute name="Version" type="t:ST_VersionQuad" use="required"/>
     <xs:attribute name="ResourceId" type="t:ST_ResourceId" use="optional"/>
@@ -164,6 +167,7 @@
       </xs:element>
       <xs:element ref="MainPackageDependencyChoice" minOccurs="0" maxOccurs="1"/>
       <xs:element ref="MainPackageDependencyChoice2" minOccurs="0" maxOccurs="1000"/>
+      <xs:element ref="uap5:DriverDependency" minOccurs="0" maxOccurs="1000"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -245,12 +249,13 @@
 
   <xs:complexType name="CT_OutOfProcessServer">
     <xs:sequence>
-      <xs:element name="Path" type="t:ST_Executable"/>
+      <xs:element name="Path" type="t:ST_ExecutableAnyCase"/>
       <xs:element name="Arguments" type="t:ST_NonEmptyString" minOccurs="0"/>
       <xs:element name="Instancing" type="t:ST_Instancing"/>
       <xs:element name="ActivatableClass" type="CT_OutOfProcessActivatableClass" maxOccurs="65535"/>
     </xs:sequence>
     <xs:attribute name="ServerName" type="t:ST_AsciiWindowsId" use="required"/>
+    <xs:attributeGroup ref="uap5:OutOfProcessServerFullTrustAttributes"/>
   </xs:complexType>
 
   <xs:complexType name="CT_OutOfProcessActivatableClass">
@@ -296,7 +301,7 @@
             <xs:element name="Extensions" type="CT_ApplicationExtensions" minOccurs="0"/>
           </xs:all>
           <xs:attribute name="Id" type="t:ST_ApplicationId" use="required"/>
-          <xs:attribute name="Executable" type="t:ST_Executable" use="optional"/>
+          <xs:attribute name="Executable" type="t:ST_ExecutableAnyCase" use="optional"/>
           <xs:attribute name="EntryPoint" type="t:ST_EntryPoint" use="optional"/>
           <xs:attribute name="StartPage" type="t:ST_ApplicationStartPage" use="optional"/>
           <xs:attribute name="ResourceGroup" type="t:ST_AsciiWindowsId" use="optional"/>
@@ -334,11 +339,11 @@
           <xs:field xpath="@AppServiceName"/>
         </xs:unique>
         <xs:key name="ComServer_Class_IdKey">
-          <xs:selector xpath="f:Extensions/com:Extension/com:ComServer/com:SurrogateServer/com:Class | f:Extensions/com:Extension/com:ComServer/com:ExeServer/com:Class | f:Extensions/com:Extension/com:ComServer/com:TreatAsClass"/>
+          <xs:selector xpath="f:Extensions/com:Extension/com:ComServer/com:SurrogateServer/com:Class | f:Extensions/com:Extension/com:ComServer/com:ExeServer/com:Class | f:Extensions/com:Extension/com:ComServer/com:TreatAsClass | f:Extensions/com2:Extension/com2:ComServer/com:SurrogateServer/com:Class | f:Extensions/com2:Extension/com2:ComServer/com:ExeServer/com:Class | f:Extensions/com2:Extension/com2:ComServer/com:TreatAsClass"/>
           <xs:field xpath="@Id"/>
         </xs:key>
         <xs:key name="ComServer_SurrogateServer_Class_IdKey">
-          <xs:selector xpath="f:Extensions/com:Extension/com:ComServer/com:SurrogateServer/com:Class"/>
+          <xs:selector xpath="f:Extensions/com:Extension/com:ComServer/com:SurrogateServer/com:Class | f:Extensions/com2:Extension/com2:ComServer/com:SurrogateServer/com:Class"/>
           <xs:field xpath="@Id"/>
         </xs:key>
         <xs:keyref name="ThumbnailHandlerRef" refer="ComServer_SurrogateServer_Class_IdKey">
@@ -388,7 +393,7 @@
 
   <xs:complexType name="CT_BackgroundTasks">
     <xs:sequence>
-      <xs:element ref="BackgroundTaskChoice" maxOccurs="17"/>
+      <xs:element ref="BackgroundTaskChoice" minOccurs="0" maxOccurs="17"/>
     </xs:sequence>
     <xs:attribute name="ServerName" type="t:ST_AsciiWindowsId" use="optional"/>
     <xs:attribute ref="uap4:SupportsMultipleInstances" use="optional"/>

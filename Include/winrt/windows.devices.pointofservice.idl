@@ -11,21 +11,8 @@ import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
 import "Windows.Graphics.Imaging.idl";
+import "Windows.Storage.idl";
 import "Windows.Storage.Streams.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Egraphics2Eimaging_h__)")
-cpp_quote("#include <Windows.Graphics.Imaging.h>")
-cpp_quote("#endif // !defined(__windows2Egraphics2Eimaging_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -61,6 +48,13 @@ namespace Windows
 {
     namespace Storage
     {
+        runtimeclass StorageFile;
+    }
+}
+namespace Windows
+{
+    namespace Storage
+    {
         namespace Streams
         {
             interface IBuffer;
@@ -81,11 +75,23 @@ namespace Windows
 
             typedef enum CashDrawerStatusKind CashDrawerStatusKind;
 
+            typedef enum LineDisplayCursorType LineDisplayCursorType;
+
+            typedef enum LineDisplayDescriptorState LineDisplayDescriptorState;
+
+            typedef enum LineDisplayHorizontalAlignment LineDisplayHorizontalAlignment;
+
+            typedef enum LineDisplayMarqueeFormat LineDisplayMarqueeFormat;
+
+            typedef enum LineDisplayPowerStatus LineDisplayPowerStatus;
+
             typedef enum LineDisplayScrollDirection LineDisplayScrollDirection;
 
             typedef enum LineDisplayTextAttribute LineDisplayTextAttribute;
 
             typedef enum LineDisplayTextAttributeGranularity LineDisplayTextAttributeGranularity;
+
+            typedef enum LineDisplayVerticalAlignment LineDisplayVerticalAlignment;
 
             typedef enum MagneticStripeReaderAuthenticationLevel MagneticStripeReaderAuthenticationLevel;
 
@@ -195,6 +201,8 @@ namespace Windows
 
             interface IClaimedLineDisplay;
 
+            interface IClaimedLineDisplay2;
+
             interface IClaimedLineDisplayStatics;
 
             interface IClaimedMagneticStripeReader;
@@ -215,11 +223,33 @@ namespace Windows
 
             interface ILineDisplay;
 
+            interface ILineDisplay2;
+
+            interface ILineDisplayAttributes;
+
             interface ILineDisplayCapabilities;
+
+            interface ILineDisplayCursor;
+
+            interface ILineDisplayCursorAttributes;
+
+            interface ILineDisplayCustomGlyphs;
+
+            interface ILineDisplayMarquee;
 
             interface ILineDisplayStatics;
 
+            interface ILineDisplayStatics2;
+
+            interface ILineDisplayStatisticsCategorySelector;
+
+            interface ILineDisplayStatusUpdatedEventArgs;
+
+            interface ILineDisplayStoredBitmap;
+
             interface ILineDisplayWindow;
+
+            interface ILineDisplayWindow2;
 
             interface IMagneticStripeReader;
 
@@ -331,7 +361,23 @@ namespace Windows
 
             runtimeclass LineDisplay;
 
+            runtimeclass LineDisplayAttributes;
+
             runtimeclass LineDisplayCapabilities;
+
+            runtimeclass LineDisplayCursor;
+
+            runtimeclass LineDisplayCursorAttributes;
+
+            runtimeclass LineDisplayCustomGlyphs;
+
+            runtimeclass LineDisplayMarquee;
+
+            runtimeclass LineDisplayStatisticsCategorySelector;
+
+            runtimeclass LineDisplayStatusUpdatedEventArgs;
+
+            runtimeclass LineDisplayStoredBitmap;
 
             runtimeclass LineDisplayWindow;
 
@@ -419,6 +465,12 @@ namespace Windows
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Devices.PointOfService.LineDisplay*>;
 
+                interface Windows.Foundation.IAsyncOperation<Windows.Devices.PointOfService.LineDisplayPowerStatus>;
+
+                interface Windows.Foundation.IAsyncOperation<Windows.Devices.PointOfService.LineDisplayStoredBitmap*>;
+
+                interface Windows.Foundation.IAsyncOperation<Windows.Devices.PointOfService.LineDisplayWindow*>;
+
                 interface Windows.Foundation.IAsyncOperation<Windows.Devices.PointOfService.MagneticStripeReader*>;
 
                 interface Windows.Foundation.IAsyncOperation<Windows.Devices.PointOfService.PosPrinter*>;
@@ -442,6 +494,8 @@ namespace Windows
                 interface Windows.Foundation.TypedEventHandler<Windows.Devices.PointOfService.ClaimedCashDrawer*, IInspectable*>;
 
                 interface Windows.Foundation.TypedEventHandler<Windows.Devices.PointOfService.ClaimedLineDisplay*, IInspectable*>;
+
+                interface Windows.Foundation.TypedEventHandler<Windows.Devices.PointOfService.ClaimedLineDisplay*, Windows.Devices.PointOfService.LineDisplayStatusUpdatedEventArgs*>;
 
                 interface Windows.Foundation.TypedEventHandler<Windows.Devices.PointOfService.ClaimedMagneticStripeReader*, Windows.Devices.PointOfService.MagneticStripeReaderAamvaCardDataReceivedEventArgs*>;
 
@@ -496,6 +550,51 @@ namespace Windows
                 Extended     = 4
             };
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            enum LineDisplayCursorType
+            {
+                None      = 0,
+                Block     = 1,
+                HalfBlock = 2,
+                Underline = 3,
+                Reverse   = 4,
+                Other     = 5
+            };
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            enum LineDisplayDescriptorState
+            {
+                Off   = 0,
+                On    = 1,
+                Blink = 2
+            };
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            enum LineDisplayHorizontalAlignment
+            {
+                Left   = 0,
+                Center = 1,
+                Right  = 2
+            };
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            enum LineDisplayMarqueeFormat
+            {
+                None  = 0,
+                Walk  = 1,
+                Place = 2
+            };
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            enum LineDisplayPowerStatus
+            {
+                Unknown      = 0,
+                Online       = 1,
+                Off          = 2,
+                Offline      = 3,
+                OffOrOffline = 4
+            };
+
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             enum LineDisplayScrollDirection
             {
@@ -520,6 +619,14 @@ namespace Windows
                 NotSupported  = 0,
                 EntireDisplay = 1,
                 PerCharacter  = 2
+            };
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            enum LineDisplayVerticalAlignment
+            {
+                Top    = 0,
+                Center = 1,
+                Bottom = 2
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1214,6 +1321,32 @@ namespace Windows
                 [eventremove] HRESULT ReleaseDeviceRequested([in] EventRegistrationToken token);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.PointOfService.ClaimedLineDisplay)]
+            [uuid(A31C75ED-41F5-4E76-A074-795E47A46E97)]
+            interface IClaimedLineDisplay2 : IInspectable
+                requires
+                    Windows.Foundation.IClosable
+            {
+                HRESULT GetStatisticsAsync([in] Windows.Foundation.Collections.IIterable<HSTRING>* statisticsCategories, [out] [retval] Windows.Foundation.IAsyncOperation<HSTRING>** result);
+                HRESULT CheckHealthAsync([in] Windows.Devices.PointOfService.UnifiedPosHealthCheckLevel level, [out] [retval] Windows.Foundation.IAsyncOperation<HSTRING>** result);
+                HRESULT CheckPowerStatusAsync([out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.PointOfService.LineDisplayPowerStatus>** result);
+                [eventadd] HRESULT StatusUpdated([in] Windows.Foundation.TypedEventHandler<Windows.Devices.PointOfService.ClaimedLineDisplay*, Windows.Devices.PointOfService.LineDisplayStatusUpdatedEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT StatusUpdated([in] EventRegistrationToken token);
+                [propget] HRESULT SupportedScreenSizesInCharacters([out] [retval] Windows.Foundation.Collections.IVectorView<Windows.Foundation.Size>** value);
+                [propget] HRESULT MaxBitmapSizeInPixels([out] [retval] Windows.Foundation.Size* value);
+                [propget] HRESULT SupportedCharacterSets([out] [retval] Windows.Foundation.Collections.IVectorView<INT32>** value);
+                [propget] HRESULT CustomGlyphs([out] [retval] Windows.Devices.PointOfService.LineDisplayCustomGlyphs** value);
+                HRESULT GetAttributes([out] [retval] Windows.Devices.PointOfService.LineDisplayAttributes** value);
+                HRESULT TryUpdateAttributesAsync([in] Windows.Devices.PointOfService.LineDisplayAttributes* attributes, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                HRESULT TrySetDescriptorAsync([in] UINT32 descriptor, [in] Windows.Devices.PointOfService.LineDisplayDescriptorState descriptorState, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                HRESULT TryClearDescriptorsAsync([out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                HRESULT TryCreateWindowAsync([in] Windows.Foundation.Rect viewport, [in] Windows.Foundation.Size windowSize, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.PointOfService.LineDisplayWindow*>** result);
+                [overload("TryStoreStorageFileBitmapAsync")] HRESULT TryStoreStorageFileBitmapAsync([in] Windows.Storage.StorageFile* bitmap, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.PointOfService.LineDisplayStoredBitmap*>** result);
+                [overload("TryStoreStorageFileBitmapAsync")] HRESULT TryStoreStorageFileBitmapWithAlignmentAsync([in] Windows.Storage.StorageFile* bitmap, [in] Windows.Devices.PointOfService.LineDisplayHorizontalAlignment horizontalAlignment, [in] Windows.Devices.PointOfService.LineDisplayVerticalAlignment verticalAlignment, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.PointOfService.LineDisplayStoredBitmap*>** result);
+                [overload("TryStoreStorageFileBitmapAsync")] HRESULT TryStoreStorageFileBitmapWithAlignmentAndWidthAsync([in] Windows.Storage.StorageFile* bitmap, [in] Windows.Devices.PointOfService.LineDisplayHorizontalAlignment horizontalAlignment, [in] Windows.Devices.PointOfService.LineDisplayVerticalAlignment verticalAlignment, [in] INT32 widthInPixels, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.PointOfService.LineDisplayStoredBitmap*>** result);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [exclusiveto(Windows.Devices.PointOfService.ClaimedLineDisplay)]
             [uuid(78CA98FB-8B6B-4973-86F0-3E570C351825)]
@@ -1418,6 +1551,37 @@ namespace Windows
                 HRESULT ClaimAsync([out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.PointOfService.ClaimedLineDisplay*>** result);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.PointOfService.LineDisplay)]
+            [uuid(C296A628-EF44-40F3-BD1C-B04C6A5CDC7D)]
+            interface ILineDisplay2 : IInspectable
+                requires
+                    Windows.Foundation.IClosable
+            {
+                HRESULT CheckPowerStatusAsync([out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.PointOfService.LineDisplayPowerStatus>** result);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.PointOfService.LineDisplayAttributes)]
+            [uuid(C17DE99C-229A-4C14-A6F1-B4E4B1FEAD92)]
+            interface ILineDisplayAttributes : IInspectable
+            {
+                [propget] HRESULT IsPowerNotifyEnabled([out] [retval] boolean* value);
+                [propput] HRESULT IsPowerNotifyEnabled([in] boolean value);
+                [propget] HRESULT Brightness([out] [retval] INT32* value);
+                [propput] HRESULT Brightness([in] INT32 value);
+                [propget] HRESULT BlinkRate([out] [retval] Windows.Foundation.TimeSpan* value);
+                [propput] HRESULT BlinkRate([in] Windows.Foundation.TimeSpan value);
+                [propget] HRESULT ScreenSizeInCharacters([out] [retval] Windows.Foundation.Size* value);
+                [propput] HRESULT ScreenSizeInCharacters([in] Windows.Foundation.Size value);
+                [propget] HRESULT CharacterSet([out] [retval] INT32* value);
+                [propput] HRESULT CharacterSet([in] INT32 value);
+                [propget] HRESULT IsCharacterSetMappingEnabled([out] [retval] boolean* value);
+                [propput] HRESULT IsCharacterSetMappingEnabled([in] boolean value);
+                [propget] HRESULT CurrentWindow([out] [retval] Windows.Devices.PointOfService.LineDisplayWindow** value);
+                [propput] HRESULT CurrentWindow([in] Windows.Devices.PointOfService.LineDisplayWindow* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [exclusiveto(Windows.Devices.PointOfService.LineDisplayCapabilities)]
             [uuid(5A15B5D1-8DC5-4B9C-9172-303E47B70C55)]
@@ -1443,6 +1607,62 @@ namespace Windows
                 [propget] HRESULT SupportedWindows([out] [retval] UINT32* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.PointOfService.LineDisplayCursor)]
+            [uuid(ECDFFC45-754A-4E3B-AB2B-151181085605)]
+            interface ILineDisplayCursor : IInspectable
+            {
+                [propget] HRESULT CanCustomize([out] [retval] boolean* value);
+                [propget] HRESULT IsBlinkSupported([out] [retval] boolean* value);
+                [propget] HRESULT IsBlockSupported([out] [retval] boolean* value);
+                [propget] HRESULT IsHalfBlockSupported([out] [retval] boolean* value);
+                [propget] HRESULT IsUnderlineSupported([out] [retval] boolean* value);
+                [propget] HRESULT IsReverseSupported([out] [retval] boolean* value);
+                [propget] HRESULT IsOtherSupported([out] [retval] boolean* value);
+                HRESULT GetAttributes([out] [retval] Windows.Devices.PointOfService.LineDisplayCursorAttributes** result);
+                HRESULT TryUpdateAttributesAsync([in] Windows.Devices.PointOfService.LineDisplayCursorAttributes* attributes, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.PointOfService.LineDisplayCursorAttributes)]
+            [uuid(4E2D54FE-4FFD-4190-AAE1-CE285F20C896)]
+            interface ILineDisplayCursorAttributes : IInspectable
+            {
+                [propget] HRESULT IsBlinkEnabled([out] [retval] boolean* value);
+                [propput] HRESULT IsBlinkEnabled([in] boolean value);
+                [propget] HRESULT CursorType([out] [retval] Windows.Devices.PointOfService.LineDisplayCursorType* value);
+                [propput] HRESULT CursorType([in] Windows.Devices.PointOfService.LineDisplayCursorType value);
+                [propget] HRESULT IsAutoAdvanceEnabled([out] [retval] boolean* value);
+                [propput] HRESULT IsAutoAdvanceEnabled([in] boolean value);
+                [propget] HRESULT Position([out] [retval] Windows.Foundation.Point* value);
+                [propput] HRESULT Position([in] Windows.Foundation.Point value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.PointOfService.LineDisplayCustomGlyphs)]
+            [uuid(2257F63C-F263-44F1-A1A0-E750A6A0EC54)]
+            interface ILineDisplayCustomGlyphs : IInspectable
+            {
+                [propget] HRESULT SizeInPixels([out] [retval] Windows.Foundation.Size* value);
+                [propget] HRESULT SupportedGlyphCodes([out] [retval] Windows.Foundation.Collections.IVectorView<UINT32>** value);
+                HRESULT TryRedefineAsync([in] UINT32 glyphCode, [in] Windows.Storage.Streams.IBuffer* glyphData, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.PointOfService.LineDisplayMarquee)]
+            [uuid(A3D33E3E-F46A-4B7A-BC21-53EB3B57F8B4)]
+            interface ILineDisplayMarquee : IInspectable
+            {
+                [propget] HRESULT Format([out] [retval] Windows.Devices.PointOfService.LineDisplayMarqueeFormat* value);
+                [propput] HRESULT Format([in] Windows.Devices.PointOfService.LineDisplayMarqueeFormat value);
+                [propget] HRESULT RepeatWaitInterval([out] [retval] Windows.Foundation.TimeSpan* value);
+                [propput] HRESULT RepeatWaitInterval([in] Windows.Foundation.TimeSpan value);
+                [propget] HRESULT ScrollWaitInterval([out] [retval] Windows.Foundation.TimeSpan* value);
+                [propput] HRESULT ScrollWaitInterval([in] Windows.Foundation.TimeSpan value);
+                HRESULT TryStartScrollingAsync([in] Windows.Devices.PointOfService.LineDisplayScrollDirection direction, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                HRESULT TryStopScrollingAsync([out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [exclusiveto(Windows.Devices.PointOfService.LineDisplay)]
             [uuid(022DC0B6-11B0-4690-9547-0B39C5AF2114)]
@@ -1452,6 +1672,41 @@ namespace Windows
                 HRESULT GetDefaultAsync([out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.PointOfService.LineDisplay*>** result);
                 [overload("GetDeviceSelector")] HRESULT GetDeviceSelector([out] [retval] HSTRING* result);
                 [overload("GetDeviceSelector")] HRESULT GetDeviceSelectorWithConnectionTypes([in] Windows.Devices.PointOfService.PosConnectionTypes connectionTypes, [out] [retval] HSTRING* value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.PointOfService.LineDisplay)]
+            [uuid(600C3F1C-77AB-4968-A7DE-C02FF169F2CC)]
+            interface ILineDisplayStatics2 : IInspectable
+            {
+                [propget] HRESULT StatisticsCategorySelector([out] [retval] Windows.Devices.PointOfService.LineDisplayStatisticsCategorySelector** value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.PointOfService.LineDisplayStatisticsCategorySelector)]
+            [uuid(B521C46B-9274-4D24-94F3-B6017B832444)]
+            interface ILineDisplayStatisticsCategorySelector : IInspectable
+            {
+                [propget] HRESULT AllStatistics([out] [retval] HSTRING* value);
+                [propget] HRESULT UnifiedPosStatistics([out] [retval] HSTRING* value);
+                [propget] HRESULT ManufacturerStatistics([out] [retval] HSTRING* value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.PointOfService.LineDisplayStatusUpdatedEventArgs)]
+            [uuid(DDD57C1A-86FB-4EBA-93D1-6F5EDA52B752)]
+            interface ILineDisplayStatusUpdatedEventArgs : IInspectable
+            {
+                [propget] HRESULT Status([out] [retval] Windows.Devices.PointOfService.LineDisplayPowerStatus* value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.PointOfService.LineDisplayStoredBitmap)]
+            [uuid(F621515B-D81E-43BA-BF1B-BCFA3C785BA0)]
+            interface ILineDisplayStoredBitmap : IInspectable
+            {
+                [propget] HRESULT EscapeSequence([out] [retval] HSTRING* escapeSequence);
+                HRESULT TryDeleteAsync([out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -1470,6 +1725,24 @@ namespace Windows
                 [overload("TryDisplayTextAsync")] HRESULT TryDisplayTextNormalAsync([in] HSTRING text, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
                 HRESULT TryScrollTextAsync([in] Windows.Devices.PointOfService.LineDisplayScrollDirection direction, [in] UINT32 numberOfColumnsOrRows, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
                 HRESULT TryClearTextAsync([out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Devices.PointOfService.LineDisplayWindow)]
+            [uuid(A95CE2E6-BDD8-4365-8E11-DE94DE8DFF02)]
+            interface ILineDisplayWindow2 : IInspectable
+                requires
+                    Windows.Foundation.IClosable
+            {
+                [propget] HRESULT Cursor([out] [retval] Windows.Devices.PointOfService.LineDisplayCursor** value);
+                [propget] HRESULT Marquee([out] [retval] Windows.Devices.PointOfService.LineDisplayMarquee** value);
+                HRESULT ReadCharacterAtCursorAsync([out] [retval] Windows.Foundation.IAsyncOperation<UINT32>** result);
+                HRESULT TryDisplayStoredBitmapAtCursorAsync([in] Windows.Devices.PointOfService.LineDisplayStoredBitmap* bitmap, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                [overload("TryDisplayStorageFileBitmapAtCursorAsync")] HRESULT TryDisplayStorageFileBitmapAtCursorAsync([in] Windows.Storage.StorageFile* bitmap, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                [overload("TryDisplayStorageFileBitmapAtCursorAsync")] HRESULT TryDisplayStorageFileBitmapAtCursorWithAlignmentAsync([in] Windows.Storage.StorageFile* bitmap, [in] Windows.Devices.PointOfService.LineDisplayHorizontalAlignment horizontalAlignment, [in] Windows.Devices.PointOfService.LineDisplayVerticalAlignment verticalAlignment, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                [overload("TryDisplayStorageFileBitmapAtCursorAsync")] HRESULT TryDisplayStorageFileBitmapAtCursorWithAlignmentAndWidthAsync([in] Windows.Storage.StorageFile* bitmap, [in] Windows.Devices.PointOfService.LineDisplayHorizontalAlignment horizontalAlignment, [in] Windows.Devices.PointOfService.LineDisplayVerticalAlignment verticalAlignment, [in] INT32 widthInPixels, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                [overload("TryDisplayStorageFileBitmapAtPointAsync")] HRESULT TryDisplayStorageFileBitmapAtPointAsync([in] Windows.Storage.StorageFile* bitmap, [in] Windows.Foundation.Point offsetInPixels, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
+                [overload("TryDisplayStorageFileBitmapAtPointAsync")] HRESULT TryDisplayStorageFileBitmapAtPointWithWidthAsync([in] Windows.Storage.StorageFile* bitmap, [in] Windows.Foundation.Point offsetInPixels, [in] INT32 widthInPixels, [out] [retval] Windows.Foundation.IAsyncOperation<boolean>** operation);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1988,6 +2261,7 @@ namespace Windows
             {
                 [default] interface Windows.Devices.PointOfService.IClaimedLineDisplay;
                 interface Windows.Foundation.IClosable;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.PointOfService.IClaimedLineDisplay2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2046,11 +2320,21 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
             [static(Windows.Devices.PointOfService.ILineDisplayStatics, Windows.Foundation.UniversalApiContract, 4.0)]
+            [static(Windows.Devices.PointOfService.ILineDisplayStatics2, Windows.Foundation.UniversalApiContract, 5.0)]
             [threading(both)]
             runtimeclass LineDisplay
             {
                 [default] interface Windows.Devices.PointOfService.ILineDisplay;
                 interface Windows.Foundation.IClosable;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.PointOfService.ILineDisplay2;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass LineDisplayAttributes
+            {
+                [default] interface Windows.Devices.PointOfService.ILineDisplayAttributes;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -2061,6 +2345,62 @@ namespace Windows
                 [default] interface Windows.Devices.PointOfService.ILineDisplayCapabilities;
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass LineDisplayCursor
+            {
+                [default] interface Windows.Devices.PointOfService.ILineDisplayCursor;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass LineDisplayCursorAttributes
+            {
+                [default] interface Windows.Devices.PointOfService.ILineDisplayCursorAttributes;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass LineDisplayCustomGlyphs
+            {
+                [default] interface Windows.Devices.PointOfService.ILineDisplayCustomGlyphs;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass LineDisplayMarquee
+            {
+                [default] interface Windows.Devices.PointOfService.ILineDisplayMarquee;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass LineDisplayStatisticsCategorySelector
+            {
+                [default] interface Windows.Devices.PointOfService.ILineDisplayStatisticsCategorySelector;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass LineDisplayStatusUpdatedEventArgs
+            {
+                [default] interface Windows.Devices.PointOfService.ILineDisplayStatusUpdatedEventArgs;
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass LineDisplayStoredBitmap
+            {
+                [default] interface Windows.Devices.PointOfService.ILineDisplayStoredBitmap;
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
             [threading(both)]
@@ -2068,6 +2408,7 @@ namespace Windows
             {
                 [default] interface Windows.Devices.PointOfService.ILineDisplayWindow;
                 interface Windows.Foundation.IClosable;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Devices.PointOfService.ILineDisplayWindow2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

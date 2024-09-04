@@ -1652,14 +1652,21 @@ DEFINE_PROPERTYKEY(PKEY_FileName, 0x41CF5AE0, 0xF75A, 0x4806, 0xBD, 0x87, 0x59, 
 //  Name:     System.FileOfflineAvailabilityStatus -- PKEY_FileOfflineAvailabilityStatus
 //  Type:     UInt32 -- VT_UI4
 //  FormatID: {FCEFF153-E839-4CF3-A9E7-EA22832094B8}, 100
-//
-//  Null indicates the normal case (file is available offline).  The partial case is only for folders where some content may be available offline and some may not.
+//  
+//  Null (VT_EMPTY) indicates the normal case (file is available offline). 
+//  The partial case is only for folders where some content may be available offline and some 
+//  may not. The Complete cases are for folders only, where everything inside is present 
+//  and/or pinned 
 DEFINE_PROPERTYKEY(PKEY_FileOfflineAvailabilityStatus, 0xFCEFF153, 0xE839, 0x4CF3, 0xA9, 0xE7, 0xEA, 0x22, 0x83, 0x20, 0x94, 0xB8, 100);
 #define INIT_PKEY_FileOfflineAvailabilityStatus { { 0xFCEFF153, 0xE839, 0x4CF3, 0xA9, 0xE7, 0xEA, 0x22, 0x83, 0x20, 0x94, 0xB8 }, 100 }
 
 // Possible discrete values for PKEY_FileOfflineAvailabilityStatus are:
-#define FILEOFFLINEAVAILABILITYSTATUS_PROP_NOTAVAILABLEOFFLINE 0ul
-#define FILEOFFLINEAVAILABILITYSTATUS_PROP_PARTIALLYAVAILABLEOFFLINE 1ul
+#define FILEOFFLINEAVAILABILITYSTATUS_NOTAVAILABLEOFFLINE 0ul
+#define FILEOFFLINEAVAILABILITYSTATUS_PARTIAL 1ul
+#define FILEOFFLINEAVAILABILITYSTATUS_COMPLETE 2ul
+#define FILEOFFLINEAVAILABILITYSTATUS_COMPLETE_PINNED 3ul
+#define FILEOFFLINEAVAILABILITYSTATUS_EXCLUDED 4ul
+#define FILEOFFLINEAVAILABILITYSTATUS_FOLDER_EMPTY 5ul
 
 //  Name:     System.FileOwner -- PKEY_FileOwner
 //  Type:     String -- VT_LPWSTR  (For variants: VT_BSTR)
@@ -2476,6 +2483,12 @@ DEFINE_PROPERTYKEY(PKEY_Language, 0xD5CDD502, 0x2E9C, 0x101B, 0x93, 0x97, 0x08, 
 DEFINE_PROPERTYKEY(PKEY_LastSyncError, 0xFCEFF153, 0xE839, 0x4CF3, 0xA9, 0xE7, 0xEA, 0x22, 0x83, 0x20, 0x94, 0xB8, 107);
 #define INIT_PKEY_LastSyncError { { 0xFCEFF153, 0xE839, 0x4CF3, 0xA9, 0xE7, 0xEA, 0x22, 0x83, 0x20, 0x94, 0xB8 }, 107 }
 
+//  Name:     System.LastSyncWarning -- PKEY_LastSyncWarning
+//  Type:     UInt32 -- VT_UI4
+//  FormatID: {FCEFF153-E839-4CF3-A9E7-EA22832094B8}, 128
+DEFINE_PROPERTYKEY(PKEY_LastSyncWarning, 0xFCEFF153, 0xE839, 0x4CF3, 0xA9, 0xE7, 0xEA, 0x22, 0x83, 0x20, 0x94, 0xB8, 128);
+#define INIT_PKEY_LastSyncWarning { { 0xFCEFF153, 0xE839, 0x4CF3, 0xA9, 0xE7, 0xEA, 0x22, 0x83, 0x20, 0x94, 0xB8 }, 128 }
+
 //  Name:     System.LastWriterPackageFamilyName -- PKEY_LastWriterPackageFamilyName
 //  Type:     String -- VT_LPWSTR  (For variants: VT_BSTR)
 //  FormatID: {502CFEAB-47EB-459C-B960-E6D8728F7701}, 101
@@ -2875,6 +2888,14 @@ DEFINE_PROPERTYKEY(PKEY_StorageProviderError, 0xFCEFF153, 0xE839, 0x4CF3, 0xA9, 
 //  The checksum computed by the storage provider for the file. Files with the same checksum value will have the same contents.
 DEFINE_PROPERTYKEY(PKEY_StorageProviderFileChecksum, 0xB2F9B9D6, 0xFEC4, 0x4DD5, 0x94, 0xD7, 0x89, 0x57, 0x48, 0x8C, 0x80, 0x7B, 5);
 #define INIT_PKEY_StorageProviderFileChecksum { { 0xB2F9B9D6, 0xFEC4, 0x4DD5, 0x94, 0xD7, 0x89, 0x57, 0x48, 0x8C, 0x80, 0x7B }, 5 }
+
+//  Name:     System.StorageProviderFileFlags -- PKEY_StorageProviderFileFlags
+//  Type:     UInt32 -- VT_UI4
+//  FormatID: {B2F9B9D6-FEC4-4DD5-94D7-8957488C807B}, 8
+//
+//  Information specified by the storage provider about a file or a folder.
+DEFINE_PROPERTYKEY(PKEY_StorageProviderFileFlags, 0xB2F9B9D6, 0xFEC4, 0x4DD5, 0x94, 0xD7, 0x89, 0x57, 0x48, 0x8C, 0x80, 0x7B, 8);
+#define INIT_PKEY_StorageProviderFileFlags { { 0xB2F9B9D6, 0xFEC4, 0x4DD5, 0x94, 0xD7, 0x89, 0x57, 0x48, 0x8C, 0x80, 0x7B }, 8 }
 
 //  Name:     System.StorageProviderFileIdentifier -- PKEY_StorageProviderFileIdentifier
 //  Type:     String -- VT_LPWSTR  (For variants: VT_BSTR)
@@ -3423,6 +3444,14 @@ DEFINE_PROPERTYKEY(PKEY_Devices_Aep_Bluetooth_Cod_Services_Rendering, 0x5FBD34CD
 //  Bluetooth class of device service telephony.
 DEFINE_PROPERTYKEY(PKEY_Devices_Aep_Bluetooth_Cod_Services_Telephony, 0x5FBD34CD, 0x561A, 0x412E, 0xBA, 0x98, 0x47, 0x8A, 0x6B, 0x0F, 0xEF, 0x1D, 11);
 #define INIT_PKEY_Devices_Aep_Bluetooth_Cod_Services_Telephony { { 0x5FBD34CD, 0x561A, 0x412E, 0xBA, 0x98, 0x47, 0x8A, 0x6B, 0x0F, 0xEF, 0x1D }, 11 }
+
+//  Name:     System.Devices.Aep.Bluetooth.LastSeenTime -- PKEY_Devices_Aep_Bluetooth_LastSeenTime
+//  Type:     DateTime -- VT_FILETIME  (For variants: VT_DATE)
+//  FormatID: {2BD67D8B-8BEB-48D5-87E0-6CDA3428040A}, 12
+//
+//  The time stamp the device was last seen via an inquiry or advertisement.
+DEFINE_PROPERTYKEY(PKEY_Devices_Aep_Bluetooth_LastSeenTime, 0x2BD67D8B, 0x8BEB, 0x48D5, 0x87, 0xE0, 0x6C, 0xDA, 0x34, 0x28, 0x04, 0x0A, 12);
+#define INIT_PKEY_Devices_Aep_Bluetooth_LastSeenTime { { 0x2BD67D8B, 0x8BEB, 0x48D5, 0x87, 0xE0, 0x6C, 0xDA, 0x34, 0x28, 0x04, 0x0A }, 12 }
 
 //  Name:     System.Devices.Aep.Bluetooth.Le.AddressType -- PKEY_Devices_Aep_Bluetooth_Le_AddressType
 //  Type:     Byte -- VT_UI1
@@ -4577,6 +4606,14 @@ DEFINE_PROPERTYKEY(PKEY_Devices_Roaming, 0x49CD1F76, 0x5626, 0x4B17, 0xA4, 0xE8,
 //  Indicates if a device requires safe removal or not
 DEFINE_PROPERTYKEY(PKEY_Devices_SafeRemovalRequired, 0xAFD97640, 0x86A3, 0x4210, 0xB6, 0x7C, 0x28, 0x9C, 0x41, 0xAA, 0xBE, 0x55, 2);
 #define INIT_PKEY_Devices_SafeRemovalRequired { { 0xAFD97640, 0x86A3, 0x4210, 0xB6, 0x7C, 0x28, 0x9C, 0x41, 0xAA, 0xBE, 0x55 }, 2 }
+
+//  Name:     System.Devices.SchematicName -- PKEY_Devices_SchematicName
+//  Type:     String -- VT_LPWSTR  (For variants: VT_BSTR)
+//  FormatID: {026E516E-B814-414B-83CD-856D6FEF4822}, 9
+//
+//  Interface name for statically connected devices based on system schematics.
+DEFINE_PROPERTYKEY(PKEY_Devices_SchematicName, 0x026E516E, 0xB814, 0x414B, 0x83, 0xCD, 0x85, 0x6D, 0x6F, 0xEF, 0x48, 0x22, 9);
+#define INIT_PKEY_Devices_SchematicName { { 0x026E516E, 0xB814, 0x414B, 0x83, 0xCD, 0x85, 0x6D, 0x6F, 0xEF, 0x48, 0x22 }, 9 }
 
 //  Name:     System.Devices.ServiceAddress -- PKEY_Devices_ServiceAddress
 //  Type:     Multivalue String -- VT_VECTOR | VT_LPWSTR  (For variants: VT_ARRAY | VT_BSTR)
@@ -7963,6 +8000,7 @@ DEFINE_PROPERTYKEY(PKEY_Shell_SFGAOFlagsStrings, 0xD6942081, 0xD53B, 0x443D, 0xA
 #define SFGAOSTR_NONENUM                    L"nonenum"               // SFGAO_NONENUMERATED
 #define SFGAOSTR_BROWSABLE                  L"browsable"               // SFGAO_BROWSABLE
 #define SFGAOSTR_SYSTEM                     L"system"               // SFGAO_SYSTEM
+#define SFGAOSTR_PLACEHOLDER                L"placeholder"               // SFGAO_PLACEHOLDER
 
 //  Name:     System.StatusBarSelectedItemCount -- PKEY_StatusBarSelectedItemCount
 //  Type:     String -- VT_LPWSTR  (For variants: VT_BSTR)

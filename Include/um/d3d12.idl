@@ -277,6 +277,7 @@ const UINT D3D12_MAX_SHADER_VISIBLE_DESCRIPTOR_HEAP_SIZE_TIER_1 = 1000000;
 const UINT D3D12_MAX_SHADER_VISIBLE_DESCRIPTOR_HEAP_SIZE_TIER_2 = 1000000;
 const UINT D3D12_MAX_SHADER_VISIBLE_SAMPLER_HEAP_SIZE = 2048;
 const UINT D3D12_MAX_TEXTURE_DIMENSION_2_TO_EXP = 17;
+const UINT D3D12_MAX_VIEW_INSTANCE_COUNT = 4;
 const UINT D3D12_MINOR_VERSION = 0;
 cpp_quote( "#define D3D12_MIN_BORDER_COLOR_COMPONENT	( 0.0f )" )
 cpp_quote( "#define D3D12_MIN_DEPTH	( 0.0f )" )
@@ -399,6 +400,10 @@ const UINT D3D12_TILED_RESOURCE_TILE_SIZE_IN_BYTES = 65536;
 const UINT D3D12_UAV_COUNTER_PLACEMENT_ALIGNMENT = 4096;
 const UINT D3D12_UAV_SLOT_COUNT = 64;
 const UINT D3D12_UNBOUND_MEMORY_ACCESS_RESULT = 0;
+const UINT D3D12_VIDEO_DECODE_MAX_ARGUMENTS = 10;
+const UINT D3D12_VIDEO_DECODE_STATUS_MACROBLOCKS_AFFECTED_UNKNOWN = 0xffffffff;
+const UINT D3D12_VIDEO_PROCESS_MAX_FILTERS = 32;
+const UINT D3D12_VIDEO_PROCESS_STEREO_VIEWS = 2;
 const UINT D3D12_VIEWPORT_AND_SCISSORRECT_MAX_INDEX = 15;
 const UINT D3D12_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE = 16;
 const UINT D3D12_VIEWPORT_BOUNDS_MAX = 32767;
@@ -429,6 +434,8 @@ typedef enum D3D12_COMMAND_LIST_TYPE
     D3D12_COMMAND_LIST_TYPE_BUNDLE          = 1,
     D3D12_COMMAND_LIST_TYPE_COMPUTE         = 2,
     D3D12_COMMAND_LIST_TYPE_COPY            = 3,
+    D3D12_COMMAND_LIST_TYPE_VIDEO_DECODE    = 4,
+    D3D12_COMMAND_LIST_TYPE_VIDEO_PROCESS   = 5,
 
 } D3D12_COMMAND_LIST_TYPE;
 
@@ -804,7 +811,7 @@ typedef struct D3D12_GRAPHICS_PIPELINE_STATE_DESC
     UINT                          NumRenderTargets;
     DXGI_FORMAT                   RTVFormats[ D3D12_SIMULTANEOUS_RENDER_TARGET_COUNT ];
     DXGI_FORMAT                   DSVFormat;
-    DXGI_SAMPLE_DESC             SampleDesc;
+    DXGI_SAMPLE_DESC              SampleDesc;
     UINT                          NodeMask;
     D3D12_CACHED_PIPELINE_STATE   CachedPSO;
     D3D12_PIPELINE_STATE_FLAGS    Flags;
@@ -861,6 +868,7 @@ typedef enum D3D12_PIPELINE_STATE_SUBOBJECT_TYPE
     D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_CACHED_PSO, // D3D12_CACHED_PIPELINE_STATE
     D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_FLAGS, // D3D12_PIPELINE_STATE_FLAGS
     D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_DEPTH_STENCIL1, // D3D12_DEPTH_STENCIL_DESC1
+    D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_VIEW_INSTANCING, // D3D12_VIEW_INSTANCING_DESC
     D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_MAX_VALID,
 } D3D12_PIPELINE_STATE_SUBOBJECT_TYPE;
 
@@ -872,20 +880,22 @@ typedef enum D3D12_PIPELINE_STATE_SUBOBJECT_TYPE
 
 typedef enum D3D12_FEATURE
 {
-    D3D12_FEATURE_D3D12_OPTIONS                     =  0,
-    D3D12_FEATURE_ARCHITECTURE                      =  1, // Deprecated by D3D12_FEATURE_ARCHITECTURE1
-    D3D12_FEATURE_FEATURE_LEVELS                    =  2,
-    D3D12_FEATURE_FORMAT_SUPPORT                    =  3,
-    D3D12_FEATURE_MULTISAMPLE_QUALITY_LEVELS        =  4,
-    D3D12_FEATURE_FORMAT_INFO                       =  5,
-    D3D12_FEATURE_GPU_VIRTUAL_ADDRESS_SUPPORT       =  6,
-    D3D12_FEATURE_SHADER_MODEL                      =  7,
-    D3D12_FEATURE_D3D12_OPTIONS1                    =  8,
-    D3D12_FEATURE_ROOT_SIGNATURE                    = 12,
-    D3D12_FEATURE_ARCHITECTURE1                     = 16,
-    D3D12_FEATURE_D3D12_OPTIONS2                    = 18,
-    D3D12_FEATURE_SHADER_CACHE                      = 19,
-    D3D12_FEATURE_COMMAND_QUEUE_PRIORITY            = 20,
+    D3D12_FEATURE_D3D12_OPTIONS                         =  0,
+    D3D12_FEATURE_ARCHITECTURE                          =  1, // Deprecated by D3D12_FEATURE_ARCHITECTURE1
+    D3D12_FEATURE_FEATURE_LEVELS                        =  2,
+    D3D12_FEATURE_FORMAT_SUPPORT                        =  3,
+    D3D12_FEATURE_MULTISAMPLE_QUALITY_LEVELS            =  4,
+    D3D12_FEATURE_FORMAT_INFO                           =  5,
+    D3D12_FEATURE_GPU_VIRTUAL_ADDRESS_SUPPORT           =  6,
+    D3D12_FEATURE_SHADER_MODEL                          =  7,
+    D3D12_FEATURE_D3D12_OPTIONS1                        =  8,
+    D3D12_FEATURE_ROOT_SIGNATURE                        = 12,
+    D3D12_FEATURE_ARCHITECTURE1                         = 16,
+    D3D12_FEATURE_D3D12_OPTIONS2                        = 18,
+    D3D12_FEATURE_SHADER_CACHE                          = 19,
+    D3D12_FEATURE_COMMAND_QUEUE_PRIORITY                = 20,
+    D3D12_FEATURE_D3D12_OPTIONS3                        = 21,
+    D3D12_FEATURE_EXISTING_HEAPS                        = 22,
 } D3D12_FEATURE;
 
 typedef enum D3D12_SHADER_MIN_PRECISION_SUPPORT
@@ -999,6 +1009,14 @@ typedef enum D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER
     D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER_2 = 2,
 } D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER;
 
+typedef enum D3D12_VIEW_INSTANCING_TIER
+{
+    D3D12_VIEW_INSTANCING_TIER_NOT_SUPPORTED = 0,
+    D3D12_VIEW_INSTANCING_TIER_1 = 1,
+    D3D12_VIEW_INSTANCING_TIER_2 = 2,
+    D3D12_VIEW_INSTANCING_TIER_3 = 3,
+} D3D12_VIEW_INSTANCING_TIER;
+
 // D3D12_FEATURE_D3D12_OPTIONS
 typedef struct D3D12_FEATURE_DATA_D3D12_OPTIONS
 {
@@ -1082,6 +1100,7 @@ typedef enum D3D_SHADER_MODEL
 {
     D3D_SHADER_MODEL_5_1 = 0x51,
     D3D_SHADER_MODEL_6_0 = 0x60,
+    D3D_SHADER_MODEL_6_1 = 0x61,
 } D3D_SHADER_MODEL;
 
 typedef struct D3D12_FEATURE_DATA_SHADER_MODEL
@@ -1144,6 +1163,35 @@ typedef struct D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITY
     [annotation("_In_")] UINT Priority;
     [annotation("_Out_")] BOOL PriorityForTypeIsSupported;
 } D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITY;
+
+typedef enum D3D12_COMMAND_LIST_SUPPORT_FLAGS
+{
+    D3D12_COMMAND_LIST_SUPPORT_FLAG_NONE                = 0x00000000,
+    D3D12_COMMAND_LIST_SUPPORT_FLAG_DIRECT              = 1 << D3D12_COMMAND_LIST_TYPE_DIRECT,
+    D3D12_COMMAND_LIST_SUPPORT_FLAG_BUNDLE              = 1 << D3D12_COMMAND_LIST_TYPE_BUNDLE,
+    D3D12_COMMAND_LIST_SUPPORT_FLAG_COMPUTE             = 1 << D3D12_COMMAND_LIST_TYPE_COMPUTE,
+    D3D12_COMMAND_LIST_SUPPORT_FLAG_COPY                = 1 << D3D12_COMMAND_LIST_TYPE_COPY,
+    D3D12_COMMAND_LIST_SUPPORT_FLAG_VIDEO_DECODE        = 1 << D3D12_COMMAND_LIST_TYPE_VIDEO_DECODE,
+    D3D12_COMMAND_LIST_SUPPORT_FLAG_VIDEO_PROCESS       = 1 << D3D12_COMMAND_LIST_TYPE_VIDEO_PROCESS,
+
+} D3D12_COMMAND_LIST_SUPPORT_FLAGS;
+cpp_quote("DEFINE_ENUM_FLAG_OPERATORS( D3D12_COMMAND_LIST_SUPPORT_FLAGS );")
+
+// D3D12_FEATURE_D3D12_OPTIONS3
+typedef struct D3D12_FEATURE_DATA_D3D12_OPTIONS3
+{
+    [annotation("_Out_")] BOOL CopyQueueTimestampQueriesSupported;
+    [annotation("_Out_")] BOOL CastingFullyTypedFormatSupported;
+    [annotation("_Out_")] D3D12_COMMAND_LIST_SUPPORT_FLAGS WriteBufferImmediateSupportFlags;
+    [annotation("_Out_")] D3D12_VIEW_INSTANCING_TIER ViewInstancingTier;
+    [annotation("_Out_")] BOOL BarycentricsSupported;
+} D3D12_FEATURE_DATA_D3D12_OPTIONS3;
+
+// D3D12_FEATURE_EXISTING_HEAPS
+typedef struct D3D12_FEATURE_DATA_EXISTING_HEAPS
+{
+    [annotation("_Out_")] BOOL Supported;
+} D3D12_FEATURE_DATA_EXISTING_HEAPS;
 
 typedef struct D3D12_RESOURCE_ALLOCATION_INFO
 {
@@ -1239,6 +1287,8 @@ typedef enum D3D12_RESOURCE_FLAGS
     D3D12_RESOURCE_FLAG_DENY_SHADER_RESOURCE = 0x8,
     D3D12_RESOURCE_FLAG_ALLOW_CROSS_ADAPTER = 0x10,
     D3D12_RESOURCE_FLAG_ALLOW_SIMULTANEOUS_ACCESS = 0x20,
+    D3D12_RESOURCE_FLAG_VIDEO_DECODE_REFERENCE_ONLY = 0x40, 
+
 } D3D12_RESOURCE_FLAGS;
 cpp_quote( "DEFINE_ENUM_FLAG_OPERATORS( D3D12_RESOURCE_FLAGS );" )
 
@@ -1393,6 +1443,10 @@ typedef enum D3D12_RESOURCE_STATES
     D3D12_RESOURCE_STATE_PRESENT                = 0,
     D3D12_RESOURCE_STATE_PREDICATION            = /*D3D12_RESOURCE_STATE_INDIRECT_ARGUMENT*/ 0x0200,
 
+    D3D12_RESOURCE_STATE_VIDEO_DECODE_READ          = 0x00010000,
+    D3D12_RESOURCE_STATE_VIDEO_DECODE_WRITE         = 0x00020000,
+    D3D12_RESOURCE_STATE_VIDEO_PROCESS_READ         = 0x00040000,
+    D3D12_RESOURCE_STATE_VIDEO_PROCESS_WRITE        = 0x00080000,
 
 } D3D12_RESOURCE_STATES;
 cpp_quote( "DEFINE_ENUM_FLAG_OPERATORS( D3D12_RESOURCE_STATES );" )
@@ -1491,6 +1545,26 @@ typedef struct D3D12_SAMPLE_POSITION
     INT8 X;
     INT8 Y;
 } D3D12_SAMPLE_POSITION;
+
+typedef struct D3D12_VIEW_INSTANCE_LOCATION
+{
+    UINT ViewportArrayIndex;
+    UINT RenderTargetArrayIndex;
+} D3D12_VIEW_INSTANCE_LOCATION;
+
+typedef enum D3D12_VIEW_INSTANCING_FLAGS
+{
+    D3D12_VIEW_INSTANCING_FLAG_NONE = 0x0,
+    D3D12_VIEW_INSTANCING_FLAG_ENABLE_VIEW_INSTANCE_MASKING = 0x1,
+} D3D12_VIEW_INSTANCING_FLAGS;
+cpp_quote("DEFINE_ENUM_FLAG_OPERATORS( D3D12_VIEW_INSTANCING_FLAGS );")
+
+typedef struct D3D12_VIEW_INSTANCING_DESC
+{
+    UINT ViewInstanceCount;
+    [annotation("_Field_size_full_(ViewInstanceCount)")] const D3D12_VIEW_INSTANCE_LOCATION* pViewInstanceLocations;
+    D3D12_VIEW_INSTANCING_FLAGS Flags;
+} D3D12_VIEW_INSTANCING_DESC;
 
 // D3D12 view descriptions
 typedef enum D3D12_SHADER_COMPONENT_MAPPING
@@ -2026,6 +2100,7 @@ typedef enum D3D12_FENCE_FLAGS
     D3D12_FENCE_FLAG_NONE = 0x0,
     D3D12_FENCE_FLAG_SHARED = 0x1,
     D3D12_FENCE_FLAG_SHARED_CROSS_ADAPTER = 0x2,
+    D3D12_FENCE_FLAG_NON_MONITORED = 0x4,
 } D3D12_FENCE_FLAGS;
 cpp_quote( "DEFINE_ENUM_FLAG_OPERATORS( D3D12_FENCE_FLAGS );" )
 
@@ -2331,10 +2406,12 @@ typedef struct D3D12_DISCARD_REGION
 
 typedef enum D3D12_QUERY_HEAP_TYPE
 {
-    D3D12_QUERY_HEAP_TYPE_OCCLUSION                 = 0,
-    D3D12_QUERY_HEAP_TYPE_TIMESTAMP                 = 1,
-    D3D12_QUERY_HEAP_TYPE_PIPELINE_STATISTICS       = 2,
-    D3D12_QUERY_HEAP_TYPE_SO_STATISTICS             = 3,
+    D3D12_QUERY_HEAP_TYPE_OCCLUSION                            = 0,
+    D3D12_QUERY_HEAP_TYPE_TIMESTAMP                            = 1,
+    D3D12_QUERY_HEAP_TYPE_PIPELINE_STATISTICS                  = 2,
+    D3D12_QUERY_HEAP_TYPE_SO_STATISTICS                        = 3,
+    D3D12_QUERY_HEAP_TYPE_VIDEO_DECODE_STATISTICS              = 4, 
+    D3D12_QUERY_HEAP_TYPE_COPY_QUEUE_TIMESTAMP                 = 5,
 } D3D12_QUERY_HEAP_TYPE;
 
 typedef struct D3D12_QUERY_HEAP_DESC
@@ -2354,6 +2431,7 @@ typedef enum D3D12_QUERY_TYPE
     D3D12_QUERY_TYPE_SO_STATISTICS_STREAM1          = 5,
     D3D12_QUERY_TYPE_SO_STATISTICS_STREAM2          = 6,
     D3D12_QUERY_TYPE_SO_STATISTICS_STREAM3          = 7,
+    D3D12_QUERY_TYPE_VIDEO_DECODE_STATISTICS        = 8,
 } D3D12_QUERY_TYPE;
 
 typedef enum D3D12_PREDICATION_OP
@@ -2580,6 +2658,13 @@ interface ID3D12Fence
     HRESULT Signal(UINT64 Value);
 };
 
+[ uuid( 433685fe-e22b-4ca0-a8db-b5b4f4dd0e4a ), object, local, pointer_default( unique ) ]
+interface ID3D12Fence1
+    : ID3D12Fence
+{
+    D3D12_FENCE_FLAGS GetCreationFlags();
+};
+
 [ uuid( 765a30f3-f624-4c6f-a828-ace948622445 ), object, local, pointer_default( unique ) ]
 interface ID3D12PipelineState
     : ID3D12Pageable
@@ -2705,7 +2790,7 @@ interface ID3D12GraphicsCommandList
         );
 
     void OMSetBlendFactor(
-        [annotation("_In_opt_")] const FLOAT BlendFactor[ 4 ]
+        [annotation("_In_reads_opt_(4)")] const FLOAT BlendFactor[ 4 ]
         );
 
     void OMSetStencilRef(
@@ -2959,6 +3044,35 @@ interface ID3D12GraphicsCommandList1
         [annotation("_In_")] DXGI_FORMAT Format,
         [annotation("_In_")] D3D12_RESOLVE_MODE ResolveMode
     );
+
+    void SetViewInstanceMask(
+        [annotation("_In_")] UINT Mask
+    );
+
+}
+
+typedef struct D3D12_WRITEBUFFERIMMEDIATE_PARAMETER
+{
+    D3D12_GPU_VIRTUAL_ADDRESS Dest;
+    UINT32 Value;
+} D3D12_WRITEBUFFERIMMEDIATE_PARAMETER;
+
+typedef enum D3D12_WRITEBUFFERIMMEDIATE_MODE
+{
+    D3D12_WRITEBUFFERIMMEDIATE_MODE_DEFAULT     = 0x0,
+    D3D12_WRITEBUFFERIMMEDIATE_MODE_MARKER_IN    = 0x1,
+    D3D12_WRITEBUFFERIMMEDIATE_MODE_MARKER_OUT   = 0x2,
+
+} D3D12_WRITEBUFFERIMMEDIATE_MODE;
+
+[uuid(38C3E585-FF17-412C-9150-4FC6F9D72A28), object, local, pointer_default(unique)]
+interface ID3D12GraphicsCommandList2 : ID3D12GraphicsCommandList1
+{
+    void WriteBufferImmediate(
+        UINT Count,
+        [annotation("_In_reads_(Count)")] const D3D12_WRITEBUFFERIMMEDIATE_PARAMETER *pParams,
+        [annotation("_In_reads_opt_(Count)")] const D3D12_WRITEBUFFERIMMEDIATE_MODE *pModes
+    );
 }
 
 
@@ -3059,7 +3173,7 @@ interface ID3D12Device
         [annotation("_In_")] ID3D12CommandAllocator* pCommandAllocator,
         [annotation("_In_opt_")] ID3D12PipelineState* pInitialState,
         [in] REFIID riid, // Expected: ID3D12CommandList
-        [out, iid_is(riid), annotation("_COM_Outptr_")] void** ppCommandList         
+        [out, iid_is(riid), annotation("_COM_Outptr_")] void** ppCommandList
         );
 
     HRESULT CheckFeatureSupport(
@@ -3339,6 +3453,36 @@ interface ID3D12Device2
         );
 }
 
+typedef enum D3D12_RESIDENCY_FLAGS
+{
+    D3D12_RESIDENCY_FLAG_NONE = 0x0,
+    D3D12_RESIDENCY_FLAG_DENY_OVERBUDGET = 0x1,
+} D3D12_RESIDENCY_FLAGS;
+cpp_quote( "DEFINE_ENUM_FLAG_OPERATORS( D3D12_RESIDENCY_FLAGS );" )
+
+[uuid(81dadc15-2bad-4392-93c5-101345c4aa98), object, local, pointer_default(unique)]
+interface ID3D12Device3
+    : ID3D12Device2
+{
+    HRESULT OpenExistingHeapFromAddress(
+        [annotation("_In_")] const void* pAddress,
+        [in] REFIID riid, // Expected: ID3D12Heap
+        [out, iid_is(riid), annotation("_COM_Outptr_")] void** ppvHeap
+        );
+    HRESULT OpenExistingHeapFromFileMapping(
+        [annotation("_In_")] HANDLE hFileMapping,
+        [in] REFIID riid, // Expected: ID3D12Heap
+        [out, iid_is(riid), annotation("_COM_Outptr_")] void** ppvHeap
+        );
+    HRESULT EnqueueMakeResident(
+        D3D12_RESIDENCY_FLAGS Flags,
+        UINT NumObjects,
+        [annotation("_In_reads_(NumObjects)")] ID3D12Pageable*const* ppObjects,
+        [annotation("_In_")] ID3D12Fence* pFenceToSignal,
+        UINT64 FenceValueToSignal
+        );
+}
+
 
 [uuid(7071e1f0-e84b-4b33-974f-12fa49de65c5), object, local, pointer_default(unique)]
 interface ID3D12Tools
@@ -3470,6 +3614,7 @@ cpp_quote( "DEFINE_GUID(IID_ID3D12Heap,0x6b3b2502,0x6e51,0x45b3,0x90,0xee,0x98,0
 cpp_quote( "DEFINE_GUID(IID_ID3D12Resource,0x696442be,0xa72e,0x4059,0xbc,0x79,0x5b,0x5c,0x98,0x04,0x0f,0xad);" )
 cpp_quote( "DEFINE_GUID(IID_ID3D12CommandAllocator,0x6102dee4,0xaf59,0x4b09,0xb9,0x99,0xb4,0x4d,0x73,0xf0,0x9b,0x24);" )
 cpp_quote( "DEFINE_GUID(IID_ID3D12Fence,0x0a753dcf,0xc4d8,0x4b91,0xad,0xf6,0xbe,0x5a,0x60,0xd9,0x5a,0x76);" )
+cpp_quote( "DEFINE_GUID(IID_ID3D12Fence1,0x433685fe,0xe22b,0x4ca0,0xa8,0xdb,0xb5,0xb4,0xf4,0xdd,0x0e,0x4a);" )
 cpp_quote( "DEFINE_GUID(IID_ID3D12PipelineState,0x765a30f3,0xf624,0x4c6f,0xa8,0x28,0xac,0xe9,0x48,0x62,0x24,0x45);" )
 cpp_quote( "DEFINE_GUID(IID_ID3D12DescriptorHeap,0x8efb471d,0x616c,0x4f49,0x90,0xf7,0x12,0x7b,0xb7,0x63,0xfa,0x51);" )
 cpp_quote( "DEFINE_GUID(IID_ID3D12QueryHeap,0x0d9658ae,0xed45,0x469e,0xa6,0x1d,0x97,0x0e,0xc5,0x83,0xca,0xb4);" )
@@ -3477,10 +3622,12 @@ cpp_quote( "DEFINE_GUID(IID_ID3D12CommandSignature,0xc36a797c,0xec80,0x4f0a,0x89
 cpp_quote( "DEFINE_GUID(IID_ID3D12CommandList,0x7116d91c,0xe7e4,0x47ce,0xb8,0xc6,0xec,0x81,0x68,0xf4,0x37,0xe5);" )
 cpp_quote( "DEFINE_GUID(IID_ID3D12GraphicsCommandList,0x5b160d0f,0xac1b,0x4185,0x8b,0xa8,0xb3,0xae,0x42,0xa5,0xa4,0x55);" )
 cpp_quote( "DEFINE_GUID(IID_ID3D12GraphicsCommandList1,0x553103fb,0x1fe7,0x4557,0xbb,0x38,0x94,0x6d,0x7d,0x0e,0x7c,0xa7);" )
+cpp_quote( "DEFINE_GUID(IID_ID3D12GraphicsCommandList2,0x38C3E585,0xFF17,0x412C,0x91,0x50,0x4F,0xC6,0xF9,0xD7,0x2A,0x28);" )
 cpp_quote( "DEFINE_GUID(IID_ID3D12CommandQueue,0x0ec870a6,0x5d7e,0x4c22,0x8c,0xfc,0x5b,0xaa,0xe0,0x76,0x16,0xed);" )
 cpp_quote( "DEFINE_GUID(IID_ID3D12Device,0x189819f1,0x1db6,0x4b57,0xbe,0x54,0x18,0x21,0x33,0x9b,0x85,0xf7);" )
 cpp_quote( "DEFINE_GUID(IID_ID3D12PipelineLibrary,0xc64226a8,0x9201,0x46af,0xb4,0xcc,0x53,0xfb,0x9f,0xf7,0x41,0x4f);" )
 cpp_quote( "DEFINE_GUID(IID_ID3D12PipelineLibrary1,0x80eabf42,0x2568,0x4e5e,0xbd,0x82,0xc3,0x7f,0x86,0x96,0x1d,0xc3);" )
 cpp_quote( "DEFINE_GUID(IID_ID3D12Device1,0x77acce80,0x638e,0x4e65,0x88,0x95,0xc1,0xf2,0x33,0x86,0x86,0x3e);" )
 cpp_quote( "DEFINE_GUID(IID_ID3D12Device2,0x30baa41e,0xb15b,0x475c,0xa0,0xbb,0x1a,0xf5,0xc5,0xb6,0x43,0x28);" )
+cpp_quote( "DEFINE_GUID(IID_ID3D12Device3,0x81dadc15,0x2bad,0x4392,0x93,0xc5,0x10,0x13,0x45,0xc4,0xaa,0x98);" )
 cpp_quote( "DEFINE_GUID(IID_ID3D12Tools,0x7071e1f0,0xe84b,0x4b33,0x97,0x4f,0x12,0xfa,0x49,0xde,0x65,0xc5);" )

@@ -31,7 +31,7 @@
 #ifdef _APISET_TARGET_VERSION
 #if _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN8
 #define _APISET_PROCESSENV_VER 0x0200
-#elif _APISET_TARGET_VERSION == _APISET_TARGET_VERSION_WIN7
+#elif _APISET_TARGET_VERSION >= _APISET_TARGET_VERSION_WIN7
 #define _APISET_PROCESSENV_VER 0x0100
 #endif
 #endif
@@ -54,30 +54,6 @@ extern "C" {
 // begin_1_0
 
 WINBASEAPI
-_NullNull_terminated_
-LPCH
-WINAPI
-GetEnvironmentStrings(
-    VOID
-    );
-
-
-WINBASEAPI
-_NullNull_terminated_
-LPWCH
-WINAPI
-GetEnvironmentStringsW(
-    VOID
-    );
-
-
-#ifdef UNICODE
-#define GetEnvironmentStrings  GetEnvironmentStringsW
-#else
-#define GetEnvironmentStringsA  GetEnvironmentStrings
-#endif // !UNICODE
-
-WINBASEAPI
 BOOL
 WINAPI
 SetEnvironmentStringsW(
@@ -88,25 +64,16 @@ SetEnvironmentStringsW(
 #define SetEnvironmentStrings  SetEnvironmentStringsW
 #endif
 
-WINBASEAPI
-BOOL
-WINAPI
-FreeEnvironmentStringsA(
-    _In_ _Pre_ _NullNull_terminated_ LPCH penv
-    );
+// end_1_0
 
-WINBASEAPI
-BOOL
-WINAPI
-FreeEnvironmentStringsW(
-    _In_ _Pre_ _NullNull_terminated_ LPWCH penv
-    );
+#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma endregion
 
-#ifdef UNICODE
-#define FreeEnvironmentStrings  FreeEnvironmentStringsW
-#else
-#define FreeEnvironmentStrings  FreeEnvironmentStringsA
-#endif // !UNICODE
+#pragma region PC Family or OneCore Family
+
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP | WINAPI_PARTITION_SYSTEM)
+
+// begin_1_0
 
 WINBASEAPI
 HANDLE
@@ -142,7 +109,7 @@ SetStdHandleEx(
 
 // end_1_0
 
-#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_PC_APP | WINAPI_PARTITION_SYSTEM)
 #pragma endregion
 
 #pragma region Application Family or OneCore Family
@@ -171,16 +138,49 @@ GetCommandLineW(
 #define GetCommandLine  GetCommandLineA
 #endif // !UNICODE
 
-// end_1_0
+WINBASEAPI
+_NullNull_terminated_
+LPCH
+WINAPI
+GetEnvironmentStrings(
+    VOID
+    );
 
-#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
-#pragma endregion
 
-#pragma region Desktop Family or OneCore Family
+WINBASEAPI
+_NullNull_terminated_
+LPWCH
+WINAPI
+GetEnvironmentStringsW(
+    VOID
+    );
 
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
-// begin_1_0
+#ifdef UNICODE
+#define GetEnvironmentStrings  GetEnvironmentStringsW
+#else
+#define GetEnvironmentStringsA  GetEnvironmentStrings
+#endif // !UNICODE
+
+WINBASEAPI
+BOOL
+WINAPI
+FreeEnvironmentStringsA(
+    _In_ _Pre_ _NullNull_terminated_ LPCH penv
+    );
+
+WINBASEAPI
+BOOL
+WINAPI
+FreeEnvironmentStringsW(
+    _In_ _Pre_ _NullNull_terminated_ LPWCH penv
+    );
+
+#ifdef UNICODE
+#define FreeEnvironmentStrings  FreeEnvironmentStringsW
+#else
+#define FreeEnvironmentStrings  FreeEnvironmentStringsA
+#endif // !UNICODE
 
 WINBASEAPI
 _Success_(return != 0 && return < nSize)
@@ -255,17 +255,6 @@ ExpandEnvironmentStringsW(
 #else
 #define ExpandEnvironmentStrings  ExpandEnvironmentStringsA
 #endif // !UNICODE
-
-// end_1_0
-
-#endif // WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
-#pragma endregion
-
-#pragma region Application Family or OneCore Family
-
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
-
-// begin_1_0
 
 WINBASEAPI
 BOOL

@@ -2921,9 +2921,9 @@ EXTERN_C const IID IID_Connection15;
         virtual /* [helpcontext][id] */ HRESULT STDMETHODCALLTYPE RollbackTrans( void) = 0;
         
         virtual /* [helpcontext][id] */ HRESULT STDMETHODCALLTYPE Open( 
-            /* [defaultvalue][in] */ __RPC__in BSTR ConnectionString = NULL,
-            /* [defaultvalue][in] */ __RPC__in BSTR UserID = NULL,
-            /* [defaultvalue][in] */ __RPC__in BSTR Password = NULL,
+            /* [defaultvalue][in] */ __RPC__in BSTR ConnectionString = (BSTR)NULL,
+            /* [defaultvalue][in] */ __RPC__in BSTR UserID = (BSTR)NULL,
+            /* [defaultvalue][in] */ __RPC__in BSTR Password = (BSTR)NULL,
             /* [defaultvalue][in] */ long Options = adOptionUnspecified) = 0;
         
         virtual /* [helpcontext][id][propget] */ HRESULT STDMETHODCALLTYPE get_Errors( 
@@ -3724,7 +3724,7 @@ EXTERN_C const IID IID__Record;
             /* [retval][out] */ __RPC__deref_out_opt BSTR *pbstrNewURL) = 0;
         
         virtual /* [helpcontext][id] */ HRESULT STDMETHODCALLTYPE DeleteRecord( 
-            /* [defaultvalue][in] */ __RPC__in BSTR Source = NULL,
+            /* [defaultvalue][in] */ __RPC__in BSTR Source = (BSTR)NULL,
             /* [defaultvalue][in] */ VARIANT_BOOL Async = 0) = 0;
         
         virtual /* [helpcontext][id] */ HRESULT STDMETHODCALLTYPE Open( 
@@ -3733,8 +3733,8 @@ EXTERN_C const IID IID__Record;
             /* [defaultvalue][in] */ ConnectModeEnum Mode = adModeUnknown,
             /* [defaultvalue][in] */ RecordCreateOptionsEnum CreateOptions = adFailIfNotExists,
             /* [defaultvalue][in] */ RecordOpenOptionsEnum Options = adOpenRecordUnspecified,
-            /* [defaultvalue][in] */ __RPC__in BSTR UserName = NULL,
-            /* [defaultvalue][in] */ __RPC__in BSTR Password = NULL) = 0;
+            /* [defaultvalue][in] */ __RPC__in BSTR UserName = (BSTR)NULL,
+            /* [defaultvalue][in] */ __RPC__in BSTR Password = (BSTR)NULL) = 0;
         
         virtual /* [helpcontext][id] */ HRESULT STDMETHODCALLTYPE Close( void) = 0;
         
@@ -4030,8 +4030,8 @@ EXTERN_C const IID IID__Stream;
             /* [optional][in] */ VARIANT Source,
             /* [defaultvalue][in] */ ConnectModeEnum Mode = adModeUnknown,
             /* [defaultvalue][in] */ StreamOpenOptionsEnum Options = adOpenStreamUnspecified,
-            /* [defaultvalue][in] */ __RPC__in BSTR UserName = NULL,
-            /* [defaultvalue][in] */ __RPC__in BSTR Password = NULL) = 0;
+            /* [defaultvalue][in] */ __RPC__in BSTR UserName = (BSTR)NULL,
+            /* [defaultvalue][in] */ __RPC__in BSTR Password = (BSTR)NULL) = 0;
         
         virtual /* [helpcontext][id] */ HRESULT STDMETHODCALLTYPE Close( void) = 0;
         
@@ -5297,7 +5297,7 @@ EXTERN_C const IID IID_Recordset20;
             /* [in] */ __RPC__in_opt IUnknown *punkDataSource) = 0;
         
         virtual /* [hidden] */ HRESULT STDMETHODCALLTYPE _xSave( 
-            /* [defaultvalue][in] */ __RPC__in BSTR FileName = NULL,
+            /* [defaultvalue][in] */ __RPC__in BSTR FileName = (BSTR)NULL,
             /* [defaultvalue][in] */ PersistFormatEnum PersistFormat = adPersistADTG) = 0;
         
         virtual /* [helpcontext][propget][id] */ HRESULT STDMETHODCALLTYPE get_ActiveCommand( 

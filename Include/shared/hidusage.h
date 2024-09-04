@@ -529,6 +529,7 @@ typedef USHORT USAGE, *PUSAGE;
 #define HID_USAGE_CONSUMER_AL_EMAIL                 ((USAGE) 0x18A)
 #define HID_USAGE_CONSUMER_AL_CALCULATOR            ((USAGE) 0x192)
 #define HID_USAGE_CONSUMER_AL_BROWSER               ((USAGE) 0x194)
+#define HID_USAGE_CONSUMER_AL_SEARCH                ((USAGE) 0x1C6)
 
 // Application Control
 #define HID_USAGE_CONSUMER_AC_SEARCH                ((USAGE) 0x221)

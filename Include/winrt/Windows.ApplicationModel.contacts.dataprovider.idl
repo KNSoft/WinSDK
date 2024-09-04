@@ -11,17 +11,6 @@ import "EventToken.idl";
 import "windowscontracts.idl";
 import "Windows.Foundation.idl";
 import "Windows.ApplicationModel.Contacts.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Eapplicationmodel2Econtacts_h__)")
-cpp_quote("#include <Windows.ApplicationModel.Contacts.h>")
-cpp_quote("#endif // !defined(__windows2Eapplicationmodel2Econtacts_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -59,7 +48,17 @@ namespace Windows
             {
                 interface IContactDataProviderConnection;
 
+                interface IContactDataProviderConnection2;
+
                 interface IContactDataProviderTriggerDetails;
+
+                interface IContactListCreateOrUpdateContactRequest;
+
+                interface IContactListCreateOrUpdateContactRequestEventArgs;
+
+                interface IContactListDeleteContactRequest;
+
+                interface IContactListDeleteContactRequestEventArgs;
 
                 interface IContactListServerSearchReadBatchRequest;
 
@@ -72,6 +71,14 @@ namespace Windows
                 runtimeclass ContactDataProviderConnection;
 
                 runtimeclass ContactDataProviderTriggerDetails;
+
+                runtimeclass ContactListCreateOrUpdateContactRequest;
+
+                runtimeclass ContactListCreateOrUpdateContactRequestEventArgs;
+
+                runtimeclass ContactListDeleteContactRequest;
+
+                runtimeclass ContactListDeleteContactRequestEventArgs;
 
                 runtimeclass ContactListServerSearchReadBatchRequest;
 
@@ -96,6 +103,10 @@ namespace Windows
             {
                 declare
                 {
+                    interface Windows.Foundation.TypedEventHandler<Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection*, Windows.ApplicationModel.Contacts.DataProvider.ContactListCreateOrUpdateContactRequestEventArgs*>;
+
+                    interface Windows.Foundation.TypedEventHandler<Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection*, Windows.ApplicationModel.Contacts.DataProvider.ContactListDeleteContactRequestEventArgs*>;
+
                     interface Windows.Foundation.TypedEventHandler<Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection*, Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequestEventArgs*>;
 
                     interface Windows.Foundation.TypedEventHandler<Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection*, Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequestEventArgs*>;
@@ -126,12 +137,63 @@ namespace Windows
                     HRESULT Start();
                 }
 
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection)]
+                [uuid(A1D327B0-196C-4BFD-8F0F-C68D67F249D3)]
+                interface IContactDataProviderConnection2 : IInspectable
+                {
+                    [eventadd] HRESULT CreateOrUpdateContactRequested([in] Windows.Foundation.TypedEventHandler<Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection*, Windows.ApplicationModel.Contacts.DataProvider.ContactListCreateOrUpdateContactRequestEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
+                    [eventremove] HRESULT CreateOrUpdateContactRequested([in] EventRegistrationToken token);
+                    [eventadd] HRESULT DeleteContactRequested([in] Windows.Foundation.TypedEventHandler<Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection*, Windows.ApplicationModel.Contacts.DataProvider.ContactListDeleteContactRequestEventArgs*>* handler, [out] [retval] EventRegistrationToken* token);
+                    [eventremove] HRESULT DeleteContactRequested([in] EventRegistrationToken token);
+                }
+
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)]
                 [exclusiveto(Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderTriggerDetails)]
                 [uuid(527104BE-3C62-43C8-9AE7-DB531685CD99)]
                 interface IContactDataProviderTriggerDetails : IInspectable
                 {
                     [propget] HRESULT Connection([out] [retval] Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection** value);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.ApplicationModel.Contacts.DataProvider.ContactListCreateOrUpdateContactRequest)]
+                [uuid(B4AF411F-C849-47D0-B119-91CF605B2F2A)]
+                interface IContactListCreateOrUpdateContactRequest : IInspectable
+                {
+                    [propget] HRESULT ContactListId([out] [retval] HSTRING* value);
+                    [propget] HRESULT Contact([out] [retval] Windows.ApplicationModel.Contacts.Contact** value);
+                    HRESULT ReportCompletedAsync([in] Windows.ApplicationModel.Contacts.Contact* createdOrUpdatedContact, [out] [retval] Windows.Foundation.IAsyncAction** result);
+                    HRESULT ReportFailedAsync([out] [retval] Windows.Foundation.IAsyncAction** result);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.ApplicationModel.Contacts.DataProvider.ContactListCreateOrUpdateContactRequestEventArgs)]
+                [uuid(851C1690-1A51-4B0C-AEEF-1240AC5BED75)]
+                interface IContactListCreateOrUpdateContactRequestEventArgs : IInspectable
+                {
+                    [propget] HRESULT Request([out] [retval] Windows.ApplicationModel.Contacts.DataProvider.ContactListCreateOrUpdateContactRequest** value);
+                    HRESULT GetDeferral([out] [retval] Windows.Foundation.Deferral** result);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.ApplicationModel.Contacts.DataProvider.ContactListDeleteContactRequest)]
+                [uuid(5E114687-CE03-4DE5-8557-9CCF552D472A)]
+                interface IContactListDeleteContactRequest : IInspectable
+                {
+                    [propget] HRESULT ContactListId([out] [retval] HSTRING* value);
+                    [propget] HRESULT ContactId([out] [retval] HSTRING* value);
+                    HRESULT ReportCompletedAsync([out] [retval] Windows.Foundation.IAsyncAction** result);
+                    HRESULT ReportFailedAsync([out] [retval] Windows.Foundation.IAsyncAction** result);
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [exclusiveto(Windows.ApplicationModel.Contacts.DataProvider.ContactListDeleteContactRequestEventArgs)]
+                [uuid(B22054A1-E8FA-4DB5-9389-2D12EE7D15EE)]
+                interface IContactListDeleteContactRequestEventArgs : IInspectable
+                {
+                    [propget] HRESULT Request([out] [retval] Windows.ApplicationModel.Contacts.DataProvider.ContactListDeleteContactRequest** value);
+                    HRESULT GetDeferral([out] [retval] Windows.Foundation.Deferral** result);
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -182,6 +244,7 @@ namespace Windows
                 runtimeclass ContactDataProviderConnection
                 {
                     [default] interface Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderConnection;
+                    [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderConnection2;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -190,6 +253,38 @@ namespace Windows
                 runtimeclass ContactDataProviderTriggerDetails
                 {
                     [default] interface Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderTriggerDetails;
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [marshaling_behavior(agile)]
+                [threading(both)]
+                runtimeclass ContactListCreateOrUpdateContactRequest
+                {
+                    [default] interface Windows.ApplicationModel.Contacts.DataProvider.IContactListCreateOrUpdateContactRequest;
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [marshaling_behavior(agile)]
+                [threading(both)]
+                runtimeclass ContactListCreateOrUpdateContactRequestEventArgs
+                {
+                    [default] interface Windows.ApplicationModel.Contacts.DataProvider.IContactListCreateOrUpdateContactRequestEventArgs;
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [marshaling_behavior(agile)]
+                [threading(both)]
+                runtimeclass ContactListDeleteContactRequest
+                {
+                    [default] interface Windows.ApplicationModel.Contacts.DataProvider.IContactListDeleteContactRequest;
+                }
+
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+                [marshaling_behavior(agile)]
+                [threading(both)]
+                runtimeclass ContactListDeleteContactRequestEventArgs
+                {
+                    [default] interface Windows.ApplicationModel.Contacts.DataProvider.IContactListDeleteContactRequestEventArgs;
                 }
 
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)]

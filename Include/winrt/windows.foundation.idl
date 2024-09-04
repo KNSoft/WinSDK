@@ -10,14 +10,6 @@ import "AsyncInfo.idl";
 import "EventToken.idl";
 import "windowscontracts.idl";
 import "IVectorChangedEventArgs.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -167,6 +159,8 @@ namespace Windows
 
             interface Windows.Foundation.Collections.IIterable<Windows.Foundation.Point>;
 
+            interface Windows.Foundation.Collections.IIterable<Windows.Foundation.Size>;
+
             interface Windows.Foundation.Collections.IIterable<Windows.Foundation.TimeSpan>;
 
             interface Windows.Foundation.Collections.IIterable<Windows.Foundation.Uri*>;
@@ -210,6 +204,8 @@ namespace Windows
             interface Windows.Foundation.Collections.IIterator<Windows.Foundation.IWwwFormUrlDecoderEntry*>;
 
             interface Windows.Foundation.Collections.IIterator<Windows.Foundation.Point>;
+
+            interface Windows.Foundation.Collections.IIterator<Windows.Foundation.Size>;
 
             interface Windows.Foundation.Collections.IIterator<Windows.Foundation.TimeSpan>;
 
@@ -283,6 +279,8 @@ namespace Windows
 
             interface Windows.Foundation.Collections.IVectorView<Windows.Foundation.Point>;
 
+            interface Windows.Foundation.Collections.IVectorView<Windows.Foundation.Size>;
+
             interface Windows.Foundation.Collections.IVectorView<Windows.Foundation.Uri*>;
 
             interface Windows.Foundation.Collections.IVectorView<boolean>;
@@ -336,6 +334,8 @@ namespace Windows
             interface Windows.Foundation.IAsyncOperation<UINT64>;
 
             interface Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IMapView<HSTRING, IInspectable*>*>;
+
+            interface Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IMap<HSTRING, HSTRING>*>;
 
             interface Windows.Foundation.IAsyncOperation<Windows.Foundation.Collections.IMap<HSTRING, IInspectable*>*>;
 

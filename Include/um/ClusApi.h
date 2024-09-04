@@ -36,10 +36,13 @@ Revision History:
 #define NT10_MAJOR_VERSION          9
 #define NT11_MAJOR_VERSION          10
 
-// And cluster upgrade versions (eg technical previews)
+// NT10 cluster upgrade versions (eg technical previews)
 #define WS2016_TP4_UPGRADE_VERSION  6
 #define WS2016_TP5_UPGRADE_VERSION  7
 #define WS2016_RTM_UPGRADE_VERSION  8
+
+// NT11 upgrade versions
+#define RS3_UPGRADE_VERSION  1
 
 #define CLUSREG_NAME_MIXED_MODE                    L"MixedMode"
 
@@ -65,9 +68,13 @@ Revision History:
 #define CLUSAPI_VERSION_WINDOWS8     0x00000701
 #define CLUSAPI_VERSION_WINDOWSBLUE  0x00000702
 #define CLUSAPI_VERSION_WINTHRESHOLD 0x00000703
+#define CLUSAPI_VERSION_RS3          0x00000A00
+
 
 #if (!defined(CLUSAPI_VERSION))
-#if (!defined(NTDDI_VERSION) || (NTDDI_VERSION >= NTDDI_WINTHRESHOLD))
+#if (!defined(NTDDI_VERSION) || (NTDDI_VERSION >= NTDDI_WIN10_RS3))
+#define CLUSAPI_VERSION CLUSAPI_VERSION_RS3
+#elif (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 #define CLUSAPI_VERSION CLUSAPI_VERSION_WINTHRESHOLD
 #elif (NTDDI_VERSION >= NTDDI_WINBLUE)
 #define CLUSAPI_VERSION CLUSAPI_VERSION_WINDOWSBLUE
@@ -364,6 +371,7 @@ typedef enum {
     ClusGroupTypeStorageReplica     = 119,
     ClusGroupTypeVMReplicaCoordinator        = 120,
     ClusGroupTypeCrossClusterOrchestrator = 121,
+    ClusGroupTypeInfrastructureFileServer = 122,
     ClusGroupTypeUnknown            = 9999
 } CLUSGROUP_TYPE, *PCLUSGROUP_TYPE;
 
@@ -385,6 +393,23 @@ typedef enum
     CLUSTER_MGMT_POINT_TYPE_DNS_ONLY,
     CLUSTER_MGMT_POINT_TYPE_CNO_ONLY
 } CLUSTER_MGMT_POINT_TYPE;
+
+typedef enum
+{
+    CLUSTER_MGMT_POINT_RESTYPE_AUTO = 0,
+    CLUSTER_MGMT_POINT_RESTYPE_SNN = 1,
+    CLUSTER_MGMT_POINT_RESTYPE_DNN = 2
+} CLUSTER_MGMT_POINT_RESTYPE, *PCLUSTER_MGMT_POINT_RESTYPE;
+
+typedef enum
+{
+    CLUSTER_CLOUD_TYPE_NONE     = 0,
+    CLUSTER_CLOUD_TYPE_AZURE    = 1,
+    CLUSTER_CLOUD_TYPE_MIXED    = 2,
+
+    CLUSTER_CLOUD_TYPE_UNKNOWN  = -1
+} CLUSTER_CLOUD_TYPE, *PCLUSTER_CLOUD_TYPE;
+
 
 #if CLUSAPI_VERSION >= CLUSAPI_VERSION_WINTHRESHOLD
 
@@ -481,25 +506,29 @@ typedef struct _CLUSTER_IP_ENTRY
 
 typedef struct _CREATE_CLUSTER_CONFIG
 {
-    DWORD             dwVersion;
-    PCWSTR            lpszClusterName;
-    DWORD             cNodes;
-    PCWSTR *          ppszNodeNames;
-    DWORD             cIpEntries;
-    PCLUSTER_IP_ENTRY pIpEntries;
-    BOOLEAN           fEmptyCluster;
-    CLUSTER_MGMT_POINT_TYPE managementPointType;
+    DWORD                       dwVersion;
+    PCWSTR                      lpszClusterName;
+    DWORD                       cNodes;
+    PCWSTR *                    ppszNodeNames;
+    DWORD                       cIpEntries;
+    PCLUSTER_IP_ENTRY           pIpEntries;
+    BOOLEAN                     fEmptyCluster;
+    CLUSTER_MGMT_POINT_TYPE     managementPointType;    // CLUSAPI Version >= CLUSAPI_VERSION_WINDOWSBLUE
+    CLUSTER_MGMT_POINT_RESTYPE  managementPointResType;        // CLUSAPI Version >= CLUSAPI_VERSION_RS3
 } CREATE_CLUSTER_CONFIG, *PCREATE_CLUSTER_CONFIG;
 
+// CLUSAPI Version >= CLUSAPI_VERSION_WINTHRESHOLD
 typedef struct _CREATE_CLUSTER_NAME_ACCOUNT
 {
-    DWORD                   dwVersion;
-    PCWSTR                  lpszClusterName;
-    DWORD                   dwFlags;
-    PCWSTR                  pszUserName;
-    PCWSTR                  pszPassword;
-    PCWSTR                  pszDomain;
-    CLUSTER_MGMT_POINT_TYPE managementPointType;
+    DWORD                       dwVersion;
+    PCWSTR                      lpszClusterName;
+    DWORD                       dwFlags;
+    PCWSTR                      pszUserName;
+    PCWSTR                      pszPassword;
+    PCWSTR                      pszDomain;
+    CLUSTER_MGMT_POINT_TYPE     managementPointType;
+    CLUSTER_MGMT_POINT_RESTYPE  managementPointResType;        // CLUSAPI Version >= CLUSAPI_VERSION_RS3
+    BOOLEAN                     bUpgradeVCOs;           // CLUSAPI Version >= CLUSAPI_VERSION_RS3, managementPointType==CLUSTER_MGMT_POINT_TYPE_CNO
 } CREATE_CLUSTER_NAME_ACCOUNT, *PCREATE_CLUSTER_NAME_ACCOUNT;
 
 #endif // _CLUSTER_API_TYPES_
@@ -1639,44 +1668,14 @@ typedef HCLUSTER
 
 DWORD
 WINAPI
-AddCrossClusterGroupToGroupDependency(
-    _In_ HGROUP hDependentGroup,
-    _In_ LPCWSTR lpRemoteClusterName,
-    _In_ LPCWSTR lpRemoteGroupName
-);
-
-typedef DWORD
-(WINAPI * PCLUSAPI_ADD_CROSS_CLUSTER_GROUP_TO_GROUP_DEPENDENCY)(
-    _In_ HGROUP hDependentGroup,
-    _In_ LPCWSTR lpRemoteClusterName,
-    _In_ LPCWSTR lpRemoteGroupName
-);
-
-DWORD
-WINAPI
-AddCrossClusterGroupToGroupSetDependency(
-    _In_ HGROUP hDependentGroup,
-    _In_ LPCWSTR lpRemoteClusterName,
-    _In_ LPCWSTR lpRemoteGroupSetName
-);
-
-typedef DWORD
-(WINAPI * PCLUSAPI_ADD_CROSS_CLUSTER_GROUP_TO_GROUP_GROUPSET_DEPENDENCY)(
-    _In_ HGROUP hDependentGroup,
-    _In_ LPCWSTR lpRemoteClusterName,
-    _In_ LPCWSTR lpRemoteGroupSetName
-);
-
-DWORD
-WINAPI
-AddCrossClusterGroupSetToGroupSetDependency(
+AddCrossClusterGroupSetDependency(
     _In_ HGROUPSET hDependentGroupSet,
     _In_ LPCWSTR lpRemoteClusterName,
     _In_ LPCWSTR lpRemoteGroupSetName
 );
 
 typedef DWORD
-(WINAPI * PCLUSAPI_ADD_CROSS_CLUSTER_GROUP_GROUPSET_TO_GROUP_GROUPSET_DEPENDENCY)(
+(WINAPI * PCLUSAPI_ADD_CROSS_CLUSTER_GROUPSET_DEPENDENCY)(
     _In_ HGROUPSET hDependentGroupSet,
     _In_ LPCWSTR lpRemoteClusterName,
     _In_ LPCWSTR lpRemoteGroupSetName
@@ -1684,44 +1683,14 @@ typedef DWORD
 
 DWORD
 WINAPI
-RemoveCrossClusterGroupToGroupDependency(
-    _In_ HGROUP hDependentGroup,
-    _In_ LPCWSTR lpRemoteClusterName,
-    _In_ LPCWSTR lpRemoteGroupName
-);
-
-typedef DWORD
-(WINAPI * PCLUSAPI_REMOVE_CROSS_CLUSTER_GROUP_TO_GROUP_DEPENDENCY)(
-    _In_ HGROUP hDependentGroup,
-    _In_ LPCWSTR lpRemoteClusterName,
-    _In_ LPCWSTR lpRemoteGroupName
-);
-
-DWORD
-WINAPI
-RemoveCrossClusterGroupToGroupSetDependency(
-    _In_ HGROUP hDependentGroup,
-    _In_ LPCWSTR lpRemoteClusterName,
-    _In_ LPCWSTR lpRemoteGroupSetName
-);
-
-typedef DWORD
-(WINAPI * PCLUSAPI_REMOVE_CROSS_CLUSTER_GROUP_TO_GROUP_GROUPSET_DEPENDENCY)(
-    _In_ HGROUP hDependentGroup,
-    _In_ LPCWSTR lpRemoteClusterName,
-    _In_ LPCWSTR lpRemoteGroupSetName
-);
-
-DWORD
-WINAPI
-RemoveCrossClusterGroupSetToGroupSetDependency(
+RemoveCrossClusterGroupSetDependency(
     _In_ HGROUPSET hDependentGroupSet,
     _In_ LPCWSTR lpRemoteClusterName,
     _In_ LPCWSTR lpRemoteGroupSetName
 );
 
 typedef DWORD
-(WINAPI * PCLUSAPI_REMOVE_CROSS_CLUSTER_GROUP_GROUPSET_TO_GROUP_GROUPSET_DEPENDENCY)(
+(WINAPI * PCLUSAPI_REMOVE_CROSS_CLUSTER_GROUPSET_DEPENDENCY)(
     _In_ HGROUPSET hDependentGroupSet,
     _In_ LPCWSTR lpRemoteClusterName,
     _In_ LPCWSTR lpRemoteGroupSetName
@@ -1751,6 +1720,14 @@ typedef HGROUPSET
     _In_ LPCWSTR lpAvailabilitySetName,
     _In_ PCLUSTER_AVAILABILITY_SET_CONFIG pAvailabilitySetConfig
 );
+
+_Success_(return == ERROR_SUCCESS)
+DWORD
+WINAPI
+ClusterNodeReplacement(
+    __in HCLUSTER   hCluster,
+    __in LPCWSTR    lpszNodeNameCurrent,
+    __in LPCWSTR    lpszNodeNameNew);
 
 
 #endif //(CLUSAPI_VERSION >= CLUSAPI_VERSION_WINTHRESHOLD)
@@ -1795,6 +1772,21 @@ typedef enum CLUSTER_NODE_STATE {
     ClusterNodeJoining
 } CLUSTER_NODE_STATE;
 
+#if (CLUSAPI_VERSION > CLUSAPI_VERSION_WINTHRESHOLD)
+
+//
+// StorageNode-related structures and types.
+//
+typedef enum CLUSTER_STORAGENODE_STATE {
+    ClusterStorageNodeStateUnknown = 0,
+    ClusterStorageNodeUp,
+    ClusterStorageNodeDown,
+    ClusterStorageNodePaused,
+    ClusterStorageNodeStarting,
+    ClusterStorageNodeStopping,
+} CLUSTER_STORAGENODE_STATE;
+
+#endif
 
 #if (CLUSAPI_VERSION >= CLUSAPI_VERSION_WINDOWS8)
 
@@ -1859,6 +1851,21 @@ typedef HNODE
     _In_opt_  LPCWSTR lpszNodeName,
     _In_      DWORD   dwDesiredAccess,
     _Out_opt_ LPDWORD lpdwGrantedAccess
+    );
+#endif
+
+#if (CLUSAPI_VERSION >= CLUSAPI_VERSION_WINTHRESHOLD)
+HNODE
+WINAPI
+OpenClusterNodeById(
+    __in HCLUSTER hCluster,
+    __in DWORD nodeId
+    );
+
+typedef HNODE
+(WINAPI * PCLUSAPI_OPEN_NODE_BY_ID)(
+    __in HCLUSTER hCluster,
+    __in DWORD nodeId
     );
 #endif
 
@@ -2313,6 +2320,7 @@ typedef DWORD
 #define CLUSGRP_STATUS_UNMONITORED                                             0x0000000000000100
 #define CLUSGRP_STATUS_OS_HEARTBEAT                                            0x0000000000000200
 #define CLUSGRP_STATUS_APPLICATION_READY                                       0x0000000000000400
+#define CLUSGRP_STATUS_OFFLINE_NOT_LOCAL_DISK_OWNER                            0x0000000000000800
 
 HGROUP
 WINAPI
@@ -2399,6 +2407,7 @@ typedef DWORD
 #define CLUSRES_STATUS_UNMONITORED                                             0x0000000000000040
 #define CLUSRES_STATUS_OS_HEARTBEAT                                            0x0000000000000080
 #define CLUSRES_STATUS_APPLICATION_READY                                       0x0000000000000100
+#define CLUSRES_STATUS_OFFLINE_NOT_LOCAL_DISK_OWNER                            0x0000000000000200
 
 HRESENUMEX
 WINAPI
@@ -3050,6 +3059,7 @@ typedef DWORD
     _In_ HRESOURCE hResource
     );
 
+
 #if (CLUSAPI_VERSION >= CLUSAPI_VERSION_SERVER2008R2)
 DWORD
 WINAPI
@@ -3441,6 +3451,7 @@ typedef enum CLUSTER_CONTROL_OBJECT {
 
 #endif // _CLUSTER_API_TYPES_
 
+
 //
 // Macro to generate full cluster control codes
 //
@@ -3655,6 +3666,8 @@ typedef enum CLCTL_CODES {
     CTCTL_GET_ROUTESTATUS_BASIC             = CLCTL_EXTERNAL_CODE( 195, CLUS_ACCESS_READ, CLUS_NO_MODIFY ),
     CTCTL_GET_ROUTESTATUS_EXTENDED          = CLCTL_EXTERNAL_CODE( 196, CLUS_ACCESS_READ, CLUS_NO_MODIFY ),
 
+    CTCTL_GET_FAULT_DOMAIN_STATE            = CLCTL_EXTERNAL_CODE( 197, CLUS_ACCESS_READ, CLUS_NO_MODIFY ),
+
     // Control codes 2000 to 2999 are reserved.
 
     CLCTL_STORAGE_GET_AVAILABLE_DISKS_EX2_INT   = CLCTL_EXTERNAL_CODE( 2040, CLUS_ACCESS_READ, CLUS_NO_MODIFY ),
@@ -3706,6 +3719,14 @@ typedef enum CLCTL_CODES {
     CLCTL_GROUPSET_GET_PROVIDER_GROUPSETS           = CLCTL_EXTERNAL_CODE(2910, CLUS_ACCESS_READ, CLUS_NO_MODIFY),
     CLCTL_GROUP_GET_PROVIDER_GROUPS                     = CLCTL_EXTERNAL_CODE(2911, CLUS_ACCESS_READ, CLUS_NO_MODIFY),
     CLCTL_GROUP_GET_PROVIDER_GROUPSETS                = CLCTL_EXTERNAL_CODE(2912, CLUS_ACCESS_READ, CLUS_NO_MODIFY),
+    CLCTL_GROUP_SET_CCF_FROM_MASTER                 = CLCTL_EXTERNAL_CODE( 2913, CLUS_ACCESS_WRITE, CLUS_MODIFY ),
+    CLCTL_GET_INFRASTRUCTURE_SOFS_BUFFER            = CLCTL_EXTERNAL_CODE( 2914, CLUS_ACCESS_READ, CLUS_NO_MODIFY ),
+    CLCTL_SET_INFRASTRUCTURE_SOFS_BUFFER            = CLCTL_EXTERNAL_CODE( 2915, CLUS_ACCESS_WRITE, CLUS_MODIFY ),
+    CLCTL_NOTIFY_INFRASTRUCTURE_SOFS_CHANGED        = CLCTL_EXTERNAL_CODE( 2916, CLUS_ACCESS_WRITE, CLUS_MODIFY ),
+    CLCTL_SCALEOUT_COMMAND                          = CLCTL_EXTERNAL_CODE( 2917, CLUS_ACCESS_WRITE, CLUS_MODIFY ),
+    CLCTL_SCALEOUT_CONTROL                          = CLCTL_EXTERNAL_CODE( 2918, CLUS_ACCESS_WRITE, CLUS_MODIFY ),
+    CLCTL_SCALEOUT_GET_CLUSTERS                     = CLCTL_EXTERNAL_CODE( 2919, CLUS_ACCESS_READ, CLUS_MODIFY ),
+
 
     //
     // Internal control codes
@@ -4118,7 +4139,21 @@ typedef enum CLUSCTL_RESOURCE_CODES {
         CLUSCTL_RESOURCE_CODE( CLCTL_RESOURCE_UPGRADE_COMPLETED ),
 
     CLUSCTL_RESOURCE_GET_STATE_CHANGE_TIME =
-        CLUSCTL_RESOURCE_CODE( CLCTL_GET_STATE_CHANGE_TIME )
+        CLUSCTL_RESOURCE_CODE( CLCTL_GET_STATE_CHANGE_TIME ),
+
+    CLUSCTL_RESOURCE_GET_INFRASTRUCTURE_SOFS_BUFFER =
+        CLUSCTL_RESOURCE_CODE( CLCTL_GET_INFRASTRUCTURE_SOFS_BUFFER ),
+
+    CLUSCTL_RESOURCE_SET_INFRASTRUCTURE_SOFS_BUFFER =
+        CLUSCTL_RESOURCE_CODE( CLCTL_SET_INFRASTRUCTURE_SOFS_BUFFER ),
+
+    CLUSCTL_RESOURCE_SCALEOUT_COMMAND =
+        CLUSCTL_RESOURCE_CODE( CLCTL_SCALEOUT_COMMAND ),
+    CLUSCTL_RESOURCE_SCALEOUT_CONTROL =
+        CLUSCTL_RESOURCE_CODE( CLCTL_SCALEOUT_CONTROL ),
+    CLUSCTL_RESOURCE_SCALEOUT_GET_CLUSTERS =
+        CLUSCTL_RESOURCE_CODE( CLCTL_SCALEOUT_GET_CLUSTERS ),
+
 } CLUSCTL_RESOURCE_CODES;
 
 //
@@ -4386,6 +4421,8 @@ typedef enum CLUSCTL_GROUP_CODES {
         CLUSCTL_GROUP_CODE( CLCTL_GROUP_GET_LAST_MOVE_TIME ),
 
 
+    CLUSCTL_GROUP_SET_CCF_FROM_MASTER =
+        CLUSCTL_GROUP_CODE( CLCTL_GROUP_SET_CCF_FROM_MASTER ),
 
     // Internal
 
@@ -4728,6 +4765,7 @@ typedef enum CLUSCTL_GROUPSET_CODES {
 
     CLUSCTL_GROUPSET_GET_ID =
         CLUSCTL_GROUPSET_CODE( CLCTL_GET_ID ),
+
 
 } CLUSCTL_GROUPSET_CODES;
 
@@ -5328,6 +5366,16 @@ typedef struct _CLUS_PROVIDER_STATE_CHANGE_INFO {
     CLUSTER_RESOURCE_STATE  resourceState;
     WCHAR                   szProviderId[1];
 } CLUS_PROVIDER_STATE_CHANGE_INFO, *PCLUS_PROVIDER_STATE_CHANGE_INFO;
+
+// Cluster set create fileserver control input.
+typedef struct _CLUS_CREATE_INFRASTRUCTURE_FILESERVER_INPUT {
+    WCHAR FileServerName[16];
+} CLUS_CREATE_INFRASTRUCTURE_FILESERVER_INPUT, *PCLUS_CREATE_INFRASTRUCTURE_FILESERVER_INPUT;
+
+// Cluster set create fileserver control output.
+typedef struct _CLUS_CREATE_INFRASTRUCTURE_FILESERVER_OUTPUT {
+    WCHAR FileServerName[MAX_PATH];
+} CLUS_CREATE_INFRASTRUCTURE_FILESERVER_OUTPUT, *PCLUS_CREATE_INFRASTRUCTURE_FILESERVER_OUTPUT;
 
 // Beginning of a property list.
 typedef struct CLUSPROP_LIST {
@@ -6563,6 +6611,49 @@ typedef DWORD
 
 DWORD
 WINAPI
+RemoveClusterNameAccount(
+    _In_ HCLUSTER    hCluster,
+    _In_ BOOL        bDeleteComputerObjects
+);
+
+DWORD
+WINAPI
+DetermineCNOResTypeFromNodelist(
+    _In_ DWORD                          cNodes,
+    _In_ PCWSTR *                       ppszNodeNames,
+    _Out_ CLUSTER_MGMT_POINT_RESTYPE*   pCNOResType
+);
+
+
+DWORD
+WINAPI
+DetermineCNOResTypeFromCluster(
+    _In_ HCLUSTER                       hCluster,
+    _Out_ CLUSTER_MGMT_POINT_RESTYPE*   pCNOResType
+);
+
+DWORD
+WINAPI
+DetermineClusterCloudTypeFromNodelist(
+    _In_ DWORD                  cNodes,
+    _In_ PCWSTR *               ppszNodeNames,
+    _Out_ PCLUSTER_CLOUD_TYPE   pCloudType
+);
+
+
+DWORD
+WINAPI
+DetermineClusterCloudTypeFromCluster(
+    _In_ HCLUSTER               hCluster,
+    _Out_ PCLUSTER_CLOUD_TYPE   pCloudType
+);
+
+typedef DWORD (WINAPI *PCLUSAPI_REMOVE_CLUSTER_NAME_ACCOUNT)(
+    _In_ HCLUSTER    hCluster
+);
+
+DWORD
+WINAPI
 RegisterClusterResourceTypeNotifyV2 (
     __in  HCHANGE hChange,
     __in  HCLUSTER hCluster,
@@ -6578,6 +6669,26 @@ AddClusterNode(
     _In_ PCWSTR      lpszNodeName,
     _In_opt_ PCLUSTER_SETUP_PROGRESS_CALLBACK   pfnProgressCallback,
     _In_opt_ PVOID   pvCallbackArg
+    );
+
+DWORD
+WINAPI
+AddClusterStorageNode(
+    _In_ HCLUSTER    hCluster,
+    _In_ PCWSTR      lpszNodeName,
+    _In_opt_ PCLUSTER_SETUP_PROGRESS_CALLBACK   pfnProgressCallback,
+    _In_opt_ PVOID   pvCallbackArg,
+    _In_opt_ LPCWSTR lpszClusterStorageNodeDescription,
+    _In_opt_ LPCWSTR lpszClusterStorageNodeLocation
+    );
+
+DWORD
+WINAPI
+RemoveClusterStorageNode(
+    __in HCLUSTER hCluster,
+    __in LPCWSTR lpszClusterStorageEnclosureName,
+    __in DWORD dwTimeout,
+    __in DWORD dwFlags
     );
 
 typedef HNODE
@@ -6653,12 +6764,25 @@ typedef DWORD
 #define CLUS_RESTYPE_NAME_STORQOS               L"Storage QoS Policy Manager"
 #define CLUS_RESTYPE_NAME_HEALTH_SERVICE        L"Health Service"
 #define CLUS_RESTYPE_NAME_VM_WMI                L"Virtual Machine Cluster WMI"
+#define CLUS_RESTYPE_NAME_SDDC_MANAGEMENT       L"SDDC Management"
 
 #define CLUS_RESTYPE_NAME_VIRTUAL_IPV4          L"Disjoint IPv4 Address"
 #define CLUS_RESTYPE_NAME_VIRTUAL_IPV6          L"Disjoint IPv6 Address"
 #define CLUS_RESTYPE_NAME_CLOUD_WITNESS         L"Cloud Witness"
 #define CLUS_RESTYPE_NAME_STORAGE_REPLICA       L"Storage Replica"
 #define CLUS_RESTYPE_NAME_CROSS_CLUSTER         L"Cross Cluster Dependency Orchestrator"
+
+#if CLUSTER_SET == 1
+#define CLUS_RESTYPE_NAME_SCALEOUT_MASTER       L"Scaleout Master"
+#define CLUS_RESTYPE_NAME_SCALEOUT_WORKER       L"Scaleout Worker"
+#endif
+
+#define CLUS_RESTYPE_NAME_CONTAINER             L"Container"
+
+#if CLUSTER_SET == 1
+#define CLUS_RES_NAME_SCALEOUT_MASTER           L"Scaleout Master"
+#define CLUS_RES_NAME_SCALEOUT_WORKER           L"Scaleout Worker"
+#endif
 
 //
 // Cluster common property names
@@ -6777,11 +6901,13 @@ typedef DWORD
 #define CLUSREG_NAME_GRP_ANTI_AFFINITY_CLASS_NAME          L"AntiAffinityClassNames"
 #define CLUSREG_NAME_GRP_START_DELAY                       L"GroupStartDelay"
 #define CLUSREG_NAME_GRP_CCF_EPOCH                         L"CCFEpoch"
+#define CLUSREG_NAME_GRP_CCF_EPOCH_HIGH                    L"CCFEpochHigh"
 #define CLUSREG_NAME_GRP_RESILIENCY_PERIOD                 L"ResiliencyPeriod"
 #define CLUSREG_NAME_GRP_PREFERRED_SITE                    L"PreferredSite"
 #define CLUSREG_NAME_GRP_COLD_START_SETTING                L"ColdStartSetting"
 #define CLUSREG_NAME_GRP_FAULT_DOMAIN                      L"FaultDomain"
 #define CLUSREG_NAME_GRP_UPDATE_DOMAIN                     L"UpdateDomain"
+#define CLUSREG_NAME_GRP_PLACEMENT_OPTIONS                 L"PlacementOptions"
 
 
 //
@@ -6916,6 +7042,7 @@ typedef DWORD
 #define CLUSREG_NAME_PHYSDISK_CSVSNAPSHOTAGELIMIT L"SnapshotAgeLimit"
 #define CLUSREG_NAME_PHYSDISK_DISKGUID         L"DiskGuid"
 #define CLUSREG_NAME_PHYSDISK_VOLSNAPACTIVATETIMEOUT L"VolsnapActivateTimeout"
+#define CLUSREG_NAME_PHYSDISK_DISKRECOVERYACTION L"DiskRecoveryAction"
 
 
 #define CLUSREG_NAME_STORAGESPACE_NAME                  L"VirtualDiskName"
@@ -7132,13 +7259,29 @@ typedef enum PLACEMENT_OPTIONS {
     PLACEMENT_OPTIONS_DONT_USE_MEMORY               = 0x00000004,
     PLACEMENT_OPTIONS_DONT_USE_CPU                  = 0x00000008,
     PLACEMENT_OPTIONS_DONT_USE_LOCAL_TEMP_DISK      = 0x00000010,
+    PLACEMENT_OPTIONS_DONT_RESUME_VMS_WITH_EXISTING_TEMP_DISK                       = 0x00000020,
+    PLACEMENT_OPTIONS_SAVE_VMS_WITH_LOCAL_DISK_ON_DRAIN_OVERWRITE                   = 0x00000040,
+    PLACEMENT_OPTIONS_DONT_RESUME_AVAILABILTY_SET_VMS_WITH_EXISTING_TEMP_DISK       = 0x00000080,
+    PLACEMENT_OPTIONS_SAVE_AVAILABILTY_SET_VMS_WITH_LOCAL_DISK_ON_DRAIN_OVERWRITE   = 0x00000100,
+    PLACEMENT_OPTIONS_AVAILABILITY_SET_DOMAIN_AFFINITY                              = 0x00000200,
     PLACEMENT_OPTIONS_ALL                           = (PLACEMENT_OPTIONS_DISABLE_CSV_VM_DEPENDENCY      |
                                                       PLACEMENT_OPTIONS_CONSIDER_OFFLINE_VMS            |
                                                       PLACEMENT_OPTIONS_DONT_USE_MEMORY                 |
                                                       PLACEMENT_OPTIONS_DONT_USE_CPU                    |
-                                                      PLACEMENT_OPTIONS_DONT_USE_LOCAL_TEMP_DISK)
+                                                      PLACEMENT_OPTIONS_DONT_USE_LOCAL_TEMP_DISK        |
+                                                      PLACEMENT_OPTIONS_DONT_RESUME_VMS_WITH_EXISTING_TEMP_DISK                 |
+                                                      PLACEMENT_OPTIONS_SAVE_VMS_WITH_LOCAL_DISK_ON_DRAIN_OVERWRITE             |
+                                                      PLACEMENT_OPTIONS_DONT_RESUME_AVAILABILTY_SET_VMS_WITH_EXISTING_TEMP_DISK |
+                                                      PLACEMENT_OPTIONS_SAVE_AVAILABILTY_SET_VMS_WITH_LOCAL_DISK_ON_DRAIN_OVERWRITE |
+                                                      PLACEMENT_OPTIONS_AVAILABILITY_SET_DOMAIN_AFFINITY)
 } PLACEMENT_OPTIONS;
 
+typedef enum GRP_PLACEMENT_OPTIONS {
+    GRP_PLACEMENT_OPTIONS_MIN_VALUE                     = 0x00000000,
+    GRP_PLACEMENT_OPTIONS_DEFAULT                       = GRP_PLACEMENT_OPTIONS_MIN_VALUE,
+    GRP_PLACEMENT_OPTIONS_DISABLE_AUTOBALANCING         = 0x00000001,
+    GRP_PLACEMENT_OPTIONS_ALL                           = (GRP_PLACEMENT_OPTIONS_DISABLE_AUTOBALANCING)
+} GRP_PLACEMENT_OPTIONS;
 
 #define SR_REPLICATED_PARTITION_DISALLOW_MULTINODE_IO   0x00000001
 

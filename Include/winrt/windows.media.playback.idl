@@ -21,47 +21,6 @@ import "Windows.Media.Protection.idl";
 import "Windows.Storage.idl";
 import "Windows.Storage.Streams.idl";
 import "Windows.UI.Composition.idl";
-// Additional imports to ensure that all required headers are included
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("}")
-cpp_quote("#endif // defined(__cplusplus)")
-cpp_quote("#include <Windows.Foundation.h>")
-cpp_quote("#if !defined(__windows2Edevices2Eenumeration_h__)")
-cpp_quote("#include <Windows.Devices.Enumeration.h>")
-cpp_quote("#endif // !defined(__windows2Edevices2Eenumeration_h__)")
-cpp_quote("#if !defined(__windows2Efoundation2Enumerics_h__)")
-cpp_quote("#include <Windows.Foundation.Numerics.h>")
-cpp_quote("#endif // !defined(__windows2Efoundation2Enumerics_h__)")
-cpp_quote("#if !defined(__windows2Egraphics2Edirectx2Edirect3d11_h__)")
-cpp_quote("#include <Windows.Graphics.DirectX.Direct3D11.h>")
-cpp_quote("#endif // !defined(__windows2Egraphics2Edirectx2Edirect3d11_h__)")
-cpp_quote("#if !defined(__windows2Emedia_h__)")
-cpp_quote("#include <Windows.Media.h>")
-cpp_quote("#endif // !defined(__windows2Emedia_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Ecasting_h__)")
-cpp_quote("#include <Windows.Media.Casting.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Ecasting_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Ecore_h__)")
-cpp_quote("#include <Windows.Media.Core.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Ecore_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Emediaproperties_h__)")
-cpp_quote("#include <Windows.Media.MediaProperties.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Emediaproperties_h__)")
-cpp_quote("#if !defined(__windows2Emedia2Eprotection_h__)")
-cpp_quote("#include <Windows.Media.Protection.h>")
-cpp_quote("#endif // !defined(__windows2Emedia2Eprotection_h__)")
-cpp_quote("#if !defined(__windows2Estorage_h__)")
-cpp_quote("#include <Windows.Storage.h>")
-cpp_quote("#endif // !defined(__windows2Estorage_h__)")
-cpp_quote("#if !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#include <Windows.Storage.Streams.h>")
-cpp_quote("#endif // !defined(__windows2Estorage2Estreams_h__)")
-cpp_quote("#if !defined(__windows2Eui2Ecomposition_h__)")
-cpp_quote("#include <Windows.UI.Composition.h>")
-cpp_quote("#endif // !defined(__windows2Eui2Ecomposition_h__)")
-cpp_quote("#if defined(__cplusplus)")
-cpp_quote("extern \"C\" {")
-cpp_quote("#endif // defined(__cplusplus)")
 
 // Forward Declare
 namespace Windows
@@ -359,6 +318,8 @@ namespace Windows
 
             interface IMediaPlaybackSession2;
 
+            interface IMediaPlaybackSessionBufferingStartedEventArgs;
+
             interface IMediaPlaybackSource;
 
             interface IMediaPlaybackSphericalVideoProjection;
@@ -374,6 +335,8 @@ namespace Windows
             interface IMediaPlayer4;
 
             interface IMediaPlayer5;
+
+            interface IMediaPlayer6;
 
             interface IMediaPlayerDataReceivedEventArgs;
 
@@ -458,6 +421,8 @@ namespace Windows
             runtimeclass MediaPlaybackList;
 
             runtimeclass MediaPlaybackSession;
+
+            runtimeclass MediaPlaybackSessionBufferingStartedEventArgs;
 
             runtimeclass MediaPlaybackSphericalVideoProjection;
 
@@ -1242,6 +1207,14 @@ namespace Windows
                 HRESULT IsSupportedPlaybackRateRange([in] DOUBLE rate1, [in] DOUBLE rate2, [out] [retval] boolean* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Media.Playback.MediaPlaybackSessionBufferingStartedEventArgs)]
+            [uuid(CD6AAFED-74E2-43B5-B115-76236C33791A)]
+            interface IMediaPlaybackSessionBufferingStartedEventArgs : IInspectable
+            {
+                [propget] HRESULT IsPlaybackInterruption([out] [retval] boolean* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [uuid(EF9DC2BC-9317-4696-B051-2BAD643177B5)]
             interface IMediaPlaybackSource : IInspectable
@@ -1387,6 +1360,17 @@ namespace Windows
                 [overload("CopyFrameToVideoSurface")] HRESULT CopyFrameToVideoSurface([in] Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface* destination);
                 [overload("CopyFrameToVideoSurface")] HRESULT CopyFrameToVideoSurfaceWithTargetRectangle([in] Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface* destination, [in] Windows.Foundation.Rect targetRectangle);
                 HRESULT CopyFrameToStereoscopicVideoSurfaces([in] Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface* destinationLeftEye, [in] Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface* destinationRightEye);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [exclusiveto(Windows.Media.Playback.MediaPlayer)]
+            [uuid(E0CAA086-AE65-414C-B010-8BC55F00E692)]
+            interface IMediaPlayer6 : IInspectable
+            {
+                [eventadd] HRESULT SubtitleFrameChanged([in] Windows.Foundation.TypedEventHandler<Windows.Media.Playback.MediaPlayer*, IInspectable*>* handler, [out] [retval] EventRegistrationToken* token);
+                [eventremove] HRESULT SubtitleFrameChanged([in] EventRegistrationToken token);
+                [overload("RenderSubtitlesToSurface")] HRESULT RenderSubtitlesToSurface([in] Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface* destination, [out] [retval] boolean* result);
+                [overload("RenderSubtitlesToSurface")] HRESULT RenderSubtitlesToSurfaceWithTargetRectangle([in] Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface* destination, [in] Windows.Foundation.Rect targetRectangle, [out] [retval] boolean* result);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -1748,6 +1732,14 @@ namespace Windows
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.Media.Playback.IMediaPlaybackSession2;
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 5.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass MediaPlaybackSessionBufferingStartedEventArgs
+            {
+                [default] interface Windows.Media.Playback.IMediaPlaybackSessionBufferingStartedEventArgs;
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
             [marshaling_behavior(agile)]
             [threading(both)]
@@ -1792,6 +1784,7 @@ namespace Windows
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.Media.Playback.IMediaPlayer4;
                 [contract(Windows.Foundation.UniversalApiContract, 3.0)] interface Windows.Media.Playback.IMediaPlayerEffects2;
                 [contract(Windows.Foundation.UniversalApiContract, 4.0)] interface Windows.Media.Playback.IMediaPlayer5;
+                [contract(Windows.Foundation.UniversalApiContract, 5.0)] interface Windows.Media.Playback.IMediaPlayer6;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

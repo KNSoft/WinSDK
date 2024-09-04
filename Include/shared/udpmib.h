@@ -154,6 +154,15 @@ typedef struct _MIB_UDPSTATS {
     DWORD dwNumAddrs;
 } MIB_UDPSTATS,*PMIB_UDPSTATS;
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+typedef struct _MIB_UDPSTATS2 {
+    DWORD64 dw64InDatagrams;
+    DWORD dwNoPorts;
+    DWORD dwInErrors;
+    DWORD64 dw64OutDatagrams;
+    DWORD dwNumAddrs;
+} MIB_UDPSTATS2, *PMIB_UDPSTATS2;
+#endif
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion

@@ -56,6 +56,8 @@ extern "C" {
 #define SIPAEV_EFI_ACTION (0x80000007)
 #define SIPAEV_EFI_PLATFORM_FIRMWARE_BLOB (0x80000008)
 #define SIPAEV_EFI_HANDOFF_TABLES (0x80000009)
+#define SIPAEV_EFI_HCRTM_EVENT (0x80000010)
+#define SIPAEV_EFI_VARIABLE_AUTHORITY (0x800000E0)
 #endif
 
 //-----------------------------Types of tagged events in WBCL file
@@ -75,6 +77,7 @@ extern "C" {
 #define SIPAEVENTTYPE_TRUSTPOINT                        (0x00080000)
 #define SIPAEVENTTYPE_ELAM                              (0x00090000)
 #define SIPAEVENTTYPE_VBS                               (0x000A0000)
+#define SIPAEVENTTYPE_KSR                               (0x000B0000)
 
 //SIPAEVENTTYPE_CONTAINER
 #define SIPAEVENT_TRUSTBOUNDARY            (SIPAEVENTTYPE_AGGREGATION + \
@@ -91,6 +94,18 @@ extern "C" {
                                             SIPAEVENTTYPE_CONTAINER + \
                                             0x0004)
 
+#if NTDDI_VERSION >= NTDDI_WIN10_RS3
+
+#define SIPAEVENT_KSR_AGGREGATION                     (SIPAEVENTTYPE_AGGREGATION + \
+                                                       SIPAEVENTTYPE_CONTAINER   + \
+                                                       0x0005)
+                                            
+#define SIPAEVENT_KSR_SIGNED_MEASUREMENT_AGGREGATION  (SIPAEVENTTYPE_AGGREGATION + \
+                                                       SIPAEVENTTYPE_CONTAINER + \
+                                                       0x0006)
+
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS3
+
 //SIPAEVENTTYPE_ERROR
 #define SIPAERROR_FIRMWAREFAILURE          (SIPAEVENTTYPE_ERROR + \
                                             0x0001)
@@ -99,6 +114,13 @@ extern "C" {
                                             0x0002)
 #define SIPAERROR_INTERNALFAILURE          (SIPAEVENTTYPE_ERROR + \
                                             0x0003)
+#if NTDDI_VERSION >= NTDDI_WIN10_RS3
+
+#define SIPAERROR_KSRFAILURE               (SIPAEVENTTYPE_NONMEASURED + \
+                                            SIPAEVENTTYPE_ERROR + \
+                                            0x0004)
+
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS3
 
 //SIPAEVENTTYPE_INFORMATION
 #define SIPAEVENT_INFORMATION              (SIPAEVENTTYPE_INFORMATION + \
@@ -207,7 +229,7 @@ extern "C" {
 // Describes the VSM/SMART identity decryption public key.
 //
 #define SIPAEVENT_VSM_IDK_INFO             (SIPAEVENTTYPE_OSPARAMETER + \
-                                           0x0020)
+                                            0x0020)
 
 #endif
 
@@ -263,7 +285,7 @@ extern "C" {
 // of these 2 places.
 //
 #define SIPAEVENT_LSAISO_CONFIG             (SIPAEVENTTYPE_OSPARAMETER + \
-								            0x0028)
+                                             0x0028)
 
 // #endif
 
@@ -349,6 +371,15 @@ extern "C" {
                                            (SIPAEVENTTYPE_VBS + \
                                            0x008)
 
+#if NTDDI_VERSION >= NTDDI_WIN10_RS3
+
+// SIPAEVENTTYPE_KSR
+#define SIPAEVENT_KSR_SIGNATURE            (SIPAEVENTTYPE_KSR + \
+                                            0x001)
+
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS3
+
+
 //
 #endif
 
@@ -377,6 +408,13 @@ extern "C" {
 //--------------------------------------------------WBCL header
 #define SIPAHDRSIGNATURE (0x4c434257) //WBCL
 #define SIPALOGVERSION (0x00000001)
+
+#if NTDDI_VERSION >= NTDDI_WIN10_RS3
+
+//--------------------------------------------------KSR Header
+#define SIPAKSRHDRSIGNATURE (0x4d52534b) //KSRM
+
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS3
 
 #endif //NTDDI_VERSION >= NTDDI_WIN8 
 
@@ -619,6 +657,35 @@ typedef struct tag_SIPAEVENT_REVOCATION_LIST_PAYLOAD
 } SIPAEVENT_REVOCATION_LIST_PAYLOAD, *PSIPAEVENT_REVOCATION_LIST_PAYLOAD;
 
 #endif // NTDDI_VERSION >= NTDDI_THRESHOLD
+
+#if NTDDI_VERSION >= NTDDI_WIN10_RS3
+
+//
+// Payload structure used to carry the KSR Measurement signature
+//
+
+typedef struct tag_SIPAEVENT_KSR_SIGNATURE_PAYLOAD
+{
+    //
+    // Specifies the algorithm used for the signature
+    //
+    ULONG32 SignAlgID;
+
+    //
+    // Indicates the signature length (in bytes).
+    //
+    UINT32 SignatureLength;
+
+    //
+    // The signature obtained using SignAlgID for the KSR
+    // Aggregation
+    //
+    _Field_size_bytes_(SignatureLength)
+    BYTE    Signature[ANYSIZE_ARRAY];
+
+} SIPAEVENT_KSR_SIGNATURE_PAYLOAD, *PSIPAEVENT_KSR_SIGNATURE_PAYLOAD;
+
+#endif // NTDDI_VERSION >= NTDDI_WIN10_RS3
 
 #pragma pack(pop)
 

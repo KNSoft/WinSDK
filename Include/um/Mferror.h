@@ -3350,6 +3350,7 @@ Notes:
 #define MF_INVALID_ACCESS_ERR          0x8070000F
 #define MF_QUOTA_EXCEEDED_ERR          0x80700016
 #define MF_PARSE_ERR                   0x80700051
+#define MF_TYPE_ERR                    0x80704005
 
 #endif // _MFERROR_H
 

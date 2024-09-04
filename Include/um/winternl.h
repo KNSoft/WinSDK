@@ -75,6 +75,13 @@ typedef struct _UNICODE_STRING {
 typedef UNICODE_STRING *PUNICODE_STRING;
 typedef const UNICODE_STRING *PCUNICODE_STRING;
 
+typedef LONG KPRIORITY;
+
+typedef struct _CLIENT_ID {
+    HANDLE UniqueProcess;
+    HANDLE UniqueThread;
+} CLIENT_ID;
+
 //
 // The PEB_LDR_DATA, LDR_DATA_TABLE_ENTRY, RTL_USER_PROCESS_PARAMETERS, PEB
 // and TEB structures are subject to changes between Windows releases; thus,
@@ -252,17 +259,41 @@ typedef struct _SYSTEM_PROCESSOR_PERFORMANCE_INFORMATION {
 
 typedef struct _SYSTEM_PROCESS_INFORMATION {
     ULONG NextEntryOffset;
-    BYTE Reserved1[52];
-    PVOID Reserved2[3];
+    ULONG NumberOfThreads;
+    BYTE Reserved1[48];
+    UNICODE_STRING ImageName;
+    KPRIORITY BasePriority;
     HANDLE UniqueProcessId;
-    PVOID Reserved3;
+    PVOID Reserved2;
     ULONG HandleCount;
-    BYTE Reserved4[4];
-    PVOID Reserved5[11];
+    ULONG SessionId;
+    PVOID Reserved3;
+    SIZE_T PeakVirtualSize;
+    SIZE_T VirtualSize;
+    ULONG Reserved4;
+    SIZE_T PeakWorkingSetSize;
+    SIZE_T WorkingSetSize;
+    PVOID Reserved5;
+    SIZE_T QuotaPagedPoolUsage;
+    PVOID Reserved6;
+    SIZE_T QuotaNonPagedPoolUsage;
+    SIZE_T PagefileUsage;
     SIZE_T PeakPagefileUsage;
     SIZE_T PrivatePageCount;
-    LARGE_INTEGER Reserved6[6];
+    LARGE_INTEGER Reserved7[6];
 } SYSTEM_PROCESS_INFORMATION, *PSYSTEM_PROCESS_INFORMATION;
+
+typedef struct _SYSTEM_THREAD_INFORMATION {
+    LARGE_INTEGER Reserved1[3];
+    ULONG Reserved2;
+    PVOID StartAddress;
+    CLIENT_ID ClientId;
+    KPRIORITY Priority;
+    LONG BasePriority;
+    ULONG Reserved3;
+    ULONG ThreadState;
+    ULONG WaitReason;
+} SYSTEM_THREAD_INFORMATION, *PSYSTEM_THREAD_INFORMATION;
 
 typedef struct _SYSTEM_REGISTRY_QUOTA_INFORMATION {
     ULONG RegistryQuotaAllowed;

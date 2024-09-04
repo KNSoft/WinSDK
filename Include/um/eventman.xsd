@@ -401,6 +401,16 @@
         <xs:attribute name="map" type="xs:string" use="optional"/>
         <xs:attribute name="length" type="man:LengthType" use="optional"/>
         <xs:attribute name="count" type="man:CountType" use="optional"/>
+        <xs:attribute name="tags" type="man:UInt32Type" use="optional">
+          <xs:annotation>
+            <xs:documentation>
+              Tags is a 28-bit user-defined metadata value applied to this property. The
+              event producer and consumer coordinate to define the semantics of the tags
+              value. During event processing on Windows 10 Fall Creators Update (2017) or
+              later, this value can be retrieved from the EVENT_PROPERTY_INFO Tags field.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
         <xs:anyAttribute namespace="##other" processContents="lax"/>
       </xs:extension>
     </xs:simpleContent>
@@ -412,6 +422,16 @@
     </xs:sequence>
     <xs:attribute name="name" type="xs:string" use="required"/>
     <xs:attribute name="count" type="man:CountType" use="optional"/>
+    <xs:attribute name="tags" type="man:UInt32Type" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+          Tags is a 28-bit user-defined metadata value applied to this property. The
+          event producer and consumer coordinate to define the semantics of the tags
+          value. During event processing on Windows 10 Fall Creators Update (2017) or
+          later, this value can be retrieved from the EVENT_PROPERTY_INFO Tags field.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:anyAttribute namespace="##other" processContents="lax"/>
   </xs:complexType>
 
@@ -439,6 +459,17 @@
     </xs:sequence>
     <xs:attribute name="tid" type="xs:token" use="required"/>
     <xs:attribute name="name" type="xs:string" use="optional"/>
+    <xs:attribute name="tags" type="man:UInt32Type" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+          Tags is a 28-bit user-defined metadata value applied to each event that uses
+          this template. The event producer and consumer coordinate to define the
+          semantics of the tags value. During event processing on Windows 10 Fall
+          Creators Update (2017) or later, this value can be retrieved from the
+          TRACE_EVENT_INFO Tags field.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:anyAttribute namespace="##other" processContents="lax"/>
   </xs:complexType>
 
@@ -524,56 +555,94 @@
         <xs:attribute name="value" type="man:UInt32Type" use="required">
           <xs:annotation>
             <xs:documentation>
-              Also referred to as the Event-Id. An ETW event is uniquely identified by the
-              {Provider-Guid,Event-Id,Event-Version} tuple.
+              Also referred to as the Event-Id. A manifest-based ETW event is uniquely
+              identified by the {Provider-Guid,Event-Id,Event-Version} tuple.
             </xs:documentation>
           </xs:annotation>
         </xs:attribute>
-          <xs:attribute name="level" type="xs:QName" use="optional">
-            <xs:annotation>
-              <xs:documentation>
-                Reference to a &lt;level&gt; element defined in the &lt;levels&gt; section.
-                Refer to a level by its attribute 'name'.
-              </xs:documentation>
-            </xs:annotation>
-          </xs:attribute>
-          <xs:attribute name="template" type="xs:token" use="optional"/>
-          <xs:attribute name="channel" type="xs:token" use="optional"/>
-          <xs:attribute name="keywords" type="man:QNameList" use="optional"/>
-          <xs:attribute name="task" type="xs:QName" use="optional"/>
-          <xs:attribute name="opcode" type="xs:QName" use="optional"/>
-          <xs:attribute name="symbol" type="man:CSymbolType" use="optional"/>
+        <xs:attribute name="name" type="xs:string" use="optional">
+          <xs:annotation>
+            <xs:documentation>
+              Non-localized event name. During event processing on Windows 10 Fall
+              Creators Update (2017) or later, this value can be retrieved from the
+              TRACE_EVENT_INFO EventNameOffset field.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="attributes" type="xs:string" use="optional">
+          <xs:annotation>
+            <xs:documentation>
+              Non-localized event attributes. This should be a semicolon-delimited list of
+              name=value attributes associated with the event. During event processing on
+              Windows 10 Fall Creators Update (2017) or later, this value can be retrieved
+              from the TRACE_EVENT_INFO EventAttributesOffset field.
+
+              Defined attributes include:
+              FILE=Filename of source code associated with event;
+              LINE=Line number of source code associated with event;
+              COL=Column of source code associated with event;
+              FUNC=Function name associated with event;
+              MJ=Major component associated with event;
+              MN=Minor component associated with event.
+              Values containing semicolons or double-quotes should be quoted using
+              double-quotes; double-quotes within the value should be doubled. Example:
+              attributes='FILE=source.cpp;LINE=123;MJ="Value; ""Quoted"""'
+
+              Note that most of these attributes are intended for use with tool-generated
+              manifests and may not be appropriate for use with hand-maintained manifests. For
+              example, the FILE ane LINE attributes are not generally appropriate for use in
+              a hand-maintained manifest, since a single event might be emitted from multiple
+              source code locations and the source code locations will change over time. The
+              FILE and LINE attributes are intended for use in cases where the manifest is
+              regenerated (with a new GUID) by a code generation tool each time the source
+              code changes.
+          </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="level" type="xs:QName" use="optional">
+          <xs:annotation>
+            <xs:documentation>
+              Reference to a &lt;level&gt; element defined in the &lt;levels&gt; section.
+              Refer to a level by its attribute 'name'.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="template" type="xs:token" use="optional"/>
+        <xs:attribute name="channel" type="xs:token" use="optional"/>
+        <xs:attribute name="keywords" type="man:QNameList" use="optional"/>
+        <xs:attribute name="task" type="xs:QName" use="optional"/>
+        <xs:attribute name="opcode" type="xs:QName" use="optional"/>
+        <xs:attribute name="symbol" type="man:CSymbolType" use="optional"/>
         <xs:attribute name="version" type="man:UInt8Type" use="optional">
           <xs:annotation>
             <xs:documentation>
-              It is advisable to increment the version of an event if its template is modified
-              between releases.
+              Increment the version of an event if its template is modified.
             </xs:documentation>
           </xs:annotation>
         </xs:attribute>
-            <xs:attribute name="message" type="man:strTableRef" use="optional"/>
-            <xs:attribute name="notLogged" type="xs:boolean" use="optional" default="false">
-              <xs:annotation>
-                <xs:documentation>
-                  Use this to indicate that this event has been removed and will not be logged
-                  by this version of the provider. The description of the event should be retained
-                  in this manifest so that if an etl file collected from an older version of the
-                  provider on a different machine is brought to this machine, it can be correctly
-                  decoded on this machine.
-                </xs:documentation>
-              </xs:annotation>
-            </xs:attribute>
-            <xs:attribute name="suppressProjection" type="xs:boolean" use="optional" default="false">
-              <xs:annotation>
-                <xs:documentation>
-                  Use this to indicate if the template associated with this event contains 
-                  valid WinRT types i.e. the event payload fields can come from arguments
-                  of projected WinRT methods. Ignore this attribute if the component which
-                  is hosting the provider does not use WinRT projection APIs to log the event.
-                </xs:documentation>
-              </xs:annotation>
-            </xs:attribute>            
-          </xs:extension>
+        <xs:attribute name="message" type="man:strTableRef" use="optional"/>
+        <xs:attribute name="notLogged" type="xs:boolean" use="optional" default="false">
+          <xs:annotation>
+            <xs:documentation>
+              Use this to indicate that this event has been removed and will not be logged
+              by this version of the provider. The description of the event should be retained
+              in this manifest so that if an etl file collected from an older version of the
+              provider on a different machine is brought to this machine, it can be correctly
+              decoded on this machine.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="suppressProjection" type="xs:boolean" use="optional" default="false">
+          <xs:annotation>
+            <xs:documentation>
+              Use this to indicate if the template associated with this event contains 
+              valid WinRT types i.e. the event payload fields can come from arguments
+              of projected WinRT methods. Ignore this attribute if the component which
+              is hosting the provider does not use WinRT projection APIs to log the event.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>            
+      </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
 
@@ -680,6 +749,31 @@
     <xs:attribute name="name" type="xs:anyURI" use="required"/>
     <xs:attribute name="namespace" type="man:NamespaceType" use="optional"/>
     <xs:attribute name="guid" type="man:GUIDType" use="required"/>
+    <xs:attribute name="controlGuid" type="man:GUIDType" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+          A manifest-based ETW provider has a decode GUID (used to locate the manifest)
+          and a control GUID (used to enable the provider or filter events). Normally,
+          the same GUID (the provider guid) is used for both decode and control.
+          If distinct values are needed for the decode and control GUIDs, set the
+          "guid" attribute to the decode GUID and set the "controlGuid" attribute to the
+          control GUID. Note that to avoid provider name conflicts, if the controlGuid
+          attribute is used, the provider name must end with the decode guid, e.g.
+
+            guid="{54bab802-bb0b-4b4a-9ce9-7360a0120b3e}"
+            name="MyProvider.54bab802bb0b4b4a9ce97360a0120b3e"
+            controlGuid="{74d557d9-4a8e-4a3f-9a32-3f1a0eab71ba}"
+  
+          If a provider uses distinct decode and control GUIDs, the resulting traces may
+          not decode properly when decoded on Windows versions prior to Windows 10
+          Fall Creators Update (2017).
+
+          (Note that distinct decode and control GUIDs are typically used to support
+          tool-generated manifests and are generally unnecessary for hand-maintained
+          manifests.)
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attribute name="resourceFileName" type="man:filePath" use="optional">
       <xs:annotation>
         <xs:documentation>

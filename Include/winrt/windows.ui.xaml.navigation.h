@@ -1,12 +1,9 @@
+/* Header file automatically generated from windows.ui.xaml.navigation.idl */
+/*
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0206 
+ */
 
-
-/* this ALWAYS GENERATED file contains the definitions for the interfaces */
-
-
- /* File created by MIDL compiler version 8.01.0622 */
-/* @@MIDL_FILE_HEADING(  ) */
-
-
+#pragma warning( disable: 4049 )  /* more than 64k source lines */
 
 /* verify that the <rpcndr.h> version is high enough to compile this file*/
 #ifndef __REQUIRED_RPCNDR_H_VERSION__
@@ -18,714 +15,651 @@
 #define __REQUIRED_RPCSAL_H_VERSION__ 100
 #endif
 
-#include "rpc.h"
-#include "rpcndr.h"
+#include <rpc.h>
+#include <rpcndr.h>
 
 #ifndef __RPCNDR_H_VERSION__
 #error this stub requires an updated version of <rpcndr.h>
 #endif /* __RPCNDR_H_VERSION__ */
 
 #ifndef COM_NO_WINDOWS_H
-#include "windows.h"
-#include "ole2.h"
+#include <windows.h>
+#include <ole2.h>
 #endif /*COM_NO_WINDOWS_H*/
-
 #ifndef __windows2Eui2Examl2Enavigation_h__
 #define __windows2Eui2Examl2Enavigation_h__
+#ifndef __windows2Eui2Examl2Enavigation_p_h__
+#define __windows2Eui2Examl2Enavigation_p_h__
 
-#if defined(_MSC_VER) && (_MSC_VER >= 1020)
+
 #pragma once
+
+//
+// Deprecated attribute support
+//
+
+#pragma push_macro("DEPRECATED")
+#undef DEPRECATED
+
+#if !defined(DISABLE_WINRT_DEPRECATION)
+#if defined(__cplusplus)
+#if __cplusplus >= 201402
+#define DEPRECATED(x) [[deprecated(x)]]
+#elif defined(_MSC_VER)
+#if _MSC_VER >= 1900
+#define DEPRECATED(x) [[deprecated(x)]]
+#define DEPRECATEDENUMERATOR(x) [[deprecated(x)]]
+#else
+#define DEPRECATED(x) __declspec(deprecated(x))
+#define DEPRECATEDENUMERATOR(x)
+#endif // _MSC_VER >= 1900
+#else // Not Standard C++ or MSVC, ignore the construct.
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif  // C++ deprecation
+#else // C - disable deprecation
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif
+#else // Deprecation is disabled
+#define DEPRECATED(x)
+#define DEPRECATEDENUMERATOR(x)
+#endif  /* DEPRECATED */
+
+// Disable Deprecation for this header, MIDL verifies that cross-type access is acceptable
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#else
+#pragma warning(push)
+#pragma warning(disable: 4996)
 #endif
 
-/* Forward Declarations */ 
-
-#ifndef ____FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_FWD_DEFINED__
-#define ____FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_FWD_DEFINED__
-typedef interface __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry;
-
-#endif 	/* ____FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_FWD_DEFINED__ */
-
-
-#ifndef ____FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_FWD_DEFINED__
-#define ____FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_FWD_DEFINED__
-typedef interface __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry;
-
-#endif 	/* ____FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_FWD_DEFINED__ */
+#pragma push_macro("MIDL_CONST_ID")
+#if !defined(_MSC_VER) || (_MSC_VER >= 1910)
+#define MIDL_CONST_ID constexpr const
+#else
+#define MIDL_CONST_ID const __declspec(selectany)
+#endif
 
 
-#ifndef ____FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_FWD_DEFINED__
-#define ____FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_FWD_DEFINED__
-typedef interface __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry;
+//  API Contract Inclusion Definitions
+#if !defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
+#if !defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATEDEVENTSCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATEDEVENTSCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATEDEVENTSCONTRACT_VERSION)
 
-#endif 	/* ____FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_FWD_DEFINED__ */
+#if !defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATIONCAMERASETTINGSCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATIONCAMERASETTINGSCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATIONCAMERASETTINGSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_CONTACTACTIVATEDEVENTSCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_ACTIVATION_CONTACTACTIVATEDEVENTSCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_CONTACTACTIVATEDEVENTSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_WEBUISEARCHACTIVATEDEVENTSCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_ACTIVATION_WEBUISEARCHACTIVATEDEVENTSCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_ACTIVATION_WEBUISEARCHACTIVATEDEVENTSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_BACKGROUND_BACKGROUNDALARMAPPLICATIONCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_BACKGROUND_BACKGROUNDALARMAPPLICATIONCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_BACKGROUND_BACKGROUNDALARMAPPLICATIONCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_BACKGROUND_CALLSBACKGROUNDCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSVOIPCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_LOCKSCREENCALLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION)
+
+#if !defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
+#define WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_APPLICATIONMODEL_WALLET_WALLETCONTRACT_VERSION)
+
+#if !defined(WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION)
+#define WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_DEVICES_PRINTERS_EXTENSIONS_EXTENSIONSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDBACKGROUNDTRIGGERCONTRACT_VERSION)
+
+#if !defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
+#define WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION 0x50000
+#endif // defined(WINDOWS_DEVICES_SMARTCARDS_SMARTCARDEMULATORCONTRACT_VERSION)
+
+#if !defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
+#define WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
+#define WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION 0x30000
+#endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
+
+#if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x50000
+#endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
+
+#if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
+#define WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
+
+#if !defined(WINDOWS_GLOBALIZATION_GLOBALIZATIONJAPANESEPHONETICANALYZERCONTRACT_VERSION)
+#define WINDOWS_GLOBALIZATION_GLOBALIZATIONJAPANESEPHONETICANALYZERCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_GLOBALIZATION_GLOBALIZATIONJAPANESEPHONETICANALYZERCONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_CAPTURE_APPBROADCASTCONTRACT_VERSION)
+#define WINDOWS_MEDIA_CAPTURE_APPBROADCASTCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_MEDIA_CAPTURE_APPBROADCASTCONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_CAPTURE_APPCAPTURECONTRACT_VERSION)
+#define WINDOWS_MEDIA_CAPTURE_APPCAPTURECONTRACT_VERSION 0x40000
+#endif // defined(WINDOWS_MEDIA_CAPTURE_APPCAPTURECONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_CAPTURE_APPCAPTUREMETADATACONTRACT_VERSION)
+#define WINDOWS_MEDIA_CAPTURE_APPCAPTUREMETADATACONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_CAPTURE_APPCAPTUREMETADATACONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_CAPTURE_CAMERACAPTUREUICONTRACT_VERSION)
+#define WINDOWS_MEDIA_CAPTURE_CAMERACAPTUREUICONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_CAPTURE_CAMERACAPTUREUICONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_CAPTURE_GAMEBARCONTRACT_VERSION)
+#define WINDOWS_MEDIA_CAPTURE_GAMEBARCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_CAPTURE_GAMEBARCONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_DEVICES_CALLCONTROLCONTRACT_VERSION)
+#define WINDOWS_MEDIA_DEVICES_CALLCONTROLCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_DEVICES_CALLCONTROLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_MEDIACONTROLCONTRACT_VERSION)
+#define WINDOWS_MEDIA_MEDIACONTROLCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_MEDIACONTROLCONTRACT_VERSION)
+
+#if !defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
+#define WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION)
+
+#if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+#define WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION 0x20000
+#endif // defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
+
+#if !defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
+#define WINDOWS_PHONE_PHONECONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_PHONE_PHONECONTRACT_VERSION)
+
+#if !defined(WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION)
+#define WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION)
+
+#if !defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
+#define WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION 0x50000
+#endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
+
+#if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
+
+#if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x40000
+#endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
+
+#if !defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
+#define WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION)
+
+#if !defined(WINDOWS_UI_VIEWMANAGEMENT_VIEWMANAGEMENTVIEWSCALINGCONTRACT_VERSION)
+#define WINDOWS_UI_VIEWMANAGEMENT_VIEWMANAGEMENTVIEWSCALINGCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_UI_VIEWMANAGEMENT_VIEWMANAGEMENTVIEWSCALINGCONTRACT_VERSION)
+
+#if !defined(WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION)
+#define WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION 0x10000
+#endif // defined(WINDOWS_UI_WEBUI_CORE_WEBUICOMMANDBARCONTRACT_VERSION)
+
+#endif // defined(SPECIFIC_API_CONTRACT_DEFINITIONS)
 
 
-#ifndef ____FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_FWD_DEFINED__
-#define ____FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_FWD_DEFINED__
-typedef interface __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry;
+// Header files for imported files
+#include "inspectable.h"
+#include "AsyncInfo.h"
+#include "EventToken.h"
+#include "windowscontracts.h"
+#include "Windows.Foundation.h"
+#include "Windows.UI.Xaml.h"
+#include "Windows.UI.Xaml.Interop.h"
+#include "Windows.UI.Xaml.Media.Animation.h"
+// Importing Collections header
+#include <windows.foundation.collections.h>
 
-#endif 	/* ____FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_FWD_DEFINED__ */
-
-
+#if defined(__cplusplus) && !defined(CINTERFACE)
+/* Forward Declarations */
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Xaml {
                 namespace Navigation {
                     interface ILoadCompletedEventHandler;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler ABI::Windows::UI::Xaml::Navigation::ILoadCompletedEventHandler
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Xaml {
                 namespace Navigation {
                     interface INavigatedEventHandler;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler ABI::Windows::UI::Xaml::Navigation::INavigatedEventHandler
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Xaml {
                 namespace Navigation {
                     interface INavigatingCancelEventHandler;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler ABI::Windows::UI::Xaml::Navigation::INavigatingCancelEventHandler
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Xaml {
                 namespace Navigation {
                     interface INavigationFailedEventHandler;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler ABI::Windows::UI::Xaml::Navigation::INavigationFailedEventHandler
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Xaml {
                 namespace Navigation {
                     interface INavigationStoppedEventHandler;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler ABI::Windows::UI::Xaml::Navigation::INavigationStoppedEventHandler
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Xaml {
                 namespace Navigation {
                     interface INavigatingCancelEventArgs;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs ABI::Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2 __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Xaml {
                 namespace Navigation {
                     interface INavigatingCancelEventArgs2;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2 ABI::Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs2
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Xaml {
                 namespace Navigation {
                     interface INavigationEventArgs;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs ABI::Windows::UI::Xaml::Navigation::INavigationEventArgs
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2 __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Xaml {
                 namespace Navigation {
                     interface INavigationEventArgs2;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2 ABI::Windows::UI::Xaml::Navigation::INavigationEventArgs2
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Xaml {
                 namespace Navigation {
                     interface INavigationFailedEventArgs;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs ABI::Windows::UI::Xaml::Navigation::INavigationFailedEventArgs
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Xaml {
                 namespace Navigation {
                     interface IPageStackEntry;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry ABI::Windows::UI::Xaml::Navigation::IPageStackEntry
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Xaml {
                 namespace Navigation {
                     interface IPageStackEntryFactory;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory ABI::Windows::UI::Xaml::Navigation::IPageStackEntryFactory
 
-#endif /* __cplusplus */
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_FWD_DEFINED__ */
-
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics;
-
-#ifdef __cplusplus
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Xaml {
                 namespace Navigation {
                     interface IPageStackEntryStatics;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics ABI::Windows::UI::Xaml::Navigation::IPageStackEntryStatics
 
-#endif /* __cplusplus */
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_FWD_DEFINED__
 
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_FWD_DEFINED__ */
+// Parameterized interface forward declarations (C++)
 
-
-/* header files for imported files */
-#include "inspectable.h"
-#include "AsyncInfo.h"
-#include "EventToken.h"
-#include "Windows.Foundation.h"
-#include "Windows.UI.Xaml.h"
-
-#ifdef __cplusplus
-extern "C"{
-#endif 
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0000 */
-/* [local] */ 
-
-#ifdef __cplusplus
-} /*extern "C"*/ 
-#endif
-#include <windows.foundation.collections.h>
-#ifdef __cplusplus
-extern "C" {
-#endif
-#ifdef __cplusplus
+// Collection interface definitions
 namespace ABI {
-namespace Windows {
-namespace UI {
-namespace Xaml {
-namespace Navigation {
-class PageStackEntry;
-} /*Navigation*/
-} /*Xaml*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
-
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace UI {
-namespace Xaml {
-namespace Navigation {
-interface IPageStackEntry;
-} /*Navigation*/
-} /*Xaml*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Navigation {
+                    class PageStackEntry;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0000 */
-/* [local] */ 
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0000_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5372 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5372 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5372_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5372_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0001 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_USE
 #define DEF___FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("b89ca96c-ded1-53bd-8744-caa84e87ba87"))
-IIterator<ABI::Windows::UI::Xaml::Navigation::PageStackEntry*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Navigation::PageStackEntry*, ABI::Windows::UI::Xaml::Navigation::IPageStackEntry*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterator`1<Windows.UI.Xaml.Navigation.PageStackEntry>"; }
+IIterator<ABI::Windows::UI::Xaml::Navigation::PageStackEntry*> : IIterator_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Navigation::PageStackEntry*, ABI::Windows::UI::Xaml::Navigation::IPageStackEntry*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterator`1<Windows.UI.Xaml.Navigation.PageStackEntry>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterator<ABI::Windows::UI::Xaml::Navigation::PageStackEntry*> __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_t;
-#define ____FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_FWD_DEFINED__
 #define __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry ABI::Windows::Foundation::Collections::__FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Xaml::Navigation::IPageStackEntry*>
+//#define __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_t ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Xaml::Navigation::IPageStackEntry*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0001 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0001_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0001_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5373 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5373 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5373_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5373_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0002 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_USE
 #define DEF___FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("dd2278a5-4c14-5967-8a41-9a47c3c5c4a7"))
-IIterable<ABI::Windows::UI::Xaml::Navigation::PageStackEntry*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Navigation::PageStackEntry*, ABI::Windows::UI::Xaml::Navigation::IPageStackEntry*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IIterable`1<Windows.UI.Xaml.Navigation.PageStackEntry>"; }
+IIterable<ABI::Windows::UI::Xaml::Navigation::PageStackEntry*> : IIterable_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Navigation::PageStackEntry*, ABI::Windows::UI::Xaml::Navigation::IPageStackEntry*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IIterable`1<Windows.UI.Xaml.Navigation.PageStackEntry>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IIterable<ABI::Windows::UI::Xaml::Navigation::PageStackEntry*> __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_t;
-#define ____FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_FWD_DEFINED__
 #define __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Xaml::Navigation::IPageStackEntry*>
+//#define __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_t ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Xaml::Navigation::IPageStackEntry*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0002 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0002_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0002_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5374 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5374 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5374_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5374_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0003 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_USE
 #define DEF___FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("af6d7eac-086f-5c5f-be4b-0858af7506f7"))
-IVectorView<ABI::Windows::UI::Xaml::Navigation::PageStackEntry*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Navigation::PageStackEntry*, ABI::Windows::UI::Xaml::Navigation::IPageStackEntry*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVectorView`1<Windows.UI.Xaml.Navigation.PageStackEntry>"; }
+IVectorView<ABI::Windows::UI::Xaml::Navigation::PageStackEntry*> : IVectorView_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Navigation::PageStackEntry*, ABI::Windows::UI::Xaml::Navigation::IPageStackEntry*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVectorView`1<Windows.UI.Xaml.Navigation.PageStackEntry>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IVectorView<ABI::Windows::UI::Xaml::Navigation::PageStackEntry*> __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_t;
-#define ____FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_FWD_DEFINED__
 #define __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Xaml::Navigation::IPageStackEntry*>
+//#define __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_t ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Xaml::Navigation::IPageStackEntry*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_USE */
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0003 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0003_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0003_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5375 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5375 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5375_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5375_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0004 */
-/* [local] */ 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_USE
 #define DEF___FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_USE
-#if defined(__cplusplus) && !defined(RO_NO_TEMPLATE_NAME)
-} /*extern "C"*/ 
+#if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 template <>
 struct __declspec(uuid("e561a13f-89a1-5ef2-a3fe-eba1b4539b46"))
-IVector<ABI::Windows::UI::Xaml::Navigation::PageStackEntry*> : IVector_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Navigation::PageStackEntry*, ABI::Windows::UI::Xaml::Navigation::IPageStackEntry*>> {
-static const wchar_t* z_get_rc_name_impl() {
-return L"Windows.Foundation.Collections.IVector`1<Windows.UI.Xaml.Navigation.PageStackEntry>"; }
+IVector<ABI::Windows::UI::Xaml::Navigation::PageStackEntry*> : IVector_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Xaml::Navigation::PageStackEntry*, ABI::Windows::UI::Xaml::Navigation::IPageStackEntry*>> 
+{
+    static const wchar_t* z_get_rc_name_impl() 
+    {
+        return L"Windows.Foundation.Collections.IVector`1<Windows.UI.Xaml.Navigation.PageStackEntry>"; 
+    }
 };
+// Define a typedef for the parameterized interface specialization's mangled name.
+// This allows code which uses the mangled name for the parameterized interface to access the
+// correct parameterized interface specialization.
 typedef IVector<ABI::Windows::UI::Xaml::Navigation::PageStackEntry*> __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_t;
-#define ____FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_FWD_DEFINED__
 #define __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_t
-
 /* ABI */ } /* Windows */ } /* Foundation */ } /* Collections */ }
-extern "C" {
-#endif //__cplusplus
+
+////  Define an alias for the C version of the interface for compatibility purposes.
+//#define __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry ABI::Windows::Foundation::Collections::IVector<ABI::Windows::UI::Xaml::Navigation::IPageStackEntry*>
+//#define __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_t ABI::Windows::Foundation::Collections::IVector<ABI::Windows::UI::Xaml::Navigation::IPageStackEntry*>
+#endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_USE */
-#if defined(__cplusplus)
-}
-#endif // defined(__cplusplus)
-#include <Windows.Foundation.h>
-#if !defined(__windows2Eui2Examl_h__)
-#include <Windows.UI.Xaml.h>
-#endif // !defined(__windows2Eui2Examl_h__)
-#if !defined(__windows2Eui2Examl2Einterop_h__)
-#include <Windows.UI.Xaml.Interop.h>
-#endif // !defined(__windows2Eui2Examl2Einterop_h__)
-#if !defined(__windows2Eui2Examl2Emedia2Eanimation_h__)
-#include <Windows.UI.Xaml.Media.Animation.h>
-#endif // !defined(__windows2Eui2Examl2Emedia2Eanimation_h__)
-#if defined(__cplusplus)
-extern "C" {
-#endif // defined(__cplusplus)
-#ifdef __cplusplus
+
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+
+
 namespace ABI {
-namespace Windows {
-namespace Foundation {
-class Uri;
-} /*Foundation*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace Foundation {
+            class Uri;
+        } /* Windows */
+    } /* Foundation */} /* ABI */
 
-#ifdef __cplusplus
+#ifndef ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
 namespace ABI {
-namespace Windows {
-namespace UI {
-namespace Xaml {
-class DependencyProperty;
-} /*Xaml*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace Foundation {
+            interface IUriRuntimeClass;
+        } /* Windows */
+    } /* Foundation */} /* ABI */
+#define __x_ABI_CWindows_CFoundation_CIUriRuntimeClass ABI::Windows::Foundation::IUriRuntimeClass
 
-#if !defined(__cplusplus)
-typedef struct __x_ABI_CWindows_CUI_CXaml_CInterop_CTypeName __x_ABI_CWindows_CUI_CXaml_CInterop_CTypeName;
+#endif // ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
 
-#endif
-#ifdef __cplusplus
+
+
+
 namespace ABI {
-namespace Windows {
-namespace UI {
-namespace Xaml {
-namespace Media {
-namespace Animation {
-class NavigationTransitionInfo;
-} /*Animation*/
-} /*Media*/
-} /*Xaml*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                class DependencyProperty;
+            } /* Windows */
+        } /* UI */
+    } /* Xaml */} /* ABI */
 
-#if !defined(__cplusplus)
-#if !defined(__cplusplus)
-
-typedef enum __x_ABI_CWindows_CUI_CXaml_CNavigation_CNavigationCacheMode __x_ABI_CWindows_CUI_CXaml_CNavigation_CNavigationCacheMode;
-
-
-#endif /* end if !defined(__cplusplus) */
-
-
-#endif
-#if !defined(__cplusplus)
-#if !defined(__cplusplus)
-
-typedef enum __x_ABI_CWindows_CUI_CXaml_CNavigation_CNavigationMode __x_ABI_CWindows_CUI_CXaml_CNavigation_CNavigationMode;
-
-
-#endif /* end if !defined(__cplusplus) */
-
-
-#endif
-
-
-
-
-
-
-
-
-
-
-
-
-#ifdef __cplusplus
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CIDependencyProperty_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CIDependencyProperty_FWD_DEFINED__
 namespace ABI {
-namespace Windows {
-namespace UI {
-namespace Xaml {
-namespace Navigation {
-class NavigatingCancelEventArgs;
-} /*Navigation*/
-} /*Xaml*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace UI {
-namespace Xaml {
-namespace Navigation {
-class NavigationEventArgs;
-} /*Navigation*/
-} /*Xaml*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
-#ifdef __cplusplus
-namespace ABI {
-namespace Windows {
-namespace UI {
-namespace Xaml {
-namespace Navigation {
-class NavigationFailedEventArgs;
-} /*Navigation*/
-} /*Xaml*/
-} /*UI*/
-} /*Windows*/
-}
-#endif
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                interface IDependencyProperty;
+            } /* Windows */
+        } /* UI */
+    } /* Xaml */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty ABI::Windows::UI::Xaml::IDependencyProperty
 
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0004 */
-/* [local] */ 
+#endif // ____x_ABI_CWindows_CUI_CXaml_CIDependencyProperty_FWD_DEFINED__
 
 
 
 
-#ifdef __cplusplus
 
-} /* end extern "C" */
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -734,197 +668,1010 @@ namespace ABI {
                     
                     typedef struct TypeName TypeName;
                     
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-extern "C" { 
-#endif
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Interop */} /* ABI */
 
 
-#ifdef __cplusplus
 
-} /* end extern "C" */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        class NavigationTransitionInfo;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Media {
+                    namespace Animation {
+                        interface INavigationTransitionInfo;
+                    } /* Windows */
+                } /* UI */
+            } /* Xaml */
+        } /* Media */
+    } /* Animation */} /* ABI */
+#define __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo ABI::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo_FWD_DEFINED__
+
+
+
+
+
+
+
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Xaml {
                 namespace Navigation {
                     
-                    typedef enum NavigationCacheMode NavigationCacheMode;
+                    typedef enum NavigationCacheMode : int NavigationCacheMode;
                     
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
 
-extern "C" { 
-#endif
-
-#ifdef __cplusplus
-
-} /* end extern "C" */
 namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Xaml {
                 namespace Navigation {
                     
-                    typedef enum NavigationMode NavigationMode;
+                    typedef enum NavigationMode : int NavigationMode;
                     
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
 
-extern "C" { 
+
+
+
+
+
+
+
+
+
+
+
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Navigation {
+                    class NavigatingCancelEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Navigation {
+                    class NavigationEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+
+
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Navigation {
+                    class NavigationFailedEventArgs;
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ *
+ * Struct Windows.UI.Xaml.Navigation.NavigationCacheMode
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Navigation {
+                    /* [v1_enum, contract] */
+                    enum NavigationCacheMode : int
+                    {
+                        NavigationCacheMode_Disabled = 0,
+                        NavigationCacheMode_Required = 1,
+                        NavigationCacheMode_Enabled = 2,
+                    };
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Struct Windows.UI.Xaml.Navigation.NavigationMode
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Navigation {
+                    /* [v1_enum, contract] */
+                    enum NavigationMode : int
+                    {
+                        NavigationMode_New = 0,
+                        NavigationMode_Back = 1,
+                        NavigationMode_Forward = 2,
+                        NavigationMode_Refresh = 3,
+                    };
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Delegate Windows.UI.Xaml.Navigation.LoadCompletedEventHandler
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_INTERFACE_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Navigation {
+                    /* [object, uuid("AEBAF785-43FC-4E2C-95C3-97AE84EABC8E"), contract] */
+                    MIDL_INTERFACE("AEBAF785-43FC-4E2C-95C3-97AE84EABC8E")
+                    ILoadCompletedEventHandler : IUnknown
+                    {
+                        virtual HRESULT STDMETHODCALLTYPE Invoke(
+                            /* [in] */__RPC__in_opt IInspectable * sender,
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Navigation::INavigationEventArgs * e
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_ILoadCompletedEventHandler=_uuidof(ILoadCompletedEventHandler);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Delegate Windows.UI.Xaml.Navigation.NavigatedEventHandler
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_INTERFACE_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Navigation {
+                    /* [object, uuid("7BD1CF54-23CF-4CCE-B2F5-4CE78D96896E"), contract] */
+                    MIDL_INTERFACE("7BD1CF54-23CF-4CCE-B2F5-4CE78D96896E")
+                    INavigatedEventHandler : IUnknown
+                    {
+                        virtual HRESULT STDMETHODCALLTYPE Invoke(
+                            /* [in] */__RPC__in_opt IInspectable * sender,
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Navigation::INavigationEventArgs * e
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_INavigatedEventHandler=_uuidof(INavigatedEventHandler);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Delegate Windows.UI.Xaml.Navigation.NavigatingCancelEventHandler
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_INTERFACE_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Navigation {
+                    /* [object, uuid("75D6A78F-A302-4489-9898-24EA49182910"), contract] */
+                    MIDL_INTERFACE("75D6A78F-A302-4489-9898-24EA49182910")
+                    INavigatingCancelEventHandler : IUnknown
+                    {
+                        virtual HRESULT STDMETHODCALLTYPE Invoke(
+                            /* [in] */__RPC__in_opt IInspectable * sender,
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs * e
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_INavigatingCancelEventHandler=_uuidof(INavigatingCancelEventHandler);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Delegate Windows.UI.Xaml.Navigation.NavigationFailedEventHandler
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_INTERFACE_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Navigation {
+                    /* [object, uuid("4DAB4671-12B2-43C7-B892-9BE2DCD3E88D"), contract] */
+                    MIDL_INTERFACE("4DAB4671-12B2-43C7-B892-9BE2DCD3E88D")
+                    INavigationFailedEventHandler : IUnknown
+                    {
+                        virtual HRESULT STDMETHODCALLTYPE Invoke(
+                            /* [in] */__RPC__in_opt IInspectable * sender,
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Navigation::INavigationFailedEventArgs * e
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_INavigationFailedEventHandler=_uuidof(INavigationFailedEventHandler);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Delegate Windows.UI.Xaml.Navigation.NavigationStoppedEventHandler
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_INTERFACE_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Navigation {
+                    /* [object, uuid("F0117DDB-12FA-4D8D-8B26-B383D09C2B3C"), contract] */
+                    MIDL_INTERFACE("F0117DDB-12FA-4D8D-8B26-B383D09C2B3C")
+                    INavigationStoppedEventHandler : IUnknown
+                    {
+                        virtual HRESULT STDMETHODCALLTYPE Invoke(
+                            /* [in] */__RPC__in_opt IInspectable * sender,
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Navigation::INavigationEventArgs * e
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_INavigationStoppedEventHandler=_uuidof(INavigationStoppedEventHandler);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Navigation.NavigatingCancelEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_INavigatingCancelEventArgs[] = L"Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Navigation {
+                    /* [object, uuid("FD1D67AE-EAFB-4079-BE80-6DC92A03AEDF"), exclusiveto, contract] */
+                    MIDL_INTERFACE("FD1D67AE-EAFB-4079-BE80-6DC92A03AEDF")
+                    INavigatingCancelEventArgs : IInspectable
+                    {
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Cancel(
+                            /* [retval, out] */__RPC__out boolean * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Cancel(
+                            /* [in] */boolean value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NavigationMode(
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Navigation::NavigationMode * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SourcePageType(
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Interop::TypeName * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_INavigatingCancelEventArgs=_uuidof(INavigatingCancelEventArgs);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Navigation.NavigatingCancelEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_INavigatingCancelEventArgs2[] = L"Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs2";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Navigation {
+                    /* [object, uuid("5407B704-8147-4343-838F-DD1EE908C137"), exclusiveto, contract] */
+                    MIDL_INTERFACE("5407B704-8147-4343-838F-DD1EE908C137")
+                    INavigatingCancelEventArgs2 : IInspectable
+                    {
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Parameter(
+                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NavigationTransitionInfo(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_INavigatingCancelEventArgs2=_uuidof(INavigatingCancelEventArgs2);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Navigation.INavigationEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Navigation.NavigationEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_INavigationEventArgs[] = L"Windows.UI.Xaml.Navigation.INavigationEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Navigation {
+                    /* [object, uuid("B6AA9834-6691-44D1-BDF7-58820C27B0D0"), exclusiveto, contract] */
+                    MIDL_INTERFACE("B6AA9834-6691-44D1-BDF7-58820C27B0D0")
+                    INavigationEventArgs : IInspectable
+                    {
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Content(
+                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Parameter(
+                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SourcePageType(
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Interop::TypeName * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NavigationMode(
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Navigation::NavigationMode * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Uri(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass * * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Uri(
+                            /* [in] */__RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_INavigationEventArgs=_uuidof(INavigationEventArgs);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Navigation.INavigationEventArgs2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Navigation.NavigationEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_INavigationEventArgs2[] = L"Windows.UI.Xaml.Navigation.INavigationEventArgs2";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Navigation {
+                    /* [object, uuid("DBFF71D9-979A-4B2E-A49B-3BB17FDEF574"), exclusiveto, contract] */
+                    MIDL_INTERFACE("DBFF71D9-979A-4B2E-A49B-3BB17FDEF574")
+                    INavigationEventArgs2 : IInspectable
+                    {
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NavigationTransitionInfo(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_INavigationEventArgs2=_uuidof(INavigationEventArgs2);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Navigation.INavigationFailedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Navigation.NavigationFailedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_INavigationFailedEventArgs[] = L"Windows.UI.Xaml.Navigation.INavigationFailedEventArgs";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Navigation {
+                    /* [object, uuid("11C1DFF7-36C2-4102-B2EF-0217A97289B3"), exclusiveto, contract] */
+                    MIDL_INTERFACE("11C1DFF7-36C2-4102-B2EF-0217A97289B3")
+                    INavigationFailedEventArgs : IInspectable
+                    {
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Exception(
+                            /* [retval, out] */__RPC__out HRESULT * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Handled(
+                            /* [retval, out] */__RPC__out boolean * value
+                            ) = 0;
+                        /* [propput] */virtual HRESULT STDMETHODCALLTYPE put_Handled(
+                            /* [in] */boolean value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SourcePageType(
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Interop::TypeName * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_INavigationFailedEventArgs=_uuidof(INavigationFailedEventArgs);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Navigation.IPageStackEntry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Navigation.PageStackEntry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_IPageStackEntry[] = L"Windows.UI.Xaml.Navigation.IPageStackEntry";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Navigation {
+                    /* [object, uuid("EF8814A6-9388-4ACA-8572-405194069080"), exclusiveto, contract] */
+                    MIDL_INTERFACE("EF8814A6-9388-4ACA-8572-405194069080")
+                    IPageStackEntry : IInspectable
+                    {
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SourcePageType(
+                            /* [retval, out] */__RPC__out ABI::Windows::UI::Xaml::Interop::TypeName * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_Parameter(
+                            /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
+                            ) = 0;
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_NavigationTransitionInfo(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IPageStackEntry=_uuidof(IPageStackEntry);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Navigation.IPageStackEntryFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Navigation.PageStackEntry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_IPageStackEntryFactory[] = L"Windows.UI.Xaml.Navigation.IPageStackEntryFactory";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Navigation {
+                    /* [object, uuid("4454048A-A8B9-4F78-9B84-1F51F58851FF"), exclusiveto, contract] */
+                    MIDL_INTERFACE("4454048A-A8B9-4F78-9B84-1F51F58851FF")
+                    IPageStackEntryFactory : IInspectable
+                    {
+                        virtual HRESULT STDMETHODCALLTYPE CreateInstance(
+                            /* [in] */ABI::Windows::UI::Xaml::Interop::TypeName sourcePageType,
+                            /* [in] */__RPC__in_opt IInspectable * parameter,
+                            /* [in] */__RPC__in_opt ABI::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo * navigationTransitionInfo,
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::Navigation::IPageStackEntry * * instance
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IPageStackEntryFactory=_uuidof(IPageStackEntryFactory);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Interface Windows.UI.Xaml.Navigation.IPageStackEntryStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Navigation.PageStackEntry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_IPageStackEntryStatics[] = L"Windows.UI.Xaml.Navigation.IPageStackEntryStatics";
+namespace ABI {
+    namespace Windows {
+        namespace UI {
+            namespace Xaml {
+                namespace Navigation {
+                    /* [object, uuid("ACEFF8E3-246C-4033-9F01-01CB0DA5254E"), exclusiveto, contract] */
+                    MIDL_INTERFACE("ACEFF8E3-246C-4033-9F01-01CB0DA5254E")
+                    IPageStackEntryStatics : IInspectable
+                    {
+                        /* [propget] */virtual HRESULT STDMETHODCALLTYPE get_SourcePageTypeProperty(
+                            /* [retval, out] */__RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty * * value
+                            ) = 0;
+                        
+                    };
+
+                    extern MIDL_CONST_ID IID & IID_IPageStackEntryStatics=_uuidof(IPageStackEntryStatics);
+                    
+                } /* Windows */
+            } /* UI */
+        } /* Xaml */
+    } /* Navigation */} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Navigation.NavigatingCancelEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs ** Default Interface **
+ *    Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs2
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Navigation_NavigatingCancelEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Navigation_NavigatingCancelEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Navigation_NavigatingCancelEventArgs[] = L"Windows.UI.Xaml.Navigation.NavigatingCancelEventArgs";
 #endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Navigation.NavigationEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Navigation.INavigationEventArgs ** Default Interface **
+ *    Windows.UI.Xaml.Navigation.INavigationEventArgs2
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Navigation_NavigationEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Navigation_NavigationEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Navigation_NavigationEventArgs[] = L"Windows.UI.Xaml.Navigation.NavigationEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Navigation.NavigationFailedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Navigation.INavigationFailedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Navigation_NavigationFailedEventArgs_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Navigation_NavigationFailedEventArgs_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Navigation_NavigationFailedEventArgs[] = L"Windows.UI.Xaml.Navigation.NavigationFailedEventArgs";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Navigation.PageStackEntry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.UI.Xaml.Navigation.IPageStackEntryFactory interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Navigation.IPageStackEntryStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Navigation.IPageStackEntry ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+#ifndef RUNTIMECLASS_Windows_UI_Xaml_Navigation_PageStackEntry_DEFINED
+#define RUNTIMECLASS_Windows_UI_Xaml_Navigation_PageStackEntry_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Navigation_PageStackEntry[] = L"Windows.UI.Xaml.Navigation.PageStackEntry";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
 
 
+#else // !defined(__cplusplus)
+/* Forward Declarations */
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler;
 
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler;
 
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler;
 
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler;
 
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler;
 
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_FWD_DEFINED__
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0004_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0004_v0_0_s_ifspec;
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5376 */
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2 __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2;
 
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5376 */
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2 __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2;
 
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs;
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5376_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5376_v0_0_s_ifspec;
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_FWD_DEFINED__
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0005 */
-/* [local] */ 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry;
 
-#ifndef DEF___FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry
-#define DEF___FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory;
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0005 */
-/* [local] */ 
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics;
 
+#endif // ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_FWD_DEFINED__
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0005_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0005_v0_0_s_ifspec;
+// Parameterized interface forward declarations (C)
 
-#ifndef ____FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_INTERFACE_DEFINED__
+// Collection interface definitions
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_INTERFACE_DEFINED__)
 #define ____FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_INTERFACE_DEFINED__
 
-/* interface __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry */
-/* [unique][uuid][object] */ 
+typedef interface __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry;
 
-
-
-/* interface __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("b89ca96c-ded1-53bd-8744-caa84e87ba87")
-    __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry : public IInspectable
-    {
-    public:
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Current( 
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Navigation::IPageStackEntry **current) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_HasCurrent( 
-            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE MoveNext( 
-            /* [retval][out] */ __RPC__out boolean *hasCurrent) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::UI::Xaml::Navigation::IPageStackEntry **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry **current);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [retval][out] */ __RPC__out boolean *hasCurrent);
-        
-        HRESULT ( STDMETHODCALLTYPE *MoveNext )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [retval][out] */ __RPC__out boolean *hasCurrent);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual);
-        
-        END_INTERFACE
-    } __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl;
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
 
-    interface __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry
-    {
-        CONST_VTBL struct __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl *lpVtbl;
-    };
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
 
-    
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Current )(__RPC__in __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This, /* [retval][out] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * *current);
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_HasCurrent )(__RPC__in __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *MoveNext )(__RPC__in __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This, /* [retval][out] */ __RPC__out boolean *hasCurrent);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    END_INTERFACE
+} __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl;
+
+interface __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry
+{
+    CONST_VTBL struct __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl *lpVtbl;
+};
+
+
 
 #ifdef COBJMACROS
 
@@ -964,131 +1711,53 @@ EXTERN_C const IID IID___FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageSta
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0006 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0006 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0006_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0006_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5377 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5377 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5377_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5377_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0007 */
-/* [local] */ 
-
-#ifndef DEF___FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry
-#define DEF___FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0007 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0007_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0007_v0_0_s_ifspec;
-
-#ifndef ____FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_INTERFACE_DEFINED__)
 #define ____FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_INTERFACE_DEFINED__
 
-/* interface __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry */
-/* [unique][uuid][object] */ 
+typedef interface __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry;
 
-
-
-/* interface __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("dd2278a5-4c14-5967-8a41-9a47c3c5c4a7")
-    __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE First( 
-            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry **first) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef  struct __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *First )( 
-            __RPC__in __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry **first);
-        
-        END_INTERFACE
-    } __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl;
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
 
-    interface __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry
-    {
-        CONST_VTBL struct __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl *lpVtbl;
-    };
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This);
 
-    
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
+                                           /* [out] */ __RPC__out ULONG *iidCount,
+                                           /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This, /* [out] */ __RPC__deref_out_opt HSTRING *className);
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *First )(__RPC__in __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This, /* [retval][out] */ __RPC__deref_out_opt __FIIterator_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry **first);
+
+    END_INTERFACE
+} __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl;
+
+interface __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry
+{
+    CONST_VTBL struct __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
-
 
 #define __FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
@@ -1116,161 +1785,77 @@ EXTERN_C const IID IID___FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageSta
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+#endif // ____FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0008 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIIterable_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0008 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0008_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0008_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5378 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5378 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5378_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5378_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0009 */
-/* [local] */ 
-
-#ifndef DEF___FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry
-#define DEF___FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0009 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0009_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0009_v0_0_s_ifspec;
-
-#ifndef ____FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_INTERFACE_DEFINED__)
 #define ____FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_INTERFACE_DEFINED__
 
-/* interface __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry */
-/* [unique][uuid][object] */ 
+typedef interface __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry;
 
-
-
-/* interface __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("af6d7eac-086f-5c5f-be4b-0858af7506f7")
-    __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE GetAt( 
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Navigation::IPageStackEntry **item) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
-            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Navigation::IPageStackEntry *item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::UI::Xaml::Navigation::IPageStackEntry **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
+        /* [in] */ __RPC__in REFIID riid,
+        /* [annotation][iid_is][out] */ 
+        _COM_Outptr_  void **ppvObject);
+
+    ULONG ( STDMETHODCALLTYPE *AddRef )( __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This);
+
+    ULONG ( STDMETHODCALLTYPE *Release )( __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This);
+
+    HRESULT ( STDMETHODCALLTYPE *GetIids )( __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
+                                            /* [out] */ __RPC__out ULONG *iidCount,
+                                            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
+
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
+        __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
             /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
+
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
+        __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
             /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry **item);
-        
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )( 
+                                         __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
+                                         /* [in] */ unsigned int index,
+                                         /* [retval][out] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * *item);
+
         /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
             __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
             /* [retval][out] */ __RPC__out unsigned int *size);
-        
+
         HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry *item,
+                                               __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
+            /* [in] */ __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * item,
             /* [out] */ __RPC__out unsigned int *index,
             /* [retval][out] */ __RPC__out boolean *found);
-        
+
         HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
+                                               __RPC__in __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
             /* [in] */ unsigned int startIndex,
             /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry **items,
+            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * *items,
             /* [retval][out] */ __RPC__out unsigned int *actual);
-        
+
         END_INTERFACE
-    } __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl;
+} __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl;
 
-    interface __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry
-    {
-        CONST_VTBL struct __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl *lpVtbl;
-    };
+interface __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry
+{
+    CONST_VTBL struct __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl *lpVtbl;
+};
 
-    
+
 
 #ifdef COBJMACROS
 
@@ -1310,219 +1895,86 @@ EXTERN_C const IID IID___FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageS
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+
+#endif // ____FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-
-
-#endif 	/* ____FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0010 */
-/* [local] */ 
-
-#endif /* pinterface */
-#endif /* DEF___FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0010 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0010_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0010_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5379 */
-
-
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5379 */
-
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5379_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation2Eidl_0000_5379_v0_0_s_ifspec;
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0011 */
-/* [local] */ 
-
-#ifndef DEF___FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry
-#define DEF___FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry
-#if !defined(__cplusplus) || defined(RO_NO_TEMPLATE_NAME)
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0011 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0011_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0011_v0_0_s_ifspec;
-
-#ifndef ____FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_INTERFACE_DEFINED__
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_INTERFACE_DEFINED__)
 #define ____FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_INTERFACE_DEFINED__
 
-/* interface __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry */
-/* [unique][uuid][object] */ 
+typedef interface __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry;
 
-
-
-/* interface __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry */
-/* [unique][uuid][object] */ 
-
-
+//  Declare the parameterized interface IID.
 EXTERN_C const IID IID___FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry;
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    
-    MIDL_INTERFACE("e561a13f-89a1-5ef2-a3fe-eba1b4539b46")
-    __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry : public IInspectable
-    {
-    public:
-        virtual HRESULT STDMETHODCALLTYPE GetAt( 
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Navigation::IPageStackEntry **item) = 0;
-        
-        virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Size( 
-            /* [retval][out] */ __RPC__out unsigned int *size) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetView( 
-            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry **view) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE IndexOf( 
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Navigation::IPageStackEntry *item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE SetAt( 
-            /* [in] */ unsigned int index,
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Navigation::IPageStackEntry *item) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE InsertAt( 
-            /* [in] */ unsigned int index,
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Navigation::IPageStackEntry *item) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE RemoveAt( 
-            /* [in] */ unsigned int index) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Append( 
-            /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Navigation::IPageStackEntry *item) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE RemoveAtEnd( void) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE Clear( void) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE GetMany( 
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) ABI::Windows::UI::Xaml::Navigation::IPageStackEntry **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual) = 0;
-        
-        virtual HRESULT STDMETHODCALLTYPE ReplaceAll( 
-            /* [in] */ unsigned int count,
-            /* [size_is][in] */ __RPC__in_ecount_full(count) ABI::Windows::UI::Xaml::Navigation::IPageStackEntry **value) = 0;
-        
-    };
-    
-    
-#else 	/* C style interface */
+typedef struct __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl
+{
+    BEGIN_INTERFACE
 
-    typedef struct __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
+        __RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
             /* [in] */ __RPC__in REFIID riid,
             /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetAt )( 
-            __RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [in] */ unsigned int index,
-            /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry **item);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
-            __RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [retval][out] */ __RPC__out unsigned int *size);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetView )( 
-            __RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry **view);
-        
-        HRESULT ( STDMETHODCALLTYPE *IndexOf )( 
-            __RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry *item,
-            /* [out] */ __RPC__out unsigned int *index,
-            /* [retval][out] */ __RPC__out boolean *found);
-        
-        HRESULT ( STDMETHODCALLTYPE *SetAt )( 
-            __RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [in] */ unsigned int index,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry *item);
-        
-        HRESULT ( STDMETHODCALLTYPE *InsertAt )( 
-            __RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [in] */ unsigned int index,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry *item);
-        
-        HRESULT ( STDMETHODCALLTYPE *RemoveAt )( 
-            __RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [in] */ unsigned int index);
-        
-        HRESULT ( STDMETHODCALLTYPE *Append )( 
-            __RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry *item);
-        
-        HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )( 
-            __RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Clear )( 
-            __RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetMany )( 
-            __RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [in] */ unsigned int startIndex,
-            /* [in] */ unsigned int capacity,
-            /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry **items,
-            /* [retval][out] */ __RPC__out unsigned int *actual);
-        
-        HRESULT ( STDMETHODCALLTYPE *ReplaceAll )( 
-            __RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
-            /* [in] */ unsigned int count,
-            /* [size_is][in] */ __RPC__in_ecount_full(count) __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry **value);
-        
-        END_INTERFACE
-    } __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl;
+        _COM_Outptr_  void **ppvObject);
 
-    interface __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry
-    {
-        CONST_VTBL struct __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl *lpVtbl;
-    };
+    ULONG ( STDMETHODCALLTYPE *AddRef )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This);
+    ULONG ( STDMETHODCALLTYPE *Release )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This);
+    HRESULT ( STDMETHODCALLTYPE *GetIids )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
+        /* [out] */ __RPC__out ULONG *iidCount,
+        /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
 
-    
+    HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This, /* [out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * *className);
+    HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This, /* [out] */ __RPC__out TrustLevel *trustLevel);
+
+    HRESULT ( STDMETHODCALLTYPE *GetAt )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
+        /* [in] */ unsigned int index,
+        /* [retval][out] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * *item);
+
+    /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Size )( 
+        __RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
+        /* [retval][out] */ __RPC__out unsigned int *size);
+
+    HRESULT ( STDMETHODCALLTYPE *GetView )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This, /* [retval][out] */ __RPC__deref_out_opt __FIVectorView_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry **view);
+
+    HRESULT ( STDMETHODCALLTYPE *IndexOf )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * item,
+        /* [out] */ __RPC__out unsigned int *index,
+        /* [retval][out] */ __RPC__out boolean *found);
+
+    HRESULT ( STDMETHODCALLTYPE *SetAt )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * item);
+
+    HRESULT ( STDMETHODCALLTYPE *InsertAt )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
+        /* [in] */ unsigned int index,
+        /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * item);
+
+    HRESULT ( STDMETHODCALLTYPE *RemoveAt )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This, /* [in] */ unsigned int index);
+    HRESULT ( STDMETHODCALLTYPE *Append )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This, /* [in] */ __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * item);
+    HRESULT ( STDMETHODCALLTYPE *RemoveAtEnd )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This);
+    HRESULT ( STDMETHODCALLTYPE *Clear )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This);
+    HRESULT ( STDMETHODCALLTYPE *GetMany )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
+        /* [in] */ unsigned int startIndex,
+        /* [in] */ unsigned int capacity,
+        /* [size_is][length_is][out] */ __RPC__out_ecount_part(capacity, *actual) __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * *items,
+        /* [retval][out] */ __RPC__out unsigned int *actual);
+
+    HRESULT ( STDMETHODCALLTYPE *ReplaceAll )(__RPC__in __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry * This,
+        /* [in] */ unsigned int count,
+        /* [size_is][in] */ __RPC__in_ecount_full(count) __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * *value);
+
+    END_INTERFACE
+} __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl;
+
+interface __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry
+{
+    CONST_VTBL struct __FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntryVtbl *lpVtbl;
+};
+
+
 
 #ifdef COBJMACROS
 
@@ -1586,1920 +2038,1397 @@ EXTERN_C const IID IID___FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStack
 #endif /* COBJMACROS */
 
 
-#endif 	/* C style interface */
+
+#endif // ____FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_INTERFACE_DEFINED__
+
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+
+#ifndef ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+#define ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CFoundation_CIUriRuntimeClass __x_ABI_CWindows_CFoundation_CIUriRuntimeClass;
+
+#endif // ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
 
 
 
 
-#endif 	/* ____FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry_INTERFACE_DEFINED__ */
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CIDependencyProperty_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CIDependencyProperty_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CIDependencyProperty_FWD_DEFINED__
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0012 */
-/* [local] */ 
 
-#endif /* pinterface */
-#endif /* DEF___FIVector_1_Windows__CUI__CXaml__CNavigation__CPageStackEntry */
-#if !defined(__cplusplus)
 
-#if !defined(__cplusplus)
-/* [v1_enum] */ 
+
+
+typedef struct __x_ABI_CWindows_CUI_CXaml_CInterop_CTypeName __x_ABI_CWindows_CUI_CXaml_CInterop_CTypeName;
+
+
+
+
+
+#ifndef ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo_FWD_DEFINED__
+#define ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo;
+
+#endif // ____x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo_FWD_DEFINED__
+
+
+
+
+
+
+
+
+typedef enum __x_ABI_CWindows_CUI_CXaml_CNavigation_CNavigationCacheMode __x_ABI_CWindows_CUI_CXaml_CNavigation_CNavigationCacheMode;
+
+
+typedef enum __x_ABI_CWindows_CUI_CXaml_CNavigation_CNavigationMode __x_ABI_CWindows_CUI_CXaml_CNavigation_CNavigationMode;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ *
+ * Struct Windows.UI.Xaml.Navigation.NavigationCacheMode
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+/* [v1_enum, contract] */
 enum __x_ABI_CWindows_CUI_CXaml_CNavigation_CNavigationCacheMode
-    {
-        NavigationCacheMode_Disabled	= 0,
-        NavigationCacheMode_Required	= 1,
-        NavigationCacheMode_Enabled	= 2
-    } ;
-#endif /* end if !defined(__cplusplus) */
+{
+    NavigationCacheMode_Disabled = 0,
+    NavigationCacheMode_Required = 1,
+    NavigationCacheMode_Enabled = 2,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#endif
-#if !defined(__cplusplus)
 
-#if !defined(__cplusplus)
-/* [v1_enum] */ 
+/*
+ *
+ * Struct Windows.UI.Xaml.Navigation.NavigationMode
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+/* [v1_enum, contract] */
 enum __x_ABI_CWindows_CUI_CXaml_CNavigation_CNavigationMode
-    {
-        NavigationMode_New	= 0,
-        NavigationMode_Back	= 1,
-        NavigationMode_Forward	= 2,
-        NavigationMode_Refresh	= 3
-    } ;
-#endif /* end if !defined(__cplusplus) */
-
-#endif
+{
+    NavigationMode_New = 0,
+    NavigationMode_Back = 1,
+    NavigationMode_Forward = 2,
+    NavigationMode_Refresh = 3,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0012 */
-/* [local] */ 
-
-#ifdef __cplusplus
-} /* end extern "C" */
-namespace ABI {
-    namespace Windows {
-        namespace UI {
-            namespace Xaml {
-                namespace Navigation {
-                    
-                    /* [v1_enum] */ 
-                    enum NavigationCacheMode
-                        {
-                            NavigationCacheMode_Disabled	= 0,
-                            NavigationCacheMode_Required	= 1,
-                            NavigationCacheMode_Enabled	= 2
-                        } ;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-extern "C" { 
-#endif
-
-#ifdef __cplusplus
-} /* end extern "C" */
-namespace ABI {
-    namespace Windows {
-        namespace UI {
-            namespace Xaml {
-                namespace Navigation {
-                    
-                    /* [v1_enum] */ 
-                    enum NavigationMode
-                        {
-                            NavigationMode_New	= 0,
-                            NavigationMode_Back	= 1,
-                            NavigationMode_Forward	= 2,
-                            NavigationMode_Refresh	= 3
-                        } ;
-                } /* end namespace */
-            } /* end namespace */
-        } /* end namespace */
-    } /* end namespace */
-} /* end namespace */
-
-extern "C" { 
-#endif
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0012_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0012_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_INTERFACE_DEFINED__
+/*
+ *
+ * Delegate Windows.UI.Xaml.Navigation.LoadCompletedEventHandler
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_INTERFACE_DEFINED__
+/* [object, uuid("AEBAF785-43FC-4E2C-95C3-97AE84EABC8E"), contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandlerVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject);
 
-/* interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler */
-/* [uuid][object] */ 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler * This);
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler * This);
+HRESULT ( STDMETHODCALLTYPE *Invoke )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler * This,
+        /* [in] */__RPC__in_opt IInspectable * sender,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * e
+        );
+    END_INTERFACE
+    
+} __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandlerVtbl;
+
+interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandlerVtbl *lpVtbl;
+};
+
+#ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_Invoke(This,sender,e) \
+    ( (This)->lpVtbl->Invoke(This,sender,e) )
 
 
-
-/* interface ABI::Windows::UI::Xaml::Navigation::ILoadCompletedEventHandler */
-/* [uuid][object] */ 
+#endif /* COBJMACROS */
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace Xaml {
-                    namespace Navigation {
-                        
-                        MIDL_INTERFACE("AEBAF785-43FC-4E2C-95C3-97AE84EABC8E")
-                        ILoadCompletedEventHandler : public IUnknown
-                        {
-                        public:
-                            virtual HRESULT STDMETHODCALLTYPE Invoke( 
-                                /* [in] */ __RPC__in_opt IInspectable *sender,
-                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Navigation::INavigationEventArgs *e) = 0;
-                            
-                        };
 
-                        extern const __declspec(selectany) IID & IID_ILoadCompletedEventHandler = __uuidof(ILoadCompletedEventHandler);
+/*
+ *
+ * Delegate Windows.UI.Xaml.Navigation.NavigatedEventHandler
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_INTERFACE_DEFINED__
+/* [object, uuid("7BD1CF54-23CF-4CCE-B2F5-4CE78D96896E"), contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandlerVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject);
 
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler * This);
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler * This);
+HRESULT ( STDMETHODCALLTYPE *Invoke )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler * This,
+        /* [in] */__RPC__in_opt IInspectable * sender,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * e
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandlerVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandlerVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler * This,
-            /* [in] */ __RPC__in_opt IInspectable *sender,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs *e);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandlerVtbl;
-
-    interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandlerVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandlerVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_Invoke(This,sender,e) \
+    ( (This)->lpVtbl->Invoke(This,sender,e) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_Invoke(This,sender,e)	\
-    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CILoadCompletedEventHandler_INTERFACE_DEFINED__ */
-
-
-#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::Xaml::Navigation::INavigatedEventHandler */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace Xaml {
-                    namespace Navigation {
-                        
-                        MIDL_INTERFACE("7BD1CF54-23CF-4CCE-B2F5-4CE78D96896E")
-                        INavigatedEventHandler : public IUnknown
-                        {
-                        public:
-                            virtual HRESULT STDMETHODCALLTYPE Invoke( 
-                                /* [in] */ __RPC__in_opt IInspectable *sender,
-                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Navigation::INavigationEventArgs *e) = 0;
-                            
-                        };
 
-                        extern const __declspec(selectany) IID & IID_INavigatedEventHandler = __uuidof(INavigatedEventHandler);
+/*
+ *
+ * Delegate Windows.UI.Xaml.Navigation.NavigatingCancelEventHandler
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_INTERFACE_DEFINED__
+/* [object, uuid("75D6A78F-A302-4489-9898-24EA49182910"), contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandlerVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject);
 
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler * This);
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler * This);
+HRESULT ( STDMETHODCALLTYPE *Invoke )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler * This,
+        /* [in] */__RPC__in_opt IInspectable * sender,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs * e
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandlerVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandlerVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler * This,
-            /* [in] */ __RPC__in_opt IInspectable *sender,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs *e);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandlerVtbl;
-
-    interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandlerVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandlerVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_Invoke(This,sender,e) \
+    ( (This)->lpVtbl->Invoke(This,sender,e) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_Invoke(This,sender,e)	\
-    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatedEventHandler_INTERFACE_DEFINED__ */
-
-
-#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::Xaml::Navigation::INavigatingCancelEventHandler */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace Xaml {
-                    namespace Navigation {
-                        
-                        MIDL_INTERFACE("75D6A78F-A302-4489-9898-24EA49182910")
-                        INavigatingCancelEventHandler : public IUnknown
-                        {
-                        public:
-                            virtual HRESULT STDMETHODCALLTYPE Invoke( 
-                                /* [in] */ __RPC__in_opt IInspectable *sender,
-                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs *e) = 0;
-                            
-                        };
 
-                        extern const __declspec(selectany) IID & IID_INavigatingCancelEventHandler = __uuidof(INavigatingCancelEventHandler);
+/*
+ *
+ * Delegate Windows.UI.Xaml.Navigation.NavigationFailedEventHandler
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_INTERFACE_DEFINED__
+/* [object, uuid("4DAB4671-12B2-43C7-B892-9BE2DCD3E88D"), contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandlerVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject);
 
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler * This);
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler * This);
+HRESULT ( STDMETHODCALLTYPE *Invoke )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler * This,
+        /* [in] */__RPC__in_opt IInspectable * sender,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs * e
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandlerVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandlerVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler * This,
-            /* [in] */ __RPC__in_opt IInspectable *sender,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs *e);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandlerVtbl;
-
-    interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandlerVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandlerVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_Invoke(This,sender,e) \
+    ( (This)->lpVtbl->Invoke(This,sender,e) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_Invoke(This,sender,e)	\
-    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventHandler_INTERFACE_DEFINED__ */
-
-
-#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::Xaml::Navigation::INavigationFailedEventHandler */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace Xaml {
-                    namespace Navigation {
-                        
-                        MIDL_INTERFACE("4DAB4671-12B2-43C7-B892-9BE2DCD3E88D")
-                        INavigationFailedEventHandler : public IUnknown
-                        {
-                        public:
-                            virtual HRESULT STDMETHODCALLTYPE Invoke( 
-                                /* [in] */ __RPC__in_opt IInspectable *sender,
-                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Navigation::INavigationFailedEventArgs *e) = 0;
-                            
-                        };
 
-                        extern const __declspec(selectany) IID & IID_INavigationFailedEventHandler = __uuidof(INavigationFailedEventHandler);
+/*
+ *
+ * Delegate Windows.UI.Xaml.Navigation.NavigationStoppedEventHandler
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_INTERFACE_DEFINED__
+/* [object, uuid("F0117DDB-12FA-4D8D-8B26-B383D09C2B3C"), contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandlerVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject);
 
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler * This);
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler * This);
+HRESULT ( STDMETHODCALLTYPE *Invoke )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler * This,
+        /* [in] */__RPC__in_opt IInspectable * sender,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * e
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandlerVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandlerVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler * This,
-            /* [in] */ __RPC__in_opt IInspectable *sender,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs *e);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandlerVtbl;
-
-    interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandlerVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandlerVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_Invoke(This,sender,e) \
+    ( (This)->lpVtbl->Invoke(This,sender,e) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_Invoke(This,sender,e)	\
-    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventHandler_INTERFACE_DEFINED__ */
-
-
-#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::Xaml::Navigation::INavigationStoppedEventHandler */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace Xaml {
-                    namespace Navigation {
-                        
-                        MIDL_INTERFACE("F0117DDB-12FA-4D8D-8B26-B383D09C2B3C")
-                        INavigationStoppedEventHandler : public IUnknown
-                        {
-                        public:
-                            virtual HRESULT STDMETHODCALLTYPE Invoke( 
-                                /* [in] */ __RPC__in_opt IInspectable *sender,
-                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Navigation::INavigationEventArgs *e) = 0;
-                            
-                        };
 
-                        extern const __declspec(selectany) IID & IID_INavigationStoppedEventHandler = __uuidof(INavigationStoppedEventHandler);
+/*
+ *
+ * Interface Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Navigation.NavigatingCancelEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_INavigatingCancelEventArgs[] = L"Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs";
+/* [object, uuid("FD1D67AE-EAFB-4079-BE80-6DC92A03AEDF"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Cancel )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Cancel )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs * This,
+        /* [in] */boolean value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_NavigationMode )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CNavigation_CNavigationMode * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SourcePageType )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CInterop_CTypeName * value
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgsVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandlerVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler * This,
-            /* [in] */ __RPC__in_opt IInspectable *sender,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs *e);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandlerVtbl;
-
-    interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandlerVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgsVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_Invoke(This,sender,e)	\
-    ( (This)->lpVtbl -> Invoke(This,sender,e) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_get_Cancel(This,value) \
+    ( (This)->lpVtbl->get_Cancel(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_put_Cancel(This,value) \
+    ( (This)->lpVtbl->put_Cancel(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_get_NavigationMode(This,value) \
+    ( (This)->lpVtbl->get_NavigationMode(This,value) )
+
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_get_SourcePageType(This,value) \
+    ( (This)->lpVtbl->get_SourcePageType(This,value) )
+
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationStoppedEventHandler_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0017 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_INavigatingCancelEventArgs[] = L"Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs";
-#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0017 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0017_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0017_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace Xaml {
-                    namespace Navigation {
-                        
-                        MIDL_INTERFACE("FD1D67AE-EAFB-4079-BE80-6DC92A03AEDF")
-                        INavigatingCancelEventArgs : public IInspectable
-                        {
-                        public:
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Cancel( 
-                                /* [out][retval] */ __RPC__out boolean *value) = 0;
-                            
-                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Cancel( 
-                                /* [in] */ boolean value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NavigationMode( 
-                                /* [out][retval] */ __RPC__out ABI::Windows::UI::Xaml::Navigation::NavigationMode *value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SourcePageType( 
-                                /* [out][retval] */ __RPC__out ABI::Windows::UI::Xaml::Interop::TypeName *value) = 0;
-                            
-                        };
 
-                        extern const __declspec(selectany) IID & IID_INavigatingCancelEventArgs = __uuidof(INavigatingCancelEventArgs);
+/*
+ *
+ * Interface Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Navigation.NavigatingCancelEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_INavigatingCancelEventArgs2[] = L"Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs2";
+/* [object, uuid("5407B704-8147-4343-838F-DD1EE908C137"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Parameter )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2 * This,
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_NavigationTransitionInfo )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo * * value
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2Vtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Cancel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs * This,
-            /* [out][retval] */ __RPC__out boolean *value);
-        
-        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Cancel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs * This,
-            /* [in] */ boolean value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NavigationMode )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs * This,
-            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CNavigation_CNavigationMode *value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SourcePageType )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs * This,
-            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CInterop_CTypeName *value);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgsVtbl;
-
-    interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgsVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2Vtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_get_Parameter(This,value) \
+    ( (This)->lpVtbl->get_Parameter(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_get_NavigationTransitionInfo(This,value) \
+    ( (This)->lpVtbl->get_NavigationTransitionInfo(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_get_Cancel(This,value)	\
-    ( (This)->lpVtbl -> get_Cancel(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_put_Cancel(This,value)	\
-    ( (This)->lpVtbl -> put_Cancel(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_get_NavigationMode(This,value)	\
-    ( (This)->lpVtbl -> get_NavigationMode(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_get_SourcePageType(This,value)	\
-    ( (This)->lpVtbl -> get_SourcePageType(This,value) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0018 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_INavigatingCancelEventArgs2[] = L"Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs2";
-#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0018 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0018_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0018_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2 */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs2 */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace Xaml {
-                    namespace Navigation {
-                        
-                        MIDL_INTERFACE("5407B704-8147-4343-838F-DD1EE908C137")
-                        INavigatingCancelEventArgs2 : public IInspectable
-                        {
-                        public:
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Parameter( 
-                                /* [out][retval] */ __RPC__deref_out_opt IInspectable **value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NavigationTransitionInfo( 
-                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo **value) = 0;
-                            
-                        };
 
-                        extern const __declspec(selectany) IID & IID_INavigatingCancelEventArgs2 = __uuidof(INavigatingCancelEventArgs2);
+/*
+ *
+ * Interface Windows.UI.Xaml.Navigation.INavigationEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Navigation.NavigationEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_INavigationEventArgs[] = L"Windows.UI.Xaml.Navigation.INavigationEventArgs";
+/* [object, uuid("B6AA9834-6691-44D1-BDF7-58820C27B0D0"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Content )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Parameter )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SourcePageType )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CInterop_CTypeName * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_NavigationMode )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CNavigation_CNavigationMode * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Uri )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Uri )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass * value
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgsVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2Vtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2 * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2 * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2 * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2 * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2 * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2 * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Parameter )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2 * This,
-            /* [out][retval] */ __RPC__deref_out_opt IInspectable **value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NavigationTransitionInfo )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2 * This,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo **value);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2Vtbl;
-
-    interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2Vtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgsVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_get_Content(This,value) \
+    ( (This)->lpVtbl->get_Content(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_get_Parameter(This,value) \
+    ( (This)->lpVtbl->get_Parameter(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_get_SourcePageType(This,value) \
+    ( (This)->lpVtbl->get_SourcePageType(This,value) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_get_NavigationMode(This,value) \
+    ( (This)->lpVtbl->get_NavigationMode(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_get_Parameter(This,value)	\
-    ( (This)->lpVtbl -> get_Parameter(This,value) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_get_Uri(This,value) \
+    ( (This)->lpVtbl->get_Uri(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_get_NavigationTransitionInfo(This,value)	\
-    ( (This)->lpVtbl -> get_NavigationTransitionInfo(This,value) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_put_Uri(This,value) \
+    ( (This)->lpVtbl->put_Uri(This,value) )
+
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigatingCancelEventArgs2_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0019 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_INavigationEventArgs[] = L"Windows.UI.Xaml.Navigation.INavigationEventArgs";
-#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0019 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0019_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0019_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::Xaml::Navigation::INavigationEventArgs */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace Xaml {
-                    namespace Navigation {
-                        
-                        MIDL_INTERFACE("B6AA9834-6691-44D1-BDF7-58820C27B0D0")
-                        INavigationEventArgs : public IInspectable
-                        {
-                        public:
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Content( 
-                                /* [out][retval] */ __RPC__deref_out_opt IInspectable **value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Parameter( 
-                                /* [out][retval] */ __RPC__deref_out_opt IInspectable **value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SourcePageType( 
-                                /* [out][retval] */ __RPC__out ABI::Windows::UI::Xaml::Interop::TypeName *value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NavigationMode( 
-                                /* [out][retval] */ __RPC__out ABI::Windows::UI::Xaml::Navigation::NavigationMode *value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Uri( 
-                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::Foundation::IUriRuntimeClass **value) = 0;
-                            
-                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Uri( 
-                                /* [in] */ __RPC__in_opt ABI::Windows::Foundation::IUriRuntimeClass *value) = 0;
-                            
-                        };
 
-                        extern const __declspec(selectany) IID & IID_INavigationEventArgs = __uuidof(INavigationEventArgs);
+/*
+ *
+ * Interface Windows.UI.Xaml.Navigation.INavigationEventArgs2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Navigation.NavigationEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_INavigationEventArgs2[] = L"Windows.UI.Xaml.Navigation.INavigationEventArgs2";
+/* [object, uuid("DBFF71D9-979A-4B2E-A49B-3BB17FDEF574"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2Vtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2 * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2 * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2 * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2 * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2 * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2 * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_NavigationTransitionInfo )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2 * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo * * value
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2Vtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Content )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This,
-            /* [out][retval] */ __RPC__deref_out_opt IInspectable **value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Parameter )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This,
-            /* [out][retval] */ __RPC__deref_out_opt IInspectable **value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SourcePageType )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This,
-            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CInterop_CTypeName *value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NavigationMode )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This,
-            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CNavigation_CNavigationMode *value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Uri )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass **value);
-        
-        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Uri )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs * This,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CFoundation_CIUriRuntimeClass *value);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgsVtbl;
-
-    interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgsVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2Vtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_get_NavigationTransitionInfo(This,value) \
+    ( (This)->lpVtbl->get_NavigationTransitionInfo(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_get_Content(This,value)	\
-    ( (This)->lpVtbl -> get_Content(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_get_Parameter(This,value)	\
-    ( (This)->lpVtbl -> get_Parameter(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_get_SourcePageType(This,value)	\
-    ( (This)->lpVtbl -> get_SourcePageType(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_get_NavigationMode(This,value)	\
-    ( (This)->lpVtbl -> get_NavigationMode(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_get_Uri(This,value)	\
-    ( (This)->lpVtbl -> get_Uri(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_put_Uri(This,value)	\
-    ( (This)->lpVtbl -> put_Uri(This,value) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0020 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_INavigationEventArgs2[] = L"Windows.UI.Xaml.Navigation.INavigationEventArgs2";
-#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0020 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0020_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2 */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::Xaml::Navigation::INavigationEventArgs2 */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace Xaml {
-                    namespace Navigation {
-                        
-                        MIDL_INTERFACE("DBFF71D9-979A-4B2E-A49B-3BB17FDEF574")
-                        INavigationEventArgs2 : public IInspectable
-                        {
-                        public:
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NavigationTransitionInfo( 
-                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo **value) = 0;
-                            
-                        };
 
-                        extern const __declspec(selectany) IID & IID_INavigationEventArgs2 = __uuidof(INavigationEventArgs2);
+/*
+ *
+ * Interface Windows.UI.Xaml.Navigation.INavigationFailedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Navigation.NavigationFailedEventArgs
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_INavigationFailedEventArgs[] = L"Windows.UI.Xaml.Navigation.INavigationFailedEventArgs";
+/* [object, uuid("11C1DFF7-36C2-4102-B2EF-0217A97289B3"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Exception )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs * This,
+        /* [retval, out] */__RPC__out HRESULT * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Handled )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs * This,
+        /* [retval, out] */__RPC__out boolean * value
+        );
+    /* [propput] */HRESULT ( STDMETHODCALLTYPE *put_Handled )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs * This,
+        /* [in] */boolean value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SourcePageType )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CInterop_CTypeName * value
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgsVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2Vtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2 * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2 * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2 * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2 * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2 * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2 * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NavigationTransitionInfo )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2 * This,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo **value);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2Vtbl;
-
-    interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2Vtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgsVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_get_Exception(This,value) \
+    ( (This)->lpVtbl->get_Exception(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_get_Handled(This,value) \
+    ( (This)->lpVtbl->get_Handled(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_put_Handled(This,value) \
+    ( (This)->lpVtbl->put_Handled(This,value) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_get_SourcePageType(This,value) \
+    ( (This)->lpVtbl->get_SourcePageType(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_get_NavigationTransitionInfo(This,value)	\
-    ( (This)->lpVtbl -> get_NavigationTransitionInfo(This,value) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationEventArgs2_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0021 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_INavigationFailedEventArgs[] = L"Windows.UI.Xaml.Navigation.INavigationFailedEventArgs";
-#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0021 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0021_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0021_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::Xaml::Navigation::INavigationFailedEventArgs */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace Xaml {
-                    namespace Navigation {
-                        
-                        MIDL_INTERFACE("11C1DFF7-36C2-4102-B2EF-0217A97289B3")
-                        INavigationFailedEventArgs : public IInspectable
-                        {
-                        public:
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Exception( 
-                                /* [out][retval] */ __RPC__out HRESULT *value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Handled( 
-                                /* [out][retval] */ __RPC__out boolean *value) = 0;
-                            
-                            virtual /* [propput] */ HRESULT STDMETHODCALLTYPE put_Handled( 
-                                /* [in] */ boolean value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SourcePageType( 
-                                /* [out][retval] */ __RPC__out ABI::Windows::UI::Xaml::Interop::TypeName *value) = 0;
-                            
-                        };
 
-                        extern const __declspec(selectany) IID & IID_INavigationFailedEventArgs = __uuidof(INavigationFailedEventArgs);
+/*
+ *
+ * Interface Windows.UI.Xaml.Navigation.IPageStackEntry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Navigation.PageStackEntry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_IPageStackEntry[] = L"Windows.UI.Xaml.Navigation.IPageStackEntry";
+/* [object, uuid("EF8814A6-9388-4ACA-8572-405194069080"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SourcePageType )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * This,
+        /* [retval, out] */__RPC__out __x_ABI_CWindows_CUI_CXaml_CInterop_CTypeName * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_Parameter )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * This,
+        /* [retval, out] */__RPC__deref_out_opt IInspectable * * value
+        );
+    /* [propget] */HRESULT ( STDMETHODCALLTYPE *get_NavigationTransitionInfo )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo * * value
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Exception )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs * This,
-            /* [out][retval] */ __RPC__out HRESULT *value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Handled )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs * This,
-            /* [out][retval] */ __RPC__out boolean *value);
-        
-        /* [propput] */ HRESULT ( STDMETHODCALLTYPE *put_Handled )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs * This,
-            /* [in] */ boolean value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SourcePageType )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs * This,
-            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CInterop_CTypeName *value);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgsVtbl;
-
-    interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgsVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_get_SourcePageType(This,value) \
+    ( (This)->lpVtbl->get_SourcePageType(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_get_Parameter(This,value) \
+    ( (This)->lpVtbl->get_Parameter(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_get_NavigationTransitionInfo(This,value) \
+    ( (This)->lpVtbl->get_NavigationTransitionInfo(This,value) )
 
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_get_Exception(This,value)	\
-    ( (This)->lpVtbl -> get_Exception(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_get_Handled(This,value)	\
-    ( (This)->lpVtbl -> get_Handled(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_put_Handled(This,value)	\
-    ( (This)->lpVtbl -> put_Handled(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_get_SourcePageType(This,value)	\
-    ( (This)->lpVtbl -> get_SourcePageType(This,value) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CINavigationFailedEventArgs_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0022 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_IPageStackEntry[] = L"Windows.UI.Xaml.Navigation.IPageStackEntry";
-#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0022 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0022_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0022_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::Xaml::Navigation::IPageStackEntry */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace Xaml {
-                    namespace Navigation {
-                        
-                        MIDL_INTERFACE("EF8814A6-9388-4ACA-8572-405194069080")
-                        IPageStackEntry : public IInspectable
-                        {
-                        public:
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SourcePageType( 
-                                /* [out][retval] */ __RPC__out ABI::Windows::UI::Xaml::Interop::TypeName *value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_Parameter( 
-                                /* [out][retval] */ __RPC__deref_out_opt IInspectable **value) = 0;
-                            
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_NavigationTransitionInfo( 
-                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo **value) = 0;
-                            
-                        };
 
-                        extern const __declspec(selectany) IID & IID_IPageStackEntry = __uuidof(IPageStackEntry);
+/*
+ *
+ * Interface Windows.UI.Xaml.Navigation.IPageStackEntryFactory
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Navigation.PageStackEntry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_IPageStackEntryFactory[] = L"Windows.UI.Xaml.Navigation.IPageStackEntryFactory";
+/* [object, uuid("4454048A-A8B9-4F78-9B84-1F51F58851FF"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactoryVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+HRESULT ( STDMETHODCALLTYPE *CreateInstance )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory * This,
+        /* [in] */__x_ABI_CWindows_CUI_CXaml_CInterop_CTypeName sourcePageType,
+        /* [in] */__RPC__in_opt IInspectable * parameter,
+        /* [in] */__RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo * navigationTransitionInfo,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * * instance
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactoryVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SourcePageType )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * This,
-            /* [out][retval] */ __RPC__out __x_ABI_CWindows_CUI_CXaml_CInterop_CTypeName *value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_Parameter )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * This,
-            /* [out][retval] */ __RPC__deref_out_opt IInspectable **value);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_NavigationTransitionInfo )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry * This,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo **value);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryVtbl;
-
-    interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactoryVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_CreateInstance(This,sourcePageType,parameter,navigationTransitionInfo,instance) \
+    ( (This)->lpVtbl->CreateInstance(This,sourcePageType,parameter,navigationTransitionInfo,instance) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_get_SourcePageType(This,value)	\
-    ( (This)->lpVtbl -> get_SourcePageType(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_get_Parameter(This,value)	\
-    ( (This)->lpVtbl -> get_Parameter(This,value) ) 
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_get_NavigationTransitionInfo(This,value)	\
-    ( (This)->lpVtbl -> get_NavigationTransitionInfo(This,value) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0023 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_IPageStackEntryFactory[] = L"Windows.UI.Xaml.Navigation.IPageStackEntryFactory";
-#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0023 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0023_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0023_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::Xaml::Navigation::IPageStackEntryFactory */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory;
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace Xaml {
-                    namespace Navigation {
-                        
-                        MIDL_INTERFACE("4454048A-A8B9-4F78-9B84-1F51F58851FF")
-                        IPageStackEntryFactory : public IInspectable
-                        {
-                        public:
-                            virtual HRESULT STDMETHODCALLTYPE CreateInstance( 
-                                /* [in] */ ABI::Windows::UI::Xaml::Interop::TypeName sourcePageType,
-                                /* [in] */ __RPC__in_opt IInspectable *parameter,
-                                /* [in] */ __RPC__in_opt ABI::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo *navigationTransitionInfo,
-                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::Navigation::IPageStackEntry **instance) = 0;
-                            
-                        };
 
-                        extern const __declspec(selectany) IID & IID_IPageStackEntryFactory = __uuidof(IPageStackEntryFactory);
+/*
+ *
+ * Interface Windows.UI.Xaml.Navigation.IPageStackEntryStatics
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Interface is a part of the implementation of type Windows.UI.Xaml.Navigation.PageStackEntry
+ *
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_IPageStackEntryStatics[] = L"Windows.UI.Xaml.Navigation.IPageStackEntryStatics";
+/* [object, uuid("ACEFF8E3-246C-4033-9F01-01CB0DA5254E"), exclusiveto, contract] */
+typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStaticsVtbl
+{
+    BEGIN_INTERFACE
+    HRESULT ( STDMETHODCALLTYPE *QueryInterface)(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics * This,
+    /* [in] */ __RPC__in REFIID riid,
+    /* [annotation][iid_is][out] */
+    _COM_Outptr_  void **ppvObject
+    );
 
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
+ULONG ( STDMETHODCALLTYPE *AddRef )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics * This
+    );
+
+ULONG ( STDMETHODCALLTYPE *Release )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics * This
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetIids )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics * This,
+    /* [out] */ __RPC__out ULONG *iidCount,
+    /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics * This,
+    /* [out] */ __RPC__deref_out_opt HSTRING *className
+    );
+
+HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )(
+    __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics * This,
+    /* [OUT ] */ __RPC__out TrustLevel *trustLevel
+    );
+/* [propget] */HRESULT ( STDMETHODCALLTYPE *get_SourcePageTypeProperty )(
+        __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics * This,
+        /* [retval, out] */__RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty * * value
+        );
+    END_INTERFACE
     
-#else 	/* C style interface */
+} __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStaticsVtbl;
 
-    typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactoryVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        HRESULT ( STDMETHODCALLTYPE *CreateInstance )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory * This,
-            /* [in] */ __x_ABI_CWindows_CUI_CXaml_CInterop_CTypeName sourcePageType,
-            /* [in] */ __RPC__in_opt IInspectable *parameter,
-            /* [in] */ __RPC__in_opt __x_ABI_CWindows_CUI_CXaml_CMedia_CAnimation_CINavigationTransitionInfo *navigationTransitionInfo,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntry **instance);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactoryVtbl;
-
-    interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactoryVtbl *lpVtbl;
-    };
-
-    
+interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics
+{
+    CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStaticsVtbl *lpVtbl;
+};
 
 #ifdef COBJMACROS
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_QueryInterface(This,riid,ppvObject) \
+( (This)->lpVtbl->QueryInterface(This,riid,ppvObject) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_AddRef(This) \
+        ( (This)->lpVtbl->AddRef(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_Release(This) \
+        ( (This)->lpVtbl->Release(This) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_GetIids(This,iidCount,iids) \
+        ( (This)->lpVtbl->GetIids(This,iidCount,iids) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_GetRuntimeClassName(This,className) \
+        ( (This)->lpVtbl->GetRuntimeClassName(This,className) )
 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_GetTrustLevel(This,trustLevel) \
+        ( (This)->lpVtbl->GetTrustLevel(This,trustLevel) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
+#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_get_SourcePageTypeProperty(This,value) \
+    ( (This)->lpVtbl->get_SourcePageTypeProperty(This,value) )
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_CreateInstance(This,sourcePageType,parameter,navigationTransitionInfo,instance)	\
-    ( (This)->lpVtbl -> CreateInstance(This,sourcePageType,parameter,navigationTransitionInfo,instance) ) 
 
 #endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryFactory_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0024 */
-/* [local] */ 
-
-#if !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_INTERFACE_DEFINED__)
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Xaml_Navigation_IPageStackEntryStatics[] = L"Windows.UI.Xaml.Navigation.IPageStackEntryStatics";
-#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_INTERFACE_DEFINED__) */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0024 */
-/* [local] */ 
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0024_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0024_v0_0_s_ifspec;
-
-#ifndef ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_INTERFACE_DEFINED__
-#define ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_INTERFACE_DEFINED__
-
-/* interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics */
-/* [uuid][object] */ 
-
-
-
-/* interface ABI::Windows::UI::Xaml::Navigation::IPageStackEntryStatics */
-/* [uuid][object] */ 
 
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics;
-
-#if defined(__cplusplus) && !defined(CINTERFACE)
-    } /* end extern "C" */
-    namespace ABI {
-        namespace Windows {
-            namespace UI {
-                namespace Xaml {
-                    namespace Navigation {
-                        
-                        MIDL_INTERFACE("ACEFF8E3-246C-4033-9F01-01CB0DA5254E")
-                        IPageStackEntryStatics : public IInspectable
-                        {
-                        public:
-                            virtual /* [propget] */ HRESULT STDMETHODCALLTYPE get_SourcePageTypeProperty( 
-                                /* [out][retval] */ __RPC__deref_out_opt ABI::Windows::UI::Xaml::IDependencyProperty **value) = 0;
-                            
-                        };
-
-                        extern const __declspec(selectany) IID & IID_IPageStackEntryStatics = __uuidof(IPageStackEntryStatics);
-
-                        
-                    }  /* end namespace */
-                }  /* end namespace */
-            }  /* end namespace */
-        }  /* end namespace */
-    }  /* end namespace */
-    extern "C" { 
-    
-#else 	/* C style interface */
-
-    typedef struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStaticsVtbl
-    {
-        BEGIN_INTERFACE
-        
-        HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics * This,
-            /* [in] */ __RPC__in REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            _COM_Outptr_  void **ppvObject);
-        
-        ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics * This);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetIids )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics * This,
-            /* [out] */ __RPC__out ULONG *iidCount,
-            /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*iidCount) IID **iids);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetRuntimeClassName )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics * This,
-            /* [out] */ __RPC__deref_out_opt HSTRING *className);
-        
-        HRESULT ( STDMETHODCALLTYPE *GetTrustLevel )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics * This,
-            /* [out] */ __RPC__out TrustLevel *trustLevel);
-        
-        /* [propget] */ HRESULT ( STDMETHODCALLTYPE *get_SourcePageTypeProperty )( 
-            __RPC__in __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics * This,
-            /* [out][retval] */ __RPC__deref_out_opt __x_ABI_CWindows_CUI_CXaml_CIDependencyProperty **value);
-        
-        END_INTERFACE
-    } __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStaticsVtbl;
-
-    interface __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics
-    {
-        CONST_VTBL struct __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStaticsVtbl *lpVtbl;
-    };
-
-    
-
-#ifdef COBJMACROS
+#endif /* !defined(____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
-
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_GetIids(This,iidCount,iids)	\
-    ( (This)->lpVtbl -> GetIids(This,iidCount,iids) ) 
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_GetRuntimeClassName(This,className)	\
-    ( (This)->lpVtbl -> GetRuntimeClassName(This,className) ) 
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_GetTrustLevel(This,trustLevel)	\
-    ( (This)->lpVtbl -> GetTrustLevel(This,trustLevel) ) 
-
-
-#define __x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_get_SourcePageTypeProperty(This,value)	\
-    ( (This)->lpVtbl -> get_SourcePageTypeProperty(This,value) ) 
-
-#endif /* COBJMACROS */
-
-
-#endif 	/* C style interface */
-
-
-
-
-#endif 	/* ____x_ABI_CWindows_CUI_CXaml_CNavigation_CIPageStackEntryStatics_INTERFACE_DEFINED__ */
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0025 */
-/* [local] */ 
+/*
+ *
+ * Class Windows.UI.Xaml.Navigation.NavigatingCancelEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs ** Default Interface **
+ *    Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs2
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef RUNTIMECLASS_Windows_UI_Xaml_Navigation_NavigatingCancelEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_UI_Xaml_Navigation_NavigatingCancelEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Navigation_NavigatingCancelEventArgs[] = L"Windows.UI.Xaml.Navigation.NavigatingCancelEventArgs";
 #endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Navigation.NavigationEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Navigation.INavigationEventArgs ** Default Interface **
+ *    Windows.UI.Xaml.Navigation.INavigationEventArgs2
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
 #ifndef RUNTIMECLASS_Windows_UI_Xaml_Navigation_NavigationEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_UI_Xaml_Navigation_NavigationEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Navigation_NavigationEventArgs[] = L"Windows.UI.Xaml.Navigation.NavigationEventArgs";
 #endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Navigation.NavigationFailedEventArgs
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Navigation.INavigationFailedEventArgs ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
 #ifndef RUNTIMECLASS_Windows_UI_Xaml_Navigation_NavigationFailedEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_UI_Xaml_Navigation_NavigationFailedEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Navigation_NavigationFailedEventArgs[] = L"Windows.UI.Xaml.Navigation.NavigationFailedEventArgs";
 #endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+
+/*
+ *
+ * Class Windows.UI.Xaml.Navigation.PageStackEntry
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
+ *
+ *
+ * RuntimeClass can be activated.
+ *   Type can be activated via the Windows.UI.Xaml.Navigation.IPageStackEntryFactory interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.UI.Xaml.Navigation.IPageStackEntryStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *
+ * Class implements the following interfaces:
+ *    Windows.UI.Xaml.Navigation.IPageStackEntry ** Default Interface **
+ *
+ * Class Threading Model:  Both Single and Multi Threaded Apartment
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
 #ifndef RUNTIMECLASS_Windows_UI_Xaml_Navigation_PageStackEntry_DEFINED
 #define RUNTIMECLASS_Windows_UI_Xaml_Navigation_PageStackEntry_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Xaml_Navigation_PageStackEntry[] = L"Windows.UI.Xaml.Navigation.PageStackEntry";
 #endif
-
-
-/* interface __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0025 */
-/* [local] */ 
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0025_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_windows2Eui2Examl2Enavigation_0000_0025_v0_0_s_ifspec;
 
-/* Additional Prototypes for ALL interfaces */
 
-unsigned long             __RPC_USER  HSTRING_UserSize(     __RPC__in unsigned long *, unsigned long            , __RPC__in HSTRING * ); 
-unsigned char * __RPC_USER  HSTRING_UserMarshal(  __RPC__in unsigned long *, __RPC__inout_xcount(0) unsigned char *, __RPC__in HSTRING * ); 
-unsigned char * __RPC_USER  HSTRING_UserUnmarshal(__RPC__in unsigned long *, __RPC__in_xcount(0) unsigned char *, __RPC__out HSTRING * ); 
-void                      __RPC_USER  HSTRING_UserFree(     __RPC__in unsigned long *, __RPC__in HSTRING * ); 
+#endif // defined(__cplusplus)
+#pragma pop_macro("MIDL_CONST_ID")
+// Restore the original value of the 'DEPRECATED' macro
+#pragma pop_macro("DEPRECATED")
 
-unsigned long             __RPC_USER  HSTRING_UserSize64(     __RPC__in unsigned long *, unsigned long            , __RPC__in HSTRING * ); 
-unsigned char * __RPC_USER  HSTRING_UserMarshal64(  __RPC__in unsigned long *, __RPC__inout_xcount(0) unsigned char *, __RPC__in HSTRING * ); 
-unsigned char * __RPC_USER  HSTRING_UserUnmarshal64(__RPC__in unsigned long *, __RPC__in_xcount(0) unsigned char *, __RPC__out HSTRING * ); 
-void                      __RPC_USER  HSTRING_UserFree64(     __RPC__in unsigned long *, __RPC__in HSTRING * ); 
-
-/* end of Additional Prototypes */
-
-#ifdef __cplusplus
-}
+#ifdef __clang__
+#pragma clang diagnostic pop // deprecated-declarations
+#else
+#pragma warning(pop)
 #endif
+#endif // __windows2Eui2Examl2Enavigation_p_h__
 
-#endif
-
-
+#endif // __windows2Eui2Examl2Enavigation_h__
