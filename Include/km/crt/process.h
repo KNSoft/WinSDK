@@ -140,9 +140,12 @@ __declspec(noreturn) void __cdecl __report_rangecheckfailure(void);
 #endif
 #if !defined(_M_CEE)
 void __cdecl __security_init_cookie(void);
-#ifdef  _M_IX86
+#if defined(_M_IX86)
 void __fastcall __security_check_cookie(_In_ uintptr_t _StackCookie);
 __declspec(noreturn) void __cdecl __report_gsfailure(void);
+#elif defined(_M_ARM64EC)
+void __cdecl __security_check_cookie_arm64ec(_In_ uintptr_t _StackCookie);
+__declspec(noreturn) void __cdecl __report_gsfailure(uintptr_t _StackCookie);
 #else
 void __cdecl __security_check_cookie(_In_ uintptr_t _StackCookie);
 __declspec(noreturn) void __cdecl __report_gsfailure(uintptr_t _StackCookie);

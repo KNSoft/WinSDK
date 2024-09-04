@@ -2530,7 +2530,7 @@ typedef enum D3D10_SB_INSTRUCTION_RETURN_TYPE
 // OpcodeToken0 is followed by 2 operands:
 // (1) an operand, starting with OperandToken0, defining which
 //     g# register (D3D11_SB_OPERAND_TYPE_THREAD_GROUP_SHARED_MEMORY) is being declared.
-// (2) a DWORD indicating the element count, # of 32-bit scalars..
+// (2) a DWORD indicating the byte count, which must be a multiple of 4.
 //
 // ----------------------------------------------------------------------------
 

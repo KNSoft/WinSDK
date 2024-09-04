@@ -4,7 +4,7 @@ Copyright (c) Microsoft Corporation.  All rights reserved.
 
 _WdfVersionBuild_
 
-Module Name: 
+Module Name:
 
     SPBCx.h
 
@@ -29,6 +29,20 @@ Revision History:
 
 #ifndef _SPBCX_H_
 #define _SPBCX_H_
+
+#ifndef WDF_EXTERN_C
+  #ifdef __cplusplus
+    #define WDF_EXTERN_C       extern "C"
+    #define WDF_EXTERN_C_START extern "C" {
+    #define WDF_EXTERN_C_END   }
+  #else
+    #define WDF_EXTERN_C
+    #define WDF_EXTERN_C_START
+    #define WDF_EXTERN_C_END
+  #endif
+#endif
+
+WDF_EXTERN_C_START
 
 
 
@@ -58,8 +72,6 @@ DECLARE_HANDLE( SPBTARGET );
 DECLARE_HANDLE( SPBREQUEST );
 
 #endif
-
-WDF_EXTERN_C_START
 
 typedef VOID (*SPBFUNC) (VOID);
 extern SPBFUNC SpbFunctions [];
@@ -98,10 +110,11 @@ _Function_class_(EVT_SPB_TARGET_CONNECT)
 _IRQL_requires_same_
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSTATUS
+NTAPI
 EVT_SPB_TARGET_CONNECT(
     _In_
     WDFDEVICE Controller,
-    _In_ 
+    _In_
     SPBTARGET Target
     );
 
@@ -112,10 +125,11 @@ _Function_class_(EVT_SPB_TARGET_DISCONNECT)
 _IRQL_requires_same_
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VOID
+NTAPI
 EVT_SPB_TARGET_DISCONNECT(
     _In_
     WDFDEVICE Controller,
-    _In_ 
+    _In_
     SPBTARGET Target
     );
 
@@ -126,6 +140,7 @@ _Function_class_(EVT_SPB_CONTROLLER_LOCK)
 _IRQL_requires_same_
 _IRQL_requires_max_(DISPATCH_LEVEL)
 VOID
+NTAPI
 EVT_SPB_CONTROLLER_LOCK(
     _In_
     WDFDEVICE Controller,
@@ -142,6 +157,7 @@ _Function_class_(EVT_SPB_CONTROLLER_UNLOCK)
 _IRQL_requires_same_
 _IRQL_requires_max_(DISPATCH_LEVEL)
 VOID
+NTAPI
 EVT_SPB_CONTROLLER_UNLOCK(
     _In_
     WDFDEVICE Controller,
@@ -158,6 +174,7 @@ _Function_class_(EVT_SPB_CONTROLLER_READ)
 _IRQL_requires_same_
 _IRQL_requires_max_(DISPATCH_LEVEL)
 VOID
+NTAPI
 EVT_SPB_CONTROLLER_READ(
     _In_
     WDFDEVICE Controller,
@@ -176,6 +193,7 @@ _Function_class_(EVT_SPB_CONTROLLER_WRITE)
 _IRQL_requires_same_
 _IRQL_requires_max_(DISPATCH_LEVEL)
 VOID
+NTAPI
 EVT_SPB_CONTROLLER_WRITE(
     _In_
     WDFDEVICE Controller,
@@ -194,6 +212,7 @@ _Function_class_(EVT_SPB_CONTROLLER_SEQUENCE)
 _IRQL_requires_same_
 _IRQL_requires_max_(DISPATCH_LEVEL)
 VOID
+NTAPI
 EVT_SPB_CONTROLLER_SEQUENCE(
     _In_
     WDFDEVICE Controller,
@@ -212,6 +231,7 @@ _Function_class_(EVT_SPB_CONTROLLER_OTHER)
 _IRQL_requires_same_
 _IRQL_requires_max_(DISPATCH_LEVEL)
 VOID
+NTAPI
 EVT_SPB_CONTROLLER_OTHER(
     _In_
     WDFDEVICE  Controller,
@@ -236,14 +256,14 @@ typedef struct _SPB_CONTROLLER_CONFIG {
 
     PFN_SPB_TARGET_CONNECT      EvtSpbTargetConnect;
     PFN_SPB_TARGET_DISCONNECT   EvtSpbTargetDisconnect;
-    
+
     PFN_SPB_CONTROLLER_LOCK     EvtSpbControllerLock;
     PFN_SPB_CONTROLLER_UNLOCK   EvtSpbControllerUnlock;
 
     PFN_SPB_CONTROLLER_READ     EvtSpbIoRead;
     PFN_SPB_CONTROLLER_WRITE    EvtSpbIoWrite;
     PFN_SPB_CONTROLLER_SEQUENCE EvtSpbIoSequence;
-}  SPB_CONTROLLER_CONFIG, 
+}  SPB_CONTROLLER_CONFIG,
   *PSPB_CONTROLLER_CONFIG;
 
 VOID
@@ -263,7 +283,7 @@ typedef struct _SPB_CONNECTION_PARAMETERS
     USHORT Size;
     PCWSTR ConnectionTag;
     PVOID ConnectionParameters;
-} 
+}
 SPB_CONNECTION_PARAMETERS, *PSPB_CONNECTION_PARAMETERS;
 
 VOID
@@ -289,7 +309,7 @@ typedef struct _SPB_REQUEST_PARAMETERS
 
     size_t Length;
 
-    ULONG SequenceTransferCount;   
+    ULONG SequenceTransferCount;
 }
 SPB_REQUEST_PARAMETERS, *PSPB_REQUEST_PARAMETERS;
 
@@ -332,7 +352,7 @@ _Must_inspect_result_
 _IRQL_requires_max_(PASSIVE_LEVEL)
 WDFAPI
 NTSTATUS
-(*PFN_SPBDEVICEINITCONFIG)(
+(NTAPI *PFN_SPBDEVICEINITCONFIG)(
     _In_
     PSPB_DRIVER_GLOBALS DriverGlobals,
     _Inout_
@@ -341,8 +361,8 @@ NTSTATUS
 
 _Must_inspect_result_
 _IRQL_requires_max_(PASSIVE_LEVEL)
-NTSTATUS
 FORCEINLINE
+NTSTATUS
 SpbDeviceInitConfig(
     _Inout_
     WDFDEVICE_INIT* DeviceInit
@@ -359,7 +379,7 @@ _Must_inspect_result_
 _IRQL_requires_max_(PASSIVE_LEVEL)
 WDFAPI
 NTSTATUS
-(*PFN_SPBDEVICEINITIALIZE)(
+(NTAPI *PFN_SPBDEVICEINITIALIZE)(
     _In_
     PSPB_DRIVER_GLOBALS DriverGlobals,
     _In_
@@ -370,8 +390,8 @@ NTSTATUS
 
 _Must_inspect_result_
 _IRQL_requires_max_(PASSIVE_LEVEL)
-NTSTATUS
 FORCEINLINE
+NTSTATUS
 SpbDeviceInitialize(
     _In_
     WDFDEVICE FxDevice,
@@ -389,7 +409,7 @@ typedef
 _IRQL_requires_max_(PASSIVE_LEVEL)
 WDFAPI
 VOID
-(*PFN_SPBCONTROLLERSETIOOTHERCALLBACK)(
+(NTAPI *PFN_SPBCONTROLLERSETIOOTHERCALLBACK)(
     _In_
     PSPB_DRIVER_GLOBALS DriverGlobals,
     _In_
@@ -401,8 +421,8 @@ VOID
     );
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
-VOID
 FORCEINLINE
+VOID
 SpbControllerSetIoOtherCallback(
     _In_
     WDFDEVICE FxDevice,
@@ -422,7 +442,7 @@ typedef
 _IRQL_requires_max_(PASSIVE_LEVEL)
 WDFAPI
 VOID
-(*PFN_SPBCONTROLLERSETREQUESTATTRIBUTES)(
+(NTAPI *PFN_SPBCONTROLLERSETREQUESTATTRIBUTES)(
     _In_
     PSPB_DRIVER_GLOBALS DriverGlobals,
     _In_
@@ -432,8 +452,8 @@ VOID
     );
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
-VOID
 FORCEINLINE
+VOID
 SpbControllerSetRequestAttributes(
     _In_
     WDFDEVICE FxDevice,
@@ -451,7 +471,7 @@ typedef
 _IRQL_requires_max_(PASSIVE_LEVEL)
 WDFAPI
 VOID
-(*PFN_SPBCONTROLLERSETTARGETATTRIBUTES)(
+(NTAPI *PFN_SPBCONTROLLERSETTARGETATTRIBUTES)(
     _In_
     PSPB_DRIVER_GLOBALS DriverGlobals,
     _In_
@@ -461,8 +481,8 @@ VOID
     );
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
-VOID
 FORCEINLINE
+VOID
 SpbControllerSetTargetAttributes(
     _In_
     WDFDEVICE FxDevice,
@@ -480,7 +500,7 @@ typedef
 _IRQL_requires_max_(DISPATCH_LEVEL)
 WDFAPI
 VOID
-(*PFN_SPBTARGETGETCONNECTIONPARAMETERS)(
+(NTAPI *PFN_SPBTARGETGETCONNECTIONPARAMETERS)(
     _In_
     PSPB_DRIVER_GLOBALS DriverGlobals,
     _In_
@@ -490,8 +510,8 @@ VOID
     );
 
 _IRQL_requires_max_(DISPATCH_LEVEL)
-VOID
 FORCEINLINE
+VOID
 SpbTargetGetConnectionParameters(
     _In_
     SPBTARGET Target,
@@ -509,7 +529,7 @@ typedef
 _IRQL_requires_max_(DISPATCH_LEVEL)
 WDFAPI
 WDFFILEOBJECT
-(*PFN_SPBTARGETGETFILEOBJECT)(
+(NTAPI *PFN_SPBTARGETGETFILEOBJECT)(
     _In_
     PSPB_DRIVER_GLOBALS DriverGlobals,
     _In_
@@ -517,8 +537,8 @@ WDFFILEOBJECT
     );
 
 _IRQL_requires_max_(DISPATCH_LEVEL)
-WDFFILEOBJECT
 FORCEINLINE
+WDFFILEOBJECT
 SpbTargetGetFileObject(
     _In_
     SPBTARGET Target
@@ -534,7 +554,7 @@ typedef
 _IRQL_requires_max_(DISPATCH_LEVEL)
 WDFAPI
 SPBTARGET
-(*PFN_SPBREQUESTGETTARGET)(
+(NTAPI *PFN_SPBREQUESTGETTARGET)(
     _In_
     PSPB_DRIVER_GLOBALS DriverGlobals,
     _In_
@@ -542,8 +562,8 @@ SPBTARGET
     );
 
 _IRQL_requires_max_(DISPATCH_LEVEL)
-SPBTARGET
 FORCEINLINE
+SPBTARGET
 SpbRequestGetTarget(
     _In_
     SPBREQUEST SpbRequest
@@ -559,7 +579,7 @@ typedef
 _IRQL_requires_max_(DISPATCH_LEVEL)
 WDFAPI
 WDFDEVICE
-(*PFN_SPBREQUESTGETCONTROLLER)(
+(NTAPI *PFN_SPBREQUESTGETCONTROLLER)(
     _In_
     PSPB_DRIVER_GLOBALS DriverGlobals,
     _In_
@@ -567,8 +587,8 @@ WDFDEVICE
     );
 
 _IRQL_requires_max_(DISPATCH_LEVEL)
-WDFDEVICE
 FORCEINLINE
+WDFDEVICE
 SpbRequestGetController(
     _In_
     SPBREQUEST SpbRequest
@@ -584,7 +604,7 @@ typedef
 _IRQL_requires_max_(DISPATCH_LEVEL)
 WDFAPI
 VOID
-(*PFN_SPBREQUESTGETPARAMETERS)(
+(NTAPI *PFN_SPBREQUESTGETPARAMETERS)(
     _In_
     PSPB_DRIVER_GLOBALS DriverGlobals,
     _In_
@@ -594,8 +614,8 @@ VOID
     );
 
 _IRQL_requires_max_(DISPATCH_LEVEL)
-VOID
 FORCEINLINE
+VOID
 SpbRequestGetParameters(
     _In_
     SPBREQUEST SpbRequest,
@@ -613,7 +633,7 @@ typedef
 _IRQL_requires_max_(DISPATCH_LEVEL)
 WDFAPI
 VOID
-(*PFN_SPBREQUESTGETTRANSFERPARAMETERS)(
+(NTAPI *PFN_SPBREQUESTGETTRANSFERPARAMETERS)(
     _In_
     PSPB_DRIVER_GLOBALS DriverGlobals,
     _In_
@@ -627,8 +647,8 @@ VOID
     );
 
 _IRQL_requires_max_(DISPATCH_LEVEL)
-VOID
 FORCEINLINE
+VOID
 SpbRequestGetTransferParameters(
     _In_
     SPBREQUEST SpbRequest,
@@ -650,7 +670,7 @@ typedef
 _IRQL_requires_max_(DISPATCH_LEVEL)
 WDFAPI
 VOID
-(*PFN_SPBREQUESTCOMPLETE)(
+(NTAPI *PFN_SPBREQUESTCOMPLETE)(
     _In_
     PSPB_DRIVER_GLOBALS DriverGlobals,
     _In_
@@ -660,8 +680,8 @@ VOID
     );
 
 _IRQL_requires_max_(DISPATCH_LEVEL)
-VOID
 FORCEINLINE
+VOID
 SpbRequestComplete(
     _In_
     SPBREQUEST Request,
@@ -680,7 +700,7 @@ _Must_inspect_result_
 _IRQL_requires_max_(DISPATCH_LEVEL)
 WDFAPI
 NTSTATUS
-(*PFN_SPBREQUESTCAPTUREIOOTHERTRANSFERLIST)(
+(NTAPI *PFN_SPBREQUESTCAPTUREIOOTHERTRANSFERLIST)(
     _In_
     PSPB_DRIVER_GLOBALS DriverGlobals,
     _In_
@@ -689,8 +709,8 @@ NTSTATUS
 
 _Must_inspect_result_
 _IRQL_requires_max_(DISPATCH_LEVEL)
-NTSTATUS
 FORCEINLINE
+NTSTATUS
 SpbRequestCaptureIoOtherTransferList(
     _In_
     SPBREQUEST Request
@@ -704,3 +724,4 @@ SpbRequestCaptureIoOtherTransferList(
 WDF_EXTERN_C_END
 
 #endif // _SPBCX_H_
+

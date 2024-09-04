@@ -85,12 +85,26 @@ BOOLEAN
     _Inout_ PCPPORT Port
     );
 
+typedef
+UART_STATUS
+(*UART_SET_POWER_D0) (
+    _In_ PCPPORT Port
+    );
+
+typedef
+UART_STATUS
+(*UART_SET_POWER_D3) (
+    _In_ PCPPORT Port
+    );
+
 typedef struct _UART_HARDWARE_DRIVER {
     UART_INITIALIZE_PORT InitializePort;
     UART_SET_BAUD SetBaud;
     UART_GET_BYTE GetByte;
     UART_PUT_BYTE PutByte;
     UART_RX_READY RxReady;
+    UART_SET_POWER_D0 SetPowerD0;
+    UART_SET_POWER_D3 SetPowerD3;
 } UART_HARDWARE_DRIVER, *PUART_HARDWARE_DRIVER;
 
 /*++
@@ -115,6 +129,10 @@ Fields:
 
     RxReady - Supplies a function to check if there is data pending to be read
         from the UART.
+
+    SetPowerD0 - Supplies a function to transition the UART to D0.
+
+    SetPowerD3 - Supplies a function to transition the UART to D3.
 
 --*/
 
@@ -264,10 +282,17 @@ extern UART_HARDWARE_DRIVER SBSAHardwareDriver;
 extern UART_HARDWARE_DRIVER SBSA32HardwareDriver;
 extern UART_HARDWARE_DRIVER Bcm2835HardwareDriver;
 extern UART_HARDWARE_DRIVER SDM845HardwareDriver;
+extern UART_HARDWARE_DRIVER SDM845v2HardwareDriver;
 
 #endif
 
 extern UART_HARDWARE_DRIVER MM16550HardwareDriver;
+
+#if defined (_X86_) || defined(_AMD64_)
+
+extern UART_HARDWARE_DRIVER IaLpssHardwareDriver;
+
+#endif
 
 extern PUART_HARDWARE_DRIVER UartHardwareDrivers[];
 extern ULONG UartHardwareDriverCount;

@@ -38,17 +38,17 @@ typedef enum _NDK_OBJECT_TYPE {
     NdkObjectTypeConnector = 8,
     NdkObjectTypeListener = 9,
     NdkObjectTypeSrq = 10,
-    NdkObjectTypeMax = 11    
+    NdkObjectTypeMax = 11
 } NDK_OBJECT_TYPE;
 
 typedef struct _NDK_OBJECT_HEADER_RESERVED_BLOCK {
-    PVOID rf[4];    
+    PVOID rf[4];
 } NDK_OBJECT_HEADER_RESERVED_BLOCK;
 
 typedef struct _NDK_OBJECT_HEADER {
     NDK_VERSION Version;
     NDK_OBJECT_TYPE ObjectType;
-    NDK_OBJECT_HEADER_RESERVED_BLOCK NdkReserved;    
+    NDK_OBJECT_HEADER_RESERVED_BLOCK NdkReserved;
 } NDK_OBJECT_HEADER;
 
 typedef struct _NDK_RESULT {
@@ -76,13 +76,17 @@ typedef struct _NDK_RESULT_EX {
     PVOID QPContext;
     PVOID RequestContext;
     NDK_OPERATION_TYPE Type;
+    ULONG ProviderErrorCode;
     ULONG_PTR TypeSpecificCompletionOutput;
 } NDK_RESULT_EX;
 
+// Added to ensure right bounds inside NDK_RESULT_EX structure.
+C_ASSERT(sizeof(NDK_OPERATION_TYPE) == sizeof(ULONG));
+
 typedef PHYSICAL_ADDRESS NDK_LOGICAL_ADDRESS;
 
-typedef 
-_Struct_size_bytes_(FIELD_OFFSET(NDK_LOGICAL_ADDRESS_MAPPING, AdapterPageArray) + 
+typedef
+_Struct_size_bytes_(FIELD_OFFSET(NDK_LOGICAL_ADDRESS_MAPPING, AdapterPageArray) +
 	(AdapterPageCount * sizeof(NDK_LOGICAL_ADDRESS)))
 struct _NDK_LOGICAL_ADDRESS_MAPPING {
     PVOID AdapterContext; // Reserved for NDK provider's use
@@ -143,7 +147,7 @@ NTSTATUS
     _In_ NDK_OBJECT_HEADER *pNdkObject,
     _In_ GUID *ExtensionInterfaceID,
     _In_ NDK_VERSION ExtensionInterfaceVersion,
-    _Out_ NDK_EXTENSION_INTERFACE *pExtensionInterface 
+    _Out_ NDK_EXTENSION_INTERFACE *pExtensionInterface
     );
 
 typedef struct _NDK_CQ NDK_CQ;
@@ -654,10 +658,29 @@ VOID
 
 typedef
 _IRQL_requires_max_(DISPATCH_LEVEL)
+VOID
+(*NDK_FN_DISCONNECT_EVENT_CALLBACK_EX) (
+    _In_opt_ PVOID DisconnectEventContext,
+    _In_ ULONG ProviderDisconnectReason
+    );
+
+typedef
+_IRQL_requires_max_(DISPATCH_LEVEL)
 NTSTATUS
 (*NDK_FN_COMPLETE_CONNECT) (
     _In_ NDK_CONNECTOR *pNdkConnector,
     _In_opt_ NDK_FN_DISCONNECT_EVENT_CALLBACK DisconnectEvent,
+    _In_opt_ PVOID DisconnectEventContext,
+    _In_ NDK_FN_REQUEST_COMPLETION RequestCompletion,
+    _In_opt_ PVOID RequestContext
+    );
+
+typedef
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTSTATUS
+(*NDK_FN_COMPLETE_CONNECT_EX) (
+    _In_ NDK_CONNECTOR *pNdkConnector,
+    _In_opt_ NDK_FN_DISCONNECT_EVENT_CALLBACK_EX DisconnectEvent,
     _In_opt_ PVOID DisconnectEventContext,
     _In_ NDK_FN_REQUEST_COMPLETION RequestCompletion,
     _In_opt_ PVOID RequestContext
@@ -674,6 +697,22 @@ NTSTATUS
     _In_reads_bytes_opt_(PrivateDataLength) CONST PVOID pPrivateData,
     _In_ ULONG PrivateDataLength,
     _In_opt_ NDK_FN_DISCONNECT_EVENT_CALLBACK DisconnectEvent,
+    _In_opt_ PVOID DisconnectEventContext,
+    _In_ NDK_FN_REQUEST_COMPLETION RequestCompletion,
+    _In_opt_ PVOID RequestContext
+    );
+
+typedef
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTSTATUS
+(*NDK_FN_ACCEPT_EX) (
+    _In_ NDK_CONNECTOR *pNdkConnector,
+    _In_ NDK_QP *pNdkQp,
+    _In_ ULONG InboundReadLimit,
+    _In_ ULONG OutboundReadLimit,
+    _In_reads_bytes_opt_(PrivateDataLength) CONST PVOID pPrivateData,
+    _In_ ULONG PrivateDataLength,
+    _In_opt_ NDK_FN_DISCONNECT_EVENT_CALLBACK_EX DisconnectEvent,
     _In_opt_ PVOID DisconnectEventContext,
     _In_ NDK_FN_REQUEST_COMPLETION RequestCompletion,
     _In_opt_ PVOID RequestContext
@@ -748,6 +787,8 @@ typedef struct _NDK_CONNECTOR_DISPATCH {
     NDK_FN_GET_LOCAL_ADDRESS NdkGetLocalAddress;
     NDK_FN_GET_PEER_ADDRESS NdkGetPeerAddress;
     NDK_FN_DISCONNECT NdkDisconnect;
+    NDK_FN_COMPLETE_CONNECT_EX NdkCompleteConnectEx;
+    NDK_FN_ACCEPT_EX NdkAcceptEx;
 } NDK_CONNECTOR_DISPATCH;
 
 typedef struct _NDK_CONNECTOR {
@@ -823,7 +864,7 @@ NTSTATUS
 (*NDK_FN_QUERY_ADAPTER_INFO_EX) (
     _In_ NDK_ADAPTER *pNdkAdapter,
     _In_ NDK_VERSION Version,
-    _Out_writes_bytes_to_opt_(*pBufferSize, *pBufferSize) 
+    _Out_writes_bytes_to_opt_(*pBufferSize, *pBufferSize)
 	  NDK_ADAPTER_INFO* pInfo,
     _Inout_ ULONG* pBufferSize
     );

@@ -33,7 +33,9 @@ _STD_BEGIN
  #define _RERAISE	throw
 
  #define _THROW0()	throw ()
- #define _THROW1(x)	throw (...)
+ // illegal as C++17 doesn't support dynamic exception specification
+ // #define _THROW1(x)	throw (...)
+ #define _THROW1(x)
 
  #define _THROW(x, y)	throw x(y)
  #define _THROW_NCEE(x, y)	_THROW(x, y)

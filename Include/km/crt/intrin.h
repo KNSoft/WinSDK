@@ -22,7 +22,7 @@
 #if !defined(_M_CEE_PURE)
 #if defined(_M_IX86) || defined(_M_X64) || defined(_M_ARM) || defined(_M_ARM64)
 
-#if (defined(_M_IX86) || defined(_M_X64)) && !defined(_CHPE_ONLY_)
+#if (defined(_M_IX86) || defined(_M_X64)) && !defined(_CHPE_ONLY_) && (!defined(_M_ARM64EC) || !defined(_DISABLE_SOFTINTRIN_))
 #include <immintrin.h>
 #include <ammintrin.h>
 #endif /* _M_IX86 || _M_X64 */
@@ -36,7 +36,7 @@
 #include <armintr.h>
 #endif /* _M_ARM */
 
-#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
+#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC)
 #include <arm64_neon.h>
 #include <arm64intr.h>
 #endif /* _M_ARM64 */
@@ -49,7 +49,7 @@
 extern "C" {
 #endif
 
-/*
+/* TODO-ARM64X: Don't define X64 intrinsics that don't make sense for ARM64EC.
 ** __MACHINE          : everything
 ** __MACHINEX86       : x86 only
 ** __MACHINEX64       : x64 only
@@ -90,17 +90,17 @@ extern "C" {
 #define __MACHINEX86        __MACHINEZ
 #endif
 
-#if !defined(_M_X64)
+#if !defined(_M_X64) || defined(_M_ARM64EC)
 #undef __MACHINEX64
 #define __MACHINEX64        __MACHINEZ
 #endif
 
-#if !(defined(_M_IX86) || defined(_M_X64)) || defined(_CHPE_ONLY_)
+#if !(defined(_M_IX86) || defined(_M_X64)) || defined(_CHPE_ONLY_) || defined(_M_ARM64EC)
 #undef __MACHINEX86_X64
 #define __MACHINEX86_X64    __MACHINEZ
 #endif
 
-#if !(defined(_M_ARM) || defined(_M_X64))
+#if !(defined(_M_ARM) || defined(_M_X64)) || defined(_M_ARM64EC)
 #undef __MACHINEARM_X64
 #define __MACHINEARM_X64    __MACHINEZ
 #endif
@@ -110,22 +110,22 @@ extern "C" {
 #define __MACHINEARM        __MACHINEZ
 #endif
 
-#if !(defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64))
+#if !(defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC))
 #undef  __MACHINEARM64
 #define __MACHINEARM64      __MACHINEZ
 #endif
 
-#if !(defined(_M_ARM) || defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64))
+#if !(defined(_M_ARM) || defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC))
 #undef __MACHINEARM_ARM64
 #define __MACHINEARM_ARM64  __MACHINEZ
 #endif
 
-#if !(defined(_M_ARM) || defined(_M_X64) || defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64))
+#if !(defined(_M_ARM) || defined(_M_X64) || defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC))
 #undef __MACHINEARM_64
 #define __MACHINEARM_64     __MACHINEZ
 #endif
 
-#if !(defined(_M_X64) || defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64))
+#if !(defined(_M_X64) || defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC))
 #undef __MACHINEARM64_X64
 #define __MACHINEARM64_X64     __MACHINEZ
 #endif
@@ -409,6 +409,8 @@ __MACHINEX86_X64(unsigned int __popcnt(unsigned int))
 __MACHINEX86_X64(unsigned short __popcnt16(unsigned short))
 __MACHINEX64(unsigned __int64 __popcnt64(unsigned __int64))
 __MACHINEARM_ARM64(void __cdecl __prefetch(const void *))
+__MACHINEARM(void __cdecl __prefetchw(const void *))
+__MACHINEARM64(void __cdecl __prefetch2(const void *, unsigned __int8))
 __MACHINEARM(unsigned __int64 __rdpmccntr64(void))
 __MACHINEX86_X64(unsigned __int64 __rdtsc(void))
 __MACHINEX86_X64(unsigned __int64 __rdtscp(unsigned int *))
@@ -479,6 +481,8 @@ __MACHINEARM_ARM64(void __wfe(void))
 __MACHINEARM_ARM64(void __wfi(void))
 __MACHINEX64(void __writecr0(unsigned __int64))
 __MACHINEX86(void __writecr0(unsigned int))
+__MACHINEX64(void __writecr2(unsigned __int64))
+__MACHINEX86(void __writecr2(unsigned int))
 __MACHINEX64(void __writecr3(unsigned __int64))
 __MACHINEX86(void __writecr3(unsigned int))
 __MACHINEX64(void __writecr4(unsigned __int64))
@@ -1106,6 +1110,14 @@ __MACHINE(unsigned char _rotr8(unsigned char _Value, unsigned char _Shift))
 __MACHINE(int __cdecl _setjmp(jmp_buf))
 __MACHINEARM_64(int __cdecl _setjmpex(jmp_buf))
 __MACHINEX64(unsigned __int64 _umul128(unsigned __int64 _Multiplier, unsigned __int64 _Multiplicand, unsigned __int64 * _HighProduct))
+
+#if defined(_M_ARM64EC) && !defined(_DISABLE_SOFTINTRIN_)
+/***
+ * softintrin.h includes widemath.h, which uses _rotr64, so
+ * softintrin.h must be included after declaration of _rotr64.
+ ****/
+#include <softintrin.h>
+#endif
 
 #if defined(__cplusplus)
 }

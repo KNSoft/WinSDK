@@ -32,6 +32,15 @@ extern "C" {
 #endif
 
 //
+// Most VideoPort functions are deprecated as of Windows 8
+//
+#if defined(FKG_FORCED_USAGE) || defined(WINPHONE) || defined(BUILD_WINDOWS)
+# define VIDEOPORT_DEPRECATED
+#else
+# define VIDEOPORT_DEPRECATED __declspec(deprecated)
+#endif
+
+//
 // Define port driver status code.
 // The values for these are the Win32 error codes
 //
@@ -1662,6 +1671,7 @@ typedef struct _VPOSVERSIONINFO
 //
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
+VIDEOPORT_DEPRECATED
 __drv_preferredFunction("VideoPortAllocatePool", "Obsolete")
 VIDEOPORT_API
 VP_STATUS
@@ -1686,6 +1696,7 @@ VideoPortCompareMemory(
     SIZE_T Length
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 BOOLEAN
@@ -1704,18 +1715,21 @@ VideoPortDebugPrint(
     ...
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VP_STATUS
 VideoPortDisableInterrupt(
     PVOID HwDeviceExtension
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VP_STATUS
 VideoPortEnableInterrupt(
     PVOID HwDeviceExtension
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(DISPATCH_LEVEL)
 VIDEOPORT_API
 VP_STATUS
@@ -1724,6 +1738,7 @@ VideoPortEnumerateChildren(
     IN _Reserved_ PVOID Reserved
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 VOID
@@ -1746,6 +1761,7 @@ VP_STATUS
     ULONG ComponentInformationLength
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 VP_STATUS
@@ -1760,6 +1776,7 @@ VideoPortGetAccessRanges(
     PULONG Slot
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 PVOID
@@ -1767,6 +1784,7 @@ VideoPortGetAssociatedDeviceExtension(
     IN PVOID DeviceObject
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 ULONG
@@ -1783,6 +1801,7 @@ VIDEOPORT_API
 UCHAR
 VideoPortGetCurrentIrql();
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 PVOID
 VideoPortGetDeviceBase(
@@ -1792,6 +1811,7 @@ VideoPortGetDeviceBase(
     UCHAR InIoSpace
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 VP_STATUS
@@ -1823,6 +1843,7 @@ VideoPortGetRegistryParameters(
     PVOID Context
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 _Out_writes_bytes_opt_(Length) PVOID
@@ -1833,6 +1854,7 @@ VideoPortGetRomImage(
     IN ULONG Length
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 VP_STATUS
@@ -1873,6 +1895,7 @@ VideoPortInitialize(
     PVOID HwContext
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 VP_STATUS
@@ -1891,6 +1914,7 @@ VideoPortLogError(
     ULONG UniqueId
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL) 
 __drv_preferredFunction("VideoPortMapMemory", "Obsolete")
 VIDEOPORT_API
@@ -1907,6 +1931,7 @@ VideoPortMapBankedMemory(
     PVOID Context
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 VP_STATUS
@@ -1959,24 +1984,28 @@ VideoPortQueueDpc(
     IN PVOID Context
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 UCHAR
 VideoPortReadPortUchar(
     PUCHAR Port
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 USHORT
 VideoPortReadPortUshort(
     PUSHORT Port
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 ULONG
 VideoPortReadPortUlong(
     PULONG Port
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VOID
 VideoPortReadPortBufferUchar(
@@ -1985,6 +2014,7 @@ VideoPortReadPortBufferUchar(
     ULONG Count
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VOID
 VideoPortReadPortBufferUshort(
@@ -1993,6 +2023,7 @@ VideoPortReadPortBufferUshort(
     ULONG Count
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VOID
 VideoPortReadPortBufferUlong(
@@ -2001,12 +2032,14 @@ VideoPortReadPortBufferUlong(
     ULONG Count
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 UCHAR
 VideoPortReadRegisterUchar(
     PUCHAR Register
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 USHORT
 VideoPortReadRegisterUshort(
@@ -2019,6 +2052,7 @@ VideoPortReadRegisterUlong(
     PULONG Register
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VOID
 VideoPortReadRegisterBufferUchar(
@@ -2027,6 +2061,7 @@ VideoPortReadRegisterBufferUchar(
     ULONG Count
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VOID
 VideoPortReadRegisterBufferUshort(
@@ -2035,6 +2070,7 @@ VideoPortReadRegisterBufferUshort(
     ULONG Count
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VOID
 VideoPortReadRegisterBufferUlong(
@@ -2043,6 +2079,7 @@ VideoPortReadRegisterBufferUlong(
     ULONG Count
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL) 
 __drv_preferredFunction("VideoPortFreePool", "Obsolete")
 VIDEOPORT_API
@@ -2059,6 +2096,7 @@ VideoPortReleaseDeviceLock(
     IN PVOID HwDeviceExtension
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL) 
 __drv_preferredFunction("(see documentation)", "Obsolete")
 VIDEOPORT_API
@@ -2070,6 +2108,7 @@ VideoPortScanRom(
     PUCHAR String
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 ULONG
@@ -2092,6 +2131,7 @@ VideoPortSetRegistryParameters(
     ULONG ValueLength
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 VP_STATUS
@@ -2101,12 +2141,14 @@ VideoPortSetTrappedEmulatorPorts(
     _In_reads_(NumAccessRanges) PVIDEO_ACCESS_RANGE AccessRange
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VOID
 VideoPortStallExecution(
     ULONG Microseconds
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(DISPATCH_LEVEL)
 VIDEOPORT_API
 VOID
@@ -2114,6 +2156,7 @@ VideoPortStartTimer(
     PVOID HwDeviceExtension
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(DISPATCH_LEVEL)
 VIDEOPORT_API
 VOID
@@ -2127,6 +2170,7 @@ BOOLEAN
     PVOID Context
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(HIGH_LEVEL)
 BOOLEAN
 VIDEOPORT_API
@@ -2137,6 +2181,7 @@ VideoPortSynchronizeExecution(
     PVOID Context
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 VP_STATUS
@@ -2146,6 +2191,7 @@ VideoPortUnmapMemory(
     HANDLE ProcessHandle
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 VP_STATUS
@@ -2155,6 +2201,7 @@ VideoPortVerifyAccessRanges(
     _In_reads_opt_(NumAccessRanges) PVIDEO_ACCESS_RANGE AccessRanges
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VOID
 VideoPortWritePortUchar(
@@ -2162,6 +2209,7 @@ VideoPortWritePortUchar(
     UCHAR Value
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VOID
 VideoPortWritePortUshort(
@@ -2169,6 +2217,7 @@ VideoPortWritePortUshort(
     USHORT Value
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VOID
 VideoPortWritePortUlong(
@@ -2176,6 +2225,7 @@ VideoPortWritePortUlong(
     ULONG Value
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VOID
 VideoPortWritePortBufferUchar(
@@ -2184,6 +2234,7 @@ VideoPortWritePortBufferUchar(
     ULONG Count
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VOID
 VideoPortWritePortBufferUshort(
@@ -2192,6 +2243,7 @@ VideoPortWritePortBufferUshort(
     ULONG Count
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VOID
 VideoPortWritePortBufferUlong(
@@ -2200,6 +2252,7 @@ VideoPortWritePortBufferUlong(
     ULONG Count
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VOID
 VideoPortWriteRegisterUchar(
@@ -2207,6 +2260,7 @@ VideoPortWriteRegisterUchar(
     UCHAR Value
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VOID
 VideoPortWriteRegisterUshort(
@@ -2214,6 +2268,7 @@ VideoPortWriteRegisterUshort(
     USHORT Value
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VOID
 VideoPortWriteRegisterUlong(
@@ -2221,6 +2276,7 @@ VideoPortWriteRegisterUlong(
     ULONG Value
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VOID
 VideoPortWriteRegisterBufferUchar(
@@ -2229,6 +2285,7 @@ VideoPortWriteRegisterBufferUchar(
     ULONG Count
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VOID
 VideoPortWriteRegisterBufferUshort(
@@ -2237,6 +2294,7 @@ VideoPortWriteRegisterBufferUshort(
     ULONG Count
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VOID
 VideoPortWriteRegisterBufferUlong(
@@ -2245,6 +2303,7 @@ VideoPortWriteRegisterBufferUlong(
     ULONG Count
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VOID
 VideoPortZeroDeviceMemory(
@@ -2265,6 +2324,7 @@ VideoPortZeroMemory(
 //
 
 _IRQL_requires_max_(PASSIVE_LEVEL) 
+VIDEOPORT_DEPRECATED
 __drv_preferredFunction("VideoPortAllocateCommonBuffer", "Obsolete")
 VIDEOPORT_API
 PVOID
@@ -2275,6 +2335,7 @@ VideoPortAllocateContiguousMemory(
     );
 
 _IRQL_requires_max_(PASSIVE_LEVEL) 
+VIDEOPORT_DEPRECATED
 __drv_preferredFunction("VideoPortAllocateCommonBuffer", "Obsolete")
 VIDEOPORT_API
 PVOID
@@ -2288,6 +2349,7 @@ VideoPortGetCommonBuffer(
     );
 
 _IRQL_requires_max_(PASSIVE_LEVEL) 
+VIDEOPORT_DEPRECATED
 __drv_preferredFunction("VideoPortReleaseCommonBuffer", "Obsolete")
 VIDEOPORT_API
 VOID
@@ -2299,6 +2361,7 @@ VideoPortFreeCommonBuffer(
     IN  BOOLEAN          CacheEnabled
     );
 
+VIDEOPORT_DEPRECATED
 __drv_preferredFunction("(see documentation)", "Obsolete")
 VIDEOPORT_API
 PDMA
@@ -2308,6 +2371,7 @@ VideoPortDoDma(
     IN DMA_FLAGS  DmaFlags
     );
 
+VIDEOPORT_DEPRECATED
 __drv_preferredFunction("VideoPortLockBuffer", "Obsolete")
 VIDEOPORT_API
 BOOLEAN
@@ -2319,6 +2383,7 @@ VideoPortLockPages(
     IN      DMA_FLAGS               DmaFlags
     );
 
+VIDEOPORT_DEPRECATED
 __drv_preferredFunction("VideoPortUnlockBuffer", "Obsolete")
 VIDEOPORT_API
 BOOLEAN
@@ -2327,6 +2392,7 @@ VideoPortUnlockPages(
     PDMA    pDma
     );
 
+VIDEOPORT_DEPRECATED
 __drv_preferredFunction("(see documentation)", "Obsolete")
 VIDEOPORT_API
 BOOLEAN
@@ -2335,6 +2401,7 @@ VideoPortSignalDmaComplete(
     IN  PDMA  pDmaHandle
     );
 
+VIDEOPORT_DEPRECATED
 __drv_preferredFunction("(see documentation)", "Obsolete")
 VIDEOPORT_API
 PVOID
@@ -2343,6 +2410,7 @@ VideoPortGetMdl(
     IN  PDMA    pDma
     );
 
+VIDEOPORT_DEPRECATED
 __drv_preferredFunction("(see documentation)", "Obsolete")
 VIDEOPORT_API
 PVOID
@@ -2351,6 +2419,7 @@ VideoPortGetDmaContext(
     IN  PDMA  pDma
     );
 
+VIDEOPORT_DEPRECATED
 __drv_preferredFunction("(see documentation)", "Obsolete")
 VIDEOPORT_API
 VOID
@@ -2360,6 +2429,7 @@ VideoPortSetDmaContext(
     IN  PVOID   InstanceContext
     );
 
+VIDEOPORT_DEPRECATED
 __drv_preferredFunction("(see documentation)", "Obsolete")
 VIDEOPORT_API
 ULONG
@@ -2368,6 +2438,7 @@ VideoPortGetBytesUsed(
     IN  PDMA    pDma
     );
 
+VIDEOPORT_DEPRECATED
 __drv_preferredFunction("(see documentation)", "Obsolete")
 VIDEOPORT_API
 VOID
@@ -2377,6 +2448,7 @@ VideoPortSetBytesUsed(
     IN      ULONG   BytesUsed
     );
 
+VIDEOPORT_DEPRECATED
 __drv_preferredFunction("(see documentation)", "Obsolete")
 VIDEOPORT_API
 PDMA
@@ -2387,6 +2459,7 @@ VideoPortAssociateEventsWithDmaHandle(
     IN      PVOID                 DisplayDriverEvent
     );
 
+VIDEOPORT_DEPRECATED
 __drv_preferredFunction("(see documentation)", "Obsolete")
 VIDEOPORT_API
 PDMA
@@ -2401,6 +2474,7 @@ VideoPortMapDmaMemory(
     IN OUT  PVOID                 * VirtualAddress
     );
 
+VIDEOPORT_DEPRECATED
 __drv_preferredFunction("(see documentation)", "Obsolete")
 VIDEOPORT_API
 BOOLEAN
@@ -2411,6 +2485,7 @@ VideoPortUnmapDmaMemory(
     PDMA                BoardMemoryHandle
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 VP_STATUS
@@ -2420,6 +2495,7 @@ VideoPortCreateSecondaryDisplay(
     IN ULONG ulFlag
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 PVP_DMA_ADAPTER
@@ -2428,6 +2504,7 @@ VideoPortGetDmaAdapter(
     IN PVP_DEVICE_DESCRIPTION  VpDeviceDescription
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 VOID
@@ -2436,6 +2513,7 @@ VideoPortPutDmaAdapter(
     IN PVP_DMA_ADAPTER VpDmaAdapter
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 PVOID
@@ -2448,6 +2526,7 @@ VideoPortAllocateCommonBuffer(
     OUT PVOID             Reserved
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 VOID
@@ -2460,6 +2539,7 @@ VideoPortReleaseCommonBuffer(
     IN  BOOLEAN           CacheEnabled
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 PVOID
@@ -2470,6 +2550,7 @@ VideoPortLockBuffer(
     IN VP_LOCK_OPERATION  Operation
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(DISPATCH_LEVEL)
 VIDEOPORT_API
 VOID
@@ -2478,6 +2559,7 @@ VideoPortUnlockBuffer(
     IN PVOID   Mdl
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(DISPATCH_LEVEL)
 VIDEOPORT_API
 VP_STATUS
@@ -2492,6 +2574,7 @@ VideoPortStartDma(
     IN BOOLEAN WriteToDevice
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(DISPATCH_LEVEL)
 VIDEOPORT_API
 VP_STATUS
@@ -2639,6 +2722,7 @@ VideoPortQuerySystemTime(
 #define CDE_USE_SUBSYSTEM_IDS   0x00000001
 #define CDE_USE_REVISION        0x00000002
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 BOOLEAN
@@ -2652,6 +2736,7 @@ VideoPortCheckForDeviceExistence(
     IN ULONG Flags
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 ULONG
@@ -2674,6 +2759,7 @@ VideoPortGetVersion(
     IN OUT PVPOSVERSIONINFO pVpOsVersionInfo
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 BOOLEAN
 VideoPortIsNoVesa(
@@ -2699,6 +2785,7 @@ VOID
     IN ULONG BufferSize
     );
 
+VIDEOPORT_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL)
 VIDEOPORT_API
 VP_STATUS
@@ -2718,6 +2805,7 @@ VideoPortRegisterBugcheckCallback(
 
 typedef struct _VIDEO_DEBUG_REPORT *PVIDEO_DEBUG_REPORT;
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 PVIDEO_DEBUG_REPORT
 VideoPortDbgReportCreate(
@@ -2729,6 +2817,7 @@ VideoPortDbgReportCreate(
     IN ULONG_PTR ulpArg4
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 BOOLEAN
 VideoPortDbgReportSecondaryData(
@@ -2737,6 +2826,7 @@ VideoPortDbgReportSecondaryData(
     IN ULONG ulDataSize
     );
 
+VIDEOPORT_DEPRECATED
 VIDEOPORT_API
 VOID
 VideoPortDbgReportComplete(

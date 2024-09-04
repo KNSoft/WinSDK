@@ -26,7 +26,7 @@ extern "C" {
 /* Function prototypes */
 
 _Check_return_wat_ _CRTIMP errno_t __cdecl _cgets_s(_Out_writes_z_(_Size)                char * _Buffer, size_t _Size, _Out_ size_t * _SizeRead);
-__DEFINE_CPP_OVERLOAD_SECURE_FUNC_0_1(errno_t, _cgets_s, _Out_writes_z_(*_Size) char, _Buffer, _Out_ size_t *, _Size)
+__DEFINE_CPP_OVERLOAD_SECURE_FUNC_0_1(errno_t, _cgets_s, _Out_writes_z_(*_Size) char, _Buffer, _Out_ size_t *, _SizeRead)
 __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_0_CGETS(char *, _CRTIMP, _cgets, _Pre_notnull_ _Post_z_, char, _Buffer)
 _Check_return_opt_ _CRTIMP int __cdecl _cprintf(_In_z_ _Printf_format_string_ const char * _Format, ...);
 _Check_return_opt_ _CRTIMP int __cdecl _cprintf_s(_In_z_ _Printf_format_string_ const char * _Format, ...);
@@ -86,7 +86,7 @@ _CRTIMP int __cdecl _ungetch_nolock(_In_ int _Ch);
 #endif
 
 _Check_return_wat_ _CRTIMP errno_t __cdecl _cgetws_s(_Out_writes_to_(_SizeInWords, *_SizeRead) wchar_t * _Buffer, size_t _SizeInWords, _Out_ size_t * _SizeRead);
-__DEFINE_CPP_OVERLOAD_SECURE_FUNC_0_1(errno_t, _cgetws_s, _Out_writes_z_(*_Size) wchar_t, _Buffer, size_t *, _Size)
+__DEFINE_CPP_OVERLOAD_SECURE_FUNC_0_1(errno_t, _cgetws_s, _Out_writes_z_(*_Size) wchar_t, _Buffer, size_t *, _SizeRead)
 __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_0_CGETS(wchar_t *, _CRTIMP, _cgetws, _Pre_notnull_ _Post_z_, wchar_t, _Buffer)
 _Check_return_ _CRTIMP wint_t __cdecl _getwch(void);
 _Check_return_ _CRTIMP wint_t __cdecl _getwche(void);

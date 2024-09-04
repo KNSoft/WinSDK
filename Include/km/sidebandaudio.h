@@ -28,7 +28,6 @@ typedef struct _SIDEBANDAUDIO_DEVICE_DESCRIPTOR
     ULONG               NumberOfEndpoints;
 }SIDEBANDAUDIO_DEVICE_DESCRIPTOR, *PSIDEBANDAUDIO_DEVICE_DESCRIPTOR;
 
-
 typedef struct _SIDEBANDAUDIO_ENDPOINT_CAPABILITIES
 {
     BOOL    Volume;
@@ -41,7 +40,7 @@ typedef struct _SIDEBANDAUDIO_ENDPOINT_CAPABILITIES
 //
 // SIDEBANDAUDIO_ENDPOINT_DESCRIPTOR
 //
-// Describes the characteristics of the audio Endpoiont
+// Describes the characteristics of the audio endpoint
 // driver. This information does not change while the interface is enabled
 // but can change while disabled.
 //
@@ -72,8 +71,61 @@ typedef struct _SIDEBANDAUDIO_ENDPOINT_DESCRIPTOR
 
     // Size of data returned by IOCTL_SBAUD_GET_SIDETONE_VOLUMEPROPERTYVALUES
     ULONG                                   SidetoneVolumePropertyValueSize;
+
+    // Size of data returned by IOCTL_SBAUD_GET_MUTEPROPERTYVALUES
+    ULONG                                   MutePropertyValuesSize;
+
 }SIDEBANDAUDIO_ENDPOINT_DESCRIPTOR, *PSIDEBANDAUDIO_ENDPOINT_DESCRIPTOR;
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+//
+// SIDEBANDAUDIO_ENDPOINT_DESCRIPTOR2
+//
+// The second version of the SIDEBANDAUDIO_ENDPOINT_DESCRIPTOR struct.
+// This version allows the controller driver to provide custom device properties to
+// add to the audio device's interface.
+//
+// ----------------------------------------------------------
+typedef struct _SIDEBANDAUDIO_ENDPOINT_DESCRIPTOR2
+{
+    // Start of _SIDEBANDAUDIO_ENDPOINT_DESCRIPTOR
+
+    // Size of Descriptor including storage for UNICODE_STRING and any additional data
+    ULONG                                   CbSize;
+
+    // Pnp Container ID for connected device
+    GUID                                    ContainerId;
+
+    // KSPIN_DESCRIPTOR.Category to indicate form factor e.g. KSNODETYPE_HEADSET_MICROPHONE
+    GUID                                    Category;
+
+    // Indicates render/capture
+    KSPIN_DATAFLOW                          Direction;
+
+    // Capabilities of the endpoint like (mute, volume, sidetone, etc.)
+    SIDEBANDAUDIO_ENDPOINT_CAPABILITIES     Capabilities;
+
+    // Storage for friendly name is attached after descriptor and is
+    // included in cbSize
+    UNICODE_STRING                          FriendlyName;
+
+    // Size of data returned by IOCTL_SBAUD_GET_VOLUMEPROPERTYVALUES
+    ULONG                                   VolumePropertyValuesSize;
+
+    // Size of data returned by IOCTL_SBAUD_GET_SIDETONE_VOLUMEPROPERTYVALUES
+    ULONG                                   SidetoneVolumePropertyValueSize;
+
+    // Size of data returned by IOCTL_SBAUD_GET_MUTEPROPERTYVALUES
+    ULONG                                   MutePropertyValuesSize;
+
+    // End of _SIDEBANDAUDIO_ENDPOINT_DESCRIPTOR
+
+    // Number of device properties that shall be added to the audio filter factory interface.
+    ULONG                                   FilterInterfacePropertyCount;
+
+    DEVPROPERTY*                            FilterInterfaceProperties;
+}SIDEBANDAUDIO_ENDPOINT_DESCRIPTOR2, *PSIDEBANDAUDIO_ENDPOINT_DESCRIPTOR2;
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_FE)
 
 //
 // SIDEBANDAUDIO_VOLUME_PARAMS
@@ -349,3 +401,6 @@ typedef struct _SIDEBANDAUDIO_DEVICE_ERROR
 #define IOCTL_SBAUD_SET_SIOP                                SIDEBANDAUDIO_IOCTL (23)
 #define IOCTL_SBAUD_SET_DEVICE_CLAIMED                      SIDEBANDAUDIO_IOCTL (24)
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+#define IOCTL_SBAUD_GET_ENDPOINT_DESCRIPTOR2                SIDEBANDAUDIO_IOCTL (25)
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_FE)

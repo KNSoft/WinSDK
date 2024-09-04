@@ -12,8 +12,6 @@ Abstract:
 
 --*/
 
-//@[contract("ntoskrnl-ntimage"), comment("MVI_tracked - https://osgwiki.com/wiki/Microsoft_Virus_Initiative")];
-
 #ifndef _NTIMAGE_
 #define _NTIMAGE_
 
@@ -38,11 +36,9 @@ Abstract:
 
 // begin_winnt
 
-
 //
 // Image Format
 //
-
 
 #ifndef _MAC
 
@@ -247,6 +243,8 @@ typedef struct _IMAGE_FILE_HEADER {
 // end_winnt
 
 #define IMAGE_FILE_MACHINE_CHPE_X86          0x3A64
+#define IMAGE_FILE_MACHINE_ARM64EC           0xA641
+#define IMAGE_FILE_MACHINE_ARM64X            0xA64E
 
 // begin_winnt
 
@@ -860,7 +858,6 @@ typedef enum IMAGE_AUX_SYMBOL_TYPE {
     IMAGE_AUX_SYMBOL_TYPE_TOKEN_DEF = 1,
 } IMAGE_AUX_SYMBOL_TYPE;
 
-
 //
 // Communal selection types.
 //
@@ -1027,7 +1024,6 @@ typedef IMAGE_RELOCATION UNALIGNED *PIMAGE_RELOCATION;
 
 #define IMAGE_REL_SH_NOMODE             0x8000  // relocation ignores section mode
 
-
 #define IMAGE_REL_ARM_ABSOLUTE          0x0000  // No relocation required
 #define IMAGE_REL_ARM_ADDR32            0x0001  // 32 bit address
 #define IMAGE_REL_ARM_ADDR32NB          0x0002  // 32 bit address w/o image base
@@ -1171,7 +1167,6 @@ typedef IMAGE_RELOCATION UNALIGNED *PIMAGE_RELOCATION;
 #define IMAGE_REL_CEE_SECREL            0x0005  // 32 bit offset from base of section containing target
 #define IMAGE_REL_CEE_TOKEN             0x0006  // 32 bit metadata token
 
-
 #define IMAGE_REL_M32R_ABSOLUTE         0x0000  // No relocation required
 #define IMAGE_REL_M32R_ADDR32           0x0001  // 32 bit address
 #define IMAGE_REL_M32R_ADDR32NB         0x0002  // 32 bit address w/o image base
@@ -1312,12 +1307,11 @@ typedef IMAGE_LINENUMBER UNALIGNED *PIMAGE_LINENUMBER;
 // Based relocation format.
 //
 
-//@[comment("MVI_tracked")]
 typedef struct _IMAGE_BASE_RELOCATION {
-    ULONG   VirtualAddress;
-    ULONG   SizeOfBlock;
-//  USHORT  TypeOffset[1];
+    ULONG VirtualAddress;
+    ULONG SizeOfBlock;
 } IMAGE_BASE_RELOCATION;
+
 typedef IMAGE_BASE_RELOCATION UNALIGNED * PIMAGE_BASE_RELOCATION;
 
 //
@@ -1348,7 +1342,6 @@ typedef IMAGE_BASE_RELOCATION UNALIGNED * PIMAGE_BASE_RELOCATION;
 #define IMAGE_REL_BASED_ARM_MOV32             5
 #define IMAGE_REL_BASED_THUMB_MOV32           7
 
-
 //
 // Archive format.
 //
@@ -1360,7 +1353,6 @@ typedef IMAGE_BASE_RELOCATION UNALIGNED * PIMAGE_BASE_RELOCATION;
 #define IMAGE_ARCHIVE_LINKER_MEMBER          "/               "
 #define IMAGE_ARCHIVE_LONGNAMES_MEMBER       "//              "
 #define IMAGE_ARCHIVE_HYBRIDMAP_MEMBER       "/<HYBRIDMAP>/   "
-
 
 typedef struct _IMAGE_ARCHIVE_MEMBER_HEADER {
     UCHAR    Name[16];                          // File member name - `/' terminated.
@@ -1382,55 +1374,53 @@ typedef struct _IMAGE_ARCHIVE_MEMBER_HEADER {
 // Export Format
 //
 
-//@[comment("MVI_tracked")]
 typedef struct _IMAGE_EXPORT_DIRECTORY {
-    ULONG   Characteristics;
-    ULONG   TimeDateStamp;
-    USHORT  MajorVersion;
-    USHORT  MinorVersion;
-    ULONG   Name;
-    ULONG   Base;
-    ULONG   NumberOfFunctions;
-    ULONG   NumberOfNames;
-    ULONG   AddressOfFunctions;     // RVA from base of image
-    ULONG   AddressOfNames;         // RVA from base of image
-    ULONG   AddressOfNameOrdinals;  // RVA from base of image
+    ULONG Characteristics;
+    ULONG TimeDateStamp;
+    USHORT MajorVersion;
+    USHORT MinorVersion;
+    ULONG Name;
+    ULONG Base;
+    ULONG NumberOfFunctions;
+    ULONG NumberOfNames;
+    ULONG AddressOfFunctions;
+    ULONG AddressOfNames;
+    ULONG AddressOfNameOrdinals;
 } IMAGE_EXPORT_DIRECTORY, *PIMAGE_EXPORT_DIRECTORY;
 
 //
 // Import Format
 //
 
-//@[comment("MVI_tracked")]
 typedef struct _IMAGE_IMPORT_BY_NAME {
-    USHORT  Hint;
-    CHAR   Name[1];
+    USHORT Hint;
+    CHAR Name [1];
 } IMAGE_IMPORT_BY_NAME, *PIMAGE_IMPORT_BY_NAME;
 
 #include "pshpack8.h"                       // Use align 8 for the 64-bit IAT.
 
-//@[comment("MVI_tracked")]
 typedef struct _IMAGE_THUNK_DATA64 {
     union {
-        ULONGLONG ForwarderString;  // PUCHAR
-        ULONGLONG Function;         // PULONG
+        ULONGLONG ForwarderString;
+        ULONGLONG Function;
         ULONGLONG Ordinal;
-        ULONGLONG AddressOfData;    // PIMAGE_IMPORT_BY_NAME
+        ULONGLONG AddressOfData;
     } u1;
 } IMAGE_THUNK_DATA64;
+
 typedef IMAGE_THUNK_DATA64 * PIMAGE_THUNK_DATA64;
 
 #include "poppack.h"                        // Back to 4 byte packing
 
-//@[comment("MVI_tracked")]
 typedef struct _IMAGE_THUNK_DATA32 {
     union {
-        ULONG ForwarderString;      // PUCHAR
-        ULONG Function;             // PULONG
+        ULONG ForwarderString;
+        ULONG Function;
         ULONG Ordinal;
-        ULONG AddressOfData;        // PIMAGE_IMPORT_BY_NAME
+        ULONG AddressOfData;
     } u1;
 } IMAGE_THUNK_DATA32;
+
 typedef IMAGE_THUNK_DATA32 * PIMAGE_THUNK_DATA32;
 
 #define IMAGE_ORDINAL_FLAG64 0x8000000000000000
@@ -1506,21 +1496,17 @@ typedef IMAGE_TLS_DIRECTORY32           IMAGE_TLS_DIRECTORY;
 typedef PIMAGE_TLS_DIRECTORY32          PIMAGE_TLS_DIRECTORY;
 #endif
 
-//@[comment("MVI_tracked")]
 typedef struct _IMAGE_IMPORT_DESCRIPTOR {
     union {
-        ULONG   Characteristics;            // 0 for terminating null import descriptor
-        ULONG   OriginalFirstThunk;         // RVA to original unbound IAT (PIMAGE_THUNK_DATA)
+        ULONG Characteristics;
+        ULONG OriginalFirstThunk;
     } DUMMYUNIONNAME;
-    ULONG   TimeDateStamp;                  // 0 if not bound,
-                                            // -1 if bound, and real date\time stamp
-                                            //     in IMAGE_DIRECTORY_ENTRY_BOUND_IMPORT (new BIND)
-                                            // O.W. date/time stamp of DLL bound to (Old BIND)
-
-    ULONG   ForwarderChain;                 // -1 if no forwarders
-    ULONG   Name;
-    ULONG   FirstThunk;                     // RVA to IAT (if bound this IAT has actual addresses)
+    ULONG TimeDateStamp;
+    ULONG ForwarderChain;
+    ULONG Name;
+    ULONG FirstThunk;
 } IMAGE_IMPORT_DESCRIPTOR;
+
 typedef IMAGE_IMPORT_DESCRIPTOR UNALIGNED *PIMAGE_IMPORT_DESCRIPTOR;
 
 //
@@ -1607,21 +1593,20 @@ typedef struct _IMAGE_RESOURCE_DIRECTORY {
 // field points to a resource data entry.
 //
 
-//@[comment("MVI_tracked")]
 typedef struct _IMAGE_RESOURCE_DIRECTORY_ENTRY {
     union {
         struct {
             ULONG NameOffset:31;
             ULONG NameIsString:1;
         } DUMMYSTRUCTNAME;
-        ULONG   Name;
-        USHORT  Id;
+        ULONG Name;
+        USHORT Id;
     } DUMMYUNIONNAME;
     union {
-        ULONG   OffsetToData;
+        ULONG OffsetToData;
         struct {
-            ULONG   OffsetToDirectory:31;
-            ULONG   DataIsDirectory:1;
+            ULONG OffsetToDirectory:31;
+            ULONG DataIsDirectory:1;
         } DUMMYSTRUCTNAME2;
     } DUMMYUNIONNAME2;
 } IMAGE_RESOURCE_DIRECTORY_ENTRY, *PIMAGE_RESOURCE_DIRECTORY_ENTRY;
@@ -1640,12 +1625,10 @@ typedef struct _IMAGE_RESOURCE_DIRECTORY_STRING {
     CHAR    NameString[ 1 ];
 } IMAGE_RESOURCE_DIRECTORY_STRING, *PIMAGE_RESOURCE_DIRECTORY_STRING;
 
-
 typedef struct _IMAGE_RESOURCE_DIR_STRING_U {
     USHORT  Length;
     WCHAR   NameString[ 1 ];
 } IMAGE_RESOURCE_DIR_STRING_U, *PIMAGE_RESOURCE_DIR_STRING_U;
-
 
 //
 // Each resource data entry describes a leaf node in the resource directory
@@ -1656,12 +1639,11 @@ typedef struct _IMAGE_RESOURCE_DIR_STRING_U {
 // applications the code page would be the unicode code page.
 //
 
-//@[comment("MVI_tracked")]
 typedef struct _IMAGE_RESOURCE_DATA_ENTRY {
-    ULONG   OffsetToData;
-    ULONG   Size;
-    ULONG   CodePage;
-    ULONG   Reserved;
+    ULONG OffsetToData;
+    ULONG Size;
+    ULONG CodePage;
+    ULONG Reserved;
 } IMAGE_RESOURCE_DATA_ENTRY, *PIMAGE_RESOURCE_DATA_ENTRY;
 
 // begin_ntoshvp
@@ -1748,6 +1730,10 @@ typedef PIMAGE_DYNAMIC_RELOCATION32_V2      PIMAGE_DYNAMIC_RELOCATION_V2;
 #define IMAGE_DYNAMIC_RELOCATION_GUARD_IMPORT_CONTROL_TRANSFER  0x00000003
 #define IMAGE_DYNAMIC_RELOCATION_GUARD_INDIR_CONTROL_TRANSFER   0x00000004
 #define IMAGE_DYNAMIC_RELOCATION_GUARD_SWITCHTABLE_BRANCH       0x00000005
+// end_winnt end_ntoshvp
+#define IMAGE_DYNAMIC_RELOCATION_MM_SHARED_USER_DATA_VA         0x7FFE0000
+#define IMAGE_DYNAMIC_RELOCATION_KI_USER_SHARED_DATA64          0xFFFFF78000000000UI64
+// begin_winnt begin_ntoshvp
 
 #include "pshpack1.h"
 
@@ -1840,6 +1826,10 @@ typedef struct _IMAGE_LOAD_CONFIG_DIRECTORY32 {
     ULONG   VolatileMetadataPointer;        // VA
     ULONG   GuardEHContinuationTable;       // VA
     ULONG   GuardEHContinuationCount;
+    ULONG   GuardXFGCheckFunctionPointer;    // VA
+    ULONG   GuardXFGDispatchFunctionPointer; // VA
+    ULONG   GuardXFGTableDispatchFunctionPointer; // VA
+    ULONG   CastGuardOsDeterminedFailureMode; // VA
 } IMAGE_LOAD_CONFIG_DIRECTORY32, *PIMAGE_LOAD_CONFIG_DIRECTORY32;
 
 typedef struct _IMAGE_LOAD_CONFIG_DIRECTORY64 {
@@ -1887,6 +1877,10 @@ typedef struct _IMAGE_LOAD_CONFIG_DIRECTORY64 {
     ULONGLONG  VolatileMetadataPointer;         // VA
     ULONGLONG  GuardEHContinuationTable;        // VA
     ULONGLONG  GuardEHContinuationCount;
+    ULONGLONG  GuardXFGCheckFunctionPointer;    // VA
+    ULONGLONG  GuardXFGDispatchFunctionPointer; // VA
+    ULONGLONG  GuardXFGTableDispatchFunctionPointer; // VA
+    ULONGLONG  CastGuardOsDeterminedFailureMode; // VA
 } IMAGE_LOAD_CONFIG_DIRECTORY64, *PIMAGE_LOAD_CONFIG_DIRECTORY64;
 
 // end_ntoshvp
@@ -1918,6 +1912,39 @@ typedef struct _IMAGE_CHPE_RANGE_ENTRY {
 
     ULONG Length;
 } IMAGE_CHPE_RANGE_ENTRY, *PIMAGE_CHPE_RANGE_ENTRY;
+
+typedef struct _IMAGE_ARM64EC_METADATA {
+    ULONG  Version;
+    ULONG  CodeMap;
+    ULONG  CodeMapCount;
+    ULONG  CodeRangesToEntryPoints;
+    ULONG  RedirectionMetadata;
+    ULONG  tbd__os_arm64x_dispatch_call_no_redirect;
+    ULONG  tbd__os_arm64x_dispatch_ret;
+    ULONG  tbd__os_arm64x_dispatch_call;
+    ULONG  tbd__os_arm64x_dispatch_icall;
+    ULONG  tbd__os_arm64x_dispatch_icall_cfg;
+    ULONG  AlternateEntryPoint;
+    ULONG  AuxiliaryIAT;
+    ULONG  CodeRangesToEntryPointsCount;
+    ULONG  RedirectionMetadataCount;
+    ULONG  RdtscFunctionPointer;
+    ULONG  CpuIDExFunctionPointer;
+    ULONG  ExtraRFETable;
+    ULONG  ExtraRFETableSize;
+    ULONG  __os_arm64x_dispatch_fptr;
+} IMAGE_ARM64EC_METADATA;
+
+typedef struct _IMAGE_ARM64EC_REDIRECTION_TUPLES {
+    ULONG Source;
+    ULONG Destination;
+} IMAGE_ARM64EC_REDIRECTION_TUPLES;
+
+typedef struct _IMAGE_ARM64EC_CODE_RANGE_ENTRY_POINT {
+    ULONG StartRva;
+    ULONG EndRva;
+    ULONG EntryPoint;
+} IMAGE_ARM64EC_CODE_RANGE_ENTRY_POINT;
 
 // begin_winnt
 // begin_ntoshvp
@@ -1992,7 +2019,9 @@ typedef struct _IMAGE_HOT_PATCH_HASHES {
 #define IMAGE_GUARD_RF_ENABLE                          0x00040000 // Module requests that the OS enable return flow protection
 #define IMAGE_GUARD_RF_STRICT                          0x00080000 // Module requests that the OS enable return flow protection in strict mode
 #define IMAGE_GUARD_RETPOLINE_PRESENT                  0x00100000 // Module was built with retpoline support
+// DO_NOT_USE                                          0x00200000 // Was EHCont flag on VB (20H1)
 #define IMAGE_GUARD_EH_CONTINUATION_TABLE_PRESENT      0x00400000 // Module contains EH continuation target information
+#define IMAGE_GUARD_XFG_ENABLED                        0x00800000 // Module was built with xfg
 
 #define IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_MASK        0xF0000000 // Stride of Guard CF function table encoded in these bits (additional count of bytes per element)
 #define IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_SHIFT       28         // Shift to right-justify Guard CF function table stride
@@ -2003,6 +2032,8 @@ typedef struct _IMAGE_HOT_PATCH_HASHES {
 
 #define IMAGE_GUARD_FLAG_FID_SUPPRESSED               0x01       // The containing GFID entry is suppressed
 #define IMAGE_GUARD_FLAG_EXPORT_SUPPRESSED            0x02       // The containing GFID entry is export suppressed
+#define IMAGE_GUARD_FLAG_FID_LANGEXCPTHANDLER         0x04
+#define IMAGE_GUARD_FLAG_FID_XFG                      0x08
 
 //
 // WIN CE Exception table format
@@ -2107,6 +2138,9 @@ typedef struct _IMAGE_RUNTIME_FUNCTION_ENTRY {
 
 typedef  _IMAGE_RUNTIME_FUNCTION_ENTRY  IMAGE_IA64_RUNTIME_FUNCTION_ENTRY;
 typedef _PIMAGE_RUNTIME_FUNCTION_ENTRY PIMAGE_IA64_RUNTIME_FUNCTION_ENTRY;
+
+typedef  _IMAGE_RUNTIME_FUNCTION_ENTRY  IMAGE_AMD64_RUNTIME_FUNCTION_ENTRY;
+typedef _PIMAGE_RUNTIME_FUNCTION_ENTRY PIMAGE_AMD64_RUNTIME_FUNCTION_ENTRY;
 
 #if defined(_AXP64_)
 
@@ -2283,7 +2317,6 @@ typedef struct _FPO_DATA {
 } FPO_DATA, *PFPO_DATA;
 #define SIZEOF_RFPO_DATA 16
 
-
 #define IMAGE_DEBUG_MISC_EXENAME    1
 
 typedef struct _IMAGE_DEBUG_MISC {
@@ -2294,7 +2327,6 @@ typedef struct _IMAGE_DEBUG_MISC {
     UCHAR       Reserved[ 3 ];
     UCHAR       Data[ 1 ];              // Actual data
 } IMAGE_DEBUG_MISC, *PIMAGE_DEBUG_MISC;
-
 
 //
 // Function table extracted from MIPS/ALPHA/IA64 images.  Does not contain
@@ -2556,6 +2588,35 @@ typedef CONST IMAGE_TLS_DIRECTORY32         *PCIMAGE_TLS_DIRECTORY32;
 typedef CONST IMAGE_TLS_DIRECTORY64         *PCIMAGE_TLS_DIRECTORY64;
 typedef CONST IMAGE_EXPORT_DIRECTORY        *PCIMAGE_EXPORT_DIRECTORY;
 typedef CONST IMAGE_SECTION_HEADER          *PCIMAGE_SECTION_HEADER;
+
+#define PATCH_MAIN_CALLOUT_FUNCTION_NAME "__PatchMainCallout__"
+
+#define PATCH_IMAGE_PHASE_1        0
+#define PATCH_IMAGE_PHASE_2        1
+#define PATCH_IMAGE_PHASE_2_FAILED 2
+
+#define PATCH_MAIN_CALLOUT_PARAMS_VERSION 1
+
+typedef struct _PATCH_MAIN_CALLOUT_PARAMS
+{
+
+    ULONG Version;
+
+    //
+    // Phase of the callout
+    //
+
+    ULONG PatchPhase;
+
+    //
+    // Flags field for future expansion
+    //
+
+    ULONG Flags;
+
+} PATCH_MAIN_CALLOUT_PARAMS, *PPATCH_MAIN_CALLOUT_PARAMS;
+
+typedef NTSTATUS (*PATCH_MAIN_CALLOUT_FUNCTION)(PPATCH_MAIN_CALLOUT_PARAMS, ULONG);
 
 #if _MSC_VER >= 1200
 #pragma warning(pop)

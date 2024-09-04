@@ -507,36 +507,6 @@ typedef enum _COLORPALETTEINFO
 } COLORPALETTEINFO, *PCOLORPALETTEINFO;
 
 __kernel_entry W32KAPI BOOL APIENTRY
-NtGdiGetDeviceGammaRamp(
-    _In_ HDC hdc,
-    _Out_writes_bytes_(256*2*3) LPVOID lpGammaRamp
-    );
-
-__kernel_entry W32KAPI BOOL APIENTRY
-NtGdiSetDeviceGammaRamp(
-    _In_ HDC hdc,
-    _In_reads_bytes_(256*2*3) LPVOID lpGammaRamp
-    );
-
-__kernel_entry W32KAPI BOOL APIENTRY
-NtGdiSetPrivateDeviceGammaRamp(
-    _In_ HDC hdc,
-    _In_reads_bytes_(GAMMARAMP_SIZE) LPVOID lpGammaRamp,
-    _In_ BOOL bRangeCheck
-    );
-
-__kernel_entry W32KAPI BOOL APIENTRY
-NtGdiGetAppliedDeviceGammaRamp(
-    _In_ HDC hdc,
-    _Out_writes_bytes_(GAMMARAMP_SIZE) LPVOID lpGammaRamp
-    );
-
-__kernel_entry W32KAPI BOOL APIENTRY
-NtGdiGetGammaRampCapability(
-    _In_ HDC hdc
-    );
-
-__kernel_entry W32KAPI BOOL APIENTRY
 NtGdiIcmBrushInfo(
     _In_ HDC hdc,
     _In_ HBRUSH hbrush,

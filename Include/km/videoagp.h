@@ -18,6 +18,15 @@ Revision History:
 #ifndef __VIDEOAGP_H__
 #define __VIDEOAGP_H__
 
+//
+// AGP is no longer supported
+//
+#if defined(FKG_FORCED_USAGE) || defined(WINPHONE) || defined(BUILD_WINDOWS)
+# define VIDEOAGP_DEPRECATED
+#else
+# define VIDEOAGP_DEPRECATED __declspec(deprecated)
+#endif
+
 #define VIDEO_AGP_RATE_1X       1
 #define VIDEO_AGP_RATE_2X       2
 #define VIDEO_AGP_RATE_4X       4
@@ -120,6 +129,7 @@ typedef struct _VIDEO_PORT_AGP_SERVICES
 
 } VIDEO_PORT_AGP_SERVICES, *PVIDEO_PORT_AGP_SERVICES;
 
+VIDEOAGP_DEPRECATED
 _IRQL_requires_max_(PASSIVE_LEVEL) 
 __drv_preferredFunction("VideoPortQueryServices", "Obsolete") 
 BOOLEAN

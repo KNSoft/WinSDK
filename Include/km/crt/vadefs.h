@@ -89,13 +89,13 @@ typedef _Writable_bytes_(_Inexpressible_("length varies")) char *  va_list;
 #define _ADDRESSOF(v)   ( &(v) )
 #endif
 
-#if     (defined(_M_ARM_NT) || defined(_M_HYBRID_X86_ARM64)) && !defined(_M_CEE_PURE)
+#if (defined(_M_ARM_NT) || defined(_M_HYBRID_X86_ARM64)) && !defined(_M_CEE_PURE)
 #define _VA_ALIGN       4
 #define _SLOTSIZEOF(t)   ( (sizeof(t) + _VA_ALIGN - 1) & ~(_VA_ALIGN - 1) )
 
 #define _APALIGN(t,ap)  ( ((va_list)0 - (ap)) & (__alignof(t) - 1) )
 
-#elif   defined(_M_ARM64) && !defined(_M_CEE_PURE)
+#elif (defined(_M_ARM64) || defined(_M_ARM64EC)) && !defined (_M_CEE_PURE)
 #define _VA_ALIGN       8
 #define _SLOTSIZEOF(t)  ( (sizeof(t) + _VA_ALIGN - 1) & ~(_VA_ALIGN - 1) )
 
@@ -118,7 +118,7 @@ extern void __cdecl __va_end(va_list*);
                                 _APALIGN(t,ap), (t *)0) )
 #define _crt_va_end(ap)      ( __va_end(&ap) )
 
-#elif   defined(_M_IX86) && !defined(_M_HYBRID_X86_ARM64)
+#elif defined(_M_IX86) && !defined(_M_HYBRID_X86_ARM64)
 
 #define _INTSIZEOF(n)   ( (sizeof(n) + sizeof(int) - 1) & ~(sizeof(int) - 1) )
 
@@ -159,6 +159,19 @@ extern void __cdecl __va_start(_Out_ va_list *, ...);
   : *(t *)((ap += _SLOTSIZEOF(t) + _APALIGN(t,ap)) \
 	   - _SLOTSIZEOF(t) ) )
 #define _crt_va_end(ap)      ( ap = (va_list)0 )
+
+/* TODO-ARM64X: Delete this branch once the compiler supports the X64 version of __va_start. */
+#elif defined(_M_ARM64EC)
+
+extern void __cdecl __va_start(_Out_ va_list *, ...);
+//take the ARM64 va_start (for now)
+#define _crt_va_start(ap,v) ((void)(__va_start(&ap, _ADDRESSOF(v), _SLOTSIZEOF(v), __alignof(v), _ADDRESSOF(v))))
+//a hybrid va arg, to account for the shift in calling convention, with the alignment of ARM64
+#define _crt_va_arg(ap, t)                                               \
+    ((sizeof(t) > sizeof(__int64) || (sizeof(t) & (sizeof(t) - 1)) != 0) \
+        ? **(t**)((ap += sizeof(__int64)) - sizeof(__int64))             \
+        : *(t*)((ap += _SLOTSIZEOF(t) + _APALIGN(t,ap)) - _SLOTSIZEOF(t)))
+#define _crt_va_end(ap)        ((void)(ap = (va_list)0))
 
 #elif defined(_M_AMD64)
 

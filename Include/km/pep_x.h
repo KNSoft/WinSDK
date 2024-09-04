@@ -406,7 +406,7 @@ typedef enum _PEP_DEVICE_ACCEPTANCE_TYPE {
 #endif
 
 // END_PEPFX
-#if (NTDDI_VERSION <= NTDDI_WIN10_VB) //ABRACADABRA_NTDDI_WIN10_VB
+#if (NTDDI_VERSION <= NTDDI_WIN10_FE) //ABRACADABRA_NTDDI_WIN10_FE
 
 #define PepDeviceAcceptedMini PepDeviceAccepted
 
@@ -711,6 +711,7 @@ typedef PEPCALLBACKPOWERONCRASHDUMPDEVICE *PPEPCALLBACKPOWERONCRASHDUMPDEVICE;
 #define PEP_NOTIFY_PPM_QUERY_DISCRETE_PERF_STATES       0x29 // PEPFX
 #define PEP_NOTIFY_PPM_QUERY_DOMAIN_INFO                0x2a // PEPFX
 #define PEP_NOTIFY_PPM_PERF_SET_STATE                   0x2b // PEPFX
+#define PEP_NOTIFY_PPM_QUERY_PERF_EPP_SUPPORT           0x2c // PEPFX
 
 // BEGIN_PEPFX
 typedef struct _PEP_PREPARE_DEVICE {
@@ -1096,10 +1097,9 @@ typedef struct _PEP_PPM_QUERY_CAPABILITIES {
     BOOLEAN PerformanceStatesSupported;
     BOOLEAN ParkingSupported;
     UCHAR DiscretePerformanceStateCount;
-    BOOLEAN Reserved;
+    UCHAR Reserved;
 } PEP_PPM_QUERY_CAPABILITIES, *PPEP_PPM_QUERY_CAPABILITIES;
 
-// END_PEPFX
 typedef struct _PEP_PPM_QUERY_IDLE_STATES {
     ULONG Count;
     ULONG MaximumCoordinatedProcessors;
@@ -1269,6 +1269,15 @@ typedef struct _PEP_PPM_PERF_SET {
     ULONG TimeWindow;
     ULONG PerformanceTolerance;
 } PEP_PPM_PERF_SET, *PPEP_PPM_PERF_SET;
+
+typedef struct _PEP_PPM_PERF_SET_V2 {
+    ULONG MinimumPerformance;
+    ULONG MaximumPerformance;
+    ULONG DesiredPerformance;
+    ULONG TimeWindow;
+    ULONG PerformanceTolerance;
+    UCHAR EnergyPerformancePreference;
+} PEP_PPM_PERF_SET_V2, *PPEP_PPM_PERF_SET_V2;
 
 typedef struct _PEP_PROCESSOR_PARK_PREFERENCE {
     // END_PEPFX
@@ -1547,7 +1556,12 @@ typedef struct _PEP_PPM_PERF_SET_STATE {
     UCHAR MinimumPerformanceState;
     UCHAR MaximumPerformanceState;
     UCHAR DesiredPerformanceState;
+    UCHAR EnergyPerformancePreference;
 } PEP_PPM_PERF_SET_STATE, *PPEP_PPM_PERF_SET_STATE;
+
+typedef struct _PEP_PPM_QUERY_PERF_EPP_SUPPORT {
+    BOOLEAN EnergyPerformancePreferenceSupported;
+} PEP_PPM_QUERY_PERF_EPP_SUPPORT, *PPEP_PPM_QUERY_PERF_EPP_SUPPORT;
 
 // END_PEPFX
 

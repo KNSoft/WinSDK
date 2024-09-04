@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0622 */
+ /* File created by MIDL compiler version 8.01.0626 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -35,6 +35,14 @@
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1020)
 #pragma once
+#endif
+
+#ifndef DECLSPEC_XFGVIRT
+#if _CONTROL_FLOW_GUARD_XFG
+#define DECLSPEC_XFGVIRT(base, func) __declspec(xfg_virtual(base, func))
+#else
+#define DECLSPEC_XFGVIRT(base, func)
+#endif
 #endif
 
 /* Forward Declarations */ 
@@ -292,102 +300,124 @@ EXTERN_C const IID IID_ISideShowDriver;
     {
         BEGIN_INTERFACE
         
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ __RPC__in REFIID riid,
             /* [annotation][iid_is][out] */ 
             _COM_Outptr_  void **ppvObject);
         
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             __RPC__in ISideShowDriver * This);
         
+        DECLSPEC_XFGVIRT(IUnknown, Release)
         ULONG ( STDMETHODCALLTYPE *Release )( 
             __RPC__in ISideShowDriver * This);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnGetDeviceName)
         HRESULT ( STDMETHODCALLTYPE *OnGetDeviceName )( 
             __RPC__in ISideShowDriver * This,
             /* [string][out] */ __RPC__deref_out_opt_string LPWSTR *ppwszName);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnGetDeviceManufacturer)
         HRESULT ( STDMETHODCALLTYPE *OnGetDeviceManufacturer )( 
             __RPC__in ISideShowDriver * This,
             /* [string][out] */ __RPC__deref_out_opt_string LPWSTR *ppwszManufacturer);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnGetDeviceFirmwareVersion)
         HRESULT ( STDMETHODCALLTYPE *OnGetDeviceFirmwareVersion )( 
             __RPC__in ISideShowDriver * This,
             /* [string][out] */ __RPC__deref_out_opt_string LPWSTR *ppwszVersion);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnSetTime)
         HRESULT ( STDMETHODCALLTYPE *OnSetTime )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ const FILETIME FileTime);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnSetTimeZone)
         HRESULT ( STDMETHODCALLTYPE *OnSetTimeZone )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ __RPC__in const SIDESHOW_TIME_ZONE_INFORMATION *pTimeZoneInformation);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnSetCurrentUser)
         HRESULT ( STDMETHODCALLTYPE *OnSetCurrentUser )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ __RPC__in const SID *pUserSid);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnGetCurrentUser)
         HRESULT ( STDMETHODCALLTYPE *OnGetCurrentUser )( 
             __RPC__in ISideShowDriver * This,
             /* [out] */ __RPC__deref_out_opt SID **ppUserSid);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnSetUserState)
         HRESULT ( STDMETHODCALLTYPE *OnSetUserState )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ __RPC__in const SID *pUserSid,
             /* [in] */ const USER_STATE state);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnSetShortDateFormat)
         HRESULT ( STDMETHODCALLTYPE *OnSetShortDateFormat )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ __RPC__in const SID *pUserSid,
             /* [string][in] */ __RPC__in_string LPCWSTR pwszDateFormat);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnSetLongDateFormat)
         HRESULT ( STDMETHODCALLTYPE *OnSetLongDateFormat )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ __RPC__in const SID *pUserSid,
             /* [string][in] */ __RPC__in_string LPCWSTR pwszDateFormat);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnSetShortTimeFormat)
         HRESULT ( STDMETHODCALLTYPE *OnSetShortTimeFormat )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ __RPC__in const SID *pUserSid,
             /* [string][in] */ __RPC__in_string LPCWSTR pwszTimeFormat);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnSetLongTimeFormat)
         HRESULT ( STDMETHODCALLTYPE *OnSetLongTimeFormat )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ __RPC__in const SID *pUserSid,
             /* [string][in] */ __RPC__in_string LPCWSTR pwszTimeFormat);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnSetLanguage)
         HRESULT ( STDMETHODCALLTYPE *OnSetLanguage )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ __RPC__in const SID *pUserSid,
             /* [in] */ __RPC__in LPCWSTR pwszLanguage);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnGetDeviceEndpoints)
         HRESULT ( STDMETHODCALLTYPE *OnGetDeviceEndpoints )( 
             __RPC__in ISideShowDriver * This,
             /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*pcEndpoints) ENDPOINT_ID **rgEndpoints,
             /* [out] */ __RPC__out DWORD *pcEndpoints);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnGetDeviceCapabilities)
         HRESULT ( STDMETHODCALLTYPE *OnGetDeviceCapabilities )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ __RPC__in const PROPERTYKEY *pKey,
             /* [out] */ __RPC__out PROPVARIANT *pvValue);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnGetPreEnabledApplications)
         HRESULT ( STDMETHODCALLTYPE *OnGetPreEnabledApplications )( 
             __RPC__in ISideShowDriver * This,
             /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*pcApplications) APPLICATION_ID **ppApplicationIds,
             /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*pcApplications) ENDPOINT_ID **ppEndpointIds,
             /* [out] */ __RPC__out DWORD *pcApplications);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnSetApplicationOrder)
         HRESULT ( STDMETHODCALLTYPE *OnSetApplicationOrder )( 
             __RPC__in ISideShowDriver * This,
             /* [size_is][in] */ __RPC__in_ecount_full(cApplicationIds) const APPLICATION_ID *pApplicationIds,
             /* [in] */ const DWORD cApplicationIds);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnGetApplicationOrder)
         HRESULT ( STDMETHODCALLTYPE *OnGetApplicationOrder )( 
             __RPC__in ISideShowDriver * This,
             /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*pcApplicationIds) APPLICATION_ID **ppApplicationIds,
             /* [out] */ __RPC__out DWORD *pcApplicationIds);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnAddApplication)
         HRESULT ( STDMETHODCALLTYPE *OnAddApplication )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ __RPC__in const SID *pUserSid,
@@ -403,15 +433,18 @@ EXTERN_C const IID IID_ISideShowDriver;
             /* [size_is][in] */ __RPC__in_ecount_full(cbSmallIcon) const unsigned char *pbSmallIcon,
             /* [in] */ const DWORD cbSmallIcon);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnRemoveApplication)
         HRESULT ( STDMETHODCALLTYPE *OnRemoveApplication )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ __RPC__in const SID *pUserSid,
             /* [in] */ __RPC__in REFAPPLICATION_ID ApplicationId);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnRemoveAllApplications)
         HRESULT ( STDMETHODCALLTYPE *OnRemoveAllApplications )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ __RPC__in const SID *pUserSid);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnAddContent)
         HRESULT ( STDMETHODCALLTYPE *OnAddContent )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ __RPC__in const SID *pUserSid,
@@ -421,6 +454,7 @@ EXTERN_C const IID IID_ISideShowDriver;
             /* [size_is][in] */ __RPC__in_ecount_full(cbData) const unsigned char *pData,
             /* [in] */ const DWORD cbData);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnRemoveContent)
         HRESULT ( STDMETHODCALLTYPE *OnRemoveContent )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ __RPC__in const SID *pUserSid,
@@ -428,12 +462,14 @@ EXTERN_C const IID IID_ISideShowDriver;
             /* [in] */ __RPC__in REFENDPOINT_ID EndpointId,
             /* [in] */ const CONTENT_ID ContentId);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnRemoveAllContent)
         HRESULT ( STDMETHODCALLTYPE *OnRemoveAllContent )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ __RPC__in const SID *pUserSid,
             /* [in] */ __RPC__in REFAPPLICATION_ID ApplicationId,
             /* [in] */ __RPC__in REFENDPOINT_ID EndpointId);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnAddNotification)
         HRESULT ( STDMETHODCALLTYPE *OnAddNotification )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ __RPC__in const SID *pUserSid,
@@ -445,22 +481,26 @@ EXTERN_C const IID IID_ISideShowDriver;
             /* [size_is][in] */ __RPC__in_ecount_full(cbImage) const unsigned char *pbImage,
             /* [in] */ const DWORD cbImage);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnRemoveNotification)
         HRESULT ( STDMETHODCALLTYPE *OnRemoveNotification )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ __RPC__in const SID *pUserSid,
             /* [in] */ __RPC__in REFAPPLICATION_ID ApplicationId,
             /* [in] */ const NOTIFICATION_ID NotificationId);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnRemoveAllNotifications)
         HRESULT ( STDMETHODCALLTYPE *OnRemoveAllNotifications )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ __RPC__in const SID *pUserSid,
             /* [in] */ __RPC__in REFAPPLICATION_ID ApplicationId);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnSetNotificationsEnabled)
         HRESULT ( STDMETHODCALLTYPE *OnSetNotificationsEnabled )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ __RPC__in const SID *pUserSid,
             /* [in] */ const BOOL fIsEnabled);
         
+        DECLSPEC_XFGVIRT(ISideShowDriver, OnProcessWpdMessage)
         HRESULT ( STDMETHODCALLTYPE *OnProcessWpdMessage )( 
             __RPC__in ISideShowDriver * This,
             /* [in] */ __RPC__in_opt IUnknown *pPortableDeviceValuesParams,
@@ -626,27 +666,33 @@ EXTERN_C const IID IID_ISideShowClassExtension;
     {
         BEGIN_INTERFACE
         
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             __RPC__in ISideShowClassExtension * This,
             /* [in] */ __RPC__in REFIID riid,
             /* [annotation][iid_is][out] */ 
             _COM_Outptr_  void **ppvObject);
         
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             __RPC__in ISideShowClassExtension * This);
         
+        DECLSPEC_XFGVIRT(IUnknown, Release)
         ULONG ( STDMETHODCALLTYPE *Release )( 
             __RPC__in ISideShowClassExtension * This);
         
+        DECLSPEC_XFGVIRT(ISideShowClassExtension, Initialize)
         HRESULT ( STDMETHODCALLTYPE *Initialize )( 
             __RPC__in ISideShowClassExtension * This,
             /* [in] */ __RPC__in_opt IUnknown *pWdfDeviceUnknown,
             /* [in] */ __RPC__in_opt IUnknown *pSideShowDriverUnknown);
         
+        DECLSPEC_XFGVIRT(ISideShowClassExtension, Uninitialize)
         HRESULT ( STDMETHODCALLTYPE *Uninitialize )( 
             __RPC__in ISideShowClassExtension * This,
             /* [in] */ __RPC__in_opt IUnknown *pWdfDeviceUnknown);
         
+        DECLSPEC_XFGVIRT(ISideShowClassExtension, OnProcessIoControl)
         HRESULT ( STDMETHODCALLTYPE *OnProcessIoControl )( 
             __RPC__in ISideShowClassExtension * This,
             /* [in] */ __RPC__in_opt IWDFIoQueue *pWdfQueue,
@@ -736,27 +782,33 @@ EXTERN_C const IID IID_ISideShowClassExtension2;
     {
         BEGIN_INTERFACE
         
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             __RPC__in ISideShowClassExtension2 * This,
             /* [in] */ __RPC__in REFIID riid,
             /* [annotation][iid_is][out] */ 
             _COM_Outptr_  void **ppvObject);
         
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             __RPC__in ISideShowClassExtension2 * This);
         
+        DECLSPEC_XFGVIRT(IUnknown, Release)
         ULONG ( STDMETHODCALLTYPE *Release )( 
             __RPC__in ISideShowClassExtension2 * This);
         
+        DECLSPEC_XFGVIRT(ISideShowClassExtension, Initialize)
         HRESULT ( STDMETHODCALLTYPE *Initialize )( 
             __RPC__in ISideShowClassExtension2 * This,
             /* [in] */ __RPC__in_opt IUnknown *pWdfDeviceUnknown,
             /* [in] */ __RPC__in_opt IUnknown *pSideShowDriverUnknown);
         
+        DECLSPEC_XFGVIRT(ISideShowClassExtension, Uninitialize)
         HRESULT ( STDMETHODCALLTYPE *Uninitialize )( 
             __RPC__in ISideShowClassExtension2 * This,
             /* [in] */ __RPC__in_opt IUnknown *pWdfDeviceUnknown);
         
+        DECLSPEC_XFGVIRT(ISideShowClassExtension, OnProcessIoControl)
         HRESULT ( STDMETHODCALLTYPE *OnProcessIoControl )( 
             __RPC__in ISideShowClassExtension2 * This,
             /* [in] */ __RPC__in_opt IWDFIoQueue *pWdfQueue,
@@ -766,11 +818,13 @@ EXTERN_C const IID IID_ISideShowClassExtension2;
             /* [in] */ SIZE_T OutputBufferSizeInBytes,
             /* [out] */ __RPC__out DWORD *pcbWritten);
         
+        DECLSPEC_XFGVIRT(ISideShowClassExtension2, InitializeAsync)
         HRESULT ( STDMETHODCALLTYPE *InitializeAsync )( 
             __RPC__in ISideShowClassExtension2 * This,
             /* [in] */ __RPC__in_opt IUnknown *pWdfDeviceUnknown,
             /* [in] */ __RPC__in_opt IUnknown *pSideShowDriverUnknown);
         
+        DECLSPEC_XFGVIRT(ISideShowClassExtension2, PostEvent)
         HRESULT ( STDMETHODCALLTYPE *PostEvent )( 
             __RPC__in ISideShowClassExtension2 * This,
             /* [in] */ __RPC__in REFGUID in_EventGuid,
@@ -778,6 +832,7 @@ EXTERN_C const IID IID_ISideShowClassExtension2;
             /* [full][in] */ __RPC__in_opt BYTE *const in_pbEventData,
             /* [in] */ const DWORD in_cbEventData);
         
+        DECLSPEC_XFGVIRT(ISideShowClassExtension2, CleanupFile)
         HRESULT ( STDMETHODCALLTYPE *CleanupFile )( 
             __RPC__in ISideShowClassExtension2 * This,
             /* [in] */ __RPC__in_opt IWDFFile *pWdfFile);

@@ -230,6 +230,11 @@ typedef struct _FILTER_INITIALIZATION_DATA {
 #define DUMP_FILTER_FLAG_SYSTEM_SUPPORT_READ	             0x1
 #define DUMP_FILTER_FLAG_SYSTEM_SUPPORT_FILTER_EXTENSION_EX  0x2
 
+//
+// Indicates to the dump filter driver that the storage device
+// supports addressing full memory within a single 4GB region
+//
+#define DUMP_FILTER_FLAG_SYSTEM_SUPPORT_64BIT_MEMORY         0x4
 
 #endif // __NTDDDUMP_H__
 

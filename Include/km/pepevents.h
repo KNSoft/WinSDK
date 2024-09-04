@@ -795,8 +795,9 @@ EXTERN_C __declspec(selectany) MCGEN_TRACE_CONTEXT POP_PEP_ETW_PROVIDER_Context 
 //
 
 typedef struct tagMcGenContext_Microsoft_Windows_Kernel_Pep {
-    // The fields of this structure are subject to change and should not be
-    // accessed directly.
+    // The fields of this structure are subject to change and should
+    // not be accessed directly. To access the provider's REGHANDLE,
+    // use Microsoft_Windows_Kernel_PepHandle_ForContext(pContext).
     MCGEN_TRACE_CONTEXT Context;
     ULONG EnableBits[1];
 } McGenContext_Microsoft_Windows_Kernel_Pep;
@@ -804,6 +805,11 @@ typedef struct tagMcGenContext_Microsoft_Windows_Kernel_Pep {
 #define EventRegisterMicrosoft_Windows_Kernel_Pep_ForContext(pContext)             _mcgen_PASTE2(_mcgen_RegisterForContext_Microsoft_Windows_Kernel_Pep_, MCGEN_EVENTREGISTER)(&POP_PEP_ETW_PROVIDER, pContext)
 #define EventRegisterByGuidMicrosoft_Windows_Kernel_Pep_ForContext(Guid, pContext) _mcgen_PASTE2(_mcgen_RegisterForContext_Microsoft_Windows_Kernel_Pep_, MCGEN_EVENTREGISTER)(&(Guid), pContext)
 #define EventUnregisterMicrosoft_Windows_Kernel_Pep_ForContext(pContext)           McGenEventUnregister(&(pContext)->Context.RegistrationHandle)
+
+//
+// Provider REGHANDLE for caller-allocated context.
+//
+#define Microsoft_Windows_Kernel_PepHandle_ForContext(pContext) ((pContext)->Context.RegistrationHandle)
 
 // This function is for use by MC-generated code and should not be used directly.
 // Initialize and register the caller-allocated context.

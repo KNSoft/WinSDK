@@ -489,6 +489,62 @@ typedef struct _COMMIT_POLICY_OUT
 
 #define COMMIT_POLICY_OUT_SIZE (FIELD_OFFSET(COMMIT_POLICY_OUT, Status) + COMMIT_POLICY_OUT_Status_SIZE)
 
+#define WheaResetPolicyRtn     5
+typedef struct _RESET_POLICY_OUT
+{
+    // 
+    ULONG Status;
+    #define RESET_POLICY_OUT_Status_SIZE sizeof(ULONG)
+    #define RESET_POLICY_OUT_Status_ID 1
+
+} RESET_POLICY_OUT, *PRESET_POLICY_OUT;
+
+#define RESET_POLICY_OUT_SIZE (FIELD_OFFSET(RESET_POLICY_OUT, Status) + RESET_POLICY_OUT_Status_SIZE)
+
+
+// WHEAPluginCtlMethods - WHEAPluginCtlMethods
+#define WHEAPluginCtlMethodsGuid \
+    { 0xed16c828,0xbdec,0x41a4, { 0x8f,0xef,0x3b,0xfc,0x15,0xad,0xec,0xbd } }
+
+#if ! (defined(MIDL_PASS))
+DEFINE_GUID(WHEAPluginCtlMethods_GUID, \
+            0xed16c828,0xbdec,0x41a4,0x8f,0xef,0x3b,0xfc,0x15,0xad,0xec,0xbd);
+#endif
+
+//
+// Method id definitions for WHEAPluginCtlMethods
+#define WheaPluginCtlInterfaceRtn     1
+typedef struct _WHEA_PLUGIN_CTL_INTERFACE_IN
+{
+    // 
+    ULONG InputLength;
+    #define WHEA_PLUGIN_CTL_INTERFACE_IN_InputLength_SIZE sizeof(ULONG)
+    #define WHEA_PLUGIN_CTL_INTERFACE_IN_InputLength_ID 1
+
+    // 
+    UCHAR InputBuffer[1];
+    #define WHEA_PLUGIN_CTL_INTERFACE_IN_InputBuffer_ID 2
+
+} WHEA_PLUGIN_CTL_INTERFACE_IN, *PWHEA_PLUGIN_CTL_INTERFACE_IN;
+
+typedef struct _WHEA_PLUGIN_CTL_INTERFACE_OUT
+{
+    // 
+    ULONG Status;
+    #define WHEA_PLUGIN_CTL_INTERFACE_OUT_Status_SIZE sizeof(ULONG)
+    #define WHEA_PLUGIN_CTL_INTERFACE_OUT_Status_ID 3
+
+    // 
+    ULONG OutputLength;
+    #define WHEA_PLUGIN_CTL_INTERFACE_OUT_OutputLength_SIZE sizeof(ULONG)
+    #define WHEA_PLUGIN_CTL_INTERFACE_OUT_OutputLength_ID 4
+
+    // 
+    UCHAR OutputBuffer[1];
+    #define WHEA_PLUGIN_CTL_INTERFACE_OUT_OutputBuffer_ID 5
+
+} WHEA_PLUGIN_CTL_INTERFACE_OUT, *PWHEA_PLUGIN_CTL_INTERFACE_OUT;
+
 
 // MSSmBios_RawSMBiosTables - MSSmBios_RawSMBiosTables
 #define MSSmBios_RawSMBiosTablesGuid \
@@ -10612,6 +10668,32 @@ typedef struct _RegisteredGuids
 } RegisteredGuids, *PRegisteredGuids;
 
 #define RegisteredGuids_SIZE (FIELD_OFFSET(RegisteredGuids, IsEnabled) + RegisteredGuids_IsEnabled_SIZE)
+
+// CounterCorruptionStatus - CounterCorruptionStatus
+#define CounterCorruptionStatusGuid \
+    { 0x5a5183f3,0x9216,0x4b06, { 0x97,0x07,0x81,0x48,0x20,0x6c,0x1e,0x3c } }
+
+#if ! (defined(MIDL_PASS))
+DEFINE_GUID(CounterCorruptionStatus_GUID, \
+            0x5a5183f3,0x9216,0x4b06,0x97,0x07,0x81,0x48,0x20,0x6c,0x1e,0x3c);
+#endif
+
+
+typedef struct _CounterCorruptionStatus
+{
+    // 
+    ULONG ProfileSource;
+    #define CounterCorruptionStatus_ProfileSource_SIZE sizeof(ULONG)
+    #define CounterCorruptionStatus_ProfileSource_ID 1
+
+    // 
+    ULONGLONG LastKnownGoodTimestamp;
+    #define CounterCorruptionStatus_LastKnownGoodTimestamp_SIZE sizeof(ULONGLONG)
+    #define CounterCorruptionStatus_LastKnownGoodTimestamp_ID 2
+
+} CounterCorruptionStatus, *PCounterCorruptionStatus;
+
+#define CounterCorruptionStatus_SIZE (FIELD_OFFSET(CounterCorruptionStatus, LastKnownGoodTimestamp) + CounterCorruptionStatus_LastKnownGoodTimestamp_SIZE)
 
 // MSTapeDriveParam - WMI_TAPE_DRIVE_PARAMETERS
 #define WMI_TAPE_DRIVE_PARAMETERS_GUID \

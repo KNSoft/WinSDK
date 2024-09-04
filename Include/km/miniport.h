@@ -168,7 +168,7 @@ Revision History:
 //       versions of the SDK which did not block inclusion in an .RC file.
 //
 
-#if defined(_AMD64_) || defined(_X86_)
+#if defined(_AMD64_) || defined(_X86_) || defined(_ARM64EC_)
 #define PROBE_ALIGNMENT( _s ) TYPE_ALIGNMENT( ULONG )
 #elif defined(_IA64_) || defined(_ARM_) || defined(_ARM64_)
 
@@ -357,7 +357,7 @@ Revision History:
 #endif
 
 #ifndef DECLSPEC_CHPE_PATCHABLE
-#if _M_HYBRID
+#if defined (_M_HYBRID)
 #define DECLSPEC_CHPE_PATCHABLE  __declspec(hybrid_patchable)
 #else
 #define DECLSPEC_CHPE_PATCHABLE
@@ -375,7 +375,10 @@ Revision History:
 #endif
 
 //
-// CFORCEINLINE: __forceinline required for correctness.
+// CFORCEINLINE: __forceinline required for correctness.  Such definitions are
+//               typically required to be visible in the same translation unit
+//               (i.e., so that they may still be forceinlined, even in the
+//               event of non-LTCG code being encountered).
 //
 
 #define CFORCEINLINE FORCEINLINE
@@ -774,10 +777,17 @@ typedef _Return_type_success_(return >= 0) long HRESULT;
     #define EXTERN_C       extern "C"
     #define EXTERN_C_START extern "C" {
     #define EXTERN_C_END   }
+
+    #if _MSC_VER >= 1900
+        #define WIN_NOEXCEPT noexcept
+    #else
+        #define WIN_NOEXCEPT throw()
+    #endif
 #else
     #define EXTERN_C       extern
     #define EXTERN_C_START
     #define EXTERN_C_END
+    #define WIN_NOEXCEPT
 #endif
 
 #if defined(_WIN32) || defined(_MPPC_)
@@ -986,8 +996,17 @@ typedef BOOLEAN *PBOOLEAN;       // winnt
 // Calculate the byte offset of a field in a structure of type type.
 //
 
+#ifdef __has_builtin
+#if __has_builtin(__builtin_offsetof)
+#define FIELD_OFFSET(type, field)    ((LONG)__builtin_offsetof(type, field))
+#define UFIELD_OFFSET(type, field)    ((ULONG)__builtin_offsetof(type, field))
+#endif
+#endif
+
+#ifndef FIELD_OFFSET
 #define FIELD_OFFSET(type, field)    ((LONG)(LONG_PTR)&(((type *)0)->field))
 #define UFIELD_OFFSET(type, field)    ((ULONG)(LONG_PTR)&(((type *)0)->field))
+#endif
 
 //
 // Calculate the size of a field in a structure of type type, without
@@ -1368,13 +1387,13 @@ extern "C++" {
 
 #define DEFINE_ENUM_FLAG_OPERATORS(ENUMTYPE) \
 extern "C++" { \
-inline _ENUM_FLAG_CONSTEXPR ENUMTYPE operator | (ENUMTYPE a, ENUMTYPE b) throw() { return ENUMTYPE(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)a) | ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
-inline ENUMTYPE &operator |= (ENUMTYPE &a, ENUMTYPE b) throw() { return (ENUMTYPE &)(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type &)a) |= ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
-inline _ENUM_FLAG_CONSTEXPR ENUMTYPE operator & (ENUMTYPE a, ENUMTYPE b) throw() { return ENUMTYPE(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)a) & ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
-inline ENUMTYPE &operator &= (ENUMTYPE &a, ENUMTYPE b) throw() { return (ENUMTYPE &)(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type &)a) &= ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
-inline _ENUM_FLAG_CONSTEXPR ENUMTYPE operator ~ (ENUMTYPE a) throw() { return ENUMTYPE(~((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)a)); } \
-inline _ENUM_FLAG_CONSTEXPR ENUMTYPE operator ^ (ENUMTYPE a, ENUMTYPE b) throw() { return ENUMTYPE(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)a) ^ ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
-inline ENUMTYPE &operator ^= (ENUMTYPE &a, ENUMTYPE b) throw() { return (ENUMTYPE &)(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type &)a) ^= ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
+inline _ENUM_FLAG_CONSTEXPR ENUMTYPE operator | (ENUMTYPE a, ENUMTYPE b) WIN_NOEXCEPT { return ENUMTYPE(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)a) | ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
+inline ENUMTYPE &operator |= (ENUMTYPE &a, ENUMTYPE b) WIN_NOEXCEPT { return (ENUMTYPE &)(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type &)a) |= ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
+inline _ENUM_FLAG_CONSTEXPR ENUMTYPE operator & (ENUMTYPE a, ENUMTYPE b) WIN_NOEXCEPT { return ENUMTYPE(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)a) & ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
+inline ENUMTYPE &operator &= (ENUMTYPE &a, ENUMTYPE b) WIN_NOEXCEPT { return (ENUMTYPE &)(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type &)a) &= ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
+inline _ENUM_FLAG_CONSTEXPR ENUMTYPE operator ~ (ENUMTYPE a) WIN_NOEXCEPT { return ENUMTYPE(~((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)a)); } \
+inline _ENUM_FLAG_CONSTEXPR ENUMTYPE operator ^ (ENUMTYPE a, ENUMTYPE b) WIN_NOEXCEPT { return ENUMTYPE(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)a) ^ ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
+inline ENUMTYPE &operator ^= (ENUMTYPE &a, ENUMTYPE b) WIN_NOEXCEPT { return (ENUMTYPE &)(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type &)a) ^= ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
 }
 #else
 #define DEFINE_ENUM_FLAG_OPERATORS(ENUMTYPE) // NOP, C allows these operators.
@@ -1428,10 +1447,12 @@ C_ASSERT(TYPE_ALIGNMENT(LARGE_INTEGER) == 8);
 #endif
 #endif
 
-// begin_ntoshvp
+//
 
-#ifdef _AMD64_
+#if defined(_AMD64_)
 
+//
+//
 
 #if defined(_M_AMD64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
@@ -1447,6 +1468,8 @@ extern "C" {
 #define BitTestAndComplement _bittestandcomplement
 #define BitTestAndSet _bittestandset
 #define BitTestAndReset _bittestandreset
+
+#if !defined(_M_ARM64EC)
 #define InterlockedBitTestAndSet _interlockedbittestandset
 #define InterlockedBitTestAndSetAcquire _interlockedbittestandset
 #define InterlockedBitTestAndSetRelease _interlockedbittestandset
@@ -1455,11 +1478,13 @@ extern "C" {
 #define InterlockedBitTestAndResetAcquire _interlockedbittestandreset
 #define InterlockedBitTestAndResetRelease _interlockedbittestandreset
 #define InterlockedBitTestAndResetNoFence _interlockedbittestandreset
+#endif // !defined(_M_ARM64EC)
 
 #define BitTest64 _bittest64
 #define BitTestAndComplement64 _bittestandcomplement64
 #define BitTestAndSet64 _bittestandset64
 #define BitTestAndReset64 _bittestandreset64
+#if !defined(_M_ARM64EC)
 #define InterlockedBitTestAndSet64 _interlockedbittestandset64
 #define InterlockedBitTestAndSet64Acquire _interlockedbittestandset64
 #define InterlockedBitTestAndSet64Release _interlockedbittestandset64
@@ -1468,6 +1493,7 @@ extern "C" {
 #define InterlockedBitTestAndReset64Acquire _interlockedbittestandreset64
 #define InterlockedBitTestAndReset64Release _interlockedbittestandreset64
 #define InterlockedBitTestAndReset64NoFence _interlockedbittestandreset64
+#endif // !defined(_M_ARM64EC)
 
 _Must_inspect_result_
 BOOLEAN
@@ -1603,6 +1629,30 @@ _BitScanReverse64 (
 //
 
 #define InterlockedIncrement16 _InterlockedIncrement16
+#define InterlockedDecrement16 _InterlockedDecrement16
+#define InterlockedCompareExchange16 _InterlockedCompareExchange16
+#define InterlockedAnd _InterlockedAnd
+#define InterlockedOr _InterlockedOr
+#define InterlockedXor _InterlockedXor
+#define InterlockedIncrement _InterlockedIncrement
+#define InterlockedDecrement _InterlockedDecrement
+#define InterlockedExchange _InterlockedExchange
+#define InterlockedExchangeAdd _InterlockedExchangeAdd
+#define InterlockedCompareExchange _InterlockedCompareExchange
+
+#define InterlockedAnd64 _InterlockedAnd64
+#define InterlockedOr64 _InterlockedOr64
+#define InterlockedXor64 _InterlockedXor64
+#define InterlockedIncrement64 _InterlockedIncrement64
+#define InterlockedDecrement64 _InterlockedDecrement64
+#define InterlockedExchange64 _InterlockedExchange64
+#define InterlockedExchangeAdd64 _InterlockedExchangeAdd64
+#define InterlockedCompareExchange64 _InterlockedCompareExchange64
+#define InterlockedCompareExchange128 _InterlockedCompareExchange128
+#define InterlockedExchangePointer _InterlockedExchangePointer
+#define InterlockedCompareExchangePointer _InterlockedCompareExchangePointer
+
+#if !defined(_M_ARM64EC)
 #define InterlockedIncrementAcquire16 _InterlockedIncrement16
 #define InterlockedIncrementRelease16 _InterlockedIncrement16
 #define InterlockedIncrementNoFence16 _InterlockedIncrement16
@@ -1705,6 +1755,7 @@ _BitScanReverse64 (
 #define InterlockedIncrementSizeTNoFence(a) InterlockedIncrement64((LONG64 *)a)
 #define InterlockedDecrementSizeT(a) InterlockedDecrement64((LONG64 *)a)
 #define InterlockedDecrementSizeTNoFence(a) InterlockedDecrement64((LONG64 *)a)
+#endif // !defined(_M_ARM64EC)
 
 SHORT
 InterlockedIncrement16 (
@@ -1794,7 +1845,7 @@ InterlockedAdd (
     return InterlockedExchangeAdd(Addend, Value) + Value;
 }
 
-#endif
+#endif // !defined(_X86AMD64_)
 
 LONG
 InterlockedCompareExchange (
@@ -1838,7 +1889,7 @@ _InlineInterlockedAdd64 (
     return InterlockedExchangeAdd64(Addend, Value) + Value;
 }
 
-#endif
+#endif // !defined(_X86AMD64_)
 
 LONG64
 InterlockedCompareExchange64 (
@@ -1987,13 +2038,23 @@ InterlockedXor16(
 
 #endif
 
-// end_ntoshvp
+//
+//
 
 //
 // Define extended CPUID intrinsic.
 //
 
+#if !defined(_M_ARM64EC)
+
 #define CpuIdEx __cpuidex
+
+#else
+
+#define __cpuidex CpuIdEx
+#define __cpuid __CpuId
+
+#endif
 
 VOID
 __cpuidex (
@@ -2002,9 +2063,77 @@ __cpuidex (
     int SubLeaf
     );
 
+#if !defined(_M_ARM64EC)
+
 #pragma intrinsic(__cpuidex)
 
-// begin_ntoshvp
+#else
+
+// TODO-ARM64X: Implement CpuIdEx in a lib
+
+__forceinline
+VOID
+CpuIdEx(
+    int CPUInfo[4],
+    int Function,
+    int Subfunction
+    )
+{
+    (CPUInfo);     // reference to make compiler happy
+    (Function);    // reference to make compiler happy
+    (Subfunction); // reference to make compiler happy
+
+    CPUInfo[0] = 0;
+    CPUInfo[1] = 0;
+    CPUInfo[2] = 0;
+    CPUInfo[4] = 0;
+}
+
+__forceinline
+VOID
+__CpuId (
+    int CPUInfo[4],
+    int Function
+    )
+{
+    CpuIdEx(CPUInfo, Function, 0);
+}
+
+//
+// TODO-ARM64X: Emulate __readmsr/__writemsr behavior accurately.
+//
+
+__declspec(noreturn) void __fastfail(_In_ unsigned int);
+
+__forceinline
+unsigned __int64
+__readmsr(
+    _In_ unsigned long Register
+    )
+{
+    (Register); // reference to make compiler happy
+    __fastfail(0);
+    return 0;
+}
+
+__forceinline
+void
+__writemsr(
+    _In_ unsigned long Register,
+    _In_ unsigned __int64 Value
+    )
+{
+    (Register); // reference to make compiler happy
+    (Value);    // reference to make compiler happy
+    __fastfail(0);
+}
+
+#endif // !defined(_M_ARM64EC)
+
+//
+//
+
+#if !defined(_M_ARM64EC)
 
 //
 // Define function to flush a cache line.
@@ -2019,8 +2148,12 @@ _mm_clflush (
 
 #pragma intrinsic(_mm_clflush)
 
-// begin_sdfwdm
-// begin_wudfpwdm
+#endif // !defined(_M_ARM64EC)
+
+//
+//
+
+#if !defined(_M_ARM64EC)
 
 VOID
 _ReadWriteBarrier (
@@ -2030,29 +2163,44 @@ _ReadWriteBarrier (
 #pragma intrinsic(_ReadWriteBarrier)
 
 //
-// Define memory fence intrinsics
+// Define memory fence intrinsics  TODO-ARM64X: Re-express in terms of ARM64?
 //
 
 #define FastFence __faststorefence
 
-// end_wudfpwdm
-// end_sdfwdm
+#endif // !defined(_M_ARM64EC)
+
+//
+//
+
+// TODO-ARM64X: Re-express in terms of ARM64?
+#if !defined(_M_ARM64EC)
 
 #define LoadFence _mm_lfence
 #define MemoryFence _mm_mfence
 #define StoreFence _mm_sfence
 #define SpeculationFence LoadFence
 
-// begin_sdfwdm
-// begin_wudfpwdm
+#endif
+
+//
+//
+
+// TODO-ARM64X: Re-express in terms of ARM64?
+#if !defined(_M_ARM64EC)
 
 VOID
 __faststorefence (
     VOID
     );
 
-// end_wudfpwdm
-// end_sdfwdm
+#endif // !defined(_M_ARM64EC)
+
+//
+//
+
+// TODO-ARM64X: Intrinsics
+#if !defined(_M_ARM64EC)
 
 VOID
 _mm_lfence (
@@ -2085,6 +2233,8 @@ _m_prefetchw (
     _In_ volatile CONST VOID *Source
     );
 
+#endif // !defined(_M_ARM64EC)
+
 //
 // Define constants for use with _mm_prefetch.
 //
@@ -2094,13 +2244,21 @@ _m_prefetchw (
 #define _MM_HINT_T2     3
 #define _MM_HINT_NTA    0
 
-// begin_sdfwdm
-// begin_wudfpwdm
+//
+//
+
+// TODO-ARM64X: Intrisincs
+#if !defined(_M_ARM64EC)
 
 #pragma intrinsic(__faststorefence)
 
-// end_wudfpwdm
-// end_sdfwdm
+#endif // !defined(_M_ARM64EC)
+
+//
+//
+
+// TODO-ARM64X: Intrisincs
+#if !defined(_M_ARM64EC)
 
 #pragma intrinsic(_mm_pause)
 #pragma intrinsic(_mm_prefetch)
@@ -2108,6 +2266,10 @@ _m_prefetchw (
 #pragma intrinsic(_mm_mfence)
 #pragma intrinsic(_mm_sfence)
 #pragma intrinsic(_m_prefetchw)
+
+#endif // !defined(_M_ARM64EC)
+
+#if !defined(_M_ARM64EC)
 
 #define YieldProcessor _mm_pause
 #define MemoryBarrier __faststorefence
@@ -2123,6 +2285,8 @@ _m_prefetchw (
 #define PF_TEMPORAL_LEVEL_2 _MM_HINT_T1
 #define PF_TEMPORAL_LEVEL_3 _MM_HINT_T2
 #define PF_NON_TEMPORAL_LEVEL_ALL _MM_HINT_NTA
+
+#endif // !defined(_M_ARM64EC)
 
 //
 // Define get/set MXCSR intrinsics.
@@ -2141,8 +2305,15 @@ _mm_setcsr (
     _In_ unsigned int MxCsr
     );
 
+// TODO-ARM64X: Intrinsics
+#if !defined(_M_ARM64EC)
+
 #pragma intrinsic(_mm_getcsr)
 #pragma intrinsic(_mm_setcsr)
+
+#endif // !defined(_M_ARM64EC)
+
+#if !defined(_M_ARM64EC)
 
 //
 // Define function to get the caller's EFLAGs value.
@@ -2292,11 +2463,21 @@ UnsignedMultiplyHigh (
 #pragma intrinsic(__mulh)
 #pragma intrinsic(__umulh)
 
+#endif // !defined(_M_ARM64EC)
+
 //
 // Define population count intrinsic.
 //
 
+#if !defined(_M_ARM64EC)
+
 #define PopulationCount64 __popcnt64
+
+#else
+
+#define __popcnt64 PopulationCount64
+
+#endif // !defined(_M_ARM64EC)
 
 ULONG64
 PopulationCount64 (
@@ -2304,17 +2485,28 @@ PopulationCount64 (
     );
 
 #if _MSC_VER >= 1500
+#if !defined(_M_ARM64EC)
 
 #pragma intrinsic(__popcnt64)
 
-#endif
+#endif // !defined(_M_ARM64EC)
+#endif // _MSC_VER >= 1500
 
 //
 // Define functions to perform 128-bit shifts
 //
 
+#if !defined(_M_ARM64EC)
+
 #define ShiftLeft128 __shiftleft128
 #define ShiftRight128 __shiftright128
+
+#else
+
+#define __shiftleft128   ShiftLeft128
+#define __shiftright128  ShiftRight128
+
+#endif // !defined(_M_ARM64EC)
 
 ULONG64
 ShiftLeft128 (
@@ -2330,14 +2522,26 @@ ShiftRight128 (
     _In_ UCHAR Shift
     );
 
+#if !defined(_M_ARM64EC)
+
 #pragma intrinsic(__shiftleft128)
 #pragma intrinsic(__shiftright128)
+
+#endif // !defined(_M_ARM64EC)
 
 //
 // Define functions to perform 128-bit multiplies.
 //
 
+#if !defined(_M_ARM64EC)
+
 #define Multiply128 _mul128
+
+#else
+
+#define _mul128 Multiply128
+
+#endif // !defined(_M_ARM64EC)
 
 LONG64
 Multiply128 (
@@ -2346,11 +2550,13 @@ Multiply128 (
     _Out_ LONG64 *HighProduct
     );
 
+#if !defined(_M_ARM64EC)
+
 #pragma intrinsic(_mul128)
 
-#ifndef UnsignedMultiply128
+#endif // !defined(_M_ARM64EC)
 
-#define UnsignedMultiply128 _umul128
+#if !defined(UnsignedMultiply128)
 
 ULONG64
 UnsignedMultiply128 (
@@ -2359,9 +2565,37 @@ UnsignedMultiply128 (
     _Out_ ULONG64 *HighProduct
     );
 
+#if !defined(_M_ARM64EC)
+
+#define UnsignedMultiply128 _umul128
+
+#else
+
+#define _umul128 UnsignedMultiply128
+
+#endif // !defined(_M_ARM64EC)
+
+ULONG64
+UnsignedMultiply128 (
+    _In_ ULONG64 Multiplier,
+    _In_ ULONG64 Multiplicand,
+    _Out_ ULONG64 *HighProduct
+    );
+
+LONG64
+Multiply128 (
+    _In_ LONG64 Multiplier,
+    _In_ LONG64 Multiplicand,
+    _Out_ LONG64 *HighProduct
+    );
+
+#if !defined(_M_ARM64EC)
+
 #pragma intrinsic(_umul128)
 
-#endif
+#endif // !defined(_M_ARM64EC)
+
+#endif // !defined(UnsignedMultiply128)
 
 __forceinline
 LONG64
@@ -2421,7 +2655,7 @@ UnsignedMultiplyExtract128 (
 }
 
 //
-// Define functions to read and write the uer TEB and the system PCR/PRCB.
+// Define functions to read and write the user TEB and the system PCR/PRCB.
 //
 
 UCHAR
@@ -2468,6 +2702,9 @@ __writegsqword (
     _In_ ULONG64 Data
     );
 
+// TODO-ARM64X: Intrinsics
+#if !defined(_M_ARM64EC)
+
 #pragma intrinsic(__readgsbyte)
 #pragma intrinsic(__readgsword)
 #pragma intrinsic(__readgsdword)
@@ -2476,6 +2713,8 @@ __writegsqword (
 #pragma intrinsic(__writegsword)
 #pragma intrinsic(__writegsdword)
 #pragma intrinsic(__writegsqword)
+
+#endif // !defined(_M_ARM64EC)
 
 #if !defined(_MANAGED)
 
@@ -2536,6 +2775,8 @@ __addgsqword (
 
 #endif // !defined(_MANAGED)
 
+//
+//
 
 #ifdef __cplusplus
 }
@@ -2543,14 +2784,12 @@ __addgsqword (
 
 #endif // defined(_M_AMD64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
-// end_ntoshvp
-// begin_ntoshvp
-// begin_sdfwdm
+//
+//
 
-#endif // _AMD64_
+#endif // defined(_AMD64_)
 
-// end_sdfwdm
-// end_ntoshvp
+//
 
 #ifdef _ARM_
 
@@ -2571,6 +2810,7 @@ extern "C" {
 
 #pragma intrinsic(__yield)
 #pragma intrinsic(__prefetch)
+#pragma intrinsic(__prefetchw)
 
 #if (_MSC_FULL_VER >= 170040825)
 #pragma intrinsic(__dmb)
@@ -2597,8 +2837,8 @@ YieldProcessor (
 
 #define MemoryBarrier()             __dmb(_ARM_BARRIER_SY)
 #define PreFetchCacheLine(l,a)      __prefetch((const void *) (a))
-#define PrefetchForWrite(p)         __prefetch((const void *) (p))
-#define ReadForWriteAccess(p)       (*(p))
+#define PrefetchForWrite(p)         __prefetchw((const void *) (p))
+#define ReadForWriteAccess(p)       (__prefetchw((const void *) (p)), *(p))
 
 #define _DataSynchronizationBarrier()        __dsb(_ARM_BARRIER_SY)
 #define _InstructionSynchronizationBarrier() __isb(_ARM_BARRIER_SY)
@@ -3233,16 +3473,19 @@ YieldProcessor (
 
 #endif // _ARM_
 
+//
 
-#if defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
+#if defined(_ARM64_) || defined(_CHPE_X86_ARM64_) || defined(_ARM64EC_)
 
+//
+//
 
 #if !defined(_M_CEE_PURE)
 #if !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
 #include <intrin.h>
 
-#if defined(_M_ARM64)
+#if defined(_M_ARM64) || defined(_M_ARM64EC)
 
 #pragma intrinsic(__readx18byte)
 #pragma intrinsic(__readx18word)
@@ -3286,11 +3529,13 @@ YieldProcessor (
 #define BitTestAndSet64 _bittestandset64
 #define BitTestAndReset64 _bittestandreset64
 #define InterlockedBitTestAndSet64 _interlockedbittestandset64
-#define InterlockedBitTestAndSet64Acquire _interlockedbittestandset64
-#define InterlockedBitTestAndSet64Release _interlockedbittestandset64
+#define InterlockedBitTestAndSet64Acquire _interlockedbittestandset64_acq
+#define InterlockedBitTestAndSet64Release _interlockedbittestandset64_rel
+#define InterlockedBitTestAndSet64NoFence _interlockedbittestandset64_nf
 #define InterlockedBitTestAndReset64 _interlockedbittestandreset64
-#define InterlockedBitTestAndReset64Acquire _interlockedbittestandreset64
-#define InterlockedBitTestAndReset64Release _interlockedbittestandreset64
+#define InterlockedBitTestAndReset64Acquire _interlockedbittestandreset64_acq
+#define InterlockedBitTestAndReset64Release _interlockedbittestandreset64_rel
+#define InterlockedBitTestAndReset64NoFence _interlockedbittestandreset64_nf
 
 #pragma intrinsic(_bittest)
 #pragma intrinsic(_bittestandcomplement)
@@ -3299,9 +3544,11 @@ YieldProcessor (
 #pragma intrinsic(_interlockedbittestandset)
 #pragma intrinsic(_interlockedbittestandset_acq)
 #pragma intrinsic(_interlockedbittestandset_rel)
+#pragma intrinsic(_interlockedbittestandset_nf)
 #pragma intrinsic(_interlockedbittestandreset)
 #pragma intrinsic(_interlockedbittestandreset_acq)
 #pragma intrinsic(_interlockedbittestandreset_rel)
+#pragma intrinsic(_interlockedbittestandreset_nf)
 
 #pragma intrinsic(_bittest64)
 #pragma intrinsic(_bittestandcomplement64)
@@ -3311,9 +3558,11 @@ YieldProcessor (
 #pragma intrinsic(_interlockedbittestandset64)
 #pragma intrinsic(_interlockedbittestandset64_acq)
 #pragma intrinsic(_interlockedbittestandset64_rel)
+#pragma intrinsic(_interlockedbittestandset64_nf)
 #pragma intrinsic(_interlockedbittestandreset64)
 #pragma intrinsic(_interlockedbittestandreset64_acq)
 #pragma intrinsic(_interlockedbittestandreset64_rel)
+#pragma intrinsic(_interlockedbittestandreset64_nf)
 
 //
 // Define bit scan functions
@@ -3598,9 +3847,9 @@ YieldProcessor (
 #define InterlockedDecrementSizeT(a) InterlockedDecrement64((LONG64 *)a)
 #define InterlockedDecrementSizeTNoFence(a) InterlockedDecrementNoFence64((LONG64 *)a)
 
-#endif // defined(_M_ARM64)
+#endif // defined(_M_ARM64) || defined(_M_ARM64EC)
 
-#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
+#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC)
 
 #pragma intrinsic(__getReg)
 #pragma intrinsic(__getCallerReg)
@@ -3618,6 +3867,20 @@ YieldProcessor (
 
 #pragma intrinsic(__yield)
 #pragma intrinsic(__prefetch)
+#pragma intrinsic(__prefetch2)
+
+#define ARM64_PREFETCH_PLD  (0 << 3)
+#define ARM64_PREFETCH_PLI  (1 << 3)
+#define ARM64_PREFETCH_PST  (2 << 3)
+
+#define ARM64_PREFETCH_L1   (0 << 1)
+#define ARM64_PREFETCH_L2   (1 << 1)
+#define ARM64_PREFETCH_L3   (2 << 1)
+
+#define ARM64_PREFETCH_KEEP (0 << 0)
+#define ARM64_PREFETCH_STRM (1 << 0)
+
+#define ARM64_PREFETCH(a,b,c) (ARM64_PREFETCH_##a | ARM64_PREFETCH_##b | ARM64_PREFETCH_##c)
 
 #pragma intrinsic(__dmb)
 #pragma intrinsic(__dsb)
@@ -3627,9 +3890,9 @@ YieldProcessor (
 #pragma intrinsic(_WriteBarrier)
 
 #define MemoryBarrier()             __dmb(_ARM64_BARRIER_SY)
-#define PreFetchCacheLine(l,a)      __prefetch((const void *) (a))
-#define PrefetchForWrite(p)         __prefetch((const void *) (p))
-#define ReadForWriteAccess(p)       (*(p))
+#define PreFetchCacheLine(l,a)      __prefetch2((const void *) (a), ARM64_PREFETCH(PLD, L1, KEEP))
+#define PrefetchForWrite(p)         __prefetch2((const void *) (p), ARM64_PREFETCH(PST, L1, KEEP))
+#define ReadForWriteAccess(p)       (__prefetch2((const void *) (p), ARM64_PREFETCH(PST, L1, KEEP)), *(p))
 
 #define _DataSynchronizationBarrier()        __dsb(_ARM64_BARRIER_SY)
 #define _InstructionSynchronizationBarrier() __isb(_ARM64_BARRIER_SY)
@@ -3657,6 +3920,8 @@ YieldProcessor (
 #pragma intrinsic(__iso_volatile_store32)
 #pragma intrinsic(__iso_volatile_store64)
 
+//
+//
 
 FORCEINLINE
 CHAR
@@ -3882,6 +4147,8 @@ WriteNoFence64 (
     return;
 }
 
+//
+//
 
 //
 // Define coprocessor access intrinsics.  Coprocessor 15 contains
@@ -3997,7 +4264,260 @@ ReadPMC (
 #pragma intrinsic(__mulh)
 #pragma intrinsic(__umulh)
 
-#endif // defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
+#endif // defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC)
+
+
+//
+// Define population count intrinsic.
+//
+
+#if !defined(PopulationCount64)
+
+__forceinline
+ULONG64
+PopulationCount64 (
+    _In_ ULONG64 operand
+    )
+{
+    // log(n) population count
+
+    ULONG64 highBits = (operand & 0xAAAAAAAAAAAAAAAA) >> 1;
+    ULONG64 lowBits = operand & 0x5555555555555555;
+    ULONG64 bitSum = highBits + lowBits;
+
+    highBits = (bitSum & 0xCCCCCCCCCCCCCCCC) >> 2;
+    lowBits = bitSum & 0x3333333333333333;
+    bitSum = highBits + lowBits;
+
+    highBits = (bitSum & 0xF0F0F0F0F0F0F0F0) >> 4;
+    lowBits = bitSum & 0x0F0F0F0F0F0F0F0F;
+    bitSum = highBits + lowBits;
+
+    highBits = (bitSum & 0xFF00FF00FF00FF00) >> 8;
+    lowBits = bitSum & 0x00FF00FF00FF00FF;
+    bitSum = highBits + lowBits;
+
+    highBits = (bitSum & 0xFFFF0000FFFF0000) >> 16;
+    lowBits = bitSum & 0x0000FFFF0000FFFF;
+    bitSum = highBits + lowBits;
+
+    highBits = (bitSum & 0xFFFFFFFF00000000) >> 32;
+    lowBits = bitSum & 0x00000000FFFFFFFF;
+    bitSum = highBits + lowBits;
+
+    return bitSum;
+}
+
+#endif // !defined(PopulationCount64)
+
+//
+// Define functions to perform 128-bit shifts
+//
+
+#if !defined(ShiftLeft128)
+
+#define __shiftleft128   ShiftLeft128
+#define __shiftright128  ShiftRight128
+
+__forceinline
+ULONG64
+ShiftLeft128 (
+    _In_ ULONG64 LowPart,
+    _In_ ULONG64 HighPart,
+    _In_ UCHAR Shift
+    )
+{
+    Shift &= 63;
+
+    if (Shift == 0) {
+        return HighPart;
+    }
+
+    return (HighPart << Shift) | (LowPart >> (64 - Shift));
+}
+
+__forceinline
+ULONG64
+ShiftRight128 (
+    _In_ ULONG64 LowPart,
+    _In_ ULONG64 HighPart,
+    _In_ UCHAR Shift
+    )
+{
+    Shift &= 63;
+
+    if (Shift == 0) {
+        return LowPart;
+    }
+
+    return (LowPart >> Shift) | (HighPart << (64 - Shift));
+}
+
+#endif // !defined(ShiftLeft128)
+
+//
+// Define functions to perform 128-bit multiplies.
+//
+
+#if !defined(UnsignedMultiply128)
+
+__forceinline
+ULONG64
+UnsignedMultiply128 (
+    _In_ ULONG64 Multiplier,
+    _In_ ULONG64 Multiplicand,
+    _Out_ ULONG64 *HighProduct
+    )
+
+/*++
+
+Routine Description:
+
+    Calculates the 128 bit product of two 64 bit integers.
+
+Arguments:
+
+    Multiplier -
+
+    Multiplicand -
+
+    HighProduct - Receives the high 64 bits of the product.
+
+Return Value:
+
+    Low 64 bits of the product.
+
+--*/
+
+{
+
+#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC)
+
+    *HighProduct = UnsignedMultiplyHigh(Multiplier, Multiplicand);
+    return Multiplier * Multiplicand;
+
+#else
+
+    ULONG64 HiMultiplier = Multiplier >> 32;
+    ULONG64 LoMultiplier = Multiplier & 0xFFFFFFFF;
+    ULONG64 HiMultiplicand = Multiplicand >> 32;
+    ULONG64 LoMultiplicand = Multiplicand & 0xFFFFFFFF;
+    ULONG64 CrossTerm1 = (HiMultiplier * LoMultiplicand);
+    ULONG64 CrossTerm2 = (LoMultiplier * HiMultiplicand);
+
+    ULONG64 ResultLo = (LoMultiplier * LoMultiplicand);
+    ULONG64 ResultHi = (HiMultiplier * HiMultiplicand);
+
+    // Add the cross-terms and propagate carries across all 128 bits.
+
+    ResultLo += (CrossTerm1 << 32);
+    ResultHi += (CrossTerm1 >> 32) + (ResultLo < (CrossTerm1 << 32));
+
+    ResultLo += (CrossTerm2 << 32);
+    ResultHi += (CrossTerm2 >> 32) + (ResultLo < (CrossTerm2 << 32));
+
+    *HighProduct = ResultHi;
+
+    return ResultLo;
+
+#endif
+
+}
+
+__forceinline
+LONG64
+Multiply128 (
+    _In_ LONG64 Multiplier,
+    _In_ LONG64 Multiplicand,
+    _Out_ LONG64 *HighProduct
+    )
+{
+    LONG64 Result = (LONG64)UnsignedMultiply128((ULONG64)Multiplier, (ULONG64)Multiplicand, (ULONG64 *)HighProduct);
+
+    *HighProduct -= (Multiplier >> 63) * Multiplicand;
+    *HighProduct -= Multiplier * (Multiplicand >> 63);
+
+    return Result;
+}
+
+#endif // !defined(UnsignedMultiply128)
+
+#if !defined(_M_ARM64EC)
+
+__forceinline
+LONG64
+MultiplyExtract128 (
+    _In_ LONG64 Multiplier,
+    _In_ LONG64 Multiplicand,
+    _In_ UCHAR Shift
+    )
+
+{
+
+    LONG64 extractedProduct;
+    LONG64 highProduct;
+    LONG64 lowProduct;
+    BOOLEAN negate;
+    ULONG64 uhighProduct;
+    ULONG64 ulowProduct;
+
+    lowProduct = Multiply128(Multiplier, Multiplicand, &highProduct);
+    negate = FALSE;
+    uhighProduct = (ULONG64)highProduct;
+    ulowProduct = (ULONG64)lowProduct;
+    if (highProduct < 0) {
+        negate = TRUE;
+        uhighProduct = (ULONG64)(-highProduct);
+        ulowProduct = (ULONG64)(-lowProduct);
+        if (ulowProduct != 0) {
+            uhighProduct -= 1;
+        }
+    }
+
+    extractedProduct = (LONG64)ShiftRight128(ulowProduct, uhighProduct, Shift);
+    if (negate != FALSE) {
+        extractedProduct = -extractedProduct;
+    }
+
+    return extractedProduct;
+}
+
+__forceinline
+ULONG64
+UnsignedMultiplyExtract128 (
+    _In_ ULONG64 Multiplier,
+    _In_ ULONG64 Multiplicand,
+    _In_ UCHAR Shift
+    )
+
+{
+
+    ULONG64 extractedProduct;
+    ULONG64 highProduct;
+    ULONG64 lowProduct;
+
+    lowProduct = UnsignedMultiply128(Multiplier, Multiplicand, &highProduct);
+    extractedProduct = ShiftRight128(lowProduct, highProduct, Shift);
+    return extractedProduct;
+}
+
+#endif // !defined(_M_ARM64EC)
+
+
+
+#if defined(_M_ARM64EC)
+
+unsigned int
+_mm_getcsr (
+    VOID
+    );
+
+VOID
+_mm_setcsr (
+    _In_ unsigned int MxCsr
+    );
+
+#endif // defined(_M_ARM64EC)
 
 #endif // !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
@@ -4017,9 +4537,12 @@ YieldProcessor (
 }
 #endif // defined(_M_CEE_PURE)
 
+//
+//
 
-#endif // defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
+#endif // defined(_ARM64_) || defined(_CHPE_X86_ARM64_) || defined(_ARM64EC_)
 
+//
 // begin_ntoshvp
 
 #ifdef _X86_
@@ -4889,7 +5412,7 @@ _mm_pause (
 
 
 #if !defined(RC_INVOKED) && !defined(MIDL_PASS)
-#if ((defined(_M_AMD64) || defined(_M_IX86)) && !defined(_M_HYBRID_X86_ARM64)) || defined(_M_CEE_PURE)
+#if ((defined(_M_AMD64) || defined(_M_IX86)) && !defined(_M_HYBRID_X86_ARM64) && !defined(_M_ARM64EC)) || defined(_M_CEE_PURE)
 
 #ifdef __cplusplus
 extern "C" {
@@ -5115,7 +5638,7 @@ WriteNoFence64 (
 }
 #endif
 
-#endif // defined(_M_AMD64) || defined(_M_IX86) || defined(_M_CEE_PURE)
+#endif // ((defined(_M_AMD64) || defined(_M_IX86)) && !defined(_M_HYBRID_X86_ARM64) && !defined(_M_ARM64EC)) || defined(_M_CEE_PURE)
 
 //
 // Define "raw" operations which have no ordering or atomicity semantics.
@@ -5788,6 +6311,8 @@ typedef enum _LOGICAL_PROCESSOR_RELATIONSHIP {
     RelationCache,
     RelationProcessorPackage,
     RelationGroup,
+    RelationProcessorDie,
+    RelationNumaNodeEx,
     RelationAll = 0xffff
 } LOGICAL_PROCESSOR_RELATIONSHIP;
 
@@ -5835,8 +6360,13 @@ typedef struct _PROCESSOR_RELATIONSHIP {
 
 typedef struct _NUMA_NODE_RELATIONSHIP {
     ULONG NodeNumber;
-    UCHAR Reserved[20];
-    GROUP_AFFINITY GroupMask;
+    UCHAR Reserved[18];
+    USHORT GroupCount;
+    union {
+        GROUP_AFFINITY GroupMask;
+        _Field_size_(GroupCount)
+        GROUP_AFFINITY GroupMasks[ANYSIZE_ARRAY];
+    } DUMMYUNIONNAME;
 } NUMA_NODE_RELATIONSHIP, *PNUMA_NODE_RELATIONSHIP;
 
 typedef struct _CACHE_RELATIONSHIP {
@@ -5845,8 +6375,13 @@ typedef struct _CACHE_RELATIONSHIP {
     USHORT LineSize;
     ULONG CacheSize;
     PROCESSOR_CACHE_TYPE Type;
-    UCHAR Reserved[20];
-    GROUP_AFFINITY GroupMask;
+    UCHAR Reserved[18];
+    USHORT GroupCount;
+    union {
+        GROUP_AFFINITY GroupMask;
+        _Field_size_(GroupCount)
+        GROUP_AFFINITY GroupMasks[ANYSIZE_ARRAY];
+    } DUMMYUNIONNAME;
 } CACHE_RELATIONSHIP, *PCACHE_RELATIONSHIP;
 
 typedef struct _PROCESSOR_GROUP_INFO {
@@ -5860,7 +6395,7 @@ typedef struct _GROUP_RELATIONSHIP {
     USHORT MaximumGroupCount;
     USHORT ActiveGroupCount;
     UCHAR Reserved[20];
-    PROCESSOR_GROUP_INFO GroupInfo[ANYSIZE_ARRAY];
+    _Field_size_(ActiveGroupCount) PROCESSOR_GROUP_INFO GroupInfo[ANYSIZE_ARRAY];
 } GROUP_RELATIONSHIP, *PGROUP_RELATIONSHIP;
 
 _Struct_size_bytes_(Size) struct _SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX {
@@ -6040,7 +6575,7 @@ DbgRaiseAssertionFailure (
 
 #endif
 
-#if defined(_AMD64_)
+#if defined(_AMD64_) && !defined(_ARM64EC_)
 
 #if defined(_M_AMD64)
 
@@ -6057,7 +6592,7 @@ __int2c (
 
 #endif // !defined(_PREFAST_)
 
-#endif // defined(_M_AMD64)
+#endif // defined(_M_AMD64) && !defined(_ARM64EC_)
 
 #elif defined(_X86_) && !defined(_M_HYBRID_X86_ARM64)
 
@@ -6108,10 +6643,15 @@ DbgRaiseAssertionFailure (
 
 #if defined(_M_IA64)
 
+#pragma prefast( push )
+#pragma prefast( disable: 28301 )
+
 void
 __break(
     _In_ int StIIM
     );
+
+#pragma prefast( pop )
 
 #pragma intrinsic (__break)
 
@@ -6126,14 +6666,19 @@ __break(
 
 #endif // defined(_M_IA64)
 
-#elif defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
+#elif defined(_ARM64_) || defined(_CHPE_X86_ARM64_) || defined(_ARM64EC_)
 
-#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
+#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC)
+
+#pragma prefast( push )
+#pragma prefast( disable: 28301 )
 
 void
 __break(
     _In_ int Code
     );
+
+#pragma prefast( pop )
 
 #pragma intrinsic (__break)
 
@@ -6143,7 +6688,7 @@ __break(
 
 #endif // !defined(_PREFAST_)
 
-#endif // defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
+#endif // defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC)
 
 #elif defined(_ARM_)
 
@@ -6196,7 +6741,7 @@ __emit(
 // and NT_FRE_ASSERT below.
 #define NT_ASSERT_ACTION(_exp) \
     ((!(_exp)) ? \
-        (__annotation(L"Debug", L"AssertFail", L#_exp), \
+        (__annotation(L"Debug", L"AssertFail", L## #_exp), \
          DbgRaiseAssertionFailure(), FALSE) : \
         TRUE)
 
@@ -6272,7 +6817,7 @@ __emit(
 
 // end_wudfwdm
 
-#if defined(_M_AMD64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
+#if defined(_M_AMD64) && !defined(_M_ARM64EC) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
 //
 // Define intrinsic function to do in's and out's.
@@ -6374,9 +6919,9 @@ __outdwordstring (
 }
 #endif
 
-#endif // defined(_M_AMD64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
+#endif // defined(_M_AMD64) && !defined(_M_ARM64EC) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
-#if defined(_AMD64_) && !defined(DSF_DRIVER)
+#if defined(_AMD64_) && !defined(_ARM64EC_) && !defined(DSF_DRIVER)
 
 //
 // I/O space read and write macros.
@@ -6590,6 +7135,7 @@ WRITE_REGISTER_BUFFER_ULONG64 (
     return;
 }
 
+// end_halextenv
 // end_wudfwdm
 // end_sdfwdm
 
@@ -6773,6 +7319,7 @@ WRITE_PORT_BUFFER_ULONG (
 
 // begin_sdfwdm
 // begin_wudfwdm
+// begin_halextenv
 
 #ifdef __cplusplus
 }
@@ -6780,6 +7327,7 @@ WRITE_PORT_BUFFER_ULONG (
 
 #endif
 
+// end_halextenv
 
 #if defined(_M_ARM) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
@@ -6788,6 +7336,7 @@ WRITE_PORT_BUFFER_ULONG (
 #if defined(_M_ARM64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
 #endif // defined(_M_ARM64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
+// begin_halextenv
 
 #if defined(_ARM64_)
 
@@ -7340,6 +7889,8 @@ WRITE_REGISTER_BUFFER_ULONG64 (
     return;
 }
 
+// end_halextenv
+// begin_halextenv
 
 #ifdef __cplusplus
 }
@@ -7347,6 +7898,7 @@ WRITE_REGISTER_BUFFER_ULONG64 (
 
 #endif
 
+// end_halextenv
 // begin_ntoshvp
 //
 // Interrupt modes.
@@ -7430,6 +7982,17 @@ typedef struct _EMULATOR_ACCESS_ENTRY {
 
 // begin_ntoshvp
 
+typedef struct _PCI_SEGMENT_BUS_NUMBER {
+    union {
+        struct {
+            ULONG   BusNumber:8;
+            ULONG   SegmentNumber:16;
+            ULONG   Reserved:8;
+        } bits;
+        ULONG   AsULONG;
+    } u;
+} PCI_SEGMENT_BUS_NUMBER, *PPCI_SEGMENT_BUS_NUMBER;
+
 typedef struct _PCI_SLOT_NUMBER {
     union {
         struct {
@@ -7505,6 +8068,7 @@ typedef struct _PCI_COMMON_CONFIG {
 #define PCI_MAX_DEVICES                     32
 #define PCI_MAX_FUNCTION                    8
 #define PCI_MAX_BRIDGE_NUMBER               0xFF
+#define PCI_MAX_SEGMENT_NUMBER              0xFFFF
 
 #define PCI_INVALID_VENDORID                0xFFFF
 
@@ -8796,6 +9360,16 @@ typedef enum {
 
 } PCI_EXPRESS_LINK_SUBSTATE;
 
+typedef enum {
+
+    PciDeviceD3Cold_State_Disabled_BitIndex = 1, //D3 cold disabled.
+    PciDeviceD3Cold_State_Enabled_BitIndex, // D3 cold enabled.
+    PciDeviceD3Cold_Reason_Default_State_BitIndex = 8, // Pci driver set default D3 cold as disabled.
+    PciDeviceD3Cold_Reason_INF_BitIndex, //Driver enabled/disabled via INF
+    PciDeviceD3Cold_Reason_Interface_Api_BitIndex //Driver enabled/disabled via Interface API.
+
+} PCI_DEVICE_D3COLD_STATE_REASON;
+
 // begin_ntoshvp
 
 typedef enum {
@@ -9061,15 +9635,19 @@ typedef struct _PCI_EXPRESS_ATS_CAPABILITY_REGISTER {
     USHORT InvalidateQueueDepth:5;
     USHORT PageAlignedRequest:1;
     USHORT GlobalInvalidateSupported:1;
-    USHORT Reserved:9;
+    USHORT RelaxedOrderingSupported:1;
+    USHORT Reserved:8;
 
 } PCI_EXPRESS_ATS_CAPABILITY_REGISTER, *PPCI_EXPRESS_ATS_CAPABILITY_REGISTER;
 
-typedef struct _PCI_EXPRESS_ATS_CONTROL_REGISTER {
+typedef union _PCI_EXPRESS_ATS_CONTROL_REGISTER {
+    struct {
+        USHORT SmallestTransactionUnit:5;
+        USHORT Reserved:10;
+        USHORT Enable:1;
+    };
 
-    USHORT SmallestTransactionUnit:5;
-    USHORT Reserved:10;
-    USHORT Enable:1;
+    USHORT AsUSHORT;
 
 } PCI_EXPRESS_ATS_CONTROL_REGISTER, *PPCI_EXPRESS_ATS_CONTROL_REGISTER;
 
@@ -9562,13 +10140,17 @@ typedef union _PCI_EXPRESS_ACS_CAPABILITY_REGISTER {
         USHORT UpstreamForwarding:1;
         USHORT EgressControl:1;
         USHORT DirectTranslation:1;
-        USHORT Reserved:1;
+        USHORT EnhancedCapability:1;
         USHORT EgressControlVectorSize:8;
     } DUMMYSTRUCTNAME;
 
     USHORT AsUSHORT;
 
 } PCI_EXPRESS_ACS_CAPABILITY_REGISTER, *PPCI_EXPRESS_ACS_CAPABILITY_REGISTER;
+
+#define PCI_ACS_ALLOWED     0
+#define PCI_ACS_BLOCKED     1
+#define PCI_ACS_REDIRECTED  2
 
 typedef union _PCI_EXPRESS_ACS_CONTROL {
 
@@ -9580,7 +10162,11 @@ typedef union _PCI_EXPRESS_ACS_CONTROL {
         USHORT UpstreamForwarding:1;
         USHORT EgressControl:1;
         USHORT DirectTranslation:1;
-        USHORT Reserved:9;
+        USHORT IoBlocking:1;
+        USHORT DspMemoryControl:2;
+        USHORT UspMemoryControl:2;
+        USHORT UnclaimedRedirect:1;
+        USHORT Reserved:3;
     } DUMMYSTRUCTNAME;
 
     USHORT AsUSHORT;
@@ -9789,6 +10375,7 @@ typedef struct _PCI_EXPRESS_SRIOV_CAPABILITY {
 #define PCI_SUBCLASS_SYS_REAL_TIME_CLOCK    0x03
 #define PCI_SUBCLASS_SYS_GEN_HOTPLUG_CTLR   0x04
 #define PCI_SUBCLASS_SYS_SDIO_CTRL          0x05
+#define PCI_SUBCLASS_SYS_RCEC               0x07
 #define PCI_SUBCLASS_SYS_OTHER              0x80
 
 // Class 09 - PCI_CLASS_INPUT_DEV

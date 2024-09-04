@@ -43,12 +43,14 @@ Environment:
 #  error If you need to compile NetDMA code supporting prior operating systems, compile with -DENABLE_LEGACY_NETDMA=1.
 #elif NTDDI_VERSION >= NTDDI_VISTASP1
 
+#ifndef NET_DMA_EXPORT
 #undef NET_DMA_EXPORT
 #if defined(NET_DMA)
 #define NET_DMA_EXPORT
 #else
 #define NET_DMA_EXPORT DECLSPEC_IMPORT
 #endif
+#endif // NET_DMA_EXPORT
 
 //
 // flags used in NET_DMA_DESCRIPTOR->ControlFlags

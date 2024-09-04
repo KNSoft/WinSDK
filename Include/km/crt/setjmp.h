@@ -199,14 +199,7 @@ int __cdecl setjmp(_Out_ jmp_buf _Buf);
 #ifdef  __cplusplus
 extern "C"
 {
-#if _MSC_VER >= 1200
-#pragma warning(push)
-#pragma warning(disable:4987) /* nonstandard extension: throw (...) */
-#endif
-_CRTIMP __declspec(noreturn) void __cdecl longjmp(_In_reads_(_JBLEN) jmp_buf _Buf, _In_ int _Value) throw(...);
-#if _MSC_VER >= 1200
-#pragma warning(pop)
-#endif
+_CRTIMP __declspec(noreturn) void __cdecl longjmp(_In_reads_(_JBLEN) jmp_buf _Buf, _In_ int _Value);
 }
 #else
 _CRTIMP __declspec(noreturn) void __cdecl longjmp(_In_reads_(_JBLEN) jmp_buf _Buf, _In_ int _Value);

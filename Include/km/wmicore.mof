@@ -482,6 +482,45 @@ class WHEAPolicyManagementMethods : WHEA
         [out] uint32 Status
         );
 
+    [WmiMethodId(5),
+     Implemented,
+     DisplayName("Reset Policy Settings") : amended,
+     HeaderName("RESET_POLICY"),
+     Description("Resets the policy settings to default") : amended
+    ]
+    void WheaResetPolicyRtn(
+        [out] uint32 Status
+        );
+
+};
+
+[WMI,
+ Dynamic,
+ Provider("WMIProv"),
+ Locale("MS\\0x409"),
+ Description("WHEA Pshed Plugin Interface") : amended,
+ guid("{ed16c828-bdec-41a4-8fef-3bfc15adecbd}")
+]
+class WHEAPluginCtlMethods : WHEA
+{
+    [key, read]
+    string InstanceName;
+
+    [read] boolean Active;
+
+    [WmiMethodId(1),
+     Implemented,
+     DisplayName("WHEA Plugin Ctl Interface") : amended,
+     HeaderName("WHEA_PLUGIN_CTL_INTERFACE"),
+     Description("WHEA Plugin Ctl Interface") : amended
+    ]
+    void WheaPluginCtlInterfaceRtn(
+        [in] uint32 InputLength,
+        [in, WmiSizeIs("InputLength")] uint8 InputBuffer[],
+        [out] uint32 Status,
+        [out] uint32 OutputLength,
+        [out, WmiSizeIs("OutputLength")] uint8 OutputBuffer[]
+        );
 };
 
 //
@@ -15866,13 +15905,52 @@ class PmcCounterConfig_V2:PerfInfo_V2
      Description("Number of counters") : amended,
      read]
      uint32  CounterCount;
-   [WmiDataId(2),
+    [WmiDataId(2),
      WmiSizeIs("CounterCount"),
      Description("Counter Name") : amended,
      StringTermination("NullTerminated"),
      format("w"),
      read]
      string  CounterName[];
+};
+
+[
+ WMI,
+ Description("Counter Corruption Status") : amended,
+ guid("{5a5183f3-9216-4b06-9707-8148206c1e3c}")
+]
+class CounterCorruptionStatus
+{
+    [WmiDataId(1),
+     Description("Profile Source") : amended,
+     read]
+     uint32  ProfileSource;
+    [WmiDataId(2),
+     Description("Last Known Good Timestamp") : amended,
+     read]
+     uint64  LastKnownGoodTimestamp;
+};
+
+[Dynamic,
+ Description("PMC Counter Corruption") : amended,
+ EventType(49),
+ EventTypeName("PmcCtrConrruption") : amended
+]
+class PmcCounterCorruption_V2:PerfInfo_V2
+{
+    [WmiDataId(1),
+     Description("ProcessorNumber") : amended,
+     read]
+     uint32  ProcessorNumber;
+    [WmiDataId(2),
+     Description("Number of counters") : amended,
+     read]
+     uint32  CounterCount;
+    [WmiDataId(3),
+     WmiSizeIs("CounterCount"),
+     Description("Counter Corruption Status Array") : amended,
+     read]
+     CounterCorruptionStatus  CounterStatus[];
 };
 
 [Dynamic,
@@ -19262,6 +19340,56 @@ class SystemConfig_V4_PnP:SystemConfig_V4
      string  LowerFilters[];
 };
 
+[Dynamic,
+ Description("System Configuration") : amended,
+ EventType(32),
+ EventTypeName("MobilePlatform") : amended
+]
+class SystemConfig_V4_MobilePlatform:SystemConfig_V4
+{
+    [WmiDataId(1),
+     Description("DeviceManufacturer") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string  DeviceManufacturer;
+    [WmiDataId(2),
+     Description("DeviceManufacturerDisplayName") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string  DeviceManufacturerDisplayName;
+    [WmiDataId(3),
+     Description("DeviceModel") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string  DeviceModel;
+    [WmiDataId(4),
+     Description("DeviceModelDisplayName") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string  DeviceModelDisplayName;
+    [WmiDataId(5),
+     Description("MobileOperator") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string  MobileOperator;
+    [WmiDataId(6),
+     Description("SocVersion") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string  SocVersion;
+     [WmiDataId(7),
+     Description("BspVersion") : amended,
+     StringTermination("NullTerminated"),
+     format("w"),
+     read]
+     string  BspVersion;
+};
 
 [Dynamic,
  Description("System Configuration") : amended,

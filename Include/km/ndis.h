@@ -40,6 +40,7 @@ Notes:
 
         Version     First available in
         ------------------------------------------------------------------
+        685         Windows 10, iron release
         684         Windows 10, vibranium release
         683         Windows 10, version 1903
         682         Windows 10, version 1809
@@ -139,92 +140,8 @@ Notes:
 
 EXTERN_C_START
 
-//
-//    Copyright (C) Microsoft.  All rights reserved.
-//
-#ifndef __NET_PNP__
-#define __NET_PNP__
+#include <netpnp.h>
 
-#pragma once
-
-//
-//  PnP and PM event codes that can be indicated up to transports
-//  and clients.
-//
-typedef enum _NET_PNP_EVENT_CODE
-{
-    NetEventSetPower,
-    NetEventQueryPower,
-    NetEventQueryRemoveDevice,
-    NetEventCancelRemoveDevice,
-    NetEventReconfigure,
-    NetEventBindList,
-    NetEventBindsComplete,
-    NetEventPnPCapabilities,
-    NetEventPause,
-    NetEventRestart,
-    NetEventPortActivation,
-    NetEventPortDeactivation,
-    NetEventIMReEnableDevice,
-    NetEventNDKEnable,
-    NetEventNDKDisable,
-    NetEventFilterPreDetach,
-    NetEventBindFailed,
-    NetEventSwitchActivate,
-    NetEventAllowBindsAbove,
-    NetEventInhibitBindsAbove,
-    NetEventAllowStart,
-    NetEventRequirePause,
-    NetEventUploadGftFlowEntries,
-    NetEventMaximum
-} NET_PNP_EVENT_CODE, *PNET_PNP_EVENT_CODE;
-
-//
-//  Networking PnP event indication structure.
-//
-typedef struct _NET_PNP_EVENT
-{
-    //
-    //  Event code describing action to take.
-    //
-    NET_PNP_EVENT_CODE  NetEvent;
-
-    //
-    //  Event specific data.
-    //
-    PVOID               Buffer;
-
-    //
-    //  Length of event specific data.
-    //
-    ULONG               BufferLength;
-
-    //
-    //  Reserved values are for use by respective components only.
-    //
-    //  Note: these reserved areas must be pointer aligned.
-    //  
-
-    ULONG_PTR           NdisReserved[4];
-    ULONG_PTR           TransportReserved[4];
-    ULONG_PTR           TdiReserved[4];
-    ULONG_PTR           TdiClientReserved[4];
-} NET_PNP_EVENT, *PNET_PNP_EVENT;
-
-//
-//  The following structure defines the device power states.
-//
-typedef enum _NET_DEVICE_POWER_STATE
-{
-    NetDeviceStateUnspecified = 0,
-    NetDeviceStateD0,
-    NetDeviceStateD1,
-    NetDeviceStateD2,
-    NetDeviceStateD3,
-    NetDeviceStateMaximum
-} NET_DEVICE_POWER_STATE, *PNET_DEVICE_POWER_STATE;
-
-#endif // __NET_PNP__
 
 //
 //    Copyright (C) Microsoft.  All rights reserved.
@@ -234,6 +151,7 @@ typedef enum _NET_DEVICE_POWER_STATE
 #ifdef NETCX_ADAPTER_2
 
 #if ( \
+    defined(NDIS685_MINIPORT) || \
     defined(NDIS684_MINIPORT) || \
     defined(NDIS683_MINIPORT) || \
     defined(NDIS682_MINIPORT) || \
@@ -252,7 +170,7 @@ typedef enum _NET_DEVICE_POWER_STATE
     defined(NDIS50_MINIPORT))
 #error NDISXXX_MINIPORT macros are reserved
 #endif
-#define NDIS684_MINIPORT 1
+#define NDIS685_MINIPORT 1
 
 #ifdef NDIS_MINIPORT_DRIVER
 #error NDIS_MINIPORT_DRIVER macro is reserved
@@ -332,6 +250,8 @@ __drv_Mode_impl(NDIS_INCLUDED)
 // Define NDIS_STATUS and NDIS_HANDLE here
 //
 
+#define NDIS_INCLUDE_LEGACY_NAMES
+
 #ifdef NDIS_STRICT
 #  if NDIS_STRICT != 1
 #    error NDIS_STRICT must be defined to 1, or not defined at all
@@ -341,9 +261,9 @@ __drv_Mode_impl(NDIS_INCLUDED)
 #  define DECLARE_NDIS_HANDLE(handle) typedef PVOID handle;
 #endif
 
-typedef PVOID NDIS_HANDLE, *PNDIS_HANDLE;
-
-typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // note default size
+#define NDIS_PLATFORM
+#include <ndis/types.h>
+#undef NDIS_PLATFORM
 
 #if (!defined(NDIS_WRAPPER))
 
@@ -373,7 +293,10 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 // for Miniports versions 5.0 and up, provide a consistent way to match
 // Ndis version in their characteristics with their makefile defines
 //
-#if (defined(NDIS684_MINIPORT))
+#if (defined(NDIS685_MINIPORT))
+#define NDIS_MINIPORT_MAJOR_VERSION 6
+#define NDIS_MINIPORT_MINOR_VERSION 85
+#elif (defined(NDIS684_MINIPORT))
 #define NDIS_MINIPORT_MAJOR_VERSION 6
 #define NDIS_MINIPORT_MINOR_VERSION 84
 #elif (defined(NDIS683_MINIPORT))
@@ -485,12 +408,16 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 #elif (defined(NDIS684_MINIPORT))
 #define NDIS_MINIPORT_MINIMUM_MAJOR_VERSION 6
 #define NDIS_MINIPORT_MINIMUM_MINOR_VERSION 84
+#elif (defined(NDIS685_MINIPORT))
+#define NDIS_MINIPORT_MINIMUM_MAJOR_VERSION 6
+#define NDIS_MINIPORT_MINIMUM_MINOR_VERSION 85
 #endif
 
 //
 // Disallow invalid major/minor combination
 //
 #if ((NDIS_MINIPORT_MAJOR_VERSION == 6) && \
+       (NDIS_MINIPORT_MINOR_VERSION != 85) && \
        (NDIS_MINIPORT_MINOR_VERSION != 84) && \
        (NDIS_MINIPORT_MINOR_VERSION != 83) && \
        (NDIS_MINIPORT_MINOR_VERSION != 82) && \
@@ -516,8 +443,13 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 //
 // Make sure the target platform is consistent with miniport version
 //
+#ifndef NTDDI_WIN10_FE
+#define DEFINED_NTDDI_WIN10_FE
+#define NTDDI_WIN10_FE WDK_NTDDI_VERSION
+#endif // NTDDI_WIN10_FE
 
 #if  (NDIS_MINIPORT_MINIMUM_MAJOR_VERSION == 6) && (\
+      (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 85 && NTDDI_VERSION < NTDDI_WIN10_FE) || \
       (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 84 && NTDDI_VERSION < NTDDI_WIN10_VB) || \
       (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 83 && NTDDI_VERSION < NTDDI_WIN10_19H1)  || \
       (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 82 && NTDDI_VERSION < NTDDI_WIN10_RS5)  || \
@@ -539,6 +471,11 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 #error NDIS: Wrong NDIS or DDI version specified
 #endif
 
+#ifdef DEFINED_NTDDI_WIN10_FE
+#undef DEFINED_NTDDI_WIN10_FE
+#undef NTDDI_WIN10_FE
+#endif // DEFINED_NTDDI_WIN10_FE
+
 #endif // NDIS_MINIPORT_DRIVER
 
 
@@ -555,7 +492,12 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 // a protocol only or filter driver
 //
 
-#if (defined(NDIS684))
+#if (defined(NDIS685))
+#define NDIS_PROTOCOL_MAJOR_VERSION 6
+#define NDIS_PROTOCOL_MINOR_VERSION 85
+#define NDIS_FILTER_MAJOR_VERSION 6
+#define NDIS_FILTER_MINOR_VERSION 85
+#elif (defined(NDIS684))
 #define NDIS_PROTOCOL_MAJOR_VERSION 6
 #define NDIS_PROTOCOL_MINOR_VERSION 84
 #define NDIS_FILTER_MAJOR_VERSION 6
@@ -723,6 +665,11 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 #define NDIS_PROTOCOL_MINIMUM_MINOR_VERSION 84
 #define NDIS_FILTER_MINIMUM_MAJOR_VERSION 6
 #define NDIS_FILTER_MINIMUM_MINOR_VERSION 84
+#elif (defined(NDIS685))
+#define NDIS_PROTOCOL_MINIMUM_MAJOR_VERSION 6
+#define NDIS_PROTOCOL_MINIMUM_MINOR_VERSION 85
+#define NDIS_FILTER_MINIMUM_MAJOR_VERSION 6
+#define NDIS_FILTER_MINIMUM_MINOR_VERSION 85
 #endif
 
 
@@ -754,6 +701,7 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 // disallow invalid major/minor combination
 //
 #if ((NDIS_FILTER_MAJOR_VERSION == 6) && \
+     (NDIS_FILTER_MINOR_VERSION != 85) && \
      (NDIS_FILTER_MINOR_VERSION != 84) && \
      (NDIS_FILTER_MINOR_VERSION != 83) && \
      (NDIS_FILTER_MINOR_VERSION != 82) && \
@@ -783,6 +731,7 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 // disallow invalid major/minor combination
 //
 #if ((NDIS_PROTOCOL_MAJOR_VERSION == 6) && \
+     (NDIS_PROTOCOL_MINOR_VERSION != 85) && \
      (NDIS_PROTOCOL_MINOR_VERSION != 84) && \
      (NDIS_PROTOCOL_MINOR_VERSION != 83) && \
      (NDIS_PROTOCOL_MINOR_VERSION != 82) && \
@@ -813,8 +762,13 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 //
 // Make sure the target platform is consistent with miniport version
 //
+#ifndef NTDDI_WIN10_FE
+#define DEFINED_NTDDI_WIN10_FE
+#define NTDDI_WIN10_FE WDK_NTDDI_VERSION
+#endif // NTDDI_WIN10_FE
 
 #if  (NDIS_PROTOCOL_MINIMUM_MAJOR_VERSION == 6) && ( \
+      (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 85 && NTDDI_VERSION < NTDDI_WIN10_FE) || \
       (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 84 && NTDDI_VERSION < NTDDI_WIN10_VB) || \
       (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 83 && NTDDI_VERSION < NTDDI_WIN10_19H1)  || \
       (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 82 && NTDDI_VERSION < NTDDI_WIN10_RS5)  || \
@@ -835,6 +789,11 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
          ((NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 0) && (NTDDI_VERSION < NTDDI_WIN2K))))
 #error NDIS: Wrong NDIS or DDI version specified
 #endif
+
+#ifdef DEFINED_NTDDI_WIN10_FE
+#undef DEFINED_NTDDI_WIN10_FE
+#undef NTDDI_WIN10_FE
+#endif // DEFINED_NTDDI_WIN10_FE
 
 #endif // defined (NDIS_PROTOCOL_MAJOR_VERSION)
 
@@ -925,6 +884,7 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 #define NDIS_RUNTIME_VERSION_682    ((6 << 16) | 82)
 #define NDIS_RUNTIME_VERSION_683    ((6 << 16) | 83)
 #define NDIS_RUNTIME_VERSION_684    ((6 << 16) | 84)
+#define NDIS_RUNTIME_VERSION_685    ((6 << 16) | 85)
 
 
 #define NDIS_DECLARE_CONTEXT_INNER(datatype,purpose) \
@@ -2028,6 +1988,8 @@ typedef struct _REFERENCE
 #define NDIS_STATUS_DOT11_WDI_RESERVED_7                                ((NDIS_STATUS)0x40030030L)
 #define NDIS_STATUS_DOT11_WDI_RESERVED_8                                ((NDIS_STATUS)0x40030031L)
 #define NDIS_STATUS_DOT11_WDI_RESERVED_9                                ((NDIS_STATUS)0x40030032L)
+#define NDIS_STATUS_DOT11_WDI_RESERVED_10                               ((NDIS_STATUS)0x40030033L)
+
 
 //
 // Add WWAN specific status indication codes
@@ -2133,6 +2095,12 @@ typedef struct _REFERENCE
 #define NDIS_STATUS_WWAN_NETWORK_PARAMS_STATE               ((NDIS_STATUS)0x4004104cL)
 #endif
 
+#if (NDIS_SUPPORT_NDIS685)
+//NDIS_STATUS_WWAN_IO_PAUSE is only used by ndisuio to PAUSE or resume OID dispatch. It will not by delivered to wwansvc
+#define NDIS_STATUS_WWAN_IO_PAUSE                           ((NDIS_STATUS)0x4004104dL)
+#define NDIS_STATUS_WWAN_IO_RESUME                          ((NDIS_STATUS)0x4004105eL)
+#endif
+
 //
 // End of WWAN specific status indication codes
 //
@@ -2142,7 +2110,7 @@ typedef struct _REFERENCE
 //
 
 
-#endif NDIS_SUPPORT_NDIS6
+#endif // NDIS_SUPPORT_NDIS6
 
 //
 // Status codes for NDIS 6.20 Power Management
@@ -2158,56 +2126,7 @@ typedef struct _REFERENCE
 #define NDIS_STATUS_PM_WAKE_REASON              ((NDIS_STATUS)0x40030055L)
 #endif
 
-//
-// status codes returned by drivers
-//
-#define NDIS_STATUS_SUCCESS                     ((NDIS_STATUS)STATUS_SUCCESS)
-#define NDIS_STATUS_PENDING                     ((NDIS_STATUS)STATUS_PENDING)
-#define NDIS_STATUS_ALREADY_COMPLETE            ((NDIS_STATUS)STATUS_ALREADY_COMPLETE)
-#define NDIS_STATUS_NOT_RECOGNIZED              ((NDIS_STATUS)0x00010001L)
-#define NDIS_STATUS_NOT_COPIED                  ((NDIS_STATUS)0x00010002L)
-#define NDIS_STATUS_NOT_ACCEPTED                ((NDIS_STATUS)0x00010003L)
-#define NDIS_STATUS_CALL_ACTIVE                 ((NDIS_STATUS)0x00010007L)
-#define NDIS_STATUS_INDICATION_REQUIRED         ((NDIS_STATUS)STATUS_NDIS_INDICATION_REQUIRED)
-#define NDIS_STATUS_NOT_RESETTABLE              ((NDIS_STATUS)0x80010001L)
-#define NDIS_STATUS_SOFT_ERRORS                 ((NDIS_STATUS)0x80010003L)
-#define NDIS_STATUS_HARD_ERRORS                 ((NDIS_STATUS)0x80010004L)
-#define NDIS_STATUS_BUFFER_OVERFLOW             ((NDIS_STATUS)STATUS_BUFFER_OVERFLOW)
-#define NDIS_STATUS_FAILURE                     ((NDIS_STATUS)STATUS_UNSUCCESSFUL)
-#define NDIS_STATUS_RESOURCES                   ((NDIS_STATUS)STATUS_INSUFFICIENT_RESOURCES)
-#define NDIS_STATUS_CLOSING                     ((NDIS_STATUS)0xC0010002L)
-#define NDIS_STATUS_BAD_VERSION                 ((NDIS_STATUS)0xC0010004L)
-#define NDIS_STATUS_BAD_CHARACTERISTICS         ((NDIS_STATUS)0xC0010005L)
-#define NDIS_STATUS_ADAPTER_NOT_FOUND           ((NDIS_STATUS)0xC0010006L)
-#define NDIS_STATUS_OPEN_FAILED                 ((NDIS_STATUS)0xC0010007L)
-#define NDIS_STATUS_DEVICE_FAILED               ((NDIS_STATUS)0xC0010008L)
-#define NDIS_STATUS_MULTICAST_FULL              ((NDIS_STATUS)0xC0010009L)
-#define NDIS_STATUS_MULTICAST_EXISTS            ((NDIS_STATUS)0xC001000AL)
-#define NDIS_STATUS_MULTICAST_NOT_FOUND         ((NDIS_STATUS)0xC001000BL)
-#define NDIS_STATUS_REQUEST_ABORTED             ((NDIS_STATUS)0xC001000CL)
-#define NDIS_STATUS_RESET_IN_PROGRESS           ((NDIS_STATUS)0xC001000DL)
-#define NDIS_STATUS_CLOSING_INDICATING          ((NDIS_STATUS)0xC001000EL)
-#define NDIS_STATUS_NOT_SUPPORTED               ((NDIS_STATUS)STATUS_NOT_SUPPORTED)
-#define NDIS_STATUS_INVALID_PACKET              ((NDIS_STATUS)0xC001000FL)
-#define NDIS_STATUS_OPEN_LIST_FULL              ((NDIS_STATUS)0xC0010010L)
-#define NDIS_STATUS_ADAPTER_NOT_READY           ((NDIS_STATUS)0xC0010011L)
-#define NDIS_STATUS_ADAPTER_NOT_OPEN            ((NDIS_STATUS)0xC0010012L)
-#define NDIS_STATUS_NOT_INDICATING              ((NDIS_STATUS)0xC0010013L)
-#define NDIS_STATUS_INVALID_LENGTH              ((NDIS_STATUS)0xC0010014L)
-#define NDIS_STATUS_INVALID_DATA                ((NDIS_STATUS)0xC0010015L)
-#define NDIS_STATUS_BUFFER_TOO_SHORT            ((NDIS_STATUS)0xC0010016L)
-#define NDIS_STATUS_INVALID_OID                 ((NDIS_STATUS)0xC0010017L)
-#define NDIS_STATUS_ADAPTER_REMOVED             ((NDIS_STATUS)0xC0010018L)
-#define NDIS_STATUS_UNSUPPORTED_MEDIA           ((NDIS_STATUS)0xC0010019L)
-#define NDIS_STATUS_GROUP_ADDRESS_IN_USE        ((NDIS_STATUS)0xC001001AL)
-#define NDIS_STATUS_FILE_NOT_FOUND              ((NDIS_STATUS)0xC001001BL)
-#define NDIS_STATUS_ERROR_READING_FILE          ((NDIS_STATUS)0xC001001CL)
-#define NDIS_STATUS_ALREADY_MAPPED              ((NDIS_STATUS)0xC001001DL)
-#define NDIS_STATUS_RESOURCE_CONFLICT           ((NDIS_STATUS)0xC001001EL)
-#define NDIS_STATUS_NO_CABLE                    ((NDIS_STATUS)0xC001001FL)
-#define NDIS_STATUS_INVALID_DEVICE_REQUEST      ((NDIS_STATUS)STATUS_INVALID_DEVICE_REQUEST)
-#define NDIS_STATUS_NETWORK_UNREACHABLE         ((NDIS_STATUS)STATUS_NETWORK_UNREACHABLE)
-#define NDIS_STATUS_DATA_NOT_ACCEPTED           ((NDIS_STATUS)STATUS_DATA_NOT_ACCEPTED)
+#include <ndis/status.h>
 
 //
 // CO-NDIS specific
@@ -3933,7 +3852,7 @@ typedef struct _X_FILTER                NULL_FILTER, *PNULL_FILTER;
 
 typedef USHORT NET_FRAME_TYPE, *PNET_FRAME_TYPE;
 
-#endif NDIS_SUPPORT_NDIS6
+#endif // NDIS_SUPPORT_NDIS6
 
 
 
@@ -3963,7 +3882,7 @@ typedef struct _NDIS_TIMER
 
 #if NDIS_SUPPORT_NDIS6
 __drv_preferredFunction(NdisAllocateTimerObject, "Not supported for NDIS 6.0 drivers in Windows Vista. Use NdisAllocateTimerObject instead.")
-#endif NDIS_SUPPORT_NDIS6
+#endif // NDIS_SUPPORT_NDIS6
 _IRQL_requires_max_(DISPATCH_LEVEL)
 EXPORT
 VOID
@@ -3976,7 +3895,7 @@ NdisInitializeTimer(
 
 #if NDIS_SUPPORT_NDIS6
 __drv_preferredFunction(NdisCancelTimerObject, "Not supported for NDIS 6.0 drivers in Windows Vista. Use NdisCancelTimerObject instead.")
-#endif NDIS_SUPPORT_NDIS6
+#endif // NDIS_SUPPORT_NDIS6
 _IRQL_requires_max_(DISPATCH_LEVEL)
 EXPORT
 VOID
@@ -3988,7 +3907,7 @@ NdisCancelTimer(
 
 #if NDIS_SUPPORT_NDIS6
 __drv_preferredFunction(NdisSetTimerObject, "Not supported for NDIS 6.0 drivers in Windows Vista. Use NdisSetTimerObject instead.")
-#endif NDIS_SUPPORT_NDIS6
+#endif // NDIS_SUPPORT_NDIS6
 _IRQL_requires_max_(DISPATCH_LEVEL)
 EXPORT
 VOID
@@ -3999,7 +3918,7 @@ NdisSetTimer(
 
 #if NDIS_SUPPORT_NDIS6
 __drv_preferredFunction(NdisSetTimerObject, "Not supported for NDIS 6.0 drivers in Windows Vista. Use NdisSetTimerObject instead.")
-#endif NDIS_SUPPORT_NDIS6
+#endif // NDIS_SUPPORT_NDIS6
 EXPORT
 VOID
 NdisSetPeriodicTimer(
@@ -4009,7 +3928,7 @@ NdisSetPeriodicTimer(
 
 #if NDIS_SUPPORT_NDIS6
 __drv_preferredFunction(NdisSetTimerObject, "Not supported for NDIS 6.0 drivers in Windows Vista. Use NdisSetTimerObject instead.")
-#endif NDIS_SUPPORT_NDIS6
+#endif // NDIS_SUPPORT_NDIS6
 
 _IRQL_requires_max_(DISPATCH_LEVEL)
 EXPORT
@@ -4431,97 +4350,8 @@ typedef struct _NET_PNP_EVENT_NOTIFICATION
         RTL_SIZEOF_THROUGH_FIELD(NET_PNP_EVENT_NOTIFICATION, VPortId)
 #endif // NDIS_SUPPORT_NDIS650
 
-//
-// new request and status structures
-//
-
-#define  NDIS_OID_REQUEST_REVISION_1             1
-#if (NDIS_SUPPORT_NDIS650)
-#define  NDIS_OID_REQUEST_REVISION_2             2
-#endif // NDIS_SUPPORT_NDIS650
-#define  NDIS_OID_REQUEST_TIMEOUT_INFINITE       0
-#define  NDIS_OID_REQUEST_NDIS_RESERVED_SIZE     16
-
-typedef struct _NDIS_OID_REQUEST
-{
-    //
-    // Caller must set Header to
-    //     Header.Type = NDIS_OBJECT_TYPE_OID_REQUEST
-    //     Header.Revision = NDIS_OID_REQUEST_REVISION_1
-    //     Header.Size = NDIS_SIZEOF_OID_REQUEST_REVISION_1
-    //
-    NDIS_OBJECT_HEADER          Header;
-    NDIS_REQUEST_TYPE           RequestType;
-    NDIS_PORT_NUMBER            PortNumber;    
-    UINT                        Timeout; // in Seconds
-    PVOID                       RequestId;
-    NDIS_HANDLE                 RequestHandle;
-
-    //
-    // OID - Information
-    //
-    union _REQUEST_DATA
-    {
-        struct _QUERY
-        {
-            NDIS_OID    Oid;
-            PVOID       InformationBuffer;
-            UINT        InformationBufferLength;
-            UINT        BytesWritten;
-            UINT        BytesNeeded;
-        } QUERY_INFORMATION;
-
-        struct _SET
-        {
-            NDIS_OID    Oid;
-            PVOID       InformationBuffer;
-            UINT        InformationBufferLength;
-            UINT        BytesRead;
-            UINT        BytesNeeded;
-        } SET_INFORMATION;
-
-        struct _METHOD
-        {
-            NDIS_OID            Oid;
-            PVOID               InformationBuffer;
-            ULONG               InputBufferLength;
-            ULONG               OutputBufferLength;
-            ULONG               MethodId;
-            UINT                BytesWritten;
-            UINT                BytesRead;
-            UINT                BytesNeeded;
-        } METHOD_INFORMATION;
-    } DATA;
-    //
-    // NDIS Reserved
-    //
-    UCHAR       NdisReserved[NDIS_OID_REQUEST_NDIS_RESERVED_SIZE * sizeof(PVOID)];
-    UCHAR       MiniportReserved[2*sizeof(PVOID)];
-    UCHAR       SourceReserved[2*sizeof(PVOID)];
-    UCHAR       SupportedRevision;
-    UCHAR       Reserved1;
-    USHORT      Reserved2;
-
-#if (NDIS_SUPPORT_NDIS650)
-    NDIS_NIC_SWITCH_ID            SwitchId;
-    NDIS_NIC_SWITCH_VPORT_ID    VPortId;
-    ULONG                        Flags;
-#endif // NDIS_SUPPORT_NDIS650
-
-}NDIS_OID_REQUEST, *PNDIS_OID_REQUEST;
-
-#define NDIS_SIZEOF_OID_REQUEST_REVISION_1     \
-        RTL_SIZEOF_THROUGH_FIELD(NDIS_OID_REQUEST, Reserved2)
-
-#if (NDIS_SUPPORT_NDIS650)
-
-#define NDIS_SIZEOF_OID_REQUEST_REVISION_2     \
-        RTL_SIZEOF_THROUGH_FIELD(NDIS_OID_REQUEST, Flags)
-
-#define NDIS_OID_REQUEST_FLAGS_VPORT_ID_VALID 0x0001
+#include <ndis/oidrequest.h>
         
-#endif // NDIS_SUPPORT_NDIS650
-
 //
 // Macros to set, clear and test NDIS_STATUS_INDICATION Flags
 //
@@ -6466,352 +6296,12 @@ typedef struct DECLSPEC_ALIGN(8) _NDIS_PD_CLOSE_PROVIDER_PARAMETERS {
 
 #if NDIS_SUPPORT_NDIS6
 
-//
-// NET_BUFFER data structures, APIs and macros
-//
+#include <ndis/nbl.h>
+#include <ndis/nblinfo.h>
+#include <ndis/nblaccessors.h>
 
-typedef struct _NET_BUFFER NET_BUFFER, *PNET_BUFFER;
-typedef struct _NET_BUFFER_LIST_CONTEXT NET_BUFFER_LIST_CONTEXT, *PNET_BUFFER_LIST_CONTEXT;
-typedef struct _NET_BUFFER_LIST NET_BUFFER_LIST, *PNET_BUFFER_LIST;
-
-struct _SCATTER_GATHER_LIST;
-typedef struct _SCATTER_GATHER_LIST SCATTER_GATHER_LIST, *PSCATTER_GATHER_LIST;
-
-typedef union _NET_BUFFER_DATA_LENGTH
-{
-    ULONG   DataLength;
-    SIZE_T  stDataLength;
-} NET_BUFFER_DATA_LENGTH, *PNET_BUFFER_DATA_LENGTH;
-
-
-typedef struct _NET_BUFFER_DATA
-{
-    PNET_BUFFER Next;
-    PMDL        CurrentMdl;
-    ULONG       CurrentMdlOffset;
-#ifdef __cplusplus
-    NET_BUFFER_DATA_LENGTH NbDataLength;
-#else
-    NET_BUFFER_DATA_LENGTH;
-#endif
-    PMDL        MdlChain;
-    ULONG       DataOffset;
-} NET_BUFFER_DATA, *PNET_BUFFER_DATA;
-
-typedef union _NET_BUFFER_HEADER
-{
-#ifdef __cplusplus
-    NET_BUFFER_DATA NetBufferData;
-#else
-    NET_BUFFER_DATA;
-#endif
-    SLIST_HEADER    Link;
-
-} NET_BUFFER_HEADER, *PNET_BUFFER_HEADER;
-
-
-#if (NDIS_SUPPORT_NDIS620)
-
-//
-// NET_BUFFER_SHARED_MEMORY is used to describe the
-// shared memory segments used in each NET_BUFFER.
-// for NDIS 6.20, they are used in VM queue capable NICs
-// used in virtualization environment
-//
-typedef struct _NET_BUFFER_SHARED_MEMORY NET_BUFFER_SHARED_MEMORY, *PNET_BUFFER_SHARED_MEMORY;
-
-typedef struct _NET_BUFFER_SHARED_MEMORY
-{
-    PNET_BUFFER_SHARED_MEMORY   NextSharedMemorySegment;
-    ULONG                       SharedMemoryFlags;
-    NDIS_HANDLE                 SharedMemoryHandle;
-    ULONG                       SharedMemoryOffset;
-    ULONG                       SharedMemoryLength;
-}NET_BUFFER_SHARED_MEMORY, *PNET_BUFFER_SHARED_MEMORY;
-
-#endif // NDIS_SUPPORT_NDIS620
-
-
-
-typedef struct _NET_BUFFER
-{
-    union
-    {
-        struct
-        {
-            PNET_BUFFER Next;
-            PMDL        CurrentMdl;
-            ULONG       CurrentMdlOffset;
-            union
-            {
-                ULONG   DataLength;
-                SIZE_T  stDataLength;
-            };
-
-            PMDL        MdlChain;
-            ULONG       DataOffset;
-        };
-
-        SLIST_HEADER    Link;
-
-        // Duplicate of the above union, for source-compatibility
-        NET_BUFFER_HEADER NetBufferHeader;
-    };
-
-    USHORT          ChecksumBias;
-    USHORT          Reserved;
-    NDIS_HANDLE     NdisPoolHandle;
-    DECLSPEC_ALIGN(MEMORY_ALLOCATION_ALIGNMENT)PVOID NdisReserved[2];
-    DECLSPEC_ALIGN(MEMORY_ALLOCATION_ALIGNMENT)PVOID ProtocolReserved[6];
-    DECLSPEC_ALIGN(MEMORY_ALLOCATION_ALIGNMENT)PVOID MiniportReserved[4];
-    NDIS_PHYSICAL_ADDRESS   DataPhysicalAddress;
-#if (NDIS_SUPPORT_NDIS620)
-    union
-    {
-        PNET_BUFFER_SHARED_MEMORY   SharedMemoryInfo;
-        PSCATTER_GATHER_LIST        ScatterGatherList;
-    };
-#endif
-}NET_BUFFER, *PNET_BUFFER;
-
-#pragma warning(push)
-#pragma warning(disable:4200)   // nonstandard extension used : zero-sized array in struct/union
-
-typedef struct _NET_BUFFER_LIST_CONTEXT
-{
-    PNET_BUFFER_LIST_CONTEXT    Next;
-    USHORT                      Size;
-    USHORT                      Offset;
-    DECLSPEC_ALIGN(MEMORY_ALLOCATION_ALIGNMENT)     UCHAR      ContextData[];
-} NET_BUFFER_LIST_CONTEXT, *PNET_BUFFER_LIST_CONTEXT;
-
-#pragma warning(pop)
-
-typedef enum _NDIS_NET_BUFFER_LIST_INFO
-{
-    TcpIpChecksumNetBufferListInfo,
-    TcpOffloadBytesTransferred = TcpIpChecksumNetBufferListInfo,
-    IPsecOffloadV1NetBufferListInfo,
-#if (NDIS_SUPPORT_NDIS61)
-    IPsecOffloadV2NetBufferListInfo = IPsecOffloadV1NetBufferListInfo,
-#endif // (NDIS_SUPPORT_NDIS61)
-    TcpLargeSendNetBufferListInfo,
-    TcpReceiveNoPush = TcpLargeSendNetBufferListInfo,
-    ClassificationHandleNetBufferListInfo,
-    Ieee8021QNetBufferListInfo,
-    NetBufferListCancelId,
-    MediaSpecificInformation,
-    NetBufferListFrameType,
-    NetBufferListProtocolId = NetBufferListFrameType,
-    NetBufferListHashValue,
-    NetBufferListHashInfo,
-    WfpNetBufferListInfo,
-#if (NDIS_SUPPORT_NDIS61)
-    IPsecOffloadV2TunnelNetBufferListInfo,
-    IPsecOffloadV2HeaderNetBufferListInfo,
-#endif  // (NDIS_SUPPORT_NDIS61)
-
-#if (NDIS_SUPPORT_NDIS620)
-    NetBufferListCorrelationId,
-    NetBufferListFilteringInfo,
-
-    MediaSpecificInformationEx,
-    NblOriginalInterfaceIfIndex,
-    NblReAuthWfpFlowContext = NblOriginalInterfaceIfIndex,
-    TcpReceiveBytesTransferred,
-    NrtNameResolutionId = TcpReceiveBytesTransferred,
-#if (NDIS_SUPPORT_NDIS684)
-    UdpRecvSegCoalesceOffloadInfo = TcpReceiveBytesTransferred,
-#endif //(NDIS_SUPPORT_NDIS684)
-
-#if (NDIS_SUPPORT_NDIS630)
-
-#if defined(_AMD64_) || defined(_ARM64_)
-    //
-    // This is a public header where the existing enumerations _CANNOT_ change.
-    // The 32b compatible enumerations are listed separately below under
-    // 32b compilation only.
-    //
-    SwitchForwardingReserved,
-    SwitchForwardingDetail,
-    VirtualSubnetInfo,
-#endif // defined(_AMD64_) || defined(_ARM64_)
-
-    IMReserved,
-    TcpRecvSegCoalesceInfo,
-#if (NDIS_SUPPORT_NDIS683)
-    UdpSegmentationOffloadInfo = TcpRecvSegCoalesceInfo,
-#endif //(NDIS_SUPPORT_NDIS683)
-    RscTcpTimestampDelta,
-    TcpSendOffloadsSupplementalNetBufferListInfo = RscTcpTimestampDelta,
-
-#if (NDIS_SUPPORT_NDIS650)
-#if defined(_AMD64_) || defined(_ARM64_)
-    GftOffloadInformation,
-    GftFlowEntryId,
-#endif // defined(_AMD64_) || defined(_ARM64_)
-
-#if (NDIS_SUPPORT_NDIS680)
-#if _WIN64
-    NetBufferListInfoReserved3,
-#else
-    NetBufferListInfoReserved3,
-    NetBufferListInfoReserved4,
-#endif // _WIN64
-#endif // (NDIS_SUPPORT_NDIS680)
-
-#endif // (NDIS_SUPPORT_NDIS650)
-
-#endif // (NDIS_SUPPORT_NDIS630)
-
-#endif // (NDIS_SUPPORT_NDIS620)
-
-#if (NDIS_SUPPORT_NDIS682)
-#if !defined(_AMD64_) && !defined(_ARM64_)
-    //
-    // 32b compilation only avaiable in NDIS682 and higher.  The enumeration
-    // repetition here is necessary to preserve backwards compat with existing
-    // ordering.
-    //
-    // The _NET_BUFFER_LIST->NetBufferListInfo[] (ie. NBL OOB) contract requires
-    // that content be of pointer size. See details below.
-    //
-    //     SwitchForwardingReserved:
-    //         - Fully 32b/64b compat.
-    //         - Always used as a pointer in both set and get operations via
-    //           VmsNblHelperGetPacketExt() and VmsNblHelperSetPacketExt(),
-    //           using PVMS_PACKET_EXT_HEADER type.
-    //
-    //     SwitchForwardingDetail:
-    //         - Not compliant with OOB contract since the contents are of
-    //           _NDIS_SWITCH_FORWARDING_DETAIL_NET_BUFFER_LIST_INFO type which
-    //           assumes a 64b OOB container.
-    //         - This is addressed by using two members in
-    //           _NET_BUFFER_LIST->NetBufferListInfo[] to allow for fitting the
-    //           64b OOB data.
-    //         - Access also occurs via NET_BUFFER_LIST_SWITCH_FORWARDING_DETAIL
-    //           which requires 64b read.
-    //         - Since this is only present in 32b, there's no backwards compat
-    //           issue.
-    //
-    //     VirtualSubnetInfo:
-    //         - Fully 32b/64b compat via preprocessor conditionals.
-    //         - See _NDIS_NET_BUFFER_LIST_VIRTUAL_SUBNET_INFO for details.
-    //
-    SwitchForwardingReserved,
-    SwitchForwardingDetail_b0_to_b31,
-    SwitchForwardingDetail_b32_to_b63,
-    VirtualSubnetInfo,
-#endif // !defined(_AMD64_) && !defined(_ARM64_)
-#endif //(NDIS_SUPPORT_NDIS682)
-
-#if NDIS_WRAPPER == 1
-    NetBufferListInfoReserved1,
-    NetBufferListInfoReserved2,
-#endif//NDIS_WRAPPER
-
-    MaxNetBufferListInfo
-} NDIS_NET_BUFFER_LIST_INFO, *PNDIS_NET_BUFFER_LIST_INFO;
-
-
-typedef struct _NET_BUFFER_LIST_DATA
-{
-    PNET_BUFFER_LIST    Next;           // Next NetBufferList in the chain
-    PNET_BUFFER         FirstNetBuffer; // First NetBuffer on this NetBufferList
-} NET_BUFFER_LIST_DATA, *PNET_BUFFER_LIST_DATA;
-
-typedef union _NET_BUFFER_LIST_HEADER
-{
-#ifdef __cplusplus
-    NET_BUFFER_LIST_DATA NetBufferListData;
-#else
-    NET_BUFFER_LIST_DATA;
-#endif
-    SLIST_HEADER            Link;           // used in SLIST of free NetBuffers in the block
-} NET_BUFFER_LIST_HEADER, *PNET_BUFFER_LIST_HEADER;
-
-
-typedef struct _NET_BUFFER_LIST
-{
-    union
-    {
-        struct
-        {
-            PNET_BUFFER_LIST Next;           // Next NetBufferList in the chain
-            PNET_BUFFER FirstNetBuffer; // First NetBuffer on this NetBufferList
-        };
-
-        SLIST_HEADER Link;           // used in SLIST of free NetBuffers in the block
-
-        // Duplicate of the above, for source-compatibility
-        NET_BUFFER_LIST_HEADER NetBufferListHeader;
-    };
-
-    PNET_BUFFER_LIST_CONTEXT    Context;
-    PNET_BUFFER_LIST            ParentNetBufferList;
-    NDIS_HANDLE                 NdisPoolHandle;
-    DECLSPEC_ALIGN(MEMORY_ALLOCATION_ALIGNMENT)PVOID NdisReserved[2];
-    DECLSPEC_ALIGN(MEMORY_ALLOCATION_ALIGNMENT)PVOID ProtocolReserved[4];
-    DECLSPEC_ALIGN(MEMORY_ALLOCATION_ALIGNMENT)PVOID MiniportReserved[2];
-    PVOID                       Scratch;
-    NDIS_HANDLE                 SourceHandle;
-    ULONG                       NblFlags;   // public flags
-    LONG                        ChildRefCount;
-    ULONG                       Flags;      // private flags used by NDIs, protocols, miniport, etc.
-
-    union
-    {
-        NDIS_STATUS             Status;
-        ULONG                   NdisReserved2;
-    };
-
-    PVOID                       NetBufferListInfo[MaxNetBufferListInfo];
-} NET_BUFFER_LIST, *PNET_BUFFER_LIST;
-
-
-
-
-#define NET_BUFFER_NEXT_NB(_NB)                     ((_NB)->Next)
-#define NET_BUFFER_FIRST_MDL(_NB)                   ((_NB)->MdlChain)
-#define NET_BUFFER_DATA_LENGTH(_NB)                 ((_NB)->DataLength)
-#define NET_BUFFER_DATA_OFFSET(_NB)                 ((_NB)->DataOffset)
-#define NET_BUFFER_CURRENT_MDL(_NB)                 ((_NB)->CurrentMdl)
-#define NET_BUFFER_CURRENT_MDL_OFFSET(_NB)          ((_NB)->CurrentMdlOffset)
-
-#define NET_BUFFER_PROTOCOL_RESERVED(_NB)           ((_NB)->ProtocolReserved)
-#define NET_BUFFER_MINIPORT_RESERVED(_NB)           ((_NB)->MiniportReserved)
-#define NET_BUFFER_CHECKSUM_BIAS(_NB)               ((_NB)->ChecksumBias)
-
-#if (NDIS_SUPPORT_NDIS61)
-#define NET_BUFFER_DATA_PHYSICAL_ADDRESS(_NB)       ((_NB)->DataPhysicalAddress)
-#endif // (NDIS_SUPPORT_NDIS61)
-
-#if (NDIS_SUPPORT_NDIS620)
-#define NET_BUFFER_FIRST_SHARED_MEM_INFO(_NB)       ((_NB)->SharedMemoryInfo)
-#define NET_BUFFER_SHARED_MEM_NEXT_SEGMENT(_SHI)    ((_SHI)->NextSharedMemorySegment)
-#define NET_BUFFER_SHARED_MEM_FLAGS(_SHI)           ((_SHI)->SharedMemoryFlags)
-#define NET_BUFFER_SHARED_MEM_HANDLE(_SHI)          ((_SHI)->SharedMemoryHandle)
-#define NET_BUFFER_SHARED_MEM_OFFSET(_SHI)          ((_SHI)->SharedMemoryOffset)
-#define NET_BUFFER_SHARED_MEM_LENGTH(_SHI)          ((_SHI)->SharedMemoryLength)
-
-#define NET_BUFFER_SCATTER_GATHER_LIST(_NB)         ((_NB)->ScatterGatherList)
-
-#endif // (NDIS_SUPPORT_NDIS620)
-
-
-#define NET_BUFFER_LIST_NEXT_NBL(_NBL)              ((_NBL)->Next)
-#define NET_BUFFER_LIST_FIRST_NB(_NBL)              ((_NBL)->FirstNetBuffer)
-
-#define NET_BUFFER_LIST_FLAGS(_NBL)                 ((_NBL)->Flags)
-#define NET_BUFFER_LIST_NBL_FLAGS(_NBL)             ((_NBL)->NblFlags)
-#define NET_BUFFER_LIST_PROTOCOL_RESERVED(_NBL)     ((_NBL)->ProtocolReserved)
-#define NET_BUFFER_LIST_MINIPORT_RESERVED(_NBL)     ((_NBL)->MiniportReserved)
 #define NET_BUFFER_LIST_CONTEXT_DATA_START(_NBL)    ((PUCHAR)(((_NBL)->Context)+1)+(_NBL)->Context->Offset)
 #define NET_BUFFER_LIST_CONTEXT_DATA_SIZE(_NBL)     (((_NBL)->Context)->Size)
-
-#define NET_BUFFER_LIST_INFO(_NBL, _Id)             ((_NBL)->NetBufferListInfo[(_Id)])
-#define NET_BUFFER_LIST_STATUS(_NBL)                ((_NBL)->Status)
-
 
 #define NDIS_GET_NET_BUFFER_LIST_CANCEL_ID(_NBL)     (NET_BUFFER_LIST_INFO(_NBL, NetBufferListCancelId))
 #define NDIS_SET_NET_BUFFER_LIST_CANCEL_ID(_NBL, _CancelId)            \
@@ -6820,36 +6310,7 @@ typedef struct _NET_BUFFER_LIST
 #define NDIS_GET_NET_BUFFER_LIST_IM_RESERVED(_NBL)        (NET_BUFFER_LIST_INFO(_NBL, IMReserved))
 #define NDIS_SET_NET_BUFFER_LIST_IM_RESERVED(_NBL, _Val)  NET_BUFFER_LIST_INFO(_NBL, IMReserved) = (_Val)
 
-#define NDIS_GET_NET_BUFFER_LIST_VLAN_ID(_NBL)            (((NDIS_NET_BUFFER_LIST_8021Q_INFO *) &NET_BUFFER_LIST_INFO((_NBL), Ieee8021QNetBufferListInfo))->TagHeader.VlanId)
-#define NDIS_SET_NET_BUFFER_LIST_VLAN_ID(_NBL, _VlanId)   ((NDIS_NET_BUFFER_LIST_8021Q_INFO *) &NET_BUFFER_LIST_INFO((_NBL), Ieee8021QNetBufferListInfo))->TagHeader.VlanId = (_VlanId)
-//
-//  Per-NBL information for Ieee8021QNetBufferListInfo.
-//
-typedef struct _NDIS_NET_BUFFER_LIST_8021Q_INFO
-{
-    union
-    {
-        struct
-        {
-            UINT32      UserPriority:3;         // 802.1p priority
-            UINT32      CanonicalFormatId:1;    // always 0
-            UINT32      VlanId:12;              // VLAN Identification
-            UINT32      Reserved:16;            // set to 0 for ethernet
-        }TagHeader;
-
-        struct
-        {
-            UINT32      UserPriority:3;         // 802.1p priority
-            UINT32      CanonicalFormatId:1;    // always 0
-            UINT32      VlanId:12;              // VLAN Identification
-            UINT32      WMMInfo:4;
-            UINT32      Reserved:12;            // set to 0 for wireless lan
-
-        }WLanTagHeader;
-
-        PVOID  Value;
-    };
-} NDIS_NET_BUFFER_LIST_8021Q_INFO, *PNDIS_NET_BUFFER_LIST_8021Q_INFO;
+#include <ndis/nbl8021q.h>
 
 typedef struct _NDIS_NET_BUFFER_LIST_MEDIA_SPECIFIC_INFO
 {
@@ -7301,52 +6762,8 @@ Bits 15-0 - Tag ID
 #define NDIS_MEDIA_SPECIFIC_INFO_LLDP                       0x80010002
 #define NDIS_MEDIA_SPECIFIC_INFO_TIMESYNC                   0x80010003
 
-
-#ifndef NDIS_HASH_FUNCTION_MASK
-#define NDIS_HASH_FUNCTION_MASK                             0x000000FF
-#define NDIS_HASH_TYPE_MASK                                 0x00FFFF00
-#endif
-
-//
-// The following macros are used by miniport driver and protocol driver to set and get
-// the hash value, hash type and hash function.
-//
-VOID
-FORCEINLINE
-NET_BUFFER_LIST_SET_HASH_TYPE(
-    _In_ PNET_BUFFER_LIST _NBL,
-    _In_ volatile ULONG _HashType
-    )
-{
-    (NET_BUFFER_LIST_INFO(_NBL, NetBufferListHashInfo)  =
-    UlongToPtr(((PtrToUlong (NET_BUFFER_LIST_INFO(_NBL, NetBufferListHashInfo)) & (~NDIS_HASH_TYPE_MASK)) | ((_HashType) & (NDIS_HASH_TYPE_MASK)))));
-}
-
-VOID
-FORCEINLINE
-NET_BUFFER_LIST_SET_HASH_FUNCTION(
-    _In_ PNET_BUFFER_LIST _NBL,
-    _In_ volatile ULONG _HashFunction
-    )
-{
-    (NET_BUFFER_LIST_INFO(_NBL, NetBufferListHashInfo)  =
-    UlongToPtr(((PtrToUlong(NET_BUFFER_LIST_INFO(_NBL, NetBufferListHashInfo)) & (~NDIS_HASH_FUNCTION_MASK)) | ((_HashFunction) & (NDIS_HASH_FUNCTION_MASK)))));
-}
-
-#define NET_BUFFER_LIST_SET_HASH_VALUE(_NBL, _HashValue)         \
-    (NET_BUFFER_LIST_INFO(_NBL, NetBufferListHashValue) = UlongToPtr(_HashValue))
-
-#define NET_BUFFER_LIST_GET_HASH_TYPE(_NBL)                      \
-    (PtrToUlong(NET_BUFFER_LIST_INFO(_NBL, NetBufferListHashInfo)) & (NDIS_HASH_TYPE_MASK))
-
-#define NET_BUFFER_LIST_GET_HASH_FUNCTION(_NBL)                  \
-    (PtrToUlong(NET_BUFFER_LIST_INFO(_NBL, NetBufferListHashInfo)) & (NDIS_HASH_FUNCTION_MASK))
-
-#define NET_BUFFER_LIST_GET_HASH_VALUE(_NBL)                     \
-    (PtrToUlong(NET_BUFFER_LIST_INFO(_NBL, NetBufferListHashValue)))
-
-#define NdisSetNetBufferListProtocolId(_NBL,_ProtocolId)   \
-    *((PUCHAR)(&NET_BUFFER_LIST_INFO(_NBL, NetBufferListProtocolId))) = _ProtocolId
+#include <ndis/hashtypes.h>
+#include <ndis/nblhash.h>
 
 
 #if (NDIS_SUPPORT_NDIS620)
@@ -7389,706 +6806,20 @@ typedef struct _NDIS_NET_BUFFER_LIST_FILTERING_INFO
     (((PNDIS_NET_BUFFER_LIST_FILTERING_INFO)&NET_BUFFER_LIST_INFO(_NBL, NetBufferListFilteringInfo))->FilteringInfo.QueueId)
 #endif
 
-#if (NDIS_SUPPORT_NDIS630)
+#include <ndis/nblrsc.h>
 
-//
-// TcpRecvSegCoalesceInfo
-//
-typedef union _NDIS_RSC_NBL_INFO
-{
-    struct
-    {
-        USHORT CoalescedSegCount;
-        USHORT DupAckCount;
-    } Info;
-    PVOID Value;
-} NDIS_RSC_NBL_INFO, *PNDIS_RSC_NBL_INFO;
-
-C_ASSERT(sizeof(NDIS_RSC_NBL_INFO)==sizeof(PVOID));
-
-#define NET_BUFFER_LIST_COALESCED_SEG_COUNT(_NBL)        \
-    (( (PNDIS_RSC_NBL_INFO)&NET_BUFFER_LIST_INFO((_NBL), TcpRecvSegCoalesceInfo))->Info.CoalescedSegCount)
-
-#define NET_BUFFER_LIST_DUP_ACK_COUNT(_NBL)        \
-    (( (PNDIS_RSC_NBL_INFO)&NET_BUFFER_LIST_INFO((_NBL), TcpRecvSegCoalesceInfo))->Info.DupAckCount)
-
-#endif // (NDIS_SUPPORT_NDIS630)
+#if (NDIS_SUPPORT_NDIS685)
+#include <ndis/poll.h>
+#endif
 
 #endif // (NDIS_SUPPORT_NDIS620)
 
-#if (NDIS_SUPPORT_NDIS682)
-
-//
-// NBL timestamp related stuff
-//
-
-#define NDIS_NBL_FLAGS_CAPTURE_TIMESTAMP_ON_TRANSMIT 0x00010000
-
-typedef struct _NET_BUFFER_LIST_TIMESTAMP
-{
-    ULONG64 Timestamp;
-} NET_BUFFER_LIST_TIMESTAMP, *PNET_BUFFER_LIST_TIMESTAMP;
-
-#if _WIN64
-
-__inline
-void
-NdisSetNblTimestampInfo(
-    _Inout_ PNET_BUFFER_LIST      Nbl,
-    _In_    NET_BUFFER_LIST_TIMESTAMP const *NblTimestamp
-    )
-{
-    *((ULONG64*)&Nbl->NetBufferListInfo[NetBufferListInfoReserved3]) = NblTimestamp->Timestamp;
-}
-
-__inline
-void
-NdisGetNblTimestampInfo(
-    _In_    PNET_BUFFER_LIST      Nbl,
-    _Out_ PNET_BUFFER_LIST_TIMESTAMP NblTimestamp
-    )
-{
-    NblTimestamp->Timestamp = ((PNET_BUFFER_LIST_TIMESTAMP)&Nbl->NetBufferListInfo[NetBufferListInfoReserved3])->Timestamp;
-}
-
-__inline
-void
-NdisCopyNblTimestampInfo(
-    _Inout_ PNET_BUFFER_LIST NblDest,
-    _In_    PNET_BUFFER_LIST NblSrc
-    )
-{
-    NblDest->NetBufferListInfo[NetBufferListInfoReserved3] =
-        NblSrc->NetBufferListInfo[NetBufferListInfoReserved3];
-}
-
-#else
-
-__inline
-void
-NdisSetNblTimestampInfo(
-    _Inout_ PNET_BUFFER_LIST      Nbl,
-    _In_ NET_BUFFER_LIST_TIMESTAMP const *NblTimestamp
-    )
-{
-    ULARGE_INTEGER ul;
-
-    ul.QuadPart = NblTimestamp->Timestamp;
-
-    *((ULONG*)&Nbl->NetBufferListInfo[NetBufferListInfoReserved3]) = ul.LowPart;
-    *((ULONG*)&Nbl->NetBufferListInfo[NetBufferListInfoReserved4]) = ul.HighPart;
-}
-
-__inline
-void
-NdisGetNblTimestampInfo(
-    _In_    PNET_BUFFER_LIST      Nbl,
-    _Out_ PNET_BUFFER_LIST_TIMESTAMP NblTimestamp
-    )
-{
-    ULARGE_INTEGER ul;
-
-    ul.LowPart = *((ULONG*)&Nbl->NetBufferListInfo[NetBufferListInfoReserved3]);
-    ul.HighPart = *((ULONG*)&Nbl->NetBufferListInfo[NetBufferListInfoReserved4]);
-
-    NblTimestamp->Timestamp = ul.QuadPart;
-}
-
-__inline
-void
-NdisCopyNblTimestampInfo(
-    _Inout_ PNET_BUFFER_LIST NblDest,
-    _In_    PNET_BUFFER_LIST NblSrc
-    )
-{
-    NblDest->NetBufferListInfo[NetBufferListInfoReserved3] =
-        NblSrc->NetBufferListInfo[NetBufferListInfoReserved3];
-    NblDest->NetBufferListInfo[NetBufferListInfoReserved4] =
-        NblSrc->NetBufferListInfo[NetBufferListInfoReserved4];
-}
-
-#endif // _WIN64
-
-#endif // (NDIS_SUPPORT_NDIS682)
-
-
-#define NdisQueryMdl(_Mdl, _VirtualAddress, _Length, _Priority)             \
-{                                                                           \
-    if (ARGUMENT_PRESENT(_VirtualAddress))                                  \
-    {                                                                       \
-        *(PVOID *)(_VirtualAddress) = MmGetSystemAddressForMdlSafe(_Mdl, ( _Priority | MdlMappingNoExecute )); \
-    }                                                                       \
-    *(_Length) = MmGetMdlByteCount(_Mdl);                                   \
-}
-
-#define NdisQueryMdlOffset(_Mdl, _Offset, _Length)                          \
-{                                                                           \
-    *(_Offset) = MmGetMdlByteOffset(_Mdl);                                  \
-    *(_Length) = MmGetMdlByteCount(_Mdl);                                   \
-}
-
-#define NDIS_MDL_TO_SPAN_PAGES(_Mdl)                                        \
-    (MmGetMdlByteCount(_Mdl)==0 ?                                           \
-                1 :                                                         \
-                (ADDRESS_AND_SIZE_TO_SPAN_PAGES(                            \
-                        MmGetMdlVirtualAddress(_Mdl),                       \
-                        MmGetMdlByteCount(_Mdl))))
-
-#define NdisGetMdlPhysicalArraySize(_Mdl, _ArraySize)                       \
-    (*(_ArraySize) = NDIS_MDL_TO_SPAN_PAGES(_Mdl))
-
-
-#define NDIS_MDL_LINKAGE(_Mdl) ((_Mdl)->Next)
-
-#define NdisGetNextMdl(_CurrentMdl, _NextMdl)                               \
-{                                                                           \
-    *(_NextMdl) = (_CurrentMdl)->Next;                                      \
-}
-
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-UCHAR
-NdisGetNetBufferListProtocolId(
-    _In_ PNET_BUFFER_LIST NetBufferList
-    );
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-VOID
-NdisAdjustNetBufferCurrentMdl(
-    _In_  PNET_BUFFER NetBuffer
-    );
-
-
-//
-// The flags that can be set at NET_BUFFER_LIST.Flags are defined below.
-// Note that, on Vista and Win7, bits 0x3 were reserved by NDIS.  However,
-// starting with Win8, these bits are free for protocol use.
-//
-#if (NDIS_SUPPORT_NDIS630)
-#define NBL_FLAGS_PROTOCOL_RESERVED                 0xFFF00003
-#define NBL_FLAGS_MINIPORT_RESERVED                 0x0000F000
-#define NBL_FLAGS_SCRATCH                           0x000F0000
-#define NBL_FLAGS_NDIS_RESERVED                     0x00000FFC
-#else // <NDIS_SUPPORT_NDIS630
-#define NBL_FLAGS_PROTOCOL_RESERVED                 0xFFF00000
-#define NBL_FLAGS_MINIPORT_RESERVED                 0x0000F000
-#define NBL_FLAGS_SCRATCH                           0x000F0000
-#define NBL_FLAGS_NDIS_RESERVED                     0x00000FFF
-#endif // NDIS_SUPPORT_NDIS630
-
-#define NBL_TEST_FLAG(_NBL, _F)                     (((_NBL)->Flags & (_F)) != 0)
-#define NBL_SET_FLAG(_NBL, _F)                      ((_NBL)->Flags |= (_F))
-#define NBL_CLEAR_FLAG(_NBL, _F)                    ((_NBL)->Flags &= ~(_F))
-
-#define NBL_SET_PROTOCOL_RSVD_FLAG(_NBL, _F)        ((_NBL)->Flags |= ((_F) & NBL_FLAGS_PROTOCOL_RESERVED))
-#define NBL_CLEAR_PROTOCOL_RSVD_FLAG(_NBL, _F)      ((_NBL)->Flags &= ~((_F) & NBL_FLAGS_PROTOCOL_RESERVED))
-#define NBL_TEST_PROTOCOL_RSVD_FLAG(_NBL, _F)       (((_NBL)->Flags & ((_F) & NBL_FLAGS_PROTOCOL_RESERVED)) != 0)
-
-
-//
-// Define some flags for protocols' own use
-//
-#define NBL_PROT_RSVD_FLAGS                     NBL_FLAGS_PROTOCOL_RESERVED
-#define NBL_SET_PROT_RSVD_FLAG(_NBL, _F)        NBL_SET_PROTOCOL_RSVD_FLAG(_NBL,_F)
-#define NBL_CLEAR_PROT_RSVD_FLAG(_NBL, _F)      NBL_CLEAR_PROTOCOL_RSVD_FLAG(_NBL, _F)
-#define NBL_TEST_PROT_RSVD_FLAG(_NBL, _F)       NBL_TEST_PROTOCOL_RSVD_FLAG(_NBL, _F)
-
-
-//
-// Flags used in NBL->NblFlags
-// 0x01 to 0xFF are reserved for use by NDIS
-//
-#define NDIS_NBL_FLAGS_SEND_READ_ONLY                   0x00000001
-#define NDIS_NBL_FLAGS_RECV_READ_ONLY                   0x00000002
-
-#if (NDIS_SUPPORT_NDIS61)
-#define NDIS_NBL_FLAGS_HD_SPLIT                         0x00000100  // Data and header are split
-#define NDIS_NBL_FLAGS_IS_IPV4                          0x00000200  // Packet is an IPv4 packet
-#define NDIS_NBL_FLAGS_IS_IPV6                          0x00000400  // Packet is an IPv6 packet
-#define NDIS_NBL_FLAGS_IS_TCP                           0x00000800  // Packet is a TCP packet
-#define NDIS_NBL_FLAGS_IS_UDP                           0x00001000  // Packet is a UDP packet
-#define NDIS_NBL_FLAGS_SPLIT_AT_UPPER_LAYER_PROTOCOL_HEADER              0x00002000  // Packet is split at the beginning of upper layer protocol header
-#define NDIS_NBL_FLAGS_SPLIT_AT_UPPER_LAYER_PROTOCOL_PAYLOAD             0x00004000  // Packet is split at the beginning of upper layer protocol data (TCP or UDP)
-#endif // (NDIS_SUPPORT_NDIS61)
-
-#define NDIS_NBL_FLAGS_IS_LOOPBACK_PACKET               0x00008000  // The NBL is loopback NBL.
-
-
-#define NdisTestNblFlag(_NBL, _F)                   (((_NBL)->NblFlags & (_F)) != 0)
-#define NdisTestNblFlags(_NBL, _F)                  (((_NBL)->NblFlags & (_F)) == (_F))
-#define NdisSetNblFlag(_NBL, _F)                    ((_NBL)->NblFlags |= (_F))
-#define NdisClearNblFlag(_NBL, _F)                  ((_NBL)->NblFlags &= ~(_F))
-
-
-
-#define NET_BUFFER_LIST_POOL_PARAMETERS_REVISION_1 1
-
-typedef struct _NET_BUFFER_LIST_POOL_PARAMETERS
-{
-    //
-    // Set ObjectHeader.Type to NDIS_OBJECT_TYPE_DEFAULT
-    //
-    NDIS_OBJECT_HEADER      Header;
-    UCHAR                   ProtocolId;
-    BOOLEAN                 fAllocateNetBuffer;
-    USHORT                  ContextSize;
-    ULONG                   PoolTag;
-    ULONG                   DataSize;
-}NET_BUFFER_LIST_POOL_PARAMETERS, *PNET_BUFFER_LIST_POOL_PARAMETERS;
-
-#define NDIS_SIZEOF_NET_BUFFER_LIST_POOL_PARAMETERS_REVISION_1   \
-        RTL_SIZEOF_THROUGH_FIELD(NET_BUFFER_LIST_POOL_PARAMETERS, DataSize)
-
-#define NET_BUFFER_POOL_PARAMETERS_REVISION_1 1
-
-typedef struct _NET_BUFFER_POOL_PARAMETERS
-{
-    //
-    // Set ObjectHeader.Type to NDIS_OBJECT_TYPE_DEFAULT
-    //
-    NDIS_OBJECT_HEADER      Header;
-    ULONG                   PoolTag;
-    ULONG                   DataSize;
-}NET_BUFFER_POOL_PARAMETERS,*PNET_BUFFER_POOL_PARAMETERS;
-
-#define NDIS_SIZEOF_NET_BUFFER_POOL_PARAMETERS_REVISION_1   \
-        RTL_SIZEOF_THROUGH_FIELD(NET_BUFFER_POOL_PARAMETERS, DataSize)
-
-//
-// Prototypes of the MDL allocation and free callback.
-//
-
-typedef
-_IRQL_requires_max_(DISPATCH_LEVEL)
-PMDL
-(*NET_BUFFER_ALLOCATE_MDL_HANDLER)(
-    _Inout_ PULONG               BufferSize
-    );
-
-typedef
-_IRQL_requires_max_(DISPATCH_LEVEL)
-VOID
-(*NET_BUFFER_FREE_MDL_HANDLER)(
-    _In_  PMDL                    Mdl
-    );
-
-_Must_inspect_result_
-__drv_allocatesMem(mem)
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-NDIS_HANDLE
-NdisAllocateNetBufferPool(
-    _In_opt_ NDIS_HANDLE                  NdisHandle,
-    _In_     PNET_BUFFER_POOL_PARAMETERS  Parameters
-    );
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-VOID
-NdisFreeNetBufferPool(
-    _In_ __drv_freesMem(mem) NDIS_HANDLE             PoolHandle
-    );
-
-_Must_inspect_result_
-__drv_allocatesMem(mem)
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-PNET_BUFFER
-NdisAllocateNetBuffer(
-    _In_      NDIS_HANDLE             PoolHandle,
-    _In_opt_  PMDL                    MdlChain,
-    _In_      ULONG                   DataOffset,
-    _In_      SIZE_T                  DataLength
-    );
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-VOID
-NdisFreeNetBuffer(
-    _In_ __drv_freesMem(mem) PNET_BUFFER             NetBuffer
-    );
-
-
-_Must_inspect_result_
-__drv_allocatesMem(mem)
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-PNET_BUFFER
-NdisAllocateNetBufferMdlAndData(
-    _In_  NDIS_HANDLE              PoolHandle
-    );
-
-
-_Must_inspect_result_
-__drv_allocatesMem(mem)
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-NDIS_HANDLE
-NdisAllocateNetBufferListPool(
-    _In_opt_  NDIS_HANDLE                         NdisHandle,
-    _In_      PNET_BUFFER_LIST_POOL_PARAMETERS    Parameters
-    );
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-VOID
-NdisFreeNetBufferListPool(
-    _In_  __drv_freesMem(mem) NDIS_HANDLE             PoolHandle
-    );
-
-_Must_inspect_result_
-__drv_allocatesMem(mem)
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-PNET_BUFFER_LIST
-NdisAllocateNetBufferList(
-    _In_  NDIS_HANDLE             PoolHandle,
-    _In_  USHORT                  ContextSize,
-    _In_  USHORT                  ContextBackFill
-    );
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-VOID
-NdisFreeNetBufferList(
-    _In_  __drv_freesMem(mem) PNET_BUFFER_LIST    NetBufferList
-    );
-
-_Must_inspect_result_
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-NDIS_STATUS
-NdisRetreatNetBufferDataStart(
-    _In_      PNET_BUFFER                      NetBuffer,
-    _In_      ULONG                            DataOffsetDelta,
-    _In_      ULONG                            DataBackFill,
-    _In_opt_  NET_BUFFER_ALLOCATE_MDL_HANDLER  AllocateMdlHandler
-    );
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-VOID
-NdisAdvanceNetBufferDataStart(
-    _In_      PNET_BUFFER                  NetBuffer,
-    _In_      ULONG                        DataOffsetDelta,
-    _In_      BOOLEAN                      FreeMdl,
-    _In_opt_  NET_BUFFER_FREE_MDL_HANDLER  FreeMdlHandler
-    );
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-NDIS_STATUS
-NdisRetreatNetBufferListDataStart(
-    _In_      PNET_BUFFER_LIST                 NetBufferList,
-    _In_      ULONG                            DataOffsetDelta,
-    _In_      ULONG                            DataBackFill,
-    _In_opt_  NET_BUFFER_ALLOCATE_MDL_HANDLER  AllocateMdlHandler,
-    _In_opt_  NET_BUFFER_FREE_MDL_HANDLER      FreeMdlHandler
-    );
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-VOID
-NdisAdvanceNetBufferListDataStart(
-    _In_      PNET_BUFFER_LIST              NetBufferList,
-    _In_      ULONG                         DataOffsetDelta,
-    _In_      BOOLEAN                       FreeMdl,
-    _In_opt_  NET_BUFFER_FREE_MDL_HANDLER   FreeMdlMdlHandler
-    );
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-_When_(return==0,_At_(NetBufferList->Context, __drv_allocatesMem(mem)))
-EXPORT
-NDIS_STATUS
-NdisAllocateNetBufferListContext(
-    _In_  PNET_BUFFER_LIST        NetBufferList,
-    _In_  USHORT                  ContextSize,
-    _In_  USHORT                  ContextBackFill,
-    _In_  ULONG                   PoolTag
-    );
-
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-_At_(NetBufferList->Context, __drv_freesMem(mem))
-EXPORT
-VOID
-NdisFreeNetBufferListContext(
-    _In_ PNET_BUFFER_LIST        NetBufferList,
-    _In_ USHORT                  ContextSize
-    );
-
-_Must_inspect_result_
-__drv_allocatesMem(mem)
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-PNET_BUFFER_LIST
-NdisAllocateCloneNetBufferList(
-    _In_     PNET_BUFFER_LIST         OriginalNetBufferList,
-    _In_opt_ NDIS_HANDLE              NetBufferListPoolHandle,
-    _In_opt_ NDIS_HANDLE              NetBufferPoolHandle,
-    _In_     ULONG                    AllocateCloneFlags
-    );
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-VOID
-NdisFreeCloneNetBufferList(
-    _In_ __drv_freesMem(mem) PNET_BUFFER_LIST         CloneNetBufferList,
-    _In_                     ULONG                    FreeCloneFlags
-    );
-
-_Must_inspect_result_
-__drv_allocatesMem(mem)
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-PNET_BUFFER_LIST
-NdisAllocateFragmentNetBufferList(
-    _In_      PNET_BUFFER_LIST        OriginalNetBufferList,
-    _In_opt_  NDIS_HANDLE             NetBufferListPool,
-    _In_opt_  NDIS_HANDLE             NetBufferPool,
-    _In_      ULONG                   StartOffset,
-    _In_      ULONG                   MaximumLength,
-    _In_      ULONG                   DataOffsetDelta,
-    _In_      ULONG                   DataBackFill,
-    _In_      ULONG                   AllocateFragmentFlags
-    );
-
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-VOID
-NdisFreeFragmentNetBufferList(
-    _In_ __drv_freesMem(mem) PNET_BUFFER_LIST        FragmentNetBufferList,
-    _In_                     ULONG                   DataOffsetDelta,
-    _In_                     ULONG                   FreeFragmentFlags
-    );
-
-_Must_inspect_result_
-__drv_allocatesMem(mem)
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-PNET_BUFFER_LIST
-NdisAllocateReassembledNetBufferList(
-    _In_      PNET_BUFFER_LIST        FragmentNetBufferList,
-    _In_opt_  NDIS_HANDLE             NetBufferAndNetBufferListPoolHandle,
-    _In_      ULONG                   StartOffset,
-    _In_      ULONG                   DataOffsetDelta,
-    _In_      ULONG                   DataBackFill,
-    _In_      ULONG                   AllocateReassembleFlags
-    );
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-VOID
-NdisFreeReassembledNetBufferList(
-    _In_ __drv_freesMem(mem) PNET_BUFFER_LIST        ReassembledNetBufferList,
-    _In_                     ULONG                   DataOffsetDelta,
-    _In_                     ULONG                   FreeReassembleFlags
-    );
-
-_Must_inspect_result_
-__drv_allocatesMem(mem)
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-PNET_BUFFER_LIST
-NdisAllocateNetBufferAndNetBufferList(
-    _In_                                NDIS_HANDLE             PoolHandle,
-    _In_                                USHORT                  ContextSize,
-    _In_                                USHORT                  ContextBackFill,
-    _In_opt_  __drv_aliasesMem          PMDL                    MdlChain,
-    _In_                                ULONG                   DataOffset,
-    _In_                                SIZE_T                  DataLength
-    );
-
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-_At_(AlignOffset, _In_range_(0, AlignMultiple-1))
-_Pre_satisfies_(AlignMultiple == 1 || AlignMultiple == 2 || AlignMultiple == 4 ||
-AlignMultiple == 8 || AlignMultiple == 16 || AlignMultiple == 32 || AlignMultiple == 64 ||
-AlignMultiple ==128 || AlignMultiple ==256 || AlignMultiple ==512 || AlignMultiple == 1024 ||
-AlignMultiple == 2048 || AlignMultiple == 4096 || AlignMultiple == 8192)
-_Must_inspect_result_
-EXPORT
-PVOID
-NdisGetDataBuffer(
-    _In_      PNET_BUFFER  NetBuffer,
-    _In_      ULONG        BytesNeeded,
-    _Out_writes_bytes_all_opt_(BytesNeeded) PVOID Storage,
-    _In_      UINT         AlignMultiple,
-    _In_      UINT         AlignOffset
-    );
-
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-NDIS_HANDLE
-NdisGetPoolFromNetBufferList(
-    _In_ PNET_BUFFER_LIST     NetBufferList
-    );
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-NDIS_HANDLE
-NdisGetPoolFromNetBuffer(
-    _In_ PNET_BUFFER          NetBuffer
-    );
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-NDIS_STATUS
-NdisCopyFromNetBufferToNetBuffer(
-    _In_  PNET_BUFFER         Destination,
-    _In_  ULONG               DestinationOffset,
-    _In_  ULONG               BytesToCopy,
-    _In_  PNET_BUFFER         Source,
-    _In_  ULONG               SourceOffset,
-    _Out_ PULONG              BytesCopied
-    );
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-VOID
-NdisCopySendNetBufferListInfo(
-    _In_ PNET_BUFFER_LIST DestNetBufferList,
-    _In_ PNET_BUFFER_LIST SrcNetBufferList
-    );
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-VOID
-NdisCopyReceiveNetBufferListInfo(
-    _In_ PNET_BUFFER_LIST DestNetBufferList,
-    _In_ PNET_BUFFER_LIST SrcNetBufferList
-    );
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-ULONG
-NdisQueryNetBufferPhysicalCount(
-    _In_  PNET_BUFFER             NetBuffer
-    );
-
-_Must_inspect_result_
-__drv_allocatesMem(mem)
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-PMDL
-NdisAllocateMdl(
-    _In_  NDIS_HANDLE             NdisHandle,
-    _In_reads_bytes_(Length)
-          PVOID                   VirtualAddress,
-    _In_  UINT                    Length
-    );
-
-_IRQL_requires_max_(DISPATCH_LEVEL)
-EXPORT
-VOID
-NdisFreeMdl(
-    _In_  __drv_freesMem(mem) PMDL                     Mdl
-    );
-
-//
-// The following flags are used in the Send APIs such as Ndis(F)SendNetBufferLists
-// and MINIPORT_SEND_NET_BUFFER_LISTS_HANDLER
-//
-#define NDIS_SEND_FLAGS_DISPATCH_LEVEL                  0x00000001
-#define NDIS_SEND_FLAGS_CHECK_FOR_LOOPBACK              0x00000002
-#if (NDIS_SUPPORT_NDIS620)
-#define NDIS_SEND_FLAGS_SINGLE_QUEUE                    0x00000004
-#endif
-#if (NDIS_SUPPORT_NDIS630)
-#define NDIS_SEND_FLAGS_SWITCH_DESTINATION_GROUP        0x00000010
-#define NDIS_SEND_FLAGS_SWITCH_SINGLE_SOURCE            0x00000020
-#endif
-
-#define NDIS_TEST_SEND_FLAG(_Flags, _Fl)            (((_Flags) & (_Fl)) == (_Fl))
-#define NDIS_SET_SEND_FLAG(_Flags, _Fl)             ((_Flags) |= (_Fl))
-#define NDIS_CLEAR_SEND_FLAG(_Flags, _Fl)           ((_Flags) &= ~(_Fl))
-
-#define NDIS_TEST_SEND_AT_DISPATCH_LEVEL(_Flags)             \
-        NDIS_TEST_SEND_FLAG((_Flags), NDIS_SEND_FLAGS_DISPATCH_LEVEL)
-
-//
-// The following flags are used in the SendComplete APIs such as
-// NdisMSendNetBufferListsComplete
-//
-#define NDIS_SEND_COMPLETE_FLAGS_DISPATCH_LEVEL          0x00000001
-#if (NDIS_SUPPORT_NDIS620)
-#define NDIS_SEND_COMPLETE_FLAGS_SINGLE_QUEUE            0x00000002
-#endif
-#if (NDIS_SUPPORT_NDIS630)
-#define NDIS_SEND_COMPLETE_FLAGS_SWITCH_SINGLE_SOURCE    0x00000004
-#endif
-
-#define NDIS_TEST_SEND_COMPLETE_FLAG(_Flags, _Fl)   (((_Flags) & (_Fl)) == (_Fl))
-#define NDIS_SET_SEND_COMPLETE_FLAG(_Flags, _Fl)    ((_Flags) |= (_Fl))
-
-#define NDIS_TEST_SEND_COMPLETE_AT_DISPATCH_LEVEL(_Flags)      \
-        NDIS_TEST_SEND_COMPLETE_FLAG((_Flags), NDIS_SEND_COMPLETE_FLAGS_DISPATCH_LEVEL)
-
-//
-// The following flags are used in the IndicateReceive APIs such
-// as NdisMIndicateReceiveNetBufferLists and RECEIVE_NET_BUFFER_LISTS_HANDLER
-//
-#define NDIS_RECEIVE_FLAGS_DISPATCH_LEVEL               0x00000001
-#define NDIS_RECEIVE_FLAGS_RESOURCES                    0x00000002
-#define NDIS_RECEIVE_FLAGS_SINGLE_ETHER_TYPE            0x00000100
-#define NDIS_RECEIVE_FLAGS_SINGLE_VLAN                  0x00000200
-#define NDIS_RECEIVE_FLAGS_PERFECT_FILTERED             0x00000400
-#if (NDIS_SUPPORT_NDIS620)
-#define NDIS_RECEIVE_FLAGS_SINGLE_QUEUE                 0x00000800
-#define NDIS_RECEIVE_FLAGS_SHARED_MEMORY_INFO_VALID     0x00001000
-#define NDIS_RECEIVE_FLAGS_MORE_NBLS                    0x00002000
-#endif
-#if (NDIS_SUPPORT_NDIS630)
-#define NDIS_RECEIVE_FLAGS_SWITCH_DESTINATION_GROUP     0x00004000
-#define NDIS_RECEIVE_FLAGS_SWITCH_SINGLE_SOURCE         0x00008000
-#endif
-
-#define NDIS_TEST_RECEIVE_FLAG(_Flags, _Fl)         (((_Flags) & (_Fl)) == (_Fl))
-#define NDIS_SET_RECEIVE_FLAG(_Flags, _Fl)          ((_Flags) |= (_Fl))
-
-#define NDIS_TEST_RECEIVE_AT_DISPATCH_LEVEL(_Flags)      \
-        NDIS_TEST_RECEIVE_FLAG((_Flags), NDIS_RECEIVE_FLAGS_DISPATCH_LEVEL)
-
-#define NDIS_TEST_RECEIVE_CANNOT_PEND(_Flags)         \
-        NDIS_TEST_RECEIVE_FLAG((_Flags), NDIS_RECEIVE_FLAGS_RESOURCES)
-
-#define NDIS_TEST_RECEIVE_CAN_PEND(_Flags)         \
-            (((_Flags) & NDIS_RECEIVE_FLAGS_RESOURCES) == 0)
-//
-// The following flags are used in the ReturnNetBufferLists APIs such
-// as NdisReturnNetBufferLists and MINIPORT_RETURN_NET_BUFFER_LISTS
-//
-#define NDIS_RETURN_FLAGS_DISPATCH_LEVEL               0x00000001
-#if (NDIS_SUPPORT_NDIS620)
-#define NDIS_RETURN_FLAGS_SINGLE_QUEUE                 0x00000002
-#endif
-#if (NDIS_SUPPORT_NDIS630)
-#define NDIS_RETURN_FLAGS_SWITCH_SINGLE_SOURCE         0x00000004
-#endif
-
-
-#define NDIS_TEST_RETURN_FLAG(_Flags, _Fl)          (((_Flags) & (_Fl)) == (_Fl))
-#define NDIS_SET_RETURN_FLAG(_Flags, _Fl)           ((_Flags) |= (_Fl))
-
-#define NDIS_TEST_RETURN_AT_DISPATCH_LEVEL(_Flags)      \
-        NDIS_TEST_RETURN_FLAG((_Flags),NDIS_RETURN_FLAGS_DISPATCH_LEVEL)
-
-
-//
-// The following flags are used in the NdisAllocateCloneNetBufferList
-// and NdisFreeCloneNetBufferList
-//
-
-#define NDIS_CLONE_FLAGS_RESERVED                     0x00000001
-#define NDIS_CLONE_FLAGS_USE_ORIGINAL_MDLS            0x00000002
-
-#define NDIS_TEST_CLONE_FLAG(_Flags, _Fl)          (((_Flags) & (_Fl)) == (_Fl))
-#define NDIS_SET_CLONE_FLAG(_Flags, _Fl)           ((_Flags) |= (_Fl))
-#define NDIS_CLEAR_CLONE_FLAG(_Flags, _Fl)         ((_Flags) &= ~(_Fl))
+#include <ndis/nbltimestamp.h>
+#include <ndis/nblapi.h>
+#include <ndis/mdlapi.h>
+
+#include <ndis/nblsend.h>
+#include <ndis/nblreceive.h>
 
 
 #endif // NDIS_SUPPORT_NDIS6
@@ -8347,113 +7078,8 @@ typedef struct _NDIS_TASK_IPSEC
 
 #if NDIS_SUPPORT_NDIS6
 
-//
-// The definitions for the NDIS_TCP_LARGE_SEND_OFFLOAD_NET_BUFFER_LIST_INFO.Transmit.Type
-// A miniport will use this definition to identify what offload type to use
-// on the NetBufferList
-//
-#define NDIS_TCP_LARGE_SEND_OFFLOAD_V1_TYPE     0
-#define NDIS_TCP_LARGE_SEND_OFFLOAD_V2_TYPE     1
-
-//
-// IP protocol version encoded in IPVersion field of
-// NDIS_TCP_LARGE_SEND_OFFLOAD_NET_BUFFER_LIST_INFO->LsoV2Transmit.IPVersion
-//
-#define NDIS_TCP_LARGE_SEND_OFFLOAD_IPv4     0
-#define NDIS_TCP_LARGE_SEND_OFFLOAD_IPv6     1
-
-//
-// The maximum length of the headers (MAC+IP+IP option or extension headers+TCP+TCP options)
-// when stack does large send offload. If header is bigger than this value, it will not do
-// LSO
-//
-#define NDIS_LARGE_SEND_OFFLOAD_MAX_HEADER_LENGTH   128
-
-//
-// This structure is used in the OOB TcpLargeSendNetBufferListInfo.
-//
-typedef struct _NDIS_TCP_LARGE_SEND_OFFLOAD_NET_BUFFER_LIST_INFO
-{
-    union
-    {
-        struct
-        {
-            ULONG    Unused:30;
-            ULONG    Type:1;
-            ULONG    Reserved2:1;
-        } Transmit;
-
-        struct
-        {
-            ULONG    MSS:20;
-            ULONG    TcpHeaderOffset:10;
-            ULONG    Type:1;
-            ULONG    Reserved2:1;
-        } LsoV1Transmit;
-
-        struct
-        {
-            ULONG    TcpPayload:30;
-            ULONG    Type:1;
-            ULONG    Reserved2:1;
-        } LsoV1TransmitComplete;
-
-        struct
-        {
-            ULONG    MSS:20;
-            ULONG    TcpHeaderOffset:10;
-            ULONG    Type:1;
-            ULONG    IPVersion:1;
-        } LsoV2Transmit;
-
-        struct
-        {
-            ULONG    Reserved:30;
-            ULONG    Type:1;
-            ULONG    Reserved2:1;
-        } LsoV2TransmitComplete;
-
-        PVOID Value;
-    };
-} NDIS_TCP_LARGE_SEND_OFFLOAD_NET_BUFFER_LIST_INFO,*PNDIS_TCP_LARGE_SEND_OFFLOAD_NET_BUFFER_LIST_INFO;
-
-
-//
-//  Per-NetBufferList information for TcpIpChecksumNetBufferListInfo.
-//
-typedef struct _NDIS_TCP_IP_CHECKSUM_NET_BUFFER_LIST_INFO
-{
-    union
-    {
-        struct
-        {
-            ULONG IsIPv4:1;
-            ULONG IsIPv6:1;
-            ULONG TcpChecksum:1;
-            ULONG UdpChecksum:1;
-            ULONG IpHeaderChecksum:1;
-            ULONG Reserved:11;
-            ULONG TcpHeaderOffset:10;
-        } Transmit;
-
-        struct
-        {
-            ULONG   TcpChecksumFailed:1;
-            ULONG   UdpChecksumFailed:1;
-            ULONG   IpChecksumFailed:1;
-            ULONG   TcpChecksumSucceeded:1;
-            ULONG   UdpChecksumSucceeded:1;
-            ULONG   IpChecksumSucceeded:1;
-            ULONG   Loopback:1;
-#if (NDIS_SUPPORT_NDIS630)
-            ULONG   TcpChecksumValueInvalid:1;
-            ULONG   IpChecksumValueInvalid:1;
-#endif // (NDIS_SUPPORT_NDIS630)
-        } Receive;
-
-        PVOID   Value;
-    };
-} NDIS_TCP_IP_CHECKSUM_NET_BUFFER_LIST_INFO, *PNDIS_TCP_IP_CHECKSUM_NET_BUFFER_LIST_INFO;
+#include <ndis/nbllso.h>
+#include <ndis/nblchecksum.h>
 
 #if (NDIS_SUPPORT_NDIS630)
 
@@ -8482,71 +7108,7 @@ typedef struct _NDIS_TCP_SEND_OFFLOADS_SUPPLEMENTAL_NET_BUFFER_LIST_INFO
 
 #endif // (NDIS_SUPPORT_NDIS630)
 
-//
-// used in NDIS_STATUS_OFFLOAD_ENCASPULATION_CHANGE status indication and
-// and OID_OFFLOAD_ENCAPSULATION OID request
-//
-#define NDIS_OFFLOAD_ENCAPSULATION_REVISION_1          1
-
-typedef struct _NDIS_OFFLOAD_ENCAPSULATION
-{
-    //
-    // Header.Type = NDIS_OBJECT_TYPE_OFFLOAD_ENCAPSULATION;
-    // Header.Size = sizeof(NDIS_OFFLOAD_ENCAPSULATION);
-    // Header.Revision  = NDIS_OFFLOAD_ENCAPSULATION_REVISION_1;
-    //
-
-    NDIS_OBJECT_HEADER                     Header;
-
-    struct
-    {
-        //
-        // A Protocol sets Enable to NDIS_OFFLOAD_SET_ON if it is enabling IPv4 LSO,
-        // or XSum offloads
-        // otherwise it is set to NDIS_OFFLOAD_SET_NO_CHANGE
-        //
-        ULONG                               Enabled;
-
-        //
-        // If Enabled is TRUE, a Protocol must set this to
-        // either NDIS_ENCAPSULATION_IEEE_802_3
-        // or NDIS_ENCAPSULATION_IEEE_LLC_SNAP_ROUTED
-        //
-        ULONG                               EncapsulationType;
-
-        //
-        // If Enabled is TRUE, a protocol must set this field to the
-        // HeaderSize it uses
-        //
-        ULONG                               HeaderSize;
-    } IPv4;
-
-
-    struct
-    {
-        //
-        // A Protocol sets Enable to NDIS_OFFLOAD_SET_ON if it is enabling IPv6 LSO,
-        // or XSum offloads
-        // otherwise it is set to NDIS_OFFLOAD_SET_NO_CHANGE
-        //
-        ULONG                               Enabled;
-        //
-        // If Enabled is TRUE, a Protocol must set this to
-        // either NDIS_ENCAPSULATION_IEEE_802_3
-        // or NDIS_ENCAPSULATION_IEEE_LLC_SNAP_ROUTED
-        //
-        ULONG                               EncapsulationType;
-
-        //
-        // If Enabled is TRUE, a protocol must set this field to the
-        // HeaderSize it uses
-        //
-        ULONG                               HeaderSize;
-    } IPv6;
-
-}NDIS_OFFLOAD_ENCAPSULATION, *PNDIS_OFFLOAD_ENCAPSULATION;
-
-#define NDIS_SIZEOF_OFFLOAD_ENCAPSULATION_REVISION_1 RTL_SIZEOF_THROUGH_FIELD(NDIS_OFFLOAD_ENCAPSULATION, IPv6.HeaderSize)
+#include <ndis/encapsulationconfig.h>
 
 #if (NDIS_SUPPORT_NDIS61)
 //
@@ -8814,67 +7376,10 @@ typedef struct _IPSEC_OFFLOAD_V2_UPDATE_SA
 
 #endif // NDIS_SUPPORT_NDIS6
 
-#if (NDIS_SUPPORT_NDIS683)
-
-//
-// IP protocol version encoded in IPVersion field of
-// NDIS_UDP_SEGMENTATION_OFFLOAD_NET_BUFFER_LIST_INFO->Transmit.IPVersion
-//
-#define NDIS_UDP_SEGMENTATION_OFFLOAD_IPV4     0
-#define NDIS_UDP_SEGMENTATION_OFFLOAD_IPV6     1
-
-//
-// This structure is used in the OOB UdpSegmentationOffloadInfo.
-//
-typedef struct _NDIS_UDP_SEGMENTATION_OFFLOAD_NET_BUFFER_LIST_INFO
-{
-    union
-    {
-        struct
-        {
-            ULONG    MSS:20;
-            ULONG    UdpHeaderOffset:10;
-            ULONG    Reserved:1;
-            ULONG    IPVersion:1;
-        } Transmit;
-
-        PVOID Value;
-    };
-} NDIS_UDP_SEGMENTATION_OFFLOAD_NET_BUFFER_LIST_INFO, *PNDIS_UDP_SEGMENTATION_OFFLOAD_NET_BUFFER_LIST_INFO;
-
-#endif // (NDIS_SUPPORT_NDIS683)
-
-#if (NDIS_SUPPORT_NDIS684)
-
-//
-// This structure is used in the OOB UdpRecvSegCoalesceOffloadInfo.
-//
-typedef struct _NDIS_UDP_RSC_OFFLOAD_NET_BUFFER_LIST_INFO
-{
-    union
-    {
-        struct
-        {
-            USHORT    SegCount;
-            USHORT    SegSize;
-        } Receive;
-
-        PVOID Value;
-    };
-} NDIS_UDP_RSC_OFFLOAD_NET_BUFFER_LIST_INFO, *PNDIS_UDP_RSC_OFFLOAD_NET_BUFFER_LIST_INFO;
-
-#define NET_BUFFER_LIST_UDP_COALESCED_SEG_COUNT(_NBL) \
-    (((PNDIS_UDP_RSC_OFFLOAD_NET_BUFFER_LIST_INFO) \
-        &NET_BUFFER_LIST_INFO((_NBL), UdpRecvSegCoalesceOffloadInfo))->Receive.SegCount)
-
-#define NET_BUFFER_LIST_UDP_COALESCED_SEG_SIZE(_NBL) \
-    (((PNDIS_UDP_RSC_OFFLOAD_NET_BUFFER_LIST_INFO) \
-        &NET_BUFFER_LIST_INFO((_NBL), UdpRecvSegCoalesceOffloadInfo))->Receive.SegSize)
-
-#endif // (NDIS_SUPPORT_NDIS684)
+#include <ndis/nbluso.h>
+#include <ndis/nbluro.h>
 
 #pragma warning(pop)
-
 
 
 //
@@ -11557,11 +10062,18 @@ NdisUpdateSharedMemory(
 #if (NDIS_SUPPORT_NDIS650)
 #define NDIS_SG_DMA_V3_HAL_API          0x00000002
 #endif // (NDIS_SUPPORT_NDIS650)
+#if NDIS_SUPPORT_NDIS685
+#define NDIS_SG_DMA_HYBRID_DMA          0x00000004
+#endif // NDIS_SUPPORT_NDIS685
 
 //
 // supported revision
 //
 #define NDIS_SG_DMA_DESCRIPTION_REVISION_1      1
+
+#if NDIS_SUPPORT_NDIS685
+#define NDIS_SG_DMA_DESCRIPTION_REVISION_2      2
+#endif // NDIS_SUPPORT_NDIS685
 
 typedef struct _NDIS_SG_DMA_DESCRIPTION
 {
@@ -11571,10 +10083,19 @@ typedef struct _NDIS_SG_DMA_DESCRIPTION
     MINIPORT_PROCESS_SG_LIST_HANDLER                ProcessSGListHandler;
     MINIPORT_ALLOCATE_SHARED_MEM_COMPLETE_HANDLER   SharedMemAllocateCompleteHandler;
     ULONG                                           ScatterGatherListSize;
+
+#if NDIS_SUPPORT_NDIS685
+    DEVICE_OBJECT                                  *PdoOverride;
+#endif // NDIS_SUPPORT_NDIS685
 } NDIS_SG_DMA_DESCRIPTION, *PNDIS_SG_DMA_DESCRIPTION;
 
 #define NDIS_SIZEOF_SG_DMA_DESCRIPTION_REVISION_1    \
         RTL_SIZEOF_THROUGH_FIELD(NDIS_SG_DMA_DESCRIPTION, ScatterGatherListSize)
+
+#if NDIS_SUPPORT_NDIS685
+#define NDIS_SIZEOF_SG_DMA_DESCRIPTION_REVISION_2    \
+        RTL_SIZEOF_THROUGH_FIELD(NDIS_SG_DMA_DESCRIPTION, PdoOverride)
+#endif // NDIS_SUPPORT_NDIS685
 
 #define NDIS_MINIPORT_INIT_PARAMETERS_REVISION_1     1
 
@@ -13026,7 +11547,6 @@ NdisIMCancelInitializeDeviceInstance(
     _In_  PNDIS_STRING            DeviceInstance
     );
 
-
 #if NDIS_LEGACY_MINIPORT
 _IRQL_requires_max_(DISPATCH_LEVEL)
 EXPORT
@@ -14258,7 +12778,6 @@ typedef struct _NDIS_MINIPORT_SS_CHARACTERISTICS {
 #define NDIS_SIZEOF_MINIPORT_SS_CHARACTERISTICS_REVISION_1 \
     RTL_SIZEOF_THROUGH_FIELD(NDIS_MINIPORT_SS_CHARACTERISTICS, CancelIdleNotificationHandler)
 
-
 _IRQL_requires_(PASSIVE_LEVEL)
 EXPORT
 VOID
@@ -14507,7 +13026,6 @@ PVOID
     );
 
 typedef NDIS_SWITCH_GET_NET_BUFFER_LIST_SWITCH_CONTEXT (*NDIS_SWITCH_GET_NET_BUFFER_LIST_SWITCH_CONTEXT_HANDLER);
-
 
 #if (NDIS_SUPPORT_NDIS650)
 #define  NDIS_SWITCH_OPTIONAL_HANDLERS_PD_RESERVED_SIZE     14

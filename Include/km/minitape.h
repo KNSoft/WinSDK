@@ -174,7 +174,7 @@ Revision History:
 //       versions of the SDK which did not block inclusion in an .RC file.
 //
 
-#if defined(_AMD64_) || defined(_X86_)
+#if defined(_AMD64_) || defined(_X86_) || defined(_ARM64EC_)
 #define PROBE_ALIGNMENT( _s ) TYPE_ALIGNMENT( ULONG )
 #elif defined(_IA64_) || defined(_ARM_) || defined(_ARM64_)
 
@@ -363,7 +363,7 @@ Revision History:
 #endif
 
 #ifndef DECLSPEC_CHPE_PATCHABLE
-#if _M_HYBRID
+#if defined (_M_HYBRID)
 #define DECLSPEC_CHPE_PATCHABLE  __declspec(hybrid_patchable)
 #else
 #define DECLSPEC_CHPE_PATCHABLE
@@ -381,7 +381,10 @@ Revision History:
 #endif
 
 //
-// CFORCEINLINE: __forceinline required for correctness.
+// CFORCEINLINE: __forceinline required for correctness.  Such definitions are
+//               typically required to be visible in the same translation unit
+//               (i.e., so that they may still be forceinlined, even in the
+//               event of non-LTCG code being encountered).
 //
 
 #define CFORCEINLINE FORCEINLINE
@@ -780,10 +783,17 @@ typedef _Return_type_success_(return >= 0) long HRESULT;
     #define EXTERN_C       extern "C"
     #define EXTERN_C_START extern "C" {
     #define EXTERN_C_END   }
+
+    #if _MSC_VER >= 1900
+        #define WIN_NOEXCEPT noexcept
+    #else
+        #define WIN_NOEXCEPT throw()
+    #endif
 #else
     #define EXTERN_C       extern
     #define EXTERN_C_START
     #define EXTERN_C_END
+    #define WIN_NOEXCEPT
 #endif
 
 #if defined(_WIN32) || defined(_MPPC_)
@@ -1124,13 +1134,13 @@ extern "C++" {
 
 #define DEFINE_ENUM_FLAG_OPERATORS(ENUMTYPE) \
 extern "C++" { \
-inline _ENUM_FLAG_CONSTEXPR ENUMTYPE operator | (ENUMTYPE a, ENUMTYPE b) throw() { return ENUMTYPE(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)a) | ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
-inline ENUMTYPE &operator |= (ENUMTYPE &a, ENUMTYPE b) throw() { return (ENUMTYPE &)(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type &)a) |= ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
-inline _ENUM_FLAG_CONSTEXPR ENUMTYPE operator & (ENUMTYPE a, ENUMTYPE b) throw() { return ENUMTYPE(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)a) & ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
-inline ENUMTYPE &operator &= (ENUMTYPE &a, ENUMTYPE b) throw() { return (ENUMTYPE &)(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type &)a) &= ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
-inline _ENUM_FLAG_CONSTEXPR ENUMTYPE operator ~ (ENUMTYPE a) throw() { return ENUMTYPE(~((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)a)); } \
-inline _ENUM_FLAG_CONSTEXPR ENUMTYPE operator ^ (ENUMTYPE a, ENUMTYPE b) throw() { return ENUMTYPE(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)a) ^ ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
-inline ENUMTYPE &operator ^= (ENUMTYPE &a, ENUMTYPE b) throw() { return (ENUMTYPE &)(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type &)a) ^= ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
+inline _ENUM_FLAG_CONSTEXPR ENUMTYPE operator | (ENUMTYPE a, ENUMTYPE b) WIN_NOEXCEPT { return ENUMTYPE(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)a) | ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
+inline ENUMTYPE &operator |= (ENUMTYPE &a, ENUMTYPE b) WIN_NOEXCEPT { return (ENUMTYPE &)(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type &)a) |= ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
+inline _ENUM_FLAG_CONSTEXPR ENUMTYPE operator & (ENUMTYPE a, ENUMTYPE b) WIN_NOEXCEPT { return ENUMTYPE(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)a) & ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
+inline ENUMTYPE &operator &= (ENUMTYPE &a, ENUMTYPE b) WIN_NOEXCEPT { return (ENUMTYPE &)(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type &)a) &= ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
+inline _ENUM_FLAG_CONSTEXPR ENUMTYPE operator ~ (ENUMTYPE a) WIN_NOEXCEPT { return ENUMTYPE(~((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)a)); } \
+inline _ENUM_FLAG_CONSTEXPR ENUMTYPE operator ^ (ENUMTYPE a, ENUMTYPE b) WIN_NOEXCEPT { return ENUMTYPE(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)a) ^ ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
+inline ENUMTYPE &operator ^= (ENUMTYPE &a, ENUMTYPE b) WIN_NOEXCEPT { return (ENUMTYPE &)(((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type &)a) ^= ((_ENUM_FLAG_SIZED_INTEGER<ENUMTYPE>::type)b)); } \
 }
 #else
 #define DEFINE_ENUM_FLAG_OPERATORS(ENUMTYPE) // NOP, C allows these operators.
@@ -1942,6 +1952,7 @@ typedef struct _SCSI_PNP_REQUEST_BLOCK {
 #define SRB_FUNCTION_SHUTDOWN               0x07
 #define SRB_FUNCTION_FLUSH                  0x08
 #define SRB_FUNCTION_PROTOCOL_COMMAND       0x09
+#define SRB_FUNCTION_EXECUTE_NVME           0x0A
 #define SRB_FUNCTION_ABORT_COMMAND          0x10
 #define SRB_FUNCTION_RELEASE_RECOVERY       0x11
 #define SRB_FUNCTION_RESET_BUS              0x12
@@ -2011,6 +2022,7 @@ typedef struct _SCSI_PNP_REQUEST_BLOCK {
 #define SRB_STATUS_LINK_DOWN                0x25
 #define SRB_STATUS_INSUFFICIENT_RESOURCES   0x26
 #define SRB_STATUS_THROTTLED_REQUEST        0x27
+#define SRB_STATUS_INVALID_PARAMETER        0x28
 
 
 //
@@ -2125,10 +2137,12 @@ typedef enum _SRBEXDATATYPE {
     SrbExDataTypeScsiCdb16 = 0x40,
     SrbExDataTypeScsiCdb32,
     SrbExDataTypeScsiCdbVar,
+    SrbExDataTypeNvmeCommand,
     SrbExDataTypeWmi = 0x60,
     SrbExDataTypePower,
     SrbExDataTypePnP,
     SrbExDataTypeIoInfo = 0x80,
+    SrbExDataTypePassthroughDirect = 0xa0,
     SrbExDataTypeMSReservedStart = 0xf0000000,
     SrbExDataTypeReserved = 0xffffffff
 } SRBEXDATATYPE, *PSRBEXDATATYPE;
@@ -2160,6 +2174,7 @@ typedef struct SRB_ALIGN _SRBEX_DATA_BIDIRECTIONAL {
     _Field_size_bytes_full_(DataInTransferLength)
     PVOID POINTER_ALIGN DataInBuffer;
 } SRBEX_DATA_BIDIRECTIONAL, *PSRBEX_DATA_BIDIRECTIONAL;
+
 
 // SRB_FUNCTION_EXECUTE_SCSI for up to 16 byte CDBs
 #define SRBEX_DATA_SCSI_CDB16_LENGTH ((20 * sizeof(UCHAR)) + sizeof(ULONG) + sizeof(PVOID))
@@ -2301,6 +2316,61 @@ typedef struct SRB_ALIGN _SRBEX_DATA_IO_INFO {
     ULONG Reserved1[2];
 } SRBEX_DATA_IO_INFO, *PSRBEX_DATA_IO_INFO;
 
+// Use in NVMe command requests to provide additional info about the IO.
+#define SRBEX_DATA_NVME_COMMAND_LENGTH ((14 * sizeof(ULONG)) + (3 * sizeof(ULONGLONG)) + (2 * sizeof(USHORT)))
+
+typedef enum {
+    SRBEX_DATA_NVME_COMMAND_TYPE_NVM     = 0,
+    SRBEX_DATA_NVME_COMMAND_TYPE_ADMIN,
+} SRBEX_DATA_NVME_COMMAND_TYPE, *PSRBEX_DATA_NVME_COMMAND_TYPE;
+
+typedef enum {
+    SRBEX_DATA_NVME_COMMAND_FLAG_REQUIRE_DATA_TRANSFER_IN  = 0x1,
+    SRBEX_DATA_NVME_COMMAND_FLAG_REQUIRE_DATA_TRANSFER_OUT = 0x2,
+    SRBEX_DATA_NVME_COMMAND_FLAG_PRP_SET_ALREADY           = 0x4,
+    SRBEX_DATA_NVME_COMMAND_FLAG_SIGNATURE_ENABLED         = 0x8,
+} SRBEX_DATA_NVME_COMMAND_FLAG, *PSRBEX_DATA_NVME_COMMAND_FLAG;
+
+typedef struct SRB_ALIGN _SRBEX_DATA_NVME_COMMAND {
+    _Field_range_(SrbExDataTypeNvmeCommand, SrbExDataTypeNvmeCommand)
+    SRBEXDATATYPE Type;
+    _Field_range_(SRBEX_DATA_NVME_COMMAND_LENGTH, SRBEX_DATA_NVME_COMMAND_LENGTH)
+    ULONG Length;
+    ULONG CommandDWORD0;
+    ULONG CommandNSID;
+    ULONG Reserved0[2];
+    ULONGLONG CommandMPTR;
+    ULONGLONG CommandPRP1;
+    ULONGLONG CommandPRP2;
+
+    ULONG CommandCDW10;
+    ULONG CommandCDW11;
+    ULONG CommandCDW12;
+    ULONG CommandCDW13;
+    ULONG CommandCDW14;
+    ULONG CommandCDW15;
+    UCHAR CommandType;          // Defined in SRBEX_DATA_NVME_COMMAND_TYPE
+    UCHAR CommandFlags;         // Defined in SRBEX_DATA_NVME_COMMAND_FLAG
+        
+    union {
+        struct {
+            USHORT  P           : 1;        // Phase Tag (P)
+    
+            USHORT  SC          : 8;        // Status Code (SC)
+            USHORT  SCT         : 3;        // Status Code Type (SCT)
+            USHORT  Reserved    : 2;
+            USHORT  M           : 1;        // More (M)
+            USHORT  DNR         : 1;        // Do Not Retry (DNR)
+        } DUMMYSTRUCTNAME;
+    
+        USHORT AsUshort;
+
+    } CommandStatus; // Status field from Completion Queue Entry (NVME_COMMAND_STATUS defined in nvme.h)
+    
+    ULONG QID;                  // User choice of Queue ID, if unspecified it should be 0xFFFFFFFF
+    ULONG CommandTag;           // Unique identifier for the command
+} SRBEX_DATA_NVME_COMMAND, *PSRBEX_DATA_NVME_COMMAND;
+
 
 // SRB signature - "SRBX" in ASCII
 #define SRB_SIGNATURE 0x53524258
@@ -2435,9 +2505,11 @@ typedef _Struct_size_bytes_(SrbLength) struct SRB_ALIGN _STORAGE_REQUEST_BLOCK {
 // Define SRB types supported
 #define SRB_TYPE_SCSI_REQUEST_BLOCK         0
 #define SRB_TYPE_STORAGE_REQUEST_BLOCK      1
+#define SRB_TYPE_NVME_REQUEST_BLOCK         2
 
 // Define address type supported
-#define STORAGE_ADDRESS_TYPE_BTL8        0
+#define STORAGE_ADDRESS_TYPE_BTL8           0
+#define STORAGE_ADDRESS_TYPE_NVME           1
 
 
 #endif //(NTDDI_VERSION >= NTDDI_WIN8)
@@ -4198,6 +4270,9 @@ typedef struct _SUPPORTED_SECURITY_PROTOCOLS_PARAMETER_DATA {
 
 // Security protocols
 #define SECURITY_PROTOCOL_IEEE1667  0xEE
+#define TCG_SECURITY_PROTOCOL_ID_0  0x00
+#define TCG_SECURITY_PROTOCOL_ID_1  0x01
+#define TCG_SECURITY_PROTOCOL_ID_2  0x02
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -4880,6 +4955,7 @@ typedef struct _PERFORMANCE_DESCRIPTOR {
 #define SCSIOP_SERVICE_ACTION_IN16      0x9E
 #define SCSIOP_SERVICE_ACTION_OUT16     0x9F
 
+
 // 32-byte commands
 #define SCSIOP_OPERATION32              0x7F
 
@@ -5519,11 +5595,25 @@ typedef struct _VPD_SUPPORTED_PAGES_PAGE {
 #define LOG_PAGE_CODE_READ_ERROR_COUNTERS           0x03
 #define LOG_PAGE_CODE_LOGICAL_BLOCK_PROVISIONING    0x0C
 #define LOG_PAGE_CODE_TEMPERATURE                   0x0D
+#define LOG_PAGE_CODE_ENVIRONMENTAL_REPORTING       0x0D
 #define LOG_PAGE_CODE_STARTSTOP_CYCLE_COUNTERS      0x0E
+#define LOG_PAGE_CODE_UTILIZATION                   0x0E
 #define LOG_PAGE_CODE_SELFTEST_RESULTS              0x10
 #define LOG_PAGE_CODE_SOLID_STATE_MEDIA             0x11
 #define LOG_PAGE_CODE_BACKGROUND_SCAN_RESULTS       0x15
 #define LOG_PAGE_CODE_INFORMATIONAL_EXCEPTIONS      0x2F
+
+#define LOG_SUBPAGE_CODE_WRITE_ERROR_COUNTERS       0x00
+#define LOG_SUBPAGE_CODE_READ_ERROR_COUNTERS        0x00
+#define LOG_SUBPAGE_CODE_LOGICAL_BLOCK_PROVISIONING 0x00
+#define LOG_SUBPAGE_CODE_TEMPERATURE                0x00
+#define LOG_SUBPAGE_CODE_ENVIRONMENTAL_REPORTING    0x01
+#define LOG_SUBPAGE_CODE_STARTSTOP_CYCLE_COUNTERS   0x00
+#define LOG_SUBPAGE_CODE_UTILIZATION                0x01
+#define LOG_SUBPAGE_CODE_SELFTEST_RESULTS           0x00
+#define LOG_SUBPAGE_CODE_SOLID_STATE_MEDIA          0x00
+#define LOG_SUBPAGE_CODE_BACKGROUND_SCAN_RESULTS    0x00
+#define LOG_SUBPAGE_CODE_INFORMATIONAL_EXCEPTIONS   0x00
 
 
 #pragma pack(push, log_page, 1)
@@ -5565,9 +5655,9 @@ typedef struct _LOG_PARAMETER {
         struct _THRESHOLD_RESOURCE_COUNT {
 
             UCHAR ResourceCount[4];             // Bytes 4-7
-            UCHAR Scope : 2;                    // Byte  5, bit 0-1
-            UCHAR Reserved1 : 6;                // Byte  5, bit 2-7
-            UCHAR Reserved2[3];                 // Byte  6
+            UCHAR Scope : 2;                    // Byte  8, bit 0-1
+            UCHAR Reserved1 : 6;                // Byte  8, bit 2-7
+            UCHAR Reserved2[3];                 // Byte  9
 
         } THRESHOLD_RESOURCE_COUNT;
 
@@ -5584,6 +5674,12 @@ typedef struct _LOG_PARAMETER {
             UCHAR Week[2];                      // Bytes 8-9
 
         } DATE_OF_MANUFACTURE;
+
+        struct _WORKLOAD_UTILIZATION {
+
+            UCHAR WorkloadUtilization[2];       // Bytes 4-5
+
+        } WORKLOAD_UTILIZATION;
 
         struct _SELF_TEST_RESULTS {
 
@@ -5718,6 +5814,8 @@ typedef struct _LOG_PAGE_LOGICAL_BLOCK_PROVISIONING {
 
 #define RESERVATION_ACTION_READ_KEYS                    0x00
 #define RESERVATION_ACTION_READ_RESERVATIONS            0x01
+#define RESERVATION_ACTION_REPORT_CAPABILITIES          0x02
+#define RESERVATION_ACTION_READ_FULL_STATUS             0x03
 
 #define RESERVATION_ACTION_REGISTER                     0x00
 #define RESERVATION_ACTION_RESERVE                      0x01
@@ -5726,6 +5824,8 @@ typedef struct _LOG_PAGE_LOGICAL_BLOCK_PROVISIONING {
 #define RESERVATION_ACTION_PREEMPT                      0x04
 #define RESERVATION_ACTION_PREEMPT_ABORT                0x05
 #define RESERVATION_ACTION_REGISTER_IGNORE_EXISTING     0x06
+#define RESERVATION_ACTION_REGISTER_AND_MOVE            0x07
+#define RESERVATION_ACTION_REPLACE_LOST_RESERVATION     0x08
 
 #define RESERVATION_SCOPE_LU                            0x00
 #define RESERVATION_SCOPE_ELEMENT                       0x02
@@ -5734,6 +5834,8 @@ typedef struct _LOG_PAGE_LOGICAL_BLOCK_PROVISIONING {
 #define RESERVATION_TYPE_EXCLUSIVE                      0x03
 #define RESERVATION_TYPE_WRITE_EXCLUSIVE_REGISTRANTS    0x05
 #define RESERVATION_TYPE_EXCLUSIVE_REGISTRANTS          0x06
+#define RESERVATION_TYPE_WRITE_EXCLUSIVE_ALL_REGISTRANTS    0x07
+#define RESERVATION_TYPE_EXCLUSIVE_ALL_REGISTRANTS      0x08
 
 //
 // Structures for reserve in command.
@@ -5764,6 +5866,67 @@ typedef struct {
     PRI_RESERVATION_DESCRIPTOR Reservations[0];
 #endif
 } PRI_RESERVATION_LIST, *PPRI_RESERVATION_LIST;
+
+typedef struct {
+    UCHAR ReservationKey[8];
+    UCHAR Reserved[4];
+    UCHAR ReservationHolder : 1;
+    UCHAR AllTargetPorts : 1;
+    UCHAR Reserved1 : 6;
+    UCHAR Type : 4;
+    UCHAR Scope : 4;
+    UCHAR Reserved2[4];
+    UCHAR RelativeTargetPortIdentifier[2];
+    UCHAR AdditionalDescriptorLength[4];
+} PRI_FULL_STATUS_DESCRIPTOR_HEADER, *PPRI_FULL_STATUS_DESCRIPTOR_HEADER;
+
+typedef struct {
+    PRI_FULL_STATUS_DESCRIPTOR_HEADER Header;
+    UCHAR TransportID[ANYSIZE_ARRAY];
+} PRI_FULL_STATUS_DESCRIPTOR, *PPRI_FULL_STATUS_DESCRIPTOR;
+
+typedef struct {
+    UCHAR Generation[4];
+    UCHAR AdditionalLength[4];
+} PRI_FULL_STATUS_LIST_HEADER, *PPRI_FULL_STATUS_LIST_HEADER;
+
+typedef struct {
+    UCHAR Generation[4];
+    UCHAR AdditionalLength[4];
+
+    //
+    // Since TransportID could be different sizes,
+    // we use PRI_FULL_STATUS_DESCRIPTOR_HEADER rather than PRI_FULL_STATUS_DESCRIPTOR
+    // as a place holder here.
+    //
+    PRI_FULL_STATUS_DESCRIPTOR_HEADER FullStatusDescriptors[ANYSIZE_ARRAY];
+} PRI_FULL_STATUS_LIST, *PPRI_FULL_STATUS_LIST;
+
+typedef struct {
+    UCHAR Length[2];
+    UCHAR PersistThroughPowerLossCapable : 1;
+    UCHAR Reserved : 1;
+    UCHAR AllTargetPortsCapable : 1;
+    UCHAR SpecifyInitiatorPortsCapable : 1;
+    UCHAR CompatibleReservationHandling : 1;
+    UCHAR Reserved1 : 2;
+    UCHAR ReplaceLostReservationCapable : 1;
+    UCHAR PersistThroughPowerLossActivated : 1;
+    UCHAR Reserved2 : 3;
+    UCHAR AllowCommands : 3;
+    UCHAR TypeMaskValid : 1;
+    UCHAR Reserved3 : 1;
+    UCHAR WriteExclusive : 1;
+    UCHAR Reserved4 : 1;
+    UCHAR ExclusiveAccess : 1;
+    UCHAR Reserved5 : 1;
+    UCHAR WriteExclusiveRegistrantsOnly : 1;
+    UCHAR ExclusiveAccessRegistrantsOnly : 1;
+    UCHAR WriteExclusiveAllRegistrants : 1;
+    UCHAR ExclusiveAccessAllRegistrants : 1;
+    UCHAR Reserved6 : 7;
+    UCHAR Reserved7[2];
+} PRI_REPORT_CAPABILITIES, *PPRI_REPORT_CAPABILITIES;
 #pragma pack(pop, reserve_in_stuff)
 
 //
@@ -5776,8 +5939,11 @@ typedef struct {
     UCHAR ServiceActionReservationKey[8];
     UCHAR ScopeSpecificAddress[4];
     UCHAR ActivatePersistThroughPowerLoss : 1;
-    UCHAR Reserved1 : 7;
-    UCHAR Reserved2;
+    UCHAR Reserved1 : 1;
+    UCHAR AllTargetPorts : 1;
+    UCHAR SpecifyInitiatorPorts : 1;
+    UCHAR Reserved2 : 4;
+    UCHAR Reserved3;
     UCHAR Obsolete[2];
 } PRO_PARAMETER_LIST, *PPRO_PARAMETER_LIST;
 #pragma pack(pop, reserve_out_stuff)

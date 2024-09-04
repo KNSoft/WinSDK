@@ -2612,6 +2612,32 @@ typedef WDI_SIGNAL_INFO WDI_SIGNAL_INFO_CONTAINER;
 
 typedef WDI_BSS_ENTRY_CHANNEL_INFO WDI_CHANNEL_INFO_CONTAINER;
 
+
+//
+// Container for channel information in 6 GHz band
+//
+typedef struct _WDI_6_GHZ_BAND_CHANNEL_LIST_CONTAINER
+{
+    struct _WDI_6_GHZ_BAND_CHANNEL_LIST_CONTAINER_Optional
+    {
+        UINT32 ColocatedAP_IsPresent : 1;
+#ifdef __cplusplus
+        _WDI_6_GHZ_BAND_CHANNEL_LIST_CONTAINER_Optional() : ColocatedAP_IsPresent( FALSE )
+        {
+        };
+#endif // __cplusplus
+    } Optional;
+
+    WDI_MAC_ADDRESS_CONTAINER Bssid;
+    UINT8_CONTAINER ChannelNumber;
+    WDI_CHANNEL_INFO_CONTAINER ColocatedAP;
+#ifdef __cplusplus
+    _WDI_6_GHZ_BAND_CHANNEL_LIST_CONTAINER() : ChannelNumber( (UINT8_CONTAINER)0 )
+    {
+        memset( &Bssid, 0, sizeof( Bssid ) );
+    };
+#endif // __cplusplus
+} WDI_6_GHZ_BAND_CHANNEL_LIST_CONTAINER, *PWDI_6_GHZ_BAND_CHANNEL_LIST_CONTAINER;
 typedef WDI_BSS_ENTRY_AGE_INFO WDI_AGE_INFO_CONTAINER;
 
 struct ArrayOfElementsOfWDI_LINK_QUALITY_BAR_MAP_PARAMETERS
@@ -3227,6 +3253,21 @@ typedef WDI_P2P_CAPABILITIES_V1_0_1 WDI_P2P_CAPABILITIES_CONTAINER_V1_0_1;
 
 typedef WDI_DATAPATH_CAPABILITIES WDI_DATAPATH_CAPABILITIES_CONTAINER;
 
+struct ArrayOfElementsOfWDI_BAND_CHANNEL_MAPPING_ENTRY
+{
+    UINT32 ElementCount;
+    WDI_BAND_CHANNEL_MAPPING_ENTRY* pElements;
+    BOOLEAN MemoryInternallyAllocated;
+};
+#ifdef __cplusplus
+C_ASSERT( sizeof( ArrayOfElements<WDI_BAND_CHANNEL_MAPPING_ENTRY> ) == sizeof( struct ArrayOfElementsOfWDI_BAND_CHANNEL_MAPPING_ENTRY ) );
+#endif // __cplusplus
+#ifdef __cplusplus
+typedef ArrayOfElements<WDI_BAND_CHANNEL_MAPPING_ENTRY> WDI_BAND_CHANNEL_MAPPING_CONTAINER;
+#else // __cplusplus
+typedef struct ArrayOfElementsOfWDI_BAND_CHANNEL_MAPPING_ENTRY WDI_BAND_CHANNEL_MAPPING_CONTAINER;
+#endif // __cplusplus
+
 struct ArrayOfElementsOfWDI_CHANNEL_MAPPING_ENTRY
 {
     UINT32 ElementCount;
@@ -3520,8 +3561,9 @@ typedef struct _WDI_SAE_COMMIT_REQUEST
     struct _WDI_SAE_COMMIT_REQUEST_Optional
     {
         UINT32 AntiCloggingToken_IsPresent : 1;
+        UINT32 RejectedGroups_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_SAE_COMMIT_REQUEST_Optional() : AntiCloggingToken_IsPresent( FALSE )
+        _WDI_SAE_COMMIT_REQUEST_Optional() : AntiCloggingToken_IsPresent( FALSE ), RejectedGroups_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -3531,6 +3573,7 @@ typedef struct _WDI_SAE_COMMIT_REQUEST
     WDI_BYTE_BLOB Scalar;
     WDI_BYTE_BLOB Element;
     WDI_BYTE_BLOB AntiCloggingToken;
+    WDI_BYTE_BLOB RejectedGroups;
 #ifdef __cplusplus
     _WDI_SAE_COMMIT_REQUEST() : FiniteCyclicGroup( (UINT16_CONTAINER)0 )
     {
@@ -3996,7 +4039,7 @@ typedef struct _WDI_SSID_OFFLOAD_CONTAINER
 
     WDI_SSID SsidToScan;
     WDI_ALGO_PAIRS_LIST_CONTAINER UnicastAlgorithms;
-    WDI_CHANNEL_MAPPING_CONTAINER ChannellHintList;
+    WDI_BAND_CHANNEL_MAPPING_CONTAINER BandChannelHintList;
     BOOL_CONTAINER IsDirectedProbeForHiddenPermitted;
 #ifdef __cplusplus
     _WDI_SSID_OFFLOAD_CONTAINER() : IsDirectedProbeForHiddenPermitted( (BOOL_CONTAINER)0 )
@@ -4013,6 +4056,41 @@ namespace WDI_TLV
     }
 }
 #endif // __cplusplus
+
+//
+// container for SSID offload
+//
+typedef struct _WDI_SSID_OFFLOAD_CONTAINERv1_1_9
+{
+    struct _WDI_SSID_OFFLOAD_CONTAINERv1_1_9_Optional
+    {
+        UINT32 IsDirectedProbeForHiddenPermitted_IsPresent : 1;
+#ifdef __cplusplus
+        _WDI_SSID_OFFLOAD_CONTAINERv1_1_9_Optional() : IsDirectedProbeForHiddenPermitted_IsPresent( FALSE )
+        {
+        };
+#endif // __cplusplus
+    } Optional;
+
+    WDI_SSID SsidToScan;
+    WDI_ALGO_PAIRS_LIST_CONTAINER UnicastAlgorithms;
+    WDI_CHANNEL_MAPPING_CONTAINER ChannellHintList;
+    BOOL_CONTAINER IsDirectedProbeForHiddenPermitted;
+#ifdef __cplusplus
+    _WDI_SSID_OFFLOAD_CONTAINERv1_1_9() : IsDirectedProbeForHiddenPermitted( (BOOL_CONTAINER)0 )
+    {
+    };
+#endif // __cplusplus
+} WDI_SSID_OFFLOAD_CONTAINERv1_1_9, *PWDI_SSID_OFFLOAD_CONTAINERv1_1_9;
+#ifdef __cplusplus
+namespace WDI_TLV
+{
+    namespace PARSER
+    {
+        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_SSID_OFFLOAD_CONTAINERv1_1_9 * pField );
+    }
+}
+#endif // __cplusplus
 struct ArrayOfElementsOfWDI_SSID_OFFLOAD_CONTAINER
 {
     UINT32 ElementCount;
@@ -4021,6 +4099,15 @@ struct ArrayOfElementsOfWDI_SSID_OFFLOAD_CONTAINER
 };
 #ifdef __cplusplus
 C_ASSERT( sizeof( ArrayOfElements<WDI_SSID_OFFLOAD_CONTAINER> ) == sizeof( struct ArrayOfElementsOfWDI_SSID_OFFLOAD_CONTAINER ) );
+#endif // __cplusplus
+struct ArrayOfElementsOfWDI_SSID_OFFLOAD_CONTAINERv1_1_9
+{
+    UINT32 ElementCount;
+    WDI_SSID_OFFLOAD_CONTAINERv1_1_9* pElements;
+    BOOLEAN MemoryInternallyAllocated;
+};
+#ifdef __cplusplus
+C_ASSERT( sizeof( ArrayOfElements<WDI_SSID_OFFLOAD_CONTAINERv1_1_9> ) == sizeof( struct ArrayOfElementsOfWDI_SSID_OFFLOAD_CONTAINERv1_1_9 ) );
 #endif // __cplusplus
 
 //
@@ -4350,6 +4437,15 @@ typedef EmptyMessageStructureType WDI_TASK_CLOSE_PARAMETERS, *PWDI_TASK_CLOSE_PA
 //
 typedef EmptyMessageStructureType WDI_SET_HOST_DETECT_ERROR_PARAMETERS, *PWDI_SET_HOST_DETECT_ERROR_PARAMETERS;
 
+struct ArrayOfElementsOfWDI_6_GHZ_BAND_CHANNEL_LIST_CONTAINER
+{
+    UINT32 ElementCount;
+    WDI_6_GHZ_BAND_CHANNEL_LIST_CONTAINER* pElements;
+    BOOLEAN MemoryInternallyAllocated;
+};
+#ifdef __cplusplus
+C_ASSERT( sizeof( ArrayOfElements<WDI_6_GHZ_BAND_CHANNEL_LIST_CONTAINER> ) == sizeof( struct ArrayOfElementsOfWDI_6_GHZ_BAND_CHANNEL_LIST_CONTAINER ) );
+#endif // __cplusplus
 
 //
 // Parameters for WDI_TASK_SCAN
@@ -4360,8 +4456,9 @@ typedef struct _WDI_SCAN_PARAMETERS
     {
         UINT32 VendorIEs_IsPresent : 1;
         UINT32 BandChannelList_IsPresent : 1;
+        UINT32 SixGHzBandChannelList_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_SCAN_PARAMETERS_Optional() : VendorIEs_IsPresent( FALSE ), BandChannelList_IsPresent( FALSE )
+        _WDI_SCAN_PARAMETERS_Optional() : VendorIEs_IsPresent( FALSE ), BandChannelList_IsPresent( FALSE ), SixGHzBandChannelList_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -4380,6 +4477,11 @@ typedef struct _WDI_SCAN_PARAMETERS
     ArrayOfElements<WDI_BAND_CHANNEL_LIST_CONTAINER> BandChannelList;
 #else // __cplusplus
     struct ArrayOfElementsOfWDI_BAND_CHANNEL_LIST_CONTAINER BandChannelList;
+#endif // __cplusplus
+#ifdef __cplusplus
+    ArrayOfElements<WDI_6_GHZ_BAND_CHANNEL_LIST_CONTAINER> SixGHzBandChannelList;
+#else // __cplusplus
+    struct ArrayOfElementsOfWDI_6_GHZ_BAND_CHANNEL_LIST_CONTAINER SixGHzBandChannelList;
 #endif // __cplusplus
 #ifdef __cplusplus
     _WDI_SCAN_PARAMETERS()

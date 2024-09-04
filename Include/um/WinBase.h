@@ -1417,36 +1417,6 @@ GetProcessIoCounters(
     _Out_ PIO_COUNTERS lpIoCounters
     );
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
-#pragma endregion
-
-#pragma region Application Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
-
-WINBASEAPI
-BOOL
-WINAPI
-GetProcessWorkingSetSize(
-    _In_  HANDLE hProcess,
-    _Out_ PSIZE_T lpMinimumWorkingSetSize,
-    _Out_ PSIZE_T lpMaximumWorkingSetSize
-    );
-
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
-
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
-
-WINBASEAPI
-BOOL
-WINAPI
-SetProcessWorkingSetSize(
-    _In_ HANDLE hProcess,
-    _In_ SIZE_T dwMinimumWorkingSetSize,
-    _In_ SIZE_T dwMaximumWorkingSetSize
-    );
-
 WINBASEAPI
 __analysis_noreturn
 VOID
@@ -1960,13 +1930,13 @@ DebugBreakProcess (
 #pragma endregion
 
 #pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_GAMES)
 
 #if (_WIN32_WINNT >= 0x0403)
 #define CRITICAL_SECTION_NO_DEBUG_INFO  RTL_CRITICAL_SECTION_FLAG_NO_DEBUG_INFO
 #endif
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_GAMES) */
 #pragma endregion
 
 #pragma region Desktop Family
@@ -2441,10 +2411,6 @@ DosDateTimeToFileTime(
 
 #pragma region Application Family or OneCore Family or Games Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES)
-
-//
-// FORMAT_MESSAGE_ALLOCATE_BUFFER requires use of HeapFree
-//
 
 #define FORMAT_MESSAGE_ALLOCATE_BUFFER 0x00000100
 
@@ -3110,6 +3076,10 @@ typedef struct _WIN32_STREAM_ID {
 #endif /* WINVER >= 0x0600 */
 
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+     #define STARTF_HOLOGRAPHIC    0x00040000
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_FE)
+
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
@@ -3501,6 +3471,11 @@ typedef enum _PROC_THREAD_ATTRIBUTE_NUM {
 #endif
 #if (NTDDI_VERSION >= NTDDI_WIN10_MN)
     ProcThreadAttributeMitigationAuditPolicy        = 24,
+    ProcThreadAttributeMachineType                  = 25,
+    ProcThreadAttributeComponentFilter              = 26,
+#endif
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+    ProcThreadAttributeEnableOptionalXStateFeatures = 27,
 #endif
 } PROC_THREAD_ATTRIBUTE_NUM;
 #endif
@@ -3545,6 +3520,16 @@ typedef enum _PROC_THREAD_ATTRIBUTE_NUM {
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
 #define PROC_THREAD_ATTRIBUTE_PSEUDOCONSOLE \
     ProcThreadAttributeValue (ProcThreadAttributePseudoConsole, FALSE, TRUE, FALSE)
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_MN)
+#define PROC_THREAD_ATTRIBUTE_MACHINE_TYPE \
+    ProcThreadAttributeValue (ProcThreadAttributeMachineType, FALSE, TRUE, FALSE)
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+#define PROC_THREAD_ATTRIBUTE_ENABLE_OPTIONAL_XSTATE_FEATURES \
+    ProcThreadAttributeValue (ProcThreadAttributeEnableOptionalXStateFeatures, TRUE, TRUE, FALSE)
 #endif
 
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN7)
@@ -3821,6 +3806,16 @@ typedef enum _PROC_THREAD_ATTRIBUTE_NUM {
 #define PROCESS_CREATION_MITIGATION_POLICY2_BLOCK_NON_CET_BINARIES_NON_EHCONT              (0x00000003ui64 << 36)
 
 //
+// Define the XFG mitigation policy options.
+//
+
+#define PROCESS_CREATION_MITIGATION_POLICY2_XTENDED_CONTROL_FLOW_GUARD_MASK                (0x00000003ui64 << 40)
+#define PROCESS_CREATION_MITIGATION_POLICY2_XTENDED_CONTROL_FLOW_GUARD_DEFER               (0x00000000ui64 << 40)
+#define PROCESS_CREATION_MITIGATION_POLICY2_XTENDED_CONTROL_FLOW_GUARD_ALWAYS_ON           (0x00000001ui64 << 40)
+#define PROCESS_CREATION_MITIGATION_POLICY2_XTENDED_CONTROL_FLOW_GUARD_ALWAYS_OFF          (0x00000002ui64 << 40)
+#define PROCESS_CREATION_MITIGATION_POLICY2_XTENDED_CONTROL_FLOW_GUARD_RESERVED            (0x00000003ui64 << 40)
+
+//
 // Define the CET-related dynamic code validation data APIs out-of-proc mitigation policy options.
 //
 
@@ -3900,6 +3895,9 @@ typedef enum _PROC_THREAD_ATTRIBUTE_NUM {
 #define PROC_THREAD_ATTRIBUTE_MITIGATION_AUDIT_POLICY \
     ProcThreadAttributeValue (ProcThreadAttributeMitigationAuditPolicy, FALSE, TRUE, FALSE)
 
+#define PROC_THREAD_ATTRIBUTE_COMPONENT_FILTER \
+    ProcThreadAttributeValue (ProcThreadAttributeComponentFilter, FALSE, TRUE, FALSE)
+
 //
 // Define the user-mode shadow stack mitigation audit policy options.
 //
@@ -3929,6 +3927,16 @@ typedef enum _PROC_THREAD_ATTRIBUTE_NUM {
 #define PROCESS_CREATION_MITIGATION_AUDIT_POLICY2_BLOCK_NON_CET_BINARIES_ALWAYS_ON               (0x00000001ui64 << 36)
 #define PROCESS_CREATION_MITIGATION_AUDIT_POLICY2_BLOCK_NON_CET_BINARIES_ALWAYS_OFF              (0x00000002ui64 << 36)
 #define PROCESS_CREATION_MITIGATION_AUDIT_POLICY2_BLOCK_NON_CET_BINARIES_RESERVED                (0x00000003ui64 << 36)
+
+//
+// Define the XFG mitigation audit policy options.
+//
+
+#define PROCESS_CREATION_MITIGATION_AUDIT_POLICY2_XTENDED_CONTROL_FLOW_GUARD_MASK                (0x00000003ui64 << 40)
+#define PROCESS_CREATION_MITIGATION_AUDIT_POLICY2_XTENDED_CONTROL_FLOW_GUARD_DEFER               (0x00000000ui64 << 40)
+#define PROCESS_CREATION_MITIGATION_AUDIT_POLICY2_XTENDED_CONTROL_FLOW_GUARD_ALWAYS_ON           (0x00000001ui64 << 40)
+#define PROCESS_CREATION_MITIGATION_AUDIT_POLICY2_XTENDED_CONTROL_FLOW_GUARD_ALWAYS_OFF          (0x00000002ui64 << 40)
+#define PROCESS_CREATION_MITIGATION_AUDIT_POLICY2_XTENDED_CONTROL_FLOW_GUARD_RESERVED            (0x00000003ui64 << 40)
 
 #endif // NTDDI_WIN10_MN
 
@@ -4202,20 +4210,6 @@ EnumResourceTypesW(
 #else
 #define EnumResourceTypes  EnumResourceTypesA
 #endif // !UNICODE
-
-WINBASEAPI
-BOOL
-WINAPI
-EnumResourceNamesA(
-    _In_opt_ HMODULE hModule,
-    _In_     LPCSTR lpType,
-    _In_     ENUMRESNAMEPROCA lpEnumFunc,
-    _In_     LONG_PTR lParam
-    );
-
-#ifndef UNICODE
-#define EnumResourceNames  EnumResourceNamesA
-#endif
 
 WINBASEAPI
 BOOL
@@ -4943,13 +4937,6 @@ GetTempFileName(
 
 #if !defined(RC_INVOKED) // RC warns because "WINBASE_DECLARE_GET_SYSTEM_WOW64_DIRECTORY" is a bit long.
 #if _WIN32_WINNT >= 0x0501 || defined(WINBASE_DECLARE_GET_SYSTEM_WOW64_DIRECTORY)
-
-WINBASEAPI
-BOOLEAN
-WINAPI
-Wow64EnableWow64FsRedirection (
-    _In_ BOOLEAN Wow64FsEnableRedirection
-    );
 
 //
 // for GetProcAddress
@@ -5805,6 +5792,52 @@ typedef struct COPYFILE2_EXTENDED_PARAMETERS {
   PCOPYFILE2_PROGRESS_ROUTINE   pProgressRoutine;
   PVOID                         pvCallbackContext;
 } COPYFILE2_EXTENDED_PARAMETERS;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+
+// minimum allowed requested i/o size, in bytes
+// (constrains COPYFILE2_EXTENDED_PARAMETERS_V2 ioDesiredSize field).
+#define COPYFILE2_IO_CYCLE_SIZE_MIN                 4096
+
+// maximum allowed requested i/o size, in bytes (1GB)
+// (constrains COPYFILE2_EXTENDED_PARAMETERS_V2 ioDesiredSize field).
+#define COPYFILE2_IO_CYCLE_SIZE_MAX                 0x40000000
+
+// minimum allowed requested average i/o rate, in kbytes per second
+// (constrains COPYFILE2_EXTENDED_PARAMETERS_V2 ioDesiredRate field).
+#define COPYFILE2_IO_RATE_MIN   512
+
+typedef struct COPYFILE2_EXTENDED_PARAMETERS_V2 {
+
+  DWORD                         dwSize;
+  DWORD                         dwCopyFlags;
+  BOOL                          *pfCancel;
+  PCOPYFILE2_PROGRESS_ROUTINE   pProgressRoutine;
+  PVOID                         pvCallbackContext;
+
+  // Additional copy flags (COPYFILE2_EXTENDED_PARAMETERS_V2 only;
+  // treated as zero if COPYFILE2_EXTENDED_PARAMETERS is used).
+  DWORD                         dwCopyFlagsV2;
+
+  // size of the i/o for each {read, write} cycle, in bytes
+  // (may be reduced, if insufficient memory is available)
+  // if zero: use a suitable default.
+  //
+  // may be ignored if ioDesiredRate is specified (i.e.,
+  // CopyFile2() will disregard if a requested size is
+  // rate is inappropriate for a requested rate.)
+  ULONG                         ioDesiredSize;
+
+  // requested average i/o rate, in kbytes per second.
+  // if zero: use a suitable default (usually as fast as possible).
+  ULONG                         ioDesiredRate;
+
+  // reserved for future use; must be set to zero
+  PVOID                         reserved[8];
+
+} COPYFILE2_EXTENDED_PARAMETERS_V2;
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_FE)
 
 WINBASEAPI
 HRESULT
@@ -6861,8 +6894,8 @@ GetFileSecurityA (
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
-#pragma region Application Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
+#pragma region Application Family or OneCore Family or Games Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES)
 
 #if(_WIN32_WINNT >= 0x0400)
 WINBASEAPI
@@ -6897,7 +6930,7 @@ ReadDirectoryChangesExW(
 #endif
 #endif /* _WIN32_WINNT >= 0x0400 */
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES) */
 #pragma endregion
 
 #pragma region Desktop Family
@@ -7627,14 +7660,6 @@ WINAPI
 CancelTimerQueueTimer(
     _In_opt_ HANDLE TimerQueue,
     _In_     HANDLE Timer
-    );
-
-WINBASEAPI
-_Must_inspect_result_
-BOOL
-WINAPI
-DeleteTimerQueue(
-    _In_ HANDLE TimerQueue
     );
 
 #endif // _WIN32_WINNT >= 0x0500
@@ -9393,6 +9418,25 @@ SetXStateFeaturesMask(
     _In_ DWORD64 FeatureMask
     );
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+
+WINBASEAPI
+DWORD64
+WINAPI
+GetThreadEnabledXStateFeatures(
+    VOID
+    );
+
+_Must_inspect_result_
+WINBASEAPI
+BOOL
+WINAPI
+EnableProcessOptionalXStateFeatures(
+    _In_ DWORD64 Features
+    );
+
+#endif /* NTDDI_VERSION >= NTDDI_WIN10_FE */
+
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES) */
 #pragma endregion
 
@@ -9461,6 +9505,19 @@ RaiseCustomSystemEventTrigger(
 
 #endif /* (NTDDI_VERSION >= NTDDI_WIN10_RS4) */
 
+//yahao
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_MN)
+
+#pragma region Desktop Family or OneCore Family or Games Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES)
+
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#pragma endregion
+
+#endif /* (NTDDI_VERSION >= NTDDI_WIN10_MN) */
+
 
 
 #if !defined(RC_INVOKED) /* RC complains about long symbols in #ifs */
@@ -9525,7 +9582,7 @@ To turn off/hide the contents of this file:
 */
 
 #if !defined(MICROSOFT_WINDOWS_WINBASE_H_DEFINE_INTERLOCKED_CPLUSPLUS_OVERLOADS)
-#define MICROSOFT_WINDOWS_WINBASE_H_DEFINE_INTERLOCKED_CPLUSPLUS_OVERLOADS (_WIN32_WINNT >= 0x0502 || !defined(_WINBASE_))
+#define MICROSOFT_WINDOWS_WINBASE_H_DEFINE_INTERLOCKED_CPLUSPLUS_OVERLOADS 1
 #endif
 
 #if MICROSOFT_WINDOWS_WINBASE_H_DEFINE_INTERLOCKED_CPLUSPLUS_OVERLOADS  /* { */

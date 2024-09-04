@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <WABIModel xmlns="http://WABIModelSchema">
   <messages>
     <!-- Keep the message list in order with the defines for Message IDs in dot11wdi.h -->
@@ -24,6 +24,7 @@
       <containerRef id="WDI_TLV_SCAN_MODE" name="ScanModeParameters" type="ScanMode" />
       <containerRef id="WDI_TLV_SCAN_DWELL_TIME" name="DwellTime" type="ScanDwellTimeContainer"/>
       <containerRef id="WDI_TLV_BAND_CHANNEL" name="BandChannelList" type="ScanBandChannelListContainer" optional="true" multiContainer="true" />
+      <containerRef id="WDI_TLV_6_GHZ_BAND_CHANNEL" name="SixGHzBandChannelList" type="SixGHzScanBandChannelListContainer" optional="true" multiContainer="true" versionAdded="WDI_VERSION_1_1_10" />
     </message>
     <message commandId="WDI_TASK_SCAN" type="WDI_SCAN_RESULTS" description="No TLV data needed, header is sufficient" direction="FromIhv" />
 
@@ -1013,6 +1014,12 @@
       <groupRef ref="BSSEntryChannelInfoStruct" name="ChannelInfo" description="Channel information"/>
     </container>
 
+    <aggregateContainer name="SixGHzScanBandChannelListContainer" type="WDI_6_GHZ_BAND_CHANNEL_LIST_CONTAINER" description="Container for channel information in 6 GHz band">
+      <containerRef id="WDI_TLV_BSSID" name="Bssid" type="MacAddressContainer" />
+      <containerRef id="WDI_TLV_CHANNEL_NUMBER" name="ChannelNumber" type="UINT8Container" />
+      <containerRef id="WDI_TLV_BSS_ENTRY_CHANNEL_INFO" name="ColocatedAP" type="ChannelInfoContainer" optional="true" />
+    </aggregateContainer>
+
     <container name="BSSEntryAgeInfoContainer" type="WDI_AGE_INFO_CONTAINER" description="Container for BSS Entry Age Info">
       <groupRef ref="BSSEntryAgeInfoStruct" name="BSSEntryAgeInfo" description="BSS entry age information"/>
     </container>    
@@ -1418,6 +1425,14 @@
     </container>      
 
     <container
+      name="BandChannelMappingContainer"
+      description="Container for Channel List"
+      type="WDI_BAND_CHANNEL_MAPPING_CONTAINER" 
+      isCollection="true">
+      <namedType name="BandChannelMappingEntry" type="WDI_BAND_CHANNEL_MAPPING_ENTRY" description="List of Channel info" />      
+    </container>
+
+    <container
       name="ChannelMappingContainer"
       description="Container for Channel List"
       type="WDI_CHANNEL_MAPPING_CONTAINER" 
@@ -1590,6 +1605,7 @@
       <containerRef id="WDI_TLV_SAE_SCALAR" name="Scalar" type="ByteBlob" />
       <containerRef id="WDI_TLV_SAE_ELEMENT" name="Element" type="ByteBlob" />
       <containerRef id="WDI_TLV_SAE_ANTI_CLOGGING_TOKEN" name="AntiCloggingToken" type="ByteBlob" optional="true" />
+      <containerRef id="WDI_TLV_SAE_REJECTED_GROUPS" name="RejectedGroups" type="ByteBlob" optional="true" versionAdded="WDI_VERSION_1_1_10" />
     </aggregateContainer>
 
     <aggregateContainer name="SAEConfirmRequestContainer" description="Container for SAE confirm request" type="WDI_SAE_CONFIRM_REQUEST">
@@ -1600,7 +1616,7 @@
      <aggregateContainer name="HESSIDInfoContainer" description="Container for HESSID connection information." type="WDI_HESSID_INFO_CONTAINER">
       <containerRef id="WDI_TLV_ACCESS_NETWORK_TYPE" name="AccessNetworkType" type="UINT8Container" />
       <containerRef id="WDI_TLV_HESSID" name="HESSIDList" type="MacAddressListContainer" />    
-      <containerRef id="WDI_TLV_HOTSPOT_INDICATION_ELEMENT" name="HSIndicationElement" type="ByteBlob" />      
+      <containerRef id="WDI_TLV_HOTSPOT_INDICATION_ELEMENT" name="HSIndicationElement" type="ByteBlob" />
      </aggregateContainer>  
 
     <aggregateContainer name="ConnectParametersContainer" type="WDI_CONNECT_PARAMETERS_CONTAINER" description="Container for connect parameters.">
@@ -1769,13 +1785,21 @@
     <aggregateContainer name="SsidOffloadContainer" description="container for SSID offload" type="WDI_SSID_OFFLOAD_CONTAINER">
       <containerRef id="WDI_TLV_SSID" name="SsidToScan" type="WiFiSSID" />
       <containerRef id="WDI_TLV_UNICAST_ALGORITHM_LIST" name="UnicastAlgorithms" type="AlgorithmPairsContainer" />
+      <containerRef id="WDI_TLV_BAND_CHANNEL_LIST" name="BandChannelHintList" type="BandChannelMappingContainer" versionAdded="WDI_VERSION_1_1_10" />
+      <containerRef id="WDI_TLV_IS_DIRECTED_PROBE_FOR_HIDDEN_PERMITTED" name="IsDirectedProbeForHiddenPermitted" type="BOOLContainer" optional="true" versionAdded="WDI_VERSION_1_1_0" />
+    </aggregateContainer>
+
+    <aggregateContainer name="SsidOffloadContainerv1_1_9" description="container for SSID offload" type="WDI_SSID_OFFLOAD_CONTAINERv1_1_9">
+      <containerRef id="WDI_TLV_SSID" name="SsidToScan" type="WiFiSSID" />
+      <containerRef id="WDI_TLV_UNICAST_ALGORITHM_LIST" name="UnicastAlgorithms" type="AlgorithmPairsContainer" />
       <containerRef id="WDI_TLV_CHANNEL_LIST" name="ChannellHintList" type="ChannelMappingContainer" />
       <containerRef id="WDI_TLV_IS_DIRECTED_PROBE_FOR_HIDDEN_PERMITTED" name="IsDirectedProbeForHiddenPermitted" type="BOOLContainer" optional="true" versionAdded="WDI_VERSION_1_1_0" />
     </aggregateContainer>
 
     <aggregateContainer name="NetworkListOffloadContainer" type="WDI_NETWORK_LIST_OFFLOAD_INFO" description="Container for Network List offload Information">
       <containerRef id="WDI_TLV_NETWORK_LIST_OFFLOAD_CONFIG" name="NetworkListOffloadConfig" type="NetworkListOffloadConfigContainer" />
-      <containerRef id="WDI_TLV_SSID_OFFLOAD" name="SsidOffload" type="SsidOffloadContainer" multiContainer="true" optional="true"/>
+      <containerRef id="WDI_TLV_SSID_OFFLOAD" name="SsidOffload" type="SsidOffloadContainer" multiContainer="true" optional="true" versionAdded="WDI_VERSION_1_1_10" />
+      <containerRef id="WDI_TLV_SSID_OFFLOAD" name="SsidOffload" type="SsidOffloadContainerv1_1_9" multiContainer="true" optional="true" versionRemoved="WDI_VERSION_1_1_10" />
     </aggregateContainer>
 
     <container name="WakeEventMaskContainer" description="container wake event mask" type="WDI_WAKE_EVENT_MASK_CONTAINER">

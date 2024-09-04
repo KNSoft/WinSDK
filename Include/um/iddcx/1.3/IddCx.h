@@ -235,7 +235,7 @@ enum IDDCX_MONITOR_DESCRIPTION_TYPE : UINT
     /// <summary>
     /// The monitor description is EDID or no EDID description available
     /// If the monitor has no description then IDDCX_MONITOR_DESCRIPTION_TYPE_EDID shall be used with zero description size
-    /// and null pointer for data</summary>
+    /// and null pointer for data
     /// </summary>
     IDDCX_MONITOR_DESCRIPTION_TYPE_EDID = 1,
     /// <summary>

@@ -45,14 +45,8 @@ using ::std::nullptr_t;
 #ifndef _CRT_ERRNO_DEFINED
 #define _CRT_ERRNO_DEFINED
 
-#ifdef _NTSUBSET_
-extern int gbl_errno;
-#define errno   (gbl_errno)
-#else /* _NTSUBSET_ */
 _CRTIMP extern int * __cdecl _errno(void);
 #define errno   (*_errno())
-#endif /* _NTSUBSET_ */
-
 
 _CRTIMP_ALT
 errno_t

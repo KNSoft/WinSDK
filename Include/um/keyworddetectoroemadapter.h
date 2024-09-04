@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0622 */
+ /* File created by MIDL compiler version 8.01.0626 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -35,6 +35,14 @@
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1020)
 #pragma once
+#endif
+
+#ifndef DECLSPEC_XFGVIRT
+#if _CONTROL_FLOW_GUARD_XFG
+#define DECLSPEC_XFGVIRT(base, func) __declspec(xfg_virtual(base, func))
+#else
+#define DECLSPEC_XFGVIRT(base, func)
+#endif
 #endif
 
 /* Forward Declarations */ 
@@ -153,18 +161,22 @@ EXTERN_C const IID IID_IKeywordDetectorOemAdapter;
     {
         BEGIN_INTERFACE
         
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             IKeywordDetectorOemAdapter * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
             _COM_Outptr_  void **ppvObject);
         
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IKeywordDetectorOemAdapter * This);
         
+        DECLSPEC_XFGVIRT(IUnknown, Release)
         ULONG ( STDMETHODCALLTYPE *Release )( 
             IKeywordDetectorOemAdapter * This);
         
+        DECLSPEC_XFGVIRT(IKeywordDetectorOemAdapter, GetCapabilities)
         HRESULT ( STDMETHODCALLTYPE *GetCapabilities )( 
             IKeywordDetectorOemAdapter * This,
             /* [ref][out] */ BOOL *SupportsUserModels,
@@ -174,6 +186,7 @@ EXTERN_C const IID IID_IKeywordDetectorOemAdapter;
             /* [ref][out] */ ULONG *NumLanguages,
             /* [full][out] */ IMFMediaType **ppMediaType);
         
+        DECLSPEC_XFGVIRT(IKeywordDetectorOemAdapter, VerifyUserKeyword)
         HRESULT ( STDMETHODCALLTYPE *VerifyUserKeyword )( 
             IKeywordDetectorOemAdapter * This,
             /* [full][in] */ IStream *ModelData,
@@ -182,6 +195,7 @@ EXTERN_C const IID IID_IKeywordDetectorOemAdapter;
             /* [in] */ LONG KeywordEndBytePos,
             /* [full][in] */ IMFMediaBuffer *UserRecording);
         
+        DECLSPEC_XFGVIRT(IKeywordDetectorOemAdapter, ComputeAndAddUserModelData)
         HRESULT ( STDMETHODCALLTYPE *ComputeAndAddUserModelData )( 
             IKeywordDetectorOemAdapter * This,
             /* [full][out][in] */ IStream *ModelData,
@@ -190,6 +204,7 @@ EXTERN_C const IID IID_IKeywordDetectorOemAdapter;
             /* [full][in] */ IMFMediaBuffer **UserRecordings,
             /* [in] */ ULONG NumUserRecordings);
         
+        DECLSPEC_XFGVIRT(IKeywordDetectorOemAdapter, BuildArmingPatternData)
         HRESULT ( STDMETHODCALLTYPE *BuildArmingPatternData )( 
             IKeywordDetectorOemAdapter * This,
             /* [full][in] */ IStream *UserModelData,
@@ -197,6 +212,7 @@ EXTERN_C const IID IID_IKeywordDetectorOemAdapter;
             /* [in] */ ULONG NumKeywordSelectors,
             /* [full][out] */ SOUNDDETECTOR_PATTERNHEADER **ppPatternData);
         
+        DECLSPEC_XFGVIRT(IKeywordDetectorOemAdapter, ParseDetectionResultData)
         HRESULT ( STDMETHODCALLTYPE *ParseDetectionResultData )( 
             IKeywordDetectorOemAdapter * This,
             /* [full][in] */ IStream *UserModelData,

@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0622 */
+ /* File created by MIDL compiler version 8.01.0626 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -35,6 +35,14 @@
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1020)
 #pragma once
+#endif
+
+#ifndef DECLSPEC_XFGVIRT
+#if _CONTROL_FLOW_GUARD_XFG
+#define DECLSPEC_XFGVIRT(base, func) __declspec(xfg_virtual(base, func))
+#else
+#define DECLSPEC_XFGVIRT(base, func)
+#endif
 #endif
 
 /* Forward Declarations */ 
@@ -123,18 +131,22 @@ EXTERN_C const IID IID_IGPUPVDev;
     {
         BEGIN_INTERFACE
         
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             __RPC__in IGPUPVDev * This,
             /* [in] */ __RPC__in REFIID riid,
             /* [annotation][iid_is][out] */ 
             _COM_Outptr_  void **ppvObject);
         
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             __RPC__in IGPUPVDev * This);
         
+        DECLSPEC_XFGVIRT(IUnknown, Release)
         ULONG ( STDMETHODCALLTYPE *Release )( 
             __RPC__in IGPUPVDev * This);
         
+        DECLSPEC_XFGVIRT(IGPUPVDev, GetDeviceLuid)
         HRESULT ( STDMETHODCALLTYPE *GetDeviceLuid )( 
             __RPC__in IGPUPVDev * This,
             /* [out] */ __RPC__out PLUID DeviceLUID);
@@ -288,18 +300,22 @@ EXTERN_C const IID IID_IGPUPMitigationDevice;
     {
         BEGIN_INTERFACE
         
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             IGPUPMitigationDevice * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
             _COM_Outptr_  void **ppvObject);
         
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IGPUPMitigationDevice * This);
         
+        DECLSPEC_XFGVIRT(IUnknown, Release)
         ULONG ( STDMETHODCALLTYPE *Release )( 
             IGPUPMitigationDevice * This);
         
+        DECLSPEC_XFGVIRT(IGPUPMitigationDevice, Initialize)
         HRESULT ( STDMETHODCALLTYPE *Initialize )( 
             IGPUPMitigationDevice * This,
             /* [in] */ GUID *VmGuid,
@@ -308,11 +324,13 @@ EXTERN_C const IID IID_IGPUPMitigationDevice;
             /* [in] */ HANDLE VmBusHandle,
             /* [in] */ IUnknown *GpupServices);
         
+        DECLSPEC_XFGVIRT(IGPUPMitigationDevice, PowerTransitionComplete)
         HRESULT ( STDMETHODCALLTYPE *PowerTransitionComplete )( 
             IGPUPMitigationDevice * This,
             /* [in] */ PLUID DeviceLuid,
             /* [in] */ GPUP_POWER_DEVICE_STATE GpupPowerState);
         
+        DECLSPEC_XFGVIRT(IGPUPMitigationDevice, ReadInterceptedGpup)
         HRESULT ( STDMETHODCALLTYPE *ReadInterceptedGpup )( 
             IGPUPMitigationDevice * This,
             /* [in] */ PLUID DeviceLuid,
@@ -321,6 +339,7 @@ EXTERN_C const IID IID_IGPUPMitigationDevice;
             /* [in] */ ULONG64 Length,
             /* [out] */ BYTE *ValueRead);
         
+        DECLSPEC_XFGVIRT(IGPUPMitigationDevice, WriteInterceptedGpup)
         HRESULT ( STDMETHODCALLTYPE *WriteInterceptedGpup )( 
             IGPUPMitigationDevice * This,
             /* [in] */ PLUID DeviceLuid,
@@ -329,16 +348,19 @@ EXTERN_C const IID IID_IGPUPMitigationDevice;
             /* [in] */ ULONG64 Length,
             /* [in] */ const BYTE WriteValue[  ]);
         
+        DECLSPEC_XFGVIRT(IGPUPMitigationDevice, PauseGpup)
         HRESULT ( STDMETHODCALLTYPE *PauseGpup )( 
             IGPUPMitigationDevice * This,
             /* [in] */ PLUID DeviceLuid,
             /* [in] */ GPUP_SAVE_RESTORE_PAUSE_STATE Flags);
         
+        DECLSPEC_XFGVIRT(IGPUPMitigationDevice, ResumeGpup)
         HRESULT ( STDMETHODCALLTYPE *ResumeGpup )( 
             IGPUPMitigationDevice * This,
             /* [in] */ PLUID DeviceLuid,
             /* [in] */ GPUP_SAVE_RESTORE_PAUSE_STATE Flags);
         
+        DECLSPEC_XFGVIRT(IGPUPMitigationDevice, SaveGpupBegin)
         HRESULT ( STDMETHODCALLTYPE *SaveGpupBegin )( 
             IGPUPMitigationDevice * This,
             /* [in] */ PLUID DeviceLuid,
@@ -346,6 +368,7 @@ EXTERN_C const IID IID_IGPUPMitigationDevice;
             /* [out][in] */ ULONG *Length,
             /* [out] */ BYTE SaveBuffer[  ]);
         
+        DECLSPEC_XFGVIRT(IGPUPMitigationDevice, SaveGpupContinue)
         HRESULT ( STDMETHODCALLTYPE *SaveGpupContinue )( 
             IGPUPMitigationDevice * This,
             /* [in] */ PLUID DeviceLuid,
@@ -354,6 +377,7 @@ EXTERN_C const IID IID_IGPUPMitigationDevice;
             /* [out] */ ULONG *RequestedLength,
             /* [out] */ BYTE SaveBuffer[  ]);
         
+        DECLSPEC_XFGVIRT(IGPUPMitigationDevice, RestoreGpup)
         HRESULT ( STDMETHODCALLTYPE *RestoreGpup )( 
             IGPUPMitigationDevice * This,
             /* [in] */ PLUID DeviceLuid,
@@ -465,18 +489,22 @@ EXTERN_C const IID IID_IVmGPUPGuestMemoryAccess;
     {
         BEGIN_INTERFACE
         
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             IVmGPUPGuestMemoryAccess * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
             _COM_Outptr_  void **ppvObject);
         
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IVmGPUPGuestMemoryAccess * This);
         
+        DECLSPEC_XFGVIRT(IUnknown, Release)
         ULONG ( STDMETHODCALLTYPE *Release )( 
             IVmGPUPGuestMemoryAccess * This);
         
+        DECLSPEC_XFGVIRT(IVmGPUPGuestMemoryAccess, CreateRamApertureFromByteRange)
         HRESULT ( STDMETHODCALLTYPE *CreateRamApertureFromByteRange )( 
             IVmGPUPGuestMemoryAccess * This,
             /* [in] */ UINT64 StartGpaAddress,
@@ -485,12 +513,14 @@ EXTERN_C const IID IID_IVmGPUPGuestMemoryAccess;
             /* [out] */ PVOID *MapAddress,
             /* [out] */ IUnknown **Aperture);
         
+        DECLSPEC_XFGVIRT(IVmGPUPGuestMemoryAccess, ReadRamBytes)
         HRESULT ( STDMETHODCALLTYPE *ReadRamBytes )( 
             IVmGPUPGuestMemoryAccess * This,
             /* [in] */ GUEST_PHYSICAL_ADDRESS StartAddress,
             /* [in] */ UINT64 ByteCount,
             /* [size_is][out] */ BYTE ClientBuffer[  ]);
         
+        DECLSPEC_XFGVIRT(IVmGPUPGuestMemoryAccess, WriteRamBytes)
         HRESULT ( STDMETHODCALLTYPE *WriteRamBytes )( 
             IVmGPUPGuestMemoryAccess * This,
             /* [in] */ GUEST_PHYSICAL_ADDRESS StartAddress,
@@ -568,18 +598,22 @@ EXTERN_C const IID IID_IVmGPUPGuestMsiAccess;
     {
         BEGIN_INTERFACE
         
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             IVmGPUPGuestMsiAccess * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
             _COM_Outptr_  void **ppvObject);
         
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IVmGPUPGuestMsiAccess * This);
         
+        DECLSPEC_XFGVIRT(IUnknown, Release)
         ULONG ( STDMETHODCALLTYPE *Release )( 
             IVmGPUPGuestMsiAccess * This);
         
+        DECLSPEC_XFGVIRT(IVmGPUPGuestMsiAccess, DeliverInterrupt)
         HRESULT ( STDMETHODCALLTYPE *DeliverInterrupt )( 
             IVmGPUPGuestMsiAccess * This,
             /* [in] */ UINT64 DestAddr,

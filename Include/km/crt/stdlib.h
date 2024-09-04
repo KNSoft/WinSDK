@@ -225,17 +225,13 @@ _CRTIMP int __cdecl ___mb_cur_max_l_func(_locale_t);
 /* External variable declarations */
 #ifndef _CRT_ERRNO_DEFINED
 #define _CRT_ERRNO_DEFINED
-#ifdef _NTSUBSET_
-extern int gbl_errno;
-#define errno   (gbl_errno)
-#else /* _NTSUBSET_ */
+
 _CRTIMP extern int * __cdecl _errno(void);
 #define errno   (*_errno())
 
 errno_t __cdecl _set_errno(_In_ int _Value);
 errno_t __cdecl _get_errno(_Out_ int * _Value);
 
-#endif /* _NTSUBSET_ */
 #endif /* _CRT_ERRNO_DEFINED */
 
 

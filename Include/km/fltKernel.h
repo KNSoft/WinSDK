@@ -924,6 +924,8 @@ typedef union _FLT_PARAMETERS {
         FS_FILTER_SECTION_SYNC_TYPE SyncType;
         ULONG PageProtection;
         PFS_FILTER_SECTION_SYNC_OUTPUT OutputInformation;
+        ULONG Flags;
+        ULONG AllocationAttributes; // Specified if SyncType is SyncTypeCreateSection
     } AcquireForSectionSynchronization;
 
     //
@@ -1807,7 +1809,7 @@ typedef FLT_PREOP_CALLBACK_STATUS
 
 //
 //  Values returned from the post-operation callback routine defining what
-//  to od next.
+//  to do next.
 //
 
 typedef enum _FLT_POSTOP_CALLBACK_STATUS {
@@ -2259,6 +2261,14 @@ typedef ULONG FLT_REGISTRATION_FLAGS;
     //
 
     #define FLTFL_REGISTRATION_SUPPORT_DAX_VOLUME           0x00000004
+
+    //
+    //  If set, this filter is aware of WCOS.  If a filter tries to register on
+    //  a WCOS system (whether in VAIL or the host) and does not set this flag,
+    //  filter attach will fail.
+    //
+
+    #define FLTFL_REGISTRATION_SUPPORT_WCOS                 0x00000008
 
 //
 //  Registration structure

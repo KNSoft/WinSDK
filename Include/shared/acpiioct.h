@@ -75,6 +75,15 @@ Environment:
 #endif
 
 //
+// Manganese IOCTLs
+//
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_MN)
+
+
+#endif
+
+//
 // -----------------------------V1 Data Structures------------------------------
 //
 
@@ -267,7 +276,7 @@ typedef struct _ACPI_EVAL_OUTPUT_BUFFER_V1 UNALIGNED *PACPI_EVAL_OUTPUT_BUFFER;
     (EvalOutputBuffer->Length - FIELD_OFFSET(ACPI_EVAL_OUTPUT_BUFFER, Argument))
 
 #define ACPI_EVAL_OUTPUT_BUFFER_ARGUMENTS_BEGIN( EvalOutputBuffer )         \
-    ((PACPI_METHOD_ARGUMENT)EvalOutputBuffer->Argument)    
+    ((PACPI_METHOD_ARGUMENT)EvalOutputBuffer->Argument)
 
 #define ACPI_EVAL_OUTPUT_BUFFER_ARGUMENTS_END( EvalOutputBuffer )           \
     (PACPI_METHOD_ARGUMENT)((PUCHAR)EvalOutputBuffer->Argument +            \

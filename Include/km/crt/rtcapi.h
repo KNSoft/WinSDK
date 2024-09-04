@@ -70,11 +70,22 @@ typedef unsigned short wchar_t;
     /* Power User/library API */
 
 
+#pragma push_macro("NOEXCEPT")
+#undef NOEXCEPT
+
+#ifdef __cplusplus
+    #define NOEXCEPT noexcept
+#else
+    #define NOEXCEPT
+#endif
+
     /* Init functions */
 
     /* These functions all call _CRT_RTC_INIT */
-    void __cdecl _RTC_Initialize(void);
-    void __cdecl _RTC_Terminate(void);
+    void __cdecl _RTC_Initialize(void) NOEXCEPT;
+    void __cdecl _RTC_Terminate(void) NOEXCEPT;
+
+#pragma pop_macro("NOEXCEPT")
 
     /*
      * If you're not using the CRT, you have to implement _CRT_RTC_INIT
@@ -157,6 +168,10 @@ typedef unsigned short wchar_t;
     void    __cdecl    _RTC_Shutdown(void);
     void    __cdecl    _RTC_InitBase(void);
     
+
+#ifdef __NOTHROW
+    #undef __NOTHROW
+#endif
 
 #ifdef  __cplusplus
 

@@ -48,7 +48,7 @@ typedef struct _GEN_ADDR {
     UCHAR               AddressSpaceID;
     UCHAR               BitWidth;
     UCHAR               BitOffset;
-    UCHAR               AccessSize;
+    UCHAR               AccessSize; // Interpreted as SubspaceID when AddressSpaceID is set to PCC (0xA)
     PHYSICAL_ADDRESS    Address;
 } GEN_ADDR, *PGEN_ADDR;
 
@@ -1174,6 +1174,8 @@ typedef struct _DEBUG_DEVICE_INFORMATION {
 #define DEBUG_DEVICE_SERIAL_BCM2835 0x10
 #define DEBUG_DEVICE_SERIAL_SDM845 0x11
 #define DEBUG_DEVICE_SERIAL_MM_16550 0x12
+#define DEBUG_DEVICE_SERIAL_SDM845V2 0x13
+#define DEBUG_DEVICE_SERIAL_IALPSS 0x14
 
 //
 // v2 Debug Device Information Structure.
@@ -1775,7 +1777,10 @@ C_ASSERT(WAET_DEV_RTC_ENLIGHTENED == 1);
 
 #define IORT_SIGNATURE          0x54524f49      // "IORT"
 #define IORT_MIN_SIZE           0x30
-#define IORT_TABLE_REVISION     0
+#define IORT_TABLE_REVISION_V0  0
+#define IORT_TABLE_REVISION_V1  1
+#define IORT_TABLE_REVISION_MIN IORT_TABLE_REVISION_V0
+#define IORT_TABLE_REVISION_MAX IORT_TABLE_REVISION_V1
 
 //
 // Node types.
@@ -1788,22 +1793,66 @@ C_ASSERT(WAET_DEV_RTC_ENLIGHTENED == 1);
 #define IORT_NODE_TYPE_SMMUV3 4
 #define IORT_NODE_TYPE_PMCG 5
 
-#define IORT_SMMUV2_NODE_REVISION 0
+//
+// SMMUv2 node revisions.
+//
+
+#define IORT_SMMUV2_NODE_REVISION_V0 0
+#define IORT_SMMUV2_NODE_REVISION_V2 2
+#define IORT_SMMUV2_NODE_REVISION_MIN IORT_SMMUV2_NODE_REVISION_V0
+#define IORT_SMMUV2_NODE_REVISION_MAX IORT_SMMUV2_NODE_REVISION_V2
+
+//
+// SMMUv2 model types.
+//
+
 #define IORT_TYPE_GENERIC_SMMUV1 0
 #define IORT_TYPE_GENERIC_SMMUV2 1
 #define IORT_TYPE_ARM_CORELINK_MMU400 2
 #define IORT_TYPE_ARM_CORELINK_MMU500 3
+#define IORT_TYPE_ARM_CORELINK_MMU401 4
+#define IORT_TYPE_CAVIUM_THUNDERX_SMMUV2 5
 
-#define IORT_SMMUV3_NODE_REVISION 0
+//
+// The SMMUv3 node revisions.
+//
+
+#define IORT_SMMUV3_NODE_REVISION_V0 0
+#define IORT_SMMUV3_NODE_REVISION_V3 3
+#define IORT_SMMUV3_NODE_REVISION_MIN IORT_SMMUV3_NODE_REVISION_V0
+#define IORT_SMMUV3_NODE_REVISION_MAX IORT_SMMUV3_NODE_REVISION_V3
+
+//
+// SMMUv3 model types.
+//
+
 #define IORT_TYPE_GENERIC_SMMUV3 0
+#define IORT_TYPE_HISILICON_HI161x 1
+#define IORT_TYPE_CAVIUM_CN99xx 2
 
-#define IORT_SMMUV3_NODE_REVISION 0
-#define IORT_TYPE_GENERIC_SMMUV3 0
+//
+// IORT Named component node revisions.
+//
 
-// TODO: Update to 1.
-#define IORT_NAMED_COMPONENT_NODE_REVISION 0
+#define IORT_NAMED_COMPONENT_NODE_REVISION_V0 0
+#define IORT_NAMED_COMPONENT_NODE_REVISION_V1 1
+#define IORT_NAMED_COMPONENT_NODE_REVISION_V2 2
+#define IORT_NAMED_COMPONENT_NODE_REVISION_V3 3
+#define IORT_NAMED_COMPONENT_NODE_REVISION_MIN \
+    IORT_NAMED_COMPONENT_NODE_REVISION_V0
 
-#define IORT_ROOT_COMPLEX_NODE_REVISION 0
+#define IORT_NAMED_COMPONENT_NODE_REVISION_MAX \
+    IORT_NAMED_COMPONENT_NODE_REVISION_V3
+
+//
+// IORT PCI root-complex node revisions.
+//
+
+#define IORT_ROOT_COMPLEX_NODE_REVISION_V0 0
+#define IORT_ROOT_COMPLEX_NODE_REVISION_V1 1
+#define IORT_ROOT_COMPLEX_NODE_REVISION_V2 2
+#define IORT_ROOT_COMPLEX_NODE_REVISION_MIN IORT_ROOT_COMPLEX_NODE_REVISION_V0
+#define IORT_ROOT_COMPLEX_NODE_REVISION_MAX IORT_ROOT_COMPLEX_NODE_REVISION_V2
 
 #if _MSC_VER >= 1200
 #pragma warning(push)
@@ -1943,7 +1992,8 @@ typedef struct _IORT_SMMUV3_NODE {
         struct {
             ULONG CohaccOverride : 1;
             ULONG HttuOverride : 2;
-            ULONG Reserved : 29;
+            ULONG ProximityDomainValid : 1;
+            ULONG Reserved : 28;
         } DUMMYSTRUCTNAME;
 
     } Flags;
@@ -1955,6 +2005,8 @@ typedef struct _IORT_SMMUV3_NODE {
     ULONG PriGsiv;
     ULONG GerrGsiv;
     ULONG SyncGsiv;
+    ULONG ProximityDomain;
+    ULONG DeviceIdMappingIndex;
 
     //
     // ID mapping array
@@ -2489,6 +2541,58 @@ typedef struct _SDEV {
     DESCRIPTION_HEADER Header;
     ULONG SDEVTables[ANYSIZE_ARRAY];
 } SDEV, *PSDEV;
+
+//
+// Definitions pertaining to the PRMT table.
+//
+
+#define PRMT_SIGNATURE ((ULONG)('TMRP'))
+#define PRMT_TABLE_REVISION 0x00
+#define PRMT_INFORMATION_REVISION 0x00
+#define PRMT_HANDLER_REVISION 0x00
+
+//
+// Definitions for PRM lock and unlock UUIDs.
+//
+
+// {3dfed791-8a76-486a-bc18-91e328465827}
+DEFINE_GUID(ACPI_PRM_LOCK_MODULE_GUID,
+    0xdfed791, 0x8a76, 0x486a, 0xbc, 0x18, 0x91, 0xe3, 0x28, 0x46, 0x58, 0x27);
+
+// {9e2aec3b-d536-4f16-af41-4978480f646a}
+DEFINE_GUID(ACPI_PRM_UNLOCK_MODULE_GUID,
+    0x9e2aec3b, 0xd536, 0x4f16, 0xaf, 0x41, 0x49, 0x78, 0x48, 0x0f, 0x64, 0x6a);
+
+//
+// PRMT table definitions
+//
+
+typedef struct _PRM_HANDLER_INFORMATION {
+    USHORT Revision;
+    USHORT Length;
+    GUID Identifier;
+    ULONG64 PhysicalAddress;
+    ULONG64 StaticBufferPhysicalAddress;
+    ULONG64 AcpiParameterPhysicalAddress;
+} PRM_HANDLER_INFORMATION, *PPRM_HANDLER_INFORMATION;
+
+typedef struct _PRM_MODULE_INFORMATION {
+    USHORT Revision;
+    USHORT Length;
+    GUID Identifier;
+    USHORT MajorVersion;
+    USHORT MinorVersion;
+    USHORT HandlerCount;
+    ULONG HandlerOffset;
+    ULONG64 MmioRangesPhysicalAddress;
+} PRM_MODULE_INFORMATION, *PPRM_MODULE_INFORMATION;
+
+typedef struct _PRMT_TABLE {
+    DESCRIPTION_HEADER Header;
+    GUID PlatformGuid;
+    ULONG ModuleInfoOffset;
+    ULONG ModuleInfoCount;
+} PRMT_TABLE, *PPRMT_TABLE;
 
 //
 // Definitions pertaining to the Core System Resource Table (CSRT) The CSRT
@@ -3806,7 +3910,7 @@ typedef union _PROC_TOPOLOGY_CACHE_ATTRIBUTES {
 typedef struct _PROC_TOPOLOGY_NODE PROC_TOPOLOGY_NODE,
     *PPROC_TOPOLOGY_NODE;
 
-#define PROC_TOPOLOGY_NODE_HEIRARCHY 0
+#define PROC_TOPOLOGY_NODE_HIERARCHY 0
 #define PROC_TOPOLOGY_NODE_CACHE 1
 #define PROC_TOPOLOGY_NODE_ID 2
 
@@ -3824,7 +3928,7 @@ struct _PROC_TOPOLOGY_NODE {
             ULONG ACPIProcessorId;
             ULONG NumberPrivateResources;
             ULONG PrivateResources[ANYSIZE_ARRAY];
-        } HeirarchyNode;
+        } HierarchyNode;
 
         struct {
             PROC_TOPOLOGY_CACHE_FLAGS Flags;
@@ -3849,7 +3953,7 @@ struct _PROC_TOPOLOGY_NODE {
 
 typedef struct _PPTT {
     DESCRIPTION_HEADER Header;
-    PROC_TOPOLOGY_NODE HeirarchyNodes[ANYSIZE_ARRAY];
+    PROC_TOPOLOGY_NODE HierarchyNodes[ANYSIZE_ARRAY];
 } PPTT, *PPPTT;
 
 #if _MSC_VER >= 1200
@@ -4029,6 +4133,39 @@ typedef struct _HMAT_TABLE {
     ULONG Reserved;
     // HMAT_ENTRY Entries[];
 } HMAT_TABLE, *PHMAT_TABLE;
+
+//
+// Service Processor Management Interface (SPMI) Table
+//      Appendix C3-1 of the IPMI Specification V2 Rev 1.1
+//
+
+#define SPMI_SIGNATURE 0x494D5053 // 'IMPS'
+
+
+typedef struct _SPMI_DESCRIPTION_TABLE {
+    DESCRIPTION_HEADER Header;
+    UINT8 InterfaceType;
+    UINT8 Reserved1;
+    UINT16 SpecificationRevision;
+
+    struct {
+        UINT8 GpeSupported: 1;
+        UINT8 ApicInterrupt: 1;
+        UINT8 Reserved: 6;
+    } InterruptType;
+
+    UINT8 Gpe;
+    UINT8 Reserved2;
+    UINT8 PciDeviceFlag;
+    UINT32 GlobalSystemInterrupt;
+    GEN_ADDR BaseAddress;
+    UINT8 PciSegmentGroupNumber;
+    UINT8 PciBusNumber;
+    UINT8 PciDeviceNumber;
+    UINT8 PciFunctionNumber;
+    UINT8 Reserved3;
+} SPMI_DESCRIPTION_TABLE, *PSPMI_DESCRIPTION_TABLE;
+
 
 #if _MSC_VER >= 1200
 #pragma warning(pop)

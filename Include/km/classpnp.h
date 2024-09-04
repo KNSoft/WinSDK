@@ -2006,8 +2006,23 @@ typedef struct _CLASS_VPD_B0_DATA {
     ULONG       UnmapGranularityAlignment;
     BOOLEAN     UGAVALID;
     UCHAR       Reserved0;
+
+    //
+    // OptimalTransferLengthGranularity specifies the optimal transfer length granularity in blocks for a single command.
+    // Transfers with transfer length not equal to a multiple of this value may incur significant delays in processing.
+    //
     USHORT      OptimalTransferLengthGranularity;
+
+    //
+    // MaximumTransferLength specifies the maximum transfer length in blocks for a single command.
+    // Requests for transfer length exceeding this limit may result in error conditions.
+    //
     ULONG       MaximumTransferLength;
+
+    //
+    // OptimalTransferLength specifies the optimal transfer length in blocks for a single command.
+    // Transfers with transfer length exceeding this value may incur significant delays in processing.
+    //
     ULONG       OptimalTransferLength;
 } CLASS_VPD_B0_DATA, *PCLASS_VPD_B0_DATA;
 

@@ -100,7 +100,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0xa0000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0xc0000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
@@ -1081,6 +1081,19 @@ namespace ABI {
 #define __x_ABI_CWindows_CSystem_CIUserStatics ABI::Windows::System::IUserStatics
 
 #endif // ____x_ABI_CWindows_CSystem_CIUserStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CIUserStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIUserStatics2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            interface IUserStatics2;
+        } /* System */
+    } /* Windows */
+} /* ABI */
+#define __x_ABI_CWindows_CSystem_CIUserStatics2 ABI::Windows::System::IUserStatics2
+
+#endif // ____x_ABI_CWindows_CSystem_CIUserStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSystem_CIUserWatcher_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIUserWatcher_FWD_DEFINED__
@@ -4701,6 +4714,9 @@ namespace ABI {
                 UserType_RemoteUser = 1,
                 UserType_LocalGuest = 2,
                 UserType_RemoteGuest = 3,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
+                UserType_SystemManaged = 4,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
             };
         } /* System */
     } /* Windows */
@@ -4784,16 +4800,16 @@ namespace ABI {
                 VirtualKey_CapitalLock = 20,
                 VirtualKey_Kana = 21,
                 VirtualKey_Hangul = 21,
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xa0000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
                 VirtualKey_ImeOn = 22,
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xa0000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
                 VirtualKey_Junja = 23,
                 VirtualKey_Final = 24,
                 VirtualKey_Hanja = 25,
                 VirtualKey_Kanji = 25,
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xa0000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
                 VirtualKey_ImeOff = 26,
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xa0000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
                 VirtualKey_Escape = 27,
                 VirtualKey_Convert = 28,
                 VirtualKey_NonConvert = 29,
@@ -8115,10 +8131,16 @@ namespace ABI {
                 virtual HRESULT STDMETHODCALLTYPE FindAllAsync(
                     __FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser** operation
                     ) = 0;
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
+                DEPRECATED("FindAllAsyncByType is deprecated and might not function consistently on all platforms. Instead, use FindAllAsync or GetDefault.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
                 virtual HRESULT STDMETHODCALLTYPE FindAllAsyncByType(
                     ABI::Windows::System::UserType type,
                     __FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser** operation
                     ) = 0;
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
+                DEPRECATED("FindAllAsyncByTypeAndStatus is deprecated and might not function consistently on all platforms. Instead, use FindAllAsync or GetDefault.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
                 virtual HRESULT STDMETHODCALLTYPE FindAllAsyncByTypeAndStatus(
                     ABI::Windows::System::UserType type,
                     ABI::Windows::System::UserAuthenticationStatus status,
@@ -8138,6 +8160,40 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIUserStatics;
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIUserStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+/*
+ *
+ * Interface Windows.System.IUserStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 11.0
+ *
+ * Interface is a part of the implementation of type Windows.System.User
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
+#if !defined(____x_ABI_CWindows_CSystem_CIUserStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CIUserStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IUserStatics2[] = L"Windows.System.IUserStatics2";
+namespace ABI {
+    namespace Windows {
+        namespace System {
+            MIDL_INTERFACE("74a37e11-2eb5-4487-b0d5-2c6790e013e9")
+            IUserStatics2 : public IInspectable
+            {
+            public:
+                virtual HRESULT STDMETHODCALLTYPE GetDefault(
+                    ABI::Windows::System::IUser** result
+                    ) = 0;
+            };
+
+            extern MIDL_CONST_ID IID& IID_IUserStatics2 = _uuidof(IUserStatics2);
+        } /* System */
+    } /* Windows */
+} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIUserStatics2;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIUserStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
 
 /*
  *
@@ -8252,8 +8308,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.System.IAppDiagnosticInfoStatics interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.IAppDiagnosticInfoStatics2 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.System.IAppDiagnosticInfoStatics interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.System.IAppDiagnosticInfo ** Default Interface **
@@ -8529,8 +8585,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
  *
  * RuntimeClass can be activated.
- *   Type can be activated via the Windows.System.IAppUriHandlerHostFactory interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Type can be activated via RoActivateInstance starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Type can be activated via the Windows.System.IAppUriHandlerHostFactory interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.System.IAppUriHandlerHost ** Default Interface **
@@ -8770,11 +8826,11 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.System.ILauncherStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
- *   Static Methods exist on the Windows.System.ILauncherStatics5 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
- *   Static Methods exist on the Windows.System.ILauncherStatics4 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
- *   Static Methods exist on the Windows.System.ILauncherStatics3 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.ILauncherStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.System.ILauncherStatics5 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.System.ILauncherStatics3 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.System.ILauncherStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.System.ILauncherStatics4 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -8842,10 +8898,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.System.IMemoryManagerStatics3 interface starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract
- *   Static Methods exist on the Windows.System.IMemoryManagerStatics4 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.IMemoryManagerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.System.IMemoryManagerStatics3 interface starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.IMemoryManagerStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.System.IMemoryManagerStatics4 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -9011,8 +9067,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.System.SystemManagementContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.System.IShutdownManagerStatics2 interface starting with version 3.0 of the Windows.System.SystemManagementContract API contract
  *   Static Methods exist on the Windows.System.IShutdownManagerStatics interface starting with version 1.0 of the Windows.System.SystemManagementContract API contract
+ *   Static Methods exist on the Windows.System.IShutdownManagerStatics2 interface starting with version 3.0 of the Windows.System.SystemManagementContract API contract
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -9051,6 +9107,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.IUserStatics2 interface starting with version 11.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.IUserStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
@@ -9653,6 +9710,12 @@ typedef interface __x_ABI_CWindows_CSystem_CIUserPickerStatics __x_ABI_CWindows_
 typedef interface __x_ABI_CWindows_CSystem_CIUserStatics __x_ABI_CWindows_CSystem_CIUserStatics;
 
 #endif // ____x_ABI_CWindows_CSystem_CIUserStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CSystem_CIUserStatics2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CSystem_CIUserStatics2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CSystem_CIUserStatics2 __x_ABI_CWindows_CSystem_CIUserStatics2;
+
+#endif // ____x_ABI_CWindows_CSystem_CIUserStatics2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CSystem_CIUserWatcher_FWD_DEFINED__
 #define ____x_ABI_CWindows_CSystem_CIUserWatcher_FWD_DEFINED__
@@ -16374,6 +16437,9 @@ enum __x_ABI_CWindows_CSystem_CUserType
     UserType_RemoteUser = 1,
     UserType_LocalGuest = 2,
     UserType_RemoteGuest = 3,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
+    UserType_SystemManaged = 4,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
@@ -16439,16 +16505,16 @@ enum __x_ABI_CWindows_CSystem_CVirtualKey
     VirtualKey_CapitalLock = 20,
     VirtualKey_Kana = 21,
     VirtualKey_Hangul = 21,
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xa0000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
     VirtualKey_ImeOn = 22,
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xa0000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
     VirtualKey_Junja = 23,
     VirtualKey_Final = 24,
     VirtualKey_Hanja = 25,
     VirtualKey_Kanji = 25,
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xa0000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
     VirtualKey_ImeOff = 26,
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xa0000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
     VirtualKey_Escape = 27,
     VirtualKey_Convert = 28,
     VirtualKey_NonConvert = 29,
@@ -22615,9 +22681,15 @@ typedef struct __x_ABI_CWindows_CSystem_CIUserStaticsVtbl
         __x_ABI_CWindows_CSystem_CIUserWatcher** result);
     HRESULT (STDMETHODCALLTYPE* FindAllAsync)(__x_ABI_CWindows_CSystem_CIUserStatics* This,
         __FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser** operation);
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
+    DEPRECATED("FindAllAsyncByType is deprecated and might not function consistently on all platforms. Instead, use FindAllAsync or GetDefault.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
     HRESULT (STDMETHODCALLTYPE* FindAllAsyncByType)(__x_ABI_CWindows_CSystem_CIUserStatics* This,
         enum __x_ABI_CWindows_CSystem_CUserType type,
         __FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser** operation);
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
+    DEPRECATED("FindAllAsyncByTypeAndStatus is deprecated and might not function consistently on all platforms. Instead, use FindAllAsync or GetDefault.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
     HRESULT (STDMETHODCALLTYPE* FindAllAsyncByTypeAndStatus)(__x_ABI_CWindows_CSystem_CIUserStatics* This,
         enum __x_ABI_CWindows_CSystem_CUserType type,
         enum __x_ABI_CWindows_CSystem_CUserAuthenticationStatus status,
@@ -22660,9 +22732,15 @@ interface __x_ABI_CWindows_CSystem_CIUserStatics
 #define __x_ABI_CWindows_CSystem_CIUserStatics_FindAllAsync(This, operation) \
     ((This)->lpVtbl->FindAllAsync(This, operation))
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
+    DEPRECATED("FindAllAsyncByType is deprecated and might not function consistently on all platforms. Instead, use FindAllAsync or GetDefault.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
 #define __x_ABI_CWindows_CSystem_CIUserStatics_FindAllAsyncByType(This, type, operation) \
     ((This)->lpVtbl->FindAllAsyncByType(This, type, operation))
 
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
+    DEPRECATED("FindAllAsyncByTypeAndStatus is deprecated and might not function consistently on all platforms. Instead, use FindAllAsync or GetDefault.")
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
 #define __x_ABI_CWindows_CSystem_CIUserStatics_FindAllAsyncByTypeAndStatus(This, type, status, operation) \
     ((This)->lpVtbl->FindAllAsyncByTypeAndStatus(This, type, status, operation))
 
@@ -22674,6 +22752,75 @@ interface __x_ABI_CWindows_CSystem_CIUserStatics
 EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIUserStatics;
 #endif /* !defined(____x_ABI_CWindows_CSystem_CIUserStatics_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
+
+/*
+ *
+ * Interface Windows.System.IUserStatics2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 11.0
+ *
+ * Interface is a part of the implementation of type Windows.System.User
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
+#if !defined(____x_ABI_CWindows_CSystem_CIUserStatics2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CSystem_CIUserStatics2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_System_IUserStatics2[] = L"Windows.System.IUserStatics2";
+typedef struct __x_ABI_CWindows_CSystem_CIUserStatics2Vtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT (STDMETHODCALLTYPE* QueryInterface)(__x_ABI_CWindows_CSystem_CIUserStatics2* This,
+        REFIID riid,
+        void** ppvObject);
+    ULONG (STDMETHODCALLTYPE* AddRef)(__x_ABI_CWindows_CSystem_CIUserStatics2* This);
+    ULONG (STDMETHODCALLTYPE* Release)(__x_ABI_CWindows_CSystem_CIUserStatics2* This);
+    HRESULT (STDMETHODCALLTYPE* GetIids)(__x_ABI_CWindows_CSystem_CIUserStatics2* This,
+        ULONG* iidCount,
+        IID** iids);
+    HRESULT (STDMETHODCALLTYPE* GetRuntimeClassName)(__x_ABI_CWindows_CSystem_CIUserStatics2* This,
+        HSTRING* className);
+    HRESULT (STDMETHODCALLTYPE* GetTrustLevel)(__x_ABI_CWindows_CSystem_CIUserStatics2* This,
+        TrustLevel* trustLevel);
+    HRESULT (STDMETHODCALLTYPE* GetDefault)(__x_ABI_CWindows_CSystem_CIUserStatics2* This,
+        __x_ABI_CWindows_CSystem_CIUser** result);
+
+    END_INTERFACE
+} __x_ABI_CWindows_CSystem_CIUserStatics2Vtbl;
+
+interface __x_ABI_CWindows_CSystem_CIUserStatics2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CSystem_CIUserStatics2Vtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __x_ABI_CWindows_CSystem_CIUserStatics2_QueryInterface(This, riid, ppvObject) \
+    ((This)->lpVtbl->QueryInterface(This, riid, ppvObject))
+
+#define __x_ABI_CWindows_CSystem_CIUserStatics2_AddRef(This) \
+    ((This)->lpVtbl->AddRef(This))
+
+#define __x_ABI_CWindows_CSystem_CIUserStatics2_Release(This) \
+    ((This)->lpVtbl->Release(This))
+
+#define __x_ABI_CWindows_CSystem_CIUserStatics2_GetIids(This, iidCount, iids) \
+    ((This)->lpVtbl->GetIids(This, iidCount, iids))
+
+#define __x_ABI_CWindows_CSystem_CIUserStatics2_GetRuntimeClassName(This, className) \
+    ((This)->lpVtbl->GetRuntimeClassName(This, className))
+
+#define __x_ABI_CWindows_CSystem_CIUserStatics2_GetTrustLevel(This, trustLevel) \
+    ((This)->lpVtbl->GetTrustLevel(This, trustLevel))
+
+#define __x_ABI_CWindows_CSystem_CIUserStatics2_GetDefault(This, result) \
+    ((This)->lpVtbl->GetDefault(This, result))
+
+#endif /* COBJMACROS */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CSystem_CIUserStatics2;
+#endif /* !defined(____x_ABI_CWindows_CSystem_CIUserStatics2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xb0000
 
 /*
  *
@@ -22857,8 +23004,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.System.IAppDiagnosticInfoStatics interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.IAppDiagnosticInfoStatics2 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.System.IAppDiagnosticInfoStatics interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.System.IAppDiagnosticInfo ** Default Interface **
@@ -23134,8 +23281,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 7.0
  *
  * RuntimeClass can be activated.
- *   Type can be activated via the Windows.System.IAppUriHandlerHostFactory interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Type can be activated via RoActivateInstance starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Type can be activated via the Windows.System.IAppUriHandlerHostFactory interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.System.IAppUriHandlerHost ** Default Interface **
@@ -23375,11 +23522,11 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.System.ILauncherStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
- *   Static Methods exist on the Windows.System.ILauncherStatics5 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
- *   Static Methods exist on the Windows.System.ILauncherStatics4 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
- *   Static Methods exist on the Windows.System.ILauncherStatics3 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.ILauncherStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.System.ILauncherStatics5 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.System.ILauncherStatics3 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.System.ILauncherStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.System.ILauncherStatics4 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -23447,10 +23594,10 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.System.IMemoryManagerStatics3 interface starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract
- *   Static Methods exist on the Windows.System.IMemoryManagerStatics4 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.IMemoryManagerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.System.IMemoryManagerStatics3 interface starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.IMemoryManagerStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.System.IMemoryManagerStatics4 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -23616,8 +23763,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.System.SystemManagementContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.System.IShutdownManagerStatics2 interface starting with version 3.0 of the Windows.System.SystemManagementContract API contract
  *   Static Methods exist on the Windows.System.IShutdownManagerStatics interface starting with version 1.0 of the Windows.System.SystemManagementContract API contract
+ *   Static Methods exist on the Windows.System.IShutdownManagerStatics2 interface starting with version 3.0 of the Windows.System.SystemManagementContract API contract
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -23656,6 +23803,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.System.IUserStatics2 interface starting with version 11.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.System.IUserStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:

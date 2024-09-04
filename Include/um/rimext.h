@@ -360,14 +360,35 @@ typedef struct tagRIMPOINTERRAWDATA {
 #ifndef POINTER_STRUCTURES_INTERNAL
 #define POINTER_STRUCTURES_INTERNAL
 
+// This struct definition should be kept in sync with the corresponding definitions in other files
 typedef struct tagTELEMETRY_POINTER_FRAME_TIMES {
-    UINT64 qpcKernelInputRead; // When the digitizer driver read the input report from the digitizer driver
-    UINT64 qpcHostInputSend; // (Container scenarios only) When the host sent the input to the container
-    UINT64 qpcContainerInputReceive; // (Container scenarios only) When the container received the input from the host
-    UINT64 hostPerformanceFrequency; // (Container scenarios only) Performance frequency of the host. Used to convert
-                                     // host timestamps to the container timeline so latencies can be computed in the
-                                     // container.
-    UINT64 qpcFrameQueued;           // timestamp when the pointer frame gets queued
+    UINT64 qpcRimFrameStart;            // When the RIM receives the first input report of the pointer frame
+    UINT64 qpcRimFrameQueued;           // When a RIM frame gets queued
+    UINT64 qpcRimSignalReadComplete;    // When the RIM tells the input processor that a RIM frame is available for processing - represents when the
+                                        // RIM is done with a frame. Note that if the frame has been queued, this time occurs when the input processor
+                                        // is ready to process the queued frame.
+    UINT64 qpcInputProcessorStart;      // When the input processor picks up a RIM frame for processing
+    UINT64 qpcIsmSend;                  // When the input processor sends input to the ISM
+    UINT64 qpcGestureTargetingSend;     // When the input is sent to Gesture Targeting
+    UINT64 qpcGenerateMessages;         // When window messages have been generated and a pointer frame is about to be delivered to an app's input queue
+    UINT64 qpcAppInputRetrieve;         // When the app's UI thread starts processing the pointer frame
+    struct {
+        UINT64 qpcHostInputSend;            // When the host sends the input to the container
+        UINT64 qpcContainerInputReceive;    // When the container receives the input from the host
+        UINT64 qpcRimFrameQueued;           // When a RIM frame gets queued
+        UINT64 qpcRimSignalReadComplete;    // When the RIM tells the input processor that a RIM frame is available for processing - represents when the
+                                            // RIM is done with a frame. Note that if the frame has been queued, this time occurs when the input processor
+                                            // is ready to process the queued frame.
+        UINT64 qpcInputProcessorStart;      // When the input processor picks up a RIM frame for processing
+        UINT64 qpcIsmSend;                  // When the input processor sends input to the ISM
+        UINT64 qpcGestureTargetingSend;     // When the input is sent to gesture targeting
+        UINT64 qpcGenerateMessages;         // When window messages have been generated and a pointer frame is about to be delivered to an app's input queue
+        UINT64 qpcAppInputRetrieve;         // When the app's UI thread starts processing the pointer frame
+
+        UINT64 hostPerformanceFrequency;    // Performance frequency of the host. Used to convert
+                                            // host timestamps to the container timeline so latencies can be computed in the
+                                            // container.
+    } vail;
 }TELEMETRY_POINTER_FRAME_TIMES, *PTELEMETRY_POINTER_FRAME_TIMES;
 
 #endif
@@ -381,7 +402,6 @@ struct RIMCOMPLETEFRAME {
     TELEMETRY_POINTER_FRAME_TIMES frameTimes; // QPCs used by interaction latency telemetry to compute performance metrics
     BOOL            bDevInjection;  // If RimDev is a an injection device
     BOOL            bButtonOnly;    // Used by TouchPad. (fButtonOnly)
-    BOOL            bAutoRepeatFrame;// This is an auto repeat frame.
     DWORD           dwRimTickCount; // TickCount when this frame was signalled
                                     // by the RIM.
     ULONGLONG       ullRimQpc;      // QPC count that matches to dwRimTickCount.
@@ -428,12 +448,10 @@ RIMRegisterForInput(
     _In_opt_ RIM_USAGE_AND_PAGE* pRimUsages,
     _In_ HANDLE hPnpNotificationEvent,
     _In_ HANDLE hTimer,
-    _In_ HANDLE hAutoRepeatTimer,
     _In_ PVOID pContext,
     _In_opt_ RIMDEVCHANGECALLBACKPROC pfnRimDevChangeCbProc,
     _Out_ PHANDLE phRimHandle
     );
-
 
 WINUSERAPI
 NTSTATUS
@@ -447,7 +465,6 @@ RIMReadInput(
     _Out_ PDWORD pdwInputTypeRead,
     _Inout_ PIO_STATUS_BLOCK pioSb
     );
-
 
 WINUSERAPI
 NTSTATUS
@@ -463,7 +480,6 @@ RIMAddInputObserver(
     _Out_ PHANDLE phInputObserver
     );
 
-
 WINUSERAPI
 NTSTATUS
 WINAPI
@@ -474,7 +490,6 @@ RIMUpdateInputObserverRegistration(
     _In_opt_ DWORD dwBufferSize
     );
 
-
 WINUSERAPI
 NTSTATUS
 WINAPI
@@ -482,14 +497,12 @@ RIMRemoveInputObserver(
     _In_ HANDLE hInputObserver
     );
 
-
 WINUSERAPI
 NTSTATUS
 WINAPI
 RIMObserveNextInput(
     _In_ HANDLE hInputObserver
     );
-
 
 WINUSERAPI
 NTSTATUS
@@ -499,7 +512,6 @@ RIMGetDevicePreparsedDataLockfree(
     _Out_writes_bytes_opt_(*pdwBufferSize) PVOID pBuffer,
     _Inout_ PDWORD pdwBufferSize
     );
-
 
 WINUSERAPI
 NTSTATUS
@@ -511,7 +523,6 @@ RIMGetDevicePreparsedData(
     _Inout_ PDWORD pdwBufferSize
     );
 
-
 WINUSERAPI
 NTSTATUS
 WINAPI
@@ -519,7 +530,6 @@ RIMGetDevicePropertiesLockfree(
     _In_ HANDLE hRimDev,
     _Out_ PRIMDEVICEPROPERTIES pRimDevProps
     );
-
 
 WINUSERAPI
 NTSTATUS
@@ -530,9 +540,6 @@ RIMGetDeviceProperties(
     _Out_ PRIMDEVICEPROPERTIES pRimDevProps
     );
 
-
-
-
 WINUSERAPI
 VOID
 WINAPI
@@ -541,7 +548,6 @@ RIMFreeInputBuffer(
     _In_ PVOID pvInputBuffer
     );
 
-
 WINUSERAPI
 NTSTATUS
 WINAPI
@@ -549,26 +555,12 @@ RIMOnPnpNotification(
     _In_ HANDLE hRimHandle
     );
 
-
-
-
-
-
 WINUSERAPI
 NTSTATUS
 WINAPI
 RIMUnregisterForInput(
     _In_ HANDLE hRimHandle
     );
-
-
-
-
-
-
-
-
-
 
 #endif // _BUILD_RIM_ && *CONVERGED*
 
@@ -719,7 +711,6 @@ InitializeInputDeviceInjection(
     _Out_writes_(1) HANDLE* device
     );
 
-
 WINUSERAPI
 BOOL
 WINAPI
@@ -731,14 +722,12 @@ InitializePointerDeviceInjection(
     _Out_writes_(1) HANDLE* device
     );
 
-
 WINUSERAPI
 BOOL
 WINAPI
 RemoveInjectionDevice(
     _In_ HANDLE hDevice
     );
-
 
 WINUSERAPI
 BOOL
@@ -749,7 +738,6 @@ SetFeatureReportResponse(
     _In_ UINT32 count
     );
 
-
 WINUSERAPI
 BOOL
 WINAPI
@@ -759,7 +747,6 @@ InjectDeviceInput(
     _In_ UINT32 count
     );
 
-
 WINUSERAPI
 BOOL
 WINAPI
@@ -767,7 +754,6 @@ InjectMouseInput(
     _In_reads_(count) CONST PMOUSEINPUT pMouseInput,
     _In_ UINT32 count
     );
-
 
 WINUSERAPI
 BOOL
@@ -777,7 +763,6 @@ InjectKeyboardInput(
     _In_ UINT32 count
     );
 
-
 WINUSERAPI
 BOOL
 WINAPI
@@ -786,7 +771,6 @@ InjectPointerInput(
     _In_reads_(count) CONST POINTER_TYPE_INFO* pointerInfo,
     _In_ UINT32 count
     );
-
 
 WINUSERAPI
 BOOL
@@ -800,7 +784,6 @@ InitializePointerDeviceInjectionEx(
     _Out_writes_(1) HANDLE* device
     );
 
-
 WINUSERAPI
 BOOL
 WINAPI
@@ -808,7 +791,6 @@ InitializeGenericHidInjection(
     _In_ PRIMIDE_GENERIC_HID_DEVICE_PROPERTIES pDeviceProperties,
     _Out_writes_(1) HANDLE* phDevice
     );
-
 
 WINUSERAPI
 BOOL
@@ -819,7 +801,6 @@ InjectGenericHidInput(
     _In_ ULONG ulInputReportLength
     );
 
-
 WINUSERAPI
 NTSTATUS
 WINAPI
@@ -829,7 +810,6 @@ RIMSetExtendedDeviceProperty(
     _In_ DWORD dwPropSize
     );
 
-
 WINUSERAPI
 NTSTATUS
 WINAPI
@@ -838,18 +818,14 @@ RIMQueryDevicePath(
     _Out_ PHANDLE phRimDev
     );
 
-
 #ifdef __cplusplus
 }
 #endif
 
 #endif // _RIM_EXT_H_
 
-
 #ifndef ext_ms_win_ntuser_rim_l1_2_0_query_routines
 #define ext_ms_win_ntuser_rim_l1_2_0_query_routines
-
-
 
 //
 //Private Extension API Query Routines

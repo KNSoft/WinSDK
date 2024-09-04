@@ -1,5 +1,9 @@
 /*++
 
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+_WdfVersionBuild_
+
 Module Name: SpbFuncEnum.h
 
 Abstract:

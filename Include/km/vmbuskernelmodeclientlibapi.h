@@ -1090,7 +1090,6 @@ FN_VMB_CHANNEL_ALLOCATE(
 typedef FN_VMB_CHANNEL_ALLOCATE *PFN_VMB_CHANNEL_ALLOCATE;
 FN_VMB_CHANNEL_ALLOCATE VmbChannelAllocate;
 
-
 /// \page VmbChannelInitSetMaximumPacketCount VmbChannelInitSetMaximumPacketCount
 /// This function, which can only be called during channel initialization, sets
 /// the maximum number of packets that can be sent and inflight on this channel 
@@ -2024,6 +2023,39 @@ FN_VMB_CHANNEL_UNMAP_GPADL(
 typedef FN_VMB_CHANNEL_UNMAP_GPADL *PFN_VMB_CHANNEL_UNMAP_GPADL;
 FN_VMB_CHANNEL_UNMAP_GPADL VmbChannelUnmapGpadl;
 
+/// \page VmbChannelCreateGpadl VmbChannelCreateGpadl
+/// Establishes a GPADL describing a client-side buffer. The GPADL may be used
+/// in the server to access the buffer.  When this function returns, the server
+/// endpoint may call \ref VmbChannelMapGpadl, as VMBus will already have send
+/// the GPADL description to the opposite endpoint and received confirmation.
+/// The client can call VmbChannelGetSystemAddressForGpadl to retrieve the virtual
+/// system address for the buffer.
+///
+/// The GPADL must be deleted with \ref VmbChannelDeleteGpadl when finished.
+///
+/// See \ref gpadl_theory for more information.
+///
+/// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
+/// \param Flags \parblock The possible flags are: \ref VMBUS_CHANNEL_GPADL_READ_ONLY If set,
+///     this buffer should be considered read-only. Otherwise, it may be written
+///     to by the server. Note that this is not a security measure; it only has
+///     the potential to improve snapshot and live migration performance.
+/// \endparblock
+/// \param PageCount The length of the buffer, in pages.
+/// \param GpadlHandle Returns a GPADL handle of the created MDL. This should be
+///     sent to the server to use with VmbChannelMapGpadl.
+typedef
+NTSTATUS
+FN_VMB_CHANNEL_CREATE_GPADL(
+    _In_ VMBCHANNEL Channel,
+    _In_ UINT32 Flags,
+    _In_ UINT32 PageCount,
+    _Out_ PUINT32 GpadlHandle
+    );
+
+typedef FN_VMB_CHANNEL_CREATE_GPADL *PFN_VMB_CHANNEL_CREATE_GPADL;
+FN_VMB_CHANNEL_CREATE_GPADL VmbChannelCreateGpadl;
+
 /// \page VmbChannelCreateGpadlFromMdl VmbChannelCreateGpadlFromMdl
 /// Establishes a GPADL describing a client-side buffer. The GPADL may be used
 /// in the server to access the buffer.  When this function returns, the server
@@ -2129,6 +2161,28 @@ FN_VMB_CHANNEL_CREATE_GPADL_FROM_PFN_LIST(
 typedef FN_VMB_CHANNEL_CREATE_GPADL_FROM_PFN_LIST *PFN_VMB_CHANNEL_CREATE_GPADL_FROM_PFN_LIST;
 FN_VMB_CHANNEL_CREATE_GPADL_FROM_PFN_LIST VmbChannelCreateGpadlFromPfnList;
 
+/// \page VmbChannelGetSystemAddressForGpadl VmbChannelGetSystemAddressForGpadl
+/// Retrieves the system virtual address for a GPADL mapped by \ref VmbChannelCreateGpadl. 
+/// If the GPADL is not currently mapped to a system address, then the GPADL
+/// will be mapped.
+///
+/// See \ref gpadl_theory for more information.
+///
+/// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
+/// \param Flags Not used.
+/// \param GpadlHandle The GPADL handle
+/// \param SystemAddress The system virtual address for the GPADL buffer
+typedef
+NTSTATUS
+FN_VMB_CHANNEL_GET_SYSTEM_ADDRESS_FOR_GPADL(
+    _In_ VMBCHANNEL Channel,
+    _In_ UINT32 Flags,
+    _In_ UINT32 GpadlHandle,
+    _Out_ PVOID* SystemAddress
+    );
+
+typedef FN_VMB_CHANNEL_GET_SYSTEM_ADDRESS_FOR_GPADL *PFN_VMB_CHANNEL_GET_SYSTEM_ADDRESS_FOR_GPADL;
+FN_VMB_CHANNEL_GET_SYSTEM_ADDRESS_FOR_GPADL VmbChannelGetSystemAddressForGpadl;
 
 /// \page VmbChannelDeleteGpadl VmbChannelDeleteGpadl
 /// Deletes a GPADL mapped by \ref VmbChannelCreateGpadlFromMdl or
@@ -2674,9 +2728,9 @@ typedef EVT_VMB_PACKET_COMPLETION_ROUTINE *PFN_VMB_PACKET_COMPLETION_ROUTINE;
 ///
 /// See \ref VmbPacketSend and related functions for information on sending packets.
 ///
-/// \param Channel A handle for the channel.  Allocated by \ref VmbChannelAllocate.
-/// \param CallbackContext A value provided by registration call \refVmbPacketSetCompletionRoutineEx
 /// \param Packet \ref VMBPACKET which just completed.
+/// \param CallbackContext A value provided by registration call \refVmbPacketSetCompletionRoutineEx
+/// \param Status The reason the packet is completed.
 /// \param Buffer This contains the completion response from the opposite endpoint, if any.
 /// \param BufferLength The length of Buffer in bytes.
 ///\code
@@ -2694,7 +2748,6 @@ EVT_VMB_PACKET_COMPLETION_ROUTINE_EX(
 
 typedef EVT_VMB_PACKET_COMPLETION_ROUTINE_EX *PFN_VMB_PACKET_COMPLETION_ROUTINE_EX;
 ///\endcode
-
 
 /// \page VmbPacketSetCompletionRoutine VmbPacketSetCompletionRoutine
 /// Sets the completion routine for a packet object. See \ref VmbPacketSend
@@ -2734,7 +2787,6 @@ FN_VMB_PACKET_SET_COMPLETION_ROUTINE_EX(
 
 typedef FN_VMB_PACKET_SET_COMPLETION_ROUTINE_EX *PFN_VMB_PACKET_SET_COMPLETION_ROUTINE_EX;
 FN_VMB_PACKET_SET_COMPLETION_ROUTINE_EX VmbPacketSetCompletionRoutineEx;
-
 
 ///\page EvtChannelPnpFailure EvtChannelPnpFailure
 /// \b EvtChannelPnpFailure
@@ -3081,7 +3133,6 @@ typedef struct _KMCL_CLIENT_INTERFACE_V5 {
 
 
 C_ASSERT(sizeof(KMCL_CLIENT_INTERFACE_V5) <= MAXUSHORT);
-
 
 #define KMCL_SERVER_INTERFACE_VERSION_V1     1
 /* Server interface versions 2 through 4 did not ship */

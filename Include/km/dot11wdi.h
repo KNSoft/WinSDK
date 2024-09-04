@@ -26,7 +26,7 @@
 
 
 
-#include <packon.h>
+#include <pshpack1.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -170,7 +170,7 @@ extern "C" {
 #define WDI_ABORT_TASK                                              75
 
 
-#include <packoff.h>
+#include <poppack.h>
 //
 // Type defs and constants
 //
@@ -452,7 +452,7 @@ typedef struct _WDI_FRAME_METADATA
 
 typedef NDIS_HANDLE TAL_TXRX_HANDLE, *PTAL_TXRX_HANDLE;
 
-#include <packon.h>
+#include <pshpack1.h>
 
 /*************************************************************************
 *
@@ -1279,14 +1279,20 @@ RTL_SIZEOF_THROUGH_FIELD(NDIS_MINIPORT_DRIVER_WDI_CHARACTERISTICS, LeCancelIdleN
 // For 1.1.9 compliant drivers
 #define WDI_VERSION_1_1_9                   ((1 << 16) | (1 << 8) | 0x9)
 
-#define WDI_VERSION_LATEST                  WDI_VERSION_1_1_9
+// For 1.1.10 compliant drivers
+#define WDI_VERSION_1_1_10                  ((1 << 16) | (1 << 8) | 0xa)
 
-#ifndef NDIS_EXPORT
-#  define NDIS_EXPORT
-#endif
+// For 1.1.11 compliant drivers
+#define WDI_VERSION_1_1_11                  ((1 << 16) | (1 << 8) | 0xb)
+
+#define WDI_VERSION_LATEST                  WDI_VERSION_1_1_11
+
+#ifndef NDIS_EXPORTED_ROUTINE
+#  define NDIS_EXPORTED_ROUTINE
+#endif // NDIS_EXPORTED_ROUTINE
 
 _IRQL_requires_(PASSIVE_LEVEL)
-NDIS_EXPORT
+NDIS_EXPORTED_ROUTINE
 NDIS_STATUS
 NdisMRegisterWdiMiniportDriver(
     _In_     DRIVER_OBJECT                              *DriverObject,
@@ -1298,7 +1304,7 @@ NdisMRegisterWdiMiniportDriver(
     );
 
 _IRQL_requires_(PASSIVE_LEVEL)
-NDIS_EXPORT
+NDIS_EXPORTED_ROUTINE
 VOID
 NdisMDeregisterWdiMiniportDriver(
     _In_     NDIS_MINIPORT_DRIVER_HANDLE                 NdisMiniportDriverHandle
@@ -1716,7 +1722,7 @@ Wdi_NdisMIndicateStatusEx(
 }
 #endif 
 
-#include <packoff.h>
+#include <poppack.h>
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion

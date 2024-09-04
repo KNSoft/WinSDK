@@ -13,7 +13,7 @@
 //#include <stdint.h>
 #include <sal.h>
 
-#if !defined (_M_ARM64) && !defined(_M_HYBRID_X86_ARM64)
+#if !defined (_M_ARM64) && !defined(_M_HYBRID_X86_ARM64) && !defined(_M_ARM64EC)
 #error This header is specific to ARM64 targets
 #endif  /* !defined (_M_ARM64) */
 

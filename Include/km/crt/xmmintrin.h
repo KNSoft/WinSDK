@@ -99,7 +99,7 @@ typedef union __declspec(intrin_type) _CRT_ALIGN(16) __m128 {
  } __m128;
 #endif //!_PREFIX_
 
-#ifndef _INC_MALLOC
+#if !defined(_INC_MALLOC) && !defined(_CHPE_X86_ARM64_)
 /* pick up _mm_malloc() and _mm_free() */
 #include <malloc.h>
 #endif

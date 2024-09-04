@@ -317,7 +317,17 @@ _Check_return_ _CRTIMP size_t __cdecl wcsspn(_In_z_ const wchar_t * _Str, _In_z_
 _Check_return_ 
 _When_(return != 0, _Ret_range_(_Str, _Str+_String_length_(_Str)-1))
 _CRTIMP _CONST_RETURN wchar_t * __cdecl wcsstr(_In_z_ const wchar_t * _Str, _In_z_ const wchar_t * _SubStr);
+#ifndef HIDE_WCSTOK
+#ifdef _DLL
+wchar_t* __cdecl wcstok_mvcrt_legacy_two_parameter_form(_Inout_opt_z_ wchar_t* _Str, _In_z_ const wchar_t* _Delim);
+_Check_return_ _CRT_INSECURE_DEPRECATE_CORE(wcstok_s) static inline wchar_t* wcstok(_Inout_opt_z_ wchar_t* _Str, _In_z_ const wchar_t* _Delim)
+{
+    return wcstok_mvcrt_legacy_two_parameter_form(_Str, _Delim);
+}
+#else
 _Check_return_ _CRT_INSECURE_DEPRECATE_CORE(wcstok_s) _CRTIMP wchar_t * __cdecl wcstok(_Inout_opt_z_ wchar_t * _Str, _In_z_ const wchar_t * _Delim);
+#endif
+#endif
 #if __STDC_WANT_SECURE_LIB__
 _Check_return_ _CRTIMP_ALT wchar_t * __ALTDECL wcstok_s(_Inout_opt_z_ wchar_t * _Str, _In_z_ const wchar_t * _Delim, _Inout_ _Deref_prepost_opt_z_ wchar_t ** _Context);
 #endif

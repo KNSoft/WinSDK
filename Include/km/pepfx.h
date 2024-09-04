@@ -561,6 +561,7 @@ typedef PEPCALLBACKPOWERONCRASHDUMPDEVICE *PPEPCALLBACKPOWERONCRASHDUMPDEVICE;
 #define PEP_NOTIFY_PPM_QUERY_DISCRETE_PERF_STATES       0x29 
 #define PEP_NOTIFY_PPM_QUERY_DOMAIN_INFO                0x2a 
 #define PEP_NOTIFY_PPM_PERF_SET_STATE                   0x2b 
+#define PEP_NOTIFY_PPM_QUERY_PERF_EPP_SUPPORT           0x2c 
 typedef struct _PEP_PREPARE_DEVICE {
     PCUNICODE_STRING DeviceId;
     BOOLEAN DeviceAccepted;
@@ -873,7 +874,7 @@ typedef struct _PEP_PPM_QUERY_CAPABILITIES {
     BOOLEAN PerformanceStatesSupported;
     BOOLEAN ParkingSupported;
     UCHAR DiscretePerformanceStateCount;
-    BOOLEAN Reserved;
+    UCHAR Reserved;
 } PEP_PPM_QUERY_CAPABILITIES, *PPEP_PPM_QUERY_CAPABILITIES;
 
 typedef struct _PEP_PPM_QUERY_IDLE_STATES_V2 {
@@ -1005,6 +1006,15 @@ typedef struct _PEP_PPM_PERF_SET {
     ULONG TimeWindow;
     ULONG PerformanceTolerance;
 } PEP_PPM_PERF_SET, *PPEP_PPM_PERF_SET;
+
+typedef struct _PEP_PPM_PERF_SET_V2 {
+    ULONG MinimumPerformance;
+    ULONG MaximumPerformance;
+    ULONG DesiredPerformance;
+    ULONG TimeWindow;
+    ULONG PerformanceTolerance;
+    UCHAR EnergyPerformancePreference;
+} PEP_PPM_PERF_SET_V2, *PPEP_PPM_PERF_SET_V2;
 
 typedef struct _PEP_PROCESSOR_PARK_PREFERENCE {
     PEPHANDLE Processor; 
@@ -1263,7 +1273,12 @@ typedef struct _PEP_PPM_PERF_SET_STATE {
     UCHAR MinimumPerformanceState;
     UCHAR MaximumPerformanceState;
     UCHAR DesiredPerformanceState;
+    UCHAR EnergyPerformancePreference;
 } PEP_PPM_PERF_SET_STATE, *PPEP_PPM_PERF_SET_STATE;
+
+typedef struct _PEP_PPM_QUERY_PERF_EPP_SUPPORT {
+    BOOLEAN EnergyPerformancePreferenceSupported;
+} PEP_PPM_QUERY_PERF_EPP_SUPPORT, *PPEP_PPM_QUERY_PERF_EPP_SUPPORT;
 
 #if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 

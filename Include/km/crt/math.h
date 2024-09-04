@@ -314,7 +314,13 @@ _CRTIMP float  __cdecl sqrtf( _In_ float _X);
 _CRTIMP float __cdecl _logbf(_In_ float _X);
 _CRTIMP int    __cdecl _finitef(_In_ float _X);
 
-#if defined(_ARM64_) || defined(_M_HYBRID_X86_ARM64)
+#endif /* _M_ARM || _M_ARM64 */
+
+#if defined(_M_ARM64EC)
+_CRTIMP float  __cdecl fabsf( _In_ float  _X);
+#endif
+
+#if defined(_ARM64_) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC)
 #pragma intrinsic(fabsf)
 #pragma intrinsic(fabs)
 #pragma intrinsic(ceilf)
@@ -322,8 +328,6 @@ _CRTIMP int    __cdecl _finitef(_In_ float _X);
 #pragma intrinsic(floorf)
 #pragma intrinsic(floor)
 #endif
-
-#endif /* _M_ARM || _M_ARM64 */
 
 /* Macros defining long double functions to be their double counterparts
  * (long double is synonymous with double in this implementation).
@@ -359,7 +363,7 @@ _CRTIMP int    __cdecl _finitef(_In_ float _X);
 
 #define frexpf(x,y) ((float)frexp((double)(x),(y)))
 
-#if defined(_M_AMD64) || (defined(_M_IX86) && !defined(_M_HYBRID_X86_ARM64))
+#if (defined(_M_AMD64) && !defined(_M_ARM64EC)) || (defined(_M_IX86) && !defined(_M_HYBRID_X86_ARM64))
 #define fabsf(x)    ((float)fabs((double)(x)))
 #endif
 #define ldexpf(x,y) ((float)ldexp((double)(x),(y)))
@@ -455,7 +459,7 @@ inline float frexpf(_In_ float _X, _Out_ int *_Y)
         {return ((float)frexp((double)_X, _Y)); }
 
 #if     !defined(_M_IA64) 
-#if     !defined(_M_ARM) && !defined(_M_ARM64) && !defined(_M_HYBRID_X86_ARM64)
+#if     !defined(_M_ARM) && !defined(_M_ARM64) && !defined(_M_HYBRID_X86_ARM64) && !defined(_M_ARM64EC)
 inline float fabsf(_In_ float _X)
         {return ((float)fabs((double)_X)); }
 #endif

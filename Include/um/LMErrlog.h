@@ -1876,6 +1876,18 @@ NetErrorLogWrite (
      * changed the password.
      */
      
+#define NELOG_NetlogonDnsHostNameLowerCasingFailed       (ERRLOG2_BASE + 125)
+    /*
+     * The system failed to lowercase the currently configured host name. This
+     * conversion failed with the error code below. This may affect the system's
+     * ability to register SRV records, potentially affecting clients' ability
+     * to locate domain controllers.
+     *
+     * Error code: %1
+     *
+     * More information is available at https://aka.ms/lowercasehostnamesrvrecord
+     */
+
 #define NETLOG_NetlogonNonWindowsSupportsSecureRpc (ERRLOG2_BASE + 126)
     /*
      * The Netlogon service detected a non-windows account using secure RPC.

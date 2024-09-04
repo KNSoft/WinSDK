@@ -3,7 +3,7 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 8.01.0622 */
+ /* File created by MIDL compiler version 8.01.0626 */
 /* @@MIDL_FILE_HEADING(  ) */
 
 
@@ -35,6 +35,14 @@
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1020)
 #pragma once
+#endif
+
+#ifndef DECLSPEC_XFGVIRT
+#if _CONTROL_FLOW_GUARD_XFG
+#define DECLSPEC_XFGVIRT(base, func) __declspec(xfg_virtual(base, func))
+#else
+#define DECLSPEC_XFGVIRT(base, func)
+#endif
 #endif
 
 /* Forward Declarations */ 
@@ -223,38 +231,46 @@ EXTERN_C const IID IID_ISensorDriver;
     {
         BEGIN_INTERFACE
         
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             __RPC__in ISensorDriver * This,
             /* [in] */ __RPC__in REFIID riid,
             /* [annotation][iid_is][out] */ 
             _COM_Outptr_  void **ppvObject);
         
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             __RPC__in ISensorDriver * This);
         
+        DECLSPEC_XFGVIRT(IUnknown, Release)
         ULONG ( STDMETHODCALLTYPE *Release )( 
             __RPC__in ISensorDriver * This);
         
+        DECLSPEC_XFGVIRT(ISensorDriver, OnGetSupportedSensorObjects)
         HRESULT ( STDMETHODCALLTYPE *OnGetSupportedSensorObjects )( 
             __RPC__in ISensorDriver * This,
             /* [out] */ __RPC__deref_out_opt IPortableDeviceValuesCollection **ppSensorObjectCollection);
         
+        DECLSPEC_XFGVIRT(ISensorDriver, OnGetSupportedProperties)
         HRESULT ( STDMETHODCALLTYPE *OnGetSupportedProperties )( 
             __RPC__in ISensorDriver * This,
             /* [in][string] */ __RPC__in_string LPWSTR pwszSensorID,
             /* [out] */ __RPC__deref_out_opt IPortableDeviceKeyCollection **ppSupportedProperties);
         
+        DECLSPEC_XFGVIRT(ISensorDriver, OnGetSupportedDataFields)
         HRESULT ( STDMETHODCALLTYPE *OnGetSupportedDataFields )( 
             __RPC__in ISensorDriver * This,
             /* [in][string] */ __RPC__in_string LPWSTR pwszSensorID,
             /* [out] */ __RPC__deref_out_opt IPortableDeviceKeyCollection **ppSupportedDataFields);
         
+        DECLSPEC_XFGVIRT(ISensorDriver, OnGetSupportedEvents)
         HRESULT ( STDMETHODCALLTYPE *OnGetSupportedEvents )( 
             __RPC__in ISensorDriver * This,
             /* [in][string] */ __RPC__in_string LPWSTR pwszSensorID,
             /* [size_is][size_is][out] */ __RPC__deref_out_ecount_full_opt(*pulEventCount) GUID **ppSupportedEvents,
             /* [out] */ __RPC__out ULONG *pulEventCount);
         
+        DECLSPEC_XFGVIRT(ISensorDriver, OnGetProperties)
         HRESULT ( STDMETHODCALLTYPE *OnGetProperties )( 
             __RPC__in ISensorDriver * This,
             /* [in] */ __RPC__in_opt IWDFFile *pClientFile,
@@ -262,6 +278,7 @@ EXTERN_C const IID IID_ISensorDriver;
             /* [in] */ __RPC__in_opt IPortableDeviceKeyCollection *pProperties,
             /* [out] */ __RPC__deref_out_opt IPortableDeviceValues **ppPropertyValues);
         
+        DECLSPEC_XFGVIRT(ISensorDriver, OnGetDataFields)
         HRESULT ( STDMETHODCALLTYPE *OnGetDataFields )( 
             __RPC__in ISensorDriver * This,
             /* [in] */ __RPC__in_opt IWDFFile *pClientFile,
@@ -269,6 +286,7 @@ EXTERN_C const IID IID_ISensorDriver;
             /* [in] */ __RPC__in_opt IPortableDeviceKeyCollection *pDataFields,
             /* [out] */ __RPC__deref_out_opt IPortableDeviceValues **ppDataValues);
         
+        DECLSPEC_XFGVIRT(ISensorDriver, OnSetProperties)
         HRESULT ( STDMETHODCALLTYPE *OnSetProperties )( 
             __RPC__in ISensorDriver * This,
             /* [in] */ __RPC__in_opt IWDFFile *pClientFile,
@@ -276,26 +294,31 @@ EXTERN_C const IID IID_ISensorDriver;
             /* [in] */ __RPC__in_opt IPortableDeviceValues *pPropertiesToSet,
             /* [out] */ __RPC__deref_out_opt IPortableDeviceValues **ppResults);
         
+        DECLSPEC_XFGVIRT(ISensorDriver, OnClientConnect)
         HRESULT ( STDMETHODCALLTYPE *OnClientConnect )( 
             __RPC__in ISensorDriver * This,
             /* [in] */ __RPC__in_opt IWDFFile *pClientFile,
             /* [in][string] */ __RPC__in_string LPWSTR pwszSensorID);
         
+        DECLSPEC_XFGVIRT(ISensorDriver, OnClientDisconnect)
         HRESULT ( STDMETHODCALLTYPE *OnClientDisconnect )( 
             __RPC__in ISensorDriver * This,
             /* [in] */ __RPC__in_opt IWDFFile *pClientFile,
             /* [in][string] */ __RPC__in_string LPWSTR pwszSensorID);
         
+        DECLSPEC_XFGVIRT(ISensorDriver, OnClientSubscribeToEvents)
         HRESULT ( STDMETHODCALLTYPE *OnClientSubscribeToEvents )( 
             __RPC__in ISensorDriver * This,
             /* [in] */ __RPC__in_opt IWDFFile *pClientFile,
             /* [in][string] */ __RPC__in_string LPWSTR pwszSensorID);
         
+        DECLSPEC_XFGVIRT(ISensorDriver, OnClientUnsubscribeFromEvents)
         HRESULT ( STDMETHODCALLTYPE *OnClientUnsubscribeFromEvents )( 
             __RPC__in ISensorDriver * This,
             /* [in] */ __RPC__in_opt IWDFFile *pClientFile,
             /* [in][string] */ __RPC__in_string LPWSTR pwszSensorID);
         
+        DECLSPEC_XFGVIRT(ISensorDriver, OnProcessWpdMessage)
         HRESULT ( STDMETHODCALLTYPE *OnProcessWpdMessage )( 
             __RPC__in ISensorDriver * This,
             /* [in] */ __RPC__in_opt IUnknown *pUnkPortableDeviceValuesParams,
@@ -415,40 +438,49 @@ EXTERN_C const IID IID_ISensorClassExtension;
     {
         BEGIN_INTERFACE
         
+        DECLSPEC_XFGVIRT(IUnknown, QueryInterface)
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             __RPC__in ISensorClassExtension * This,
             /* [in] */ __RPC__in REFIID riid,
             /* [annotation][iid_is][out] */ 
             _COM_Outptr_  void **ppvObject);
         
+        DECLSPEC_XFGVIRT(IUnknown, AddRef)
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             __RPC__in ISensorClassExtension * This);
         
+        DECLSPEC_XFGVIRT(IUnknown, Release)
         ULONG ( STDMETHODCALLTYPE *Release )( 
             __RPC__in ISensorClassExtension * This);
         
+        DECLSPEC_XFGVIRT(ISensorClassExtension, Initialize)
         HRESULT ( STDMETHODCALLTYPE *Initialize )( 
             __RPC__in ISensorClassExtension * This,
             /* [in] */ __RPC__in_opt IUnknown *pWdfDeviceUnknown,
             /* [in] */ __RPC__in_opt IUnknown *pSensorDriverUnknown);
         
+        DECLSPEC_XFGVIRT(ISensorClassExtension, Uninitialize)
         HRESULT ( STDMETHODCALLTYPE *Uninitialize )( 
             __RPC__in ISensorClassExtension * This);
         
+        DECLSPEC_XFGVIRT(ISensorClassExtension, ProcessIoControl)
         HRESULT ( STDMETHODCALLTYPE *ProcessIoControl )( 
             __RPC__in ISensorClassExtension * This,
             /* [in] */ __RPC__in_opt IWDFIoRequest *pRequest);
         
+        DECLSPEC_XFGVIRT(ISensorClassExtension, PostEvent)
         HRESULT ( STDMETHODCALLTYPE *PostEvent )( 
             __RPC__in ISensorClassExtension * This,
             /* [in][string] */ __RPC__in_string LPWSTR pwszSensorID,
             /* [in] */ __RPC__in_opt IPortableDeviceValuesCollection *pEventCollection);
         
+        DECLSPEC_XFGVIRT(ISensorClassExtension, PostStateChange)
         HRESULT ( STDMETHODCALLTYPE *PostStateChange )( 
             __RPC__in ISensorClassExtension * This,
             /* [in][string] */ __RPC__in_string LPWSTR pwszSensorID,
             /* [in] */ SensorState state);
         
+        DECLSPEC_XFGVIRT(ISensorClassExtension, CleanupFile)
         HRESULT ( STDMETHODCALLTYPE *CleanupFile )( 
             __RPC__in ISensorClassExtension * This,
             /* [in] */ __RPC__in_opt IWDFFile *pWdfFile);

@@ -42,9 +42,9 @@ typedef struct _CPTABLEINFO {
     USHORT TransUniDefaultChar;         // translation of Unic default char (MB)
     USHORT DBCSCodePage;                // Non 0 for DBCS code pages
     UCHAR  LeadByte[MAXIMUM_LEADBYTES]; // lead byte ranges
-    PUSHORT MultiByteTable;             // pointer to MB translation table
-    PVOID   WideCharTable;              // pointer to WC translation table
-    PUSHORT DBCSRanges;                 // pointer to DBCS ranges
+    PUSHORT MultiByteTable;             // pointer to MB->Unicode translation table
+    PVOID   WideCharTable;              // pointer to WC (Unicode->CodePage) translation table
+    PUSHORT DBCSRanges;                 // pointer to DBCS ranges (UNUSED, DO NOT SET)
     PUSHORT DBCSOffsets;                // pointer to DBCS offsets
 } CPTABLEINFO, *PCPTABLEINFO;
 
@@ -54,6 +54,18 @@ typedef struct _NLSTABLEINFO {
     PUSHORT UpperCaseTable;             // 844 format upcase table
     PUSHORT LowerCaseTable;             // 844 format lower case table
 } NLSTABLEINFO, *PNLSTABLEINFO;
+
+typedef struct _RTL_NLS_STATE {
+    CPTABLEINFO DefaultAcpTableInfo;
+    CPTABLEINFO DefaultOemTableInfo;
+    PUSHORT ActiveCodePageData;
+    PUSHORT OemCodePageData;
+    PUSHORT LeadByteInfo;
+    PUSHORT OemLeadByteInfo;
+    PUSHORT CaseMappingData;
+    PUSHORT UnicodeUpcaseTable844;
+    PUSHORT UnicodeLowercaseTable844;
+} RTL_NLS_STATE, *PRTL_NLS_STATE;
 
 #if _MSC_VER >= 1200
 #pragma warning(pop)

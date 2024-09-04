@@ -109,6 +109,8 @@ __readgsqword (
     _In_ ULONG Offset
     );
 
+#if !defined(_M_ARM64EC)
+
 #pragma intrinsic(__readgsqword)
 
 __forceinline
@@ -120,6 +122,20 @@ KeGetCurrentThread (
 {
     return (struct _KTHREAD *)__readgsqword(0x188);
 }
+
+#else
+
+__forceinline
+PKTHREAD
+KeGetCurrentThread (
+    VOID
+    )
+
+{
+    return NULL; // ARM64EC_STUB
+}
+
+#endif // !defined(_M_ARM64EC)
 
 #endif // defined(_M_AMD64)
 
@@ -496,6 +512,19 @@ typedef struct _XSTATE_CONTEXT {
 #endif
 
 } XSTATE_CONTEXT, *PXSTATE_CONTEXT;
+
+typedef struct _KERNEL_CET_CONTEXT {
+    ULONG64 Ssp;
+    ULONG64 Rip;
+    USHORT SegCs;
+    USHORT Fill[3];
+} KERNEL_CET_CONTEXT, *PKERNEL_CET_CONTEXT;
+
+#if !defined(__midl) && !defined(MIDL_PASS)
+
+C_ASSERT(sizeof(KERNEL_CET_CONTEXT) == (3 * sizeof(ULONG64)));
+
+#endif
 
 
 
@@ -1382,10 +1411,12 @@ C_ASSERT(sizeof(XSAVE_FORMAT) == MAXIMUM_SUPPORTED_EXTENSION);
 
 #endif // _X86_
 
+//
 
+#if defined(_AMD64_)
 
-#ifdef _AMD64_
-
+//
+//
 
 #if defined(_M_AMD64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
@@ -1401,6 +1432,8 @@ extern "C" {
 #define BitTestAndComplement _bittestandcomplement
 #define BitTestAndSet _bittestandset
 #define BitTestAndReset _bittestandreset
+
+#if !defined(_M_ARM64EC)
 #define InterlockedBitTestAndSet _interlockedbittestandset
 #define InterlockedBitTestAndSetAcquire _interlockedbittestandset
 #define InterlockedBitTestAndSetRelease _interlockedbittestandset
@@ -1409,11 +1442,13 @@ extern "C" {
 #define InterlockedBitTestAndResetAcquire _interlockedbittestandreset
 #define InterlockedBitTestAndResetRelease _interlockedbittestandreset
 #define InterlockedBitTestAndResetNoFence _interlockedbittestandreset
+#endif // !defined(_M_ARM64EC)
 
 #define BitTest64 _bittest64
 #define BitTestAndComplement64 _bittestandcomplement64
 #define BitTestAndSet64 _bittestandset64
 #define BitTestAndReset64 _bittestandreset64
+#if !defined(_M_ARM64EC)
 #define InterlockedBitTestAndSet64 _interlockedbittestandset64
 #define InterlockedBitTestAndSet64Acquire _interlockedbittestandset64
 #define InterlockedBitTestAndSet64Release _interlockedbittestandset64
@@ -1422,6 +1457,7 @@ extern "C" {
 #define InterlockedBitTestAndReset64Acquire _interlockedbittestandreset64
 #define InterlockedBitTestAndReset64Release _interlockedbittestandreset64
 #define InterlockedBitTestAndReset64NoFence _interlockedbittestandreset64
+#endif // !defined(_M_ARM64EC)
 
 _Must_inspect_result_
 BOOLEAN
@@ -1557,6 +1593,30 @@ _BitScanReverse64 (
 //
 
 #define InterlockedIncrement16 _InterlockedIncrement16
+#define InterlockedDecrement16 _InterlockedDecrement16
+#define InterlockedCompareExchange16 _InterlockedCompareExchange16
+#define InterlockedAnd _InterlockedAnd
+#define InterlockedOr _InterlockedOr
+#define InterlockedXor _InterlockedXor
+#define InterlockedIncrement _InterlockedIncrement
+#define InterlockedDecrement _InterlockedDecrement
+#define InterlockedExchange _InterlockedExchange
+#define InterlockedExchangeAdd _InterlockedExchangeAdd
+#define InterlockedCompareExchange _InterlockedCompareExchange
+
+#define InterlockedAnd64 _InterlockedAnd64
+#define InterlockedOr64 _InterlockedOr64
+#define InterlockedXor64 _InterlockedXor64
+#define InterlockedIncrement64 _InterlockedIncrement64
+#define InterlockedDecrement64 _InterlockedDecrement64
+#define InterlockedExchange64 _InterlockedExchange64
+#define InterlockedExchangeAdd64 _InterlockedExchangeAdd64
+#define InterlockedCompareExchange64 _InterlockedCompareExchange64
+#define InterlockedCompareExchange128 _InterlockedCompareExchange128
+#define InterlockedExchangePointer _InterlockedExchangePointer
+#define InterlockedCompareExchangePointer _InterlockedCompareExchangePointer
+
+#if !defined(_M_ARM64EC)
 #define InterlockedIncrementAcquire16 _InterlockedIncrement16
 #define InterlockedIncrementRelease16 _InterlockedIncrement16
 #define InterlockedIncrementNoFence16 _InterlockedIncrement16
@@ -1659,6 +1719,7 @@ _BitScanReverse64 (
 #define InterlockedIncrementSizeTNoFence(a) InterlockedIncrement64((LONG64 *)a)
 #define InterlockedDecrementSizeT(a) InterlockedDecrement64((LONG64 *)a)
 #define InterlockedDecrementSizeTNoFence(a) InterlockedDecrement64((LONG64 *)a)
+#endif // !defined(_M_ARM64EC)
 
 SHORT
 InterlockedIncrement16 (
@@ -1748,7 +1809,7 @@ InterlockedAdd (
     return InterlockedExchangeAdd(Addend, Value) + Value;
 }
 
-#endif
+#endif // !defined(_X86AMD64_)
 
 LONG
 InterlockedCompareExchange (
@@ -1792,7 +1853,7 @@ _InlineInterlockedAdd64 (
     return InterlockedExchangeAdd64(Addend, Value) + Value;
 }
 
-#endif
+#endif // !defined(_X86AMD64_)
 
 LONG64
 InterlockedCompareExchange64 (
@@ -1941,13 +2002,23 @@ InterlockedXor16(
 
 #endif
 
-
+//
+//
 
 //
 // Define extended CPUID intrinsic.
 //
 
+#if !defined(_M_ARM64EC)
+
 #define CpuIdEx __cpuidex
+
+#else
+
+#define __cpuidex CpuIdEx
+#define __cpuid __CpuId
+
+#endif
 
 VOID
 __cpuidex (
@@ -1956,9 +2027,77 @@ __cpuidex (
     int SubLeaf
     );
 
+#if !defined(_M_ARM64EC)
+
 #pragma intrinsic(__cpuidex)
 
+#else
 
+// TODO-ARM64X: Implement CpuIdEx in a lib
+
+__forceinline
+VOID
+CpuIdEx(
+    int CPUInfo[4],
+    int Function,
+    int Subfunction
+    )
+{
+    (CPUInfo);     // reference to make compiler happy
+    (Function);    // reference to make compiler happy
+    (Subfunction); // reference to make compiler happy
+
+    CPUInfo[0] = 0;
+    CPUInfo[1] = 0;
+    CPUInfo[2] = 0;
+    CPUInfo[4] = 0;
+}
+
+__forceinline
+VOID
+__CpuId (
+    int CPUInfo[4],
+    int Function
+    )
+{
+    CpuIdEx(CPUInfo, Function, 0);
+}
+
+//
+// TODO-ARM64X: Emulate __readmsr/__writemsr behavior accurately.
+//
+
+__declspec(noreturn) void __fastfail(_In_ unsigned int);
+
+__forceinline
+unsigned __int64
+__readmsr(
+    _In_ unsigned long Register
+    )
+{
+    (Register); // reference to make compiler happy
+    __fastfail(0);
+    return 0;
+}
+
+__forceinline
+void
+__writemsr(
+    _In_ unsigned long Register,
+    _In_ unsigned __int64 Value
+    )
+{
+    (Register); // reference to make compiler happy
+    (Value);    // reference to make compiler happy
+    __fastfail(0);
+}
+
+#endif // !defined(_M_ARM64EC)
+
+//
+//
+
+#if !defined(_M_ARM64EC)
 
 //
 // Define function to flush a cache line.
@@ -1973,8 +2112,12 @@ _mm_clflush (
 
 #pragma intrinsic(_mm_clflush)
 
+#endif // !defined(_M_ARM64EC)
 
+//
+//
 
+#if !defined(_M_ARM64EC)
 
 VOID
 _ReadWriteBarrier (
@@ -1984,29 +2127,44 @@ _ReadWriteBarrier (
 #pragma intrinsic(_ReadWriteBarrier)
 
 //
-// Define memory fence intrinsics
+// Define memory fence intrinsics  TODO-ARM64X: Re-express in terms of ARM64?
 //
 
 #define FastFence __faststorefence
 
+#endif // !defined(_M_ARM64EC)
 
+//
+//
 
+// TODO-ARM64X: Re-express in terms of ARM64?
+#if !defined(_M_ARM64EC)
 
 #define LoadFence _mm_lfence
 #define MemoryFence _mm_mfence
 #define StoreFence _mm_sfence
 #define SpeculationFence LoadFence
 
+#endif
 
+//
+//
 
+// TODO-ARM64X: Re-express in terms of ARM64?
+#if !defined(_M_ARM64EC)
 
 VOID
 __faststorefence (
     VOID
     );
 
+#endif // !defined(_M_ARM64EC)
 
+//
+//
 
+// TODO-ARM64X: Intrinsics
+#if !defined(_M_ARM64EC)
 
 VOID
 _mm_lfence (
@@ -2039,6 +2197,8 @@ _m_prefetchw (
     _In_ volatile CONST VOID *Source
     );
 
+#endif // !defined(_M_ARM64EC)
+
 //
 // Define constants for use with _mm_prefetch.
 //
@@ -2048,13 +2208,21 @@ _m_prefetchw (
 #define _MM_HINT_T2     3
 #define _MM_HINT_NTA    0
 
+//
+//
 
-
+// TODO-ARM64X: Intrisincs
+#if !defined(_M_ARM64EC)
 
 #pragma intrinsic(__faststorefence)
 
+#endif // !defined(_M_ARM64EC)
 
+//
+//
 
+// TODO-ARM64X: Intrisincs
+#if !defined(_M_ARM64EC)
 
 #pragma intrinsic(_mm_pause)
 #pragma intrinsic(_mm_prefetch)
@@ -2062,6 +2230,10 @@ _m_prefetchw (
 #pragma intrinsic(_mm_mfence)
 #pragma intrinsic(_mm_sfence)
 #pragma intrinsic(_m_prefetchw)
+
+#endif // !defined(_M_ARM64EC)
+
+#if !defined(_M_ARM64EC)
 
 #define YieldProcessor _mm_pause
 #define MemoryBarrier __faststorefence
@@ -2077,6 +2249,8 @@ _m_prefetchw (
 #define PF_TEMPORAL_LEVEL_2 _MM_HINT_T1
 #define PF_TEMPORAL_LEVEL_3 _MM_HINT_T2
 #define PF_NON_TEMPORAL_LEVEL_ALL _MM_HINT_NTA
+
+#endif // !defined(_M_ARM64EC)
 
 //
 // Define get/set MXCSR intrinsics.
@@ -2095,8 +2269,15 @@ _mm_setcsr (
     _In_ unsigned int MxCsr
     );
 
+// TODO-ARM64X: Intrinsics
+#if !defined(_M_ARM64EC)
+
 #pragma intrinsic(_mm_getcsr)
 #pragma intrinsic(_mm_setcsr)
+
+#endif // !defined(_M_ARM64EC)
+
+#if !defined(_M_ARM64EC)
 
 //
 // Define function to get the caller's EFLAGs value.
@@ -2246,11 +2427,21 @@ UnsignedMultiplyHigh (
 #pragma intrinsic(__mulh)
 #pragma intrinsic(__umulh)
 
+#endif // !defined(_M_ARM64EC)
+
 //
 // Define population count intrinsic.
 //
 
+#if !defined(_M_ARM64EC)
+
 #define PopulationCount64 __popcnt64
+
+#else
+
+#define __popcnt64 PopulationCount64
+
+#endif // !defined(_M_ARM64EC)
 
 ULONG64
 PopulationCount64 (
@@ -2258,17 +2449,28 @@ PopulationCount64 (
     );
 
 #if _MSC_VER >= 1500
+#if !defined(_M_ARM64EC)
 
 #pragma intrinsic(__popcnt64)
 
-#endif
+#endif // !defined(_M_ARM64EC)
+#endif // _MSC_VER >= 1500
 
 //
 // Define functions to perform 128-bit shifts
 //
 
+#if !defined(_M_ARM64EC)
+
 #define ShiftLeft128 __shiftleft128
 #define ShiftRight128 __shiftright128
+
+#else
+
+#define __shiftleft128   ShiftLeft128
+#define __shiftright128  ShiftRight128
+
+#endif // !defined(_M_ARM64EC)
 
 ULONG64
 ShiftLeft128 (
@@ -2284,14 +2486,26 @@ ShiftRight128 (
     _In_ UCHAR Shift
     );
 
+#if !defined(_M_ARM64EC)
+
 #pragma intrinsic(__shiftleft128)
 #pragma intrinsic(__shiftright128)
+
+#endif // !defined(_M_ARM64EC)
 
 //
 // Define functions to perform 128-bit multiplies.
 //
 
+#if !defined(_M_ARM64EC)
+
 #define Multiply128 _mul128
+
+#else
+
+#define _mul128 Multiply128
+
+#endif // !defined(_M_ARM64EC)
 
 LONG64
 Multiply128 (
@@ -2300,11 +2514,13 @@ Multiply128 (
     _Out_ LONG64 *HighProduct
     );
 
+#if !defined(_M_ARM64EC)
+
 #pragma intrinsic(_mul128)
 
-#ifndef UnsignedMultiply128
+#endif // !defined(_M_ARM64EC)
 
-#define UnsignedMultiply128 _umul128
+#if !defined(UnsignedMultiply128)
 
 ULONG64
 UnsignedMultiply128 (
@@ -2313,9 +2529,37 @@ UnsignedMultiply128 (
     _Out_ ULONG64 *HighProduct
     );
 
+#if !defined(_M_ARM64EC)
+
+#define UnsignedMultiply128 _umul128
+
+#else
+
+#define _umul128 UnsignedMultiply128
+
+#endif // !defined(_M_ARM64EC)
+
+ULONG64
+UnsignedMultiply128 (
+    _In_ ULONG64 Multiplier,
+    _In_ ULONG64 Multiplicand,
+    _Out_ ULONG64 *HighProduct
+    );
+
+LONG64
+Multiply128 (
+    _In_ LONG64 Multiplier,
+    _In_ LONG64 Multiplicand,
+    _Out_ LONG64 *HighProduct
+    );
+
+#if !defined(_M_ARM64EC)
+
 #pragma intrinsic(_umul128)
 
-#endif
+#endif // !defined(_M_ARM64EC)
+
+#endif // !defined(UnsignedMultiply128)
 
 __forceinline
 LONG64
@@ -2375,7 +2619,7 @@ UnsignedMultiplyExtract128 (
 }
 
 //
-// Define functions to read and write the uer TEB and the system PCR/PRCB.
+// Define functions to read and write the user TEB and the system PCR/PRCB.
 //
 
 UCHAR
@@ -2422,6 +2666,9 @@ __writegsqword (
     _In_ ULONG64 Data
     );
 
+// TODO-ARM64X: Intrinsics
+#if !defined(_M_ARM64EC)
+
 #pragma intrinsic(__readgsbyte)
 #pragma intrinsic(__readgsword)
 #pragma intrinsic(__readgsdword)
@@ -2430,6 +2677,8 @@ __writegsqword (
 #pragma intrinsic(__writegsword)
 #pragma intrinsic(__writegsdword)
 #pragma intrinsic(__writegsqword)
+
+#endif // !defined(_M_ARM64EC)
 
 #if !defined(_MANAGED)
 
@@ -2490,6 +2739,8 @@ __addgsqword (
 
 #endif // !defined(_MANAGED)
 
+//
+//
 
 #ifdef __cplusplus
 }
@@ -2497,17 +2748,36 @@ __addgsqword (
 
 #endif // defined(_M_AMD64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
-
-
+//
+//
 
 typedef XSAVE_FORMAT XMM_SAVE_AREA32, *PXMM_SAVE_AREA32;
 
+//
+//
 
 #if defined(_KERNEL_MODE) || defined(_BOOT_ENVIRONMENT)
 
+#ifdef RELOCATABLE_USER_SHARED_DATA
+
+typedef struct _KUSER_SHARED_DATA KUSER_SHARED_DATA;
+
+extern KUSER_SHARED_DATA ki_user_shared_data;
+
+#define SharedUserData        (&ki_user_shared_data)
+#define KI_USER_SHARED_DATA   ((ULONG_PTR)&ki_user_shared_data)
+
+#else
+
 #define KI_USER_SHARED_DATA 0xFFFFF78000000000UI64
 
+//
+// const is on the pointer, not the struct.
+//
+
 #define SharedUserData ((KUSER_SHARED_DATA * const)KI_USER_SHARED_DATA)
+
+#endif
 
 #define SharedInterruptTime (KI_USER_SHARED_DATA + 0x8)
 #define SharedSystemTime (KI_USER_SHARED_DATA + 0x14)
@@ -2521,15 +2791,14 @@ typedef XSAVE_FORMAT XMM_SAVE_AREA32, *PXMM_SAVE_AREA32;
 #define KeQueryTickCount(CurrentCount)                                      \
     *((PULONG64)(CurrentCount)) = *((volatile ULONG64 *)(SharedTickCount))
 
-#endif
+#endif // defined(_KERNEL_MODE) || defined(_BOOT_ENVIRONMENT)
 
+//
+//
 
+#endif // defined(_AMD64_)
 
-
-#endif // _AMD64_
-
-
-
+//
 
 #ifdef _ARM_
 
@@ -2550,6 +2819,7 @@ extern "C" {
 
 #pragma intrinsic(__yield)
 #pragma intrinsic(__prefetch)
+#pragma intrinsic(__prefetchw)
 
 #if (_MSC_FULL_VER >= 170040825)
 #pragma intrinsic(__dmb)
@@ -2576,8 +2846,8 @@ YieldProcessor (
 
 #define MemoryBarrier()             __dmb(_ARM_BARRIER_SY)
 #define PreFetchCacheLine(l,a)      __prefetch((const void *) (a))
-#define PrefetchForWrite(p)         __prefetch((const void *) (p))
-#define ReadForWriteAccess(p)       (*(p))
+#define PrefetchForWrite(p)         __prefetchw((const void *) (p))
+#define ReadForWriteAccess(p)       (__prefetchw((const void *) (p)), *(p))
 
 #define _DataSynchronizationBarrier()        __dsb(_ARM_BARRIER_SY)
 #define _InstructionSynchronizationBarrier() __isb(_ARM_BARRIER_SY)
@@ -3221,16 +3491,19 @@ YieldProcessor (
 
 #endif // _ARM_
 
+//
 
-#if defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
+#if defined(_ARM64_) || defined(_CHPE_X86_ARM64_) || defined(_ARM64EC_)
 
+//
+//
 
 #if !defined(_M_CEE_PURE)
 #if !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
 #include <intrin.h>
 
-#if defined(_M_ARM64)
+#if defined(_M_ARM64) || defined(_M_ARM64EC)
 
 #pragma intrinsic(__readx18byte)
 #pragma intrinsic(__readx18word)
@@ -3274,11 +3547,13 @@ YieldProcessor (
 #define BitTestAndSet64 _bittestandset64
 #define BitTestAndReset64 _bittestandreset64
 #define InterlockedBitTestAndSet64 _interlockedbittestandset64
-#define InterlockedBitTestAndSet64Acquire _interlockedbittestandset64
-#define InterlockedBitTestAndSet64Release _interlockedbittestandset64
+#define InterlockedBitTestAndSet64Acquire _interlockedbittestandset64_acq
+#define InterlockedBitTestAndSet64Release _interlockedbittestandset64_rel
+#define InterlockedBitTestAndSet64NoFence _interlockedbittestandset64_nf
 #define InterlockedBitTestAndReset64 _interlockedbittestandreset64
-#define InterlockedBitTestAndReset64Acquire _interlockedbittestandreset64
-#define InterlockedBitTestAndReset64Release _interlockedbittestandreset64
+#define InterlockedBitTestAndReset64Acquire _interlockedbittestandreset64_acq
+#define InterlockedBitTestAndReset64Release _interlockedbittestandreset64_rel
+#define InterlockedBitTestAndReset64NoFence _interlockedbittestandreset64_nf
 
 #pragma intrinsic(_bittest)
 #pragma intrinsic(_bittestandcomplement)
@@ -3287,9 +3562,11 @@ YieldProcessor (
 #pragma intrinsic(_interlockedbittestandset)
 #pragma intrinsic(_interlockedbittestandset_acq)
 #pragma intrinsic(_interlockedbittestandset_rel)
+#pragma intrinsic(_interlockedbittestandset_nf)
 #pragma intrinsic(_interlockedbittestandreset)
 #pragma intrinsic(_interlockedbittestandreset_acq)
 #pragma intrinsic(_interlockedbittestandreset_rel)
+#pragma intrinsic(_interlockedbittestandreset_nf)
 
 #pragma intrinsic(_bittest64)
 #pragma intrinsic(_bittestandcomplement64)
@@ -3299,9 +3576,11 @@ YieldProcessor (
 #pragma intrinsic(_interlockedbittestandset64)
 #pragma intrinsic(_interlockedbittestandset64_acq)
 #pragma intrinsic(_interlockedbittestandset64_rel)
+#pragma intrinsic(_interlockedbittestandset64_nf)
 #pragma intrinsic(_interlockedbittestandreset64)
 #pragma intrinsic(_interlockedbittestandreset64_acq)
 #pragma intrinsic(_interlockedbittestandreset64_rel)
+#pragma intrinsic(_interlockedbittestandreset64_nf)
 
 //
 // Define bit scan functions
@@ -3586,9 +3865,9 @@ YieldProcessor (
 #define InterlockedDecrementSizeT(a) InterlockedDecrement64((LONG64 *)a)
 #define InterlockedDecrementSizeTNoFence(a) InterlockedDecrementNoFence64((LONG64 *)a)
 
-#endif // defined(_M_ARM64)
+#endif // defined(_M_ARM64) || defined(_M_ARM64EC)
 
-#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
+#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC)
 
 #pragma intrinsic(__getReg)
 #pragma intrinsic(__getCallerReg)
@@ -3606,6 +3885,20 @@ YieldProcessor (
 
 #pragma intrinsic(__yield)
 #pragma intrinsic(__prefetch)
+#pragma intrinsic(__prefetch2)
+
+#define ARM64_PREFETCH_PLD  (0 << 3)
+#define ARM64_PREFETCH_PLI  (1 << 3)
+#define ARM64_PREFETCH_PST  (2 << 3)
+
+#define ARM64_PREFETCH_L1   (0 << 1)
+#define ARM64_PREFETCH_L2   (1 << 1)
+#define ARM64_PREFETCH_L3   (2 << 1)
+
+#define ARM64_PREFETCH_KEEP (0 << 0)
+#define ARM64_PREFETCH_STRM (1 << 0)
+
+#define ARM64_PREFETCH(a,b,c) (ARM64_PREFETCH_##a | ARM64_PREFETCH_##b | ARM64_PREFETCH_##c)
 
 #pragma intrinsic(__dmb)
 #pragma intrinsic(__dsb)
@@ -3615,9 +3908,9 @@ YieldProcessor (
 #pragma intrinsic(_WriteBarrier)
 
 #define MemoryBarrier()             __dmb(_ARM64_BARRIER_SY)
-#define PreFetchCacheLine(l,a)      __prefetch((const void *) (a))
-#define PrefetchForWrite(p)         __prefetch((const void *) (p))
-#define ReadForWriteAccess(p)       (*(p))
+#define PreFetchCacheLine(l,a)      __prefetch2((const void *) (a), ARM64_PREFETCH(PLD, L1, KEEP))
+#define PrefetchForWrite(p)         __prefetch2((const void *) (p), ARM64_PREFETCH(PST, L1, KEEP))
+#define ReadForWriteAccess(p)       (__prefetch2((const void *) (p), ARM64_PREFETCH(PST, L1, KEEP)), *(p))
 
 #define _DataSynchronizationBarrier()        __dsb(_ARM64_BARRIER_SY)
 #define _InstructionSynchronizationBarrier() __isb(_ARM64_BARRIER_SY)
@@ -3645,6 +3938,8 @@ YieldProcessor (
 #pragma intrinsic(__iso_volatile_store32)
 #pragma intrinsic(__iso_volatile_store64)
 
+//
+//
 
 FORCEINLINE
 CHAR
@@ -3870,6 +4165,8 @@ WriteNoFence64 (
     return;
 }
 
+//
+//
 
 //
 // Define coprocessor access intrinsics.  Coprocessor 15 contains
@@ -3985,7 +4282,260 @@ ReadPMC (
 #pragma intrinsic(__mulh)
 #pragma intrinsic(__umulh)
 
-#endif // defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
+#endif // defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC)
+
+
+//
+// Define population count intrinsic.
+//
+
+#if !defined(PopulationCount64)
+
+__forceinline
+ULONG64
+PopulationCount64 (
+    _In_ ULONG64 operand
+    )
+{
+    // log(n) population count
+
+    ULONG64 highBits = (operand & 0xAAAAAAAAAAAAAAAA) >> 1;
+    ULONG64 lowBits = operand & 0x5555555555555555;
+    ULONG64 bitSum = highBits + lowBits;
+
+    highBits = (bitSum & 0xCCCCCCCCCCCCCCCC) >> 2;
+    lowBits = bitSum & 0x3333333333333333;
+    bitSum = highBits + lowBits;
+
+    highBits = (bitSum & 0xF0F0F0F0F0F0F0F0) >> 4;
+    lowBits = bitSum & 0x0F0F0F0F0F0F0F0F;
+    bitSum = highBits + lowBits;
+
+    highBits = (bitSum & 0xFF00FF00FF00FF00) >> 8;
+    lowBits = bitSum & 0x00FF00FF00FF00FF;
+    bitSum = highBits + lowBits;
+
+    highBits = (bitSum & 0xFFFF0000FFFF0000) >> 16;
+    lowBits = bitSum & 0x0000FFFF0000FFFF;
+    bitSum = highBits + lowBits;
+
+    highBits = (bitSum & 0xFFFFFFFF00000000) >> 32;
+    lowBits = bitSum & 0x00000000FFFFFFFF;
+    bitSum = highBits + lowBits;
+
+    return bitSum;
+}
+
+#endif // !defined(PopulationCount64)
+
+//
+// Define functions to perform 128-bit shifts
+//
+
+#if !defined(ShiftLeft128)
+
+#define __shiftleft128   ShiftLeft128
+#define __shiftright128  ShiftRight128
+
+__forceinline
+ULONG64
+ShiftLeft128 (
+    _In_ ULONG64 LowPart,
+    _In_ ULONG64 HighPart,
+    _In_ UCHAR Shift
+    )
+{
+    Shift &= 63;
+
+    if (Shift == 0) {
+        return HighPart;
+    }
+
+    return (HighPart << Shift) | (LowPart >> (64 - Shift));
+}
+
+__forceinline
+ULONG64
+ShiftRight128 (
+    _In_ ULONG64 LowPart,
+    _In_ ULONG64 HighPart,
+    _In_ UCHAR Shift
+    )
+{
+    Shift &= 63;
+
+    if (Shift == 0) {
+        return LowPart;
+    }
+
+    return (LowPart >> Shift) | (HighPart << (64 - Shift));
+}
+
+#endif // !defined(ShiftLeft128)
+
+//
+// Define functions to perform 128-bit multiplies.
+//
+
+#if !defined(UnsignedMultiply128)
+
+__forceinline
+ULONG64
+UnsignedMultiply128 (
+    _In_ ULONG64 Multiplier,
+    _In_ ULONG64 Multiplicand,
+    _Out_ ULONG64 *HighProduct
+    )
+
+/*++
+
+Routine Description:
+
+    Calculates the 128 bit product of two 64 bit integers.
+
+Arguments:
+
+    Multiplier -
+
+    Multiplicand -
+
+    HighProduct - Receives the high 64 bits of the product.
+
+Return Value:
+
+    Low 64 bits of the product.
+
+--*/
+
+{
+
+#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC)
+
+    *HighProduct = UnsignedMultiplyHigh(Multiplier, Multiplicand);
+    return Multiplier * Multiplicand;
+
+#else
+
+    ULONG64 HiMultiplier = Multiplier >> 32;
+    ULONG64 LoMultiplier = Multiplier & 0xFFFFFFFF;
+    ULONG64 HiMultiplicand = Multiplicand >> 32;
+    ULONG64 LoMultiplicand = Multiplicand & 0xFFFFFFFF;
+    ULONG64 CrossTerm1 = (HiMultiplier * LoMultiplicand);
+    ULONG64 CrossTerm2 = (LoMultiplier * HiMultiplicand);
+
+    ULONG64 ResultLo = (LoMultiplier * LoMultiplicand);
+    ULONG64 ResultHi = (HiMultiplier * HiMultiplicand);
+
+    // Add the cross-terms and propagate carries across all 128 bits.
+
+    ResultLo += (CrossTerm1 << 32);
+    ResultHi += (CrossTerm1 >> 32) + (ResultLo < (CrossTerm1 << 32));
+
+    ResultLo += (CrossTerm2 << 32);
+    ResultHi += (CrossTerm2 >> 32) + (ResultLo < (CrossTerm2 << 32));
+
+    *HighProduct = ResultHi;
+
+    return ResultLo;
+
+#endif
+
+}
+
+__forceinline
+LONG64
+Multiply128 (
+    _In_ LONG64 Multiplier,
+    _In_ LONG64 Multiplicand,
+    _Out_ LONG64 *HighProduct
+    )
+{
+    LONG64 Result = (LONG64)UnsignedMultiply128((ULONG64)Multiplier, (ULONG64)Multiplicand, (ULONG64 *)HighProduct);
+
+    *HighProduct -= (Multiplier >> 63) * Multiplicand;
+    *HighProduct -= Multiplier * (Multiplicand >> 63);
+
+    return Result;
+}
+
+#endif // !defined(UnsignedMultiply128)
+
+#if !defined(_M_ARM64EC)
+
+__forceinline
+LONG64
+MultiplyExtract128 (
+    _In_ LONG64 Multiplier,
+    _In_ LONG64 Multiplicand,
+    _In_ UCHAR Shift
+    )
+
+{
+
+    LONG64 extractedProduct;
+    LONG64 highProduct;
+    LONG64 lowProduct;
+    BOOLEAN negate;
+    ULONG64 uhighProduct;
+    ULONG64 ulowProduct;
+
+    lowProduct = Multiply128(Multiplier, Multiplicand, &highProduct);
+    negate = FALSE;
+    uhighProduct = (ULONG64)highProduct;
+    ulowProduct = (ULONG64)lowProduct;
+    if (highProduct < 0) {
+        negate = TRUE;
+        uhighProduct = (ULONG64)(-highProduct);
+        ulowProduct = (ULONG64)(-lowProduct);
+        if (ulowProduct != 0) {
+            uhighProduct -= 1;
+        }
+    }
+
+    extractedProduct = (LONG64)ShiftRight128(ulowProduct, uhighProduct, Shift);
+    if (negate != FALSE) {
+        extractedProduct = -extractedProduct;
+    }
+
+    return extractedProduct;
+}
+
+__forceinline
+ULONG64
+UnsignedMultiplyExtract128 (
+    _In_ ULONG64 Multiplier,
+    _In_ ULONG64 Multiplicand,
+    _In_ UCHAR Shift
+    )
+
+{
+
+    ULONG64 extractedProduct;
+    ULONG64 highProduct;
+    ULONG64 lowProduct;
+
+    lowProduct = UnsignedMultiply128(Multiplier, Multiplicand, &highProduct);
+    extractedProduct = ShiftRight128(lowProduct, highProduct, Shift);
+    return extractedProduct;
+}
+
+#endif // !defined(_M_ARM64EC)
+
+
+
+#if defined(_M_ARM64EC)
+
+unsigned int
+_mm_getcsr (
+    VOID
+    );
+
+VOID
+_mm_setcsr (
+    _In_ unsigned int MxCsr
+    );
+
+#endif // defined(_M_ARM64EC)
 
 #endif // !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
@@ -4005,12 +4555,33 @@ YieldProcessor (
 }
 #endif // defined(_M_CEE_PURE)
 
+//
+//
 
-#if (defined(_KERNEL_MODE) || defined(_BOOT_ENVIRONMENT)) && defined(_ARM64_)
+#if defined(_ARM64_)
+
+#if (defined(_KERNEL_MODE) || defined(_BOOT_ENVIRONMENT))
+
+#ifdef RELOCATABLE_USER_SHARED_DATA
+
+typedef struct _KUSER_SHARED_DATA KUSER_SHARED_DATA;
+
+extern KUSER_SHARED_DATA ki_user_shared_data;
+
+#define SharedUserData        (&ki_user_shared_data)
+#define KI_USER_SHARED_DATA   ((ULONG_PTR)&ki_user_shared_data)
+
+#else   // !(defined(RELOCATABLE_USER_SHARED_DATA)
 
 #define KI_USER_SHARED_DATA 0xFFFFF78000000000UI64
 
+//
+// const is on the pointer, not the struct.
+//
+
 #define SharedUserData ((KUSER_SHARED_DATA * const)KI_USER_SHARED_DATA)
+
+#endif  // (defined(RELOCATABLE_USER_SHARED_DATA)
 
 #define SharedInterruptTime (KI_USER_SHARED_DATA + 0x8)
 #define SharedSystemTime (KI_USER_SHARED_DATA + 0x14)
@@ -4024,14 +4595,18 @@ YieldProcessor (
 #define KeQueryTickCount(CurrentCount)                                      \
     *((PULONG64)(CurrentCount)) = ReadNoFence64((const volatile LONG64 *)(SharedTickCount))
 
-#endif // (defined(_KERNEL_MODE) || defined(_BOOT_ENVIRONMENT)) && defined(_ARM64_)
+#endif  //(defined(_KERNEL_MODE) || defined(_BOOT_ENVIRONMENT))
 
+#endif  // defined(_ARM64_)
+//
+//
 
-#endif // defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
+#endif // defined(_ARM64_) || defined(_CHPE_X86_ARM64_) || defined(_ARM64EC_)
 
+//
 
 #if !defined(RC_INVOKED) && !defined(MIDL_PASS)
-#if ((defined(_M_AMD64) || defined(_M_IX86)) && !defined(_M_HYBRID_X86_ARM64)) || defined(_M_CEE_PURE)
+#if ((defined(_M_AMD64) || defined(_M_IX86)) && !defined(_M_HYBRID_X86_ARM64) && !defined(_M_ARM64EC)) || defined(_M_CEE_PURE)
 
 #ifdef __cplusplus
 extern "C" {
@@ -4257,7 +4832,7 @@ WriteNoFence64 (
 }
 #endif
 
-#endif // defined(_M_AMD64) || defined(_M_IX86) || defined(_M_CEE_PURE)
+#endif // ((defined(_M_AMD64) || defined(_M_IX86)) && !defined(_M_HYBRID_X86_ARM64) && !defined(_M_ARM64EC)) || defined(_M_CEE_PURE)
 
 //
 // Define "raw" operations which have no ordering or atomicity semantics.
@@ -4948,7 +5523,7 @@ DbgRaiseAssertionFailure (
 
 #endif
 
-#if defined(_AMD64_)
+#if defined(_AMD64_) && !defined(_ARM64EC_)
 
 #if defined(_M_AMD64)
 
@@ -4965,7 +5540,7 @@ __int2c (
 
 #endif // !defined(_PREFAST_)
 
-#endif // defined(_M_AMD64)
+#endif // defined(_M_AMD64) && !defined(_ARM64EC_)
 
 #elif defined(_X86_) && !defined(_M_HYBRID_X86_ARM64)
 
@@ -5016,10 +5591,15 @@ DbgRaiseAssertionFailure (
 
 #if defined(_M_IA64)
 
+#pragma prefast( push )
+#pragma prefast( disable: 28301 )
+
 void
 __break(
     _In_ int StIIM
     );
+
+#pragma prefast( pop )
 
 #pragma intrinsic (__break)
 
@@ -5034,14 +5614,19 @@ __break(
 
 #endif // defined(_M_IA64)
 
-#elif defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
+#elif defined(_ARM64_) || defined(_CHPE_X86_ARM64_) || defined(_ARM64EC_)
 
-#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
+#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC)
+
+#pragma prefast( push )
+#pragma prefast( disable: 28301 )
 
 void
 __break(
     _In_ int Code
     );
+
+#pragma prefast( pop )
 
 #pragma intrinsic (__break)
 
@@ -5051,7 +5636,7 @@ __break(
 
 #endif // !defined(_PREFAST_)
 
-#endif // defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64)
+#endif // defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC)
 
 #elif defined(_ARM_)
 
@@ -5104,7 +5689,7 @@ __emit(
 // and NT_FRE_ASSERT below.
 #define NT_ASSERT_ACTION(_exp) \
     ((!(_exp)) ? \
-        (__annotation(L"Debug", L"AssertFail", L#_exp), \
+        (__annotation(L"Debug", L"AssertFail", L## #_exp), \
          DbgRaiseAssertionFailure(), FALSE) : \
         TRUE)
 
@@ -5463,7 +6048,7 @@ typedef ULONG SECURITY_INFORMATION, *PSECURITY_INFORMATION;
 #define LABEL_SECURITY_INFORMATION                  (0x00000010L)
 #define ATTRIBUTE_SECURITY_INFORMATION              (0x00000020L)
 #define SCOPE_SECURITY_INFORMATION                  (0x00000040L)
-#define PROCESS_TRUST_LABEL_SECURITY_INFORMATION    (0x00000080L) 
+#define PROCESS_TRUST_LABEL_SECURITY_INFORMATION    (0x00000080L)
 #define ACCESS_FILTER_SECURITY_INFORMATION          (0x00000100L)
 #define BACKUP_SECURITY_INFORMATION                 (0x00010000L)
 
@@ -6161,6 +6746,8 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 #define FILE_DEVICE_HOLOGRAPHIC         0x0000005b
 #define FILE_DEVICE_SDFXHCI             0x0000005c
 #define FILE_DEVICE_UCMUCSI             0x0000005d
+#define FILE_DEVICE_PRM                 0x0000005e
+#define FILE_DEVICE_EVENT_COLLECTOR     0x0000005f
 
 //
 // Macro definition for defining IOCTL and FSCTL function control codes.  Note
@@ -6324,7 +6911,7 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 #define FILE_ATTRIBUTE_NOT_CONTENT_INDEXED  0x00002000  
 #define FILE_ATTRIBUTE_ENCRYPTED            0x00004000  
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN8)
+#if (NTDDI_VERSION >= NTDDI_WIN8)
 
 #define FILE_ATTRIBUTE_INTEGRITY_STREAM     0x00008000  
 
@@ -6336,19 +6923,19 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 //
 #define FILE_ATTRIBUTE_VIRTUAL              0x00010000  
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN8)
+#if (NTDDI_VERSION >= NTDDI_WIN8)
 
 #define FILE_ATTRIBUTE_NO_SCRUB_DATA        0x00020000  
 
 #endif
 
-#if (_WIN32_WINNT > _WIN32_WINNT_WINBLUE || (_WIN32_WINNT == _WIN32_WINNT_WINBLUE && defined(WINBLUE_KBSPRING14)))
+#if ((NTDDI_VERSION > NTDDI_WINBLUE) || ((NTDDI_VERSION == NTDDI_WINBLUE) && defined(WINBLUE_KBSPRING14)))
 
 #define FILE_ATTRIBUTE_EA                   0x00040000  
 
 #endif
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS2) || (NTDDI_VERSION >= NTDDI_VISTASP1) //Vista check is for backward compatibility.
 
 #define FILE_ATTRIBUTE_PINNED               0x00080000  
 #define FILE_ATTRIBUTE_UNPINNED             0x00100000  
@@ -6381,9 +6968,9 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 #define TREE_CONNECT_ATTRIBUTE_INTEGRITY    0x00008000  
 #define TREE_CONNECT_ATTRIBUTE_GLOBAL       0x00000004  
 
-#endif  // _WIN32_WINNT_WIN10_RS2
+#endif  // NTDDI_WIN10_RS2
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS5)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
 
 //
 // Pins the tree connection to memory even after the handle is closed. Prior to RS5, this used
@@ -6395,9 +6982,9 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 
 #define TREE_CONNECT_ATTRIBUTE_PINNED       0x00000002  
 
-#endif  // _WIN32_WINNT_WIN10_RS5
+#endif  // NTDDI_WIN10_RS5
 
-#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS3)
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
 
 //
 //  The value of this flag is chosen to overlap with an internal bit used by NTFS.
@@ -6405,19 +6992,19 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 
 #define FILE_ATTRIBUTE_STRICTLY_SEQUENTIAL  0x20000000  
 
-#endif
+#endif  // NTDDI_WIN10_RS3
 
-#if (_WIN32_WINNT < _WIN32_WINNT_WIN8)
+#if (NTDDI_VERSION < NTDDI_WIN8)
 
 #define FILE_ATTRIBUTE_VALID_FLAGS          0x00007fb7
 #define FILE_ATTRIBUTE_VALID_SET_FLAGS      0x000031a7
 
-#elif (_WIN32_WINNT < _WIN32_WINNT_WIN10_RS2)
+#elif (NTDDI_VERSION < NTDDI_WIN10_RS2)
 
 #define FILE_ATTRIBUTE_VALID_FLAGS          0x0002ffb7
 #define FILE_ATTRIBUTE_VALID_SET_FLAGS      0x000231a7
 
-#elif (_WIN32_WINNT < _WIN32_WINNT_WIN10_RS3)
+#elif (NTDDI_VERSION < NTDDI_WIN10_RS3)
 
 #define FILE_ATTRIBUTE_VALID_FLAGS              0x005affb7
 #define FILE_ATTRIBUTE_VALID_SET_FLAGS          0x001a31a7
@@ -6498,8 +7085,6 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 
 #define TREE_CONNECT_NO_CLIENT_BUFFERING          0x00000008  // matches with FILE_NO_INTERMEDIATE_BUFFERING
 #define TREE_CONNECT_WRITE_THROUGH                0x00000002  // matches with FILE_WRITE_THROUGH
-#define TREE_CONNECT_USE_COMPRESSION              0x00008000  // matches with FILE_NO_COMPRESSION
-
 #endif  // _WIN32_WINNT_WIN10_RS5
 
 //
@@ -6586,6 +7171,7 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 #define FILE_CHARACTERISTIC_CSV                     0x00010000
 #define FILE_DEVICE_ALLOW_APPCONTAINER_TRAVERSAL    0x00020000
 #define FILE_PORTABLE_DEVICE                        0x00040000
+#define FILE_REMOTE_DEVICE_VSMB                     0x00080000
 #define FILE_DEVICE_REQUIRE_SECURITY_CHECK          0x00100000
 
 
@@ -6779,6 +7365,7 @@ typedef enum _FILE_INFORMATION_CLASS {
     FileLinkInformationExBypassAccessCheck,         // 73
     FileStorageReserveIdInformation,                // 74
     FileCaseSensitiveInformationForceAccessCheck,   // 75
+    FileKnownFolderInformation,                     // 76
 
     FileMaximumInformation
 } FILE_INFORMATION_CLASS, *PFILE_INFORMATION_CLASS;
@@ -7267,27 +7854,27 @@ typedef struct _IO_ERROR_LOG_MESSAGE {
 // Open/Create Options
 //
 
-#define REG_OPTION_RESERVED         (0x00000000L)   // Parameter is reserved
+#define REG_OPTION_RESERVED             (0x00000000L)   // Parameter is reserved
 
-#define REG_OPTION_NON_VOLATILE     (0x00000000L)   // Key is preserved
-                                                    // when system is rebooted
+#define REG_OPTION_NON_VOLATILE         (0x00000000L)   // Key is preserved
+                                                        // when system is rebooted
 
-#define REG_OPTION_VOLATILE         (0x00000001L)   // Key is not preserved
-                                                    // when system is rebooted
+#define REG_OPTION_VOLATILE             (0x00000001L)   // Key is not preserved
+                                                        // when system is rebooted
 
-#define REG_OPTION_CREATE_LINK      (0x00000002L)   // Created key is a
-                                                    // symbolic link
+#define REG_OPTION_CREATE_LINK          (0x00000002L)   // Created key is a
+                                                        // symbolic link
 
-#define REG_OPTION_BACKUP_RESTORE   (0x00000004L)   // open for backup or restore
-                                                    // special access rules
-                                                    // privilege required
+#define REG_OPTION_BACKUP_RESTORE       (0x00000004L)   // open for backup or restore
+                                                        // special access rules
+                                                        // privilege required
 
-#define REG_OPTION_OPEN_LINK        (0x00000008L)   // Open symbolic link
+#define REG_OPTION_OPEN_LINK            (0x00000008L)   // Open symbolic link
 
-#define REG_OPTION_DONT_VIRTUALIZE  (0x00000010L)   // Disable Open/Read/Write
-                                                    // virtualization for this
-                                                    // open and the resulting
-                                                    // handle.
+#define REG_OPTION_DONT_VIRTUALIZE      (0x00000010L)   // Disable Open/Read/Write
+                                                        // virtualization for this
+                                                        // open and the resulting
+                                                        // handle.
 
 #define REG_LEGAL_OPTION            \
                 (REG_OPTION_RESERVED            |\
@@ -7672,6 +8259,7 @@ typedef struct _MEM_ADDRESS_REQUIREMENTS {
 #define MEM_EXTENDED_PARAMETER_NONPAGED_LARGE           0x00000008
 #define MEM_EXTENDED_PARAMETER_NONPAGED_HUGE            0x00000010
 #define MEM_EXTENDED_PARAMETER_SOFT_FAULT_PAGES         0x00000020
+#define MEM_EXTENDED_PARAMETER_EC_CODE                  0x00000040
 
 //
 // Use the high ULONG64 bit of the MEM_EXTENDED_PARAMETER to indicate
@@ -7692,6 +8280,7 @@ typedef enum MEM_EXTENDED_PARAMETER_TYPE {
     MemExtendedParameterPartitionHandle,
     MemExtendedParameterUserPhysicalHandle,
     MemExtendedParameterAttributeFlags,
+    MemExtendedParameterImageMachine,
     MemExtendedParameterMax
 } MEM_EXTENDED_PARAMETER_TYPE, *PMEM_EXTENDED_PARAMETER_TYPE;
 
@@ -7714,12 +8303,58 @@ typedef struct DECLSPEC_ALIGN(8) MEM_EXTENDED_PARAMETER {
 
 } MEM_EXTENDED_PARAMETER, *PMEM_EXTENDED_PARAMETER;
 
+#define MEMORY_CURRENT_PARTITION_HANDLE         ((HANDLE) (LONG_PTR) -1)
+#define MEMORY_SYSTEM_PARTITION_HANDLE          ((HANDLE) (LONG_PTR) -2)
+#define MEMORY_EXISTING_VAD_PARTITION_HANDLE    ((HANDLE) (LONG_PTR) -3)
+
+//
+// Dedicated memory attributes.
+//
+
+#define MEM_DEDICATED_ATTRIBUTE_NOT_SPECIFIED   ((ULONG64) -1)
+
+typedef enum _MEM_DEDICATED_ATTRIBUTE_TYPE {
+    MemDedicatedAttributeReadBandwidth = 0,
+    MemDedicatedAttributeReadLatency,
+    MemDedicatedAttributeWriteBandwidth,
+    MemDedicatedAttributeWriteLatency,
+    MemDedicatedAttributeMax
+} MEM_DEDICATED_ATTRIBUTE_TYPE, *PMEM_DEDICATED_ATTRIBUTE_TYPE;
+
+
+
+typedef struct _MEMORY_PARTITION_DEDICATED_MEMORY_OPEN_INFORMATION {
+
+    //
+    // Type identifier of the dedicated memory to open.
+    //
+
+    ULONG64 DedicatedMemoryTypeId;
+
+    //
+    // Attributes and desired access for the new handle to be opened and stored
+    // in DedicatedMemoryPartitionHandle.
+    //
+
+    ULONG HandleAttributes;
+    ACCESS_MASK DesiredAccess;
+
+    //
+    // Returned handle to the opened dedicated memory partition.
+    //
+
+    HANDLE DedicatedMemoryPartitionHandle;
+
+} MEMORY_PARTITION_DEDICATED_MEMORY_OPEN_INFORMATION, *PMEMORY_PARTITION_DEDICATED_MEMORY_OPEN_INFORMATION;
 
 #define SEC_64K_PAGES               0x00080000  
 #define SEC_FILE                    0x00800000  
+#define SEC_IMAGE                   0x01000000  
 #define SEC_RESERVE                 0x04000000  
 #define SEC_COMMIT                  0x08000000  
+#define SEC_NOCACHE                 0x10000000  
 #define SEC_LARGE_PAGES             0x80000000  
+#define SEC_IMAGE_NO_EXECUTE (SEC_IMAGE | SEC_NOCACHE)  
 
 typedef enum MEM_SECTION_EXTENDED_PARAMETER_TYPE {
     MemSectionExtendedParameterInvalidType = 0,
@@ -7785,6 +8420,38 @@ typedef CLIENT_ID *PCLIENT_ID;
 #define ZwCurrentThread() NtCurrentThread()           
 #define NtCurrentSession() ( (HANDLE)(LONG_PTR) -3 )  
 #define ZwCurrentSession() NtCurrentSession()         
+
+//
+// Partition Specific Access Rights.
+//
+
+#define MEMORY_PARTITION_QUERY_ACCESS  0x0001
+#define MEMORY_PARTITION_MODIFY_ACCESS 0x0002
+
+#define MEMORY_PARTITION_ALL_ACCESS (STANDARD_RIGHTS_REQUIRED |      \
+                                     SYNCHRONIZE |                   \
+                                     MEMORY_PARTITION_QUERY_ACCESS | \
+                                     MEMORY_PARTITION_MODIFY_ACCESS)
+
+
+typedef enum _PARTITION_INFORMATION_CLASS {                     
+    SystemMemoryPartitionInformation = 0,                       
+    SystemMemoryPartitionDedicatedMemoryInformation = 9,        
+    SystemMemoryPartitionOpenDedicatedMemory = 10,              
+} PARTITION_INFORMATION_CLASS, *PPARTITION_INFORMATION_CLASS;   
+
+_Must_inspect_result_
+__kernel_entry NTSYSCALLAPI
+NTSTATUS
+NTAPI
+NtManagePartition (
+    _In_ HANDLE TargetHandle,
+    _In_opt_ HANDLE SourceHandle,
+    _In_ PARTITION_INFORMATION_CLASS PartitionInformationClass,
+    _Inout_updates_bytes_(PartitionInformationLength) PVOID PartitionInformation,
+    _In_ ULONG PartitionInformationLength
+    );
+
 
 //
 // =========================================
@@ -9735,6 +10402,7 @@ typedef enum {
     EnergyTrackerQuery,
     UpdateBlackBoxRecorder,
     SessionAllowExternalDmaDevices,
+    SendSuspendResumeNotification,
     PowerInformationLevelMaximum
 } POWER_INFORMATION_LEVEL;
 
@@ -9838,7 +10506,7 @@ typedef enum {
     MonitorRequestReasonWinrt,
     MonitorRequestReasonUserInputKeyboard,
     MonitorRequestReasonUserInputMouse,
-    MonitorRequestReasonUserInputTouch,
+    MonitorRequestReasonUserInputTouchpad,
     MonitorRequestReasonUserInputPen,
     MonitorRequestReasonUserInputAccelerometer,
     MonitorRequestReasonUserInputHid,
@@ -9856,6 +10524,10 @@ typedef enum {
     MonitorRequestReasonDisplayRequiredUnDim,
     MonitorRequestReasonBatteryCountChangeSuppressed,
     MonitorRequestReasonResumeModernStandby,
+    MonitorRequestReasonTerminalInit,
+    MonitorRequestReasonPdcSignalSensorsHumanPresence,          // PDC_SIGNAL_PROVIDER_SENSORS_HUMAN_PRESENCE_MONITOR
+    MonitorRequestReasonBatteryPreCritical,
+    MonitorRequestReasonUserInputTouch,
     MonitorRequestReasonMax
 } POWER_MONITOR_REQUEST_REASON;
 
@@ -9996,6 +10668,20 @@ typedef enum _POWER_PLATFORM_ROLE {
 typedef struct _POWER_PLATFORM_INFORMATION {
     BOOLEAN AoAc;
 } POWER_PLATFORM_INFORMATION, *PPOWER_PLATFORM_INFORMATION;
+
+//
+// Enum which defines the effective altitude of a power setting.
+//
+
+typedef enum POWER_SETTING_ALTITUDE {
+    ALTITUDE_GROUP_POLICY,
+    ALTITUDE_USER,
+    ALTITUDE_RUNTIME_OVERRIDE,
+    ALTITUDE_PROVISIONING,
+    ALTITUDE_OEM_CUSTOMIZATION,
+    ALTITUDE_INTERNAL_OVERRIDE,
+    ALTITUDE_OS_DEFAULT,
+} POWER_SETTING_ALTITUDE, *PPOWER_SETTING_ALTITUDE;
 
 //
 // System power manager capabilities
@@ -11485,6 +12171,12 @@ RtlAssert(
 #define FAST_FAIL_ETW_CORRUPTION                    61
 #define FAST_FAIL_RIO_ABORT                         62
 #define FAST_FAIL_INVALID_PFN                       63
+#define FAST_FAIL_GUARD_ICALL_CHECK_FAILURE_XFG     64
+#define FAST_FAIL_CAST_GUARD                        65         // Known to compiler, must retain value 65
+#define FAST_FAIL_HOST_VISIBILITY_CHANGE            66
+#define FAST_FAIL_KERNEL_CET_SHADOW_STACK_ASSIST    67
+#define FAST_FAIL_PATCH_CALLBACK_FAILED             68
+#define FAST_FAIL_NTDLL_PATCH_FAILED                69
 #define FAST_FAIL_INVALID_FAST_FAIL_CODE            0xFFFFFFFF
 
 #if _MSC_VER >= 1610
@@ -12143,6 +12835,9 @@ RtlInitUnicodeString(
 
 #if !defined(MIDL_PASS)
 
+#pragma prefast(push)
+#pragma prefast(disable : 6101, "Out parameter is not written fully or at all.")
+
 FORCEINLINE
 VOID
 RtlSanitizeUnicodeStringPadding(
@@ -12150,27 +12845,27 @@ RtlSanitizeUnicodeStringPadding(
     )
 {
 
+#if defined(_WIN64)
+
     ULONG PaddingSize;
     ULONG PaddingStart;
-
-#if defined(_WIN64)
 
     PaddingStart = FIELD_OFFSET(UNICODE_STRING, MaximumLength) +
                    sizeof(String->MaximumLength);
 
     PaddingSize = FIELD_OFFSET(UNICODE_STRING, Buffer) - PaddingStart;
 
-    memset((PVOID)((ULONG_PTR)String + PaddingStart), 0, PaddingSize);
+    memset((PCH)String + PaddingStart, 0, PaddingSize);
 
 #else
 
     UNREFERENCED_PARAMETER(String);
-    UNREFERENCED_PARAMETER(PaddingSize);
-    UNREFERENCED_PARAMETER(PaddingStart);
 
 #endif
 
 }
+
+#pragma prefast(pop)
 
 
 
@@ -12304,7 +12999,7 @@ typedef struct _RTL_QUERY_REGISTRY_TABLE {
 #define RTL_QUERY_REGISTRY_TYPECHECK_MASK       (0xff << RTL_QUERY_REGISTRY_TYPECHECK_SHIFT)
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
-////@[comment("MVI_tracked")]
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -12939,7 +13634,7 @@ RtlSecureZeroMemory(
 {
     volatile char *vptr = (volatile char *)ptr;
 
-#if defined(_M_AMD64)
+#if defined(_M_AMD64) && !defined(_M_ARM64EC)
 
     __stosb((PUCHAR)((ULONG64)vptr), 0, cnt);
 
@@ -12947,7 +13642,7 @@ RtlSecureZeroMemory(
 
     while (cnt) {
 
-#if !defined(_M_CEE) && (defined(_M_ARM) || defined(_M_ARM64))
+#if !defined(_M_CEE) && (defined(_M_ARM) || defined(_M_ARM64) || defined(_M_ARM64EC))
 
         __iso_volatile_store8(vptr, 0);
 
@@ -12961,7 +13656,7 @@ RtlSecureZeroMemory(
         cnt--;
     }
 
-#endif // _M_AMD64
+#endif // _M_AMD64 && !defined(_M_ARM64EC)
 
     return ptr;
 }
@@ -12974,7 +13669,8 @@ RtlSecureZeroMemory(
 #define RtlZeroBytes RtlZeroMemory
 #define RtlFillBytes RtlFillMemory
 
-#if defined(_M_AMD64)
+// TODO-ARM64X: These are ASM functions on amd64. Not sure if we care about their cache non-pollution property if native ARM64 didn't...
+#if defined(_M_AMD64) && !defined(_M_ARM64EC)
 
 NTSYSAPI
 VOID
@@ -15186,7 +15882,6 @@ RtlCompareMemory(
     _In_ SIZE_T Length
     );
 
-
 #endif
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
@@ -16952,8 +17647,8 @@ typedef struct _DISPATCHER_HEADER {
                     BOOLEAN Minimal : 1;
                     BOOLEAN Reserved4 : 2;
                     BOOLEAN AltSyscall : 1;
-                    BOOLEAN UmsScheduled : 1;
-                    BOOLEAN UmsPrimary : 1;
+                    BOOLEAN Emulation : 1;
+                    BOOLEAN Reserved5 : 1;
                 } DUMMYSTRUCTNAME;
 
 #endif
@@ -17044,6 +17739,7 @@ typedef struct _FAST_MUTEX {
 
 
 
+// end_halextenv
 
 //
 // Types to use to contain PFNs and their counts.
@@ -17111,6 +17807,7 @@ KeRaiseIrqlToDpcLevel (
 #endif
 
 
+// begin_halextenv
 
 //
 // I/O space read and write macros.
@@ -17226,6 +17923,7 @@ WRITE_REGISTER_BUFFER_ULONG(
     _In_ ULONG   Count
     );
 
+// end_halextenv
 
 
 NTHALAPI
@@ -17682,7 +18380,7 @@ KeRestoreFloatingPointState (
 
 
 
-#if defined(_M_AMD64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
+#if defined(_M_AMD64) && !defined(_M_ARM64EC) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
 //
 // Define intrinsic function to do in's and out's.
@@ -17784,7 +18482,7 @@ __outdwordstring (
 }
 #endif
 
-#endif // defined(_M_AMD64) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
+#endif // defined(_M_AMD64) && !defined(_M_ARM64EC) && !defined(RC_INVOKED) && !defined(MIDL_PASS)
 
 
 #if defined(_AMD64_) // ntddk nthal irqls
@@ -17808,6 +18506,9 @@ typedef ULONG64 PFN_NUMBER, *PPFN_NUMBER;
 
 #define ALLOC_PRAGMA 1
 #define ALLOC_DATA_PRAGMA 1
+
+
+#if !defined(_ARM64EC_)
 
 //
 // Define functions to read and write CR8.
@@ -17844,12 +18545,15 @@ __writecr8 (
 }
 #endif
 
+#endif // !defined(_ARM64EC_)
 
 
 
+// begin_halextenv
 
 
-#if defined(_AMD64_) && !defined(DSF_DRIVER)
+
+#if defined(_AMD64_) && !defined(_ARM64EC_) && !defined(DSF_DRIVER)
 
 //
 // I/O space read and write macros.
@@ -18063,6 +18767,7 @@ WRITE_REGISTER_BUFFER_ULONG64 (
     return;
 }
 
+// end_halextenv
 
 
 
@@ -18246,6 +18951,7 @@ WRITE_PORT_BUFFER_ULONG (
 
 
 
+// begin_halextenv
 
 #ifdef __cplusplus
 }
@@ -18253,6 +18959,7 @@ WRITE_PORT_BUFFER_ULONG (
 
 #endif
 
+// end_halextenv
 
 
 
@@ -18319,7 +19026,8 @@ KeGetCurrentProcessorIndex (
 #endif
 
 
-#if !defined(_CROSS_PLATFORM_)
+// TODO-ARM64X: Redefine FastFence() to allow us to re-enable KeMemoryBarrier()?
+#if !defined(_CROSS_PLATFORM_) && !defined(_ARM64EC_)
 
 CFORCEINLINE
 VOID
@@ -18445,6 +19153,8 @@ KeRestoreFloatingPointState (
 
 #endif
 
+#if defined(NT_INLINE_GET_CURRENT_IRQL) || defined(_NTHALLIB_)
+
 _IRQL_requires_max_(HIGH_LEVEL)
 _IRQL_saves_
 CFORCEINLINE
@@ -18471,8 +19181,29 @@ Return Value:
 
 {
 
+#if !defined(_ARM64EC_)
+
     return (KIRQL)ReadCR8();
+
+#else
+
+    return 0;  // ARM64EC_STUB
+
+#endif // !defined(_ARM64EC_)
+
 }
+
+#else
+
+_IRQL_requires_max_(HIGH_LEVEL)
+_IRQL_saves_
+NTKERNELAPI
+KIRQL
+KeGetCurrentIrql (
+    VOID
+    );
+
+#endif
 
 #define KeRaiseIrql(a,b) *(b) = KfRaiseIrql(a)
 
@@ -18546,10 +19277,19 @@ Return Value:
 
 {
 
+#if !defined(_ARM64EC_)
+
     NT_ASSERT(KeGetCurrentIrql() >= NewIrql);
 
     WriteCR8(NewIrql);
     return;
+
+#else
+
+    UNREFERENCED_PARAMETER(NewIrql);
+    return;
+
+#endif // !defined(_ARM64EC_)
 }
 
 _IRQL_requires_max_(HIGH_LEVEL)
@@ -18580,6 +19320,8 @@ Return Value:
 
 {
 
+#if !defined(_ARM64EC_)
+
     KIRQL OldIrql;
 
     OldIrql = KeGetCurrentIrql();
@@ -18588,6 +19330,14 @@ Return Value:
 
     WriteCR8(NewIrql);
     return OldIrql;
+
+#else
+
+    UNREFERENCED_PARAMETER(NewIrql);
+    return 0;
+
+#endif // !defined(_ARM64EC_)
+
 }
 
 #if !defined(_NTHALLIB_)
@@ -18647,6 +19397,7 @@ extern "C" {
 #endif
 
 
+// begin_halextenv
 
 #if defined(_ARM_)
 
@@ -19043,8 +19794,7 @@ WRITE_REGISTER_BUFFER_ULONG (
     return;
 }
 
-
-
+// end_halextenv
 
 
 NTHALAPI
@@ -19135,6 +19885,7 @@ WRITE_PORT_BUFFER_ULONG (
     );
 
 
+// begin_halextenv
 
 #ifdef __cplusplus
 }
@@ -19142,6 +19893,7 @@ WRITE_PORT_BUFFER_ULONG (
 
 #endif
 
+// end_halextenv
 
 
 //
@@ -19444,6 +20196,7 @@ extern "C" {
 
 
 
+// begin_halextenv
 
 #if defined(_ARM64_)
 
@@ -19996,7 +20749,7 @@ WRITE_REGISTER_BUFFER_ULONG64 (
     return;
 }
 
-
+// end_halextenv
 
 
 
@@ -20089,7 +20842,7 @@ WRITE_PORT_BUFFER_ULONG (
 
 
 
-
+// begin_halextenv
 
 #ifdef __cplusplus
 }
@@ -20097,6 +20850,7 @@ WRITE_PORT_BUFFER_ULONG (
 
 #endif
 
+// end_halextenv
 
 
 
@@ -20372,6 +21126,8 @@ typedef enum _LOGICAL_PROCESSOR_RELATIONSHIP {
     RelationCache,
     RelationProcessorPackage,
     RelationGroup,
+    RelationProcessorDie,
+    RelationNumaNodeEx,
     RelationAll = 0xffff
 } LOGICAL_PROCESSOR_RELATIONSHIP;
 
@@ -20419,8 +21175,13 @@ typedef struct _PROCESSOR_RELATIONSHIP {
 
 typedef struct _NUMA_NODE_RELATIONSHIP {
     ULONG NodeNumber;
-    UCHAR Reserved[20];
-    GROUP_AFFINITY GroupMask;
+    UCHAR Reserved[18];
+    USHORT GroupCount;
+    union {
+        GROUP_AFFINITY GroupMask;
+        _Field_size_(GroupCount)
+        GROUP_AFFINITY GroupMasks[ANYSIZE_ARRAY];
+    } DUMMYUNIONNAME;
 } NUMA_NODE_RELATIONSHIP, *PNUMA_NODE_RELATIONSHIP;
 
 typedef struct _CACHE_RELATIONSHIP {
@@ -20429,8 +21190,13 @@ typedef struct _CACHE_RELATIONSHIP {
     USHORT LineSize;
     ULONG CacheSize;
     PROCESSOR_CACHE_TYPE Type;
-    UCHAR Reserved[20];
-    GROUP_AFFINITY GroupMask;
+    UCHAR Reserved[18];
+    USHORT GroupCount;
+    union {
+        GROUP_AFFINITY GroupMask;
+        _Field_size_(GroupCount)
+        GROUP_AFFINITY GroupMasks[ANYSIZE_ARRAY];
+    } DUMMYUNIONNAME;
 } CACHE_RELATIONSHIP, *PCACHE_RELATIONSHIP;
 
 typedef struct _PROCESSOR_GROUP_INFO {
@@ -20444,7 +21210,7 @@ typedef struct _GROUP_RELATIONSHIP {
     USHORT MaximumGroupCount;
     USHORT ActiveGroupCount;
     UCHAR Reserved[20];
-    PROCESSOR_GROUP_INFO GroupInfo[ANYSIZE_ARRAY];
+    _Field_size_(ActiveGroupCount) PROCESSOR_GROUP_INFO GroupInfo[ANYSIZE_ARRAY];
 } GROUP_RELATIONSHIP, *PGROUP_RELATIONSHIP;
 
 _Struct_size_bytes_(Size) struct _SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX {
@@ -20559,6 +21325,9 @@ typedef struct _SYSTEM_POOL_ZEROING_INFORMATION {
 #define PF_AVX_INSTRUCTIONS_AVAILABLE               39   
 #define PF_AVX2_INSTRUCTIONS_AVAILABLE              40   
 #define PF_AVX512F_INSTRUCTIONS_AVAILABLE           41   
+#define PF_ERMS_AVAILABLE                           42   
+#define PF_ARM_V82_DP_INSTRUCTIONS_AVAILABLE        43   
+#define PF_ARM_V83_JSCVT_INSTRUCTIONS_AVAILABLE     44   
 
 typedef enum _ALTERNATIVE_ARCHITECTURE_TYPE {
     StandardDesign,                 // None == 0 == standard design
@@ -20595,13 +21364,14 @@ typedef enum _ALTERNATIVE_ARCHITECTURE_TYPE {
 //
 
 
-#define EXCEPTION_NONCONTINUABLE 0x1    // Noncontinuable exception
-#define EXCEPTION_UNWINDING 0x2         // Unwind is in progress
-#define EXCEPTION_EXIT_UNWIND 0x4       // Exit unwind is in progress
-#define EXCEPTION_STACK_INVALID 0x8     // Stack out of limits or unaligned
-#define EXCEPTION_NESTED_CALL 0x10      // Nested exception handler call
-#define EXCEPTION_TARGET_UNWIND 0x20    // Target unwind in progress
-#define EXCEPTION_COLLIDED_UNWIND 0x40  // Collided exception handler call
+#define EXCEPTION_NONCONTINUABLE 0x1        // Noncontinuable exception
+#define EXCEPTION_UNWINDING 0x2             // Unwind is in progress
+#define EXCEPTION_EXIT_UNWIND 0x4           // Exit unwind is in progress
+#define EXCEPTION_STACK_INVALID 0x8         // Stack out of limits or unaligned
+#define EXCEPTION_NESTED_CALL 0x10          // Nested exception handler call
+#define EXCEPTION_TARGET_UNWIND 0x20        // Target unwind in progress
+#define EXCEPTION_COLLIDED_UNWIND 0x40      // Collided exception handler call
+#define EXCEPTION_SOFTWARE_ORIGINATE 0x80   // Exception originated in software
 
 #define EXCEPTION_UNWIND (EXCEPTION_UNWINDING | EXCEPTION_EXIT_UNWIND | \
                           EXCEPTION_TARGET_UNWIND | EXCEPTION_COLLIDED_UNWIND)
@@ -20790,6 +21560,7 @@ typedef struct _KWAIT_BLOCK {
     union {
         struct _KTHREAD *Thread;
         struct _KQUEUE *NotificationQueue;
+        struct _KDPC *Dpc;
     };
 
     PVOID Object;
@@ -21999,7 +22770,8 @@ typedef enum _KBUGCHECK_CALLBACK_REASON {
     KbCallbackAddPages,
     KbCallbackSecondaryMultiPartDumpData,
     KbCallbackRemovePages,
-    KbCallbackTriageDumpData
+    KbCallbackTriageDumpData,
+    KbCallbackReserved2,
 } KBUGCHECK_CALLBACK_REASON;
 
 typedef
@@ -22500,6 +23272,25 @@ KeShouldYieldProcessor (
     VOID
     );
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+NTKERNELAPI
+NTSTATUS
+KeQueryNodeActiveAffinity2 (
+    _In_ USHORT NodeNumber,
+    _Out_writes_to_opt_(GroupAffinitiesCount, *GroupAffinitiesRequired)
+    PGROUP_AFFINITY GroupAffinities,
+    _In_ USHORT GroupAffinitiesCount,
+    _Out_ PUSHORT GroupAffinitiesRequired
+    );
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+NTKERNELAPI
+ULONG
+KeQueryNodeActiveProcessorCount (
+    _In_ USHORT NodeNumber
+    );
+#endif
 
 #if defined(_X86_) || defined(_ARM_)
 
@@ -22947,6 +23738,10 @@ typedef _Enum_is_bitflag_ enum _POOL_TYPE {
 
 #define POOL_ZERO_ALLOCATION      1024
 
+
+
+
+
 //
 // POOL_FLAG values
 //
@@ -23201,12 +23996,27 @@ ExAllocatePoolWithTagPriority (
 typedef enum POOL_EXTENDED_PARAMETER_TYPE {
     PoolExtendedParameterInvalidType = 0,
     PoolExtendedParameterPriority,
+    PoolExtendedParameterSecurePool,
+    PoolExtendedParameterNumaNode,
     PoolExtendedParameterMax
 } POOL_EXTENDED_PARAMETER_TYPE, *PPOOL_EXTENDED_PARAMETER_TYPE;
 
 #define POOL_EXTENDED_PARAMETER_TYPE_BITS    8
 #define POOL_EXTENDED_PARAMETER_REQUIRED_FIELD_BITS    1
 #define POOL_EXTENDED_PARAMETER_RESERVED_BITS    (64 - POOL_EXTENDED_PARAMETER_TYPE_BITS - POOL_EXTENDED_PARAMETER_REQUIRED_FIELD_BITS)
+
+#define SECURE_POOL_FLAGS_NONE       0x0
+#define SECURE_POOL_FLAGS_FREEABLE   0x1
+#define SECURE_POOL_FLAGS_MODIFIABLE 0x2
+
+typedef struct _POOL_EXTENDED_PARAMS_SECURE_POOL {
+    HANDLE SecurePoolHandle;
+    PVOID Buffer;
+    ULONG_PTR Cookie;
+    ULONG SecurePoolFlags;
+} POOL_EXTENDED_PARAMS_SECURE_POOL;
+
+typedef ULONG POOL_NODE_REQUIREMENT;
 
 typedef struct _POOL_EXTENDED_PARAMETER {
     struct {
@@ -23219,11 +24029,15 @@ typedef struct _POOL_EXTENDED_PARAMETER {
         ULONG64 Reserved2;
         PVOID Reserved3;
         EX_POOL_PRIORITY Priority;
+        POOL_EXTENDED_PARAMS_SECURE_POOL* SecurePoolParams;
+        POOL_NODE_REQUIREMENT PreferredNode;
     } DUMMYUNIONNAME;
 } POOL_EXTENDED_PARAMETER, *PPOOL_EXTENDED_PARAMETER;
 typedef CONST POOL_EXTENDED_PARAMETER *PCPOOL_EXTENDED_PARAMETER;
 
+
 typedef ULONG64 POOL_FLAGS;
+
 
 __drv_allocatesMem(Mem)
 _Check_return_
@@ -23255,8 +24069,62 @@ ExAllocatePool3 (
     _In_ POOL_FLAGS Flags,
     _In_ SIZE_T NumberOfBytes,
     _In_ ULONG Tag,
-    _In_reads_opt_(ExtendedParameterCount) PCPOOL_EXTENDED_PARAMETER ExtendedParameters,
+    _In_reads_opt_(ExtendedParametersCount) PCPOOL_EXTENDED_PARAMETER ExtendedParameters,
     _In_ ULONG ExtendedParametersCount
+    );
+
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTKERNELAPI
+VOID
+NTAPI
+ExFreePool2 (
+    _Pre_notnull_ __drv_freesMem(P) PVOID P,
+    _In_ ULONG Tag,
+    _In_reads_opt_(ExtendedParametersCount) PCPOOL_EXTENDED_PARAMETER ExtendedParameters,
+    _In_ ULONG ExtendedParametersCount
+    );
+
+#define POOL_CREATE_FLG_SECURE_POOL     0x1
+#define POOL_CREATE_FLG_USE_GLOBAL_POOL 0x2
+#define POOL_CREATE_FLG_VALID_FLAGS (POOL_CREATE_FLG_SECURE_POOL | \
+                                     POOL_CREATE_FLG_USE_GLOBAL_POOL)
+
+#define POOL_CREATE_PARAMS_VERSION 1
+
+typedef struct _POOL_CREATE_EXTENDED_PARAMS {
+    ULONG Version;
+} POOL_CREATE_EXTENDED_PARAMS, *PPOOL_CREATE_EXTENDED_PARAMS;
+
+NTSTATUS
+ExCreatePool (
+    _In_ ULONG Flags,
+    _In_ ULONG_PTR Tag,
+    _In_opt_ POOL_CREATE_EXTENDED_PARAMS* Params,
+    _Out_ HANDLE* PoolHandle
+    );
+
+VOID
+ExDestroyPool (
+    _In_ HANDLE PoolHandle
+    );
+
+NTSTATUS
+ExSecurePoolUpdate (
+    _In_ HANDLE SecurePoolHandle,
+    _In_ ULONG Tag,
+    _In_ PVOID Allocation,
+    _In_ ULONG_PTR Cookie,
+    _In_ SIZE_T Offset,
+    _In_ SIZE_T Size,
+    _In_ PVOID Buffer
+    );
+
+LOGICAL
+ExSecurePoolValidate (
+    _In_ HANDLE SecurePoolHandle,
+    _In_ ULONG Tag,
+    _In_ PVOID Allocation,
+    _In_ ULONG_PTR Cookie
     );
 
 #endif
@@ -23300,7 +24168,7 @@ ExAllocatePoolWithQuotaTag (
 DECLSPEC_SELECTANY BOOLEAN ExPoolZeroingNativelySupported = FALSE;
 
 //
-// If POOL_ZERO_DOWN_LEVEL_SUPPORT is defined, this code must 
+// If POOL_ZERO_DOWN_LEVEL_SUPPORT is defined, this code must
 // be able to run downlevel.
 //
 
@@ -23859,11 +24727,17 @@ Return Value:
     //
 
 #if defined(_WIN64)
+#if !defined(_BOOT_ENVIRONMENT)
 
     if (((ULONG_PTR)SListHead & 0xf) != 0) {
         RtlRaiseStatus(STATUS_DATATYPE_MISALIGNMENT);
     }
 
+#else
+
+    NT_ASSERT(((ULONG_PTR)SListHead & 0xF) == 0);
+
+#endif
 #endif
 
     RtlZeroMemory(SListHead, sizeof(SLIST_HEADER));
@@ -25752,6 +26626,7 @@ ExInitializePushLock (
     );
 
 #if !defined(EX_LEGACY_PUSH_LOCKS)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(APC_LEVEL)
 _Requires_lock_held_(_Global_critical_region_)
 NTKERNELAPI
@@ -25774,6 +26649,7 @@ ExAcquirePushLockSharedEx (
     _In_ ULONG Flags
     );
 
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(DISPATCH_LEVEL)
 _Requires_lock_held_(_Global_critical_region_)
 NTKERNELAPI
@@ -26102,6 +26978,8 @@ typedef enum _REG_NOTIFY_CLASS {
     //
     RegNtPreQueryKeyName,
     RegNtPostQueryKeyName,
+    RegNtPreSaveMergedKey,
+    RegNtPostSaveMergedKey,
 
     MaxRegNtNotifyClass //should always be the last enum
 } REG_NOTIFY_CLASS;
@@ -26497,6 +27375,20 @@ CmCallbackReleaseKeyObjectIDEx (
     );
 
 #endif // NTDDI_VERSION >= NTDDI_WIN8
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+
+typedef struct _REG_SAVE_MERGED_KEY_INFORMATION {
+    PVOID               Object;
+    HANDLE              FileHandle;
+    PVOID               HighKeyObject;
+    PVOID               LowKeyObject;
+    PVOID               CallContext;  
+    PVOID               ObjectContext;
+    PVOID               Reserved;     
+} REG_SAVE_MERGED_KEY_INFORMATION, *PREG_SAVE_MERGED_KEY_INFORMATION;
+
+#endif // NTDDI_VERSION >= NTDDI_WIN10_FE
 
 
 //
@@ -27153,6 +28045,13 @@ MmGetSystemRoutineAddress (
     );
 #endif
 
+typedef
+PVOID
+(*PMM_GET_SYSTEM_ROUTINE_ADDRESS_EX) (
+    _In_ PUNICODE_STRING ModuleName,
+    _In_ PSTR FunctionName
+    );
+
 #if defined(XBOX_SYSTEMOS) || defined(XBOX_GAMECOREOS)
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
@@ -27396,7 +28295,7 @@ MmAllocateNodePagesForMdlEx (
 
 //
 // 0..N - Indicates a specific NUMA node used as an index into
-//        structures dimensioned by {MM_MAXIMUM_NODE, MI_MAXIMUM_NODES, etc}.
+//        structures dimensioned by MAXIMUM_NUMA_NODES.
 //
 
 typedef ULONG MM_NODE_NUMBER_ZERO_BASED;
@@ -27406,8 +28305,7 @@ typedef ULONG MM_NODE_NUMBER_ZERO_BASED;
 //     use the current thread's ideal processor etc).
 //
 // 1..N - Indicates a specific NUMA node so need to subtract 1 for
-//        example to index into structures dimensioned by {MM_MAXIMUM_NODE,
-//        MI_MAXIMUM_NODES, etc}.
+//        example to index into structures dimensioned by MAXIMUM_NUMA_NODES.
 //
 
 typedef ULONG MM_NODE_NUMBER_ONE_BASED;
@@ -27581,6 +28479,28 @@ MmAllocateContiguousNodeMemory (
     _In_ ULONG Protect,
     _In_ NODE_REQUIREMENT PreferredNode
     );
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+
+#define MM_ALLOCATE_CONTIGUOUS_MEMORY_FAST_ONLY   0x1
+
+_IRQL_requires_max_ (DISPATCH_LEVEL)
+NTKERNELAPI
+NTSTATUS
+MmAllocateContiguousMemoryEx (
+    _In_ PSIZE_T NumberOfBytes,
+    _In_ PHYSICAL_ADDRESS LowestAcceptableAddress,
+    _In_ PHYSICAL_ADDRESS HighestAcceptableAddress,
+    _In_ PHYSICAL_ADDRESS BoundaryAddressMultiple,
+    _In_ NODE_REQUIREMENT PreferredNode,
+    _In_ ULONG Protect,
+    _In_opt_ PVOID PartitionObject,
+    _In_ ULONG Tag,
+    _In_ ULONG Flags,
+    _Out_ PVOID* BaseAddress
+    );
+
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
@@ -27880,6 +28800,19 @@ MmIsDriverVerifyingByAddress (
     _In_ PVOID AddressWithinSection
     );
 #endif
+
+#define MM_PROTECT_DRIVER_SECTION_ALLOW_UNLOAD          (0x1)
+
+#define MM_PROTECT_DRIVER_SECTION_VALID_FLAGS \
+    (MM_PROTECT_DRIVER_SECTION_ALLOW_UNLOAD)
+
+_IRQL_requires_max_ (APC_LEVEL)
+NTSTATUS
+MmProtectDriverSection (
+    _In_ PVOID AddressWithinSection,
+    _In_ SIZE_T Size,
+    _In_ ULONG Flags
+    );
 
 //
 //  Security operation codes
@@ -28269,6 +29202,47 @@ PsQueryTotalCycleTimeProcess (
     _Out_ PULONG64 CycleTimeStamp
     );
 #endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+
+typedef struct _AFFINITY_TOKEN *PAFFINITY_TOKEN;
+
+_IRQL_requires_min_(PASSIVE_LEVEL)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTKERNELAPI
+NTSTATUS
+PsAllocateAffinityToken (
+    _Outptr_ PAFFINITY_TOKEN *AffinityToken
+    );
+
+_IRQL_requires_min_(PASSIVE_LEVEL)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTKERNELAPI
+VOID
+PsFreeAffinityToken (
+    _Frees_ptr_ PAFFINITY_TOKEN AffinityToken
+    );
+
+_IRQL_requires_min_(PASSIVE_LEVEL)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTKERNELAPI
+NTSTATUS
+PsSetSystemMultipleGroupAffinityThread (
+    _In_reads_(GroupCount) PGROUP_AFFINITY GroupAffinities,
+    _In_ USHORT GroupCount,
+    _Inout_ PAFFINITY_TOKEN AffinityToken
+    );
+
+_IRQL_requires_min_(PASSIVE_LEVEL)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTKERNELAPI
+VOID
+PsRevertToUserMultipleGroupAffinityThread (
+    _In_ PAFFINITY_TOKEN AffinityToken
+    );
+
+#endif
+
 //
 // Define I/O system data structure type codes.  Each major data structure in
 // the I/O system has a type code  The type field in each structure is at the
@@ -29185,6 +30159,7 @@ typedef struct _IO_SECURITY_CONTEXT {
     ULONG FullCreateOptions;
 } IO_SECURITY_CONTEXT, *PIO_SECURITY_CONTEXT;
 
+
 //
 // Define Volume Parameter Block (VPB) flags.
 //
@@ -29565,6 +30540,7 @@ typedef struct _IO_COMPLETION_CONTEXT {
 #define FO_FLAGS_VALID_ONLY_DURING_CREATE FO_DISALLOW_EXCLUSIVE
 
 
+//@[comment("MVI_tracked")]
 typedef struct _FILE_OBJECT {
     CSHORT Type;
     CSHORT Size;
@@ -32070,6 +33046,22 @@ IoGetIommuInterface (
 
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+
+typedef struct _DMA_IOMMU_INTERFACE_EX DMA_IOMMU_INTERFACE_EX, *PDMA_IOMMU_INTERFACE_EX;
+
+_Must_inspect_result_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+NTSTATUS
+IoGetIommuInterfaceEx (
+    _In_ ULONG Version,
+    _In_ ULONGLONG Flags,
+    _Out_ PDMA_IOMMU_INTERFACE_EX InterfaceOut
+    );
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_FE)
+
 #if (NTDDI_VERSION >= NTDDI_WINXP)
 NTKERNELAPI
 BOOLEAN
@@ -32408,6 +33400,7 @@ Return Value:
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -33967,6 +34960,78 @@ IoWriteKsrPersistentMemory (
 
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+
+typedef
+NTSTATUS
+(IO_PERSISTED_MEMORY_ENUMERATION_CALLBACK) (
+    _In_ PDRIVER_OBJECT DriverObject,
+    _In_opt_ PDEVICE_OBJECT PhysicalDeviceObject,
+    _In_opt_ PUNICODE_STRING PhysicalDeviceId,
+    _In_opt_ PUSHORT DataTag,
+    _In_opt_ PULONG DataVersion,
+    _In_opt_ PVOID Context
+    );
+
+typedef IO_PERSISTED_MEMORY_ENUMERATION_CALLBACK*
+         PIO_PERSISTED_MEMORY_ENUMERATION_CALLBACK;
+
+_Must_inspect_result_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+NTSTATUS
+IoEnumerateKsrPersistentMemoryEx (
+    _In_ PDRIVER_OBJECT DriverObject,
+    _In_opt_ PDEVICE_OBJECT PhysicalDeviceObject,
+    _In_opt_ PUNICODE_STRING PhysicalDeviceId,
+    _In_ PIO_PERSISTED_MEMORY_ENUMERATION_CALLBACK Callback,
+    _In_ PVOID CallbackContext
+    );
+
+_Must_inspect_result_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+NTSTATUS
+IoReserveKsrPersistentMemoryEx (
+    _In_ PDRIVER_OBJECT DriverObject,
+    _In_opt_ PDEVICE_OBJECT PhysicalDeviceObject,
+    _In_opt_ PUNICODE_STRING PhysicalDeviceId,
+    _In_opt_ PUSHORT DataTag,
+    _In_ ULONG DataVersion,
+    _In_ SIZE_T Size,
+    _In_ ULONG Flags,
+    _Out_ PVOID * DataHandle
+    );
+
+_Must_inspect_result_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+NTSTATUS
+IoQueryKsrPersistentMemorySizeEx (
+    _In_ PDRIVER_OBJECT DriverObject,
+    _In_opt_ PDEVICE_OBJECT PhysicalDeviceObject,
+    _In_opt_ PUNICODE_STRING PhysicalDeviceId,
+    _In_opt_ PUSHORT DataTag,
+    _Out_opt_ PULONG DataVersion,
+    _Out_ PSIZE_T BufferSize
+    );
+
+_Must_inspect_result_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+NTSTATUS
+IoAcquireKsrPersistentMemoryEx (
+    _In_ PDRIVER_OBJECT DriverObject,
+    _In_opt_ PDEVICE_OBJECT PhysicalDeviceObject,
+    _In_opt_ PUNICODE_STRING PhysicalDeviceId,
+    _In_opt_ PUSHORT DataTag,
+    _Out_opt_ PULONG DataVersion,
+    _Out_writes_bytes_(*Size) PVOID Buffer,
+    _Inout_ PSIZE_T Size
+    );
+
+#endif
+
 
 #ifdef RUN_WPP
 
@@ -34516,18 +35581,107 @@ NTSTATUS PCI_SET_ACS (
 typedef PCI_SET_ACS *PPCI_SET_ACS;
 
 typedef struct _PCI_SECURITY_INTERFACE {
+
     //
     // generic interface header
     //
+
     USHORT Size;
     USHORT Version;
     PVOID Context;
     PINTERFACE_REFERENCE InterfaceReference;
     PINTERFACE_DEREFERENCE InterfaceDereference;
 
+    //
+    // Security interface
+    //
+
     PPCI_SET_ACS    SetAccessControlServices;
 
 } PCI_SECURITY_INTERFACE, *PPCI_SECURITY_INTERFACE;
+
+#define PCI_SECURITY_INTERFACE_VERSION2 2
+
+#define PCI_SECURITY_FULLY_SUPPORTED                0x1
+#define PCI_SECURITY_ENHANCED                       0x2
+
+#define PCI_SECURITY_GUEST_ASSIGNED                 0x1
+#define PCI_SECURITY_DIRECT_TRANSLATED_P2P          0x4
+
+#define PCI_SECURITY_SRIOV_DIRECT_TRANSLATED_P2P    0x40000
+
+typedef
+_Function_class_(PCI_SET_ACS2)
+_IRQL_requires_same_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSTATUS
+PCI_SET_ACS2 (
+    _Inout_ PVOID Context,
+    _In_ ULONG ScenariosToModify,
+    _In_ ULONG ScenarioState
+    );
+typedef PCI_SET_ACS2 *PPCI_SET_ACS2;
+
+typedef struct _PCI_SECURITY_INTERFACE2 {
+
+    //
+    // generic interface header
+    //
+
+    USHORT Size;
+    USHORT Version;
+    PVOID Context;
+    PINTERFACE_REFERENCE InterfaceReference;
+    PINTERFACE_DEREFERENCE InterfaceDereference;
+
+    //
+    // Security interface
+    //
+
+    ULONG Flags;
+    ULONG SupportedScenarios;
+    PPCI_SET_ACS2 SetAccessControlServices;
+
+} PCI_SECURITY_INTERFACE2, *PPCI_SECURITY_INTERFACE2;
+
+//
+// PCI ATS Interface - 010A7FE8-96F5-4943-BEDF-95E651B93412
+//
+
+#define PCI_ATS_INTERFACE_VERSION 1
+#define PCI_ATS_INTERFACE_SIZE sizeof(PCI_ATS_INTERFACE)
+
+typedef
+_Function_class_(PCI_SET_ATS)
+_IRQL_requires_same_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSTATUS PCI_SET_ATS (
+    _In_ PVOID Context,
+    _In_ BOOLEAN EnableAts
+    );
+
+typedef PCI_SET_ATS *PPCI_SET_ATS;
+
+typedef struct _PCI_ATS_INTERFACE {
+
+    //
+    // generic interface header
+    //
+
+    USHORT Size;
+    USHORT Version;
+    PVOID Context;
+    PINTERFACE_REFERENCE InterfaceReference;
+    PINTERFACE_DEREFERENCE InterfaceDereference;
+
+    //
+    // ATS interface
+    //
+
+    PPCI_SET_ATS    SetAddressTranslationServices;
+
+    UCHAR InvalidateQueueDepth;
+} PCI_ATS_INTERFACE, *PPCI_ATS_INTERFACE;
 
 
 
@@ -34941,6 +36095,22 @@ NPEM_CONTROL_SET_STANDARD_CONTROL (
 
 typedef NPEM_CONTROL_SET_STANDARD_CONTROL *PNPEM_CONTROL_SET_STANDARD_CONTROL;
 
+typedef
+_Function_class_(NPEM_CONTROL_QUERY_CONTROL)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+ULONG
+NPEM_CONTROL_QUERY_CONTROL (
+    _In_reads_opt_(_Inexpressible_("varies")) PVOID Context
+    );
+
+typedef NPEM_CONTROL_QUERY_CONTROL *PNPEM_CONTROL_QUERY_CONTROL;
+
+#define NPEM_CONTROL_INTERFACE_VERSION1 1
+
+#define NPEM_CONTROL_INTERFACE_VERSION2 2
+
+#define NPEM_CONTROL_INTERFACE_CURRENT_VERSION NPEM_CONTROL_INTERFACE_VERSION2
+
 typedef struct _NPEM_CONTROL_INTERFACE {
     USHORT Size;
     USHORT Version;
@@ -34951,6 +36121,7 @@ typedef struct _NPEM_CONTROL_INTERFACE {
     PNPEM_CONTROL_ENABLE_DISABLE                         SetNpemSupportState;
     PNPEM_CONTROL_QUERY_STANDARD_CAPABILITIES            QueryStandardCapabilities;
     PNPEM_CONTROL_SET_STANDARD_CONTROL                   SetStandardControl;
+    PNPEM_CONTROL_QUERY_CONTROL                          QueryNpemControl;
 } NPEM_CONTROL_INTERFACE, *PNPEM_CONTROL_INTERFACE;
 
 
@@ -35428,7 +36599,10 @@ IoReportTargetDeviceChangeAsynchronous(
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
 typedef enum _DRIVER_DIRECTORY_TYPE {
     DriverDirectoryImage = 0,
-    DriverDirectoryData = 1,
+    DriverDirectoryData,
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+    DriverDirectorySharedData,
+#endif
 } DRIVER_DIRECTORY_TYPE, *PDRIVER_DIRECTORY_TYPE;
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
@@ -35464,7 +36638,10 @@ IoGetDeviceDirectory(
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
 typedef enum _DRIVER_REGKEY_TYPE {
     DriverRegKeyParameters = 0,
-    DriverRegKeyPersistentState = 1,
+    DriverRegKeyPersistentState,
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+    DriverRegKeySharedPersistentState,
+#endif
 } DRIVER_REGKEY_TYPE, *PDRIVER_REGKEY_TYPE;
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
@@ -35936,6 +37113,8 @@ typedef struct _CRASHDUMP_FUNCTIONS_INTERFACE {
 
 #if (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
+#define DEVICE_RESET_INTERFACE_VERSION_1 1
+#define DEVICE_RESET_INTERFACE_VERSION_2 2
 #define DEVICE_RESET_INTERFACE_VERSION  1
 
 //
@@ -35950,6 +37129,26 @@ typedef enum _DEVICE_RESET_TYPE
     FunctionLevelDeviceReset,
     PlatformLevelDeviceReset
 } DEVICE_RESET_TYPE;
+
+//
+// Available in Version 2 Device Reset Interface
+//
+
+typedef union _DEVICE_BUS_SPECIFIC_RESET_TYPE {
+    struct {
+        ULONGLONG FunctionLevelDeviceReset:1;
+        ULONGLONG PlatformLevelDeviceReset:1;
+        ULONGLONG SecondaryBusReset:1;
+        ULONGLONG Reserved:61;
+    } Pci;
+
+    struct {
+        ULONGLONG FunctionLevelDeviceReset:1;
+        ULONGLONG PlatformLevelDeviceReset:1;
+        ULONGLONG Reserved:62;
+    } Acpi;
+    ULONGLONG AsULONGLONG;
+} DEVICE_BUS_SPECIFIC_RESET_TYPE, *PDEVICE_BUS_SPECIFIC_RESET_TYPE;
 
 typedef
 VOID
@@ -35975,10 +37174,46 @@ NTSTATUS
     _In_opt_ PVOID ResetParameters
     );
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+
+typedef struct _DEVICE_BUS_SPECIFIC_RESET_INFO {
+
+    //
+    // See GUID_BUS_TYPE_*
+    //
+    GUID BusTypeGuid;
+    DEVICE_BUS_SPECIFIC_RESET_TYPE ResetTypeSupported;
+
+} DEVICE_BUS_SPECIFIC_RESET_INFO, *PDEVICE_BUS_SPECIFIC_RESET_INFO;
+
+#define RESET_FLAG_PLDR_KEEP_DRIVER_STACK  0x1
+
+typedef
+NTSTATUS
+(*PDEVICE_QUERY_BUS_SPECIFIC_RESET_HANDLER)(
+    _In_ PVOID InterfaceContext,
+    _Out_ PULONG ResetInfoCount,
+    _Out_ PDEVICE_BUS_SPECIFIC_RESET_INFO ResetInfoSupported
+);
+
+typedef
+NTSTATUS
+(*PDEVICE_BUS_SPECIFIC_RESET_HANDLER)(
+    _In_ PVOID InterfaceContext,
+    _In_ CONST GUID *BusType,
+    _In_ DEVICE_BUS_SPECIFIC_RESET_TYPE ResetTypeSelected,
+    _In_ ULONGLONG Flags,
+    _In_ PVOID ResetParameters
+);
+
+#endif
+
 typedef struct _DEVICE_RESET_INTERFACE_STANDARD {
+
     //
     // generic interface header
     //
+
     USHORT Size;
     USHORT Version;
     PVOID Context;
@@ -35986,11 +37221,24 @@ typedef struct _DEVICE_RESET_INTERFACE_STANDARD {
     PINTERFACE_DEREFERENCE InterfaceDereference;
 
     //
-    // device reset interface
+    // Version 1 Device Reset Interface
     //
+
     PDEVICE_RESET_HANDLER DeviceReset;
     ULONG SupportedResetTypes;
     PVOID Reserved;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+
+    //
+    // Version 2 Device Reset Interface
+    //
+
+    PDEVICE_QUERY_BUS_SPECIFIC_RESET_HANDLER QueryBusSpecificResetInfo;
+    PDEVICE_BUS_SPECIFIC_RESET_HANDLER DeviceBusSpecificReset;
+
+#endif
+
 } DEVICE_RESET_INTERFACE_STANDARD, *PDEVICE_RESET_INTERFACE_STANDARD;
 
 #endif
@@ -36064,7 +37312,7 @@ typedef struct _DEVICE_DESCRIPTION {
     BOOLEAN AutoInitialize;
     BOOLEAN Dma32BitAddresses;
     BOOLEAN IgnoreCount;
-    BOOLEAN Reserved1;          // must be false
+    BOOLEAN Reserved1;
     BOOLEAN Dma64BitAddresses;
     ULONG BusNumber; // unused for WDM
     ULONG DmaChannel;
@@ -36168,9 +37416,9 @@ typedef struct _DMA_TRANSFER_INFO {
 // and BuildScatterGatherListEx.
 //
 
-#define DMA_SYNCHRONOUS_CALLBACK  0x01
-
-#define DMA_ZERO_BUFFERS        0x02
+#define DMA_SYNCHRONOUS_CALLBACK    0x01
+#define DMA_ZERO_BUFFERS            0x02
+#define DMA_FAIL_ON_BOUNCE          0x04
 
                                                 
 
@@ -36232,6 +37480,9 @@ PROCESSOR_HALT_ROUTINE (
 typedef PROCESSOR_HALT_ROUTINE *PPROCESSOR_HALT_ROUTINE;
 
 
+typedef struct _IOMMU_DMA_DEVICE IOMMU_DMA_DEVICE, *PIOMMU_DMA_DEVICE;
+
+
 typedef struct _SCATTER_GATHER_ELEMENT {
     PHYSICAL_ADDRESS Address;
     ULONG Length;
@@ -36281,6 +37532,45 @@ typedef enum {
     DmaError,
     DmaCancelled
 } DMA_COMPLETION_STATUS;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+
+typedef enum _DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_TYPE {
+    CommonBufferConfigTypeLogicalAddressLimits,
+    CommonBufferConfigTypeSubSection,
+    CommonBufferConfigTypeHardwareAccessPermissions,
+    CommonBufferConfigTypeMax,
+} DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_TYPE,
+  *PDMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_TYPE;
+
+typedef enum _DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_ACCESS_TYPE {
+    CommonBufferHardwareAccessReadOnly,
+    CommonBufferHardwareAccessWriteOnly,
+    CommonBufferHardwareAccessReadWrite,
+    CommonBufferHardwareAccessMax,
+} DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_ACCESS_TYPE,
+  *PDMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_ACCESS_TYPE;
+
+typedef struct _DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION {
+    DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_TYPE ConfigType;
+    union {
+        struct {
+            PHYSICAL_ADDRESS MinimumAddress;
+            PHYSICAL_ADDRESS MaximumAddress;
+        } LogicalAddressLimits;
+
+        struct {
+            ULONGLONG Offset;
+            ULONG Length;
+        } SubSection;
+
+        DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION_ACCESS_TYPE HardwareAccessType;
+        ULONGLONG Reserved[4];
+    };
+} DMA_COMMON_BUFFER_EXTENDED_CONFIGURATION,
+  *PDMA_COMMON_BUFFER_EXTENDED_CONFIGURATION;
+
+#endif
 
 
 
@@ -36586,7 +37876,7 @@ typedef NTSTATUS
     _In_ PHYSICAL_ADDRESS LowAddress,
     _In_ PHYSICAL_ADDRESS HighAddress,
     _In_ MEMORY_CACHING_TYPE CacheType,
-    _In_ ULONG IdealNode,
+    _In_ NODE_REQUIREMENT IdealNode,
     _In_ ULONG Flags,
     _In_ ULONG NumberOfElements,
     _In_ ULONGLONG SizeOfElements,
@@ -36614,6 +37904,19 @@ typedef VOID
     _In_ PDMA_ADAPTER DmaAdapter,
     _In_ PDMA_COMMON_BUFFER_VECTOR Vector
     );
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+
+typedef NTSTATUS
+(*PCREATE_COMMON_BUFFER_FROM_MDL)(
+    _In_ PDMA_ADAPTER DmaAdapter,
+    _In_ PMDL Mdl,
+    _In_reads_opt_(ExtendedConfigsCount) PDMA_COMMON_BUFFER_EXTENDED_CONFIGURATION ExtendedConfigs,
+    _In_ ULONG ExtendedConfigsCount,
+    _Out_ PPHYSICAL_ADDRESS LogicalAddress
+    );
+
+#endif
 
 //
 // Define the bits in the allocate domain common buffer flags.
@@ -36686,6 +37989,13 @@ typedef struct _DMA_OPERATIONS {
     PGET_COMMON_BUFFER_FROM_VECTOR_BY_INDEX GetCommonBufferFromVectorByIndex;
     PFREE_COMMON_BUFFER_FROM_VECTOR FreeCommonBufferFromVector;
     PFREE_COMMON_BUFFER_VECTOR FreeCommonBufferVector;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+
+    PCREATE_COMMON_BUFFER_FROM_MDL CreateCommonBufferFromMdl;
+
+#endif
+
 } DMA_OPERATIONS;
 
 
@@ -36991,6 +38301,7 @@ typedef struct _FAULT_INFORMATION {
 
 typedef enum _DOMAIN_CONFIGURATION_ARCH {
     DomainConfigurationArm64,
+    DomainConfigurationX64,
     DomainConfigurationInvalid,
 } DOMAIN_CONFIGURATION_ARCH, *PDOMAIN_CONFIGURATION_ARCH;
 
@@ -37005,10 +38316,17 @@ typedef struct _DOMAIN_CONFIGURATION_ARM64 {
     BOOLEAN TranslationEnabled;
 } DOMAIN_CONFIGURATION_ARM64, *PDOMAIN_CONFIGURATION_ARM64;
 
+typedef struct _DOMAIN_CONFIGURATION_X64 {
+    PHYSICAL_ADDRESS FirstLevelPageTableRoot;
+    BOOLEAN TranslationEnabled;
+} DOMAIN_CONFIGURATION_X64, *PDOMAIN_CONFIGURATION_X64;
+
+
 typedef struct _DOMAIN_CONFIGURATION {
     DOMAIN_CONFIGURATION_ARCH Type;
     union {
         DOMAIN_CONFIGURATION_ARM64 Arm64;
+        DOMAIN_CONFIGURATION_X64 X64;
     };
 } DOMAIN_CONFIGURATION, *PDOMAIN_CONFIGURATION;
 
@@ -37039,7 +38357,217 @@ typedef struct _DEVICE_FAULT_CONFIGURATION {
     PVOID FaultContext;
 } DEVICE_FAULT_CONFIGURATION, *PDEVICE_FAULT_CONFIGURATION;
 
-typedef _Function_class_(IOMMU_DOMAIN_CREATE)
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+
+typedef ULONGLONG IOMMU_DMA_LOGICAL_ADDRESS, *PIOMMU_DMA_LOGICAL_ADDRESS;
+
+//
+// IOMMU DMA Domain types describe what kinds of domains can be created and
+// interacted with via the IOMMU interface.
+//
+// DomainTypeTranslate - The standard remapping domain. The HAL/Hypervisor will
+//     create a domain structure and page table for logical address mappings.
+//
+// DomainTypePassThrough - Represents a passthrough domain. Calls to map and
+//     unmap are not allowed. Depending on the DMAGuard policy, this domain may
+//     not be available.
+//
+// DomainTypeUnmanaged - This is a remapping domain in which the page table is
+//     owned by the caller. The caller is responsible for interacting with the
+//     IOMMU Interface to provide its page table as well as performing necessary
+//     IOMMU TLB flushes.
+//
+//
+
+typedef enum _IOMMU_DMA_DOMAIN_TYPE {
+    DomainTypeTranslate,
+    DomainTypePassThrough,
+    DomainTypeUnmanaged,
+    DomainTypeMax,
+} IOMMU_DMA_DOMAIN_TYPE, *PIOMMU_DMA_DOMAIN_TYPE;
+
+typedef union _IOMMU_DMA_DOMAIN_CREATION_FLAGS {
+    struct {
+        ULONGLONG Reserved : 64;
+    };
+
+    ULONGLONG AsUlonglong;
+} IOMMU_DMA_DOMAIN_CREATION_FLAGS, *PIOMMU_DMA_DOMAIN_CREATION_FLAGS;
+
+typedef enum _IOMMU_DEVICE_CREATION_CONFIGURATION_TYPE {
+    IommuDeviceCreationConfigTypeNone,
+    IommuDeviceCreationConfigTypeAcpi,
+    IommuDeviceCreationConfigTypeMax
+} IOMMU_DEVICE_CREATION_CONFIGURATION_TYPE,
+  *PIOMMU_DEVICE_CREATION_CONFIGURATION_TYPE;
+
+typedef struct _IOMMU_DEVICE_CREATION_CONFIGURATION_ACPI {
+    UINT32 InputMappingBase;
+    UINT32 MappingsCount;
+} IOMMU_DEVICE_CREATION_CONFIGURATION_ACPI,
+  *PIOMMU_DEVICE_CREATION_CONFIGURATION_ACPI;
+
+typedef struct _IOMMU_DEVICE_CREATION_CONFIGURATION {
+    LIST_ENTRY NextConfiguration;
+    IOMMU_DEVICE_CREATION_CONFIGURATION_TYPE ConfigType;
+    union {
+        IOMMU_DEVICE_CREATION_CONFIGURATION_ACPI Acpi;
+
+        //
+        // Future configs.
+        //
+
+    };
+} IOMMU_DEVICE_CREATION_CONFIGURATION, *PIOMMU_DEVICE_CREATION_CONFIGURATION;
+
+//
+// Iommu map/unmap definitions.
+//
+
+typedef enum _IOMMU_MAP_PHYSICAL_ADDRESS_TYPE {
+    MapPhysicalAddressTypeMdl,
+    MapPhysicalAddressTypeContiguousRange,
+    MapPhysicalAddressTypePfn,
+    MapPhysicalAddressTypeMax,
+} IOMMU_MAP_PHYSICAL_ADDRESS_TYPE, *PIOMMU_MAP_PHYSICAL_ADDRESS_TYPE;
+
+typedef struct _IOMMU_MAP_PHYSICAL_ADDRESS {
+    IOMMU_MAP_PHYSICAL_ADDRESS_TYPE MapType;
+    union {
+        struct {
+            PMDL Mdl;
+        } Mdl;
+
+        struct {
+            PHYSICAL_ADDRESS Base;
+            SIZE_T Size;
+        } ContiguousRange;
+
+        struct {
+            PPFN_NUMBER PageFrame;
+            SIZE_T NumberOfPages;
+        } PfnArray;
+    };
+} IOMMU_MAP_PHYSICAL_ADDRESS, *PIOMMU_MAP_PHYSICAL_ADDRESS;
+
+typedef struct _IOMMU_DMA_RESERVED_REGION {
+    struct _IOMMU_DMA_RESERVED_REGION *RegionNext;
+    IOMMU_DMA_LOGICAL_ADDRESS Base;
+    SIZE_T NumberOfPages;
+    BOOLEAN ShouldMap;
+} IOMMU_DMA_RESERVED_REGION, *PIOMMU_DMA_RESERVED_REGION;
+
+//
+// Logical allocator definitions.
+//
+
+//
+// IOMMU DMA logical allocator types describe what kinds of logical allocators
+// can be created and supported by the HAL.
+//
+// IommuDmaLogicalAllocatorNone - No logical allocator. This is default when
+//     operating with passthrough domains.
+//
+// IommuDmaLogicalAllocatorBuddy - This is the HAL implementation of a buddy
+//     allocator. This is the default logical allocator.
+//
+
+typedef enum _IOMMU_DMA_LOGICAL_ALLOCATOR_TYPE {
+    IommuDmaLogicalAllocatorNone,
+    IommuDmaLogicalAllocatorBuddy,
+
+    //
+    // Future types.
+    //
+
+    IommuDmaLogicalAllocatorMax
+} IOMMU_DMA_LOGICAL_ALLOCATOR_TYPE, *PIOMMU_DMA_LOGICAL_ALLOCATOR_TYPE;
+
+typedef struct _IOMMU_DMA_LOGICAL_ALLOCATOR_CONFIG {
+    IOMMU_DMA_LOGICAL_ALLOCATOR_TYPE LogicalAllocatorType;
+
+    //
+    // Allocator type-specific configuations.
+    //
+
+    union {
+        struct {
+            ULONG AddressWidth;
+        } BuddyAllocatorConfig;
+    };
+} IOMMU_DMA_LOGICAL_ALLOCATOR_CONFIG, *PIOMMU_DMA_LOGICAL_ALLOCATOR_CONFIG;
+
+typedef struct _IOMMU_DMA_LOGICAL_ADDRESS_TOKEN {
+    IOMMU_DMA_LOGICAL_ADDRESS LogicalAddressBase;
+    SIZE_T Size;
+} IOMMU_DMA_LOGICAL_ADDRESS_TOKEN, *PIOMMU_DMA_LOGICAL_ADDRESS_TOKEN;
+
+typedef struct _IOMMU_DMA_LOGICAL_ADDRESS_TOKEN_MAPPED_SEGMENT {
+    PIOMMU_DMA_LOGICAL_ADDRESS_TOKEN OwningToken;
+    SIZE_T Offset;
+    SIZE_T Size;
+} IOMMU_DMA_LOGICAL_ADDRESS_TOKEN_MAPPED_SEGMENT,
+  *PIOMMU_DMA_LOGICAL_ADDRESS_TOKEN_MAPPED_SEGMENT;
+
+//
+// IOMMU interface state change definitions.
+//
+
+typedef union _IOMMU_INTERFACE_STATE_CHANGE_FIELDS {
+    struct {
+        ULONG AvailableDomainTypes : 1;
+        ULONG Reserved : 31;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+} IOMMU_INTERFACE_STATE_CHANGE_FIELDS, *PIOMMU_INTERFACE_STATE_CHANGE_FIELDS;
+
+typedef struct _IOMMU_INTERFACE_STATE_CHANGE {
+    IOMMU_INTERFACE_STATE_CHANGE_FIELDS PresentFields;
+    ULONG AvailableDomainTypes;
+} IOMMU_INTERFACE_STATE_CHANGE, *PIOMMU_INTERFACE_STATE_CHANGE;
+
+typedef
+_Function_class_(IOMMU_INTERFACE_STATE_CHANGE_CALLBACK)
+_IRQL_requires_same_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+VOID
+IOMMU_INTERFACE_STATE_CHANGE_CALLBACK (
+    _In_ PIOMMU_INTERFACE_STATE_CHANGE StateChange,
+    _In_opt_ PVOID Context
+    );
+
+/*++
+
+Routine Description:
+
+    This routine is invoked whenever there has been a system state change that
+    affects the IOMMU interface.
+
+Arguments:
+
+    StateChange - Supplies a pointer to the state information that changes.
+
+    Context - Provides a caller-specified context.
+
+Return Value:
+
+    None.
+
+--*/
+
+typedef IOMMU_INTERFACE_STATE_CHANGE_CALLBACK
+        *PIOMMU_INTERFACE_STATE_CHANGE_CALLBACK;
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_FE)
+
+//
+// IOMMU interface function definitions.
+//
+
+typedef
+_Function_class_(IOMMU_DOMAIN_CREATE)
+_IRQL_requires_max_(PASSIVE_LEVEL)
 NTSTATUS
 IOMMU_DOMAIN_CREATE (
     _In_ BOOLEAN OsManagedPageTable,
@@ -37075,7 +38603,9 @@ Return Value:
 
 typedef IOMMU_DOMAIN_CREATE *PIOMMU_DOMAIN_CREATE;
 
-typedef _Function_class_(IOMMU_DOMAIN_DELETE)
+typedef
+_Function_class_(IOMMU_DOMAIN_DELETE)
+_IRQL_requires_max_(PASSIVE_LEVEL)
 NTSTATUS
 IOMMU_DOMAIN_DELETE (
     _In_ PIOMMU_DMA_DOMAIN Domain
@@ -37100,7 +38630,9 @@ Return Value:
 
 typedef IOMMU_DOMAIN_DELETE *PIOMMU_DOMAIN_DELETE;
 
-typedef _Function_class_(IOMMU_DOMAIN_ATTACH_DEVICE)
+typedef
+_Function_class_(IOMMU_DOMAIN_ATTACH_DEVICE)
+_IRQL_requires_max_(PASSIVE_LEVEL)
 NTSTATUS
 IOMMU_DOMAIN_ATTACH_DEVICE (
     _In_ PIOMMU_DMA_DOMAIN Domain,
@@ -37144,7 +38676,9 @@ Return Value:
 
 typedef IOMMU_DOMAIN_ATTACH_DEVICE *PIOMMU_DOMAIN_ATTACH_DEVICE;
 
-typedef _Function_class_(IOMMU_DOMAIN_DETACH_DEVICE)
+typedef
+_Function_class_(IOMMU_DOMAIN_DETACH_DEVICE)
+_IRQL_requires_max_(PASSIVE_LEVEL)
 NTSTATUS
 IOMMU_DOMAIN_DETACH_DEVICE (
     _In_ PIOMMU_DMA_DOMAIN Domain,
@@ -37362,7 +38896,9 @@ Return Value:
 
 typedef IOMMU_QUERY_INPUT_MAPPINGS *PIOMMU_QUERY_INPUT_MAPPINGS;
 
-typedef _Function_class_(IOMMU_MAP_LOGICAL_RANGE)
+typedef
+_Function_class_(IOMMU_MAP_LOGICAL_RANGE)
+_IRQL_requires_max_(DISPATCH_LEVEL)
 NTSTATUS
 IOMMU_MAP_LOGICAL_RANGE (
     _In_ PIOMMU_DMA_DOMAIN Domain,
@@ -37392,13 +38928,23 @@ Arguments:
 
 Return Value:
 
-    NTSTATUS.
+    STATUS_SUCCESS on successful physical to logical mapping.
+
+    STATUS_INVALID_PARAMETER_1 - The domain is not a remapping domain.
+
+    STATUS_INVALID_PARAMETER_3 - The provided MDL is not page aligned and/or is
+        not a whole number of pages.
+
+    STATUS_INVALID_PARAMETER_4 - The logical address provided is not page
+        aligned.
 
 --*/
 
 typedef IOMMU_MAP_LOGICAL_RANGE *PIOMMU_MAP_LOGICAL_RANGE;
 
-typedef _Function_class_(IOMMU_UNMAP_LOGICAL_RANGE)
+typedef
+_Function_class_(IOMMU_UNMAP_LOGICAL_RANGE)
+_IRQL_requires_max_(DISPATCH_LEVEL)
 NTSTATUS
 IOMMU_UNMAP_LOGICAL_RANGE (
     _In_ PIOMMU_DMA_DOMAIN Domain,
@@ -37424,13 +38970,20 @@ Arguments:
 
 Return Value:
 
-    NTSTATUS.
+    STATUS_SUCCESS on successful unmapping of the logical address.
+
+    STATUS_INVALID_PARAMETER_1 - The domain is not a remapping domain.
+
+    STATUS_INVALID_PARAMETER_2 - The logical address provided is not page
+        aligned.
 
 --*/
 
 typedef IOMMU_UNMAP_LOGICAL_RANGE *PIOMMU_UNMAP_LOGICAL_RANGE;
 
-typedef _Function_class_(IOMMU_MAP_IDENTITY_RANGE)
+typedef
+_Function_class_(IOMMU_MAP_IDENTITY_RANGE)
+_IRQL_requires_max_(DISPATCH_LEVEL)
 NTSTATUS
 IOMMU_MAP_IDENTITY_RANGE (
     _In_ PIOMMU_DMA_DOMAIN Domain,
@@ -37455,13 +39008,21 @@ Arguments:
 
 Return Value:
 
-    NTSTATUS.
+    STATUS_SUCCESS on successful physical to logical mapping.
+
+    STATUS_INVALID_PARAMETER_1 - The domain is not a remapping domain. For
+        passthrough domains, this routine is a no-op.
+
+    STATUS_INVALID_PARAMETER_3 - The provided MDL is not page aligned and/or is
+        not a whole number of pages.
 
 --*/
 
 typedef IOMMU_MAP_IDENTITY_RANGE *PIOMMU_MAP_IDENTITY_RANGE;
 
-typedef _Function_class_(IOMMU_UNMAP_IDENTITY_RANGE)
+typedef
+_Function_class_(IOMMU_UNMAP_IDENTITY_RANGE)
+_IRQL_requires_max_(DISPATCH_LEVEL)
 NTSTATUS
 IOMMU_UNMAP_IDENTITY_RANGE (
     _In_ PIOMMU_DMA_DOMAIN Domain,
@@ -37482,23 +39043,729 @@ Arguments:
 
 Return Value:
 
-    NTSTATUS.
+    STATUS_SUCCESS on successful unmapping.
+
+    STATUS_INVALID_PARAMETER_1 - The domain is not a remapping domain. For
+        passthrough domains, this routine is a no-op.
+
+    STATUS_INVALID_PARAMETER_2 - The provided MDL is not page aligned and/or is
+        not a whole number of pages.
 
 --*/
 
 typedef IOMMU_UNMAP_IDENTITY_RANGE *PIOMMU_UNMAP_IDENTITY_RANGE;
 
-#define DMA_IOMMU_INTERFACE_VERSION_1 (1UL)
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
 
+typedef
+_Function_class_(IOMMU_DOMAIN_CREATE_EX)
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSTATUS
+IOMMU_DOMAIN_CREATE_EX (
+    _In_ IOMMU_DMA_DOMAIN_TYPE DomainType,
+    _In_ IOMMU_DMA_DOMAIN_CREATION_FLAGS Flags,
+    _In_opt_ PIOMMU_DMA_LOGICAL_ALLOCATOR_CONFIG LogicalAllocatorConfig,
+    _In_opt_ PIOMMU_DMA_RESERVED_REGION ReservedRegions,
+    _Out_ PIOMMU_DMA_DOMAIN *DomainOut
+    );
+
+/*++
+
+Routine Description:
+
+    This routine creates a new DMA device domain based on the provided domain
+    type.
+
+Arguments:
+
+    DomainType - Indicates the type of domain to be created. The domain types
+        are described in the new IOMMU_DMA_DOMAIN_TYPE enum.
+
+    Flags - Currently unused.
+
+    LogicalAllocatorConfig - Optionally supplies the parameters to initialize a
+        logical allocator that will be associated with the created domain.
+
+    ReservedRegions - Optionally provides a set of regions to be reserved
+        during domain creation.
+
+    DomainOut - Returns an opaque handle to the created domain.
+
+Return Value:
+
+    STATUS_SUCCESS - On successful creation of the domain handle.
+
+    STATUS_INSUFFICIENT_RESOURCES - Not enough memory to allocate the opaque
+        domain type or not enough ASIDs for unmanaged domains.
+
+    STATUS_NOT_SUPPORTED - Hypervisor domain interface not available or X86
+        guest machine attempting to create a domain.
+
+--*/
+
+typedef IOMMU_DOMAIN_CREATE_EX *PIOMMU_DOMAIN_CREATE_EX;
+
+typedef
+_Function_class_(IOMMU_DOMAIN_ATTACH_DEVICE_EX)
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSTATUS
+IOMMU_DOMAIN_ATTACH_DEVICE_EX (
+    _In_ PIOMMU_DMA_DOMAIN Domain,
+    _In_ PIOMMU_DMA_DEVICE DmaDevice
+    );
+
+/*++
+
+Routine Description:
+
+    This routine attaches a device to an existing domain.
+
+    N.B. It is driver's responsibility to ensure that this function is not
+    called concurrently with any IOMMU_DOMAIN_DETACH_DEVICE_EX or
+    IOMMU_SET_DEVICE_FAULT_REPORTING calls on the same device.
+
+Arguments:
+
+    Domain - Supplies a handle to the domain that the device will attach to.
+
+    DmaDevice - Supplies a pointer to the IOMMU DMA Device to be attached.
+
+Return Value:
+
+    STATUS_SUCCESS - On successful device attachment to the domain.
+
+    STATUS_INSUFFICIENT_RESOURCES - Not enough memory to allocate a cached
+        device for attach/detach bookkeeping.
+
+    STATUS_ACCESS_DENIED - The device is currently not allowed to attach to this
+        domain.
+
+--*/
+
+typedef IOMMU_DOMAIN_ATTACH_DEVICE_EX *PIOMMU_DOMAIN_ATTACH_DEVICE_EX;
+
+typedef
+_Function_class_(IOMMU_DOMAIN_DETACH_DEVICE_EX)
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSTATUS
+IOMMU_DOMAIN_DETACH_DEVICE_EX (
+    _In_ PIOMMU_DMA_DEVICE DmaDevice
+    );
+
+/*++
+
+Routine Description:
+
+    This routine detaches a device from an existing domain.
+
+    N.B. It is driver's responsibility to ensure that this function is not
+    called concurrently with any IOMMU_DOMAIN_ATTACH_DEVICE_EX or
+    IOMMU_SET_DEVICE_FAULT_REPORTING calls on the same device.
+
+Arguments:
+
+    DmaDevice - Supplies a pointer to the IOMMU DMA Device to be detached.
+
+Return Value:
+
+    STATUS_SUCCESS - On successful device detachment from the domain.
+
+    STATUS_INVALID_PARAMETER_1 - The device could not be detached because it
+        was never attached.
+
+--*/
+
+typedef IOMMU_DOMAIN_DETACH_DEVICE_EX *PIOMMU_DOMAIN_DETACH_DEVICE_EX;
+
+typedef
+_Function_class_(IOMMU_MAP_LOGICAL_RANGE_EX)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTSTATUS
+IOMMU_MAP_LOGICAL_RANGE_EX (
+    _In_ PIOMMU_DMA_DOMAIN Domain,
+    _In_ ULONG Permissions,
+    _In_ PIOMMU_MAP_PHYSICAL_ADDRESS PhysicalAddressToMap,
+    _In_opt_ PIOMMU_DMA_LOGICAL_ADDRESS ExplicitLogicalAddress,
+    _In_opt_ PIOMMU_DMA_LOGICAL_ADDRESS MinLogicalAddress,
+    _In_opt_ PIOMMU_DMA_LOGICAL_ADDRESS MaxLogicalAddress,
+    _Out_ PIOMMU_DMA_LOGICAL_ADDRESS LogicalAddressOut
+    );
+
+/*++
+
+Routine Description:
+
+    This routine maps a range of pages into the address space of a domain.
+
+    N.B. This is only available to remapping domains in which the page tables
+         are OS-managed.
+
+Arguments:
+
+    Domain - Supplies a pointer to the domain that the mapped logical address
+        will belong to.
+
+    Permissions - Provides permissions to be set for the range being mapped.
+
+    PhysicalAddressToMap - Supplies a pointer to the physical address and range
+        to be mapped.
+
+    ExplicitLogicalAddress - Supplies a pointer to an optional logical address
+        that the physical address will be mapped to.
+
+        N.B. If the domain does not have a registered logical allocator, this
+             argument must be provided. If the domain does have a registered
+             logical allocator that does not support explicit addresses, this
+             argument is forbidden.
+
+    MinLogicalAddress - Supplies a pointer to an optional logical address
+        representing the minimum (inclusive) allowable logical address.
+
+    MaxLogicalAddress - Supplies a pointer to an optional logical address
+        representing the maximum (inclusive) allowable logical address.
+
+    LogicalAddressOut - Provides the resulting logical address from the mapping.
+
+Return Value:
+
+    STATUS_SUCCESS - On successful physical to logical mapping.
+
+    STATUS_INVALID_PARAMETER_1 - The domain is not a remapping domain in which
+        the page tables are OS-managed.
+
+    STATUS_INVALID_PARAMETER_3 - The physical address provided is not page
+        aligned and/or is not a whole number of pages.
+
+    STATUS_INVALID_PARAMETER_4 - The logical address provided is not page
+        aligned and/or is not a whole number of pages.
+
+    STATUS_INVALID_PARAMETER_MIX - The min and max logical addresses provided
+        could not be satisfied.
+
+    STATUS_IN_USE - LogicalAddress range is already mapped or partially mapped.
+
+    STATUS_NOT_SUPPORTED - LogicalAddress was provided when a logical allocator
+        was present and does not allow explicit logical address allocation. Or
+        LogicalAddress was not provided when no logical allocator is present.
+
+--*/
+
+typedef IOMMU_MAP_LOGICAL_RANGE_EX *PIOMMU_MAP_LOGICAL_RANGE_EX;
+
+typedef
+_Function_class_(IOMMU_MAP_IDENTITY_RANGE_EX)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTSTATUS
+IOMMU_MAP_IDENTITY_RANGE_EX (
+    _In_ PIOMMU_DMA_DOMAIN Domain,
+    _In_ ULONG Permissions,
+    _In_ PIOMMU_MAP_PHYSICAL_ADDRESS PhysicalAddressToMap
+    );
+
+/*++
+
+Routine Description:
+
+    This routine creates an identity mapping for the provided physical address
+    in the provided domain.
+
+    N.B. This is available only to domains in which the page tables are
+         are OS-managed.
+
+Arguments:
+
+    Domain - Supplies a pointer to the domain that the mapped logical address
+        will belong to.
+
+    Permissions - Provides permissions to be set for the range being mapped.
+
+    PhysicalAddressToMap - Supplies a pointer to the physical address and range
+        to be mapped.
+
+Return Value:
+
+    STATUS_SUCCESS - On successful physical to logical mapping.
+
+    STATUS_INVALID_PARAMETER_1 - The domain is not a remapping domain in which
+        the page tables are OS-managed. For passthrough domains, this routine is
+        a no-op.
+
+    STATUS_INVALID_PARAMETER_3 - The physical address provided is not page
+        aligned and/or is not a whole number of pages.
+
+    STATUS_IN_USE - Identity range is already mapped or partially mapped.
+
+    STATUS_NOT_SUPPORTED - Logical allocator is present and does not allow
+        explicit logical address allocation.
+
+--*/
+
+typedef IOMMU_MAP_IDENTITY_RANGE_EX *PIOMMU_MAP_IDENTITY_RANGE_EX;
+
+typedef
+_Function_class_(IOMMU_UNMAP_IDENTITY_RANGE_EX)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTSTATUS
+IOMMU_UNMAP_IDENTITY_RANGE_EX (
+    _In_ PIOMMU_DMA_DOMAIN Domain,
+    _In_ PIOMMU_MAP_PHYSICAL_ADDRESS MappedPhysicalAddress
+    );
+
+/*++
+
+Routine Description:
+
+    This routine deletes an identity mapping for the specified physical address.
+
+    N.B. This is available only to domains in which the page tables are
+         are OS-managed.
+
+Arguments:
+
+    Domain - Supplies a pointer to the domain.
+
+    MappedPhysicalAddress - Provides the physical address that was identity
+        mapped.
+
+Return Value:
+
+    STATUS_SUCCESS on successful unmapping.
+
+    STATUS_INVALID_PARAMETER_1 - The domain is not a remapping domain in which
+        the page tables are OS-managed. For passthrough domains, this routine is
+        a no-op.
+
+    STATUS_INVALID_PARAMETER_2 - The physical address provided is not page
+        aligned and/or is not a whole number of pages.
+
+    STATUS_NOT_SUPPORTED - Logical allocator is present and does not allow
+        explicit logical address allocation.
+
+--*/
+
+typedef IOMMU_UNMAP_IDENTITY_RANGE_EX *PIOMMU_UNMAP_IDENTITY_RANGE_EX;
+
+typedef
+_Function_class_(IOMMU_DEVICE_QUERY_DOMAIN_TYPES)
+_IRQL_requires_max_(PASSIVE_LEVEL)
+VOID
+IOMMU_DEVICE_QUERY_DOMAIN_TYPES (
+    _In_ PIOMMU_DMA_DEVICE DmaDevice,
+    _Out_ PULONG AvailableDomains
+    );
+
+/*++
+
+Routine Description:
+
+    This routine queries for the available types of domains that a device is
+    allowed to attach to, depending on environment factors, such as platform and
+    the DMA Guard policy.
+
+Arguments:
+
+    DmaDevice - Supplies a pointer to an opaque token representing the device.
+
+    AvailableDomains - Returns the current domain types that are available to
+        be created and attached to. Each set bit represents an available domain
+        type (1 << IOMMU_DMA_DOMAIN_TYPE).
+
+Return Value:
+
+    None.
+
+--*/
+
+typedef IOMMU_DEVICE_QUERY_DOMAIN_TYPES *PIOMMU_DEVICE_QUERY_DOMAIN_TYPES;
+
+typedef
+_Function_class_(IOMMU_REGISTER_INTERFACE_STATE_CHANGE_CALLBACK)
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSTATUS
+IOMMU_REGISTER_INTERFACE_STATE_CHANGE_CALLBACK (
+    _In_ PIOMMU_INTERFACE_STATE_CHANGE_CALLBACK StateChangeCallback,
+    _In_opt_ PVOID Context,
+    _In_ PIOMMU_DMA_DEVICE DmaDevice,
+    _In_ PIOMMU_INTERFACE_STATE_CHANGE_FIELDS StateFields
+    );
+
+/*++
+
+Routine Description:
+
+    This routine allows the caller to register a callback to be invoked whenever
+    any state change related to the IOMMU interface occurs.
+
+    N.B. This will always immediately invoke the callback to avoid race
+         conditions with any notifications that invoke the callbacks. Callback
+         owners should not assume the state when a callback is invoked and
+         should always check that the state matches their needs.
+
+    N.B. Before disposing of a DMA_IOMMU_INTERFACE or IOMMU_DMA_DEVICE, the
+         owner is responsible for unregistering all its registered callbacks.
+         This is enforced by taking a reference on the device object in the
+         provided DMA device. This reference is dropped when the caller
+         unregisters.
+
+    N.B. Only one callback can be registered per device.
+
+Arguments:
+
+    StateChangeCallback - Provides the callback to be registered.
+
+    Context - Provides an optional context that will be passed to the state
+        change callback.
+
+    DmaDevice - Supplies a pointer to an opaque token representing the device.
+
+    StateFields - Supplies a pointer to the states a caller is registering for.
+
+Return Value:
+
+    STATUS_SUCCESS - If registration was successful and the callback was
+        inserted into the callback queue.
+
+    STATUS_UNSUCCESSFUL - If the provided callback is already registered.
+
+    STATUS_INVALID_PARAMETER_4 - If the caller did not indicate interest in any
+        interface state field.
+
+--*/
+
+typedef IOMMU_REGISTER_INTERFACE_STATE_CHANGE_CALLBACK
+        *PIOMMU_REGISTER_INTERFACE_STATE_CHANGE_CALLBACK;
+
+typedef
+_Function_class_(IOMMU_UNREGISTER_INTERFACE_STATE_CHANGE_CALLBACK)
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSTATUS
+IOMMU_UNREGISTER_INTERFACE_STATE_CHANGE_CALLBACK (
+    _In_ PIOMMU_INTERFACE_STATE_CHANGE_CALLBACK StateChangeCallback,
+    _In_ PIOMMU_DMA_DEVICE DmaDevice
+    );
+
+/*++
+
+Routine Description:
+
+    This routine allows the caller to deregister a registered callback.
+
+Arguments:
+
+    StateChangeCallback - Provides the callback to be unregistered.
+
+    DmaDevice - Supplies a pointer to an opaque token representing the device
+        associated with the provided callback.
+
+Return Value:
+
+    STATUS_SUCCESS - If the unregistration was successful.
+
+    STATUS_UNSUCCESSFUL - If the provided callback is not a registered callback.
+
+--*/
+
+typedef IOMMU_UNREGISTER_INTERFACE_STATE_CHANGE_CALLBACK
+        *PIOMMU_UNREGISTER_INTERFACE_STATE_CHANGE_CALLBACK;
+
+typedef _Function_class_(IOMMU_RESERVE_LOGICAL_ADDRESS_RANGE)
+NTSTATUS
+IOMMU_RESERVE_LOGICAL_ADDRESS_RANGE (
+    _In_ PIOMMU_DMA_DOMAIN Domain,
+    _In_ SIZE_T Size,
+    _In_opt_ PIOMMU_DMA_LOGICAL_ADDRESS ExplicitLogicalAddress,
+    _In_opt_ PIOMMU_DMA_LOGICAL_ADDRESS MinLogicalAddress,
+    _In_opt_ PIOMMU_DMA_LOGICAL_ADDRESS MaxLogicalAddress,
+    _Out_ PIOMMU_DMA_LOGICAL_ADDRESS_TOKEN *LogicalAddressToken
+    );
+
+/*++
+
+Routine Description:
+
+    This routine preallocates logical address space that can be used for future
+    mappings. This grants a driver the ability to ensure forward progress for
+    future map/unmap calls.
+
+Arguments:
+
+    Domain - Provides the domain that the reserved logical address will belong
+        to. Only remapping domains are supported.
+
+    Size - Provides the size, in bytes, of the logical address range to reserve.
+        This value must represent a whole number of pages.
+
+    ExplicitLogicalAddress - Supplies a pointer to an optional logical address
+        that the physical address will be mapped to.
+
+        N.B. If the domain does not have a registered logical allocator, this
+             argument must be provided.
+
+    MinLogicalAddress - Supplies a pointer to an optional logical address
+        representing the minimum (inclusive) allowable logical address.
+
+    MaxLogicalAddress - Supplies a pointer to an optional logical address
+        representing the maximum (inclusive) allowable logical address.
+
+    LogicalAddressToken - Provides a token representing the reserved logical
+        address range.
+
+Return Value:
+
+    STATUS_SUCCESS - On successful reservation of the logical address range.
+
+    STATUS_INVALID_PARAMETER_1 - Domain provided is not a remapping domain.
+
+    STATUS_INVALID_PARAMETER_2 - Size is not a whole number of pages.
+
+    STATUS_INVALID_PARAMETER_3 - The logical address provided is not page
+        aligned and/or is not a whole number of pages.
+
+    STATUS_INVALID_PARAMETER_MIX - The min and max logical addresses provided
+        could not be satisfied.
+
+    STATUS_INSUFFICIENT_RESOURCES - Not enough memory to allocate page tables
+        and/or logical address token metadata.
+
+    STATUS_IN_USE - LogicalAddress range provided is already reserved or mapped.
+
+    STATUS_NOT_SUPPORTED - LogicalAddress was provided when a logical allocator
+        was present and does not allow explicit logical address allocation. Or
+        LogicalAddress was not provided and no logical allocator is present.
+
+--*/
+
+typedef IOMMU_RESERVE_LOGICAL_ADDRESS_RANGE *PIOMMU_RESERVE_LOGICAL_ADDRESS_RANGE;
+
+typedef _Function_class_(IOMMU_FREE_RESERVED_LOGICAL_ADDRESS_RANGE)
+NTSTATUS
+IOMMU_FREE_RESERVED_LOGICAL_ADDRESS_RANGE (
+    _In_ PIOMMU_DMA_LOGICAL_ADDRESS_TOKEN LogicalAddressToken
+    );
+
+/*++
+
+Routine Description:
+
+    This routine frees a logical address token.
+
+    N.B. Before disposing of a DMA_IOMMU_INTERFACE, the owner of the interface
+        is responsible for freeing all its logical address tokens.
+
+Arguments:
+
+    LogicalAddressToken - Provides a pointer to the token, representing the
+        reserved logical address range, to be freed.
+
+Return Value:
+
+    STATUS_SUCCESS - On successfully freeing the LogicalAddressToken.
+
+    STATUS_IN_USE - LogicalAddress is currently mapped.
+
+--*/
+
+typedef IOMMU_FREE_RESERVED_LOGICAL_ADDRESS_RANGE *PIOMMU_FREE_RESERVED_LOGICAL_ADDRESS_RANGE;
+
+typedef _Function_class_(IOMMU_MAP_RESERVED_LOGICAL_RANGE)
+NTSTATUS
+IOMMU_MAP_RESERVED_LOGICAL_RANGE (
+    _Inout_ PIOMMU_DMA_LOGICAL_ADDRESS_TOKEN LogicalAddressToken,
+    _In_ SIZE_T Offset,
+    _In_ ULONG Permissions,
+    _In_ PIOMMU_MAP_PHYSICAL_ADDRESS PhysicalAddressToMap,
+    _Out_ PIOMMU_DMA_LOGICAL_ADDRESS_TOKEN_MAPPED_SEGMENT MappedSegment
+    );
+
+/*++
+
+Routine Description:
+
+    This routine maps a reserved logical range. Unlike MapLogicalRange, this is
+    guaranteed not to perform any memory allocations as they are assumed to have
+    already been performed earlier with ReserveLogicalAddressRange.
+
+Arguments:
+
+    LogicalAddressToken - Provides the logical address token to be mapped to.
+
+    Offset - Provides the offset, in bytes, into the logical address token,
+        representing the base logical address to be mapped.
+
+    Permissions - Provides permissions to be set for the range being mapped.
+
+    PhysicalAddressToMap - Provides the physical address to be mapped.
+
+    MappedSegment - Provides a pointer to the mapped segment. This field will
+        only be filled on successful mapping.
+
+Return Value:
+
+    STATUS_SUCCESS - On successful physical to logical mapping.
+
+    STATUS_INVALID_PARAMETER_4 - The physical address provided is not page
+        aligned and/or is not a whole number of pages.
+
+    STATUS_IN_USE - The logical address range represented in the logical address
+        token is completely or partially already mapped.
+
+--*/
+
+typedef IOMMU_MAP_RESERVED_LOGICAL_RANGE *PIOMMU_MAP_RESERVED_LOGICAL_RANGE;
+
+typedef _Function_class_(IOMMU_UNMAP_RESERVED_LOGICAL_RANGE)
+NTSTATUS
+IOMMU_UNMAP_RESERVED_LOGICAL_RANGE (
+    _Inout_ PIOMMU_DMA_LOGICAL_ADDRESS_TOKEN_MAPPED_SEGMENT MappedSegment
+    );
+
+/*++
+
+Routine Description:
+
+    This routine unmaps a previously mapped reserved logical range. Unlike
+    UnmapLogicalRange, this is guaranteed not to delete any page table resources
+    so that the logical address range can be reused without performing any
+    memory allocations.
+
+Arguments:
+
+    MappedSegment - Provides the logical address segment to be unmapped.
+
+Return Value:
+
+    STATUS_SUCCESS - On successful unmapping of the physical address from the
+        logical address space.
+
+    STATUS_INVALID_PARAMETER - MappedSegment is not mapped.
+
+--*/
+
+typedef IOMMU_UNMAP_RESERVED_LOGICAL_RANGE *PIOMMU_UNMAP_RESERVED_LOGICAL_RANGE;
+
+typedef
+_Function_class_(IOMMU_DEVICE_CREATE)
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSTATUS
+IOMMU_DEVICE_CREATE (
+    _In_ PDEVICE_OBJECT DeviceObject,
+    _In_opt_ PIOMMU_DEVICE_CREATION_CONFIGURATION DeviceConfig,
+    _Out_ PIOMMU_DMA_DEVICE *DmaDeviceOut
+    );
+
+/*++
+
+Routine Description:
+
+    This routine takes a physical device object and creates an IOMMU DMA Device.
+
+Arguments:
+
+    DeviceObject - Supplies a pointer to the PDO of the device that the created
+        DMA Device will represent.
+
+    DeviceConfig - Supplies an optional pointer to a list of configurations that
+        may be needed for device creation, depending on the system.
+
+        N.B. This is currently required for ARM64 ACPI devices. All other
+             devices on ARM64 and any devices on AMD64 should not provide any
+             configuration.
+
+    DmaDeviceOut - Supplies a pointer to the created IOMMU DMA Device.
+
+Return Value:
+
+    STATUS_SUCCESS - On successful creation of a DMA Device.
+
+    STATUS_INVALID_PARAMETER - Provided PDO represents a device that is not
+        behind an IOMMU.
+
+    STATUS_INVALID_PARAMETER_2 - Provided inputs do not match system support.
+
+    STATUS_INSUFFICIENT_RESOURCES - Not enough memory to allocate an
+        IOMMU_DMA_DEVICE structure.
+
+--*/
+
+typedef IOMMU_DEVICE_CREATE *PIOMMU_DEVICE_CREATE;
+
+typedef
+_Function_class_(IOMMU_DEVICE_DELETE)
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSTATUS
+IOMMU_DEVICE_DELETE (
+    _In_ PIOMMU_DMA_DEVICE DmaDevice
+    );
+
+/*++
+
+Routine Description:
+
+    This routine deletes an IOMMU DMA Device.
+
+Arguments:
+
+    DmaDevice - Supplies a pointer to the IOMMU DMA Device to be deleted.
+
+Return Value:
+
+    STATUS_SUCCESS - On successful deletion of the DMA device.
+
+    STATUS_RESOURCE_IN_USE - Device is still attached to a domain or still has
+        a callback registered.
+
+--*/
+
+typedef IOMMU_DEVICE_DELETE *PIOMMU_DEVICE_DELETE;
+
+typedef _Function_class_(IOMMU_SET_DEVICE_FAULT_REPORTING_EX)
+NTSTATUS
+IOMMU_SET_DEVICE_FAULT_REPORTING_EX (
+    _In_ PIOMMU_DMA_DEVICE DmaDevice,
+    _In_ ULONG InputMappingIdBase,
+    _In_ BOOLEAN Enable,
+    _In_opt_ PDEVICE_FAULT_CONFIGURATION FaultConfig
+    );
+
+/*++
+
+Routine Description:
+
+    This routine set the device fault reporting state on an
+    device already attached to a domain.
+
+    N.B. It is driver's responsibility to ensure that this function is not
+    called concurrently with any IOMMU_DOMAIN_ATTACH_DEVICE_EX or
+    IOMMU_DOMAIN_DETACH_DEVICE_EX calls on the same device.
+
+Arguments:
+
+    DmaDevice - Supplies a pointer to the IOMMU DMA Device.
+
+    InputMappingIdBase - Supplies the base input mapping ID for the device.
+
+    Enable - Supplies a BOOLEAN indicating whether to enable fault reporting
+        for the device.
+
+    FaultConfig - Supplies an optional pointer to DEVICE_FAULT_CONFIGURATION.
+        Only used when enabling fault reporting.
+
+Return Value:
+
+    NTSTATUS code.
+
+--*/
+
+typedef IOMMU_SET_DEVICE_FAULT_REPORTING_EX
+        *PIOMMU_SET_DEVICE_FAULT_REPORTING_EX;
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_FE)
+
+#define DMA_IOMMU_INTERFACE_VERSION_1 (1UL)
 #define DMA_IOMMU_INTERFACE_VERSION DMA_IOMMU_INTERFACE_VERSION_1
 
 typedef struct _DMA_IOMMU_INTERFACE {
     ULONG Version;
-
-    //
-    // Version 1 routines.
-    //
-
     PIOMMU_DOMAIN_CREATE CreateDomain;
     PIOMMU_DOMAIN_DELETE DeleteDomain;
     PIOMMU_DOMAIN_ATTACH_DEVICE AttachDevice;
@@ -37515,6 +39782,70 @@ typedef struct _DMA_IOMMU_INTERFACE {
 } DMA_IOMMU_INTERFACE, *PDMA_IOMMU_INTERFACE;
 
 #endif // (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+
+#define DMA_IOMMU_INTERFACE_EX_VERSION_1 (1UL)
+#define DMA_IOMMU_INTERFACE_EX_VERSION_2 (2UL)
+#define DMA_IOMMU_INTERFACE_EX_VERSION_MIN DMA_IOMMU_INTERFACE_EX_VERSION_1
+#define DMA_IOMMU_INTERFACE_EX_VERSION_MAX DMA_IOMMU_INTERFACE_EX_VERSION_2
+#define DMA_IOMMU_INTERFACE_EX_VERSION DMA_IOMMU_INTERFACE_EX_VERSION_1
+
+typedef struct _DMA_IOMMU_INTERFACE_V1 {
+    PIOMMU_DOMAIN_CREATE CreateDomain;
+    PIOMMU_DOMAIN_DELETE DeleteDomain;
+    PIOMMU_DOMAIN_ATTACH_DEVICE AttachDevice;
+    PIOMMU_DOMAIN_DETACH_DEVICE DetachDevice;
+    PIOMMU_FLUSH_DOMAIN FlushDomain;
+    PIOMMU_FLUSH_DOMAIN_VA_LIST FlushDomainByVaList;
+    PIOMMU_QUERY_INPUT_MAPPINGS QueryInputMappings;
+    PIOMMU_MAP_LOGICAL_RANGE MapLogicalRange;
+    PIOMMU_UNMAP_LOGICAL_RANGE UnmapLogicalRange;
+    PIOMMU_MAP_IDENTITY_RANGE MapIdentityRange;
+    PIOMMU_UNMAP_IDENTITY_RANGE UnmapIdentityRange;
+    PIOMMU_SET_DEVICE_FAULT_REPORTING SetDeviceFaultReporting;
+    PIOMMU_DOMAIN_CONFIGURE ConfigureDomain;
+} DMA_IOMMU_INTERFACE_V1, *PDMA_IOMMU_INTERFACE_V1;
+
+typedef struct _DMA_IOMMU_INTERFACE_V2 {
+    PIOMMU_DOMAIN_CREATE_EX CreateDomainEx;
+    PIOMMU_DOMAIN_DELETE DeleteDomain;
+    PIOMMU_DOMAIN_ATTACH_DEVICE_EX AttachDeviceEx;
+    PIOMMU_DOMAIN_DETACH_DEVICE_EX DetachDeviceEx;
+    PIOMMU_FLUSH_DOMAIN FlushDomain;
+    PIOMMU_FLUSH_DOMAIN_VA_LIST FlushDomainByVaList;
+    PIOMMU_QUERY_INPUT_MAPPINGS QueryInputMappings;
+    PIOMMU_MAP_LOGICAL_RANGE_EX MapLogicalRangeEx;
+    PIOMMU_UNMAP_LOGICAL_RANGE UnmapLogicalRange;
+    PIOMMU_MAP_IDENTITY_RANGE_EX MapIdentityRangeEx;
+    PIOMMU_UNMAP_IDENTITY_RANGE_EX UnmapIdentityRangeEx;
+    PIOMMU_SET_DEVICE_FAULT_REPORTING_EX SetDeviceFaultReportingEx;
+    PIOMMU_DOMAIN_CONFIGURE ConfigureDomain;
+    PIOMMU_DEVICE_QUERY_DOMAIN_TYPES QueryAvailableDomainTypes;
+    PIOMMU_REGISTER_INTERFACE_STATE_CHANGE_CALLBACK
+        RegisterInterfaceStateChangeCallback;
+
+    PIOMMU_UNREGISTER_INTERFACE_STATE_CHANGE_CALLBACK
+        UnregisterInterfaceStateChangeCallback;
+
+    PIOMMU_RESERVE_LOGICAL_ADDRESS_RANGE ReserveLogicalAddressRange;
+    PIOMMU_FREE_RESERVED_LOGICAL_ADDRESS_RANGE FreeReservedLogicalAddressRange;
+    PIOMMU_MAP_RESERVED_LOGICAL_RANGE MapReservedLogicalRange;
+    PIOMMU_UNMAP_RESERVED_LOGICAL_RANGE UnmapReservedLogicalRange;
+    PIOMMU_DEVICE_CREATE CreateDevice;
+    PIOMMU_DEVICE_DELETE DeleteDevice;
+} DMA_IOMMU_INTERFACE_V2, *PDMA_IOMMU_INTERFACE_V2;
+
+typedef struct _DMA_IOMMU_INTERFACE_EX {
+    SIZE_T Size;
+    ULONG Version;
+    union {
+        DMA_IOMMU_INTERFACE_V1 V1;
+        DMA_IOMMU_INTERFACE_V2 V2;
+    };
+} DMA_IOMMU_INTERFACE_EX, *PDMA_IOMMU_INTERFACE_EX;
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_FE)
 
 
 NTKERNELAPI
@@ -37632,6 +39963,15 @@ NTKERNELAPI
 VOID
 PoSetSystemWake (
     _Inout_ PIRP Irp
+    );
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTKERNELAPI
+VOID
+PoSetSystemWakeDevice(
+     _In_ PDEVICE_OBJECT DeviceObject
     );
 #endif
 
@@ -37950,6 +40290,13 @@ typedef struct _PO_FX_DEVICE_V2 {
 //     If not provided, then all power children must support Directed Fx
 //     for this device to fully support Directed Fx.
 //
+// PO_FX_DEVICE_FLAG_DFX_CHILDREN_OPTIONAL - Sets both PO_FX_DEVICE_FLAG_DFX_DIRECT_CHILDREN_OPTIONAL
+//     and PO_FX_DEVICE_FLAG_DFX_POWER_CHILDREN_OPTIONAL.
+//
+// PO_FX_DEVICE_FLAG_DISABLE_FAST_RESUME - When set this enforces that the
+//     device completes its D0-IRP before the system will complete the S0-IRP
+//     when resuming from a system state transition.
+//
 
 #define PO_FX_DEVICE_FLAG_RESERVED_1                   (0x0000000000000001ull)
 #define PO_FX_DEVICE_FLAG_DFX_DIRECT_CHILDREN_OPTIONAL (0x0000000000000002ull)
@@ -37957,6 +40304,8 @@ typedef struct _PO_FX_DEVICE_V2 {
 #define PO_FX_DEVICE_FLAG_DFX_CHILDREN_OPTIONAL \
             (PO_FX_DEVICE_FLAG_DFX_DIRECT_CHILDREN_OPTIONAL | \
              PO_FX_DEVICE_FLAG_DFX_POWER_CHILDREN_OPTIONAL)
+
+#define PO_FX_DEVICE_FLAG_DISABLE_FAST_RESUME          (0x0000000000000008ull)
 
 #define PO_FX_DIRECTED_FX_DEFAULT_IDLE_TIMEOUT    (0ul)
 #define PO_FX_DIRECTED_FX_IMMEDIATE_IDLE_TIMEOUT  ((ULONG)-1)
@@ -38769,6 +41118,17 @@ ObGetFilterVersion (
 
 
 
+typedef struct _PCI_SEGMENT_BUS_NUMBER {
+    union {
+        struct {
+            ULONG   BusNumber:8;
+            ULONG   SegmentNumber:16;
+            ULONG   Reserved:8;
+        } bits;
+        ULONG   AsULONG;
+    } u;
+} PCI_SEGMENT_BUS_NUMBER, *PPCI_SEGMENT_BUS_NUMBER;
+
 typedef struct _PCI_SLOT_NUMBER {
     union {
         struct {
@@ -38898,6 +41258,7 @@ typedef struct _PCI_COMMON_CONFIG {
 #define PCI_MAX_DEVICES                     32
 #define PCI_MAX_FUNCTION                    8
 #define PCI_MAX_BRIDGE_NUMBER               0xFF
+#define PCI_MAX_SEGMENT_NUMBER              0xFFFF
 
 #define PCI_INVALID_VENDORID                0xFFFF
 
@@ -39352,15 +41713,19 @@ typedef struct _PCI_EXPRESS_ATS_CAPABILITY_REGISTER {
     USHORT InvalidateQueueDepth:5;
     USHORT PageAlignedRequest:1;
     USHORT GlobalInvalidateSupported:1;
-    USHORT Reserved:9;
+    USHORT RelaxedOrderingSupported:1;
+    USHORT Reserved:8;
 
 } PCI_EXPRESS_ATS_CAPABILITY_REGISTER, *PPCI_EXPRESS_ATS_CAPABILITY_REGISTER;
 
-typedef struct _PCI_EXPRESS_ATS_CONTROL_REGISTER {
+typedef union _PCI_EXPRESS_ATS_CONTROL_REGISTER {
+    struct {
+        USHORT SmallestTransactionUnit:5;
+        USHORT Reserved:10;
+        USHORT Enable:1;
+    };
 
-    USHORT SmallestTransactionUnit:5;
-    USHORT Reserved:10;
-    USHORT Enable:1;
+    USHORT AsUSHORT;
 
 } PCI_EXPRESS_ATS_CONTROL_REGISTER, *PPCI_EXPRESS_ATS_CONTROL_REGISTER;
 
@@ -39853,13 +42218,17 @@ typedef union _PCI_EXPRESS_ACS_CAPABILITY_REGISTER {
         USHORT UpstreamForwarding:1;
         USHORT EgressControl:1;
         USHORT DirectTranslation:1;
-        USHORT Reserved:1;
+        USHORT EnhancedCapability:1;
         USHORT EgressControlVectorSize:8;
     } DUMMYSTRUCTNAME;
 
     USHORT AsUSHORT;
 
 } PCI_EXPRESS_ACS_CAPABILITY_REGISTER, *PPCI_EXPRESS_ACS_CAPABILITY_REGISTER;
+
+#define PCI_ACS_ALLOWED     0
+#define PCI_ACS_BLOCKED     1
+#define PCI_ACS_REDIRECTED  2
 
 typedef union _PCI_EXPRESS_ACS_CONTROL {
 
@@ -39871,7 +42240,11 @@ typedef union _PCI_EXPRESS_ACS_CONTROL {
         USHORT UpstreamForwarding:1;
         USHORT EgressControl:1;
         USHORT DirectTranslation:1;
-        USHORT Reserved:9;
+        USHORT IoBlocking:1;
+        USHORT DspMemoryControl:2;
+        USHORT UspMemoryControl:2;
+        USHORT UnclaimedRedirect:1;
+        USHORT Reserved:3;
     } DUMMYSTRUCTNAME;
 
     USHORT AsUSHORT;
@@ -40080,6 +42453,7 @@ typedef struct _PCI_EXPRESS_SRIOV_CAPABILITY {
 #define PCI_SUBCLASS_SYS_REAL_TIME_CLOCK    0x03
 #define PCI_SUBCLASS_SYS_GEN_HOTPLUG_CTLR   0x04
 #define PCI_SUBCLASS_SYS_SDIO_CTRL          0x05
+#define PCI_SUBCLASS_SYS_RCEC               0x07
 #define PCI_SUBCLASS_SYS_OTHER              0x80
 
 // Class 09 - PCI_CLASS_INPUT_DEV
@@ -40893,6 +43267,7 @@ ZwRenameKey(
     _In_ PUNICODE_STRING  NewName
     );
 
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -44145,7 +46520,15 @@ TmIsTransactionActive (
 
 
 #define PCW_VERSION_1 0x0100
+#if (NTDDI_VERSION >= NTDDI_WIN10_MN)
+#define PCW_VERSION_2 0x0200
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+#define PCW_CURRENT_VERSION PCW_VERSION_2
+#else
 #define PCW_CURRENT_VERSION PCW_VERSION_1
+#endif
 
 typedef struct _PCW_INSTANCE *PPCW_INSTANCE;
 typedef struct _PCW_REGISTRATION *PPCW_REGISTRATION;
@@ -44201,6 +46584,26 @@ PCW_CALLBACK(
 
 typedef PCW_CALLBACK *PPCW_CALLBACK;
 
+typedef enum PCW_REGISTRATION_FLAGS {
+    PcwRegistrationNone = 0,
+#if (NTDDI_VERSION >= NTDDI_WIN10_MN)
+
+    /*
+    By default, PcwRegister creates a silo-specific registration, i.e. it
+    creates a registration that is accessible only to consumers in the server
+    silo that was active at the time PcwRegister was called. Silo-specific
+    registrations can support child silos by creating a separate registration
+    for each silo.
+
+    If called with the PcwRegistrationSiloNeutral flag set, PcwRegister will
+    create a silo-neutral registration. A silo-neutral registration is
+    accessible to consumers in all server silos. This can simplify support of
+    child silos, especially when the data is the same for all silos.
+    */
+    PcwRegistrationSiloNeutral = 0x0001,
+#endif
+} PCW_REGISTRATION_FLAGS;
+
 typedef struct _PCW_REGISTRATION_INFORMATION {
     _In_ ULONG Version;
     _In_ PCUNICODE_STRING Name;
@@ -44208,6 +46611,10 @@ typedef struct _PCW_REGISTRATION_INFORMATION {
     _In_reads_(CounterCount) PPCW_COUNTER_DESCRIPTOR Counters;
     _In_opt_ PPCW_CALLBACK Callback;
     _In_opt_ PVOID CallbackContext;
+#if (NTDDI_VERSION >= NTDDI_WIN10_MN)
+    // Subsequent fields recognized only if Version >= PCW_VERSION_2.
+    PCW_REGISTRATION_FLAGS Flags;
+#endif
 } PCW_REGISTRATION_INFORMATION, *PPCW_REGISTRATION_INFORMATION;
 
 #if (NTDDI_VERSION >= NTDDI_WIN7)
@@ -44311,6 +46718,7 @@ VslDeleteSecureSection (
 #define REFTAG_PSNOTIFICATION 'oNsP'
 #define REFTAG_PSWAKE 'kWsP'
 #define REFTAG_RAWENDPOINT 'EwaR'
+#define REFTAG_SUBJECTCONTEXT 'uSeS'
 #define REFTAG_TCPENDPOINT 'EpcT'
 #define REFTAG_TCPLISTENER 'LpcT'
 #define REFTAG_TCPTCB 'TpcT'

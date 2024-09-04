@@ -1999,6 +1999,7 @@ typedef enum {
     EnergyTrackerQuery,
     UpdateBlackBoxRecorder,
     SessionAllowExternalDmaDevices,
+    SendSuspendResumeNotification,
     PowerInformationLevelMaximum
 } POWER_INFORMATION_LEVEL;
 
@@ -2102,7 +2103,7 @@ typedef enum {
     MonitorRequestReasonWinrt,
     MonitorRequestReasonUserInputKeyboard,
     MonitorRequestReasonUserInputMouse,
-    MonitorRequestReasonUserInputTouch,
+    MonitorRequestReasonUserInputTouchpad,
     MonitorRequestReasonUserInputPen,
     MonitorRequestReasonUserInputAccelerometer,
     MonitorRequestReasonUserInputHid,
@@ -2120,6 +2121,10 @@ typedef enum {
     MonitorRequestReasonDisplayRequiredUnDim,
     MonitorRequestReasonBatteryCountChangeSuppressed,
     MonitorRequestReasonResumeModernStandby,
+    MonitorRequestReasonTerminalInit,
+    MonitorRequestReasonPdcSignalSensorsHumanPresence,          // PDC_SIGNAL_PROVIDER_SENSORS_HUMAN_PRESENCE_MONITOR
+    MonitorRequestReasonBatteryPreCritical,
+    MonitorRequestReasonUserInputTouch,
     MonitorRequestReasonMax
 } POWER_MONITOR_REQUEST_REASON;
 
@@ -2260,6 +2265,20 @@ typedef enum _POWER_PLATFORM_ROLE {
 typedef struct _POWER_PLATFORM_INFORMATION {
     BOOLEAN AoAc;
 } POWER_PLATFORM_INFORMATION, *PPOWER_PLATFORM_INFORMATION;
+
+//
+// Enum which defines the effective altitude of a power setting.
+//
+
+typedef enum POWER_SETTING_ALTITUDE {
+    ALTITUDE_GROUP_POLICY,
+    ALTITUDE_USER,
+    ALTITUDE_RUNTIME_OVERRIDE,
+    ALTITUDE_PROVISIONING,
+    ALTITUDE_OEM_CUSTOMIZATION,
+    ALTITUDE_INTERNAL_OVERRIDE,
+    ALTITUDE_OS_DEFAULT,
+} POWER_SETTING_ALTITUDE, *PPOWER_SETTING_ALTITUDE;
 
 //
 // System power manager capabilities
@@ -3162,6 +3181,10 @@ typedef struct {
 #define SPSD_REASON_AOAC_NOBIOSSUPPORT          0x00000013
 #define SPSD_REASON_AOAC_HARDWARECHECKS         0x00000014
 #define SPSD_REASON_DEVICE_GUARD                0x00000015
+#define SPSD_REASON_HIBERNATE_NOT_SUPPORTED     0x00000016
+#define SPSD_REASON_BOOTVA_RESOURCE             0x00000017
+#define SPSD_REASON_HIBERNATE_CONTEXT_RESOURCE  0x00000018
+#define SPSD_REASON_HIBERNATE_MEM_PREALLOCATE   0x00000019
 
 // begin_nthal
 
